@@ -1,0 +1,812 @@
+{
+  "version": "chartr-treatment-review-0.1.0",
+  "evaluation_time": "2026-09-24T12:00:00Z",
+  "sources": [
+    {
+      "resourceType": "MedicationRequest",
+      "id": "D01",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-31T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/cancelled-at",
+          "valueDateTime": "2026-09-01T08:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/cancelled-by",
+          "valueReference": {
+            "reference": "DocumentReference/D03"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/replaced-by",
+          "valueReference": {
+            "reference": "MedicationRequest/D04"
+          }
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "cancelled",
+      "intent": "order",
+      "authoredOn": "2026-08-31T09:00:00Z",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Primary syphilis. Benzathine penicillin G 2.4 million units IM once. Cancelled September 1 at 08:00 by D03; replacement order D04."
+        }
+      ],
+      "statusReason": {
+        "text": "Cancelled by D03; replaced by D04"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "D02",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-31T09:20:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-08-31T09:20:00Z",
+      "description": "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted to reconcile the plan.",
+      "type": {
+        "text": "nurse note"
+      },
+      "author": [
+        {
+          "display": "nurse"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-31T09:20:00Z",
+            "data": "UGF0aWVudCByZXBvcnRzIHByaW9yIGltbWVkaWF0ZSBoaXZlcyBhbmQgYnJlYXRoaW5nIGRpZmZpY3VsdHkgYWZ0ZXIgcGVuaWNpbGxpbi4gTWVkaWNhdGlvbiBub3QgYWRtaW5pc3RlcmVkLiBQcmVzY3JpYmVyIGNvbnRhY3RlZCB0byByZWNvbmNpbGUgdGhlIHBsYW4u"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "D03",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-01T08:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-09-01T08:00:00Z",
+      "description": "Reviewed the reported penicillin reaction. Cancel D01. For this adult patient, for whom pregnancy is not applicable and with no documented neurologic, ocular, or auditory symptoms, use oral doxycycline 100 mg twice daily for 14 days. Follow-up arranged. This replaces the Aug. 31 plan and addresses the medication concern in D02.",
+      "type": {
+        "text": "Signed clinician note"
+      },
+      "author": [
+        {
+          "display": "treating-clinician"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-01T08:00:00Z",
+            "data": "UmV2aWV3ZWQgdGhlIHJlcG9ydGVkIHBlbmljaWxsaW4gcmVhY3Rpb24uIENhbmNlbCBEMDEuIEZvciB0aGlzIGFkdWx0IHBhdGllbnQsIGZvciB3aG9tIHByZWduYW5jeSBpcyBub3QgYXBwbGljYWJsZSBhbmQgd2l0aCBubyBkb2N1bWVudGVkIG5ldXJvbG9naWMsIG9jdWxhciwgb3IgYXVkaXRvcnkgc3ltcHRvbXMsIHVzZSBvcmFsIGRveHljeWNsaW5lIDEwMCBtZyB0d2ljZSBkYWlseSBmb3IgMTQgZGF5cy4gRm9sbG93LXVwIGFycmFuZ2VkLiBUaGlzIHJlcGxhY2VzIHRoZSBBdWcuIDMxIHBsYW4gYW5kIGFkZHJlc3NlcyB0aGUgbWVkaWNhdGlvbiBjb25jZXJuIGluIEQwMi4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "treating-clinician"
+      }
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "D04",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-01T08:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-09-01T08:10:00Z",
+      "medicationCodeableConcept": {
+        "text": "Doxycycline"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Doxycycline 100 mg orally twice daily for 14 days. Linked to D03 and replacing D01. Order history preserves the replacement relationship."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/D03"
+        }
+      ],
+      "priorPrescription": {
+        "reference": "MedicationRequest/D01"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "D05",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T16:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-09-15T16:00:00Z",
+      "description": "Patient reports completing the prescribed course. No new treatment concern identified. Planned serologic follow-up remains in place.",
+      "type": {
+        "text": "Signed clinician note"
+      },
+      "author": [
+        {
+          "display": "treating-clinician"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-15T16:00:00Z",
+            "data": "UGF0aWVudCByZXBvcnRzIGNvbXBsZXRpbmcgdGhlIHByZXNjcmliZWQgY291cnNlLiBObyBuZXcgdHJlYXRtZW50IGNvbmNlcm4gaWRlbnRpZmllZC4gUGxhbm5lZCBzZXJvbG9naWMgZm9sbG93LXVwIHJlbWFpbnMgaW4gcGxhY2Uu"
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "treating-clinician"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E101",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P101"
+      },
+      "period": {
+        "start": "2026-09-23"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E102",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P102"
+      },
+      "period": {
+        "start": "2026-08-31"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E103",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P103"
+      },
+      "period": {
+        "start": "2026-09-23"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "M01",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician-A"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T09:00:00Z",
+      "description": "Latent syphilis; duration cannot be established from the available history. Plan for benzathine penicillin G 2.4 million units IM weekly for three doses.",
+      "type": {
+        "text": "Signed clinician note"
+      },
+      "author": [
+        {
+          "display": "treating-clinician-A"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T09:00:00Z",
+            "data": "TGF0ZW50IHN5cGhpbGlzOyBkdXJhdGlvbiBjYW5ub3QgYmUgZXN0YWJsaXNoZWQgZnJvbSB0aGUgYXZhaWxhYmxlIGhpc3RvcnkuIFBsYW4gZm9yIGJlbnphdGhpbmUgcGVuaWNpbGxpbiBHIDIuNCBtaWxsaW9uIHVuaXRzIElNIHdlZWtseSBmb3IgdGhyZWUgZG9zZXMu"
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "treating-clinician-A"
+      }
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "M02",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-09-23T09:10:00Z",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM weekly for three doses. Active. Linked to M01. No cancellation or replacement relationship."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/M01"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "M03",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T15:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician-B"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T15:00:00Z",
+      "description": "Assessment: early latent syphilis. Plan for benzathine penicillin G 2.4 million units IM once. No statement addressing M01 or replacing its plan.",
+      "type": {
+        "text": "Signed clinician note"
+      },
+      "author": [
+        {
+          "display": "treating-clinician-B"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T15:00:00Z",
+            "data": "QXNzZXNzbWVudDogZWFybHkgbGF0ZW50IHN5cGhpbGlzLiBQbGFuIGZvciBiZW56YXRoaW5lIHBlbmljaWxsaW4gRyAyLjQgbWlsbGlvbiB1bml0cyBJTSBvbmNlLiBObyBzdGF0ZW1lbnQgYWRkcmVzc2luZyBNMDEgb3IgcmVwbGFjaW5nIGl0cyBwbGFuLg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "treating-clinician-B"
+      }
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "M04",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T15:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-09-23T15:10:00Z",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM once. Active. Linked to M03. No cancellation or replacement relationship."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/M03"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "M05",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "scheduling-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-24T09:00:00Z",
+      "description": "First treatment appointment booked for Sept. 24 at 14:00 UTC. No medication administration recorded for this episode.",
+      "type": {
+        "text": "scheduling-staff note"
+      },
+      "author": [
+        {
+          "display": "scheduling-staff"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-24T09:00:00Z",
+            "data": "Rmlyc3QgdHJlYXRtZW50IGFwcG9pbnRtZW50IGJvb2tlZCBmb3IgU2VwdC4gMjQgYXQgMTQ6MDAgVVRDLiBObyBtZWRpY2F0aW9uIGFkbWluaXN0cmF0aW9uIHJlY29yZGVkIGZvciB0aGlzIGVwaXNvZGUu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P101",
+      "name": [
+        {
+          "text": "Samantha Lee"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P102",
+      "name": [
+        {
+          "text": "Darrow Jones"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P103",
+      "name": [
+        {
+          "text": "Morgan Patel"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "S01",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-23T09:00:00Z",
+      "description": "Primary syphilis documented. Patient reports a penicillin allergy. Oral doxycycline is being considered as an alternative. Pregnancy status has not been established; treatment selection requires clinician review after assessment.",
+      "type": {
+        "text": "Signed clinician note"
+      },
+      "author": [
+        {
+          "display": "treating-clinician"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T09:00:00Z",
+            "data": "UHJpbWFyeSBzeXBoaWxpcyBkb2N1bWVudGVkLiBQYXRpZW50IHJlcG9ydHMgYSBwZW5pY2lsbGluIGFsbGVyZ3kuIE9yYWwgZG94eWN5Y2xpbmUgaXMgYmVpbmcgY29uc2lkZXJlZCBhcyBhbiBhbHRlcm5hdGl2ZS4gUHJlZ25hbmN5IHN0YXR1cyBoYXMgbm90IGJlZW4gZXN0YWJsaXNoZWQ7IHRyZWF0bWVudCBzZWxlY3Rpb24gcmVxdWlyZXMgY2xpbmljaWFuIHJldmlldyBhZnRlciBhc3Nlc3NtZW50Lg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "treating-clinician"
+      }
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "S02",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:15:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "draft",
+      "intent": "proposal",
+      "authoredOn": "2026-09-23T09:15:00Z",
+      "medicationCodeableConcept": {
+        "text": "Doxycycline"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Proposed oral doxycycline course. Draft, not released. Final selection pending the assessment requested in S01."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/S01"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "S03",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T10:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-23T10:00:00Z",
+      "description": "Patient reports a late menstrual period. Pregnancy testing requested by clinician; specimen not collected during this visit. Clinician informed.",
+      "type": {
+        "text": "nurse note"
+      },
+      "author": [
+        {
+          "display": "nurse"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T10:00:00Z",
+            "data": "UGF0aWVudCByZXBvcnRzIGEgbGF0ZSBtZW5zdHJ1YWwgcGVyaW9kLiBQcmVnbmFuY3kgdGVzdGluZyByZXF1ZXN0ZWQgYnkgY2xpbmljaWFuOyBzcGVjaW1lbiBub3QgY29sbGVjdGVkIGR1cmluZyB0aGlzIHZpc2l0LiBDbGluaWNpYW4gaW5mb3JtZWQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "S04",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T08:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "order-status"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "active",
+      "intent": "order",
+      "code": {
+        "text": "Pregnancy test"
+      },
+      "note": [
+        {
+          "text": "Pregnancy test ordered; specimen not collected; no result available."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/S03"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "S05",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-24T09:00:00Z",
+      "description": "Patient plans to attend today. Message sent to treating clinician for review. No treatment decision documented in this encounter.",
+      "type": {
+        "text": "telephone-staff note"
+      },
+      "author": [
+        {
+          "display": "telephone-staff"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-24T09:00:00Z",
+            "data": "UGF0aWVudCBwbGFucyB0byBhdHRlbmQgdG9kYXkuIE1lc3NhZ2Ugc2VudCB0byB0cmVhdGluZyBjbGluaWNpYW4gZm9yIHJldmlldy4gTm8gdHJlYXRtZW50IGRlY2lzaW9uIGRvY3VtZW50ZWQgaW4gdGhpcyBlbmNvdW50ZXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Organization",
+      "id": "clinical-review",
+      "name": "Clinical review"
+    }
+  ],
+  "queue": [
+    {
+      "resourceType": "Task",
+      "id": "Q102",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "treatment_review"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "UNRESOLVED_TREATMENT_CONCERN"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P102"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E102"
+      },
+      "owner": {
+        "reference": "Organization/clinical-review"
+      },
+      "authoredOn": "2026-08-31T09:30:00Z",
+      "lastModified": "2026-08-31T09:30:00Z",
+      "description": "Penicillin order requires prescriber review in light of the reported reaction; medication has not been administered.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "MedicationRequest/D01"
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "DocumentReference/D02"
+          }
+        }
+      ]
+    }
+  ]
+}

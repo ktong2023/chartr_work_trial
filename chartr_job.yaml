@@ -1,0 +1,3 @@
+# Required for ChartR: stock Docker mounts writable host log directories.
+environment:
+  import_path: chartr_environment:ChartREnvironment

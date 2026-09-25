@@ -1,0 +1,4 @@
+# Reproduce in a NEW environment; do not upgrade the existing working .venv.
+harbor==0.23.0
+anthropic==1.8.0
+jsonschema==4.26.0

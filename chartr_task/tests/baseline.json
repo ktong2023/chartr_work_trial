@@ -1,0 +1,88 @@
+{
+  "version": "chartr-treatment-review-0.1.0",
+  "evaluation_time": "2026-09-24T12:00:00Z",
+  "initial_digest": "57e00ae3600a0d43fd7b8f00dc179e9e72b0a923e406535117a67e86ba4f80f1",
+  "sources_digest": "5c469c6fd2b74794682700ba3aa4f518b6b69daec855b35011bb63d0599c2851",
+  "q102": {
+    "resourceType": "Task",
+    "id": "Q102",
+    "intent": "order",
+    "status": "requested",
+    "businessStatus": {
+      "coding": [
+        {
+          "system": "https://chartr.example/fhir/CodeSystem/review-status",
+          "code": "open"
+        }
+      ]
+    },
+    "code": {
+      "coding": [
+        {
+          "system": "https://chartr.example/fhir/CodeSystem/category",
+          "code": "treatment_review"
+        }
+      ]
+    },
+    "reasonCode": {
+      "coding": [
+        {
+          "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+          "code": "UNRESOLVED_TREATMENT_CONCERN"
+        }
+      ]
+    },
+    "for": {
+      "reference": "Patient/P102"
+    },
+    "focus": {
+      "reference": "EpisodeOfCare/E102"
+    },
+    "owner": {
+      "reference": "Organization/clinical-review"
+    },
+    "authoredOn": "2026-08-31T09:30:00Z",
+    "lastModified": "2026-08-31T09:30:00Z",
+    "description": "Penicillin order requires prescriber review in light of the reported reaction; medication has not been administered.",
+    "extension": [
+      {
+        "url": "https://chartr.example/fhir/StructureDefinition/episode",
+        "valueReference": {
+          "reference": "EpisodeOfCare/E102"
+        }
+      },
+      {
+        "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+        "valueInteger": 0
+      }
+    ],
+    "input": [
+      {
+        "type": {
+          "coding": [
+            {
+              "system": "https://chartr.example/fhir/CodeSystem/input",
+              "code": "evidence"
+            }
+          ]
+        },
+        "valueReference": {
+          "reference": "MedicationRequest/D01"
+        }
+      },
+      {
+        "type": {
+          "coding": [
+            {
+              "system": "https://chartr.example/fhir/CodeSystem/input",
+              "code": "evidence"
+            }
+          ]
+        },
+        "valueReference": {
+          "reference": "DocumentReference/D02"
+        }
+      }
+    ]
+  }
+}
