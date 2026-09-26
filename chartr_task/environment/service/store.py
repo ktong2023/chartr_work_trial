@@ -1,4 +1,4 @@
-import copy
+from contextlib import contextmanager
 import json
 import sqlite3
 import uuid
@@ -17,10 +17,15 @@ class Store:
     def __init__(self, path):
         self.path = Path(path)
 
+    @contextmanager
     def connect(self):
         db = sqlite3.connect(self.path, timeout=20, isolation_level=None)
         db.execute("PRAGMA busy_timeout=20000")
-        return db
+        try:
+            with db:
+                yield db
+        finally:
+            db.close()
 
     def initialize(self):
         """New container only. Reset means destroy this state and start a new container."""

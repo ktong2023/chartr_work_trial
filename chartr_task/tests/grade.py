@@ -98,7 +98,14 @@ def grade(snapshot, attestation):
 def main():
     snapshot_path, attestation_path, output = map(Path, sys.argv[1:])
     output.mkdir(parents=True, exist_ok=True)
+    for name in ("reward.txt", "reward.json"):
+        (output / name).unlink(missing_ok=True)
     try:
+        termination_path = snapshot_path.parent / "termination.json"
+        if termination_path.exists():
+            termination = json.loads(termination_path.read_text())
+            if termination["validity"] != "valid":
+                raise EvaluationError("Adapter did not complete a valid attempt: " + termination["reason"])
         result = grade(json.loads(snapshot_path.read_text()), json.loads(attestation_path.read_text()))
     except Exception as exc:
         (output / "diagnostics.json").write_text(json.dumps({"validity": "evaluation_error", "error": str(exc)}, indent=2))

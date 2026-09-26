@@ -56,10 +56,16 @@ class ChartREnvironment(DockerEnvironment):
                 "harbor": version("harbor"), "anthropic": version("anthropic"),
                 "provider": "chartr_environment:ChartREnvironment", "task_files_sha256": files,
                 "trial_id": str(self.context_id), "bind_mounts": False,
+                "container_images": {c["Service"]: c["Image"] for c in containers},
+                "provider_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             }, indent=2))
         elif (self.environment_dir / "baseline.json").exists():
             # Private verifier only; never materialized in the agent container.
+            await self.ensure_dirs(["/evidence"], chmod=True)
             await self.upload_file(controller / "attestation.json", "/evidence/attestation.json")
+            termination = controller / "anthropic/termination.json"
+            if termination.exists():
+                await self.upload_file(termination, "/evidence/termination.json")
 
     async def stop_service(self, service):
         await super().stop_service(service)
@@ -73,5 +79,21 @@ class ChartREnvironment(DockerEnvironment):
 
     async def service_exec(self, command, *, service=None, **kwargs):
         if service and service != "main" and not self._main_stopped:
-            raise RuntimeError("Sidecar collection requires a stopped agent container")
+            # Harbor's exception-recovery path does not stop main before hooks.
+            # Enforce the same ordering even for cancellation or agent failures.
+            await self.stop_service("main")
         return await super().service_exec(command, service=service, **kwargs)
+
+    async def service_download_file(self, source_path, target_path, *, service=None):
+        if service == "clinic" and source_path == "/evidence/snapshot.json":
+            # Docker cp on this Docker Desktop version cannot see this tmpfs file.
+            # Read through the trusted sidecar exec channel, never the agent shell.
+            result = await self.service_exec("cat /evidence/snapshot.json", service="clinic", timeout_sec=30)
+            if result.return_code:
+                raise RuntimeError("Trusted clinic snapshot collection failed")
+            snapshot = json.loads(result.stdout)
+            target = Path(target_path)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps(snapshot, indent=2))
+            return
+        await super().service_download_file(source_path, target_path, service=service)

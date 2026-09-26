@@ -1,0 +1,165 @@
+# ChartR treatment-review task — first working version
+
+One Harbor task contains Samantha Lee/P101, Darrow Jones/P102 and Morgan Patel/P103.
+The original `task_1` tutorial is unchanged. The existing `-a anthropic_agent` import
+continues to work. Development uses the existing `.venv`: Harbor **0.23.0**, Anthropic
+SDK **1.8.0**, jsonschema **4.26.0**. No installed dependency was upgraded.
+
+## Run from the project root
+
+Docker Desktop must be running. Always include `-c chartr_job.yaml` for ChartR:
+stock Harbor Docker adds writable host log mounts, contrary to this task's boundary.
+Use an absolute jobs directory to avoid this Harbor version's relative Docker-copy
+path issue. No credentials are needed for oracle or no-op runs.
+
+```sh
+# Deterministic reference on fresh state
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a oracle --jobs-dir "$PWD/jobs/chartr"
+
+# Fresh initial state must score zero
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a nop --jobs-dir "$PWD/jobs/chartr"
+
+# ONE paid pilot, only when you decide to run it; not executed during implementation.
+# ANTHROPIC_API_KEY must already be exported on the host. Do not use --agent-env for it.
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent:AnthropicAgent -m claude-opus-5 --ak max_turns=60 --ak max_tokens=2048 --ak wall_timeout_sec=570 --jobs-dir "$PWD/jobs/chartr"
+```
+
+The model default preserves the original `claude-opus-5` value. `-m` overrides it;
+otherwise `ANTHROPIC_MODEL` overrides the default. `--ak max_turns`, `max_tokens`,
+`wall_timeout_sec`, `api_timeout_sec`, `tool_timeout_sec`, `max_tool_chars` configure
+limits. `ANTHROPIC_MAX_TURNS` and `ANTHROPIC_MAX_TOKENS` are optional host fallbacks.
+Harbor allows 600 seconds for the agent, 600 for builds, and 120 for verification.
+The adapter uses the ordinary Messages API and no new organization-dependent API
+features. Actual model access/settings have not been retested with paid requests.
+
+## Architecture and trust boundary
+
+* **Agent container:** Python shell, `clinic` CLI, public policy and tool docs only.
+  Its build context is explicitly filtered; no tests, solutions, fixture database,
+  repository history, or complete conceptual framework ever enter its image layers.
+* **Clinic service:** Python standard-library HTTP server, SQLite persistence, public
+  fixtures, pinned R4 schema, operational validation and append-only API audit. The
+  service is read-only except per-trial tmpfs state/evidence. No host ports or shared
+  volumes. The agent and service use an internal Docker network; the verifier has
+  no network. The host performs model requests.
+* **Controller:** `chartr_environment.py` removes Harbor's host bind mounts, checks
+  actual container mounts, binds a fresh service nonce to the trial UUID, and checks
+  the starting digest against a private baseline before agent execution. It stops
+  the main container (including children), confirms it is stopped, then invokes the
+  service-only collector over Docker exec. A SQLite transaction freezes further
+  operations and exports a consistent snapshot/audit. In-flight transactions settle
+  before collection. The API exposes no collector, reset, database, or admin route.
+* **Private verifier:** Harbor creates it after stopping the evaluated environment.
+  The snapshot is copied from the service and the start attestation from the host.
+  The independent grader checks trial/fixture identity, frozen state, service faults,
+  audit continuity, unchanged sources, Q102 identity/creation, item counts,
+  dispositions and evidence groups. A valid incorrect queue gets 0; missing or
+  invalid evidence/service/API faults produce diagnostics and **no reward file**.
+
+Harbor 0.23.0 natively supports `[[verifier.collect]]`, sidecar `artifacts.service`,
+main-stop-before-sidecars, and `environment_mode = "separate"`. The small custom
+provider is still necessary: default log mounts violate the boundary, recovery
+collection needs explicit stop ordering, and Docker Desktop 29.8.0's `docker cp`
+could not read the service tmpfs snapshot. The provider reads that exact JSON file
+through sidecar exec instead. It never accepts an agent-written snapshot.
+
+The minimal unrelated transfer proof is `qa/transfer_smoke.py`: service counter 7
+passes while an agent-created counter 999 at the same path is ignored. The real
+clinical boundary probe also plants a forgery in both the agent's `/evidence` and
+its published artifacts directory; neither shadows the trusted service evidence.
+
+Every new trial gets an empty SQLite database, Q102, fresh nonce, ID counter and
+audit. Reusing an existing database is rejected. Reset means tearing down the
+per-trial containers and launching a new trial, never calling an agent admin API.
+
+## FHIR representation
+
+See [public tools and mapping](environment/public/tools.md) for exact commands,
+return shapes, local extensions, episode/evidence links, timestamps and status
+mapping. Patient, EpisodeOfCare, DocumentReference, MedicationRequest,
+ServiceRequest, Organization and Task resources are stored as JSON. This is a
+limited representation, **not full FHIR REST/API conformance**. The official R4
+4.0.1 JSON schema is vendored and checksum checked; see
+[schema provenance](environment/service/schema/README.md).
+
+S04 is an outstanding request, with no fabricated result. D01 retains its August
+31 authorship and September 1 cancellation; D04 explicitly replaces it. D04 stays
+an active recorded order because D05 reports patient completion without documenting
+an order-status closure. Both Morgan orders retain active status and their distinct
+supporting notes. No new diagnoses or clinical categories have been introduced.
+
+Custom `open`/`needs_clarification`/`resolved` codes live in Task.businessStatus;
+Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 23
+resources including Q102. New/updated tasks are schema validated before commit.
+FHIR schema validation is structural; it is not complete terminology, profile,
+reference-resolution or FHIRPath conformance validation.
+
+## Reference and grading
+
+`solution/reference.py` reads and writes only through the same `clinic` CLI. Harbor
+uploads it for dedicated oracle runs only. `tests/grade.py` imports neither the
+reference nor the backend. It accepts either S01 or S03 with S02/S04, D03 plus D01
+or D04, and M02/M04; relevant additional references and different action ordering
+are allowed. Explanation text must be nonempty, but its factual prose requires
+human QA. The backend intentionally permits duplicate and semantically incorrect
+items; the grader detects them. Q102 cannot be reassigned, deleted or replaced.
+
+## Evidence and attribution
+
+Each Harbor trial saves:
+
+* `controller/attestation.json`: trusted initial digest, nonce and trial identity.
+* `controller/run-manifest.json`: task file hashes, provider hash, runtime versions
+  and container image names; Dockerfiles pin their common base image digest.
+* `controller/anthropic/events.jsonl` and `termination.json`: durable observable
+  messages, tool calls/full results, usage, limits and termination (model runs).
+  This sibling directory is never mirrored into or mounted by the agent. Known
+  host secrets and Anthropic key patterns are redacted; headers/credential values
+  and provider exception bodies are never recorded.
+* `artifacts/evidence/snapshot.json`: authoritative frozen FHIR sources, queue,
+  service metadata and complete API audit with before/after queue states.
+* `verifier/diagnostics.json`, `verifier/reward.txt`, `result.json`, and `config.json`:
+  checks, reward when valid, timings and Harbor configuration.
+
+`max_tokens`, turn exhaustion and adapter time/tool limits save the current state
+and remain valid budget-limited attempts. API errors are invalid. Cancellation is
+explicitly recorded as interrupted; recovery stops the agent and preserves evidence.
+Harbor's outer timeout/cancellation may have no valid grade and should not be counted
+as a clean model failure. The adapter's shorter wall budget normally avoids this.
+No automatic API or transport write retry is performed. Inspect queue after an
+ambiguous write failure. Retain failed attempts; don't silently include exceptions
+as score zero or discard valid unsuccessful runs.
+
+```sh
+# No external model calls; clinic tests use an ephemeral loopback HTTP listener.
+./.venv/bin/python -m unittest discover -s qa -p 'test_*.py' -v
+./.venv/bin/python qa/transfer_smoke.py
+./.venv/bin/python qa/summarize.py jobs/chartr
+
+# Runtime privacy and invalid-attempt checks (mocked / no model charges)
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a qa.agents:BoundaryProbe --jobs-dir "$PWD/jobs/chartr"
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a qa.agents:MockAPIError --jobs-dir "$PWD/jobs/chartr"
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a qa.agents:MockBudget --ak max_turns=1 --jobs-dir "$PWD/jobs/chartr"
+```
+
+Full development results stay under ignored `jobs/chartr/`; see
+`verification-summary.json` and `offline-tests.log` there. No benchmark pass rate or
+real-model performance is claimed. Once a paid pilot is authorized and reviewed,
+freeze a version before running the eventual ten-trial batch.
+
+## Files and dependencies
+
+`environment/public/`: agent-visible CLI/policy/docs. `environment/service/`: public
+fixtures, schema, persistence/API and controller-only collection code.
+`solution/`: private oracle. `tests/`: private baseline/grader/verifier image.
+`qa/`: private focused acceptance tests and no-credit Harbor probes.
+`chartr_environment.py`, `chartr_job.yaml`: trusted Harbor integration.
+`anthropic_agent.py`: direct async adapter. `PROGRESS.md`: resume notes.
+
+Host pins are in `requirements.txt`; container validation dependencies are pinned in
+`environment/service/requirements.txt`. Images use Python 3.13.7 slim Bookworm at a
+fixed digest. Docker builds install dependencies; grading never downloads packages.
+Use the existing `.venv`. The vendored schema makes validation independent of HL7
+availability. `qa/build_fixture.py` is a designer-only regeneration helper that also
+updates the private integrity baseline; rerun it only when intentionally revising
+and reviewing fixture facts, not during trials.
