@@ -1,5 +1,5 @@
 {
-  "version": "chartr-treatment-review-0.1.2",
+  "version": "chartr-treatment-review-0.1.4",
   "evaluation_time": "2026-09-24T12:00:00Z",
   "sources": [
     {
@@ -233,6 +233,135 @@
       "authenticator": {
         "display": "Jordan Blake"
       }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "D06",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-31T08:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-08-31T08:30:00Z",
+      "description": "Photo ID verified. Emergency contact updated.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-31T08:30:00Z",
+            "data": "UGhvdG8gSUQgdmVyaWZpZWQuIEVtZXJnZW5jeSBjb250YWN0IHVwZGF0ZWQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "D07",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-31T08:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-08-31T08:50:00Z",
+      "description": "BP 126/80, HR 70, temperature 36.9 C, RR 16, SpO2 98% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Sam Ortiz"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-31T08:50:00Z",
+            "data": "QlAgMTI2LzgwLCBIUiA3MCwgdGVtcGVyYXR1cmUgMzYuOSBDLCBSUiAxNiwgU3BPMiA5OCUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "D08",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T16:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-09-15T16:30:00Z",
+      "description": "Work attendance letter for today's visit provided at patient request.",
+      "type": {
+        "text": "Administrative note"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-15T16:30:00Z",
+            "data": "V29yayBhdHRlbmRhbmNlIGxldHRlciBmb3IgdG9kYXkncyB2aXNpdCBwcm92aWRlZCBhdCBwYXRpZW50IHJlcXVlc3Qu"
+          }
+        }
+      ]
     },
     {
       "resourceType": "EpisodeOfCare",
@@ -483,6 +612,135 @@
       ]
     },
     {
+      "resourceType": "DocumentReference",
+      "id": "M06",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:30:00Z",
+      "description": "New patient registration completed. Contact details and insurance recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:30:00Z",
+            "data": "TmV3IHBhdGllbnQgcmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gQ29udGFjdCBkZXRhaWxzIGFuZCBpbnN1cmFuY2UgcmVjb3JkZWQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "M07",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:45:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:45:00Z",
+      "description": "BP 130/84, HR 78, temperature 36.6 C, RR 16, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Dana Kim"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:45:00Z",
+            "data": "QlAgMTMwLzg0LCBIUiA3OCwgdGVtcGVyYXR1cmUgMzYuNiBDLCBSUiAxNiwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "M08",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T18:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T18:00:00Z",
+      "description": "Patient asked whether the clinic validates parking. Replied that validation is available at the front desk.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T18:00:00Z",
+            "data": "UGF0aWVudCBhc2tlZCB3aGV0aGVyIHRoZSBjbGluaWMgdmFsaWRhdGVzIHBhcmtpbmcuIFJlcGxpZWQgdGhhdCB2YWxpZGF0aW9uIGlzIGF2YWlsYWJsZSBhdCB0aGUgZnJvbnQgZGVzay4="
+          }
+        }
+      ]
+    },
+    {
       "resourceType": "Patient",
       "id": "P101",
       "name": [
@@ -715,6 +973,135 @@
             "contentType": "text/plain",
             "creation": "2026-09-24T09:00:00Z",
             "data": "UGF0aWVudCBjYWxsZWQ7IHBsYW5zIHRvIGF0dGVuZCBjbGluaWMgdG9kYXkuIE1lc3NhZ2UgZm9yd2FyZGVkIHRvIHRyZWF0aW5nIGNsaW5pY2lhbi4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "S06",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:40:00Z",
+      "description": "Insurance information verified. Mailing address and phone number updated. Preferred pharmacy recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:40:00Z",
+            "data": "SW5zdXJhbmNlIGluZm9ybWF0aW9uIHZlcmlmaWVkLiBNYWlsaW5nIGFkZHJlc3MgYW5kIHBob25lIG51bWJlciB1cGRhdGVkLiBQcmVmZXJyZWQgcGhhcm1hY3kgcmVjb3JkZWQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "S07",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:50:00Z",
+      "description": "BP 118/74, HR 76, temperature 36.7 C, RR 14, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Riley Chen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:50:00Z",
+            "data": "QlAgMTE4Lzc0LCBIUiA3NiwgdGVtcGVyYXR1cmUgMzYuNyBDLCBSUiAxNCwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "S08",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T10:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-24T10:30:00Z",
+      "description": "Patient asked for clinic parking information. Directions and parking details sent.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-24T10:30:00Z",
+            "data": "UGF0aWVudCBhc2tlZCBmb3IgY2xpbmljIHBhcmtpbmcgaW5mb3JtYXRpb24uIERpcmVjdGlvbnMgYW5kIHBhcmtpbmcgZGV0YWlscyBzZW50Lg=="
           }
         }
       ]

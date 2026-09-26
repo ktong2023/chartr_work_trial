@@ -114,6 +114,25 @@ class ClinicTests(unittest.TestCase):
         self.write('P101', evidence=['S01']); self.write('P102'); self.write('P103')
         self.assertEqual(self.finish()[1]['reward'], 0)
 
+    def test_extraneous_record_citation_fails(self):
+        self.write('P101', evidence=['S01', 'S02', 'S04', 'S07']); self.write('P102'); self.write('P103')
+        result = self.finish()[1]
+        self.assertEqual(result['reward'], 0)
+        self.assertFalse(result['patients']['P101']['evidence'])
+
+    def test_all_relevant_records_pass_but_whole_chart_fails(self):
+        self.write('P101', evidence=['S01', 'S02', 'S03', 'S04', 'S05'])
+        self.write('P102', evidence=['D01', 'D02', 'D03', 'D04', 'D05'])
+        self.write('P103', evidence=['M01', 'M02', 'M03', 'M04', 'M05', 'M06', 'M07', 'M08'])
+        result = self.finish()[1]
+        self.assertTrue(result['patients']['P101']['evidence'] and result['patients']['P102']['evidence'])
+        self.assertFalse(result['patients']['P103']['evidence'])
+
+    def test_records_chronological(self):
+        times = [next((e['valueDateTime'] for e in r.get('extension', []) if e['url'].endswith('/event-time')), '')
+                 for r in self.cli('records', 'P101')['resources']]
+        self.assertEqual(times, sorted(times))
+
     def test_wrong_patient_episode_and_immutable_q102(self):
         original = self.cli('reviews')['items']
         self.cli('update', 'Q102', '--json', '{"patient":"P101"}', error=True)

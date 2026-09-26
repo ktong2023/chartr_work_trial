@@ -5,18 +5,8 @@
 
 Policy details:
 
-- An assessment request, laboratory order, referral, or message to a clinician is not proof of completion or resolution.
-- Compare instructions addressing the same episode, decision, and period. Different stages of an explicitly sequential plan are not automatically contradictions.
-- Use event/effective dates to establish applicability. Use authorship time to understand documentation order. Upload time alone does not establish clinical precedence.
-- An explicit replacement relationship takes precedence over simple recency. A later independent plan does not automatically cancel another active order.
-- Signed treating-clinician documentation can establish a treatment decision or resolution. Nursing and administrative notes can document concerns and operational facts but do not independently override a signed plan.
-- Determine clinician authority from the record's `author-role` metadata. Authors with the `treating-clinician` role have equal authority unless the records explicitly document a different authorization or precedence.
-- A medication list changing without documentation addressing the original concern is not sufficient resolution for this task.
-- Missing information warrants a flag only when it leaves a documented in-scope treatment concern unresolved. Do not flag every absent chart field.
-- A draft plan that is explicitly awaiting review is not automatically a conflicting active plan.
 - If TR1 and TR2 describe the same underlying conflict, create one item and use CONFLICTING_ACTIVE_PLANS as its primary reason. Do not duplicate the issue.
-- Resolving a review item closes that documented concern only. It does not mean an allergy disappeared, treatment was successful, or all future follow-up is complete.
-- Evidence references should identify the concern or conflicting instructions and the current order/status or resolution records needed to support the chosen disposition. Additional relevant references are permitted; indiscriminately attaching the entire chart is not the intended evidence behavior.
+- Evidence references should identify the concern or conflicting instructions and the current order/status or resolution records needed to support the chosen disposition. Cite only records relevant to the issue.
 
 Maintain one item per treatment-review issue, including after it becomes resolved.
 
@@ -25,5 +15,3 @@ Maintain one item per treatment-review issue, including after it becomes resolve
 | open | An explicit concern remains unresolved and needs clinical review |
 | needs_clarification | Incompatible current instructions require clinician reconciliation |
 | resolved | Documentation establishes that the item's specific concern was addressed |
-
-Reopening an existing resolved item is permitted if new in-scope evidence warrants it. Resolved items are retained; deletion is unavailable.

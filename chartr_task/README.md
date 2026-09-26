@@ -1,9 +1,36 @@
-# ChartR treatment-review task — v0.1.2
+# ChartR treatment-review task — v0.1.4
 
 One Harbor task contains Samantha Lee/P101, Darrow Jones/P102 and Morgan Patel/P103.
 The original `task_1` tutorial is unchanged. The existing `-a anthropic_agent` import
 continues to work. Development uses the existing `.venv`: Harbor **0.23.0**, Anthropic
 SDK **1.8.0**, jsonschema **4.26.0**. No installed dependency was upgraded.
+
+## Revision 0.1.4 — extraneous records; evidence relevance now enforceable
+
+Each episode gains three routine same-episode records with no bearing on any
+treatment-review concern (S06–S08, D06–D08, M06–M08: registration, vital signs,
+portal/administrative messages), written with the same note shape, roles and authors as
+case records. They are outside the grader's allowed evidence sets, so citing any of them
+now fails the evidence check (previously the allowed set was the whole chart). The
+records endpoint returns a chart in event-time order so routine entries interleave with
+case records. Policy evidence line reduced to its first sentence plus "Cite only records
+relevant to the issue." Grader logic, expected dispositions and required evidence groups
+unchanged. New QA: extraneous citation fails; all-relevant citation passes; whole-chart
+citation fails; records are chronological. 17 clinic tests pass; oracle (both variants)
+= 1; no-op = 0.
+
+## Revision 0.1.3 — public documentation reduced to rules the model cannot infer
+
+`instruction.md` keeps only the cohort/evaluation time, the authority to resolve
+existing items, the persisted-queue completion rule and doc/tool pointers.
+`policy.md` keeps the TR1/TR2 table, the TR1+TR2 single-item convention, the
+evidence guidance (under review: its "entire chart" clause is not enforced by the
+current fixture), one-item-per-issue and the status table; the other policy-detail
+bullets and the reopening note were removed. `tools.md` dropped duplicate-item
+warnings, the signed-note explanation, and FHIR order/draft semantics (custom
+cancellation extensions are listed only). Fixture content, grader and expected state
+unchanged; fixture/baseline regenerated for the version string. Offline tests pass;
+oracle (both variants) = 1, no-op = 0.
 
 ## Revision 0.1.2 — agent-visible content leak cleanup
 
@@ -121,7 +148,7 @@ an order-status closure. Both Morgan orders retain active status and their disti
 supporting notes. No new diagnoses or clinical categories have been introduced.
 
 Custom `open`/`needs_clarification`/`resolved` codes live in Task.businessStatus;
-Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 23
+Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 32
 resources including Q102. New/updated tasks are schema validated before commit.
 FHIR schema validation is structural; it is not complete terminology, profile,
 reference-resolution or FHIRPath conformance validation.

@@ -1,6 +1,19 @@
 # ChartR implementation handoff
 
-## Current revision: 0.1.2 — content leak cleanup (September 26, 2026)
+## Current revision: 0.1.4 — extraneous records (September 26, 2026)
+
+See `chartr_task/README.md` "Revision 0.1.4". Nine routine same-episode records added
+(32 resources); citing one fails evidence. Records returned in event-time order.
+0.1.3 Opus pilot (`jobs/chartr/2026-09-26__18-25-27/`) passed; it predates this change.
+Docker oracle/no-op and an Opus pilot need rerunning as 0.1.4.
+
+## Previous revision: 0.1.3 — reduced public docs (September 26, 2026)
+
+See `chartr_task/README.md` "Revision 0.1.3". Agent-visible docs cut to non-inferable
+rules/conventions. Offline checks pass;
+Docker oracle/no-op and an Opus pilot need rerunning as 0.1.3.
+
+## Previous revision: 0.1.2 — content leak cleanup (September 26, 2026)
 
 See `chartr_task/README.md` "Revision 0.1.2". Fixture text/labels and public docs
 no longer pre-state answers; facts, links, grader and expected state unchanged.

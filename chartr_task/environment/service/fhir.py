@@ -6,7 +6,7 @@ from jsonschema import Draft6Validator
 
 BASE = "https://chartr.example/fhir"
 NOW = "2026-09-24T12:00:00Z"
-VERSION = "chartr-treatment-review-0.1.2"
+VERSION = "chartr-treatment-review-0.1.4"
 STATUS = {"open": "requested", "needs_clarification": "requested", "resolved": "completed"}
 REASONS = {"UNRESOLVED_TREATMENT_CONCERN", "CONFLICTING_ACTIVE_PLANS"}
 _schema_bytes = (Path(__file__).parent / "schema/fhir.schema.json").read_bytes()

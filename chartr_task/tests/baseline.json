@@ -1,8 +1,8 @@
 {
-  "version": "chartr-treatment-review-0.1.2",
+  "version": "chartr-treatment-review-0.1.4",
   "evaluation_time": "2026-09-24T12:00:00Z",
-  "initial_digest": "e672e169c427251e04e9bc71f5ffd66c2763498800eb2484b743dedf42341cd9",
-  "sources_digest": "479d9257ec1e68fd5593b9f3885a6356c7bb51b2dcf0284d34581a9a64709eff",
+  "initial_digest": "92696dc6f13307f0317d3b1968bc65eb9cf156b5d1eeee1607517c2b8c6a712a",
+  "sources_digest": "967e2b5aec3bd333b84e24541ce8cf504bc5d5f372b9b1be832086db37d3e637",
   "q102": {
     "resourceType": "Task",
     "id": "Q102",

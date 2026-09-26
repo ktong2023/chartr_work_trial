@@ -91,6 +91,27 @@ def main():
         "Benzathine penicillin G 2.4 million units IM once.", ["M03"])
     note("M05", "P103", "E103", "2026-09-24T09:00:00Z", "scheduling-staff", "Scheduling note", "Jamie Ellis",
          "First treatment appointment booked for Sept. 24 at 14:00 UTC.")
+    # Extraneous same-episode records (v0.1.4). Routine chart content with no bearing on any
+    # treatment-review concern; deliberately excluded from the grader's allowed evidence sets,
+    # so citing them fails the evidence check. Same note shape, roles and authors as real ones.
+    note("S06", "P101", "E101", "2026-09-23T08:40:00Z", "front-desk", "Registration", "Avery Hughes",
+         "Insurance information verified. Mailing address and phone number updated. Preferred pharmacy recorded.")
+    note("S07", "P101", "E101", "2026-09-23T08:50:00Z", "nurse", "Vital signs", "Riley Chen",
+         "BP 118/74, HR 76, temperature 36.7 C, RR 14, SpO2 99% on room air.")
+    note("S08", "P101", "E101", "2026-09-24T10:30:00Z", "telephone-staff", "Patient portal message", "Taylor Brooks",
+         "Patient asked for clinic parking information. Directions and parking details sent.")
+    note("D06", "P102", "E102", "2026-08-31T08:30:00Z", "front-desk", "Registration", "Avery Hughes",
+         "Photo ID verified. Emergency contact updated.")
+    note("D07", "P102", "E102", "2026-08-31T08:50:00Z", "nurse", "Vital signs", "Sam Ortiz",
+         "BP 126/80, HR 70, temperature 36.9 C, RR 16, SpO2 98% on room air.")
+    note("D08", "P102", "E102", "2026-09-15T16:30:00Z", "front-desk", "Administrative note", "Avery Hughes",
+         "Work attendance letter for today's visit provided at patient request.")
+    note("M06", "P103", "E103", "2026-09-23T08:30:00Z", "front-desk", "Registration", "Avery Hughes",
+         "New patient registration completed. Contact details and insurance recorded.")
+    note("M07", "P103", "E103", "2026-09-23T08:45:00Z", "nurse", "Vital signs", "Dana Kim",
+         "BP 130/84, HR 78, temperature 36.6 C, RR 16, SpO2 99% on room air.")
+    note("M08", "P103", "E103", "2026-09-23T18:00:00Z", "telephone-staff", "Patient portal message", "Taylor Brooks",
+         "Patient asked whether the clinic validates parking. Replied that validation is available at the front desk.")
     sources.sort(key=lambda r: r["id"])
     queue = [review("Q102", "P102", "E102", "UNRESOLVED_TREATMENT_CONCERN", "open", ["D01", "D02"],
                     "Penicillin order requires prescriber review in light of the reported reaction; medication has not been administered.",

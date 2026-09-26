@@ -1,10 +1,6 @@
 You are assisting a clinic with treatment-review queue reconciliation. Review every patient in the supplied cohort as of September 24, 2026, at 12:00 UTC. Apply the supplied treatment-review policy to the available records.
 
-Create a review item when a current treatment concern remains unresolved or active treatment instructions conflict without documented reconciliation. Update an existing item for the same issue rather than creating a duplicate. Resolve an existing item when the available documentation explicitly establishes that its concern has been addressed.
-
-For each item you create or update, record the patient, treatment episode, applicable reason, destination, status, supporting record references, and a short factual explanation. Use the documented clinic tools. Clinical records, treatment orders, and allergy information are not writable. Treatment decisions remain with the clinical team.
-
-Use the fixed evaluation time rather than the computer's clock.
+Resolve an existing item when the available documentation explicitly establishes that its concern has been addressed.
 
 A brief completion message may summarize the work, but grading uses the persisted queue.
 

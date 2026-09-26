@@ -134,9 +134,11 @@ class Store:
                                                and e["patient"]["reference"] == "Patient/" + r["id"]]}
                     for r in sources if r["id"] in patients]}
             if len(parts) == 2 and parts[0] == "records" and parts[1] in patients:
-                return {"complete": True, "resources": [r for r in sources if
-                    r.get("subject", r.get("patient", {})).get("reference") == "Patient/" + parts[1]
-                    or r["id"] == parts[1]]}
+                chart = [r for r in sources if
+                         r.get("subject", r.get("patient", {})).get("reference") == "Patient/" + parts[1]
+                         or r["id"] == parts[1]]
+                return {"complete": True, "resources": sorted(chart, key=lambda r: (next(
+                    (e["valueDateTime"] for e in r.get("extension", []) if e["url"].endswith("/event-time")), ""), r["id"]))}
             if parts[0] == "reviews" and len(parts) in (1, 2):
                 if len(parts) == 2 and parts[1] not in patients:
                     raise InvalidRequest("Unknown patient")
