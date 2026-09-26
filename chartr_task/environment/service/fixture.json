@@ -1,5 +1,5 @@
 {
-  "version": "chartr-treatment-review-0.1.0",
+  "version": "chartr-treatment-review-0.1.2",
   "evaluation_time": "2026-09-24T12:00:00Z",
   "sources": [
     {
@@ -48,11 +48,11 @@
       },
       "dosageInstruction": [
         {
-          "text": "Primary syphilis. Benzathine penicillin G 2.4 million units IM once. Cancelled September 1 at 08:00 by D03; replacement order D04."
+          "text": "Primary syphilis. Benzathine penicillin G 2.4 million units IM once."
         }
       ],
       "statusReason": {
-        "text": "Cancelled by D03; replaced by D04"
+        "text": "Discontinued by prescriber"
       }
     },
     {
@@ -79,13 +79,13 @@
       },
       "status": "current",
       "date": "2026-08-31T09:20:00Z",
-      "description": "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted to reconcile the plan.",
+      "description": "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted.",
       "type": {
-        "text": "nurse note"
+        "text": "Nursing note"
       },
       "author": [
         {
-          "display": "nurse"
+          "display": "Sam Ortiz"
         }
       ],
       "content": [
@@ -93,7 +93,7 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-08-31T09:20:00Z",
-            "data": "UGF0aWVudCByZXBvcnRzIHByaW9yIGltbWVkaWF0ZSBoaXZlcyBhbmQgYnJlYXRoaW5nIGRpZmZpY3VsdHkgYWZ0ZXIgcGVuaWNpbGxpbi4gTWVkaWNhdGlvbiBub3QgYWRtaW5pc3RlcmVkLiBQcmVzY3JpYmVyIGNvbnRhY3RlZCB0byByZWNvbmNpbGUgdGhlIHBsYW4u"
+            "data": "UGF0aWVudCByZXBvcnRzIHByaW9yIGltbWVkaWF0ZSBoaXZlcyBhbmQgYnJlYXRoaW5nIGRpZmZpY3VsdHkgYWZ0ZXIgcGVuaWNpbGxpbi4gTWVkaWNhdGlvbiBub3QgYWRtaW5pc3RlcmVkLiBQcmVzY3JpYmVyIGNvbnRhY3RlZC4="
           }
         }
       ]
@@ -122,13 +122,13 @@
       },
       "status": "current",
       "date": "2026-09-01T08:00:00Z",
-      "description": "Reviewed the reported penicillin reaction. Cancel D01. For this adult patient, for whom pregnancy is not applicable and with no documented neurologic, ocular, or auditory symptoms, use oral doxycycline 100 mg twice daily for 14 days. Follow-up arranged. This replaces the Aug. 31 plan and addresses the medication concern in D02.",
+      "description": "Reviewed nursing report from Aug. 31 of prior immediate hives and breathing difficulty after penicillin. Discontinue the Aug. 31 benzathine penicillin G order. Adult patient; pregnancy not applicable; no documented neurologic, ocular, or auditory symptoms. New plan: oral doxycycline 100 mg twice daily for 14 days. Follow-up arranged.",
       "type": {
-        "text": "Signed clinician note"
+        "text": "Progress note"
       },
       "author": [
         {
-          "display": "treating-clinician"
+          "display": "Jordan Blake"
         }
       ],
       "content": [
@@ -136,13 +136,13 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-09-01T08:00:00Z",
-            "data": "UmV2aWV3ZWQgdGhlIHJlcG9ydGVkIHBlbmljaWxsaW4gcmVhY3Rpb24uIENhbmNlbCBEMDEuIEZvciB0aGlzIGFkdWx0IHBhdGllbnQsIGZvciB3aG9tIHByZWduYW5jeSBpcyBub3QgYXBwbGljYWJsZSBhbmQgd2l0aCBubyBkb2N1bWVudGVkIG5ldXJvbG9naWMsIG9jdWxhciwgb3IgYXVkaXRvcnkgc3ltcHRvbXMsIHVzZSBvcmFsIGRveHljeWNsaW5lIDEwMCBtZyB0d2ljZSBkYWlseSBmb3IgMTQgZGF5cy4gRm9sbG93LXVwIGFycmFuZ2VkLiBUaGlzIHJlcGxhY2VzIHRoZSBBdWcuIDMxIHBsYW4gYW5kIGFkZHJlc3NlcyB0aGUgbWVkaWNhdGlvbiBjb25jZXJuIGluIEQwMi4="
+            "data": "UmV2aWV3ZWQgbnVyc2luZyByZXBvcnQgZnJvbSBBdWcuIDMxIG9mIHByaW9yIGltbWVkaWF0ZSBoaXZlcyBhbmQgYnJlYXRoaW5nIGRpZmZpY3VsdHkgYWZ0ZXIgcGVuaWNpbGxpbi4gRGlzY29udGludWUgdGhlIEF1Zy4gMzEgYmVuemF0aGluZSBwZW5pY2lsbGluIEcgb3JkZXIuIEFkdWx0IHBhdGllbnQ7IHByZWduYW5jeSBub3QgYXBwbGljYWJsZTsgbm8gZG9jdW1lbnRlZCBuZXVyb2xvZ2ljLCBvY3VsYXIsIG9yIGF1ZGl0b3J5IHN5bXB0b21zLiBOZXcgcGxhbjogb3JhbCBkb3h5Y3ljbGluZSAxMDAgbWcgdHdpY2UgZGFpbHkgZm9yIDE0IGRheXMuIEZvbGxvdy11cCBhcnJhbmdlZC4="
           }
         }
       ],
       "docStatus": "final",
       "authenticator": {
-        "display": "treating-clinician"
+        "display": "Jordan Blake"
       }
     },
     {
@@ -175,7 +175,7 @@
       },
       "dosageInstruction": [
         {
-          "text": "Doxycycline 100 mg orally twice daily for 14 days. Linked to D03 and replacing D01. Order history preserves the replacement relationship."
+          "text": "Doxycycline 100 mg orally twice daily for 14 days."
         }
       ],
       "supportingInformation": [
@@ -211,13 +211,13 @@
       },
       "status": "current",
       "date": "2026-09-15T16:00:00Z",
-      "description": "Patient reports completing the prescribed course. No new treatment concern identified. Planned serologic follow-up remains in place.",
+      "description": "Patient reports completing the prescribed course. Serologic follow-up planned.",
       "type": {
-        "text": "Signed clinician note"
+        "text": "Progress note"
       },
       "author": [
         {
-          "display": "treating-clinician"
+          "display": "Jordan Blake"
         }
       ],
       "content": [
@@ -225,13 +225,13 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-09-15T16:00:00Z",
-            "data": "UGF0aWVudCByZXBvcnRzIGNvbXBsZXRpbmcgdGhlIHByZXNjcmliZWQgY291cnNlLiBObyBuZXcgdHJlYXRtZW50IGNvbmNlcm4gaWRlbnRpZmllZC4gUGxhbm5lZCBzZXJvbG9naWMgZm9sbG93LXVwIHJlbWFpbnMgaW4gcGxhY2Uu"
+            "data": "UGF0aWVudCByZXBvcnRzIGNvbXBsZXRpbmcgdGhlIHByZXNjcmliZWQgY291cnNlLiBTZXJvbG9naWMgZm9sbG93LXVwIHBsYW5uZWQu"
           }
         }
       ],
       "docStatus": "final",
       "authenticator": {
-        "display": "treating-clinician"
+        "display": "Jordan Blake"
       }
     },
     {
@@ -283,7 +283,7 @@
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "treating-clinician-A"
+          "valueCode": "treating-clinician"
         }
       ],
       "subject": {
@@ -293,11 +293,11 @@
       "date": "2026-09-23T09:00:00Z",
       "description": "Latent syphilis; duration cannot be established from the available history. Plan for benzathine penicillin G 2.4 million units IM weekly for three doses.",
       "type": {
-        "text": "Signed clinician note"
+        "text": "Progress note"
       },
       "author": [
         {
-          "display": "treating-clinician-A"
+          "display": "Alex Moreno"
         }
       ],
       "content": [
@@ -311,7 +311,7 @@
       ],
       "docStatus": "final",
       "authenticator": {
-        "display": "treating-clinician-A"
+        "display": "Alex Moreno"
       }
     },
     {
@@ -344,7 +344,7 @@
       },
       "dosageInstruction": [
         {
-          "text": "Benzathine penicillin G 2.4 million units IM weekly for three doses. Active. Linked to M01. No cancellation or replacement relationship."
+          "text": "Benzathine penicillin G 2.4 million units IM weekly for three doses."
         }
       ],
       "supportingInformation": [
@@ -369,7 +369,7 @@
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "treating-clinician-B"
+          "valueCode": "treating-clinician"
         }
       ],
       "subject": {
@@ -377,13 +377,13 @@
       },
       "status": "current",
       "date": "2026-09-23T15:00:00Z",
-      "description": "Assessment: early latent syphilis. Plan for benzathine penicillin G 2.4 million units IM once. No statement addressing M01 or replacing its plan.",
+      "description": "Assessment: early latent syphilis. Plan for benzathine penicillin G 2.4 million units IM once.",
       "type": {
-        "text": "Signed clinician note"
+        "text": "Progress note"
       },
       "author": [
         {
-          "display": "treating-clinician-B"
+          "display": "Priya Raman"
         }
       ],
       "content": [
@@ -391,13 +391,13 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-09-23T15:00:00Z",
-            "data": "QXNzZXNzbWVudDogZWFybHkgbGF0ZW50IHN5cGhpbGlzLiBQbGFuIGZvciBiZW56YXRoaW5lIHBlbmljaWxsaW4gRyAyLjQgbWlsbGlvbiB1bml0cyBJTSBvbmNlLiBObyBzdGF0ZW1lbnQgYWRkcmVzc2luZyBNMDEgb3IgcmVwbGFjaW5nIGl0cyBwbGFuLg=="
+            "data": "QXNzZXNzbWVudDogZWFybHkgbGF0ZW50IHN5cGhpbGlzLiBQbGFuIGZvciBiZW56YXRoaW5lIHBlbmljaWxsaW4gRyAyLjQgbWlsbGlvbiB1bml0cyBJTSBvbmNlLg=="
           }
         }
       ],
       "docStatus": "final",
       "authenticator": {
-        "display": "treating-clinician-B"
+        "display": "Priya Raman"
       }
     },
     {
@@ -430,7 +430,7 @@
       },
       "dosageInstruction": [
         {
-          "text": "Benzathine penicillin G 2.4 million units IM once. Active. Linked to M03. No cancellation or replacement relationship."
+          "text": "Benzathine penicillin G 2.4 million units IM once."
         }
       ],
       "supportingInformation": [
@@ -463,13 +463,13 @@
       },
       "status": "current",
       "date": "2026-09-24T09:00:00Z",
-      "description": "First treatment appointment booked for Sept. 24 at 14:00 UTC. No medication administration recorded for this episode.",
+      "description": "First treatment appointment booked for Sept. 24 at 14:00 UTC.",
       "type": {
-        "text": "scheduling-staff note"
+        "text": "Scheduling note"
       },
       "author": [
         {
-          "display": "scheduling-staff"
+          "display": "Jamie Ellis"
         }
       ],
       "content": [
@@ -477,7 +477,7 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-09-24T09:00:00Z",
-            "data": "Rmlyc3QgdHJlYXRtZW50IGFwcG9pbnRtZW50IGJvb2tlZCBmb3IgU2VwdC4gMjQgYXQgMTQ6MDAgVVRDLiBObyBtZWRpY2F0aW9uIGFkbWluaXN0cmF0aW9uIHJlY29yZGVkIGZvciB0aGlzIGVwaXNvZGUu"
+            "data": "Rmlyc3QgdHJlYXRtZW50IGFwcG9pbnRtZW50IGJvb2tlZCBmb3IgU2VwdC4gMjQgYXQgMTQ6MDAgVVRDLg=="
           }
         }
       ]
@@ -533,13 +533,13 @@
       },
       "status": "current",
       "date": "2026-09-23T09:00:00Z",
-      "description": "Primary syphilis documented. Patient reports a penicillin allergy. Oral doxycycline is being considered as an alternative. Pregnancy status has not been established; treatment selection requires clinician review after assessment.",
+      "description": "Primary syphilis. Patient reports a penicillin allergy. Considering oral doxycycline as an alternative. Pregnancy status not yet established; treatment selection to be reviewed once pregnancy status is known.",
       "type": {
-        "text": "Signed clinician note"
+        "text": "Progress note"
       },
       "author": [
         {
-          "display": "treating-clinician"
+          "display": "Casey Nguyen"
         }
       ],
       "content": [
@@ -547,13 +547,13 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-09-23T09:00:00Z",
-            "data": "UHJpbWFyeSBzeXBoaWxpcyBkb2N1bWVudGVkLiBQYXRpZW50IHJlcG9ydHMgYSBwZW5pY2lsbGluIGFsbGVyZ3kuIE9yYWwgZG94eWN5Y2xpbmUgaXMgYmVpbmcgY29uc2lkZXJlZCBhcyBhbiBhbHRlcm5hdGl2ZS4gUHJlZ25hbmN5IHN0YXR1cyBoYXMgbm90IGJlZW4gZXN0YWJsaXNoZWQ7IHRyZWF0bWVudCBzZWxlY3Rpb24gcmVxdWlyZXMgY2xpbmljaWFuIHJldmlldyBhZnRlciBhc3Nlc3NtZW50Lg=="
+            "data": "UHJpbWFyeSBzeXBoaWxpcy4gUGF0aWVudCByZXBvcnRzIGEgcGVuaWNpbGxpbiBhbGxlcmd5LiBDb25zaWRlcmluZyBvcmFsIGRveHljeWNsaW5lIGFzIGFuIGFsdGVybmF0aXZlLiBQcmVnbmFuY3kgc3RhdHVzIG5vdCB5ZXQgZXN0YWJsaXNoZWQ7IHRyZWF0bWVudCBzZWxlY3Rpb24gdG8gYmUgcmV2aWV3ZWQgb25jZSBwcmVnbmFuY3kgc3RhdHVzIGlzIGtub3duLg=="
           }
         }
       ],
       "docStatus": "final",
       "authenticator": {
-        "display": "treating-clinician"
+        "display": "Casey Nguyen"
       }
     },
     {
@@ -586,7 +586,7 @@
       },
       "dosageInstruction": [
         {
-          "text": "Proposed oral doxycycline course. Draft, not released. Final selection pending the assessment requested in S01."
+          "text": "Oral doxycycline course (proposed). Not released; pending prescriber review once pregnancy status is known."
         }
       ],
       "supportingInformation": [
@@ -621,11 +621,11 @@
       "date": "2026-09-23T10:00:00Z",
       "description": "Patient reports a late menstrual period. Pregnancy testing requested by clinician; specimen not collected during this visit. Clinician informed.",
       "type": {
-        "text": "nurse note"
+        "text": "Nursing note"
       },
       "author": [
         {
-          "display": "nurse"
+          "display": "Riley Chen"
         }
       ],
       "content": [
@@ -654,7 +654,7 @@
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "order-status"
+          "valueCode": "laboratory"
         }
       ],
       "subject": {
@@ -667,7 +667,7 @@
       },
       "note": [
         {
-          "text": "Pregnancy test ordered; specimen not collected; no result available."
+          "text": "Specimen not collected. No result available."
         }
       ],
       "supportingInfo": [
@@ -700,13 +700,13 @@
       },
       "status": "current",
       "date": "2026-09-24T09:00:00Z",
-      "description": "Patient plans to attend today. Message sent to treating clinician for review. No treatment decision documented in this encounter.",
+      "description": "Patient called; plans to attend clinic today. Message forwarded to treating clinician.",
       "type": {
-        "text": "telephone-staff note"
+        "text": "Telephone encounter"
       },
       "author": [
         {
-          "display": "telephone-staff"
+          "display": "Taylor Brooks"
         }
       ],
       "content": [
@@ -714,7 +714,7 @@
           "attachment": {
             "contentType": "text/plain",
             "creation": "2026-09-24T09:00:00Z",
-            "data": "UGF0aWVudCBwbGFucyB0byBhdHRlbmQgdG9kYXkuIE1lc3NhZ2Ugc2VudCB0byB0cmVhdGluZyBjbGluaWNpYW4gZm9yIHJldmlldy4gTm8gdHJlYXRtZW50IGRlY2lzaW9uIGRvY3VtZW50ZWQgaW4gdGhpcyBlbmNvdW50ZXIu"
+            "data": "UGF0aWVudCBjYWxsZWQ7IHBsYW5zIHRvIGF0dGVuZCBjbGluaWMgdG9kYXkuIE1lc3NhZ2UgZm9yd2FyZGVkIHRvIHRyZWF0aW5nIGNsaW5pY2lhbi4="
           }
         }
       ]

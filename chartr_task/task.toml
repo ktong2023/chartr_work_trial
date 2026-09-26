@@ -3,7 +3,7 @@ artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
 name = "chartr/treatment-review"
-version = "0.1.0"
+version = "0.1.2"
 description = "Reconcile a treatment-review queue for three synthetic patients"
 
 [agent]

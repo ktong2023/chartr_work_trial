@@ -29,18 +29,22 @@ def main():
                               extension("author-role", "Code", role)],
                 "subject": {"reference": "Patient/" + patient}}
 
-    def note(rid, patient, ep, date, role, body, signed=False):
+    def note(rid, patient, ep, date, role, doctype, author, body, signed=False):
+        # Document type and author display are realistic chart labels; they never encode
+        # signature status or authority. Those live only in docStatus/authenticator/author-role.
         r = common("DocumentReference", rid, patient, ep, date, role)
         r.update(status="current", date=date, description=body,
-                 type={"text": "Signed clinician note" if signed else role + " note"},
-                 author=[{"display": role}],
+                 type={"text": doctype},
+                 author=[{"display": author}],
                  content=[{"attachment": {"contentType": "text/plain", "creation": date,
                                           "data": base64.b64encode(body.encode()).decode()}}])
         if signed:
-            r.update(docStatus="final", authenticator={"display": role})
+            r.update(docStatus="final", authenticator={"display": author})
         sources.append(r)
 
     def med(rid, patient, ep, date, status, intent, medication, instructions, support):
+        # Instruction text carries only the clinical instruction. Status, links, cancellation
+        # and replacement history are structured fields and are never restated in prose.
         r = common("MedicationRequest", rid, patient, ep, date, "treating-clinician")
         r.update(status=status, intent=intent, authoredOn=date, medicationCodeableConcept={"text": medication},
                  dosageInstruction=[{"text": instructions}],
@@ -48,45 +52,45 @@ def main():
         sources.append(r)
         return r
 
-    note("S01", "P101", "E101", "2026-09-23T09:00:00Z", "treating-clinician",
-         "Primary syphilis documented. Patient reports a penicillin allergy. Oral doxycycline is being considered as an alternative. Pregnancy status has not been established; treatment selection requires clinician review after assessment.", True)
+    note("S01", "P101", "E101", "2026-09-23T09:00:00Z", "treating-clinician", "Progress note", "Casey Nguyen",
+         "Primary syphilis. Patient reports a penicillin allergy. Considering oral doxycycline as an alternative. Pregnancy status not yet established; treatment selection to be reviewed once pregnancy status is known.", True)
     med("S02", "P101", "E101", "2026-09-23T09:15:00Z", "draft", "proposal", "Doxycycline",
-        "Proposed oral doxycycline course. Draft, not released. Final selection pending the assessment requested in S01.", ["S01"])
-    note("S03", "P101", "E101", "2026-09-23T10:00:00Z", "nurse",
+        "Oral doxycycline course (proposed). Not released; pending prescriber review once pregnancy status is known.", ["S01"])
+    note("S03", "P101", "E101", "2026-09-23T10:00:00Z", "nurse", "Nursing note", "Riley Chen",
          "Patient reports a late menstrual period. Pregnancy testing requested by clinician; specimen not collected during this visit. Clinician informed.")
-    lab = common("ServiceRequest", "S04", "P101", "E101", "2026-09-24T08:00:00Z", "order-status")
+    lab = common("ServiceRequest", "S04", "P101", "E101", "2026-09-24T08:00:00Z", "laboratory")
     lab.update(status="active", intent="order", code={"text": "Pregnancy test"},
-               note=[{"text": "Pregnancy test ordered; specimen not collected; no result available."}],
+               note=[{"text": "Specimen not collected. No result available."}],
                supportingInfo=[{"reference": "DocumentReference/S03"}])
     sources.append(lab)
-    note("S05", "P101", "E101", "2026-09-24T09:00:00Z", "telephone-staff",
-         "Patient plans to attend today. Message sent to treating clinician for review. No treatment decision documented in this encounter.")
+    note("S05", "P101", "E101", "2026-09-24T09:00:00Z", "telephone-staff", "Telephone encounter", "Taylor Brooks",
+         "Patient called; plans to attend clinic today. Message forwarded to treating clinician.")
     old = med("D01", "P102", "E102", "2026-08-31T09:00:00Z", "cancelled", "order", "Benzathine penicillin G",
-              "Primary syphilis. Benzathine penicillin G 2.4 million units IM once. Cancelled September 1 at 08:00 by D03; replacement order D04.", [])
+              "Primary syphilis. Benzathine penicillin G 2.4 million units IM once.", [])
     old.pop("supportingInformation")
-    old["statusReason"] = {"text": "Cancelled by D03; replaced by D04"}
+    old["statusReason"] = {"text": "Discontinued by prescriber"}
     old["extension"].extend([extension("cancelled-at", "DateTime", "2026-09-01T08:00:00Z"),
                              extension("cancelled-by", "Reference", {"reference": "DocumentReference/D03"}),
                              extension("replaced-by", "Reference", {"reference": "MedicationRequest/D04"})])
-    note("D02", "P102", "E102", "2026-08-31T09:20:00Z", "nurse",
-         "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted to reconcile the plan.")
-    note("D03", "P102", "E102", "2026-09-01T08:00:00Z", "treating-clinician",
-         "Reviewed the reported penicillin reaction. Cancel D01. For this adult patient, for whom pregnancy is not applicable and with no documented neurologic, ocular, or auditory symptoms, use oral doxycycline 100 mg twice daily for 14 days. Follow-up arranged. This replaces the Aug. 31 plan and addresses the medication concern in D02.", True)
+    note("D02", "P102", "E102", "2026-08-31T09:20:00Z", "nurse", "Nursing note", "Sam Ortiz",
+         "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted.")
+    note("D03", "P102", "E102", "2026-09-01T08:00:00Z", "treating-clinician", "Progress note", "Jordan Blake",
+         "Reviewed nursing report from Aug. 31 of prior immediate hives and breathing difficulty after penicillin. Discontinue the Aug. 31 benzathine penicillin G order. Adult patient; pregnancy not applicable; no documented neurologic, ocular, or auditory symptoms. New plan: oral doxycycline 100 mg twice daily for 14 days. Follow-up arranged.", True)
     replacement = med("D04", "P102", "E102", "2026-09-01T08:10:00Z", "active", "order", "Doxycycline",
-                      "Doxycycline 100 mg orally twice daily for 14 days. Linked to D03 and replacing D01. Order history preserves the replacement relationship.", ["D03"])
+                      "Doxycycline 100 mg orally twice daily for 14 days.", ["D03"])
     replacement["priorPrescription"] = {"reference": "MedicationRequest/D01"}
-    note("D05", "P102", "E102", "2026-09-15T16:00:00Z", "treating-clinician",
-         "Patient reports completing the prescribed course. No new treatment concern identified. Planned serologic follow-up remains in place.", True)
-    note("M01", "P103", "E103", "2026-09-23T09:00:00Z", "treating-clinician-A",
+    note("D05", "P102", "E102", "2026-09-15T16:00:00Z", "treating-clinician", "Progress note", "Jordan Blake",
+         "Patient reports completing the prescribed course. Serologic follow-up planned.", True)
+    note("M01", "P103", "E103", "2026-09-23T09:00:00Z", "treating-clinician", "Progress note", "Alex Moreno",
          "Latent syphilis; duration cannot be established from the available history. Plan for benzathine penicillin G 2.4 million units IM weekly for three doses.", True)
     med("M02", "P103", "E103", "2026-09-23T09:10:00Z", "active", "order", "Benzathine penicillin G",
-        "Benzathine penicillin G 2.4 million units IM weekly for three doses. Active. Linked to M01. No cancellation or replacement relationship.", ["M01"])
-    note("M03", "P103", "E103", "2026-09-23T15:00:00Z", "treating-clinician-B",
-         "Assessment: early latent syphilis. Plan for benzathine penicillin G 2.4 million units IM once. No statement addressing M01 or replacing its plan.", True)
+        "Benzathine penicillin G 2.4 million units IM weekly for three doses.", ["M01"])
+    note("M03", "P103", "E103", "2026-09-23T15:00:00Z", "treating-clinician", "Progress note", "Priya Raman",
+         "Assessment: early latent syphilis. Plan for benzathine penicillin G 2.4 million units IM once.", True)
     med("M04", "P103", "E103", "2026-09-23T15:10:00Z", "active", "order", "Benzathine penicillin G",
-        "Benzathine penicillin G 2.4 million units IM once. Active. Linked to M03. No cancellation or replacement relationship.", ["M03"])
-    note("M05", "P103", "E103", "2026-09-24T09:00:00Z", "scheduling-staff",
-         "First treatment appointment booked for Sept. 24 at 14:00 UTC. No medication administration recorded for this episode.")
+        "Benzathine penicillin G 2.4 million units IM once.", ["M03"])
+    note("M05", "P103", "E103", "2026-09-24T09:00:00Z", "scheduling-staff", "Scheduling note", "Jamie Ellis",
+         "First treatment appointment booked for Sept. 24 at 14:00 UTC.")
     sources.sort(key=lambda r: r["id"])
     queue = [review("Q102", "P102", "E102", "UNRESOLVED_TREATMENT_CONCERN", "open", ["D01", "D02"],
                     "Penicillin order requires prescriber review in light of the reported reaction; medication has not been administered.",

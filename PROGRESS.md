@@ -1,5 +1,36 @@
 # ChartR implementation handoff
 
+## Current revision: 0.1.2 — content leak cleanup (September 26, 2026)
+
+See `chartr_task/README.md` "Revision 0.1.2". Fixture text/labels and public docs
+no longer pre-state answers; facts, links, grader and expected state unchanged.
+Offline: 14 clinic tests pass; oracle 1 (both variants), no-op 0. Docker oracle/no-op
+and a fresh Opus pilot still need to be rerun locally and labeled 0.1.2.
+
+## Previous revision: 0.1.1 — hint cleanup (September 26, 2026)
+
+Public examples now use labeled placeholders; authority is a general `author-role`
+rule. Both signed Morgan assessments keep distinct authors and share the
+`treating-clinician` role. Removed named-case documentation, fixture-transition
+commentary, and editorial sentences about absent replacement links/order history.
+All clinical facts, dates, statuses, genuine links, Q102, intended dispositions and
+accepted evidence alternatives remain unchanged. Canonical generator and derived
+fixture/private integrity baseline updated; task/runtime versions are 0.1.1.
+Grader, reference, CLI behavior, adapter, dependencies and isolation are unchanged.
+README pilot command now uses `-a anthropic_agent`.
+
+Verification: 25 existing offline checks passed; fresh Docker oracle scored **1**
+and no-op scored **0**, both valid with no exceptions. Schema/fact/attachment and
+public-surface reviews passed. New evidence is in
+`jobs/chartr/hint-cleanup-0.1.1-20260926T212013Z/`. All 275 pre-existing artifact
+files were hash-checked and preserved, including the successful 0.1.0 Opus pilot
+at `jobs/chartr/2026-09-26__15-11-22/`. No paid calls, new tests, dependency changes,
+or subagents in this revision. No local verification blockers remain.
+The entries below are historical initial-implementation notes; their statements
+about no pilot predate that saved pilot. A future model run must be labeled 0.1.1.
+
+## Initial implementation history
+
 Updated after resuming the interrupted implementation, September 25–26, 2026.
 
 **Status:** first working version implemented and locally verified. No paid model

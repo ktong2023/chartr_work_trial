@@ -1,9 +1,40 @@
-# ChartR treatment-review task — first working version
+# ChartR treatment-review task — v0.1.2
 
 One Harbor task contains Samantha Lee/P101, Darrow Jones/P102 and Morgan Patel/P103.
 The original `task_1` tutorial is unchanged. The existing `-a anthropic_agent` import
 continues to work. Development uses the existing `.venv`: Harbor **0.23.0**, Anthropic
 SDK **1.8.0**, jsonschema **4.26.0**. No installed dependency was upgraded.
+
+## Revision 0.1.2 — agent-visible content leak cleanup
+
+Record text now carries only clinical content. Removed record-ID citations and
+restated status/link/cancellation history from order and note prose (D01, D03, D04,
+S02, M02, M04), and removed sentences written only to rule out wrong answers (S05,
+M05, D05). DocumentReference `type` no longer says "Signed clinician note"; note
+types are realistic (Progress/Nursing note, Telephone encounter, Scheduling note)
+and `author.display` holds fictional names instead of role strings, so signature and
+authority must be read from `docStatus`, `authenticator` and `author-role`.
+`instruction.md` dropped its per-case warnings; `tools.md` dropped repeated policy
+reasoning; `policy.md` dropped the "at most one issue per episode" statement.
+Structured facts (statuses, intents, dates, links, cancellation extensions, regimens),
+Q102, dispositions and accepted evidence sets are unchanged; the grader is unchanged.
+Fixture and private baseline regenerated; offline tests, oracle (both evidence
+variants) = 1 and no-op = 0. 0.1.1 run artifacts remain historical evidence.
+
+## Revision 0.1.1 — public hint cleanup
+
+CLI examples now use labeled placeholders. Public documentation explains clinician
+authority through `author-role` metadata and contains no named-case commentary or
+statements about which transitions the starting fixture requires. Both signed
+Morgan assessments retain distinct author identities and share the same
+`treating-clinician` role. Editorial sentences announcing absent replacement links
+or commenting on order history were removed from the canonical fixture generator;
+the fixtures and private integrity digests were regenerated after a fact comparison.
+Clinical dates, status fields, regimens, genuine replacement links, the initial
+queue, intended dispositions, and the grader's evidence alternatives are unchanged.
+This is a documentation/fixture revision, not a new difficulty case or architecture.
+Existing run artifacts, including the earlier successful pilot, remain historical
+evidence for 0.1.0 and must not be overwritten or relabeled as 0.1.1 results.
 
 ## Run from the project root
 
@@ -21,7 +52,7 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a no
 
 # ONE paid pilot, only when you decide to run it; not executed during implementation.
 # ANTHROPIC_API_KEY must already be exported on the host. Do not use --agent-env for it.
-PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent:AnthropicAgent -m claude-opus-5 --ak max_turns=60 --ak max_tokens=2048 --ak wall_timeout_sec=570 --jobs-dir "$PWD/jobs/chartr"
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent -m claude-opus-5 --ak max_turns=60 --ak max_tokens=2048 --ak wall_timeout_sec=570 --jobs-dir "$PWD/jobs/chartr"
 ```
 
 The model default preserves the original `claude-opus-5` value. `-m` overrides it;
@@ -30,7 +61,8 @@ otherwise `ANTHROPIC_MODEL` overrides the default. `--ak max_turns`, `max_tokens
 limits. `ANTHROPIC_MAX_TURNS` and `ANTHROPIC_MAX_TOKENS` are optional host fallbacks.
 Harbor allows 600 seconds for the agent, 600 for builds, and 120 for verification.
 The adapter uses the ordinary Messages API and no new organization-dependent API
-features. Actual model access/settings have not been retested with paid requests.
+features. This revision has not been retested with paid requests; the earlier
+0.1.0 pilot artifacts are retained.
 
 ## Architecture and trust boundary
 

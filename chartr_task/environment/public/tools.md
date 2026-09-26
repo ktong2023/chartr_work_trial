@@ -2,16 +2,20 @@
 
 `clinic patients` lists the complete cohort: `{complete, evaluation_time, patients}`.
 Each patient entry has a Patient resource and its EpisodeOfCare resources.
-`clinic records P101` returns `{complete: true, resources: [...]}`: every available
+`clinic records PATIENT_ID` returns `{complete: true, resources: [...]}`: every available
 record for that patient, including full notes and orders. There is no pagination.
-`clinic reviews [--patient P101]` returns `{complete: true, items: [...]}` including
+`clinic reviews [--patient PATIENT_ID]` returns `{complete: true, items: [...]}` including
 resolved items. Empty items is a successful empty result, not a retrieval error.
 
-Create a review item (example syntax, not a clinical recommendation):
+Command templates below use placeholders, not executable patient records.
+Substitute `PATIENT_ID`, `EPISODE_ID`, `RECORD_ID`, and `ITEM_ID` with IDs returned
+by the clinic tools. Substitute `REASON_CODE` and `WORKFLOW_STATUS` with the allowed
+values supported by your review, and replace `EXPLANATION_TEXT` with your explanation.
+Square brackets around `--patient PATIENT_ID` above indicate an optional argument.
 
 ```sh
-clinic create --json '{"patient":"P101","episode":"E101","category":"treatment_review","reason":"UNRESOLVED_TREATMENT_CONCERN","destination":"clinical_review","status":"open","evidence":["S01"],"explanation":"State the documented concern and its current disposition here."}'
-clinic update Q102 --json '{"status":"open","evidence":["D01","D02"],"explanation":"State what the cited records establish here."}'
+clinic create --json '{"patient":"PATIENT_ID","episode":"EPISODE_ID","category":"treatment_review","reason":"REASON_CODE","destination":"clinical_review","status":"WORKFLOW_STATUS","evidence":["RECORD_ID"],"explanation":"EXPLANATION_TEXT"}'
+clinic update ITEM_ID --json '{"status":"WORKFLOW_STATUS","evidence":["RECORD_ID"],"explanation":"EXPLANATION_TEXT"}'
 ```
 
 Create requires exactly all eight keys shown. Update accepts only `status`,
@@ -45,18 +49,16 @@ Patients use Patient; care episodes use EpisodeOfCare. Notes and the scheduling
 record use DocumentReference: `description` is the full readable text, also encoded
 as UTF-8/base64 in `content.attachment.data`. `date` is documentation time;
 `event-time` is applicability time. Signed notes have `docStatus: final` and an
-authenticator. Roles are stated in `author-role`; Morgan's two clinicians have equal
-authority. No upload-time precedence is implied.
+authenticator. `author` identifies the note's author; the `author-role` extension
+states their role.
 
 Orders use MedicationRequest; `authoredOn` remains the original order time.
 `supportingInformation` links the supporting note; `priorPrescription` identifies
 an explicitly replaced order. `cancelled-at`, `cancelled-by`, and `replaced-by`
 extensions preserve cancellation history. `cancelled` is the R4 spelling.
 Draft proposals use `status: draft`, `intent: proposal`; released orders use
-`intent: order`. D04 stays an active recorded order: D05 records patient-reported
-completion but no separate order-status closure. The pending lab uses ServiceRequest
-with `status: active`, `intent: order`, and its outstanding collection/result in
-`note`; no completed result is fabricated.
+`intent: order`. Laboratory requests use ServiceRequest; `status` and `intent`
+describe the request, and `note` carries free-text order notes.
 
 Review items use Task: `for` is the Patient, `focus` is the EpisodeOfCare, `code`
 is the category, `reasonCode` the reason, `owner: Organization/clinical-review`
@@ -75,4 +77,4 @@ review item carries an `episode` extension. Extension URLs are under
 The clinic status is the code in `businessStatus`, never an invented Task.status.
 `authoredOn` is preserved on update; `lastModified` uses the fixed evaluation time.
 The `event-sequence` extension orders workflow changes at that simulated time.
-Real execution time is separate from clinical time. Q102 predates the evaluation.
+Real execution time is separate from clinical time.

@@ -4,8 +4,8 @@ Create a review item when a current treatment concern remains unresolved or acti
 
 For each item you create or update, record the patient, treatment episode, applicable reason, destination, status, supporting record references, and a short factual explanation. Use the documented clinic tools. Clinical records, treatment orders, and allergy information are not writable. Treatment decisions remain with the clinical team.
 
-Use the fixed evaluation time rather than the computer's clock. Distinguish a historical concern from a current concern. Do not assume that an ordered assessment has been completed or that a more recent note automatically replaces an earlier active instruction. Where the policy requires clarification, represent that uncertainty instead of inventing a resolution.
+Use the fixed evaluation time rather than the computer's clock.
 
-Before finishing, inspect the persisted queue to check that all in-scope episodes are accounted for, existing items have been reconciled, and no duplicate or unsupported items were added. A brief completion message may summarize the work, but grading uses the saved state.
+A brief completion message may summarize the work, but grading uses the persisted queue.
 
 Read /app/policy.md and /app/tools.md. Use `clinic` from the shell. All patients are synthetic.
