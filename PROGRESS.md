@@ -1,5 +1,33 @@
 # ChartR implementation handoff
 
+## Task 3 pilot 0.2.0 (300 patients) and v0.2.2 (September 27, 2026)
+
+Five `claude-opus-5` trials on the real 0.2.0 (hashes match `40162ad`), all valid, 52–82 turns, ≤3,050 s, peak turn
+≤21.4K. **Raw 0/5; defect-adjusted 0/5.** Defects, all now fixed and not counted:
+- the audit's evidence defect, in all 5 runs;
+- the accession collisions, which Opus flagged in 2 runs;
+- one code-precedence ambiguity: unreceived delivery with disagreeing local notes, where both
+  `OUTSIDE_RECORD_NOT_RECEIVED` and `UNRESOLVED_SOURCE_CONFLICT` literally applied. It affected 1 run; 0.2.2 adds a
+  precedence sentence to `policy.md`, and no answers change.
+
+Fair misses, each verified against the chart and the run's own explanation:
+
+| Miss | Runs | Right in |
+|---|---|---|
+| Patient-reported ED dose not considered when anchoring follow-up (F7) | 3 | 2/5 |
+| Identity named only on the accessioning entry of a specimen filed in another chart (F1 partner / F5) | 3 | 2/5 |
+| Signed dose-date corrections ignored (F6) | 1 | 4/5 |
+| Early latent scheduled 6/12 instead of 6/12/24 | 1 | 4/5 |
+
+The whole core, including patient 22, was right in all 5 runs. Zero tolerance compounds these into an estimated pass
+rate of about 10%, below the 2–7/10 target.
+
+**Decision needed (calibration):**
+- (a) Keep 0.2.2 as is and pilot it to confirm.
+- (b) Soften one discovery chain: my recommendation is to drop the F7 `unreceived` CD variant. It has the lowest
+  clinical stakes, since the test was done, possibly early. That lands at roughly 25%.
+- (c) Soften both, which lands at roughly 60%.
+
 ## Task 3 `chartr_task3/` v0.2.1 — fixes from the independent 0.2.0 audit (September 27, 2026)
 
 `TASK3_V020_AUDIT_2026_09_27.md` findings reproduced and fixed across all 300 patients:

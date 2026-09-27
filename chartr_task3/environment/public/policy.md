@@ -20,6 +20,8 @@ A `cannot_determine` item names the missing-evidence code of the fact it depends
 | `OUTSIDE_RECORD_NOT_RECEIVED` | care at another facility that the chart indicates, from any source, and whose record the clinic has not received |
 | `UNRESOLVED_SOURCE_CONFLICT` | a fact on which records conflict, where the conflict is not settled by the authority conventions below |
 
+When the fact is care at another facility whose record the clinic has not received, the code is `OUTSIDE_RECORD_NOT_RECEIVED`, even if other records disagree about that care.
+
 ## Issue types
 
 | Issue | Exists when |

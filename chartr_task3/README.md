@@ -1,4 +1,47 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.2.1 (300 patients, chain-weighted)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.2.2 (300 patients, chain-weighted)
+
+## Pilot 0.2.0 (September 27, 2026) and 0.2.2
+
+Five `claude-opus-5` trials on the actual 300-patient 0.2.0: every task-file hash matches `40162ad`. Results branch:
+`task3-pilot-results`, `jobs/chartr/task3-0.2.0-pilot-opus/`, the five trials not in the earlier 0.1.1 set (74VimNs,
+EGtYvWL, Kc4VEtB, Qg3K5ne, xrHn2mx). All ended valid `end_turn`, with 52–82 turns, 1,630–3,050 s, 13–17M input and
+119–157K output tokens, and a peak turn of 9.6–21.4K. No budget pressure (250 / 32K / 7,000 s). Every run scripted the
+cohort.
+
+**Raw 0/5. Defects, all fixed (0.2.1 and 0.2.2), none counted:**
+- *Evidence (all 5 runs):* every rejected citation was an accessioning-entry-only link (F1 partner, F5 conflict
+  pair), which is the audit's defect. Regraded with the 0.2.1 rule on the same records, every item's evidence passes.
+- *Accession collisions (2 runs):* EGtYvWL and Kc4VEtB coded `MISFILED_RESULT` (and twice `FOLLOW_UP_OVERDUE`) as
+  unresolved conflicts on 6 of the 8 collision patients. Opus correctly caught the rendering defect.
+- *Two codes applied (1 run):* xrHn2mx coded the four unreceived-delivery cases (F9) `UNRESOLVED_SOURCE_CONFLICT`
+  instead of `OUTSIDE_RECORD_NOT_RECEIVED`: two local notes disagree on a delivery whose hospital record never arrived,
+  and both code definitions literally apply. **0.2.2** adds a precedence sentence to `policy.md`. When the fact is
+  unreceived outside care, the code is `OUTSIDE_RECORD_NOT_RECEIVED` even if other records disagree. No authored answer
+  changes; no conflict-coded case involves outside care.
+
+**Defect-adjusted: 0/5.** Each run still has at least one fair miss, and every candidate listed below was checked
+against its chart and the run's explanation or transcript:
+
+| Fair miss | Runs | What happened |
+|---|---|---|
+| Unreceived outside first dose (F7 `unreceived`, all 5 instances incl. the requested one) | EGtYvWL, Kc4VEtB, xrHn2mx | Timed follow-up from the clinic's dose, never considering the patient-reported ED dose 12–24 days earlier. If that dose was real, the 12-month test was on time, so the answer is `cannot_determine` / `OUTSIDE_RECORD_NOT_RECEIVED`. The independent reviewer and the other two runs coded it that way. |
+| Identity only on the accessioning entry (F1 partner follow-up; F5 pregnancy-test conflict partner) | EGtYvWL, Qg3K5ne (F1 ×4, F5); Kc4VEtB (F5) | Did not find the accessioning entry naming this patient on a specimen filed in another chart, so reported the window missed, or treatment adequate, instead of an unresolved identity. |
+| Author corrections (F6: 4 later, 2 earlier, 4 disputed) | Kc4VEtB | Used the charted administration dates, ignoring the administering nurse's signed correction and another clinician's contradiction. |
+| Early latent follow-up schedule | 74VimNs | Its script scheduled early latent at 6 and 12 months. CDC 2021 gives 6, 12 and 24 for all latent syphilis, as the other four runs applied. Two 24-month windows missed. |
+
+Everything else was right in all five runs: the whole 29-patient core, including patient 22 under the 0.2.0 wording;
+resolved misfiles, pending tests, pregnancy-test misfiles, received and contradicted outside records, and deliveries
+with received hospital records. Requested candidates scored 31–34 of 34; the misses sit in unrequested chains.
+
+**Calibration.** Zero tolerance compounds independent concepts. Each run fair-failed 1–3 of 4 concepts, and the two
+discovery chains (unreceived first dose, accessioning-only identity) were each right in only 2 of 5 runs. The
+estimated pass rate is about 10%, below the 2–7 of 10 target. The 0.2.1 and 0.2.2 fixes would not turn any of these
+runs into a pass. Next step: the user's decision on which concept to soften or remove (see PROGRESS.md), then a 0.2.x
+pilot after `python3 qa/task3_preflight.py VERSION`.
+
+**0.2.2 checks:** offline 15/15; Docker (cloud CA copies) oracle 1, no-op valid 0, boundary probe exit 0 (trusted
+snapshot complete, frozen, 0 faults).
+
 
 ## 0.2.1: fixes from the independent 0.2.0 audit (September 27, 2026)
 
@@ -176,7 +219,7 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a o
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a nop --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 --agent-import-path qa.agents:BoundaryProbe --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 # Paid pilots (authorize first; the preflight must print all ok):
-python3 qa/task3_preflight.py 0.2.1
+python3 qa/task3_preflight.py 0.2.2
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 5 -n 5 --ak max_turns=150 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=3500 --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 ```
 
