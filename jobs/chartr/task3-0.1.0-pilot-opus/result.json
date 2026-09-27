@@ -1,0 +1,47 @@
+{
+    "id": "6e651f8b-1d6e-4483-9fc0-0e6d025b8417",
+    "started_at": "2026-09-27T16:16:47.188776",
+    "updated_at": "2026-09-27T16:28:24.547403",
+    "finished_at": "2026-09-27T16:28:24.547403",
+    "n_total_trials": 5,
+    "stats": {
+        "n_completed_trials": 5,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "anthropic-direct__claude-opus-5__adhoc": {
+                "n_trials": 5,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {
+                    "2": 0.0,
+                    "4": 0.0,
+                    "5": 0.0
+                },
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "chartr_task3__EYPqUZh",
+                            "chartr_task3__9vmdKvV",
+                            "chartr_task3__j3amVn9",
+                            "chartr_task3__vSJVB4N",
+                            "chartr_task3__5iqYtYD"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": 5626423,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 232301,
+        "cost_usd": null
+    }
+}

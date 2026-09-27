@@ -1,0 +1,8 @@
+Skipping image OS validation for hb__cc67872ce6c5b5fb0f33d5d9c73890d3: docker inspect returned 1
+Collecting main service artifacts
+Stopping main service before sidecar evidence collection
+Main service stopped
+Collecting sidecar artifacts from services: ['clinic']
+Running collect hook in service 'clinic': 'python /app/control.py collect'
+Collect hook in service 'clinic' completed
+Skipping image OS validation for hb__beb29b208d329f59734be842d8e23364: docker inspect returned 1
