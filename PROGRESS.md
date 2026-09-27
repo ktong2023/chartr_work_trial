@@ -1,9 +1,29 @@
 # ChartR implementation handoff
 
+## Task 3 `chartr_task3/` v0.2.1 — fixes from the independent 0.2.0 audit (September 27, 2026)
+
+`TASK3_V020_AUDIT_2026_09_27.md` findings reproduced and fixed across all 300 patients:
+- **Accession collisions.** Four numbers were shared by unrelated specimens. Each specimen now gets a unique number,
+  and the build rebuilds every result's identity from the rendered records and refuses to build unless it matches
+  what the rules engine reads.
+- **Cross-chart evidence.** Links made only through the accessioning entry were rejected, affecting 10 pairs. The
+  evidence rule is now public in `tools.md` and computed by the grader from the attested sources. A test requires the
+  links to equal the authored identity relationships and passes every linked patient's cross-chart citations.
+- **F3 stage inference.** The notes named the stage. They are rewritten to give only examination and history, and a
+  matched early-latent/unknown-duration pair (the prior nonreactive test within 12 months or 15–22 months before
+  diagnosis) is added; F3 now has 18 patients.
+
+A second-model review of the new F3 charts matched 72/72. Its one concern, a missed test after the follow-up RPR had
+turned nonreactive, turned up in 7 patients cohort-wide (5 of them since 0.2.0). It is now fixed for all patients and
+guarded by a build check. Earlier review evidence is kept in `qa/reviews/`, and there is a pre-dispatch check,
+`qa/task3_preflight.py 0.2.1`. The result is 1,200 candidates (109 confirmed, 101 `cannot_determine`) with 208 of 363
+non-control candidates chained. Offline 15/15, Task 1 19/19, adapter 14/14. Docker oracle 1, no-op 0, boundary exit 0. Audit item 4
+(composition over workload) is the next difficulty step after a 0.2.x pilot. Details in `chartr_task3/README.md`.
+
 ## Task 3 expansion `chartr_task3/` v0.2.0 — 300 patients, chain-weighted (September 27, 2026)
 
 Core 29 unchanged plus 271 generated (`qa/task3_families.py`): 1,200 candidates (107 confirmed, 101
-`cannot_determine`), 187 chained non-control candidates across eight families, both directions each; authority-
+`cannot_determine`), 208 chained non-control candidates (first reported as 187, a miscount) across eight families, both directions each; authority-
 conflict chains added because the only fair pilot miss (2/10) was the outside-facility rule vs a later local note.
 Second-model review of 58 sampled charts matched 231/232 (the miss a generator bug, fixed) and prompted three fairness
 fixes. Audit log made linear after it overflowed tmpfs at this scale. Offline 14/14; Docker oracle 1, no-op 0,

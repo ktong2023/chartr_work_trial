@@ -1,12 +1,84 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.2.0 (300 patients, chain-weighted)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.2.1 (300 patients, chain-weighted)
+
+## 0.2.1: fixes from the independent 0.2.0 audit (September 27, 2026)
+
+`TASK3_V020_AUDIT_2026_09_27.md` audited 0.2.0 and found two fairness defects and one overstated difficulty claim. All
+three were reproduced, then fixed across the whole 300-patient cohort, not just the cases the audit named.
+
+- **Accession-number collisions (high).** Accession numbers came from a hash reduced mod 9,000 with no uniqueness
+  check. Four numbers were shared by two unrelated specimens each, so joining a result to its accessioning entry by the
+  documented accession number could return a second patient's identity (one pair had the same test, date and staff).
+  The rules engine reads generator facts, so it could not see this. Now every specimen gets its own number, and
+  `qa/build_task3.py` rebuilds every result's identity from the rendered records alone (accession number to
+  collection record and accessioning entry, MRN plus DOB). The build then refuses unless that matches what the engine
+  reads: which charts hold misfiled results, which RPR specimens count toward each patient's follow-up, that every
+  identity conflict is a modeled uncertainty, and that every positive hCG unambiguously a patient's makes her pregnant.
+  Run against the 0.2.0 fixture, this check stops at the first collision.
+- **Cross-chart evidence rejected (high).** The private evidence rule linked patients only through the charts holding
+  a result or its specimen, missing a second patient named only by the accessioning entry's MRN and DOB. That is
+  exactly how the 5 F1 identity-conflict pairs and 5 F5 pregnancy-test conflict pairs are built. A correct run that
+  cited the disputed result for the second patient scored 0; the audit reproduced this, and so did I. Public
+  `tools.md` also said "any chart", broader than the grader accepted. The rule is now public and precise in
+  `tools.md`. `tests/grade.py` computes it from the attested sources rather than from private build data: a result
+  links the patients whose charts hold it or its specimen, and the patients its collection record and accessioning
+  entry identify. The audit's exact case now scores 1. A new test checks that the grader's links equal the identity
+  relationships the cases were written with, with none missing and none spurious. It also submits every linked
+  patient (60) citing the linking result, specimen and accessioning entry plus the other patient's records, and
+  requires reward 1.
+- **F3 stage inference named the stage (medium).** Every F3 intake note said "Secondary syphilis", "Latent syphilis,
+  duration unknown" or "Treating as late latent"; `recorded=False` only dropped the diagnosis-list entry. F3 is
+  rewritten in the style of core p01/p12. Notes now give only examination, testing history and the plan, never a stage,
+  and nothing else in those charts names one. There are 18 patients (was 13):
+  - secondary by exam (1 dose, 6/12-month tests: nothing due);
+  - unknown duration, meaning no prior test and no early-latent criterion, with 3 doses but no 24-month test
+    (overdue) or 1 dose (inadequate);
+  - a matched pair where only the date of a prior nonreactive RPR differs. When it is 3–9 months before diagnosis,
+    that is documented seroconversion, so the infection is early latent and one dose is adequate. When it is 15–22
+    months before, the infection is of unknown duration and one dose is inadequate.
+
+  A test asserts that no stage word appears in any stage-inference chart (F3 and core p01/p02/p12) and checks the
+  pair's 12-month logic.
+- **Follow-up missed after seroreversion (from the independent review of the new F3 charts).** Two F3 patients were
+  overdue only for a 24-month test after their follow-up RPR had already turned nonreactive. CDC 2021 has no exception
+  for this, but some clinicians stop testing then, so the answer should not depend on it. I checked the whole cohort
+  and found five more such patients, present since 0.2.0: one F1-e, three F2 (a, c, d) and one F6 anchor-late. Fixed
+  for all 300: generated follow-up RPRs turn nonreactive only at the last scheduled test, and the F6 pre-window specimen
+  stays reactive. The rules engine now reports missed windows per possible world, and the build refuses any answer that
+  depends on a window missed after a nonreactive follow-up. Only result values changed, with no answers moved.
+
+Also: a grammar slip in two generated note templates ("Pt reports they was seen") fixed. The README's 0.2.0 count of
+chained candidates was wrong: it is 208 of 359 non-control candidates (0.2.0) and 208 of 363 (0.2.1).
+`qa/task3_preflight.py VERSION` checks the checkout before paid runs: versions, fixture digest and a clean
+`chartr_task3/`. That is the check that would have stopped the mislabeled 0.1.1 batch. Earlier independent-review
+packets and decisions are now kept in `qa/reviews/`, and `qa/task3_review_packet.py` renders new ones.
+
+**Not changed (audit item 4, a direction rather than a defect).** Most generated patients carry one modeled unknown,
+and intake-note templates repeat, so 300 patients add more workload than they add reasoning structure. The next
+difficulty step, once a 0.2.x pilot shows where Opus stands, is composed complications, where resolving one fact
+changes whether another matters, plus more matched counterfactuals. F3's early/lapsed pair is the first of these.
+
+**Counts:** 300 patients, 1,200 candidates, 6,634 records, 109 confirmed, 101 `cannot_determine` (69 conflict, 18
+pending, 14 outside), 34 review requests, 208 of 363 non-control candidates chained.
+
+**Independent review:** a second model given only the 18 rewritten F3 charts and the public docs matched all 72
+authored decisions. It reported no stage leakage and no boundary-close intervals. Its seroreversion concern is fixed
+above. Packet, answer key, its decisions and full report: `qa/reviews/2026-09-27_v0.2.1-pre_f3/`. The final build
+differs from the reviewed packet only in ten follow-up values, and the answer key is identical.
+
+**Checks (final build):** offline `qa/test_task3.py` 15/15. This includes the new link-equality and every-link
+evidence test, accession uniqueness, and stage-free charts with the matched pair; the build itself runs the rendered
+identity and seroreversion checks. Task 1 offline 19/19 and adapter 14/14 are unchanged. The audit's exact failing case
+scores reward 1. Docker (cloud CA copies, final build): oracle 1, no-op valid 0
+(missing 34, missed 103, overclaim 93), boundary probe exit 0 with the trusted snapshot complete (6,634 records),
+frozen, 0 faults.
 
 ## Expansion 0.2.0 (September 27, 2026)
 
 The 29-patient core (unchanged cases) plus 271 generated patients: **300 patients, 1,200 candidates, 6,579 records,
 107 confirmed, 101 `cannot_determine` (69 conflict, 18 pending, 14 outside), 34 review requests.** Generator:
 `qa/task3_families.py` (seeded, deterministic); cohort: `qa/task3_cohort.py`. Weighted heavily toward *chained*
-cases, where one fact's status must be carried into a different issue or a different patient's chart; 187 of the
-~360 non-control candidates are chains, each family pointing both ways (the chain changes the answer / is present
+cases, where one fact's status must be carried into a different issue or a different patient's chart; 208 of the
+359 non-control candidates are chains, each family pointing both ways (the chain changes the answer / is present
 but does not):
 
 | Family | What must be carried | Patients |
@@ -18,7 +90,7 @@ but does not):
 | F6 corrections | author's dose-date correction → follow-up anchor or series gap; a non-author's contradiction → unresolved | 21 |
 | F7 outside first dose | received ED record sets the anchor (even against a later clinic note); unreceived ED dose → anchor unknown | 23 |
 | F9 delivery | received hospital record beats a later local note (both directions); unreceived record with conflicting local notes | 14 |
-| F3 stage inference | no staging entry: exam text → stage → adequacy and the 24-month test | 13 |
+| F3 stage inference | no staging entry: exam text → stage → adequacy and the 24-month test (0.2.0 notes still named the stage; rewritten in 0.2.1) | 13 |
 | Single-step | overdue, gaps, untreated, doxy-PEP, rejected, pending, name change, outside records incl. contradicted | 26 |
 | Background | clean histories, pregnancies with received deliveries, rejected-then-recollected specimens | 69 |
 
@@ -83,8 +155,8 @@ authority, unresolved conflicts). There are no adequacy tables, schedules, stagi
 `qa/task3_rules.py` recomputes every disposition from each patient's clinical facts by evaluating every
 possible world of the patient's single unknown; the build refuses to write if it disagrees with the
 authored truth. `tests/grade.py` grades every candidate exactly (zero tolerance), requires explicit items
-for review requests, checks that evidence IDs exist and belong to the patient (or are linked identity
-records or clinic-level records), and reports diagnostics by case kind × issue, error type
+for review requests, checks evidence against the public rule in `tools.md` (records of the patient or of a patient
+linked through a laboratory result, or clinic-level records), computed from the attested sources, and reports diagnostics by case kind × issue, error type
 (overclaim, underclaim, wrong code, false flag, missed, missing) and requested vs unrequested.
 Citation sufficiency and explanation prose are not graded. Invalid runs produce no reward.
 
@@ -103,7 +175,8 @@ PYTHONDONTWRITEBYTECODE=1 ./.venv/bin/python -m unittest qa.test_task3 -v
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a oracle --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a nop --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 --agent-import-path qa.agents:BoundaryProbe --job-name NAME --jobs-dir "$PWD/jobs/chartr"
-# Paid pilots (authorize first):
+# Paid pilots (authorize first; the preflight must print all ok):
+python3 qa/task3_preflight.py 0.2.1
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 5 -n 5 --ak max_turns=150 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=3500 --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 ```
 

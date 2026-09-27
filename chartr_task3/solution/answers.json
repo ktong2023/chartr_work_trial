@@ -3024,10 +3024,11 @@
     "disposition": "not_an_issue",
     "missing_evidence": null,
     "evidence": [
-      "R1ab40b59a6ac",
+      "R285ec999626d",
       "R3fe2695e7759",
       "R61c32437976a",
       "R77af0afff187",
+      "R88455fd5c50e",
       "Rccdc3ef425f7"
     ],
     "explanation": "Reference determination."
@@ -3040,9 +3041,10 @@
     "missing_evidence": null,
     "evidence": [
       "R1cdb4f4a1840",
+      "R45298f1c03ce",
+      "R67559e48a9a5",
       "R6e084b230b35",
-      "Rc7fae572edeb",
-      "Reb8859f6473e"
+      "Rc7fae572edeb"
     ],
     "explanation": "Reference determination."
   },
@@ -3053,7 +3055,6 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R32e285abb489",
       "R3e6fac34b91a",
       "R4454b08a95f6",
       "R6e4ec680c60d",
@@ -3069,10 +3070,13 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R1fc94bf9b783",
+      "R374ac0da0682",
+      "R51abf6b7503a",
+      "R649a6db25083",
       "R6fca2fb245f8",
-      "R9aeff97ffc76",
-      "R9b3a3f0dfd9a"
+      "R9b3a3f0dfd9a",
+      "Rdfa133b2ed6a",
+      "Re257222bc1f6"
     ],
     "explanation": "Reference determination."
   },
@@ -3085,22 +3089,21 @@
     "evidence": [
       "R19f4c7284a4d",
       "R701611860030",
+      "R75436fd50a0b",
       "R839baa0c04c4",
-      "Ra5ba87e3bfba"
+      "Rd76c8825a20e",
+      "Re44de93ea8ab"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "P19f19a9",
     "episode": "E45ac7d5",
-    "issue": "FOLLOW_UP_OVERDUE",
+    "issue": "INADEQUATE_TREATMENT",
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "Rbef6e017ff97",
-      "Rd5ee1162f449",
-      "Re2f989c4b2fc",
-      "Reb669fbfc6b4"
+      "R7b5b14c0fe55"
     ],
     "explanation": "Reference determination."
   },
@@ -3111,7 +3114,7 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "Rd468276857d1"
+      "R409fd31c6816"
     ],
     "explanation": "Reference determination."
   },
@@ -3122,49 +3125,7 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R7f8a855657ef"
-    ],
-    "explanation": "Reference determination."
-  },
-  {
-    "patient": "P18861d2",
-    "episode": "E04fd801",
-    "issue": "INADEQUATE_TREATMENT",
-    "disposition": "confirmed",
-    "missing_evidence": null,
-    "evidence": [
-      "Rfcd92bdeeacb"
-    ],
-    "explanation": "Reference determination."
-  },
-  {
-    "patient": "P0ee79b0",
-    "episode": "E6a7b3de",
-    "issue": "FOLLOW_UP_OVERDUE",
-    "disposition": "confirmed",
-    "missing_evidence": null,
-    "evidence": [
-      "R13dd8c03fc2d",
-      "R1b16dd3f9adb",
-      "R651799973ddb",
-      "R8a064cee8573",
-      "R8f492885a1d8"
-    ],
-    "explanation": "Reference determination."
-  },
-  {
-    "patient": "P7b6a47b",
-    "episode": "E1a1e605",
-    "issue": "FOLLOW_UP_OVERDUE",
-    "disposition": "confirmed",
-    "missing_evidence": null,
-    "evidence": [
-      "R07e0cac7b02f",
-      "R9179ed5d3a47",
-      "Rb2da5204979b",
-      "Rb5cb5878e392",
-      "Rb78ff0bae0d0",
-      "Rb91b2f20f04a"
+      "Rc4dadde37834"
     ],
     "explanation": "Reference determination."
   },
@@ -3175,10 +3136,7 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R2ac4bb267f7c",
-      "R41c82b14790e",
-      "R5aff1ab852a0",
-      "R9e27fdf70ad4"
+      "R2ac4bb267f7c"
     ],
     "explanation": "Reference determination."
   },
@@ -3189,10 +3147,7 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R12d1c06b6e15",
-      "Rb2b290d07326",
-      "Rfbbbb6aaaf6f",
-      "Rfe55fa406be9"
+      "Rd9343592d08a"
     ],
     "explanation": "Reference determination."
   },
@@ -3203,20 +3158,22 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R1e1e70970454",
-      "Rd4ecc09aa0ed"
+      "R3e8c27ad7027"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "P88d4d8c",
     "episode": "E6b082d2",
-    "issue": "INADEQUATE_TREATMENT",
+    "issue": "FOLLOW_UP_OVERDUE",
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R0e9f06de8288",
-      "Rb0e051093f77"
+      "R2f07dc49cb11",
+      "R40471cda529c",
+      "R53a15cdb84cb",
+      "R9345227e0b34",
+      "Rb59bbe229230"
     ],
     "explanation": "Reference determination."
   },
@@ -3224,14 +3181,11 @@
     "patient": "Pfdffea0",
     "episode": "Ec87f26b",
     "issue": "FOLLOW_UP_OVERDUE",
-    "disposition": "not_an_issue",
+    "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
       "R15b70590ebd0",
-      "R2dd6b15724e1",
       "R89d0aab30a0e",
-      "Rd061738a7d5e",
-      "Reedd08098df3",
       "Rf2eddd5b9c54"
     ],
     "explanation": "Reference determination."
@@ -3239,44 +3193,40 @@
   {
     "patient": "P1adb295",
     "episode": "Ea64c8c7",
-    "issue": "FOLLOW_UP_OVERDUE",
-    "disposition": "not_an_issue",
+    "issue": "INADEQUATE_TREATMENT",
+    "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R6ed31af64055",
-      "R854eca150eb8",
-      "Ra53b9def7282",
-      "Rdcea8a27b22b"
+      "R4fc714f68f3a",
+      "R829ec54a1d99",
+      "R98ec8a96e502",
+      "Refd22ff5a2e9"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "P4cabf5f",
     "episode": "E2f91b01",
-    "issue": "FOLLOW_UP_OVERDUE",
+    "issue": "INADEQUATE_TREATMENT",
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R042789172dbd",
-      "R6496cebf5d7f",
-      "R6c9637123adc",
-      "R6fede73783fd",
-      "Rab8812c4b663",
-      "Rf8b4953376ef"
+      "R03fb5764d407",
+      "R288acac8f9e3",
+      "R35fba377356f",
+      "Rf482acc87728"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "Pffaf75e",
     "episode": "E40b091b",
-    "issue": "FOLLOW_UP_OVERDUE",
+    "issue": "INADEQUATE_TREATMENT",
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R35c6e4a18fbb",
-      "R9ebdad364200",
-      "Rabd804f8b844",
-      "Rb92b6915baa6"
+      "R89f92f08f9ed",
+      "R9d0a5a374b85"
     ],
     "explanation": "Reference determination."
   },
@@ -3287,56 +3237,68 @@
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R0c4aa016b664",
-      "R4befa3d43b8c"
+      "R0262ca07c6fc",
+      "R582235522932"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "Pd7d6b3d",
     "episode": "E2014a0c",
-    "issue": "INADEQUATE_TREATMENT",
-    "disposition": "confirmed",
+    "issue": "FOLLOW_UP_OVERDUE",
+    "disposition": "not_an_issue",
     "missing_evidence": null,
     "evidence": [
-      "R87a2a5a5ad53",
-      "R8a859b1d9384"
+      "R0a344eb1cd7a",
+      "R1314b0556aec",
+      "R528f8dce494e",
+      "R5de56eb16a94",
+      "Re00c911a5e2c"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "Pdb43865",
     "episode": "Ef1b9a54",
-    "issue": "INADEQUATE_TREATMENT",
-    "disposition": "cannot_determine",
-    "missing_evidence": "OUTSIDE_RECORD_NOT_RECEIVED",
+    "issue": "FOLLOW_UP_OVERDUE",
+    "disposition": "not_an_issue",
+    "missing_evidence": null,
     "evidence": [
-      "R3e4bd4c9442b",
-      "R8945aa12456b"
+      "R0503d68bbb13",
+      "R0da4d0d7a362",
+      "R1c01f8986ecf",
+      "R3158d7f83744"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "Pa15cf5d",
     "episode": "E4977884",
-    "issue": "INADEQUATE_TREATMENT",
-    "disposition": "cannot_determine",
-    "missing_evidence": "OUTSIDE_RECORD_NOT_RECEIVED",
+    "issue": "FOLLOW_UP_OVERDUE",
+    "disposition": "confirmed",
+    "missing_evidence": null,
     "evidence": [
-      "R5994a3506d47",
-      "R798b2401918b"
+      "R21134e934c71",
+      "R2af266ce123a",
+      "R6a338103ed45",
+      "R8726edc0abf2",
+      "Rb030cc4c69fc",
+      "Rfa5f2264e70e"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "P4190abe",
     "episode": "E697f7fc",
-    "issue": "INADEQUATE_TREATMENT",
-    "disposition": "not_an_issue",
+    "issue": "FOLLOW_UP_OVERDUE",
+    "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "Rc5351eb0fe72",
-      "Rc8efcc19edbf"
+      "R0377508005a5",
+      "R5091e2f4cfd9",
+      "R7989e64f0a86",
+      "Rb27063f0c25f",
+      "Rff97f8903be2"
     ],
     "explanation": "Reference determination."
   },
@@ -3344,7 +3306,7 @@
     "patient": "Pf6742f0",
     "episode": "E28f8cba",
     "issue": "INADEQUATE_TREATMENT",
-    "disposition": "not_an_issue",
+    "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
       "R8418a443b4ca",
@@ -3355,34 +3317,24 @@
   {
     "patient": "Pb4566dd",
     "episode": "E4527954",
-    "issue": "MISFILED_RESULT",
-    "disposition": "not_an_issue",
+    "issue": "INADEQUATE_TREATMENT",
+    "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R0567ae89ecc7",
-      "R20fc1766837f",
-      "R24c2623f90c6",
-      "R327afb4cde97",
-      "R4e606002e20a",
-      "R590c75b3f71c",
-      "R8823bfec8638",
-      "R996d00a96d80"
+      "R20936063175d",
+      "Rb6a6c8633cba"
     ],
     "explanation": "Reference determination."
   },
   {
     "patient": "P04706b3",
     "episode": "E3708acf",
-    "issue": "MISFILED_RESULT",
-    "disposition": "not_an_issue",
-    "missing_evidence": null,
+    "issue": "INADEQUATE_TREATMENT",
+    "disposition": "cannot_determine",
+    "missing_evidence": "OUTSIDE_RECORD_NOT_RECEIVED",
     "evidence": [
-      "R01f1626b8c18",
-      "R2c86c197e948",
-      "R4c763812176c",
-      "R4f32140fa59a",
-      "Ra87937325e18",
-      "Rde873931e13b"
+      "R3442013a7e47",
+      "Re1bf45e8c7a2"
     ],
     "explanation": "Reference determination."
   },
@@ -3390,11 +3342,11 @@
     "patient": "P701bd85",
     "episode": "Ec73584b",
     "issue": "INADEQUATE_TREATMENT",
-    "disposition": "confirmed",
-    "missing_evidence": null,
+    "disposition": "cannot_determine",
+    "missing_evidence": "OUTSIDE_RECORD_NOT_RECEIVED",
     "evidence": [
-      "R7e1b29b1bdd5",
-      "R8283ce3af4a9"
+      "R07bd85c72166",
+      "R7b4bfbe9aac0"
     ],
     "explanation": "Reference determination."
   },
@@ -3402,11 +3354,83 @@
     "patient": "P80e16b4",
     "episode": "E04d89a1",
     "issue": "INADEQUATE_TREATMENT",
+    "disposition": "not_an_issue",
+    "missing_evidence": null,
+    "evidence": [
+      "R0c051425b62d",
+      "Rdebb5f93df35"
+    ],
+    "explanation": "Reference determination."
+  },
+  {
+    "patient": "P1a78d91",
+    "episode": "E49e32e3",
+    "issue": "INADEQUATE_TREATMENT",
+    "disposition": "not_an_issue",
+    "missing_evidence": null,
+    "evidence": [
+      "R52466d7b40ff",
+      "Re1f6316a72a6"
+    ],
+    "explanation": "Reference determination."
+  },
+  {
+    "patient": "Pe0ca4be",
+    "episode": "E880dbf7",
+    "issue": "MISFILED_RESULT",
+    "disposition": "not_an_issue",
+    "missing_evidence": null,
+    "evidence": [
+      "R2720c3a56807",
+      "R3855f4dd527b",
+      "R40f059a93389",
+      "R48ba642d3324",
+      "R5c45bb9c8c74",
+      "R5f317ca37389",
+      "R6e2988e941f6",
+      "Ra2c6b58d0982"
+    ],
+    "explanation": "Reference determination."
+  },
+  {
+    "patient": "Pec7e649",
+    "episode": "E279dc6c",
+    "issue": "MISFILED_RESULT",
+    "disposition": "not_an_issue",
+    "missing_evidence": null,
+    "evidence": [
+      "R0d18d7c39498",
+      "R2e07c587232b",
+      "R317fd5a5db78",
+      "R3f047c310a59",
+      "R516d7041eeb8",
+      "R5ae8ad4b6fe6",
+      "R64c7c84c120c",
+      "R8b8c1c35c44b"
+    ],
+    "explanation": "Reference determination."
+  },
+  {
+    "patient": "P0591f30",
+    "episode": "Eba02c53",
+    "issue": "INADEQUATE_TREATMENT",
     "disposition": "confirmed",
     "missing_evidence": null,
     "evidence": [
-      "R150984326c9a",
-      "Rac1edb9a73fd"
+      "R286b9de0d47a",
+      "R819e5663f79b"
+    ],
+    "explanation": "Reference determination."
+  },
+  {
+    "patient": "P9172c63",
+    "episode": "E658e7e0",
+    "issue": "INADEQUATE_TREATMENT",
+    "disposition": "confirmed",
+    "missing_evidence": null,
+    "evidence": [
+      "R0681eb7342b9",
+      "Rbef4a20f3c6f"
     ],
     "explanation": "Reference determination."
   }

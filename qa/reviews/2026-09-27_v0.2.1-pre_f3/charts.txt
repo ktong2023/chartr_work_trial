@@ -1,0 +1,602 @@
+Evaluation time 2026-09-24T12:00:00Z. 18 patients.
+
+==== PATIENT P0ee79b0 Joy Webber (female, DOB 1994-07-09, MRN 26403994)
+[E6a7b3de] EpisodeOfCare (diagnosis date 2024-06-14)
+[R433be1d6fd89] 2024-03-07 SPECIMEN (collection record) accession=A2403-6550 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2024-03-07T10:00:00Z collector=Sam Okafor, LPN
+[R651799973ddb] 2024-03-07 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-03-08T08:00:00Z accession=A2403-6550 specimen=Specimen/R433be1d6fd89
+[Rdc9c638b87d6] 2024-03-07 Nursing note (Ruth Adeyemi, RN, role nurse):
+    Screening labs drawn per protocol.
+    
+    Signed: Ruth Adeyemi, RN
+[R18f22f253b74] 2024-06-14 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-06-15T08:00:00Z accession=A2406-1944 specimen=Specimen/R2ffe81cdc960
+[R1aea343ca9ce] 2024-06-14 SPECIMEN (collection record) accession=A2406-4318 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2024-06-14T10:00:00Z collector=T. Brandt, phlebotomist
+[R1b16dd3f9adb] 2024-06-14 LAB hCG, serum: status=final value=Negative issued=2024-06-15T08:00:00Z accession=A2406-5627 specimen=Specimen/R67b0a309a884
+[R2ffe81cdc960] 2024-06-14 SPECIMEN (collection record) accession=A2406-1944 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2024-06-14T10:00:00Z collector=T. Brandt, phlebotomist
+[R4a58bfd25e73] 2024-06-14 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Diego Santos, RN note='L ventrogluteal.'
+[R5f52789b37a5] 2024-06-14 SPECIMEN (collection record) accession=A2406-5371 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2024-06-14T10:00:00Z collector=Mina Cho, RN
+[R67b0a309a884] 2024-06-14 SPECIMEN (collection record) accession=A2406-5627 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2024-06-14T10:00:00Z collector=T. Brandt, phlebotomist
+[R69bf932023bf] 2024-06-14 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-06-15T08:00:00Z accession=A2406-4318 specimen=Specimen/R1aea343ca9ce
+[Rbc0894dcbdd1] 2024-06-14 Progress note (Dr. Priya Raman, role clinician):
+    Routine screen. Asymptomatic; denies sores or rash since last visit. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR nonreactive here 3/7/2024; now RPR 1:16, TP-PA reactive. No known contact to syphilis. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Priya Raman
+[Rf2e920542906] 2024-06-14 LAB RPR, quantitative: status=final value=Reactive 1:16 issued=2024-06-15T08:00:00Z accession=A2406-5371 specimen=Specimen/R5f52789b37a5
+[R138413d2ba0c] 2024-11-27 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2024-11-28T08:00:00Z accession=A2411-5446 specimen=Specimen/R8b54bf01f5a2
+[R8b54bf01f5a2] 2024-11-27 SPECIMEN (collection record) accession=A2411-5446 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2024-11-27T10:00:00Z collector=Mina Cho, RN
+[R52295e90dacc] 2025-06-16 SPECIMEN (collection record) accession=A2506-5436 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2025-06-16T10:00:00Z collector=Mina Cho, RN
+[Rdb59027b1495] 2025-06-16 LAB RPR, quantitative: status=final value=Reactive 1:2 issued=2025-06-17T08:00:00Z accession=A2506-5436 specimen=Specimen/R52295e90dacc
+[Rb37941c5c4a8] 2026-05-30 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2026-05-31T08:00:00Z accession=A2605-6070 specimen=Specimen/Rd8d25f2d648f
+[Rd8d25f2d648f] 2026-05-30 SPECIMEN (collection record) accession=A2605-6070 label=WEBBER, JOY MRN 26403994 DOB 1994-07-09 collected=2026-05-30T10:00:00Z collector=Ana Ruiz, RN
+
+==== PATIENT P0f2673a Maya Farrow (female, DOB 1995-05-04, MRN 41494349)
+[E1089e6b] EpisodeOfCare (diagnosis date 2024-03-01)
+[R06bcec0202be] 2024-03-01 SPECIMEN (collection record) accession=A2403-9251 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2024-03-01T10:00:00Z collector=Jordan Lee, RN
+[R21fd60d4dbb2] 2024-03-01 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Lena Park, RN note='R ventrogluteal, observed 15 min.'
+[R3f83f2700005] 2024-03-01 Progress note (Dr. Elias Green, role clinician):
+    Pre-employment labs: reactive treponemal test. No symptoms now or over the past year per pt. No earlier syphilis serology that pt knows of; no partner known to have syphilis. Exam: no rash, lesions or adenopathy. RPR 1:8, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Elias Green
+[R4192da5f8cb8] 2024-03-01 SPECIMEN (collection record) accession=A2403-4941 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2024-03-01T10:00:00Z collector=Jordan Lee, RN
+[R649a6db25083] 2024-03-01 LAB RPR, quantitative: status=final value=Reactive 1:8 issued=2024-03-02T08:00:00Z accession=A2403-9148 specimen=Specimen/R972e6c796c17
+[R6fca2fb245f8] 2024-03-01 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-03-02T08:00:00Z accession=A2403-9251 specimen=Specimen/R06bcec0202be
+[R8baf0ebf1e9a] 2024-03-01 SPECIMEN (collection record) accession=A2403-1763 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2024-03-01T10:00:00Z collector=T. Brandt, phlebotomist
+[R972e6c796c17] 2024-03-01 SPECIMEN (collection record) accession=A2403-9148 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2024-03-01T10:00:00Z collector=Clinic phlebotomy
+[R9b3a3f0dfd9a] 2024-03-01 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-03-02T08:00:00Z accession=A2403-1763 specimen=Specimen/R8baf0ebf1e9a
+[Re257222bc1f6] 2024-03-01 LAB hCG, serum: status=final value=Negative issued=2024-03-02T08:00:00Z accession=A2403-4941 specimen=Specimen/R4192da5f8cb8
+[Rf8a45f892bc3] 2024-03-08 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Lena Park, RN note='R gluteal.'
+[Rb7495b2efe26] 2024-03-15 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Lena Park, RN note='L ventrogluteal. Tolerated.'
+[R2ee64ade7f18] 2024-09-18 SPECIMEN (collection record) accession=A2409-4513 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2024-09-18T10:00:00Z collector=Jordan Lee, RN
+[R374ac0da0682] 2024-09-18 LAB RPR, quantitative: status=final value=Reactive 1:2 issued=2024-09-19T08:00:00Z accession=A2409-4513 specimen=Specimen/R2ee64ade7f18
+[R1ed1a7dd0385] 2025-03-05 SPECIMEN (collection record) accession=A2503-8010 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2025-03-05T10:00:00Z collector=Jordan Lee, RN
+[Rdfa133b2ed6a] 2025-03-05 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-03-06T08:00:00Z accession=A2503-8010 specimen=Specimen/R1ed1a7dd0385
+[R1cdc8531859a] 2026-01-27 Nursing note (Ruth Adeyemi, RN, role nurse):
+    Pt called to confirm appointment time.
+    
+    Signed: Ruth Adeyemi, RN
+[R3bfcbd17e360] 2026-06-01 Telephone encounter (Dr. Priya Raman, role clinician):
+    Reviewed lipid panel; diet counseling.
+    
+    Electronically signed: Dr. Priya Raman
+[R51abf6b7503a] 2026-07-23 LAB Chlamydia/Gonorrhea NAAT: status=final value=Not detected issued=2026-07-24T08:00:00Z accession=A2607-6250 specimen=Specimen/Ra3f3dbfc3c3f
+[Ra3f3dbfc3c3f] 2026-07-23 SPECIMEN (collection record) accession=A2607-6250 label=FARROW, MAYA MRN 41494349 DOB 1995-05-04 collected=2026-07-23T10:00:00Z collector=Jordan Lee, RN
+
+==== PATIENT P18861d2 Erin Chowdhury (female, DOB 1994-11-26, MRN 97915236)
+[E04fd801] EpisodeOfCare (diagnosis date 2024-03-25)
+[R0e7a13ac308b] 2023-08-05 LAB RPR, quantitative: status=final value=Nonreactive issued=2023-08-06T08:00:00Z accession=A2308-4176 specimen=Specimen/Rdf6ec9c9709b
+[Rdf6ec9c9709b] 2023-08-05 SPECIMEN (collection record) accession=A2308-4176 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2023-08-05T10:00:00Z collector=Jordan Lee, RN
+[Reff686d848b8] 2023-08-05 Nursing note (Ruth Adeyemi, RN, role nurse):
+    Routine STI screen; labs drawn.
+    
+    Signed: Ruth Adeyemi, RN
+[R0b7846443792] 2024-03-25 LAB RPR, quantitative: status=final value=Reactive 1:8 issued=2024-03-26T08:00:00Z accession=A2403-5328 specimen=Specimen/R1f98533cb443
+[R1f98533cb443] 2024-03-25 SPECIMEN (collection record) accession=A2403-5328 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2024-03-25T10:00:00Z collector=Jordan Lee, RN
+[R2608eab08bd8] 2024-03-25 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-03-26T08:00:00Z accession=A2403-2076 specimen=Specimen/R2dd00174847e
+[R2a4ad8c686f7] 2024-03-25 SPECIMEN (collection record) accession=A2403-4761 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2024-03-25T10:00:00Z collector=Jordan Lee, RN
+[R2dd00174847e] 2024-03-25 SPECIMEN (collection record) accession=A2403-2076 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2024-03-25T10:00:00Z collector=Jordan Lee, RN
+[R5d26f9678d17] 2024-03-25 SPECIMEN (collection record) accession=A2403-3484 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2024-03-25T10:00:00Z collector=Ana Ruiz, RN
+[R5e7940e1b72a] 2024-03-25 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-03-26T08:00:00Z accession=A2403-3484 specimen=Specimen/R5d26f9678d17
+[R9aa04de3876b] 2024-03-25 LAB hCG, serum: status=final value=Negative issued=2024-03-26T08:00:00Z accession=A2403-4761 specimen=Specimen/R2a4ad8c686f7
+[Rfaba7932bbea] 2024-03-25 Progress note (Dr. Imani Shaw, role clinician):
+    Screening visit, no symptoms. Last syphilis screen at this clinic Aug 5, 2023 was nonreactive. Today RPR 1:8, treponemal reactive. Exam without rash or lesions. Unaware of any partner diagnosis. HIV Ag/Ab nonreactive.
+    Plan: Bicillin L-A 2.4 MU IM today. Partner referral given.
+    
+    Electronically signed: Dr. Imani Shaw
+[Rfc0c23ac6c91] 2024-03-25 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Lena Park, RN note='L ventrogluteal. Tolerated.'
+[R5d48fad2de4f] 2024-09-18 LAB RPR, quantitative: status=final value=Reactive 1:2 issued=2024-09-19T08:00:00Z accession=A2409-1435 specimen=Specimen/Re4d7df2250b5
+[Re4d7df2250b5] 2024-09-18 SPECIMEN (collection record) accession=A2409-1435 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2024-09-18T10:00:00Z collector=Ana Ruiz, RN
+[R8846ecbd0735] 2025-03-30 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-03-31T08:00:00Z accession=A2503-8917 specimen=Specimen/Rd77d8fa7533b
+[Rd77d8fa7533b] 2025-03-30 SPECIMEN (collection record) accession=A2503-8917 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2025-03-30T10:00:00Z collector=Clinic phlebotomy
+[R66384966ced0] 2025-05-06 SPECIMEN (collection record) accession=A2505-3172 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2025-05-06T10:00:00Z collector=Ana Ruiz, RN
+[Refb2d4f4d5ef] 2025-05-06 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2025-05-07T08:00:00Z accession=A2505-3172 specimen=Specimen/R66384966ced0
+[R4db9f9b8301d] 2026-03-16 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2026-03-17T08:00:00Z accession=A2603-9774 specimen=Specimen/R8d9534c6e98a
+[R8d9534c6e98a] 2026-03-16 SPECIMEN (collection record) accession=A2603-9774 label=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 collected=2026-03-16T10:00:00Z collector=Ana Ruiz, RN
+
+==== PATIENT P19f19a9 Yvette Tanaka (female, DOB 1984-12-04, MRN 62039853)
+[E45ac7d5] EpisodeOfCare (diagnosis date 2023-11-29)
+[R2313df8a3cca] 2023-11-29 SPECIMEN (collection record) accession=A2311-4908 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2023-11-29T10:00:00Z collector=Jordan Lee, RN
+[R3e6e908dd951] 2023-11-29 LAB hCG, serum: status=final value=Negative issued=2023-11-30T08:00:00Z accession=A2311-7029 specimen=Specimen/R976d774c368f
+[R6514e1e645ca] 2023-11-29 SPECIMEN (collection record) accession=A2311-1333 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2023-11-29T10:00:00Z collector=Clinic phlebotomy
+[R7b5b14c0fe55] 2023-11-29 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Ana Ruiz, RN note='R ventrogluteal.'
+[R976d774c368f] 2023-11-29 SPECIMEN (collection record) accession=A2311-7029 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2023-11-29T10:00:00Z collector=Sam Okafor, LPN
+[Ra0aab6a8b007] 2023-11-29 SPECIMEN (collection record) accession=A2311-3629 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2023-11-29T10:00:00Z collector=Sam Okafor, LPN
+[Rd5ee1162f449] 2023-11-29 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2023-11-30T08:00:00Z accession=A2311-1333 specimen=Specimen/R6514e1e645ca
+[Re2f989c4b2fc] 2023-11-29 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2023-11-30T08:00:00Z accession=A2311-4908 specimen=Specimen/R2313df8a3cca
+[Re5eb93df4393] 2023-11-29 STI clinic visit (Dr. Elias Green, role clinician):
+    Referred after a reactive screen on routine labs. Denies sores, rash, hair loss or other symptoms in the past year. No prior syphilis testing on record or by history. No known contact to syphilis. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR 1:2, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Elias Green
+[Rf658ab28e5d6] 2023-11-29 LAB RPR, quantitative: status=final value=Reactive 1:2 issued=2023-11-30T08:00:00Z accession=A2311-3629 specimen=Specimen/Ra0aab6a8b007
+[R0a523286d57b] 2024-06-16 SPECIMEN (collection record) accession=A2406-9693 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2024-06-16T10:00:00Z collector=Sam Okafor, LPN
+[Rbef6e017ff97] 2024-06-16 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-06-17T08:00:00Z accession=A2406-9693 specimen=Specimen/R0a523286d57b
+[Reb669fbfc6b4] 2024-12-10 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-12-11T08:00:00Z accession=A2412-6572 specimen=Specimen/Rffe76cd6077e
+[Rffe76cd6077e] 2024-12-10 SPECIMEN (collection record) accession=A2412-6572 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2024-12-10T10:00:00Z collector=Mina Cho, RN
+[R4b6355c22774] 2025-12-12 SPECIMEN (collection record) accession=A2512-5239 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2025-12-12T10:00:00Z collector=Jordan Lee, RN
+[R5608cd482cbe] 2025-12-12 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-12-13T08:00:00Z accession=A2512-5239 specimen=Specimen/R4b6355c22774
+[R488b68a5a517] 2026-06-20 LAB Chlamydia/Gonorrhea NAAT: status=final value=Not detected issued=2026-06-21T08:00:00Z accession=A2606-4021 specimen=Specimen/Recdd9a394791
+[Recdd9a394791] 2026-06-20 SPECIMEN (collection record) accession=A2606-4021 label=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 collected=2026-06-20T10:00:00Z collector=Ana Ruiz, RN
+
+==== PATIENT P1d94d5a Victor Kearney (male, DOB 1976-09-19, MRN 37454042)
+[E82a30d5] EpisodeOfCare (diagnosis date 2024-02-07)
+[R424fbbf69c85] 2024-02-07 SPECIMEN (collection record) accession=A2402-8736 label=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 collected=2024-02-07T10:00:00Z collector=Jordan Lee, RN
+[R45298f1c03ce] 2024-02-07 LAB RPR, quantitative: status=final value=Reactive 1:2 issued=2024-02-08T08:00:00Z accession=A2402-7445 specimen=Specimen/R88c0e06f52d1
+[R5ab8b98b646c] 2024-02-07 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Sam Okafor, LPN note='L gluteal. Tolerated.'
+[R6281f5f5c862] 2024-02-07 Progress note (Dr. Hana Ito, role clinician):
+    Reactive syphilis screen at blood donation. Asymptomatic; recalls no ulcer or rash. Never tested before. Unaware of any partner diagnosis. Exam unremarkable, skin and mucosa clear. RPR 1:2, treponemal reactive. HIV Ag/Ab nonreactive.
+    Plan: Bicillin L-A 2.4 MU IM today. Partner referral given.
+    
+    Electronically signed: Dr. Hana Ito
+[R6e084b230b35] 2024-02-07 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-02-08T08:00:00Z accession=A2402-8736 specimen=Specimen/R424fbbf69c85
+[R6efee3fcceba] 2024-02-07 SPECIMEN (collection record) accession=A2402-8990 label=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 collected=2024-02-07T10:00:00Z collector=Sam Okafor, LPN
+[R88c0e06f52d1] 2024-02-07 SPECIMEN (collection record) accession=A2402-7445 label=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 collected=2024-02-07T10:00:00Z collector=Clinic phlebotomy
+[Rc7fae572edeb] 2024-02-07 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-02-08T08:00:00Z accession=A2402-8990 specimen=Specimen/R6efee3fcceba
+[Rfee39a3365b6] 2024-02-14 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Sam Okafor, LPN note='L gluteal, observed 15 min.'
+[Rcde0d1348ef7] 2024-02-21 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Sam Okafor, LPN note='R gluteal.'
+[R1cdb4f4a1840] 2024-08-12 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-08-13T08:00:00Z accession=A2408-9873 specimen=Specimen/Rd27aa748e930
+[Rd27aa748e930] 2024-08-12 SPECIMEN (collection record) accession=A2408-9873 label=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 collected=2024-08-12T10:00:00Z collector=T. Brandt, phlebotomist
+[R417176d36edb] 2025-01-26 SPECIMEN (collection record) accession=A2501-1378 label=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 collected=2025-01-26T10:00:00Z collector=T. Brandt, phlebotomist
+[R67559e48a9a5] 2025-01-26 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-01-27T08:00:00Z accession=A2501-1378 specimen=Specimen/R417176d36edb
+
+==== PATIENT P3ea5806 Lamar Yamamoto (male, DOB 1982-05-04, MRN 30585933)
+[E4ff5987] EpisodeOfCare (diagnosis date 2024-05-16)
+[R5e9a7970bc4d] 2024-03-07 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-03-08T08:00:00Z accession=A2403-2362 specimen=Specimen/Raa42d1944f8a
+[Raa42d1944f8a] 2024-03-07 SPECIMEN (collection record) accession=A2403-2362 label=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 collected=2024-03-07T10:00:00Z collector=Sam Okafor, LPN
+[R272c9295d06f] 2024-05-16 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Amara Diallo, RN note='L ventrogluteal.'
+[R439e04a4d731] 2024-05-16 STI clinic visit (Dr. Elias Green, role clinician):
+    Rash for 22 days involving palms and soles, moist papules in the perianal area, patchy alopecia. RPR 1:64, treponemal reactive. HIV Ag/Ab nonreactive.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Elias Green
+[R8dac78e2602d] 2024-05-16 LAB RPR, quantitative: status=final value=Reactive 1:64 issued=2024-05-17T08:00:00Z accession=A2405-9035 specimen=Specimen/Rdf773bf12978
+[R9c9e859636b8] 2024-05-16 SPECIMEN (collection record) accession=A2405-7306 label=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 collected=2024-05-16T10:00:00Z collector=Ana Ruiz, RN
+[Ra71c0ab0762f] 2024-05-16 SPECIMEN (collection record) accession=A2405-7340 label=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 collected=2024-05-16T10:00:00Z collector=Ana Ruiz, RN
+[Rdf773bf12978] 2024-05-16 SPECIMEN (collection record) accession=A2405-9035 label=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 collected=2024-05-16T10:00:00Z collector=Jordan Lee, RN
+[Rfa693ddf01f5] 2024-05-16 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-05-17T08:00:00Z accession=A2405-7306 specimen=Specimen/R9c9e859636b8
+[Rfeb85032fb02] 2024-05-16 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-05-17T08:00:00Z accession=A2405-7340 specimen=Specimen/Ra71c0ab0762f
+[R3d3fd5979830] 2024-11-30 SPECIMEN (collection record) accession=A2411-2529 label=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 collected=2024-11-30T10:00:00Z collector=Ana Ruiz, RN
+[R55cbb08a4cca] 2024-11-30 LAB RPR, quantitative: status=final value=Reactive 1:16 issued=2024-12-01T08:00:00Z accession=A2411-2529 specimen=Specimen/R3d3fd5979830
+[R2281d682fa66] 2025-04-30 SPECIMEN (collection record) accession=A2504-7075 label=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 collected=2025-04-30T10:00:00Z collector=Clinic phlebotomy
+[Rdb8a40556047] 2025-04-30 LAB RPR, quantitative: status=final value=Reactive 1:8 issued=2025-05-01T08:00:00Z accession=A2504-7075 specimen=Specimen/R2281d682fa66
+[R6acbf2c905b9] 2026-06-19 Telephone encounter (Dr. Marcus Lee, role clinician):
+    Discussed PrEP; pt will think about it.
+    
+    Electronically signed: Dr. Marcus Lee
+
+==== PATIENT P68cbfe4 Iris Grimes (female, DOB 1988-06-23, MRN 93618668)
+[Ef82b674] EpisodeOfCare (diagnosis date 2024-07-14)
+[R23ebdc676f6e] 2024-07-14 Progress note (Dr. Priya Raman, role clinician):
+    c/o rash x 13 days, not itchy. Exam: diffuse maculopapular rash on trunk, palms and soles; mucous patches on the tongue; shotty cervical and inguinal nodes. RPR 1:256, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Priya Raman
+[R293bea15921f] 2024-07-14 LAB hCG, serum: status=final value=Negative issued=2024-07-15T08:00:00Z accession=A2407-8153 specimen=Specimen/Rd73d29150bdf
+[R2dda0a4f07b0] 2024-07-14 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-07-15T08:00:00Z accession=A2407-8762 specimen=Specimen/Ra04963ae3456
+[R3b56ac5e5d15] 2024-07-14 SPECIMEN (collection record) accession=A2407-7639 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2024-07-14T10:00:00Z collector=Ana Ruiz, RN
+[R67afb6d32f31] 2024-07-14 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-07-15T08:00:00Z accession=A2407-1714 specimen=Specimen/R9fda8443f86b
+[R9d0b770a0b2b] 2024-07-14 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Ruth Adeyemi, RN note='L ventrogluteal, observed 15 min.'
+[R9fda8443f86b] 2024-07-14 SPECIMEN (collection record) accession=A2407-1714 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2024-07-14T10:00:00Z collector=T. Brandt, phlebotomist
+[Ra04963ae3456] 2024-07-14 SPECIMEN (collection record) accession=A2407-8762 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2024-07-14T10:00:00Z collector=Jordan Lee, RN
+[Rd37fd6fb8c9b] 2024-07-14 LAB RPR, quantitative: status=final value=Reactive 1:256 issued=2024-07-15T08:00:00Z accession=A2407-7639 specimen=Specimen/R3b56ac5e5d15
+[Rd73d29150bdf] 2024-07-14 SPECIMEN (collection record) accession=A2407-8153 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2024-07-14T10:00:00Z collector=Ana Ruiz, RN
+[R731956f6d15a] 2025-01-10 SPECIMEN (collection record) accession=A2501-1916 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2025-01-10T10:00:00Z collector=Sam Okafor, LPN
+[R94b3c7245f33] 2025-01-10 LAB RPR, quantitative: status=final value=Reactive 1:64 issued=2025-01-11T08:00:00Z accession=A2501-1916 specimen=Specimen/R731956f6d15a
+[R08ef87081da3] 2025-07-15 LAB RPR, quantitative: status=final value=Reactive 1:32 issued=2025-07-16T08:00:00Z accession=A2507-3713 specimen=Specimen/R61f1879ef447
+[R61f1879ef447] 2025-07-15 SPECIMEN (collection record) accession=A2507-3713 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2025-07-15T10:00:00Z collector=T. Brandt, phlebotomist
+[Rc7572433c362] 2026-06-12 SPECIMEN (collection record) accession=A2606-6724 label=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 collected=2026-06-12T10:00:00Z collector=T. Brandt, phlebotomist
+[Rc9dce98f4460] 2026-06-12 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2026-06-13T08:00:00Z accession=A2606-6724 specimen=Specimen/Rc7572433c362
+
+==== PATIENT P740271c Paige Okonkwo (female, DOB 1993-02-12, MRN 66012721)
+[E8004838] EpisodeOfCare (diagnosis date 2024-07-29)
+[R0e2b24857567] 2024-07-29 SPECIMEN (collection record) accession=A2407-4867 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2024-07-29T10:00:00Z collector=Sam Okafor, LPN
+[R4424e4d57fcb] 2024-07-29 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2024-07-30T08:00:00Z accession=A2407-5682 specimen=Specimen/R4a71673b7c43
+[R4a71673b7c43] 2024-07-29 SPECIMEN (collection record) accession=A2407-5682 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2024-07-29T10:00:00Z collector=Clinic phlebotomy
+[R602f4ff3ab91] 2024-07-29 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-07-30T08:00:00Z accession=A2407-7732 specimen=Specimen/Rc4a82397d615
+[R85dbf0755b94] 2024-07-29 LAB hCG, serum: status=final value=Negative issued=2024-07-30T08:00:00Z accession=A2407-4867 specimen=Specimen/R0e2b24857567
+[R9ce918dad40f] 2024-07-29 SPECIMEN (collection record) accession=A2407-5707 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2024-07-29T10:00:00Z collector=Sam Okafor, LPN
+[Rc4a82397d615] 2024-07-29 SPECIMEN (collection record) accession=A2407-7732 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2024-07-29T10:00:00Z collector=Mina Cho, RN
+[Rc4dadde37834] 2024-07-29 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Jordan Lee, RN note='L gluteal, observed 15 min.'
+[Re473434a2fd3] 2024-07-29 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-07-30T08:00:00Z accession=A2407-5707 specimen=Specimen/R9ce918dad40f
+[Rf76cd02425e9] 2024-07-29 STI clinic visit (Dr. Julia Brandt, role clinician):
+    Referred after a reactive screen on routine labs. Denies sores, rash, hair loss or other symptoms in the past year. No prior syphilis testing on record or by history. No known contact to syphilis. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR 1:4, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Julia Brandt
+[R46104e416a95] 2025-02-06 SPECIMEN (collection record) accession=A2502-5293 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2025-02-06T10:00:00Z collector=Jordan Lee, RN
+[Rb09f9df8976b] 2025-02-06 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-02-07T08:00:00Z accession=A2502-5293 specimen=Specimen/R46104e416a95
+[R20d76f29380a] 2025-07-27 SPECIMEN (collection record) accession=A2507-5341 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2025-07-27T10:00:00Z collector=Clinic phlebotomy
+[R929a623e699c] 2025-07-27 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-07-28T08:00:00Z accession=A2507-5341 specimen=Specimen/R20d76f29380a
+[R054f7864262b] 2026-04-18 Telephone encounter (Dr. Marcus Lee, role clinician):
+    Discussed PrEP; pt will think about it.
+    
+    Electronically signed: Dr. Marcus Lee
+[R01e4dabf622e] 2026-07-14 SPECIMEN (collection record) accession=A2607-8769 label=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 collected=2026-07-14T10:00:00Z collector=Clinic phlebotomy
+[R69ef0bbf33e2] 2026-07-14 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2026-07-15T08:00:00Z accession=A2607-8769 specimen=Specimen/R01e4dabf622e
+
+==== PATIENT P7b43b8f Monique Petrakis (female, DOB 1989-10-07, MRN 40962333)
+[E4c43a62] EpisodeOfCare (diagnosis date 2024-06-10)
+[R013a4e84348f] 2024-06-10 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-06-11T08:00:00Z accession=A2406-4143 specimen=Specimen/R3e211166d11f
+[R1d4c17581c07] 2024-06-10 LAB hCG, serum: status=final value=Negative issued=2024-06-11T08:00:00Z accession=A2406-4394 specimen=Specimen/R8db97ae9d260
+[R3b2a0f72dbdf] 2024-06-10 SPECIMEN (collection record) accession=A2406-2659 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2024-06-10T10:00:00Z collector=Clinic phlebotomy
+[R3e211166d11f] 2024-06-10 SPECIMEN (collection record) accession=A2406-4143 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2024-06-10T10:00:00Z collector=Mina Cho, RN
+[R409fd31c6816] 2024-06-10 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Jordan Lee, RN note='R ventrogluteal. Tolerated.'
+[R4a4f95426eed] 2024-06-10 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-06-11T08:00:00Z accession=A2406-2659 specimen=Specimen/R3b2a0f72dbdf
+[R8db97ae9d260] 2024-06-10 SPECIMEN (collection record) accession=A2406-4394 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2024-06-10T10:00:00Z collector=Jordan Lee, RN
+[Rd543b9338bd2] 2024-06-10 STI clinic visit (Dr. Imani Shaw, role clinician):
+    Referred after a reactive screen on routine labs. Denies sores, rash, hair loss or other symptoms in the past year. No prior syphilis testing on record or by history. No known contact to syphilis. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR 1:1, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Imani Shaw
+[Rd739b594c9bb] 2024-06-10 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-06-11T08:00:00Z accession=A2406-8433 specimen=Specimen/Rf8d83a04facd
+[Rf8d83a04facd] 2024-06-10 SPECIMEN (collection record) accession=A2406-8433 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2024-06-10T10:00:00Z collector=Mina Cho, RN
+[R7a4c3754d4e2] 2024-12-19 SPECIMEN (collection record) accession=A2412-1262 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2024-12-19T10:00:00Z collector=Clinic phlebotomy
+[Rdac557a6521f] 2024-12-19 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-20T08:00:00Z accession=A2412-1262 specimen=Specimen/R7a4c3754d4e2
+[R91a7a7613a72] 2025-06-23 SPECIMEN (collection record) accession=A2506-7161 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2025-06-23T10:00:00Z collector=Jordan Lee, RN
+[Raf2ea949caa4] 2025-06-23 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-06-24T08:00:00Z accession=A2506-7161 specimen=Specimen/R91a7a7613a72
+[Rd57ae65cae3b] 2026-03-31 LAB Chlamydia/Gonorrhea NAAT: status=final value=Not detected issued=2026-04-01T08:00:00Z accession=A2603-1113 specimen=Specimen/Re6af19f7ab33
+[Re6af19f7ab33] 2026-03-31 SPECIMEN (collection record) accession=A2603-1113 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2026-03-31T10:00:00Z collector=T. Brandt, phlebotomist
+[R59d3bd2da9c0] 2026-06-03 LAB RPR, quantitative: status=final value=Nonreactive issued=2026-06-04T08:00:00Z accession=A2606-7239 specimen=Specimen/Rb2d32c8ffde7
+[Rb2d32c8ffde7] 2026-06-03 SPECIMEN (collection record) accession=A2606-7239 label=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 collected=2026-06-03T10:00:00Z collector=Sam Okafor, LPN
+
+==== PATIENT P7b6a47b Emmanuel Dalton (male, DOB 1991-01-19, MRN 20017108)
+[E1a1e605] EpisodeOfCare (diagnosis date 2024-05-23)
+[R762e4f77c52a] 2023-09-04 Nursing note (Ruth Adeyemi, RN, role nurse):
+    Screening labs drawn per protocol.
+    
+    Signed: Ruth Adeyemi, RN
+[R7b775afa0555] 2023-09-04 SPECIMEN (collection record) accession=A2309-8762 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2023-09-04T10:00:00Z collector=Clinic phlebotomy
+[Rb78ff0bae0d0] 2023-09-04 LAB RPR, quantitative: status=final value=Nonreactive issued=2023-09-05T08:00:00Z accession=A2309-8762 specimen=Specimen/R7b775afa0555
+[R02b5f3564427] 2024-05-23 SPECIMEN (collection record) accession=A2405-5218 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2024-05-23T10:00:00Z collector=Ana Ruiz, RN
+[R28d77757a28f] 2024-05-23 SPECIMEN (collection record) accession=A2405-8547 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2024-05-23T10:00:00Z collector=Ana Ruiz, RN
+[R6955ac518cf3] 2024-05-23 New patient visit (Dr. Priya Raman, role clinician):
+    Routine screen. Asymptomatic; denies sores or rash since last visit. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR nonreactive here 9/4/2023; now RPR 1:4, TP-PA reactive. No known contact to syphilis. HIV neg.
+    Plan: Bicillin L-A 2.4 MU IM today. Partner referral given.
+    
+    Electronically signed: Dr. Priya Raman
+[Ra4fdb2ae0958] 2024-05-23 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2024-05-24T08:00:00Z accession=A2405-5218 specimen=Specimen/R02b5f3564427
+[Ra84dd6b0786a] 2024-05-23 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-05-24T08:00:00Z accession=A2405-8547 specimen=Specimen/R28d77757a28f
+[Rcdd056fe89b1] 2024-05-23 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-05-24T08:00:00Z accession=A2405-8763 specimen=Specimen/Rd8ec10983ea1
+[Rd8ec10983ea1] 2024-05-23 SPECIMEN (collection record) accession=A2405-8763 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2024-05-23T10:00:00Z collector=Clinic phlebotomy
+[Rf26fedc04e49] 2024-05-23 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Sam Okafor, LPN note='L ventrogluteal. Tolerated.'
+[R0c27b1235601] 2024-12-04 SPECIMEN (collection record) accession=A2412-7612 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2024-12-04T10:00:00Z collector=Clinic phlebotomy
+[Rb91b2f20f04a] 2024-12-04 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-05T08:00:00Z accession=A2412-7612 specimen=Specimen/R0c27b1235601
+[R2a1d5ab06671] 2025-05-30 SPECIMEN (collection record) accession=A2505-4967 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2025-05-30T10:00:00Z collector=Sam Okafor, LPN
+[R9179ed5d3a47] 2025-05-30 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-05-31T08:00:00Z accession=A2505-4967 specimen=Specimen/R2a1d5ab06671
+[R07e0cac7b02f] 2026-05-25 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2026-05-26T08:00:00Z accession=A2605-3946 specimen=Specimen/R7aa68d7a92ed
+[R7aa68d7a92ed] 2026-05-25 SPECIMEN (collection record) accession=A2605-3946 label=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 collected=2026-05-25T10:00:00Z collector=T. Brandt, phlebotomist
+
+==== PATIENT P983d9c9 Priscilla Alvarado (female, DOB 1983-08-09, MRN 43425645)
+[E9b3a323] EpisodeOfCare (diagnosis date 2024-03-26)
+[R285ec999626d] 2024-03-26 LAB hCG, serum: status=final value=Negative issued=2024-03-27T08:00:00Z accession=A2403-4378 specimen=Specimen/Ra7e959ebd758
+[R3fe2695e7759] 2024-03-26 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-03-27T08:00:00Z accession=A2403-9391 specimen=Specimen/R4af12ec6a28d
+[R4af12ec6a28d] 2024-03-26 SPECIMEN (collection record) accession=A2403-9391 label=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 collected=2024-03-26T10:00:00Z collector=Jordan Lee, RN
+[R61c32437976a] 2024-03-26 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-03-27T08:00:00Z accession=A2403-4672 specimen=Specimen/Rd094b9a3363c
+[R62cf513bfa82] 2024-03-26 SPECIMEN (collection record) accession=A2403-3579 label=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 collected=2024-03-26T10:00:00Z collector=Clinic phlebotomy
+[R77af0afff187] 2024-03-26 LAB RPR, quantitative: status=final value=Reactive 1:128 issued=2024-03-27T08:00:00Z accession=A2403-3579 specimen=Specimen/R62cf513bfa82
+[Ra7e959ebd758] 2024-03-26 SPECIMEN (collection record) accession=A2403-4378 label=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 collected=2024-03-26T10:00:00Z collector=T. Brandt, phlebotomist
+[Rbf20044c32fd] 2024-03-26 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Chris Novak, LPN note='R gluteal. Tolerated.'
+[Rd094b9a3363c] 2024-03-26 SPECIMEN (collection record) accession=A2403-4672 label=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 collected=2024-03-26T10:00:00Z collector=T. Brandt, phlebotomist
+[Re8215e76402b] 2024-03-26 STI clinic visit (Dr. Noah Patel, role clinician):
+    Rash for 13 days involving palms and soles, moist papules in the perianal area, patchy alopecia. RPR 1:128, treponemal reactive. HIV Ag/Ab nonreactive.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Noah Patel
+[R75ebd86eb7e8] 2024-09-13 SPECIMEN (collection record) accession=A2409-8377 label=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 collected=2024-09-13T10:00:00Z collector=Mina Cho, RN
+[Rccdc3ef425f7] 2024-09-13 LAB RPR, quantitative: status=final value=Reactive 1:32 issued=2024-09-14T08:00:00Z accession=A2409-8377 specimen=Specimen/R75ebd86eb7e8
+[R88455fd5c50e] 2025-03-22 LAB RPR, quantitative: status=final value=Reactive 1:16 issued=2025-03-23T08:00:00Z accession=A2503-6351 specimen=Specimen/R9e57c63cdbdf
+[R9e57c63cdbdf] 2025-03-22 SPECIMEN (collection record) accession=A2503-6351 label=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 collected=2025-03-22T10:00:00Z collector=Clinic phlebotomy
+
+==== PATIENT P9c94977 Rosa Sokolov (female, DOB 1969-03-27, MRN 68801392)
+[E1b0a814] EpisodeOfCare (diagnosis date 2024-01-08)
+[R06451df537ae] 2024-01-08 SPECIMEN (collection record) accession=A2401-7027 label=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 collected=2024-01-08T10:00:00Z collector=Mina Cho, RN
+[R094ae520e990] 2024-01-08 LAB RPR, quantitative: status=final value=Reactive 1:256 issued=2024-01-09T08:00:00Z accession=A2401-7027 specimen=Specimen/R06451df537ae
+[R4bc2b0a2750e] 2024-01-08 STI clinic visit (Dr. Owen Hart, role clinician):
+    13 days of non-pruritic papulosquamous rash including palms and soles, sore throat, malaise. Mucous patches on buccal mucosa, generalized lymphadenopathy. RPR 1:256; TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Owen Hart
+[R7ab41529d68d] 2024-01-08 SPECIMEN (collection record) accession=A2401-9845 label=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 collected=2024-01-08T10:00:00Z collector=T. Brandt, phlebotomist
+[R87f3bb3f9470] 2024-01-08 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-01-09T08:00:00Z accession=A2401-2469 specimen=Specimen/Rca53c2ee7916
+[Rca53c2ee7916] 2024-01-08 SPECIMEN (collection record) accession=A2401-2469 label=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 collected=2024-01-08T10:00:00Z collector=Sam Okafor, LPN
+[Redf64e440bff] 2024-01-08 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-01-09T08:00:00Z accession=A2401-9845 specimen=Specimen/R7ab41529d68d
+[Rf92c907ea7eb] 2024-01-08 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Ana Ruiz, RN note='L ventrogluteal. Tolerated.'
+[R0069a94013ec] 2024-07-13 LAB RPR, quantitative: status=final value=Reactive 1:64 issued=2024-07-14T08:00:00Z accession=A2407-2863 specimen=Specimen/R7df821fd9b82
+[R7df821fd9b82] 2024-07-13 SPECIMEN (collection record) accession=A2407-2863 label=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 collected=2024-07-13T10:00:00Z collector=Mina Cho, RN
+[Ra994228d97cc] 2025-01-22 LAB RPR, quantitative: status=final value=Reactive 1:32 issued=2025-01-23T08:00:00Z accession=A2501-5586 specimen=Specimen/Rcd71029ebdf0
+[Rcd71029ebdf0] 2025-01-22 SPECIMEN (collection record) accession=A2501-5586 label=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 collected=2025-01-22T10:00:00Z collector=T. Brandt, phlebotomist
+
+==== PATIENT Pa82335d Farah Thibodeaux (female, DOB 2006-08-30, MRN 18553249)
+[E52a4a5a] EpisodeOfCare (diagnosis date 2024-05-20)
+[R053b6627a352] 2024-05-20 SPECIMEN (collection record) accession=A2405-9074 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2024-05-20T10:00:00Z collector=Clinic phlebotomy
+[R2a351a42ccb1] 2024-05-20 LAB RPR, quantitative: status=final value=Reactive 1:64 issued=2024-05-21T08:00:00Z accession=A2405-9074 specimen=Specimen/R053b6627a352
+[R41ffa9b40558] 2024-05-20 LAB hCG, serum: status=final value=Negative issued=2024-05-21T08:00:00Z accession=A2405-1676 specimen=Specimen/Rca6518d26357
+[R4253939e043d] 2024-05-20 STI clinic visit (Dr. Julia Brandt, role clinician):
+    c/o rash x 23 days, not itchy. Exam: diffuse maculopapular rash on trunk, palms and soles; mucous patches on the tongue; shotty cervical and inguinal nodes. RPR 1:64, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Julia Brandt
+[R63e7ed0b9d2f] 2024-05-20 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-05-21T08:00:00Z accession=A2405-9679 specimen=Specimen/Rfafbdde68bf9
+[R7b688785e934] 2024-05-20 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-05-21T08:00:00Z accession=A2405-2774 specimen=Specimen/Rb3157dc047df
+[R91da4ec2c53a] 2024-05-20 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Lena Park, RN note='L gluteal, observed 15 min.'
+[Rb3157dc047df] 2024-05-20 SPECIMEN (collection record) accession=A2405-2774 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2024-05-20T10:00:00Z collector=Mina Cho, RN
+[Rca6518d26357] 2024-05-20 SPECIMEN (collection record) accession=A2405-1676 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2024-05-20T10:00:00Z collector=T. Brandt, phlebotomist
+[Rfafbdde68bf9] 2024-05-20 SPECIMEN (collection record) accession=A2405-9679 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2024-05-20T10:00:00Z collector=Jordan Lee, RN
+[R6814d4b6e7d5] 2024-11-08 LAB RPR, quantitative: status=final value=Reactive 1:16 issued=2024-11-09T08:00:00Z accession=A2411-8389 specimen=Specimen/R7a6b9ec1485c
+[R7a6b9ec1485c] 2024-11-08 SPECIMEN (collection record) accession=A2411-8389 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2024-11-08T10:00:00Z collector=Clinic phlebotomy
+[R046b8d70856f] 2025-05-14 LAB RPR, quantitative: status=final value=Reactive 1:8 issued=2025-05-15T08:00:00Z accession=A2505-1913 specimen=Specimen/R884ed79bca88
+[R884ed79bca88] 2025-05-14 SPECIMEN (collection record) accession=A2505-1913 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2025-05-14T10:00:00Z collector=Jordan Lee, RN
+[Rb8910fa13f4b] 2025-10-19 LAB Chlamydia/Gonorrhea NAAT: status=final value=Not detected issued=2025-10-20T08:00:00Z accession=A2510-5511 specimen=Specimen/Rc941c98c7ac1
+[Rc941c98c7ac1] 2025-10-19 SPECIMEN (collection record) accession=A2510-5511 label=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 collected=2025-10-19T10:00:00Z collector=T. Brandt, phlebotomist
+
+==== PATIENT Pbc7f3e9 Imogen Zimmer (female, DOB 2002-10-26, MRN 37794597)
+[Eee74510] EpisodeOfCare (diagnosis date 2024-06-15)
+[R0be71814f21e] 2022-10-17 SPECIMEN (collection record) accession=A2210-4781 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2022-10-17T10:00:00Z collector=Mina Cho, RN
+[R7a57111ad0ac] 2022-10-17 LAB RPR, quantitative: status=final value=Nonreactive issued=2022-10-18T08:00:00Z accession=A2210-4781 specimen=Specimen/R0be71814f21e
+[Rdea0e05de84c] 2022-10-17 Nursing note (Ruth Adeyemi, RN, role nurse):
+    Screening labs drawn per protocol.
+    
+    Signed: Ruth Adeyemi, RN
+[R00978a8f2502] 2024-06-15 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-06-16T08:00:00Z accession=A2406-2104 specimen=Specimen/R0b4c61ce0fd5
+[R070c5305a38c] 2024-06-15 LAB RPR, quantitative: status=final value=Reactive 1:8 issued=2024-06-16T08:00:00Z accession=A2406-1021 specimen=Specimen/R0e8d6b0d59be
+[R0b4c61ce0fd5] 2024-06-15 SPECIMEN (collection record) accession=A2406-2104 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2024-06-15T10:00:00Z collector=Clinic phlebotomy
+[R0c769c0f4cd9] 2024-06-15 STI clinic visit (Dr. Elias Green, role clinician):
+    Screening visit, no symptoms. Last syphilis screen at this clinic Oct 17, 2022 was nonreactive. Today RPR 1:8, treponemal reactive. Exam without rash or lesions. Unaware of any partner diagnosis. HIV Ag/Ab nonreactive.
+    Plan: Bicillin L-A 2.4 MU IM today. Partner referral given.
+    
+    Electronically signed: Dr. Elias Green
+[R0e8d6b0d59be] 2024-06-15 SPECIMEN (collection record) accession=A2406-1021 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2024-06-15T10:00:00Z collector=Sam Okafor, LPN
+[R1f8358582f73] 2024-06-15 LAB hCG, serum: status=final value=Negative issued=2024-06-16T08:00:00Z accession=A2406-3256 specimen=Specimen/Rae76ec037e09
+[R569d5a7db116] 2024-06-15 SPECIMEN (collection record) accession=A2406-5696 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2024-06-15T10:00:00Z collector=Jordan Lee, RN
+[Rae76ec037e09] 2024-06-15 SPECIMEN (collection record) accession=A2406-3256 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2024-06-15T10:00:00Z collector=T. Brandt, phlebotomist
+[Rcd5ddd8c608e] 2024-06-15 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-06-16T08:00:00Z accession=A2406-5696 specimen=Specimen/R569d5a7db116
+[Rd9343592d08a] 2024-06-15 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Lena Park, RN note='R gluteal.'
+[R512bdff6da09] 2024-12-21 LAB RPR, quantitative: status=final value=Reactive 1:2 issued=2024-12-22T08:00:00Z accession=A2412-1172 specimen=Specimen/Rdb9ca3e4b272
+[Rdb9ca3e4b272] 2024-12-21 SPECIMEN (collection record) accession=A2412-1172 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2024-12-21T10:00:00Z collector=Sam Okafor, LPN
+[R270357a2f118] 2025-02-12 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2025-02-13T08:00:00Z accession=A2502-9254 specimen=Specimen/R4bd366cff641
+[R4bd366cff641] 2025-02-12 SPECIMEN (collection record) accession=A2502-9254 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2025-02-12T10:00:00Z collector=Clinic phlebotomy
+[Re73225ccfbac] 2025-06-08 SPECIMEN (collection record) accession=A2506-6246 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2025-06-08T10:00:00Z collector=Clinic phlebotomy
+[Rfa13a14dafeb] 2025-06-08 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-06-09T08:00:00Z accession=A2506-6246 specimen=Specimen/Re73225ccfbac
+[R48dde89bc5e6] 2025-06-13 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2025-06-14T08:00:00Z accession=A2506-5583 specimen=Specimen/R5bc9e14f1f6e
+[R5bc9e14f1f6e] 2025-06-13 SPECIMEN (collection record) accession=A2506-5583 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2025-06-13T10:00:00Z collector=T. Brandt, phlebotomist
+[Re50521d74dc2] 2026-06-12 SPECIMEN (collection record) accession=A2606-5434 label=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 collected=2026-06-12T10:00:00Z collector=Jordan Lee, RN
+[Rea7485a831a7] 2026-06-12 LAB RPR, quantitative: status=final value=Nonreactive issued=2026-06-13T08:00:00Z accession=A2606-5434 specimen=Specimen/Re50521d74dc2
+
+==== PATIENT Pe6039b8 Celeste Whitaker (female, DOB 1986-03-24, MRN 51149631)
+[E245761a] EpisodeOfCare (diagnosis date 2023-12-05)
+[R6306d4c7a760] 2022-08-01 Nursing note (Diego Santos, RN, role nurse):
+    Screening labs drawn per protocol.
+    
+    Signed: Diego Santos, RN
+[Rc554c5602690] 2022-08-01 SPECIMEN (collection record) accession=A2208-1712 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2022-08-01T10:00:00Z collector=Sam Okafor, LPN
+[Rdb96d7ae75dc] 2022-08-01 LAB RPR, quantitative: status=final value=Nonreactive issued=2022-08-02T08:00:00Z accession=A2208-1712 specimen=Specimen/Rc554c5602690
+[R2e77f87e21a3] 2023-12-05 LAB hCG, serum: status=final value=Negative issued=2023-12-06T08:00:00Z accession=A2312-7418 specimen=Specimen/Rc61a851b0810
+[R3e8c27ad7027] 2023-12-05 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Sam Okafor, LPN note='L gluteal. Tolerated.'
+[R4cbea301f814] 2023-12-05 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2023-12-06T08:00:00Z accession=A2312-1787 specimen=Specimen/R554c8fe50325
+[R554c8fe50325] 2023-12-05 SPECIMEN (collection record) accession=A2312-1787 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2023-12-05T10:00:00Z collector=Clinic phlebotomy
+[R57251803d285] 2023-12-05 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2023-12-06T08:00:00Z accession=A2312-6928 specimen=Specimen/Raca8aa3ac423
+[R988892436eeb] 2023-12-05 Progress note (Dr. Rosa Alvarez, role clinician):
+    Screening visit, no symptoms. Last syphilis screen at this clinic Aug 1, 2022 was nonreactive. Today RPR 1:4, treponemal reactive. Exam without rash or lesions. Unaware of any partner diagnosis. HIV Ag/Ab nonreactive.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Rosa Alvarez
+[Raca8aa3ac423] 2023-12-05 SPECIMEN (collection record) accession=A2312-6928 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2023-12-05T10:00:00Z collector=Sam Okafor, LPN
+[Rb4f0c39b2084] 2023-12-05 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2023-12-06T08:00:00Z accession=A2312-4972 specimen=Specimen/Rc98084a919a0
+[Rc61a851b0810] 2023-12-05 SPECIMEN (collection record) accession=A2312-7418 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2023-12-05T10:00:00Z collector=Clinic phlebotomy
+[Rc98084a919a0] 2023-12-05 SPECIMEN (collection record) accession=A2312-4972 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2023-12-05T10:00:00Z collector=Sam Okafor, LPN
+[R65e8938f0b29] 2024-06-01 SPECIMEN (collection record) accession=A2406-1820 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2024-06-01T10:00:00Z collector=T. Brandt, phlebotomist
+[Rf34595226687] 2024-06-01 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-06-02T08:00:00Z accession=A2406-1820 specimen=Specimen/R65e8938f0b29
+[R9011259a4c45] 2024-09-17 Nursing note (Mina Cho, RN, role nurse):
+    Flu vaccine given, L deltoid.
+    
+    Signed: Mina Cho, RN
+[R1cf945037d5e] 2024-12-12 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-13T08:00:00Z accession=A2412-4892 specimen=Specimen/Rdca12ef79cbb
+[Rdca12ef79cbb] 2024-12-12 SPECIMEN (collection record) accession=A2412-4892 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2024-12-12T10:00:00Z collector=T. Brandt, phlebotomist
+[R42dc6161061a] 2025-12-03 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-12-04T08:00:00Z accession=A2512-5144 specimen=Specimen/R81f77305c9cc
+[R81f77305c9cc] 2025-12-03 SPECIMEN (collection record) accession=A2512-5144 label=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 collected=2025-12-03T10:00:00Z collector=Clinic phlebotomy
+
+==== PATIENT Pe671eb5 Luis Petrakis (male, DOB 1974-09-30, MRN 46859612)
+[Ecd29a05] EpisodeOfCare (diagnosis date 2024-05-07)
+[R13e13920f18d] 2023-01-17 LAB RPR, quantitative: status=final value=Nonreactive issued=2023-01-18T08:00:00Z accession=A2301-4766 specimen=Specimen/Rddeeec07510f
+[R7d00ea8de31a] 2023-01-17 Nursing note (Sam Okafor, LPN, role nurse):
+    Routine STI screen; labs drawn.
+    
+    Signed: Sam Okafor, LPN
+[Rddeeec07510f] 2023-01-17 SPECIMEN (collection record) accession=A2301-4766 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2023-01-17T10:00:00Z collector=T. Brandt, phlebotomist
+[R0789d106f50f] 2024-05-07 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2024-05-08T08:00:00Z accession=A2405-8334 specimen=Specimen/Rcfdc45e66a85
+[R2ac4bb267f7c] 2024-05-07 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Diego Santos, RN note='R ventrogluteal.'
+[R47ead19afa81] 2024-05-07 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-05-08T08:00:00Z accession=A2405-3056 specimen=Specimen/Rd6943964f816
+[R5b7a1f8410c4] 2024-05-07 SPECIMEN (collection record) accession=A2405-4782 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2024-05-07T10:00:00Z collector=Ana Ruiz, RN
+[R96e2c3fe8c05] 2024-05-07 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-05-08T08:00:00Z accession=A2405-4782 specimen=Specimen/R5b7a1f8410c4
+[Rcfdc45e66a85] 2024-05-07 SPECIMEN (collection record) accession=A2405-8334 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2024-05-07T10:00:00Z collector=Sam Okafor, LPN
+[Rd6943964f816] 2024-05-07 SPECIMEN (collection record) accession=A2405-3056 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2024-05-07T10:00:00Z collector=Mina Cho, RN
+[Rff0c4f5e06b6] 2024-05-07 Progress note (Dr. Noah Patel, role clinician):
+    Routine screen. Asymptomatic; denies sores or rash since last visit. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR nonreactive here 1/17/23; now RPR 1:4, TP-PA reactive. No known contact to syphilis. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Noah Patel
+[R2470c9e30af5] 2024-11-21 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-11-22T08:00:00Z accession=A2411-4419 specimen=Specimen/R2d5ad3f94608
+[R2d5ad3f94608] 2024-11-21 SPECIMEN (collection record) accession=A2411-4419 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2024-11-21T10:00:00Z collector=Sam Okafor, LPN
+[R85c651e80ecd] 2025-05-18 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-05-19T08:00:00Z accession=A2505-1753 specimen=Specimen/Rd6c740709e52
+[Rd6c740709e52] 2025-05-18 SPECIMEN (collection record) accession=A2505-1753 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2025-05-18T10:00:00Z collector=Jordan Lee, RN
+[R08c1ad73439c] 2026-05-07 SPECIMEN (collection record) accession=A2605-4965 label=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 collected=2026-05-07T10:00:00Z collector=Sam Okafor, LPN
+[R23e7d55f4042] 2026-05-07 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2026-05-08T08:00:00Z accession=A2605-4965 specimen=Specimen/R08c1ad73439c
+
+==== PATIENT Peaeca49 Stefan Lindgren (male, DOB 1984-05-06, MRN 70790943)
+[Eaeb5761] EpisodeOfCare (diagnosis date 2024-06-10)
+[R8b513b87fdc5] 2023-12-03 SPECIMEN (collection record) accession=A2312-7650 label=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 collected=2023-12-03T10:00:00Z collector=Ana Ruiz, RN
+[Rd76c8825a20e] 2023-12-03 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2023-12-04T08:00:00Z accession=A2312-7650 specimen=Specimen/R8b513b87fdc5
+[R432327542e75] 2024-06-10 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Jordan Lee, RN note='R gluteal, observed 15 min.'
+[R54f2a3bd919a] 2024-06-10 SPECIMEN (collection record) accession=A2406-7453 label=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 collected=2024-06-10T10:00:00Z collector=T. Brandt, phlebotomist
+[R701611860030] 2024-06-10 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-06-11T08:00:00Z accession=A2406-7764 specimen=Specimen/R9af6d2d8150e
+[R839baa0c04c4] 2024-06-10 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-06-11T08:00:00Z accession=A2406-5881 specimen=Specimen/Rac6d33d15ca9
+[R9af6d2d8150e] 2024-06-10 SPECIMEN (collection record) accession=A2406-7764 label=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 collected=2024-06-10T10:00:00Z collector=Sam Okafor, LPN
+[Rac6d33d15ca9] 2024-06-10 SPECIMEN (collection record) accession=A2406-5881 label=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 collected=2024-06-10T10:00:00Z collector=Clinic phlebotomy
+[Racdd1c73f50c] 2024-06-10 New patient visit (Dr. Hana Ito, role clinician):
+    Referred after a reactive screen on routine labs. Denies sores, rash, hair loss or other symptoms in the past year. No prior syphilis testing on record or by history. No known contact to syphilis. Exam: no rash, no genital or oral lesions, no lymphadenopathy. RPR 1:4, TP-PA reactive. HIV neg.
+    Bicillin L-A 2.4 million units IM today; partner notification discussed.
+    
+    Electronically signed: Dr. Hana Ito
+[Re44de93ea8ab] 2024-06-10 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2024-06-11T08:00:00Z accession=A2406-7453 specimen=Specimen/R54f2a3bd919a
+[R6cda73af9d7b] 2024-06-17 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Jordan Lee, RN note='R gluteal, observed 15 min.'
+[Rb57ca1743898] 2024-06-24 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Jordan Lee, RN note='L gluteal, observed 15 min.'
+[R19f4c7284a4d] 2024-12-20 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-21T08:00:00Z accession=A2412-7049 specimen=Specimen/Rf2af721db5d2
+[Rf2af721db5d2] 2024-12-20 SPECIMEN (collection record) accession=A2412-7049 label=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 collected=2024-12-20T10:00:00Z collector=Clinic phlebotomy
+[R75436fd50a0b] 2025-05-31 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-06-01T08:00:00Z accession=A2505-3598 specimen=Specimen/Rbb9149e575e2
+[Rbb9149e575e2] 2025-05-31 SPECIMEN (collection record) accession=A2505-3598 label=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 collected=2025-05-31T10:00:00Z collector=Mina Cho, RN
+
+==== PATIENT Pf10a35a Kenji Zimmer (male, DOB 1976-10-17, MRN 10005014)
+[Ee181052] EpisodeOfCare (diagnosis date 2024-05-04)
+[R570075474743] 2024-01-03 Nursing note (Jordan Lee, RN, role nurse):
+    Flu vaccine given, L deltoid.
+    
+    Signed: Jordan Lee, RN
+[R2cde11563d3b] 2024-05-04 SPECIMEN (collection record) accession=A2405-8860 label=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 collected=2024-05-04T10:00:00Z collector=Sam Okafor, LPN
+[R380fc55787d9] 2024-05-04 SPECIMEN (collection record) accession=A2405-9661 label=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 collected=2024-05-04T10:00:00Z collector=T. Brandt, phlebotomist
+[R4454b08a95f6] 2024-05-04 LAB Treponema pallidum antibody (TP-PA): status=final value=Reactive issued=2024-05-05T08:00:00Z accession=A2405-3324 specimen=Specimen/R78d7ded4bca4
+[R6e4ec680c60d] 2024-05-04 LAB RPR, quantitative: status=final value=Reactive 1:4 issued=2024-05-05T08:00:00Z accession=A2405-8860 specimen=Specimen/R2cde11563d3b
+[R78d7ded4bca4] 2024-05-04 SPECIMEN (collection record) accession=A2405-3324 label=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 collected=2024-05-04T10:00:00Z collector=T. Brandt, phlebotomist
+[R884dc6ba1d0b] 2024-05-04 LAB HIV-1/2 Ag/Ab: status=final value=Nonreactive issued=2024-05-05T08:00:00Z accession=A2405-9661 specimen=Specimen/R380fc55787d9
+[Rca9eb2af1392] 2024-05-04 Progress note (Dr. Priya Raman, role clinician):
+    Pre-employment labs: reactive treponemal test. No symptoms now or over the past year per pt. No earlier syphilis serology that pt knows of; no partner known to have syphilis. Exam: no rash, lesions or adenopathy. RPR 1:4, TP-PA reactive. HIV neg.
+    Plan: Bicillin L-A 2.4 MU IM today. Partner referral given.
+    
+    Electronically signed: Dr. Priya Raman
+[Rf3952b01d214] 2024-05-04 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Diego Santos, RN note='R gluteal.'
+[Rf849a59173ff] 2024-05-11 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Diego Santos, RN note='R gluteal, observed 15 min.'
+[Ra15f9db5ade1] 2024-05-18 ADMIN Bicillin L-A (benzathine penicillin G) 2.4 million units IM status=completed by Diego Santos, RN note='L ventrogluteal, observed 15 min.'
+[R8d9facf3db6b] 2024-11-20 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-11-21T08:00:00Z accession=A2411-1655 specimen=Specimen/R99156a49be97
+[R99156a49be97] 2024-11-20 SPECIMEN (collection record) accession=A2411-1655 label=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 collected=2024-11-20T10:00:00Z collector=Clinic phlebotomy
+[R3e6fac34b91a] 2025-05-15 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-05-16T08:00:00Z accession=A2505-4122 specimen=Specimen/R556eb4e14e1a
+[R556eb4e14e1a] 2025-05-15 SPECIMEN (collection record) accession=A2505-4122 label=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 collected=2025-05-15T10:00:00Z collector=Clinic phlebotomy
+
+==== LABORATORY ACCESSIONING LOG (clinic-level; entries for the accessions above)
+[R0017da525c72] 2024-06-10 ACCESSIONING accession=A2406-4394 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by J. Ferris, MLT received=2024-06-10T13:00:00Z
+[R014ae32a84e5] 2024-07-14 ACCESSIONING accession=A2407-8762 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by J. Ferris, MLT received=2024-07-14T13:00:00Z
+[R03c3e481ce63] 2023-12-05 ACCESSIONING accession=A2312-1787 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by M. Ortiz, MLS received=2023-12-05T13:00:00Z
+[R070a7bd6aae1] 2026-03-31 ACCESSIONING accession=A2603-1113 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by S. Walsh, MLS received=2026-03-31T13:00:00Z
+[R0742cf55edbd] 2024-06-14 ACCESSIONING accession=A2406-4318 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by M. Ortiz, MLS received=2024-06-14T13:00:00Z
+[R0841d6882a3f] 2026-06-12 ACCESSIONING accession=A2606-6724 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by M. Ortiz, MLS received=2026-06-12T13:00:00Z
+[R08a78a55f987] 2024-09-18 ACCESSIONING accession=A2409-4513 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by S. Walsh, MLS received=2024-09-18T13:00:00Z
+[R136cb96ee95a] 2024-02-07 ACCESSIONING accession=A2402-8990 patient=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 entered by R. Chen, MLS received=2024-02-07T13:00:00Z
+[R14dafb52c54c] 2024-12-19 ACCESSIONING accession=A2412-1262 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by J. Ferris, MLT received=2024-12-19T13:00:00Z
+[R1c8b3653e72f] 2024-12-10 ACCESSIONING accession=A2412-6572 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by R. Chen, MLS received=2024-12-10T13:00:00Z
+[R1f2e0721541d] 2024-06-15 ACCESSIONING accession=A2406-3256 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by K. Dube, MLT received=2024-06-15T13:00:00Z
+[R1fe2bb60999e] 2024-07-29 ACCESSIONING accession=A2407-4867 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by K. Dube, MLT received=2024-07-29T13:00:00Z
+[R218c8f1c557b] 2024-06-01 ACCESSIONING accession=A2406-1820 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by R. Chen, MLS received=2024-06-01T13:00:00Z
+[R239674a490a1] 2024-05-07 ACCESSIONING accession=A2405-3056 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by S. Walsh, MLS received=2024-05-07T13:00:00Z
+[R24761c7dbf5b] 2025-04-30 ACCESSIONING accession=A2504-7075 patient=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 entered by S. Walsh, MLS received=2025-04-30T13:00:00Z
+[R264cb458ffa7] 2024-06-10 ACCESSIONING accession=A2406-2659 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by J. Ferris, MLT received=2024-06-10T13:00:00Z
+[R27e30cacc91c] 2024-03-25 ACCESSIONING accession=A2403-3484 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by R. Chen, MLS received=2024-03-25T13:00:00Z
+[R28165f26d6ae] 2024-08-12 ACCESSIONING accession=A2408-9873 patient=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 entered by J. Ferris, MLT received=2024-08-12T13:00:00Z
+[R282e2b990062] 2024-07-29 ACCESSIONING accession=A2407-7732 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by J. Ferris, MLT received=2024-07-29T13:00:00Z
+[R2d4a351d3a05] 2023-12-03 ACCESSIONING accession=A2312-7650 patient=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 entered by J. Ferris, MLT received=2023-12-03T13:00:00Z
+[R2e1d5e6abcc7] 2024-02-07 ACCESSIONING accession=A2402-7445 patient=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 entered by R. Chen, MLS received=2024-02-07T13:00:00Z
+[R311a3f2180db] 2024-03-26 ACCESSIONING accession=A2403-9391 patient=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 entered by K. Dube, MLT received=2024-03-26T13:00:00Z
+[R35e0a5474567] 2024-06-14 ACCESSIONING accession=A2406-5627 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by J. Ferris, MLT received=2024-06-14T13:00:00Z
+[R35f5380aaa85] 2025-05-06 ACCESSIONING accession=A2505-3172 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by S. Walsh, MLS received=2025-05-06T13:00:00Z
+[R37c0c1837073] 2026-05-07 ACCESSIONING accession=A2605-4965 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by K. Dube, MLT received=2026-05-07T13:00:00Z
+[R39542609ddbe] 2025-02-12 ACCESSIONING accession=A2502-9254 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by J. Ferris, MLT received=2025-02-12T13:00:00Z
+[R397d0dc42bc8] 2025-06-08 ACCESSIONING accession=A2506-6246 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by S. Walsh, MLS received=2025-06-08T13:00:00Z
+[R3a3e585c7b24] 2024-11-21 ACCESSIONING accession=A2411-4419 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by K. Dube, MLT received=2024-11-21T13:00:00Z
+[R4457ab962f22] 2026-03-16 ACCESSIONING accession=A2603-9774 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by M. Ortiz, MLS received=2026-03-16T13:00:00Z
+[R486289f9258f] 2025-05-18 ACCESSIONING accession=A2505-1753 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by K. Dube, MLT received=2025-05-18T13:00:00Z
+[R4a42c6181b1e] 2024-06-15 ACCESSIONING accession=A2406-2104 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by R. Chen, MLS received=2024-06-15T13:00:00Z
+[R4b982a42b533] 2026-05-25 ACCESSIONING accession=A2605-3946 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by K. Dube, MLT received=2026-05-25T13:00:00Z
+[R4c947c88d12d] 2025-06-23 ACCESSIONING accession=A2506-7161 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by K. Dube, MLT received=2025-06-23T13:00:00Z
+[R4edf57f2a819] 2024-05-20 ACCESSIONING accession=A2405-9679 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by K. Dube, MLT received=2024-05-20T13:00:00Z
+[R4f95354429be] 2024-05-20 ACCESSIONING accession=A2405-9074 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by J. Ferris, MLT received=2024-05-20T13:00:00Z
+[R524165664ace] 2024-07-14 ACCESSIONING accession=A2407-7639 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by R. Chen, MLS received=2024-07-14T13:00:00Z
+[R52a3bd95e373] 2025-01-10 ACCESSIONING accession=A2501-1916 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by K. Dube, MLT received=2025-01-10T13:00:00Z
+[R52d4109fbfb9] 2023-11-29 ACCESSIONING accession=A2311-1333 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by K. Dube, MLT received=2023-11-29T13:00:00Z
+[R5336ac2f4333] 2024-05-23 ACCESSIONING accession=A2405-8547 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by M. Ortiz, MLS received=2024-05-23T13:00:00Z
+[R53c13ab5a01c] 2024-06-10 ACCESSIONING accession=A2406-7764 patient=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 entered by J. Ferris, MLT received=2024-06-10T13:00:00Z
+[R56855dc10d42] 2023-11-29 ACCESSIONING accession=A2311-7029 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by R. Chen, MLS received=2023-11-29T13:00:00Z
+[R575a1d6293de] 2024-12-04 ACCESSIONING accession=A2412-7612 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by K. Dube, MLT received=2024-12-04T13:00:00Z
+[R5842d675d429] 2024-06-14 ACCESSIONING accession=A2406-1944 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by K. Dube, MLT received=2024-06-14T13:00:00Z
+[R5c7c7ebdc046] 2025-01-26 ACCESSIONING accession=A2501-1378 patient=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 entered by K. Dube, MLT received=2025-01-26T13:00:00Z
+[R621496e99bbf] 2024-12-20 ACCESSIONING accession=A2412-7049 patient=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 entered by S. Walsh, MLS received=2024-12-20T13:00:00Z
+[R66ec6933237d] 2024-03-26 ACCESSIONING accession=A2403-3579 patient=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 entered by S. Walsh, MLS received=2024-03-26T13:00:00Z
+[R6b9a5982de13] 2026-06-03 ACCESSIONING accession=A2606-7239 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by R. Chen, MLS received=2026-06-03T13:00:00Z
+[R728fb21cff94] 2024-05-04 ACCESSIONING accession=A2405-9661 patient=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 entered by M. Ortiz, MLS received=2024-05-04T13:00:00Z
+[R75e6e60350a5] 2024-05-07 ACCESSIONING accession=A2405-4782 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by M. Ortiz, MLS received=2024-05-07T13:00:00Z
+[R771772aaad53] 2024-11-30 ACCESSIONING accession=A2411-2529 patient=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 entered by K. Dube, MLT received=2024-11-30T13:00:00Z
+[R7a1174933ed4] 2024-05-20 ACCESSIONING accession=A2405-1676 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by R. Chen, MLS received=2024-05-20T13:00:00Z
+[R7ab40b78ae9f] 2024-06-16 ACCESSIONING accession=A2406-9693 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by S. Walsh, MLS received=2024-06-16T13:00:00Z
+[R7bff56b8ac90] 2026-06-12 ACCESSIONING accession=A2606-5434 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by R. Chen, MLS received=2026-06-12T13:00:00Z
+[R7c23ddb95640] 2024-05-16 ACCESSIONING accession=A2405-9035 patient=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 entered by S. Walsh, MLS received=2024-05-16T13:00:00Z
+[R7cd9f00cc373] 2024-07-13 ACCESSIONING accession=A2407-2863 patient=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 entered by R. Chen, MLS received=2024-07-13T13:00:00Z
+[R814a0ac1f794] 2024-03-07 ACCESSIONING accession=A2403-6550 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by R. Chen, MLS received=2024-03-07T13:00:00Z
+[R885680488ba3] 2023-01-17 ACCESSIONING accession=A2301-4766 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by R. Chen, MLS received=2023-01-17T13:00:00Z
+[R88934c43162d] 2024-02-07 ACCESSIONING accession=A2402-8736 patient=KEARNEY, VICTOR MRN 37454042 DOB 1976-09-19 entered by K. Dube, MLT received=2024-02-07T13:00:00Z
+[R8a282758b8f3] 2024-05-23 ACCESSIONING accession=A2405-8763 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by K. Dube, MLT received=2024-05-23T13:00:00Z
+[R8f6efde33516] 2024-05-23 ACCESSIONING accession=A2405-5218 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by J. Ferris, MLT received=2024-05-23T13:00:00Z
+[R904ae2d70fdd] 2024-06-14 ACCESSIONING accession=A2406-5371 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by R. Chen, MLS received=2024-06-14T13:00:00Z
+[R944706eb6dae] 2024-09-18 ACCESSIONING accession=A2409-1435 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by M. Ortiz, MLS received=2024-09-18T13:00:00Z
+[R947151bc124f] 2024-06-15 ACCESSIONING accession=A2406-5696 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by K. Dube, MLT received=2024-06-15T13:00:00Z
+[R9623ebfd31e2] 2024-05-20 ACCESSIONING accession=A2405-2774 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by S. Walsh, MLS received=2024-05-20T13:00:00Z
+[R974d8f566041] 2025-07-27 ACCESSIONING accession=A2507-5341 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by J. Ferris, MLT received=2025-07-27T13:00:00Z
+[R97ae38863a14] 2024-11-27 ACCESSIONING accession=A2411-5446 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by M. Ortiz, MLS received=2024-11-27T13:00:00Z
+[R997f720c40b3] 2023-12-05 ACCESSIONING accession=A2312-6928 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by R. Chen, MLS received=2023-12-05T13:00:00Z
+[Ra365ecf7f7cc] 2024-07-29 ACCESSIONING accession=A2407-5707 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by K. Dube, MLT received=2024-07-29T13:00:00Z
+[Ra410102f953e] 2025-12-12 ACCESSIONING accession=A2512-5239 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by K. Dube, MLT received=2025-12-12T13:00:00Z
+[Ra497bb7ae006] 2024-03-01 ACCESSIONING accession=A2403-9148 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by R. Chen, MLS received=2024-03-01T13:00:00Z
+[Ra79cd37cc0bf] 2025-01-22 ACCESSIONING accession=A2501-5586 patient=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 entered by M. Ortiz, MLS received=2025-01-22T13:00:00Z
+[Ra7c1c3124699] 2024-05-07 ACCESSIONING accession=A2405-8334 patient=PETRAKIS, LUIS MRN 46859612 DOB 1974-09-30 entered by J. Ferris, MLT received=2024-05-07T13:00:00Z
+[Ra90cc980ce26] 2024-01-08 ACCESSIONING accession=A2401-7027 patient=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 entered by K. Dube, MLT received=2024-01-08T13:00:00Z
+[Ra971acee8856] 2024-06-10 ACCESSIONING accession=A2406-4143 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by S. Walsh, MLS received=2024-06-10T13:00:00Z
+[Rabb8cc02caa4] 2025-05-15 ACCESSIONING accession=A2505-4122 patient=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 entered by S. Walsh, MLS received=2025-05-15T13:00:00Z
+[Racd67c33aba7] 2025-02-06 ACCESSIONING accession=A2502-5293 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by M. Ortiz, MLS received=2025-02-06T13:00:00Z
+[Racf051af6bba] 2025-07-15 ACCESSIONING accession=A2507-3713 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by M. Ortiz, MLS received=2025-07-15T13:00:00Z
+[Rae53e1245750] 2025-03-05 ACCESSIONING accession=A2503-8010 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by M. Ortiz, MLS received=2025-03-05T13:00:00Z
+[Rae9a491685aa] 2023-12-05 ACCESSIONING accession=A2312-7418 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by S. Walsh, MLS received=2023-12-05T13:00:00Z
+[Rb0812c6f1ea6] 2024-12-21 ACCESSIONING accession=A2412-1172 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by K. Dube, MLT received=2024-12-21T13:00:00Z
+[Rb4e4d4b466da] 2023-08-05 ACCESSIONING accession=A2308-4176 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by M. Ortiz, MLS received=2023-08-05T13:00:00Z
+[Rbfb914cf649d] 2023-09-04 ACCESSIONING accession=A2309-8762 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by J. Ferris, MLT received=2023-09-04T13:00:00Z
+[Rc00c191cd177] 2024-11-20 ACCESSIONING accession=A2411-1655 patient=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 entered by K. Dube, MLT received=2024-11-20T13:00:00Z
+[Rc2ee1826481c] 2024-05-04 ACCESSIONING accession=A2405-3324 patient=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 entered by K. Dube, MLT received=2024-05-04T13:00:00Z
+[Rc2f09a2b176d] 2024-09-13 ACCESSIONING accession=A2409-8377 patient=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 entered by S. Walsh, MLS received=2024-09-13T13:00:00Z
+[Rc3917e6f5fa3] 2026-05-30 ACCESSIONING accession=A2605-6070 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by S. Walsh, MLS received=2026-05-30T13:00:00Z
+[Rc3e370ba401c] 2025-06-13 ACCESSIONING accession=A2506-5583 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by J. Ferris, MLT received=2025-06-13T13:00:00Z
+[Rc774b856ec99] 2024-05-16 ACCESSIONING accession=A2405-7340 patient=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 entered by J. Ferris, MLT received=2024-05-16T13:00:00Z
+[Rc7d0f123977a] 2024-03-01 ACCESSIONING accession=A2403-4941 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by K. Dube, MLT received=2024-03-01T13:00:00Z
+[Rcb5f17736adc] 2022-10-17 ACCESSIONING accession=A2210-4781 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by J. Ferris, MLT received=2022-10-17T13:00:00Z
+[Rcbc1d7f50b37] 2024-03-26 ACCESSIONING accession=A2403-4378 patient=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 entered by S. Walsh, MLS received=2024-03-26T13:00:00Z
+[Rcc3db78de0fd] 2026-07-14 ACCESSIONING accession=A2607-8769 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by J. Ferris, MLT received=2026-07-14T13:00:00Z
+[Rcd0c59671b68] 2025-10-19 ACCESSIONING accession=A2510-5511 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by J. Ferris, MLT received=2025-10-19T13:00:00Z
+[Rcd0e225f15a1] 2022-08-01 ACCESSIONING accession=A2208-1712 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by R. Chen, MLS received=2022-08-01T13:00:00Z
+[Rcec4dc037aa8] 2024-03-01 ACCESSIONING accession=A2403-9251 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by R. Chen, MLS received=2024-03-01T13:00:00Z
+[Rcf4c8789cc42] 2024-07-29 ACCESSIONING accession=A2407-5682 patient=OKONKWO, PAIGE MRN 66012721 DOB 1993-02-12 entered by M. Ortiz, MLS received=2024-07-29T13:00:00Z
+[Rd02274bea5fd] 2024-12-12 ACCESSIONING accession=A2412-4892 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by J. Ferris, MLT received=2024-12-12T13:00:00Z
+[Rd1e1de315c49] 2024-03-25 ACCESSIONING accession=A2403-2076 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by M. Ortiz, MLS received=2024-03-25T13:00:00Z
+[Rd724c222d704] 2025-05-30 ACCESSIONING accession=A2505-4967 patient=DALTON, EMMANUEL MRN 20017108 DOB 1991-01-19 entered by S. Walsh, MLS received=2025-05-30T13:00:00Z
+[Rdc3cb8326cfd] 2026-07-23 ACCESSIONING accession=A2607-6250 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by J. Ferris, MLT received=2026-07-23T13:00:00Z
+[Rdcc3dbed5f85] 2024-01-08 ACCESSIONING accession=A2401-2469 patient=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 entered by K. Dube, MLT received=2024-01-08T13:00:00Z
+[Rdef737577705] 2025-03-22 ACCESSIONING accession=A2503-6351 patient=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 entered by S. Walsh, MLS received=2025-03-22T13:00:00Z
+[Rdf19855b4476] 2024-03-25 ACCESSIONING accession=A2403-5328 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by R. Chen, MLS received=2024-03-25T13:00:00Z
+[Re39004a4970c] 2025-06-16 ACCESSIONING accession=A2506-5436 patient=WEBBER, JOY MRN 26403994 DOB 1994-07-09 entered by S. Walsh, MLS received=2025-06-16T13:00:00Z
+[Re4c6ed771a0a] 2024-05-04 ACCESSIONING accession=A2405-8860 patient=ZIMMER, KENJI MRN 10005014 DOB 1976-10-17 entered by K. Dube, MLT received=2024-05-04T13:00:00Z
+[Re526a2b49c19] 2024-07-14 ACCESSIONING accession=A2407-8153 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by M. Ortiz, MLS received=2024-07-14T13:00:00Z
+[Re5bd47e6cec7] 2024-05-16 ACCESSIONING accession=A2405-7306 patient=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 entered by M. Ortiz, MLS received=2024-05-16T13:00:00Z
+[Re61e239752fd] 2025-05-31 ACCESSIONING accession=A2505-3598 patient=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 entered by R. Chen, MLS received=2025-05-31T13:00:00Z
+[Re6b0e5b2762e] 2024-06-10 ACCESSIONING accession=A2406-5881 patient=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 entered by R. Chen, MLS received=2024-06-10T13:00:00Z
+[Re6d2b673098a] 2024-07-14 ACCESSIONING accession=A2407-1714 patient=GRIMES, IRIS MRN 93618668 DOB 1988-06-23 entered by R. Chen, MLS received=2024-07-14T13:00:00Z
+[Re70b13d6d8c8] 2024-03-26 ACCESSIONING accession=A2403-4672 patient=ALVARADO, PRISCILLA MRN 43425645 DOB 1983-08-09 entered by M. Ortiz, MLS received=2024-03-26T13:00:00Z
+[Re8f1574a43dc] 2025-03-30 ACCESSIONING accession=A2503-8917 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by R. Chen, MLS received=2025-03-30T13:00:00Z
+[Re950706b21f8] 2023-12-05 ACCESSIONING accession=A2312-4972 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by S. Walsh, MLS received=2023-12-05T13:00:00Z
+[Re98fc10d1078] 2024-03-25 ACCESSIONING accession=A2403-4761 patient=CHOWDHURY, ERIN MRN 97915236 DOB 1994-11-26 entered by K. Dube, MLT received=2024-03-25T13:00:00Z
+[Re9bc97ab8e26] 2024-06-10 ACCESSIONING accession=A2406-8433 patient=PETRAKIS, MONIQUE MRN 40962333 DOB 1989-10-07 entered by K. Dube, MLT received=2024-06-10T13:00:00Z
+[Re9c67c3734b2] 2024-03-07 ACCESSIONING accession=A2403-2362 patient=YAMAMOTO, LAMAR MRN 30585933 DOB 1982-05-04 entered by M. Ortiz, MLS received=2024-03-07T13:00:00Z
+[Re9fab30c1a97] 2024-11-08 ACCESSIONING accession=A2411-8389 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by S. Walsh, MLS received=2024-11-08T13:00:00Z
+[Rebe718c13a8a] 2024-01-08 ACCESSIONING accession=A2401-9845 patient=SOKOLOV, ROSA MRN 68801392 DOB 1969-03-27 entered by K. Dube, MLT received=2024-01-08T13:00:00Z
+[Reeca3595281a] 2026-06-20 ACCESSIONING accession=A2606-4021 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by K. Dube, MLT received=2026-06-20T13:00:00Z
+[Rf17a6051af03] 2025-05-14 ACCESSIONING accession=A2505-1913 patient=THIBODEAUX, FARAH MRN 18553249 DOB 2006-08-30 entered by M. Ortiz, MLS received=2025-05-14T13:00:00Z
+[Rf5dbef3e5226] 2024-06-10 ACCESSIONING accession=A2406-7453 patient=LINDGREN, STEFAN MRN 70790943 DOB 1984-05-06 entered by K. Dube, MLT received=2024-06-10T13:00:00Z
+[Rf8217f5184ff] 2024-03-01 ACCESSIONING accession=A2403-1763 patient=FARROW, MAYA MRN 41494349 DOB 1995-05-04 entered by R. Chen, MLS received=2024-03-01T13:00:00Z
+[Rf9648804b6df] 2025-12-03 ACCESSIONING accession=A2512-5144 patient=WHITAKER, CELESTE MRN 51149631 DOB 1986-03-24 entered by S. Walsh, MLS received=2025-12-03T13:00:00Z
+[Rfa027ed3297d] 2024-06-15 ACCESSIONING accession=A2406-1021 patient=ZIMMER, IMOGEN MRN 37794597 DOB 2002-10-26 entered by R. Chen, MLS received=2024-06-15T13:00:00Z
+[Rfb7068edeaab] 2023-11-29 ACCESSIONING accession=A2311-4908 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by S. Walsh, MLS received=2023-11-29T13:00:00Z
+[Rfcca29b2e710] 2023-11-29 ACCESSIONING accession=A2311-3629 patient=TANAKA, YVETTE MRN 62039853 DOB 1984-12-04 entered by M. Ortiz, MLS received=2023-11-29T13:00:00Z
+
+==== REVIEW REQUESTS (for these patients)
+[Ref86824a9fd1] Patient/P983d9c9 EpisodeOfCare/E9b3a323 issue FOLLOW_UP_OVERDUE: Registry audit: follow-up serology not found for a due interval. Please review.

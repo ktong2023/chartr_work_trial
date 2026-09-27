@@ -154,7 +154,7 @@ class Chart:
 
 # ------------------------------------------------------------------------------------------------ building blocks
 
-def diagnose(c, stage, recorded=True, clinician=None, pregnant_test=True, evidence=True):
+def diagnose(c, stage, clinician=None, pregnant_test=True, evidence=True):
     """Diagnostic labs, staging entry and intake note for an episode diagnosed on c.dx."""
     g, dx = c.g, c.dx
     doc = clinician or g.pick(CLIN)
@@ -190,8 +190,7 @@ def diagnose(c, stage, recorded=True, clinician=None, pregnant_test=True, eviden
     else:
         text = text.format(titer)
     c.note(dx, 'clinician', doc, g.pick(['Progress note', 'New patient visit', 'STI clinic visit']), text)
-    if recorded:
-        c.records.append(('condition', dx, g.pick(STAGE_TEXT[stage]), doc))
+    c.records.append(('condition', dx, g.pick(STAGE_TEXT[stage]), doc))
     c.facts['stage'] = stage
     return doc
 
@@ -225,7 +224,8 @@ def followups(c, anchor, stage, skip=(), open_extra=0.3):
         if D(hi) < EVALD:
             if m not in skip:
                 day = plus(due, g.rng.randint(-18, 18))
-                c.rpr(day, titer if titer > 1 else g.pick([1, 'NR']))
+                # Nonreactive only at the last scheduled test: no answer may rest on a test missed after seroreversion.
+                c.rpr(day, titer if titer > 1 else (lambda v: v if m == schedule(stage)[-1] else 1)(g.pick([1, 'NR'])))
                 titer = max(1, titer // 2)
         elif D(lo) < EVALD - dt.timedelta(days=10) and m not in skip and g.rng.random() < open_extra:
             c.rpr(g.date_between(lo, plus(EVAL, -4)), max(1, titer))
@@ -574,7 +574,7 @@ def f6_correction(g, variant):
             spec = g.date_between(lo_a, plus(lo_c, -2))
         else:                             # disputed: fits only the charted anchor
             spec = g.date_between(lo_c, plus(lo_a, -2))
-        c.rpr(spec, max(1, c.titer // 16) if c.titer > 8 else 'NR')
+        c.rpr(spec, max(1, c.titer // 16))      # reactive: it may precede a missed window
         if variant == 'dispute':
             author = g.pick([x for x in CLIN])
             c.note(plus(actual, g.rng.randint(1, 20)), 'clinician', author, 'Progress note', g.pick([
@@ -687,10 +687,10 @@ def f7_outside_first_dose(g, variant):
         c.gaps['outside_received'] = (ADQ, FUP)
     else:  # 'unreceived' / 'unreceived-both': patient reports an ED dose; clinic treats anyway
         c.note(visit, 'clinician', g.pick(CLIN), 'Progress note', g.pick([
-            f'Pt reports she/he was seen at {facility} ~{c.d(ed_day)} and "got a shot in the butt", no paperwork. Records '
+            f'Pt reports being seen at {facility} ~{c.d(ed_day)} and "got a shot in the butt", no paperwork. Records '
             'requested. Unable to confirm, so Bicillin given today.',
             f'States treated at {facility} on {c.d(ed_day)}; ROI faxed for ED records. Giving BPG 2.4 MU today given '
-            'uncertainty.']).replace('she/he', 'they'))
+            'uncertainty.']))
         give(c, visit)
         lo6, hi6 = window(visit, 6)[1], window(ed_day, 6)[2]
         c.rpr(g.date_between(lo6, hi6), max(1, c.titer // 4))
@@ -764,33 +764,73 @@ def followups_after(c):
             c.rpr(plus(due, c.g.rng.randint(-10, 10)), max(1, getattr(c, 'titer', 8) // 8))
 
 
+# Stage-inference intake notes: examination and history only. No stage is named, and nothing else in these charts
+# (no diagnosis-list entry, plan, order or follow-up note) names or schedules by stage.
+F3_SECONDARY = [
+    'c/o rash x {d} days, not itchy. Exam: diffuse maculopapular rash on trunk, palms and soles; mucous patches on the '
+    'tongue; shotty cervical and inguinal nodes. RPR 1:{t}, TP-PA reactive. HIV neg.',
+    'Rash for {d} days involving palms and soles, moist papules in the perianal area, patchy alopecia. RPR 1:{t}, '
+    'treponemal reactive. HIV Ag/Ab nonreactive.',
+    '{d} days of non-pruritic papulosquamous rash including palms and soles, sore throat, malaise. Mucous patches on '
+    'buccal mucosa, generalized lymphadenopathy. RPR 1:{t}; TP-PA reactive. HIV neg.']
+F3_NO_PRIOR = [
+    'Referred after a reactive screen on routine labs. Denies sores, rash, hair loss or other symptoms in the past year. '
+    'No prior syphilis testing on record or by history. No known contact to syphilis. Exam: no rash, no genital or oral '
+    'lesions, no lymphadenopathy. RPR 1:{t}, TP-PA reactive. HIV neg.',
+    'Reactive syphilis screen at blood donation. Asymptomatic; recalls no ulcer or rash. Never tested before. Unaware of '
+    'any partner diagnosis. Exam unremarkable, skin and mucosa clear. RPR 1:{t}, treponemal reactive. HIV Ag/Ab nonreactive.',
+    'Pre-employment labs: reactive treponemal test. No symptoms now or over the past year per pt. No earlier syphilis '
+    'serology that pt knows of; no partner known to have syphilis. Exam: no rash, lesions or adenopathy. RPR 1:{t}, '
+    'TP-PA reactive. HIV neg.']
+F3_PRIOR = [
+    'Routine screen. Asymptomatic; denies sores or rash since last visit. Exam: no rash, no genital or oral lesions, no '
+    'lymphadenopathy. RPR nonreactive here {p}; now RPR 1:{t}, TP-PA reactive. No known contact to syphilis. HIV neg.',
+    'Screening visit, no symptoms. Last syphilis screen at this clinic {p} was nonreactive. Today RPR 1:{t}, treponemal '
+    'reactive. Exam without rash or lesions. Unaware of any partner diagnosis. HIV Ag/Ab nonreactive.']
+
+
 def f3_stage_inference(g, variant):
-    """No staging entry: the clinical description sets the stage, which sets adequacy and the 24-month test."""
+    """No stage anywhere in the chart: the examination and testing history set it (CDC 2021), and the stage sets
+    adequacy and whether a 24-month test is due. `early1` / `lapsed1` are matched: they differ only in whether the
+    prior nonreactive test falls within the 12 months before diagnosis (documented seroconversion -> early latent)."""
     first = anchor_for(g, [24])
     c = Chart(g, 'F3_stage_inference', variant, dx=first)
-    if variant == 'secondary':
-        diagnose(c, 'secondary', recorded=False)
-        give(c, first)
-        followups(c, first, 'secondary', open_extra=0.0)
-        c.facts['stage_recorded'] = False
-        c.wrong.update(fill_stage=dict(stage='late_latent'), default_late=dict(stage='late_latent'))
-        kind(c, ADQ='inference', FUP='inference')
-    elif variant == 'latent3':
-        diagnose(c, 'late_latent', recorded=False)
+    stage = {'secondary': 'secondary', 'early1': 'early_latent'}.get(variant, 'late_latent')
+    c.titer = g.pick(TITER[stage] if variant not in ('early1', 'lapsed1') else [4, 8, 16])
+    doc = g.pick(CLIN)
+    if variant in ('early1', 'lapsed1'):
+        prior = plus(first, -g.rng.randint(90, 270) if variant == 'early1' else -g.rng.randint(460, 670))
+        c.note(prior, 'nurse', g.pick(NURSES), 'Nursing note', g.pick(['Routine STI screen; labs drawn.', 'Screening labs drawn per protocol.']))
+        c.rpr(prior, 'NR')
+        text = g.pick(F3_PRIOR).format(p=c.d(prior), t=c.titer)
+    elif variant == 'secondary':
+        text = g.pick(F3_SECONDARY).format(d=g.rng.randint(8, 25), t=c.titer)
+    else:
+        text = g.pick(F3_NO_PRIOR).format(t=c.titer)
+    c.records.append(('lab', first, 'HIV-1/2 Ag/Ab', 'Nonreactive'))
+    c.records.append(('trep', first, 'reactive'))
+    c.rpr(first, c.titer)
+    if c.sex == 'female' and 17 < (EVALD - D(c.dob)).days / 365 < 50:
+        c.records.append(('hcg', first, 'negative', {}))
+    c.note(first, 'clinician', doc, g.pick(['Progress note', 'New patient visit', 'STI clinic visit']),
+           text + '\n' + g.pick(['Plan: Bicillin L-A 2.4 MU IM today. Partner referral given.',
+                                 'Bicillin L-A 2.4 million units IM today; partner notification discussed.']))
+    c.facts.update(stage=stage, stage_recorded=False)
+    if variant == 'latent3':
         treat(c, 'late_latent', first, gaps=[7, 7])
-        followups(c, first, 'late_latent', skip=(24,), open_extra=0.0)
-        c.facts['stage_recorded'] = False
-        c.wrong['fill_stage'] = dict(stage='early_latent')
+        followups(c, first, stage, skip=(24,), open_extra=0.0)
         expect(c, FUP=('confirmed', None))
         kind(c, ADQ='relevance', FUP='inference')
-    else:  # latent1
-        diagnose(c, 'late_latent', recorded=False)
+    else:
         give(c, first)
-        followups(c, first, 'late_latent', open_extra=0.0)
-        c.facts['stage_recorded'] = False
-        c.wrong['fill_stage'] = dict(stage='early_latent')
-        expect(c, ADQ=('confirmed', None))
-        kind(c, ADQ='inference')
+        followups(c, first, stage, open_extra=0.0)
+        if variant in ('latent1', 'lapsed1'):
+            expect(c, ADQ=('confirmed', None))
+        kind(c, ADQ='inference', **({'FUP': 'inference'} if variant == 'secondary' else {}))
+    wrong = 'late_latent' if variant in ('secondary', 'early1') else 'early_latent'
+    c.wrong['fill_stage'] = dict(stage=wrong)
+    if wrong == 'late_latent':
+        c.wrong['default_late'] = dict(stage='late_latent')
     c.gaps['stage_unrecorded'] = (ADQ, FUP)
     noise(c)
     return [c]
@@ -888,8 +928,8 @@ def single(g, variant):
         c.records.append(('outside', plus(c.dx, 22), clinic,
                           f'{clinic.upper()} - MEDICATION ADMINISTRATION RECORD\nPatient: {c.label}  DOB {c.d(c.dob)}\n{rows}'))
         c.note(plus(c.dx, g.rng.randint(40, 90)), 'nurse', g.pick(NURSES), 'Telephone encounter', g.pick([
-            f'Pt says {clinic} only gave one more shot, not two.' if complete else f'Pt states she/he finished all three shots; the last two were at {clinic}.',
-            f'Per pt, only one injection was given at {clinic}.' if complete else f'Pt reports series completed at {clinic}.']).replace('she/he', 'they'))
+            f'Pt says {clinic} only gave one more shot, not two.' if complete else f'Pt states they finished all three shots; the last two were at {clinic}.',
+            f'Per pt, only one injection was given at {clinic}.' if complete else f'Pt reports series completed at {clinic}.']))
         doses = [(c.dx, 'bpg'), (plus(c.dx, 7), 'bpg')] + ([(plus(c.dx, 14), 'bpg')] if complete else [])
         c.facts['doses'] = doses
         c.wrong['latest_wins'] = dict(doses=doses[:2] if complete else doses + [(plus(c.dx, 14), 'bpg')])
@@ -974,7 +1014,7 @@ PLAN = (
                                                 ('received-conflict-ok', 4), ('received-conflict-late', 4))] +
     [(f9_delivery, v, n) for v, n in (('hospital-ok', 5), ('hospital-late', 5), ('unreceived', 4))] +
     [(single, v, 3) for v in ('outside_conflict_complete', 'outside_conflict_incomplete')] +
-    [(f3_stage_inference, v, n) for v, n in (('secondary', 5), ('latent3', 5), ('latent1', 3))] +
+    [(f3_stage_inference, v, n) for v, n in (('secondary', 5), ('latent3', 4), ('latent1', 3), ('early1', 3), ('lapsed1', 3))] +
     [(single, v, 2) for v in ('overdue', 'gap16', 'untreated', 'pending_fu', 'rejected', 'unknown_duration1',
                               'outside_unreceived', 'outside_received', 'name_change', 'pep')]
 )

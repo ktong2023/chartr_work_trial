@@ -3,7 +3,7 @@ artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
 name = "chartr/cohort-audit"
-version = "0.2.0"
+version = "0.2.1"
 description = "Audit a syphilis-care cohort for defined issues with calibrated abstention"
 
 [agent]
