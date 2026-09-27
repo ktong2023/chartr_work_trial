@@ -1,0 +1,1 @@
+Review follow-up for every target episode returned by `clinic patients`, as of 2026-09-24 12:00 UTC, and save one determination per episode and checkpoint through the clinic CLI (/app/tools.md). Clinical rules are in /app/policy.md. Only saved determinations are graded. All patients are synthetic.

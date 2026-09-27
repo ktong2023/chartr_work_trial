@@ -6,7 +6,7 @@ from jsonschema import Draft6Validator
 
 BASE = "https://chartr.example/fhir"
 NOW = "2026-09-24T12:00:00Z"
-VERSION = "chartr-relevance-0.2.0"
+VERSION = "chartr-relevance-0.1.0"
 STATUSES = ("no_requirement", "not_due", "overdue", "completed", "unclear", "blocked", "cannot_determine")
 _schema_bytes = (Path(__file__).parent / "schema/fhir.schema.json").read_bytes()
 if hashlib.sha256(_schema_bytes).hexdigest() != "2230406893b4cf002a4ee1e5e2bbeca22ac5d2d4931b3e9ef7b9594bbc376a01":

@@ -100,6 +100,18 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.read_termination()['reason'],'api_error')
         self.assertNotIn('sk-ant-offline-test-secret',json.dumps(self.read_events()))
 
+    async def test_context_overflow_is_a_valid_termination(self):
+        error = anthropic.BadRequestError('prompt is too long: 210000 tokens > 200000 maximum',
+            response=httpx.Response(400, request=httpx.Request('POST', 'https://example.invalid')),
+            body={'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'prompt is too long'}})
+        term, events = await self.run_agent([tool(), error], api_retry_delays=(0,))
+        self.assertEqual((term['reason'], term['validity']), ('context_exhausted', 'valid'))
+        self.assertEqual(self.client.messages.create.await_count, 2)  # never retried or trimmed
+        other = anthropic.BadRequestError('invalid tool schema',
+            response=httpx.Response(400, request=httpx.Request('POST', 'https://example.invalid')), body=None)
+        term, _ = await self.run_agent([other], api_retry_delays=(0,))
+        self.assertEqual((term['reason'], term['validity']), ('api_error', 'evaluation_error'))
+
     async def test_transient_api_error_is_retried_and_logged(self):
         error = anthropic.APIConnectionError(request=httpx.Request('POST', 'https://example.invalid'))
         term, events = await self.run_agent([error, response()], api_retry_delays=(0,))

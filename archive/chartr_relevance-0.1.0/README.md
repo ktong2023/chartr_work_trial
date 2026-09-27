@@ -47,15 +47,3 @@ an agent that enumerates. Six gaps is a small sample.
 `claude-opus-5`, adapter 0.3.1, 32K output cap: **5/5**, all valid, 21–25 turns, 608–697 s. Every
 determination right, including all three relevant gaps (`unclear` ×2 patients, `cannot_determine`) and
 all three irrelevant ones (definite answers). Evidence: `jobs/chartr/relevance-0.1.0-*/pilot-summary.json`.
-
-## Revision 0.2.0 (minimal relevance wording)
-
-The policy no longer defines when a gap matters. Removed: "established only when they are the same for
-every date or value these facts allow", "one unknown value among those reported", and the spelled-out
-eligibility test for `cannot_determine`. Kept only output rules: a date range means some date in the
-range; conflicting reports mean neither governs; if branch or completion cannot be established from the
-record, `unclear`; an unassigned checkpoint an unreceived result could have completed is
-`cannot_determine`. Answers, grader and fixture facts unchanged. 0.1.0 is archived at
-`archive/chartr_relevance-0.1.0/`. Offline 90/90; Docker oracle 1, no-op 0. Not yet piloted.
-Adapter 0.3.2 (all tasks): an API "prompt is too long" rejection now ends the run as a valid
-`context_exhausted` failure instead of an invalid API error; context management is left to the model.

@@ -41,7 +41,7 @@ class AnthropicAgent(BaseAgent):
         return "anthropic-direct"
 
     def version(self):
-        return "0.3.1"
+        return "0.3.2"
 
     async def setup(self, environment):
         pass
@@ -157,9 +157,14 @@ class AnthropicAgent(BaseAgent):
             reason, validity = "cancelled", "interrupted"
             raise
         except anthropic.APIError as exc:
-            reason = "api_error"
+            if isinstance(exc, anthropic.BadRequestError) and "prompt is too long" in str(exc).lower():
+                # The agent chose what to print, so filling the context window is its own valid failure,
+                # reported separately from reasoning misses. The request itself is never altered.
+                reason, validity = "context_exhausted", "valid"
+            else:
+                reason = "api_error"
             self._event("api_error", error_type=type(exc).__name__, status_code=getattr(exc, "status_code", None),
-                        request_id=getattr(exc, "request_id", None))
+                        request_id=getattr(exc, "request_id", None), classified_as=reason)
         except Exception as exc:
             reason = "tool_or_adapter_error"
             self._event("error", error_type=type(exc).__name__)  # Never log exception bodies/headers.
