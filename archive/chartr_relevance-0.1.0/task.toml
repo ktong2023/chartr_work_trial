@@ -3,7 +3,7 @@ artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
 name = "chartr/relevance"
-version = "0.2.0"
+version = "0.1.0"
 description = "Reconcile dependent requirements from free-text documentation, deciding which gaps change the determination"
 
 [agent]

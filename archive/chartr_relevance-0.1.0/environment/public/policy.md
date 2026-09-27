@@ -39,9 +39,9 @@ Use a course's MedicationRequest episode link to establish scope. For injections
 
 ## Ranges, conflicting reports and unreceived results
 
-- An administration recorded with a date range was given on some date within that range.
-- When final or corrected reports on the same specimen give different titers and no effective change settles which is right, neither report governs.
-- If the governing plan's branch or the course's counted doses and completion date cannot be established from the record, both determinations are `unclear` with the empty fields described below.
+- An administration recorded with a date range occurred on one unknown date within that range, inclusive.
+- When final or corrected reports on the same specimen give different titers and no effective change settles which is right, the specimen's titer is one unknown value among those reported.
+- A course's counted doses and completion date, and a plan's schedule branch, are established only when they are the same for every date or value these facts allow. If the governing plan's branch or the course's counted doses and completion date cannot be established, both determinations are `unclear` with the empty fields described below.
 - An RPR that a signed note documents as collected elsewhere on a stated date, with no report in the chart, is an unreceived result. It cannot complete a checkpoint.
 
 ## Paused clocks and course completion
@@ -80,7 +80,7 @@ Choose a valid joint assignment that **maximizes the total number of completed c
 After choosing the assignment:
 
 - An assigned checkpoint is `completed`, even if its due date is still in the future.
-- An unassigned checkpoint that an unreceived result could have completed is `cannot_determine`.
+- An unassigned checkpoint is `cannot_determine` if an unreceived result would have been eligible for it had it been received: collected after course completion and inside the checkpoint's window and, for `second`, at least the minimum separation after the specimen assigned to `first`.
 - With a complete course and valid plan, an unassigned `second` whose `first` is unassigned is `blocked`, regardless of its due date.
 - Other unassigned checkpoints are `overdue` when their due date is at or before the evaluation date, otherwise `not_due`.
 - Preserve the governing plan/course, branch, counted doses, completion date, due date, and paused-day count in these rows. `result` is null unless `completed`.

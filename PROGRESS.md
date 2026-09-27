@@ -1,5 +1,17 @@
 # ChartR implementation handoff
 
+## Relevance probe `chartr_relevance/` v0.1.0 (September 27, 2026)
+
+`chartr_notes` plus six authored gaps (idea from `TASK3_BUILD_PROMPT.md`): dose dates known only as a
+range, two conflicting reports on one specimen, and outside RPRs referenced but not received; three change
+the determination (orchard, meadow, ridge) and three do not (harbor, ridge, summit). Policy states that
+completion and branch are established only when identical for every allowed value; new status
+`cannot_determine`. Hand-authored golden changes agree with the extended reference; `best_guess` and
+`abstain_any_gap` each fail 3 patients. Offline 89/89; Docker oracle 1, no-op 0, boundary exit 0.
+Pilots (32K cap, 900 s API timeout): **5/5**, 21–25 turns, 608–697 s, all valid; every gap decided
+correctly in every run. Open design question: the "every allowed value" sentence makes relevance
+explicit; a v0.2 would keep only output rules ("neither report governs"; "if not established, unclear").
+
 ## Messy-notes probe `chartr_notes/` v0.1.0 (September 27, 2026)
 
 Same cases, golden answers and grader as `chartr_graph`; only documentation changes. Corrections,

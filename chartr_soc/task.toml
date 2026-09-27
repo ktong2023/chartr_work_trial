@@ -2,9 +2,9 @@ schema_version = "1.4"
 artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
-name = "chartr/relevance"
-version = "0.2.0"
-description = "Reconcile dependent requirements from free-text documentation, deciding which gaps change the determination"
+name = "chartr/standard-of-care"
+version = "0.1.0"
+description = "Determine syphilis follow-up status from charts under CDC guidance and chart-level clinic instructions"
 
 [agent]
 timeout_sec = 3600
