@@ -1,5 +1,24 @@
 # ChartR implementation handoff
 
+## Messy-notes probe `chartr_notes/` v0.1.0 (September 27, 2026)
+
+Same cases, golden answers and grader as `chartr_graph`; only documentation changes. Corrections,
+retractions, some review holds and plan schedules are free-text clinical notes (abbreviations, seven
+date styles, records named by charted details never IDs, retractions naming author/date/change,
+"correct as charted" confirmations, a nurse's unauthorized travel hold). Public policy maps statement
+types to facts, including both hold-ending conventions. Every note reviewed against its private
+reading (`solution/readings.json`) for a single interpretation. Offline 77/77; Docker oracle 1, no-op 0,
+boundary exit 0. Evidence: `jobs/chartr/notes-0.1.0-*/` (`pilot-summary.json`).
+
+Pilots, `claude-opus-5`, adapter 0.3.1:
+- 16K output cap: **4/5**. The failure (`NmrvjSL`) stopped at turn 15 on a single 16,000-token thinking
+  block before saving anything: a budget failure, not a reasoning miss. Two passing runs peaked at
+  13.3K and 14.0K output tokens in one turn; messy notes make Opus think far longer per turn.
+- 32K output cap, API timeout 900 s: **5/5**, 23–31 turns, 511–711 s, peak turn 16.6K tokens.
+Every run read all notes and hand-wrote a per-patient table of effective overrides (no regex), then
+ran its own solver. All 216 determinations from the nine complete runs were right. Conclusion: free-text
+interpretation of this kind is not where Opus fails; use a 32K cap for any text-heavy task.
+
 ## Interacting-requirements probe `chartr_graph/` v0.1.0 (September 27, 2026)
 
 Follow-up to `chartr_probe` (5/5). Six patients, three courses and two checkpoints each (36
