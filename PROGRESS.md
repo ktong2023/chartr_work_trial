@@ -15,6 +15,8 @@ Pilot 0.1.0 (5 × `claude-opus-5`, all valid): raw 0/5 from one grader defect (c
 rejected) and one wording defect (follow-up did not require the specimen to be the patient's); defect-adjusted 4/5,
 the single fair miss an unapplied outside-facility authority rule. Both defects fixed in 0.1.1 (oracle 1, no-op 0).
 Triage in `chartr_task3/README.md`.
+Pilot 0.1.1 (5 trials): raw 2/5 from a grader defect (review requests and patient records rejected as evidence),
+fixed in 0.1.2; defect-adjusted 4/5, the same fair miss (outside-facility authority, patient 22). Both batches: 8/10.
 
 ## Relevance probe `chartr_relevance/` v0.1.0 (September 27, 2026)
 

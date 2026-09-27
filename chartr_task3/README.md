@@ -1,4 +1,4 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.1.1 (29-patient core)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.1.2 (29-patient core)
 
 The agent audits 29 synthetic syphilis-care patients (one episode each) for four publicly defined issue
 types: `INADEQUATE_TREATMENT`, `FOLLOW_UP_OVERDUE`, `MISFILED_RESULT`, `PREGNANCY_TREATMENT_INADEQUATE`.
@@ -100,6 +100,19 @@ Reading: calibrated abstention on a small, fully readable cohort is not where Op
 hard decisions). The misses that did occur were an authority rule applied inconsistently and a second-order
 consequence of an unresolved fact (identity conflict → follow-up) that no run connected, though its wording was
 defective. 0.1.1: offline tests pass; Docker oracle 1, no-op 0.
+
+## Pilot 0.1.1 (September 27, 2026) and fix in 0.1.2
+
+Five `claude-opus-5` trials, same settings, task-file hashes identical to 0.1.1: all valid `end_turn`, 18–28 turns,
+540–647 s, peak single-turn output 21.4K. **Raw 2/5.** Three trials failed evidence validity on a *grader defect*:
+they cited the review request being answered, or patient records (MRN/DOB) on identity questions; `tools.md` allows
+any record, and 0.1.2 accepts the item's own patient, episode and review requests plus the partner patient on a
+shared accession. **Defect-adjusted 4/5.** The one fair miss (`ooZZVWg`) is the same as in 0.1.0: patient 22's
+delivery date coded as an unresolved conflict ("no other convention settles the conflict"), not applying the
+outside-facility rule. The identity-conflict → follow-up chain, fixed in 0.1.1, was right in all five runs.
+
+Both batches together, defect-adjusted: **8/10**; the only fair miss (2/10) is the outside-facility authority rule
+against a tempting later local note. Single-hop chains stated through explicit conventions are solved.
 
 ## Reuse
 

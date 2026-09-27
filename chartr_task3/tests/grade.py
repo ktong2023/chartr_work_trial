@@ -61,11 +61,13 @@ def fields(task):
 
 
 def evidence_ok(f, sources):
-    """Evidence must exist in the item's patient chart, in the chart of any patient sharing a specimen
-    accession with it (both sides of a misfile), or be a clinic-level record."""
+    """Evidence must be the item's own patient, episode, chart records or review requests; the chart or patient
+    record of any patient sharing a specimen accession with it (both sides of a misfile); or a clinic-level record."""
     allowed = set(EXPECTED["charts"].get(f["patient"], [])) | set(EXPECTED["linked"].get(f["patient"], []))
+    allowed |= {f["patient"], f["episode"]}
+    allowed |= {r["id"] for r in sources if r["resourceType"] == "Task" and r.get("for", {}).get("reference") == "Patient/" + f["patient"]}
     for partner in EXPECTED["partners"].get(f["patient"], []):
-        allowed |= set(EXPECTED["charts"].get(partner, []))
+        allowed |= set(EXPECTED["charts"].get(partner, [])) | {partner}
     clinic_level = {r["id"] for r in sources if "subject" not in r and "patient" not in r and "for" not in r
                     and r["resourceType"] not in ("Patient", "EpisodeOfCare")}
     return bool(f["evidence"]) and all(e in allowed or e in clinic_level for e in f["evidence"])

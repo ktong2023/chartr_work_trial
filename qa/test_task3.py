@@ -196,6 +196,11 @@ class Task3(unittest.TestCase):
         cross = [dict(a, evidence=owner_note[:5]) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a for a in ANSWERS]
         self.assertEqual(self.run_items(cross)['reward'], 1)
         self.assertEqual(EXPECTED['partners'], {pid14: [pid15], pid15: [pid14]})
+        # Own patient/episode records, the answered review request and the partner's patient record are valid (pilot 0.1.1).
+        request_ids = [r['id'] for r in FIXTURE['sources'] if r['resourceType'] == 'Task' and r['for']['reference'] == 'Patient/' + pid14]
+        own = [dict(a, evidence=[pid14, KEYS['p14'][1], pid15] + request_ids) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a
+               for a in ANSWERS]
+        self.assertEqual(self.run_items(own)['reward'], 1)
         foreign = EXPECTED['charts'][KEYS['p27'][0]][0]
         bad = [dict(a, evidence=[foreign]) if a['patient'] == pid15 else a for a in ANSWERS]
         result = self.run_items(bad)
