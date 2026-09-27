@@ -17,12 +17,12 @@ from harbor.models.agent.context import ModelUsage
 
 
 class Options(AgentOptions):
-    max_turns: Annotated[int, Env("ANTHROPIC_MAX_TURNS", fallback="ANTHROPIC_MAX_TURNS")] = Field(60, ge=1)
-    max_tokens: Annotated[int, Env("ANTHROPIC_MAX_TOKENS", fallback="ANTHROPIC_MAX_TOKENS")] = Field(2048, ge=1)
-    wall_timeout_sec: float = Field(570, gt=0)
+    max_turns: Annotated[int, Env("ANTHROPIC_MAX_TURNS", fallback="ANTHROPIC_MAX_TURNS")] = Field(100, ge=1)
+    max_tokens: Annotated[int, Env("ANTHROPIC_MAX_TOKENS", fallback="ANTHROPIC_MAX_TOKENS")] = Field(4096, ge=1)
+    wall_timeout_sec: float = Field(1170, gt=0)
     api_timeout_sec: float = Field(90, gt=0)
     tool_timeout_sec: float = Field(60, gt=0)
-    max_tool_chars: int = Field(24000, ge=256)
+    max_tool_chars: int = Field(50000, ge=256)
 
 
 class AnthropicAgent(BaseAgent):

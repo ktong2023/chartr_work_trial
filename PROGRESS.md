@@ -1,11 +1,22 @@
 # ChartR implementation handoff
 
-## Current revision: 0.1.4 — extraneous records (September 26, 2026)
+## Current revision: 0.2.0 — follow-up category and ten patients (September 26, 2026)
+
+See `chartr_task/README.md` "Revision 0.2.0" and the private case sheet
+`chartr_task1_cases_v0_2.md`. First difficulty revision: 10 patients, treatment +
+follow-up categories, 4 seeded items, 9 expected final items, opaque record IDs, raised
+budgets. Offline: 29 tests pass (18 clinic + 11 adapter). Docker: oracle 1 (×2, and ×5 run
+concurrently), no-op 0, boundary probe clean (`jobs/chartr/v0.2.0-*`). Opus pilots
+(`jobs/chartr/v0.2.0-pilot-opus/`): **5/5 pass**, all valid `end_turn`, 11–25 turns,
+115–154 s, 3.3M input tokens total, no credentials in artifacts. Still too easy.
+
+## Previous revision: 0.1.4 — extraneous records (September 26, 2026)
 
 See `chartr_task/README.md` "Revision 0.1.4". Nine routine same-episode records added
 (32 resources); citing one fails evidence. Records returned in event-time order.
 0.1.3 Opus pilot (`jobs/chartr/2026-09-26__18-25-27/`) passed; it predates this change.
-Docker oracle/no-op and an Opus pilot need rerunning as 0.1.4.
+0.1.4 Opus pilot `jobs/chartr/2026-09-26__18-33-58/` scored 1 (10 turns, 70 s). A later
+0.1.4 service fix returns 400 (not a trial-voiding 500) for unsupported whitespace.
 
 ## Previous revision: 0.1.3 — reduced public docs (September 26, 2026)
 

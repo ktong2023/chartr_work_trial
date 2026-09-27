@@ -1,88 +1,310 @@
 {
-  "version": "chartr-treatment-review-0.1.4",
+  "version": "chartr-treatment-review-0.2.0",
   "evaluation_time": "2026-09-24T12:00:00Z",
-  "initial_digest": "92696dc6f13307f0317d3b1968bc65eb9cf156b5d1eeee1607517c2b8c6a712a",
-  "sources_digest": "967e2b5aec3bd333b84e24541ce8cf504bc5d5f372b9b1be832086db37d3e637",
-  "q102": {
-    "resourceType": "Task",
-    "id": "Q102",
-    "intent": "order",
-    "status": "requested",
-    "businessStatus": {
-      "coding": [
-        {
-          "system": "https://chartr.example/fhir/CodeSystem/review-status",
-          "code": "open"
-        }
-      ]
-    },
-    "code": {
-      "coding": [
-        {
-          "system": "https://chartr.example/fhir/CodeSystem/category",
-          "code": "treatment_review"
-        }
-      ]
-    },
-    "reasonCode": {
-      "coding": [
-        {
-          "system": "https://chartr.example/fhir/CodeSystem/review-reason",
-          "code": "UNRESOLVED_TREATMENT_CONCERN"
-        }
-      ]
-    },
-    "for": {
-      "reference": "Patient/P102"
-    },
-    "focus": {
-      "reference": "EpisodeOfCare/E102"
-    },
-    "owner": {
-      "reference": "Organization/clinical-review"
-    },
-    "authoredOn": "2026-08-31T09:30:00Z",
-    "lastModified": "2026-08-31T09:30:00Z",
-    "description": "Penicillin order requires prescriber review in light of the reported reaction; medication has not been administered.",
-    "extension": [
-      {
-        "url": "https://chartr.example/fhir/StructureDefinition/episode",
-        "valueReference": {
-          "reference": "EpisodeOfCare/E102"
-        }
+  "initial_digest": "959a612a624d0fb64e780c07b11a18b7704ddfcd1ae74114c537014b0ef9b9af",
+  "sources_digest": "95a320bfa5fd242cc08a61b64403ab2051cd45b116a90bbc02cb944852260ea4",
+  "queue": [
+    {
+      "resourceType": "Task",
+      "id": "Q2081",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
       },
-      {
-        "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
-        "valueInteger": 0
-      }
-    ],
-    "input": [
-      {
-        "type": {
-          "coding": [
-            {
-              "system": "https://chartr.example/fhir/CodeSystem/input",
-              "code": "evidence"
-            }
-          ]
-        },
-        "valueReference": {
-          "reference": "MedicationRequest/D01"
-        }
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
       },
-      {
-        "type": {
-          "coding": [
-            {
-              "system": "https://chartr.example/fhir/CodeSystem/input",
-              "code": "evidence"
-            }
-          ]
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P110"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E110"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-07-25T08:30:00Z",
+      "lastModified": "2026-07-25T08:30:00Z",
+      "description": "Repeat RPR titer was due by 2026-07-20; no result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
         },
-        "valueReference": {
-          "reference": "DocumentReference/D02"
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
         }
-      }
-    ]
-  }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R756689"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2146",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "treatment_review"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "UNRESOLVED_TREATMENT_CONCERN"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P102"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E102"
+      },
+      "owner": {
+        "reference": "Organization/clinical-review"
+      },
+      "authoredOn": "2026-08-31T09:30:00Z",
+      "lastModified": "2026-08-31T09:30:00Z",
+      "description": "Penicillin order requires prescriber review in light of the reported reaction; medication has not been administered.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "MedicationRequest/R426517"
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "DocumentReference/R977714"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2203",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P105"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E105"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-09-05T09:00:00Z",
+      "lastModified": "2026-09-05T09:00:00Z",
+      "description": "Repeat RPR titer was due 6 months after the March 1 treatment; no result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "MedicationAdministration/R242510"
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R747576"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2217",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P108"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E108"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-09-12T08:00:00Z",
+      "lastModified": "2026-09-12T08:00:00Z",
+      "description": "Repeat RPR titer was due by 2026-09-01; no result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R444747"
+          }
+        }
+      ]
+    }
+  ]
 }

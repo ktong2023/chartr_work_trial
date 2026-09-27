@@ -1,8 +1,13 @@
-# Handoff: ChartR Task 1 — state as of v0.1.4 (September 26, 2026)
+# Handoff: ChartR Task 1 — state as of v0.2.0 (September 26, 2026)
 
 This file explains where the ChartR treatment-review Harbor task stands, why it looks
 the way it does, and what I want from you next: **a read-only audit**. Please read it
 fully before running anything.
+
+**Update (v0.2.0):** the 0.1.4 audit in section 5 is complete. Version 0.2.0 is the first
+difficulty revision: ten patients, a new follow-up category, four seeded items and
+opaque record IDs. Cases and expected answers are in the private
+`chartr_task1_cases_v0_2.md`; the list of three cases below describes 0.1.x.
 
 ## 1. Background
 
@@ -22,9 +27,9 @@ items according to a published policy. A private grader checks the saved queue.
   - Morgan Patel (P103/E103): expected to **create** a `needs_clarification` CONFLICTING_ACTIVE_PLANS item.
 - **Pilot command** (bills the Anthropic API):
   ```sh
-  ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task \
+  PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task \
     -a anthropic_agent:AnthropicAgent -m claude-opus-5 \
-    --ak max_turns=60 --ak max_tokens=2048 --ak wall_timeout_sec=570 \
+    --ak max_turns=100 --ak max_tokens=4096 --ak wall_timeout_sec=1170 \
     --jobs-dir "$PWD/jobs/chartr"
   ```
 
@@ -43,6 +48,7 @@ logic.
 | 0.1.2 | Record text now carries only clinical content. Removed record-ID citations and restated status/link/cancellation history from prose (D01, D03, D04, S02, M02, M04). Removed sentences that existed only to rule out wrong answers (S05, M05, D05). Note `type` is no longer "Signed clinician note"; notes use realistic types (Progress note, Nursing note, …). `author.display` is now a fictional name instead of the role string. | Prose and labels handed over the answer, so the model never had to read the structured fields |
 | 0.1.3 | Cut public docs to rules the model can't infer. `instruction.md` keeps the cohort/time, the permission to resolve existing items, "grading uses the persisted queue", and doc/tool pointers. `policy.md` keeps the TR1/TR2 table, the TR1+TR2 single-item convention, the evidence line, one-item-per-issue, and the status table. `tools.md` lost the duplicate-item warnings, the signed-note explanation, and the draft/`priorPrescription` meanings; custom cancellation extensions are listed by name only. | In the 0.1.2 pilot, Opus's reasoning matched the policy bullets one-for-one, which amounted to a per-case checklist |
 | 0.1.4 | Added three routine same-episode records per patient (S06–S08, D06–D08, M06–M08: registration, vital signs, portal/admin message). They are outside the grader's allowed evidence sets, so citing one fails. `clinic records` now returns a chart in event-time order. Evidence policy line reduced to its first sentence plus "Cite only records relevant to the issue." Three QA tests added. | Before this, the allowed set was the entire chart, so "don't attach the whole chart" could not be enforced |
+| 0.2.0 | Follow-up category (FU1 overdue, FU2 timing unclear) and seven new patients; four seeded items (Q102 renamed Q2146); opaque hashed record IDs; routine records now include orders, results, visits and signed notes; category/destination/reason combinations validated; budgets raised (100 turns, 4,096 tokens, 1,170 s, 50,000 tool chars). See `chartr_task1_cases_v0_2.md`. | Every 0.1.x pilot passed. More independent decisions, each with a plausible wrong answer. The 0.1.4 routine records were always X06–X08, an ID-based tell. |
 
 **Deliberate divergences from the framework doc.** These are not defects, so do not
 "fix" them back. The framework's Section 2 instruction, Section 3 policy bullets
@@ -64,7 +70,8 @@ All runs used `claude-opus-5`. Artifacts are under `jobs/chartr/<timestamp>/char
 | `2026-09-26__17-27-01` | 0.1.1 | 1 | 9 / 57 s | Only read the docs and used `clinic`; relied on prose hints in records |
 | `2026-09-26__17-50-45` | 0.1.2 | 1 | 8 / 68 s | Read the structured fields; reasoning mirrored the policy bullets |
 | `2026-09-26__18-25-27` | 0.1.3 | 1 | 10 / 61 s | Reasoned from the records; all citations inside the allowed sets |
-| — | 0.1.4 | not run yet | | |
+| `2026-09-26__18-33-58` | 0.1.4 | 1 | 10 / 70 s | Cited S01–S04, D01–D04, M01–M04 |
+| `v0.2.0-pilot-opus` (5 trials) | 0.2.0 | 5/5 | 11–25 / 115–154 s | Every decision right in every run, with no visible hesitation; tabulated charts with a script; two runs self-corrected an evidence-format 400 |
 
 No run has shown the agent probing outside its boundary. The runs only ran `ls /app`
 and `clinic --help`, both public.

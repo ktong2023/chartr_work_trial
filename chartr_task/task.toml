@@ -3,11 +3,11 @@ artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
 name = "chartr/treatment-review"
-version = "0.1.4"
-description = "Reconcile a treatment-review queue for three synthetic patients"
+version = "0.2.0"
+description = "Reconcile treatment-review and follow-up queues for ten synthetic patients"
 
 [agent]
-timeout_sec = 600
+timeout_sec = 1200
 
 [environment]
 network_mode = "public"

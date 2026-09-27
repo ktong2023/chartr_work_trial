@@ -6,9 +6,15 @@ from jsonschema import Draft6Validator
 
 BASE = "https://chartr.example/fhir"
 NOW = "2026-09-24T12:00:00Z"
-VERSION = "chartr-treatment-review-0.1.4"
+VERSION = "chartr-treatment-review-0.2.0"
 STATUS = {"open": "requested", "needs_clarification": "requested", "resolved": "completed"}
-REASONS = {"UNRESOLVED_TREATMENT_CONCERN", "CONFLICTING_ACTIVE_PLANS"}
+# Each review category has exactly one destination (owner Organization) and its own reasons.
+CATEGORIES = {
+    "treatment_review": {"destination": "clinical_review", "owner": "clinical-review",
+                         "reasons": {"UNRESOLVED_TREATMENT_CONCERN", "CONFLICTING_ACTIVE_PLANS"}},
+    "follow_up": {"destination": "follow_up_coordination", "owner": "follow-up-coordination",
+                  "reasons": {"OVERDUE_FOLLOW_UP", "FOLLOW_UP_TIMING_UNCLEAR"}},
+}
 _schema_bytes = (Path(__file__).parent / "schema/fhir.schema.json").read_bytes()
 if hashlib.sha256(_schema_bytes).hexdigest() != "2230406893b4cf002a4ee1e5e2bbeca22ac5d2d4931b3e9ef7b9594bbc376a01":
     raise RuntimeError("Pinned HL7 R4 4.0.1 schema checksum mismatch")
@@ -43,13 +49,13 @@ def episode(resource):
                 for e in resource.get("extension", []) if e["url"].endswith("/episode"))
 
 
-def review(item_id, patient, ep, reason, status, evidence, explanation, sources, created=NOW, seq=0):
+def review(item_id, patient, ep, category, reason, status, evidence, explanation, sources, created=NOW, seq=0):
     task = {
         "resourceType": "Task", "id": item_id, "intent": "order", "status": STATUS[status],
-        "businessStatus": concept("review-status", status), "code": concept("category", "treatment_review"),
+        "businessStatus": concept("review-status", status), "code": concept("category", category),
         "reasonCode": concept("review-reason", reason), "for": {"reference": "Patient/" + patient},
         "focus": {"reference": "EpisodeOfCare/" + ep},
-        "owner": {"reference": "Organization/clinical-review"},
+        "owner": {"reference": "Organization/" + CATEGORIES[category]["owner"]},
         "authoredOn": created, "lastModified": NOW if seq else created,
         "description": explanation,
         "extension": [extension("episode", "Reference", {"reference": "EpisodeOfCare/" + ep}),

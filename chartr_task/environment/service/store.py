@@ -5,7 +5,7 @@ import sqlite3
 import uuid
 from pathlib import Path
 
-from fhir import NOW, VERSION, STATUS, REASONS, SCHEMA, canonical, digest, episode, review, validate
+from fhir import NOW, VERSION, STATUS, CATEGORIES, SCHEMA, canonical, digest, episode, review, validate
 
 HERE = Path(__file__).parent
 # R4 string pattern; checked up front so agent text is a 400, never a schema-failure 500.
@@ -50,7 +50,8 @@ class Store:
             db.executemany("INSERT INTO meta VALUES (?,?)", [(k, canonical(v)) for k, v in {
                 "version": VERSION, "evaluation_time": NOW, "initial_digest": digest(fixture),
                 "nonce": str(uuid.uuid4()), "trial_id": None, "frozen": False, "faults": 0,
-                "next_id": 103,
+                # Generated IDs continue after the highest seeded item ID.
+                "next_id": max(int(r["id"][1:]) for r in fixture["queue"]) + 1,
             }.items()])
             for operation in ("INSERT", "UPDATE", "DELETE"):
                 db.execute(f"CREATE TRIGGER source_no_{operation} BEFORE {operation} ON source "
@@ -158,13 +159,14 @@ class Store:
                 raise InvalidRequest("All fields except evidence must be strings")
             if data["patient"] not in patients or by_id.get(data["episode"], {}).get("patient", {}).get("reference") != "Patient/" + data["patient"]:
                 raise InvalidRequest("Patient/episode relationship does not exist")
-            if data["reason"] not in REASONS or data["category"] != "treatment_review" or data["destination"] != "clinical_review":
-                raise InvalidRequest("Unsupported reason, category, or destination")
+            spec = CATEGORIES.get(data["category"])
+            if spec is None or data["destination"] != spec["destination"] or data["reason"] not in spec["reasons"]:
+                raise InvalidRequest("Unsupported category, or destination/reason not allowed for that category")
             self._validate_changes(data, data["patient"], data["episode"], by_id)
             item_id = "Q" + str(self.metadata(db)["next_id"])
             self.set_meta(db, "next_id", self.metadata(db)["next_id"] + 1)
-            result = review(item_id, data["patient"], data["episode"], data["reason"], data["status"],
-                            data["evidence"], data["explanation"], by_id, seq=seq)
+            result = review(item_id, data["patient"], data["episode"], data["category"], data["reason"],
+                            data["status"], data["evidence"], data["explanation"], by_id, seq=seq)
             db.execute("INSERT INTO queue VALUES (?,?)", (item_id, canonical(result)))
             return result
         if method == "PATCH" and len(parts) == 2 and parts[0] == "reviews":
@@ -179,9 +181,9 @@ class Store:
                       "evidence": [i["valueReference"]["reference"].split("/")[1] for i in original["input"]],
                       "explanation": original["description"], **data}
             self._validate_changes(merged, patient, ep, by_id)
-            result = review(original["id"], patient, ep, original["reasonCode"]["coding"][0]["code"],
-                            merged["status"], merged["evidence"], merged["explanation"], by_id,
-                            created=original["authoredOn"], seq=seq)
+            result = review(original["id"], patient, ep, original["code"]["coding"][0]["code"],
+                            original["reasonCode"]["coding"][0]["code"], merged["status"], merged["evidence"],
+                            merged["explanation"], by_id, created=original["authoredOn"], seq=seq)
             db.execute("UPDATE queue SET resource=? WHERE id=?", (canonical(result), original["id"]))
             return result
         raise InvalidRequest("Unknown operation; clinical sources are read-only")

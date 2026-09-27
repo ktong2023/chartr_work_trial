@@ -1,10 +1,2086 @@
 {
-  "version": "chartr-treatment-review-0.1.4",
+  "version": "chartr-treatment-review-0.2.0",
   "evaluation_time": "2026-09-24T12:00:00Z",
   "sources": [
     {
+      "resourceType": "EpisodeOfCare",
+      "id": "E101",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P101"
+      },
+      "period": {
+        "start": "2026-09-23"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E102",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P102"
+      },
+      "period": {
+        "start": "2026-08-31"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E103",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P103"
+      },
+      "period": {
+        "start": "2026-09-23"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E104",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P104"
+      },
+      "period": {
+        "start": "2026-03-17"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E105",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P105"
+      },
+      "period": {
+        "start": "2026-02-27"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E106",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P106"
+      },
+      "period": {
+        "start": "2026-03-04"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E107",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P107"
+      },
+      "period": {
+        "start": "2026-06-01"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E108",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P108"
+      },
+      "period": {
+        "start": "2026-02-27"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E109",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P109"
+      },
+      "period": {
+        "start": "2026-02-09"
+      }
+    },
+    {
+      "resourceType": "EpisodeOfCare",
+      "id": "E110",
+      "status": "active",
+      "patient": {
+        "reference": "Patient/P110"
+      },
+      "period": {
+        "start": "2026-01-19"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P101",
+      "name": [
+        {
+          "text": "Samantha Lee"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P102",
+      "name": [
+        {
+          "text": "Darrow Jones"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P103",
+      "name": [
+        {
+          "text": "Morgan Patel"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P104",
+      "name": [
+        {
+          "text": "Elena Ruiz"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P105",
+      "name": [
+        {
+          "text": "Marcus Hale"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P106",
+      "name": [
+        {
+          "text": "Tessa Okafor"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P107",
+      "name": [
+        {
+          "text": "Wendell Park"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P108",
+      "name": [
+        {
+          "text": "Nadia Farrell"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P109",
+      "name": [
+        {
+          "text": "Owen Castillo"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "P110",
+      "name": [
+        {
+          "text": "Grace Lindqvist"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R108970",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-28T11:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "current",
+      "date": "2026-08-28T11:00:00Z",
+      "description": "Seen after report of stopping doxycycline after about 5 days in January because of nausea. January course incomplete. Re-treat with doxycycline 100 mg orally twice daily for 14 days starting today, taken with food. Urine pregnancy test negative. The January follow-up RPR plan is replaced: repeat RPR titer due by 2027-03-10.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Casey Nguyen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-28T11:00:00Z",
+            "data": "U2VlbiBhZnRlciByZXBvcnQgb2Ygc3RvcHBpbmcgZG94eWN5Y2xpbmUgYWZ0ZXIgYWJvdXQgNSBkYXlzIGluIEphbnVhcnkgYmVjYXVzZSBvZiBuYXVzZWEuIEphbnVhcnkgY291cnNlIGluY29tcGxldGUuIFJlLXRyZWF0IHdpdGggZG94eWN5Y2xpbmUgMTAwIG1nIG9yYWxseSB0d2ljZSBkYWlseSBmb3IgMTQgZGF5cyBzdGFydGluZyB0b2RheSwgdGFrZW4gd2l0aCBmb29kLiBVcmluZSBwcmVnbmFuY3kgdGVzdCBuZWdhdGl2ZS4gVGhlIEphbnVhcnkgZm9sbG93LXVwIFJQUiBwbGFuIGlzIHJlcGxhY2VkOiByZXBlYXQgUlBSIHRpdGVyIGR1ZSBieSAyMDI3LTAzLTEwLg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Casey Nguyen"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R109124",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-04-02T12:15:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-04-02T12:15:00Z",
+      "description": "Patient requested a copy of his vaccination record. Sent through the portal.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-04-02T12:15:00Z",
+            "data": "UGF0aWVudCByZXF1ZXN0ZWQgYSBjb3B5IG9mIGhpcyB2YWNjaW5hdGlvbiByZWNvcmQuIFNlbnQgdGhyb3VnaCB0aGUgcG9ydGFsLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R159830",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-01-19T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "current",
+      "date": "2026-01-19T09:00:00Z",
+      "description": "Registration completed. Insurance card scanned.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-01-19T09:00:00Z",
+            "data": "UmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gSW5zdXJhbmNlIGNhcmQgc2Nhbm5lZC4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R166509",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-05T09:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-03-05T09:30:00Z",
+      "request": {
+        "reference": "MedicationRequest/R271652"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Dana Kim"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R173760",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-08T15:20:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-09-08T15:20:00Z",
+      "description": "Hepatitis B vaccine dose 2 of 3 given, left deltoid. HIV test collected at patient request.",
+      "type": {
+        "text": "Nursing note"
+      },
+      "author": [
+        {
+          "display": "Pat Quinn"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-08T15:20:00Z",
+            "data": "SGVwYXRpdGlzIEIgdmFjY2luZSBkb3NlIDIgb2YgMyBnaXZlbiwgbGVmdCBkZWx0b2lkLiBISVYgdGVzdCBjb2xsZWN0ZWQgYXQgcGF0aWVudCByZXF1ZXN0Lg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R179198",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-10T09:25:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-02-10T09:25:00Z",
+      "request": {
+        "reference": "MedicationRequest/R713344"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Pat Quinn"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R182359",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-17T08:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-03-17T08:40:00Z",
+      "issued": "2026-03-17T16:20:00Z",
+      "valueString": "Reactive, 1:16",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ]
+    },
+    {
       "resourceType": "MedicationRequest",
-      "id": "D01",
+      "id": "R186162",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:15:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "draft",
+      "intent": "proposal",
+      "authoredOn": "2026-09-23T09:15:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "medicationCodeableConcept": {
+        "text": "Doxycycline"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Oral doxycycline course (proposed). Not released; pending prescriber review once pregnancy status is known."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R963338"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R189234",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-25T10:25:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "current",
+      "date": "2026-03-25T10:25:00Z",
+      "description": "Second weekly injection given. Patient tolerated it well and left in stable condition.",
+      "type": {
+        "text": "Nursing note"
+      },
+      "author": [
+        {
+          "display": "Riley Chen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-25T10:25:00Z",
+            "data": "U2Vjb25kIHdlZWtseSBpbmplY3Rpb24gZ2l2ZW4uIFBhdGllbnQgdG9sZXJhdGVkIGl0IHdlbGwgYW5kIGxlZnQgaW4gc3RhYmxlIGNvbmRpdGlvbi4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R190651",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-07T10:20:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-09-07T10:20:00Z",
+      "description": "Patient called to confirm the time of tomorrow's vaccine appointment. Confirmed 15:00.",
+      "type": {
+        "text": "Telephone encounter"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-07T10:20:00Z",
+            "data": "UGF0aWVudCBjYWxsZWQgdG8gY29uZmlybSB0aGUgdGltZSBvZiB0b21vcnJvdydzIHZhY2NpbmUgYXBwb2ludG1lbnQuIENvbmZpcm1lZCAxNTowMC4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R193590",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-07-15T14:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-07-15T14:10:00Z",
+      "requester": {
+        "display": "Priya Raman"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer 6 months after treatment."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R371011"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R196809",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-10T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-02-10T09:00:00Z",
+      "description": "Secondary syphilis: generalized rash and oral mucous patches, RPR 1:64. Benzathine penicillin G 2.4 million units IM once, given today. Repeat RPR titer 6 months after treatment.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Hana Sato"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-02-10T09:00:00Z",
+            "data": "U2Vjb25kYXJ5IHN5cGhpbGlzOiBnZW5lcmFsaXplZCByYXNoIGFuZCBvcmFsIG11Y291cyBwYXRjaGVzLCBSUFIgMTo2NC4gQmVuemF0aGluZSBwZW5pY2lsbGluIEcgMi40IG1pbGxpb24gdW5pdHMgSU0gb25jZSwgZ2l2ZW4gdG9kYXkuIFJlcGVhdCBSUFIgdGl0ZXIgNiBtb250aHMgYWZ0ZXIgdHJlYXRtZW50Lg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Hana Sato"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R200072",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-17T08:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "current",
+      "date": "2026-03-17T08:10:00Z",
+      "description": "New patient registration completed. Insurance card scanned.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Chris Lowe"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-17T08:10:00Z",
+            "data": "TmV3IHBhdGllbnQgcmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gSW5zdXJhbmNlIGNhcmQgc2Nhbm5lZC4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R209747",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-02T10:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "completed",
+      "intent": "order",
+      "authoredOn": "2026-06-02T10:05:00Z",
+      "requester": {
+        "display": "Alex Moreno"
+      },
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM once."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R248036"
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R219883",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-28T11:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-08-28T11:05:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "medicationCodeableConcept": {
+        "text": "Doxycycline"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Doxycycline 100 mg orally twice daily for 14 days."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R108970"
+        }
+      ],
+      "priorPrescription": {
+        "reference": "MedicationRequest/R536741"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R220415",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T11:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "current",
+      "date": "2026-03-01T11:00:00Z",
+      "description": "Primary syphilis: genital ulcer, RPR 1:32. Benzathine penicillin G 2.4 million units IM once, given today. Repeat RPR titer due by 2026-09-01, and again 12 months after treatment.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Jordan Blake"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-01T11:00:00Z",
+            "data": "UHJpbWFyeSBzeXBoaWxpczogZ2VuaXRhbCB1bGNlciwgUlBSIDE6MzIuIEJlbnphdGhpbmUgcGVuaWNpbGxpbiBHIDIuNCBtaWxsaW9uIHVuaXRzIElNIG9uY2UsIGdpdmVuIHRvZGF5LiBSZXBlYXQgUlBSIHRpdGVyIGR1ZSBieSAyMDI2LTA5LTAxLCBhbmQgYWdhaW4gMTIgbW9udGhzIGFmdGVyIHRyZWF0bWVudC4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Jordan Blake"
+      }
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "R220894",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-12T15:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "type": [
+        {
+          "text": "Office visit"
+        }
+      ],
+      "reasonCode": [
+        {
+          "text": "Contraception"
+        }
+      ],
+      "period": {
+        "start": "2026-06-12T15:00:00Z",
+        "end": "2026-06-12T15:30:00Z"
+      }
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R224591",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T11:20:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-03-01T11:20:00Z",
+      "request": {
+        "reference": "MedicationRequest/R932433"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Riley Chen"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R224923",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-04T12:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-03-04T12:10:00Z",
+      "issued": "2026-03-04T17:45:00Z",
+      "valueString": "Reactive, 1:32",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R242510",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T10:20:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-03-01T10:20:00Z",
+      "request": {
+        "reference": "MedicationRequest/R416751"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Dana Kim"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R248036",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-02T10:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "current",
+      "date": "2026-06-02T10:00:00Z",
+      "description": "Early latent syphilis: RPR 1:8 with reactive treponemal antibody; nonreactive syphilis testing in January 2026; no signs or symptoms. Benzathine penicillin G 2.4 million units IM once, given today. Repeat RPR titer 3 months after treatment.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Alex Moreno"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-06-02T10:00:00Z",
+            "data": "RWFybHkgbGF0ZW50IHN5cGhpbGlzOiBSUFIgMTo4IHdpdGggcmVhY3RpdmUgdHJlcG9uZW1hbCBhbnRpYm9keTsgbm9ucmVhY3RpdmUgc3lwaGlsaXMgdGVzdGluZyBpbiBKYW51YXJ5IDIwMjY7IG5vIHNpZ25zIG9yIHN5bXB0b21zLiBCZW56YXRoaW5lIHBlbmljaWxsaW4gRyAyLjQgbWlsbGlvbiB1bml0cyBJTSBvbmNlLCBnaXZlbiB0b2RheS4gUmVwZWF0IFJQUiB0aXRlciAzIG1vbnRocyBhZnRlciB0cmVhdG1lbnQu"
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Alex Moreno"
+      }
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "R257187",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-29T08:45:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "planned",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "type": [
+        {
+          "text": "Follow-up visit"
+        }
+      ],
+      "reasonCode": [
+        {
+          "text": "Repeat RPR titer"
+        }
+      ],
+      "period": {
+        "start": "2026-09-29T08:45:00Z"
+      }
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R258646",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-02T10:25:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-06-02T10:25:00Z",
+      "request": {
+        "reference": "MedicationRequest/R209747"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Sam Ortiz"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R262440",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-04-01T10:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "scheduling-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "current",
+      "date": "2026-04-01T10:30:00Z",
+      "description": "Added to RPR recall list. Recall reminder set for 2026-09-17.",
+      "type": {
+        "text": "Recall note"
+      },
+      "author": [
+        {
+          "display": "Jamie Ellis"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-04-01T10:30:00Z",
+            "data": "QWRkZWQgdG8gUlBSIHJlY2FsbCBsaXN0LiBSZWNhbGwgcmVtaW5kZXIgc2V0IGZvciAyMDI2LTA5LTE3Lg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R269829",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-27T10:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-02-27T10:30:00Z",
+      "issued": "2026-02-28T08:40:00Z",
+      "valueString": "Reactive, 1:32",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R270059",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-28T10:45:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "current",
+      "date": "2026-08-28T10:45:00Z",
+      "description": "BP 112/70, HR 68, temperature 36.5 C, RR 14, SpO2 100% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Sam Ortiz"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-28T10:45:00Z",
+            "data": "QlAgMTEyLzcwLCBIUiA2OCwgdGVtcGVyYXR1cmUgMzYuNSBDLCBSUiAxNCwgU3BPMiAxMDAlIG9uIHJvb20gYWlyLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R271652",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-05T09:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "completed",
+      "intent": "order",
+      "authoredOn": "2026-03-05T09:05:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM once."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R774543"
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R277410",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T15:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-09-23T15:10:00Z",
+      "requester": {
+        "display": "Priya Raman"
+      },
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM once."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R921741"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R281983",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-03T18:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "current",
+      "date": "2026-06-03T18:05:00Z",
+      "description": "Patient asked to change his preferred pharmacy. Pharmacy updated.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-06-03T18:05:00Z",
+            "data": "UGF0aWVudCBhc2tlZCB0byBjaGFuZ2UgaGlzIHByZWZlcnJlZCBwaGFybWFjeS4gUGhhcm1hY3kgdXBkYXRlZC4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R284350",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-09T14:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-02-09T14:30:00Z",
+      "issued": "2026-02-09T19:10:00Z",
+      "valueString": "Reactive, 1:64",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R298744",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-05-14T11:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-05-14T11:00:00Z",
+      "description": "Seen for seasonal allergies with sneezing and itchy eyes. Loratadine 10 mg daily as needed.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Alex Moreno"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-05-14T11:00:00Z",
+            "data": "U2VlbiBmb3Igc2Vhc29uYWwgYWxsZXJnaWVzIHdpdGggc25lZXppbmcgYW5kIGl0Y2h5IGV5ZXMuIExvcmF0YWRpbmUgMTAgbWcgZGFpbHkgYXMgbmVlZGVkLg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Alex Moreno"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R312377",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-20T09:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "current",
+      "date": "2026-08-20T09:40:00Z",
+      "description": "Patient updated his email address.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-20T09:40:00Z",
+            "data": "UGF0aWVudCB1cGRhdGVkIGhpcyBlbWFpbCBhZGRyZXNzLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R320845",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T09:00:00Z",
+      "description": "Latent syphilis; duration cannot be established from the available history. Plan for benzathine penicillin G 2.4 million units IM weekly for three doses.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Alex Moreno"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T09:00:00Z",
+            "data": "TGF0ZW50IHN5cGhpbGlzOyBkdXJhdGlvbiBjYW5ub3QgYmUgZXN0YWJsaXNoZWQgZnJvbSB0aGUgYXZhaWxhYmxlIGhpc3RvcnkuIFBsYW4gZm9yIGJlbnphdGhpbmUgcGVuaWNpbGxpbiBHIDIuNCBtaWxsaW9uIHVuaXRzIElNIHdlZWtseSBmb3IgdGhyZWUgZG9zZXMu"
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Alex Moreno"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R336161",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-31T08:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "current",
+      "date": "2026-08-31T08:50:00Z",
+      "description": "BP 126/80, HR 70, temperature 36.9 C, RR 16, SpO2 98% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Sam Ortiz"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-31T08:50:00Z",
+            "data": "QlAgMTI2LzgwLCBIUiA3MCwgdGVtcGVyYXR1cmUgMzYuOSBDLCBSUiAxNiwgU3BPMiA5OCUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R338426",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-05T09:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/due-by",
+          "valueDate": "2026-09-05"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-03-05T09:10:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer due by 2026-09-05."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R774543"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R341853",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:40:00Z",
+      "description": "Insurance information verified. Mailing address and phone number updated. Preferred pharmacy recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:40:00Z",
+            "data": "SW5zdXJhbmNlIGluZm9ybWF0aW9uIHZlcmlmaWVkLiBNYWlsaW5nIGFkZHJlc3MgYW5kIHBob25lIG51bWJlciB1cGRhdGVkLiBQcmVmZXJyZWQgcGhhcm1hY3kgcmVjb3JkZWQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R342850",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-27T13:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "current",
+      "date": "2026-02-27T13:00:00Z",
+      "description": "Photo ID verified. Insurance information recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-02-27T13:00:00Z",
+            "data": "UGhvdG8gSUQgdmVyaWZpZWQuIEluc3VyYW5jZSBpbmZvcm1hdGlvbiByZWNvcmRlZC4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R357790",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T09:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-09-23T09:10:00Z",
+      "requester": {
+        "display": "Alex Moreno"
+      },
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM weekly for three doses."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R320845"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R371011",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-07-15T14:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "current",
+      "date": "2026-07-15T14:00:00Z",
+      "description": "Visit to discuss syphilis treated in June. No new symptoms. Reviewed prior results and treatment. Plan: repeat RPR titer 6 months after treatment.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Priya Raman"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-07-15T14:00:00Z",
+            "data": "VmlzaXQgdG8gZGlzY3VzcyBzeXBoaWxpcyB0cmVhdGVkIGluIEp1bmUuIE5vIG5ldyBzeW1wdG9tcy4gUmV2aWV3ZWQgcHJpb3IgcmVzdWx0cyBhbmQgdHJlYXRtZW50LiBQbGFuOiByZXBlYXQgUlBSIHRpdGVyIDYgbW9udGhzIGFmdGVyIHRyZWF0bWVudC4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Priya Raman"
+      }
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "R383971",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-10-01T09:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "planned",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "type": [
+        {
+          "text": "Follow-up visit"
+        }
+      ],
+      "reasonCode": [
+        {
+          "text": "Repeat RPR titer"
+        }
+      ],
+      "period": {
+        "start": "2026-10-01T09:30:00Z"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R387348",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-26T16:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "current",
+      "date": "2026-08-26T16:00:00Z",
+      "description": "Patient returned recall call. States she stopped doxycycline after about 5 days in January because of nausea. Message sent to treating clinician.",
+      "type": {
+        "text": "Telephone encounter"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-26T16:00:00Z",
+            "data": "UGF0aWVudCByZXR1cm5lZCByZWNhbGwgY2FsbC4gU3RhdGVzIHNoZSBzdG9wcGVkIGRveHljeWNsaW5lIGFmdGVyIGFib3V0IDUgZGF5cyBpbiBKYW51YXJ5IGJlY2F1c2Ugb2YgbmF1c2VhLiBNZXNzYWdlIHNlbnQgdG8gdHJlYXRpbmcgY2xpbmljaWFuLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R388451",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-10T08:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-02-10T08:50:00Z",
+      "description": "BP 124/80, HR 82, temperature 37.0 C, RR 16, SpO2 98% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Pat Quinn"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-02-10T08:50:00Z",
+            "data": "QlAgMTI0LzgwLCBIUiA4MiwgdGVtcGVyYXR1cmUgMzcuMCBDLCBSUiAxNiwgU3BPMiA5OCUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R413407",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-01T08:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "active",
+      "intent": "order",
+      "authoredOn": "2026-09-01T08:10:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
+      "medicationCodeableConcept": {
+        "text": "Doxycycline"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Doxycycline 100 mg orally twice daily for 14 days."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R546612"
+        }
+      ],
+      "priorPrescription": {
+        "reference": "MedicationRequest/R426517"
+      }
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R416751",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T10:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "completed",
+      "intent": "order",
+      "authoredOn": "2026-03-01T10:05:00Z",
+      "requester": {
+        "display": "Luis Ortega"
+      },
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM once."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R574649"
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R426517",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -27,13 +2103,13 @@
         {
           "url": "https://chartr.example/fhir/StructureDefinition/cancelled-by",
           "valueReference": {
-            "reference": "DocumentReference/D03"
+            "reference": "DocumentReference/R546612"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/replaced-by",
           "valueReference": {
-            "reference": "MedicationRequest/D04"
+            "reference": "MedicationRequest/R413407"
           }
         }
       ],
@@ -43,6 +2119,9 @@
       "status": "cancelled",
       "intent": "order",
       "authoredOn": "2026-08-31T09:00:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
       "medicationCodeableConcept": {
         "text": "Benzathine penicillin G"
       },
@@ -57,7 +2136,671 @@
     },
     {
       "resourceType": "DocumentReference",
-      "id": "D02",
+      "id": "R433228",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:50:00Z",
+      "description": "BP 118/74, HR 76, temperature 36.7 C, RR 14, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Riley Chen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:50:00Z",
+            "data": "QlAgMTE4Lzc0LCBIUiA3NiwgdGVtcGVyYXR1cmUgMzYuNyBDLCBSUiAxNCwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R441761",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-08T15:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "completed",
+      "intent": "order",
+      "code": {
+        "text": "HIV-1/2 antigen/antibody"
+      },
+      "authoredOn": "2026-09-08T15:10:00Z",
+      "requester": {
+        "display": "Hana Sato"
+      }
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R444747",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T11:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/due-by",
+          "valueDate": "2026-09-01"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-03-01T11:10:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer due by 2026-09-01."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R220415"
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R447145",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-27T13:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-02-27T13:40:00Z",
+      "issued": "2026-02-28T09:15:00Z",
+      "valueString": "Reactive, 1:64",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R452671",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-09T14:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "current",
+      "date": "2026-02-09T14:00:00Z",
+      "description": "New patient registration completed. Contact details recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Chris Lowe"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-02-09T14:00:00Z",
+            "data": "TmV3IHBhdGllbnQgcmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gQ29udGFjdCBkZXRhaWxzIHJlY29yZGVkLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R476096",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-18T14:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "current",
+      "date": "2026-09-18T14:00:00Z",
+      "description": "Patient called to book follow-up blood test visit. Booked for 2026-10-01 09:30.",
+      "type": {
+        "text": "Scheduling note"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-18T14:00:00Z",
+            "data": "UGF0aWVudCBjYWxsZWQgdG8gYm9vayBmb2xsb3ctdXAgYmxvb2QgdGVzdCB2aXNpdC4gQm9va2VkIGZvciAyMDI2LTEwLTAxIDA5OjMwLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R487631",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-08T15:25:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "final",
+      "code": {
+        "text": "HIV-1/2 antigen/antibody"
+      },
+      "effectiveDateTime": "2026-09-08T15:25:00Z",
+      "issued": "2026-09-09T10:00:00Z",
+      "valueString": "Nonreactive",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ],
+      "basedOn": [
+        {
+          "reference": "ServiceRequest/R441761"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R498283",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T10:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "completed",
+      "intent": "order",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-09-15T10:00:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
+      "basedOn": [
+        {
+          "reference": "ServiceRequest/R444747"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R501006",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-10T09:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-02-10T09:10:00Z",
+      "requester": {
+        "display": "Hana Sato"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer 6 months after treatment."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R196809"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R502988",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-28T11:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/due-by",
+          "valueDate": "2027-03-10"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-08-28T11:10:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer due by 2027-03-10."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R108970"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R510589",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-18T09:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "current",
+      "date": "2026-03-18T09:10:00Z",
+      "description": "BP 122/78, HR 72, temperature 36.8 C, RR 14, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Pat Quinn"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-18T09:10:00Z",
+            "data": "QlAgMTIyLzc4LCBIUiA3MiwgdGVtcGVyYXR1cmUgMzYuOCBDLCBSUiAxNCwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R515198",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T10:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "final",
+      "code": {
+        "text": "Chlamydia trachomatis and Neisseria gonorrhoeae NAAT"
+      },
+      "effectiveDateTime": "2026-09-15T10:30:00Z",
+      "issued": "2026-09-16T11:30:00Z",
+      "valueString": "Not detected",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ],
+      "basedOn": [
+        {
+          "reference": "ServiceRequest/R908902"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R527338",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:45:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:45:00Z",
+      "description": "BP 130/84, HR 78, temperature 36.6 C, RR 16, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Dana Kim"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:45:00Z",
+            "data": "QlAgMTMwLzg0LCBIUiA3OCwgdGVtcGVyYXR1cmUgMzYuNiBDLCBSUiAxNiwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R536443",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T09:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "current",
+      "date": "2026-09-15T09:50:00Z",
+      "description": "BP 116/72, HR 74, temperature 36.7 C, RR 14, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Dana Kim"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-15T09:50:00Z",
+            "data": "QlAgMTE2LzcyLCBIUiA3NCwgdGVtcGVyYXR1cmUgMzYuNyBDLCBSUiAxNCwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R536741",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-01-20T10:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "stopped",
+      "intent": "order",
+      "authoredOn": "2026-01-20T10:05:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "medicationCodeableConcept": {
+        "text": "Doxycycline"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Doxycycline 100 mg orally twice daily for 14 days."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R903446"
+        }
+      ],
+      "statusReason": {
+        "text": "Stopped by patient after about 5 days because of nausea"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R537294",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T09:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "current",
+      "date": "2026-03-01T09:50:00Z",
+      "description": "BP 128/82, HR 80, temperature 36.9 C, RR 16, SpO2 98% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Dana Kim"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-01T09:50:00Z",
+            "data": "QlAgMTI4LzgyLCBIUiA4MCwgdGVtcGVyYXR1cmUgMzYuOSBDLCBSUiAxNiwgU3BPMiA5OCUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R537446",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -67,40 +2810,40 @@
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-08-31T09:20:00Z"
+          "valueDateTime": "2026-08-31T08:30:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "nurse"
+          "valueCode": "front-desk"
         }
       ],
       "subject": {
         "reference": "Patient/P102"
       },
       "status": "current",
-      "date": "2026-08-31T09:20:00Z",
-      "description": "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted.",
+      "date": "2026-08-31T08:30:00Z",
+      "description": "Photo ID verified. Emergency contact updated.",
       "type": {
-        "text": "Nursing note"
+        "text": "Registration"
       },
       "author": [
         {
-          "display": "Sam Ortiz"
+          "display": "Avery Hughes"
         }
       ],
       "content": [
         {
           "attachment": {
             "contentType": "text/plain",
-            "creation": "2026-08-31T09:20:00Z",
-            "data": "UGF0aWVudCByZXBvcnRzIHByaW9yIGltbWVkaWF0ZSBoaXZlcyBhbmQgYnJlYXRoaW5nIGRpZmZpY3VsdHkgYWZ0ZXIgcGVuaWNpbGxpbi4gTWVkaWNhdGlvbiBub3QgYWRtaW5pc3RlcmVkLiBQcmVzY3JpYmVyIGNvbnRhY3RlZC4="
+            "creation": "2026-08-31T08:30:00Z",
+            "data": "UGhvdG8gSUQgdmVyaWZpZWQuIEVtZXJnZW5jeSBjb250YWN0IHVwZGF0ZWQu"
           }
         }
       ]
     },
     {
       "resourceType": "DocumentReference",
-      "id": "D03",
+      "id": "R546612",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -146,18 +2889,102 @@
       }
     },
     {
-      "resourceType": "MedicationRequest",
-      "id": "D04",
+      "resourceType": "DocumentReference",
+      "id": "R555724",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E102"
+            "reference": "EpisodeOfCare/E106"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-01T08:10:00Z"
+          "valueDateTime": "2026-03-05T09:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "current",
+      "date": "2026-03-05T09:50:00Z",
+      "description": "Observed 15 minutes after injection. Mild soreness at injection site; resolved before discharge.",
+      "type": {
+        "text": "Nursing note"
+      },
+      "author": [
+        {
+          "display": "Dana Kim"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-05T09:50:00Z",
+            "data": "T2JzZXJ2ZWQgMTUgbWludXRlcyBhZnRlciBpbmplY3Rpb24uIE1pbGQgc29yZW5lc3MgYXQgaW5qZWN0aW9uIHNpdGU7IHJlc29sdmVkIGJlZm9yZSBkaXNjaGFyZ2Uu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R563322",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-18T10:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-03-18T10:05:00Z",
+      "request": {
+        "reference": "MedicationRequest/R616431"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Pat Quinn"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R574649",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T10:00:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
@@ -165,31 +2992,211 @@
         }
       ],
       "subject": {
-        "reference": "Patient/P102"
+        "reference": "Patient/P105"
       },
-      "status": "active",
-      "intent": "order",
-      "authoredOn": "2026-09-01T08:10:00Z",
-      "medicationCodeableConcept": {
-        "text": "Doxycycline"
+      "status": "current",
+      "date": "2026-03-01T10:00:00Z",
+      "description": "Primary syphilis: painless penile ulcer, RPR 1:64. Benzathine penicillin G 2.4 million units IM once, given today. Repeat RPR titer 6 months after treatment.",
+      "type": {
+        "text": "Progress note"
       },
-      "dosageInstruction": [
+      "author": [
         {
-          "text": "Doxycycline 100 mg orally twice daily for 14 days."
+          "display": "Luis Ortega"
         }
       ],
-      "supportingInformation": [
+      "content": [
         {
-          "reference": "DocumentReference/D03"
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-01T10:00:00Z",
+            "data": "UHJpbWFyeSBzeXBoaWxpczogcGFpbmxlc3MgcGVuaWxlIHVsY2VyLCBSUFIgMTo2NC4gQmVuemF0aGluZSBwZW5pY2lsbGluIEcgMi40IG1pbGxpb24gdW5pdHMgSU0gb25jZSwgZ2l2ZW4gdG9kYXkuIFJlcGVhdCBSUFIgdGl0ZXIgNiBtb250aHMgYWZ0ZXIgdHJlYXRtZW50Lg=="
+          }
         }
       ],
-      "priorPrescription": {
-        "reference": "MedicationRequest/D01"
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Luis Ortega"
       }
     },
     {
       "resourceType": "DocumentReference",
-      "id": "D05",
+      "id": "R587067",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-17T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "current",
+      "date": "2026-09-17T09:00:00Z",
+      "description": "Reviewed repeat RPR: 1:2, down from 1:32 at diagnosis. Next RPR titer 12 months after treatment as planned.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Jordan Blake"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-17T09:00:00Z",
+            "data": "UmV2aWV3ZWQgcmVwZWF0IFJQUjogMToyLCBkb3duIGZyb20gMTozMiBhdCBkaWFnbm9zaXMuIE5leHQgUlBSIHRpdGVyIDEyIG1vbnRocyBhZnRlciB0cmVhdG1lbnQgYXMgcGxhbm5lZC4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Jordan Blake"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R616015",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-03T11:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "scheduling-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "current",
+      "date": "2026-09-03T11:00:00Z",
+      "description": "Recall call for follow-up blood test. Patient declined to schedule. Removed from recall list.",
+      "type": {
+        "text": "Recall note"
+      },
+      "author": [
+        {
+          "display": "Jamie Ellis"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-03T11:00:00Z",
+            "data": "UmVjYWxsIGNhbGwgZm9yIGZvbGxvdy11cCBibG9vZCB0ZXN0LiBQYXRpZW50IGRlY2xpbmVkIHRvIHNjaGVkdWxlLiBSZW1vdmVkIGZyb20gcmVjYWxsIGxpc3Qu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R616431",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-18T09:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "completed",
+      "intent": "order",
+      "authoredOn": "2026-03-18T09:40:00Z",
+      "requester": {
+        "display": "Luis Ortega"
+      },
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "dosageInstruction": [
+        {
+          "text": "Benzathine penicillin G 2.4 million units IM weekly for three doses."
+        }
+      ],
+      "supportingInformation": [
+        {
+          "reference": "DocumentReference/R703501"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R665796",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-07-15T13:50:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "current",
+      "date": "2026-07-15T13:50:00Z",
+      "description": "BP 118/76, HR 66, temperature 36.6 C, RR 14, SpO2 99% on room air.",
+      "type": {
+        "text": "Vital signs"
+      },
+      "author": [
+        {
+          "display": "Pat Quinn"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-07-15T13:50:00Z",
+            "data": "QlAgMTE4Lzc2LCBIUiA2NiwgdGVtcGVyYXR1cmUgMzYuNiBDLCBSUiAxNCwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R673514",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -236,93 +3243,7 @@
     },
     {
       "resourceType": "DocumentReference",
-      "id": "D06",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E102"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-08-31T08:30:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "front-desk"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P102"
-      },
-      "status": "current",
-      "date": "2026-08-31T08:30:00Z",
-      "description": "Photo ID verified. Emergency contact updated.",
-      "type": {
-        "text": "Registration"
-      },
-      "author": [
-        {
-          "display": "Avery Hughes"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-08-31T08:30:00Z",
-            "data": "UGhvdG8gSUQgdmVyaWZpZWQuIEVtZXJnZW5jeSBjb250YWN0IHVwZGF0ZWQu"
-          }
-        }
-      ]
-    },
-    {
-      "resourceType": "DocumentReference",
-      "id": "D07",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E102"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-08-31T08:50:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "nurse"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P102"
-      },
-      "status": "current",
-      "date": "2026-08-31T08:50:00Z",
-      "description": "BP 126/80, HR 70, temperature 36.9 C, RR 16, SpO2 98% on room air.",
-      "type": {
-        "text": "Vital signs"
-      },
-      "author": [
-        {
-          "display": "Sam Ortiz"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-08-31T08:50:00Z",
-            "data": "QlAgMTI2LzgwLCBIUiA3MCwgdGVtcGVyYXR1cmUgMzYuOSBDLCBSUiAxNiwgU3BPMiA5OCUgb24gcm9vbSBhaXIu"
-          }
-        }
-      ]
-    },
-    {
-      "resourceType": "DocumentReference",
-      "id": "D08",
+      "id": "R679994",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -364,88 +3285,145 @@
       ]
     },
     {
-      "resourceType": "EpisodeOfCare",
-      "id": "E101",
-      "status": "active",
-      "patient": {
-        "reference": "Patient/P101"
-      },
-      "period": {
-        "start": "2026-09-23"
-      }
-    },
-    {
-      "resourceType": "EpisodeOfCare",
-      "id": "E102",
-      "status": "active",
-      "patient": {
-        "reference": "Patient/P102"
-      },
-      "period": {
-        "start": "2026-08-31"
-      }
-    },
-    {
-      "resourceType": "EpisodeOfCare",
-      "id": "E103",
-      "status": "active",
-      "patient": {
-        "reference": "Patient/P103"
-      },
-      "period": {
-        "start": "2026-09-23"
-      }
-    },
-    {
       "resourceType": "DocumentReference",
-      "id": "M01",
+      "id": "R684991",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E103"
+            "reference": "EpisodeOfCare/E101"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T09:00:00Z"
+          "valueDateTime": "2026-09-24T10:30:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "treating-clinician"
+          "valueCode": "telephone-staff"
         }
       ],
       "subject": {
-        "reference": "Patient/P103"
+        "reference": "Patient/P101"
       },
       "status": "current",
-      "date": "2026-09-23T09:00:00Z",
-      "description": "Latent syphilis; duration cannot be established from the available history. Plan for benzathine penicillin G 2.4 million units IM weekly for three doses.",
+      "date": "2026-09-24T10:30:00Z",
+      "description": "Patient asked for clinic parking information. Directions and parking details sent.",
       "type": {
-        "text": "Progress note"
+        "text": "Patient portal message"
       },
       "author": [
         {
-          "display": "Alex Moreno"
+          "display": "Taylor Brooks"
         }
       ],
       "content": [
         {
           "attachment": {
             "contentType": "text/plain",
-            "creation": "2026-09-23T09:00:00Z",
-            "data": "TGF0ZW50IHN5cGhpbGlzOyBkdXJhdGlvbiBjYW5ub3QgYmUgZXN0YWJsaXNoZWQgZnJvbSB0aGUgYXZhaWxhYmxlIGhpc3RvcnkuIFBsYW4gZm9yIGJlbnphdGhpbmUgcGVuaWNpbGxpbiBHIDIuNCBtaWxsaW9uIHVuaXRzIElNIHdlZWtseSBmb3IgdGhyZWUgZG9zZXMu"
+            "creation": "2026-09-24T10:30:00Z",
+            "data": "UGF0aWVudCBhc2tlZCBmb3IgY2xpbmljIHBhcmtpbmcgaW5mb3JtYXRpb24uIERpcmVjdGlvbnMgYW5kIHBhcmtpbmcgZGV0YWlscyBzZW50Lg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R703501",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-18T09:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "current",
+      "date": "2026-03-18T09:30:00Z",
+      "description": "Latent syphilis of unknown duration: RPR 1:16 with reactive treponemal antibody, no signs or symptoms, no prior test results available. Benzathine penicillin G 2.4 million units IM weekly for three doses, first dose today. Repeat RPR titer 6 months after the final dose.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Luis Ortega"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-18T09:30:00Z",
+            "data": "TGF0ZW50IHN5cGhpbGlzIG9mIHVua25vd24gZHVyYXRpb246IFJQUiAxOjE2IHdpdGggcmVhY3RpdmUgdHJlcG9uZW1hbCBhbnRpYm9keSwgbm8gc2lnbnMgb3Igc3ltcHRvbXMsIG5vIHByaW9yIHRlc3QgcmVzdWx0cyBhdmFpbGFibGUuIEJlbnphdGhpbmUgcGVuaWNpbGxpbiBHIDIuNCBtaWxsaW9uIHVuaXRzIElNIHdlZWtseSBmb3IgdGhyZWUgZG9zZXMsIGZpcnN0IGRvc2UgdG9kYXkuIFJlcGVhdCBSUFIgdGl0ZXIgNiBtb250aHMgYWZ0ZXIgdGhlIGZpbmFsIGRvc2Uu"
           }
         }
       ],
       "docStatus": "final",
       "authenticator": {
-        "display": "Alex Moreno"
+        "display": "Luis Ortega"
       }
     },
     {
-      "resourceType": "MedicationRequest",
-      "id": "M02",
+      "resourceType": "DocumentReference",
+      "id": "R708002",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-08-05T10:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "current",
+      "date": "2026-08-05T10:00:00Z",
+      "description": "Seen for three days of cough and sore throat. Viral upper respiratory infection. Supportive care.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Hana Sato"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-08-05T10:00:00Z",
+            "data": "U2VlbiBmb3IgdGhyZWUgZGF5cyBvZiBjb3VnaCBhbmQgc29yZSB0aHJvYXQuIFZpcmFsIHVwcGVyIHJlc3BpcmF0b3J5IGluZmVjdGlvbi4gU3VwcG9ydGl2ZSBjYXJlLg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Hana Sato"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R708473",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -455,7 +3433,50 @@
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T09:10:00Z"
+          "valueDateTime": "2026-09-23T18:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T18:00:00Z",
+      "description": "Patient asked whether the clinic validates parking. Replied that validation is available at the front desk.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T18:00:00Z",
+            "data": "UGF0aWVudCBhc2tlZCB3aGV0aGVyIHRoZSBjbGluaWMgdmFsaWRhdGVzIHBhcmtpbmcuIFJlcGxpZWQgdGhhdCB2YWxpZGF0aW9uIGlzIGF2YWlsYWJsZSBhdCB0aGUgZnJvbnQgZGVzay4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "R713344",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-10T09:05:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
@@ -463,28 +3484,1021 @@
         }
       ],
       "subject": {
-        "reference": "Patient/P103"
+        "reference": "Patient/P109"
       },
-      "status": "active",
+      "status": "completed",
       "intent": "order",
-      "authoredOn": "2026-09-23T09:10:00Z",
+      "authoredOn": "2026-02-10T09:05:00Z",
+      "requester": {
+        "display": "Hana Sato"
+      },
       "medicationCodeableConcept": {
         "text": "Benzathine penicillin G"
       },
       "dosageInstruction": [
         {
-          "text": "Benzathine penicillin G 2.4 million units IM weekly for three doses."
+          "text": "Benzathine penicillin G 2.4 million units IM once."
         }
       ],
       "supportingInformation": [
         {
-          "reference": "DocumentReference/M01"
+          "reference": "DocumentReference/R196809"
         }
       ]
     },
     {
       "resourceType": "DocumentReference",
-      "id": "M03",
+      "id": "R729827",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-23T08:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-23T08:30:00Z",
+      "description": "New patient registration completed. Contact details and insurance recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-23T08:30:00Z",
+            "data": "TmV3IHBhdGllbnQgcmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gQ29udGFjdCBkZXRhaWxzIGFuZCBpbnN1cmFuY2UgcmVjb3JkZWQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R742002",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-01-19T09:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-01-19T09:30:00Z",
+      "issued": "2026-01-19T16:00:00Z",
+      "valueString": "Reactive, 1:16",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R743999",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T08:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "active",
+      "intent": "order",
+      "code": {
+        "text": "Pregnancy test"
+      },
+      "authoredOn": "2026-09-24T08:00:00Z",
+      "note": [
+        {
+          "text": "Specimen not collected. No result available."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R957160"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R747576",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T10:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-03-01T10:10:00Z",
+      "requester": {
+        "display": "Luis Ortega"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer 6 months after treatment."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R574649"
+        }
+      ]
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "R752438",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E109"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-08T15:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P109"
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "type": [
+        {
+          "text": "Nurse visit"
+        }
+      ],
+      "reasonCode": [
+        {
+          "text": "Hepatitis B vaccine dose 2"
+        }
+      ],
+      "period": {
+        "start": "2026-09-08T15:00:00Z",
+        "end": "2026-09-08T15:30:00Z"
+      }
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R756689",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-01-20T10:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/due-by",
+          "valueDate": "2026-07-20"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/cancelled-at",
+          "valueDateTime": "2026-08-28T11:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/cancelled-by",
+          "valueReference": {
+            "reference": "DocumentReference/R108970"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/replaced-by",
+          "valueReference": {
+            "reference": "ServiceRequest/R502988"
+          }
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "revoked",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-01-20T10:10:00Z",
+      "requester": {
+        "display": "Casey Nguyen"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer due by 2026-07-20."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R903446"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R774543",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-05T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "current",
+      "date": "2026-03-05T09:00:00Z",
+      "description": "Secondary syphilis: diffuse rash including palms and soles, RPR 1:32. Benzathine penicillin G 2.4 million units IM once, given today. Repeat RPR titer due by 2026-09-05.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Casey Nguyen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-05T09:00:00Z",
+            "data": "U2Vjb25kYXJ5IHN5cGhpbGlzOiBkaWZmdXNlIHJhc2ggaW5jbHVkaW5nIHBhbG1zIGFuZCBzb2xlcywgUlBSIDE6MzIuIEJlbnphdGhpbmUgcGVuaWNpbGxpbiBHIDIuNCBtaWxsaW9uIHVuaXRzIElNIG9uY2UsIGdpdmVuIHRvZGF5LiBSZXBlYXQgUlBSIHRpdGVyIGR1ZSBieSAyMDI2LTA5LTA1Lg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Casey Nguyen"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R778350",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E103"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "scheduling-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P103"
+      },
+      "status": "current",
+      "date": "2026-09-24T09:00:00Z",
+      "description": "First treatment appointment booked for Sept. 24 at 14:00 UTC.",
+      "type": {
+        "text": "Scheduling note"
+      },
+      "author": [
+        {
+          "display": "Jamie Ellis"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-24T09:00:00Z",
+            "data": "Rmlyc3QgdHJlYXRtZW50IGFwcG9pbnRtZW50IGJvb2tlZCBmb3IgU2VwdC4gMjQgYXQgMTQ6MDAgVVRDLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R798211",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-10T19:20:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "current",
+      "date": "2026-09-10T19:20:00Z",
+      "description": "Patient writes that he was tested at a community health fair in August and that \"everything was fine.\" Asked patient to upload the report.",
+      "type": {
+        "text": "Patient portal message"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-10T19:20:00Z",
+            "data": "UGF0aWVudCB3cml0ZXMgdGhhdCBoZSB3YXMgdGVzdGVkIGF0IGEgY29tbXVuaXR5IGhlYWx0aCBmYWlyIGluIEF1Z3VzdCBhbmQgdGhhdCAiZXZlcnl0aGluZyB3YXMgZmluZS4iIEFza2VkIHBhdGllbnQgdG8gdXBsb2FkIHRoZSByZXBvcnQu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R810184",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-17T13:15:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "current",
+      "date": "2026-09-17T13:15:00Z",
+      "description": "Patient called after recall reminder. Follow-up blood test visit booked for 2026-09-29 08:45.",
+      "type": {
+        "text": "Scheduling note"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-17T13:15:00Z",
+            "data": "UGF0aWVudCBjYWxsZWQgYWZ0ZXIgcmVjYWxsIHJlbWluZGVyLiBGb2xsb3ctdXAgYmxvb2QgdGVzdCB2aXNpdCBib29rZWQgZm9yIDIwMjYtMDktMjkgMDg6NDUu"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R819038",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-18T09:45:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-03-18T09:45:00Z",
+      "requester": {
+        "display": "Luis Ortega"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer 6 months after the final dose of benzathine penicillin G."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R703501"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R840652",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E107"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-01T15:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P107"
+      },
+      "status": "current",
+      "date": "2026-06-01T15:00:00Z",
+      "description": "Registration updated. Emergency contact recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Avery Hughes"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-06-01T15:00:00Z",
+            "data": "UmVnaXN0cmF0aW9uIHVwZGF0ZWQuIEVtZXJnZW5jeSBjb250YWN0IHJlY29yZGVkLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R843963",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E101"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-24T09:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "telephone-staff"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P101"
+      },
+      "status": "current",
+      "date": "2026-09-24T09:00:00Z",
+      "description": "Patient called; plans to attend clinic today. Message forwarded to treating clinician.",
+      "type": {
+        "text": "Telephone encounter"
+      },
+      "author": [
+        {
+          "display": "Taylor Brooks"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-09-24T09:00:00Z",
+            "data": "UGF0aWVudCBjYWxsZWQ7IHBsYW5zIHRvIGF0dGVuZCBjbGluaWMgdG9kYXkuIE1lc3NhZ2UgZm9yd2FyZGVkIHRvIHRyZWF0aW5nIGNsaW5pY2lhbi4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R852016",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E102"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T16:05:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/due-by",
+          "valueDate": "2027-03-15"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P102"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-09-15T16:05:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer due by 2027-03-15."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R673514"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R853352",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-02-27T10:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "current",
+      "date": "2026-02-27T10:00:00Z",
+      "description": "Registration completed. Insurance information recorded.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Chris Lowe"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-02-27T10:00:00Z",
+            "data": "UmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gSW5zdXJhbmNlIGluZm9ybWF0aW9uIHJlY29yZGVkLg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R853409",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T10:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
+      },
+      "effectiveDateTime": "2026-09-15T10:30:00Z",
+      "issued": "2026-09-16T08:00:00Z",
+      "valueString": "Reactive, 1:2",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ],
+      "basedOn": [
+        {
+          "reference": "ServiceRequest/R498283"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R869016",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-17T08:35:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "completed",
+      "intent": "order",
+      "code": {
+        "text": "Chlamydia and gonorrhea NAAT"
+      },
+      "authoredOn": "2026-03-17T08:35:00Z",
+      "requester": {
+        "display": "Luis Ortega"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R869426",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-06-12T15:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "current",
+      "date": "2026-06-12T15:30:00Z",
+      "description": "Contraception visit. Continues combined oral contraceptive; refilled for 12 months. No new symptoms.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Priya Raman"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-06-12T15:30:00Z",
+            "data": "Q29udHJhY2VwdGlvbiB2aXNpdC4gQ29udGludWVzIGNvbWJpbmVkIG9yYWwgY29udHJhY2VwdGl2ZTsgcmVmaWxsZWQgZm9yIDEyIG1vbnRocy4gTm8gbmV3IHN5bXB0b21zLg=="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Priya Raman"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R878533",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-05-06T15:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P105"
+      },
+      "status": "current",
+      "date": "2026-05-06T15:00:00Z",
+      "description": "Seen for a right ankle sprain after a fall while running. Swelling without bony tenderness. Ice, elevation and ibuprofen as needed.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Jordan Blake"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-05-06T15:00:00Z",
+            "data": "U2VlbiBmb3IgYSByaWdodCBhbmtsZSBzcHJhaW4gYWZ0ZXIgYSBmYWxsIHdoaWxlIHJ1bm5pbmcuIFN3ZWxsaW5nIHdpdGhvdXQgYm9ueSB0ZW5kZXJuZXNzLiBJY2UsIGVsZXZhdGlvbiBhbmQgaWJ1cHJvZmVuIGFzIG5lZWRlZC4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Jordan Blake"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R903446",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-01-20T10:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P110"
+      },
+      "status": "current",
+      "date": "2026-01-20T10:00:00Z",
+      "description": "Primary syphilis: vulvar ulcer, RPR 1:16. History of anaphylaxis to penicillin. Urine pregnancy test negative. Doxycycline 100 mg orally twice daily for 14 days. Repeat RPR titer due by 2026-07-20.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Casey Nguyen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-01-20T10:00:00Z",
+            "data": "UHJpbWFyeSBzeXBoaWxpczogdnVsdmFyIHVsY2VyLCBSUFIgMToxNi4gSGlzdG9yeSBvZiBhbmFwaHlsYXhpcyB0byBwZW5pY2lsbGluLiBVcmluZSBwcmVnbmFuY3kgdGVzdCBuZWdhdGl2ZS4gRG94eWN5Y2xpbmUgMTAwIG1nIG9yYWxseSB0d2ljZSBkYWlseSBmb3IgMTQgZGF5cy4gUmVwZWF0IFJQUiB0aXRlciBkdWUgYnkgMjAyNi0wNy0yMC4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Casey Nguyen"
+      }
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R908902",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-09-15T10:02:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "completed",
+      "intent": "order",
+      "code": {
+        "text": "Chlamydia and gonorrhea NAAT"
+      },
+      "authoredOn": "2026-09-15T10:02:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      }
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R911344",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-04-01T09:55:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-04-01T09:55:00Z",
+      "request": {
+        "reference": "MedicationRequest/R616431"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Pat Quinn"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R919361",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-04-22T14:00:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "current",
+      "date": "2026-04-22T14:00:00Z",
+      "description": "Travel consultation before a trip abroad. Hepatitis A vaccine given. Traveler's diarrhea precautions reviewed.",
+      "type": {
+        "text": "Progress note"
+      },
+      "author": [
+        {
+          "display": "Casey Nguyen"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-04-22T14:00:00Z",
+            "data": "VHJhdmVsIGNvbnN1bHRhdGlvbiBiZWZvcmUgYSB0cmlwIGFicm9hZC4gSGVwYXRpdGlzIEEgdmFjY2luZSBnaXZlbi4gVHJhdmVsZXIncyBkaWFycmhlYSBwcmVjYXV0aW9ucyByZXZpZXdlZC4="
+          }
+        }
+      ],
+      "docStatus": "final",
+      "authenticator": {
+        "display": "Casey Nguyen"
+      }
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R921741",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -531,17 +4545,17 @@
     },
     {
       "resourceType": "MedicationRequest",
-      "id": "M04",
+      "id": "R932433",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E103"
+            "reference": "EpisodeOfCare/E108"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T15:10:00Z"
+          "valueDateTime": "2026-03-01T11:05:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
@@ -549,11 +4563,14 @@
         }
       ],
       "subject": {
-        "reference": "Patient/P103"
+        "reference": "Patient/P108"
       },
-      "status": "active",
+      "status": "completed",
       "intent": "order",
-      "authoredOn": "2026-09-23T15:10:00Z",
+      "authoredOn": "2026-03-01T11:05:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
       "medicationCodeableConcept": {
         "text": "Benzathine penicillin G"
       },
@@ -564,109 +4581,142 @@
       ],
       "supportingInformation": [
         {
-          "reference": "DocumentReference/M03"
+          "reference": "DocumentReference/R220415"
         }
       ]
     },
     {
-      "resourceType": "DocumentReference",
-      "id": "M05",
+      "resourceType": "Observation",
+      "id": "R942580",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E103"
+            "reference": "EpisodeOfCare/E107"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-24T09:00:00Z"
+          "valueDateTime": "2026-06-01T15:30:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "scheduling-staff"
+          "valueCode": "laboratory"
         }
       ],
       "subject": {
-        "reference": "Patient/P103"
+        "reference": "Patient/P107"
       },
-      "status": "current",
-      "date": "2026-09-24T09:00:00Z",
-      "description": "First treatment appointment booked for Sept. 24 at 14:00 UTC.",
-      "type": {
-        "text": "Scheduling note"
+      "status": "final",
+      "code": {
+        "text": "RPR titer"
       },
-      "author": [
+      "effectiveDateTime": "2026-06-01T15:30:00Z",
+      "issued": "2026-06-02T08:05:00Z",
+      "valueString": "Reactive, 1:8",
+      "performer": [
         {
-          "display": "Jamie Ellis"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-09-24T09:00:00Z",
-            "data": "Rmlyc3QgdHJlYXRtZW50IGFwcG9pbnRtZW50IGJvb2tlZCBmb3IgU2VwdC4gMjQgYXQgMTQ6MDAgVVRDLg=="
-          }
+          "display": "Clinic laboratory"
         }
       ]
     },
     {
-      "resourceType": "DocumentReference",
-      "id": "M06",
+      "resourceType": "ServiceRequest",
+      "id": "R944637",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E103"
+            "reference": "EpisodeOfCare/E107"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T08:30:00Z"
+          "valueDateTime": "2026-06-02T10:10:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "front-desk"
+          "valueCode": "treating-clinician"
         }
       ],
       "subject": {
-        "reference": "Patient/P103"
+        "reference": "Patient/P107"
       },
-      "status": "current",
-      "date": "2026-09-23T08:30:00Z",
-      "description": "New patient registration completed. Contact details and insurance recorded.",
-      "type": {
-        "text": "Registration"
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
       },
-      "author": [
+      "authoredOn": "2026-06-02T10:10:00Z",
+      "requester": {
+        "display": "Alex Moreno"
+      },
+      "note": [
         {
-          "display": "Avery Hughes"
+          "text": "Repeat RPR titer 3 months after treatment."
         }
       ],
-      "content": [
+      "supportingInfo": [
         {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-09-23T08:30:00Z",
-            "data": "TmV3IHBhdGllbnQgcmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gQ29udGFjdCBkZXRhaWxzIGFuZCBpbnN1cmFuY2UgcmVjb3JkZWQu"
+          "reference": "DocumentReference/R248036"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "R948337",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
           }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-01T11:12:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "treating-clinician"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P108"
+      },
+      "status": "active",
+      "intent": "plan",
+      "code": {
+        "text": "RPR titer"
+      },
+      "authoredOn": "2026-03-01T11:12:00Z",
+      "requester": {
+        "display": "Jordan Blake"
+      },
+      "note": [
+        {
+          "text": "Repeat RPR titer 12 months after treatment."
+        }
+      ],
+      "supportingInfo": [
+        {
+          "reference": "DocumentReference/R220415"
         }
       ]
     },
     {
       "resourceType": "DocumentReference",
-      "id": "M07",
+      "id": "R957160",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E103"
+            "reference": "EpisodeOfCare/E101"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T08:45:00Z"
+          "valueDateTime": "2026-09-23T10:00:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
@@ -674,102 +4724,32 @@
         }
       ],
       "subject": {
-        "reference": "Patient/P103"
+        "reference": "Patient/P101"
       },
       "status": "current",
-      "date": "2026-09-23T08:45:00Z",
-      "description": "BP 130/84, HR 78, temperature 36.6 C, RR 16, SpO2 99% on room air.",
+      "date": "2026-09-23T10:00:00Z",
+      "description": "Patient reports a late menstrual period. Pregnancy testing requested by clinician; specimen not collected during this visit. Clinician informed.",
       "type": {
-        "text": "Vital signs"
+        "text": "Nursing note"
       },
       "author": [
         {
-          "display": "Dana Kim"
+          "display": "Riley Chen"
         }
       ],
       "content": [
         {
           "attachment": {
             "contentType": "text/plain",
-            "creation": "2026-09-23T08:45:00Z",
-            "data": "QlAgMTMwLzg0LCBIUiA3OCwgdGVtcGVyYXR1cmUgMzYuNiBDLCBSUiAxNiwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
+            "creation": "2026-09-23T10:00:00Z",
+            "data": "UGF0aWVudCByZXBvcnRzIGEgbGF0ZSBtZW5zdHJ1YWwgcGVyaW9kLiBQcmVnbmFuY3kgdGVzdGluZyByZXF1ZXN0ZWQgYnkgY2xpbmljaWFuOyBzcGVjaW1lbiBub3QgY29sbGVjdGVkIGR1cmluZyB0aGlzIHZpc2l0LiBDbGluaWNpYW4gaW5mb3JtZWQu"
           }
         }
       ]
     },
     {
       "resourceType": "DocumentReference",
-      "id": "M08",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E103"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T18:00:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "telephone-staff"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P103"
-      },
-      "status": "current",
-      "date": "2026-09-23T18:00:00Z",
-      "description": "Patient asked whether the clinic validates parking. Replied that validation is available at the front desk.",
-      "type": {
-        "text": "Patient portal message"
-      },
-      "author": [
-        {
-          "display": "Taylor Brooks"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-09-23T18:00:00Z",
-            "data": "UGF0aWVudCBhc2tlZCB3aGV0aGVyIHRoZSBjbGluaWMgdmFsaWRhdGVzIHBhcmtpbmcuIFJlcGxpZWQgdGhhdCB2YWxpZGF0aW9uIGlzIGF2YWlsYWJsZSBhdCB0aGUgZnJvbnQgZGVzay4="
-          }
-        }
-      ]
-    },
-    {
-      "resourceType": "Patient",
-      "id": "P101",
-      "name": [
-        {
-          "text": "Samantha Lee"
-        }
-      ]
-    },
-    {
-      "resourceType": "Patient",
-      "id": "P102",
-      "name": [
-        {
-          "text": "Darrow Jones"
-        }
-      ]
-    },
-    {
-      "resourceType": "Patient",
-      "id": "P103",
-      "name": [
-        {
-          "text": "Morgan Patel"
-        }
-      ]
-    },
-    {
-      "resourceType": "DocumentReference",
-      "id": "S01",
+      "id": "R963338",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
@@ -815,57 +4795,18 @@
       }
     },
     {
-      "resourceType": "MedicationRequest",
-      "id": "S02",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E101"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T09:15:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "treating-clinician"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P101"
-      },
-      "status": "draft",
-      "intent": "proposal",
-      "authoredOn": "2026-09-23T09:15:00Z",
-      "medicationCodeableConcept": {
-        "text": "Doxycycline"
-      },
-      "dosageInstruction": [
-        {
-          "text": "Oral doxycycline course (proposed). Not released; pending prescriber review once pregnancy status is known."
-        }
-      ],
-      "supportingInformation": [
-        {
-          "reference": "DocumentReference/S01"
-        }
-      ]
-    },
-    {
       "resourceType": "DocumentReference",
-      "id": "S03",
+      "id": "R977714",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E101"
+            "reference": "EpisodeOfCare/E102"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T10:00:00Z"
+          "valueDateTime": "2026-08-31T09:20:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
@@ -873,80 +4814,42 @@
         }
       ],
       "subject": {
-        "reference": "Patient/P101"
+        "reference": "Patient/P102"
       },
       "status": "current",
-      "date": "2026-09-23T10:00:00Z",
-      "description": "Patient reports a late menstrual period. Pregnancy testing requested by clinician; specimen not collected during this visit. Clinician informed.",
+      "date": "2026-08-31T09:20:00Z",
+      "description": "Patient reports prior immediate hives and breathing difficulty after penicillin. Medication not administered. Prescriber contacted.",
       "type": {
         "text": "Nursing note"
       },
       "author": [
         {
-          "display": "Riley Chen"
+          "display": "Sam Ortiz"
         }
       ],
       "content": [
         {
           "attachment": {
             "contentType": "text/plain",
-            "creation": "2026-09-23T10:00:00Z",
-            "data": "UGF0aWVudCByZXBvcnRzIGEgbGF0ZSBtZW5zdHJ1YWwgcGVyaW9kLiBQcmVnbmFuY3kgdGVzdGluZyByZXF1ZXN0ZWQgYnkgY2xpbmljaWFuOyBzcGVjaW1lbiBub3QgY29sbGVjdGVkIGR1cmluZyB0aGlzIHZpc2l0LiBDbGluaWNpYW4gaW5mb3JtZWQu"
+            "creation": "2026-08-31T09:20:00Z",
+            "data": "UGF0aWVudCByZXBvcnRzIHByaW9yIGltbWVkaWF0ZSBoaXZlcyBhbmQgYnJlYXRoaW5nIGRpZmZpY3VsdHkgYWZ0ZXIgcGVuaWNpbGxpbi4gTWVkaWNhdGlvbiBub3QgYWRtaW5pc3RlcmVkLiBQcmVzY3JpYmVyIGNvbnRhY3RlZC4="
           }
-        }
-      ]
-    },
-    {
-      "resourceType": "ServiceRequest",
-      "id": "S04",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E101"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-24T08:00:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "laboratory"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P101"
-      },
-      "status": "active",
-      "intent": "order",
-      "code": {
-        "text": "Pregnancy test"
-      },
-      "note": [
-        {
-          "text": "Specimen not collected. No result available."
-        }
-      ],
-      "supportingInfo": [
-        {
-          "reference": "DocumentReference/S03"
         }
       ]
     },
     {
       "resourceType": "DocumentReference",
-      "id": "S05",
+      "id": "R984877",
       "extension": [
         {
           "url": "https://chartr.example/fhir/StructureDefinition/episode",
           "valueReference": {
-            "reference": "EpisodeOfCare/E101"
+            "reference": "EpisodeOfCare/E110"
           }
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-24T09:00:00Z"
+          "valueDateTime": "2026-05-11T08:30:00Z"
         },
         {
           "url": "https://chartr.example/fhir/StructureDefinition/author-role",
@@ -954,140 +4857,11 @@
         }
       ],
       "subject": {
-        "reference": "Patient/P101"
+        "reference": "Patient/P110"
       },
       "status": "current",
-      "date": "2026-09-24T09:00:00Z",
-      "description": "Patient called; plans to attend clinic today. Message forwarded to treating clinician.",
-      "type": {
-        "text": "Telephone encounter"
-      },
-      "author": [
-        {
-          "display": "Taylor Brooks"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-09-24T09:00:00Z",
-            "data": "UGF0aWVudCBjYWxsZWQ7IHBsYW5zIHRvIGF0dGVuZCBjbGluaWMgdG9kYXkuIE1lc3NhZ2UgZm9yd2FyZGVkIHRvIHRyZWF0aW5nIGNsaW5pY2lhbi4="
-          }
-        }
-      ]
-    },
-    {
-      "resourceType": "DocumentReference",
-      "id": "S06",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E101"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T08:40:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "front-desk"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P101"
-      },
-      "status": "current",
-      "date": "2026-09-23T08:40:00Z",
-      "description": "Insurance information verified. Mailing address and phone number updated. Preferred pharmacy recorded.",
-      "type": {
-        "text": "Registration"
-      },
-      "author": [
-        {
-          "display": "Avery Hughes"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-09-23T08:40:00Z",
-            "data": "SW5zdXJhbmNlIGluZm9ybWF0aW9uIHZlcmlmaWVkLiBNYWlsaW5nIGFkZHJlc3MgYW5kIHBob25lIG51bWJlciB1cGRhdGVkLiBQcmVmZXJyZWQgcGhhcm1hY3kgcmVjb3JkZWQu"
-          }
-        }
-      ]
-    },
-    {
-      "resourceType": "DocumentReference",
-      "id": "S07",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E101"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-23T08:50:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "nurse"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P101"
-      },
-      "status": "current",
-      "date": "2026-09-23T08:50:00Z",
-      "description": "BP 118/74, HR 76, temperature 36.7 C, RR 14, SpO2 99% on room air.",
-      "type": {
-        "text": "Vital signs"
-      },
-      "author": [
-        {
-          "display": "Riley Chen"
-        }
-      ],
-      "content": [
-        {
-          "attachment": {
-            "contentType": "text/plain",
-            "creation": "2026-09-23T08:50:00Z",
-            "data": "QlAgMTE4Lzc0LCBIUiA3NiwgdGVtcGVyYXR1cmUgMzYuNyBDLCBSUiAxNCwgU3BPMiA5OSUgb24gcm9vbSBhaXIu"
-          }
-        }
-      ]
-    },
-    {
-      "resourceType": "DocumentReference",
-      "id": "S08",
-      "extension": [
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/episode",
-          "valueReference": {
-            "reference": "EpisodeOfCare/E101"
-          }
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
-          "valueDateTime": "2026-09-24T10:30:00Z"
-        },
-        {
-          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
-          "valueCode": "telephone-staff"
-        }
-      ],
-      "subject": {
-        "reference": "Patient/P101"
-      },
-      "status": "current",
-      "date": "2026-09-24T10:30:00Z",
-      "description": "Patient asked for clinic parking information. Directions and parking details sent.",
+      "date": "2026-05-11T08:30:00Z",
+      "description": "Patient asked about clinic hours on Memorial Day. Replied with holiday hours.",
       "type": {
         "text": "Patient portal message"
       },
@@ -1100,8 +4874,132 @@
         {
           "attachment": {
             "contentType": "text/plain",
-            "creation": "2026-09-24T10:30:00Z",
-            "data": "UGF0aWVudCBhc2tlZCBmb3IgY2xpbmljIHBhcmtpbmcgaW5mb3JtYXRpb24uIERpcmVjdGlvbnMgYW5kIHBhcmtpbmcgZGV0YWlscyBzZW50Lg=="
+            "creation": "2026-05-11T08:30:00Z",
+            "data": "UGF0aWVudCBhc2tlZCBhYm91dCBjbGluaWMgaG91cnMgb24gTWVtb3JpYWwgRGF5LiBSZXBsaWVkIHdpdGggaG9saWRheSBob3Vycy4="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "R990385",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-17T08:40:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "laboratory"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "final",
+      "code": {
+        "text": "Chlamydia trachomatis and Neisseria gonorrhoeae NAAT"
+      },
+      "effectiveDateTime": "2026-03-17T08:40:00Z",
+      "issued": "2026-03-18T12:00:00Z",
+      "valueString": "Not detected",
+      "performer": [
+        {
+          "display": "Clinic laboratory"
+        }
+      ],
+      "basedOn": [
+        {
+          "reference": "ServiceRequest/R869016"
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationAdministration",
+      "id": "R991580",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E104"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-25T10:10:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "nurse"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P104"
+      },
+      "status": "completed",
+      "medicationCodeableConcept": {
+        "text": "Benzathine penicillin G"
+      },
+      "effectiveDateTime": "2026-03-25T10:10:00Z",
+      "request": {
+        "reference": "MedicationRequest/R616431"
+      },
+      "dosage": {
+        "text": "2.4 million units IM"
+      },
+      "performer": [
+        {
+          "actor": {
+            "display": "Riley Chen"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "R994149",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E106"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-time",
+          "valueDateTime": "2026-03-04T11:30:00Z"
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/author-role",
+          "valueCode": "front-desk"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/P106"
+      },
+      "status": "current",
+      "date": "2026-03-04T11:30:00Z",
+      "description": "Registration completed. Mailing address confirmed.",
+      "type": {
+        "text": "Registration"
+      },
+      "author": [
+        {
+          "display": "Chris Lowe"
+        }
+      ],
+      "content": [
+        {
+          "attachment": {
+            "contentType": "text/plain",
+            "creation": "2026-03-04T11:30:00Z",
+            "data": "UmVnaXN0cmF0aW9uIGNvbXBsZXRlZC4gTWFpbGluZyBhZGRyZXNzIGNvbmZpcm1lZC4="
           }
         }
       ]
@@ -1110,12 +5008,86 @@
       "resourceType": "Organization",
       "id": "clinical-review",
       "name": "Clinical review"
+    },
+    {
+      "resourceType": "Organization",
+      "id": "follow-up-coordination",
+      "name": "Follow-up coordination"
     }
   ],
   "queue": [
     {
       "resourceType": "Task",
-      "id": "Q102",
+      "id": "Q2081",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P110"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E110"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-07-25T08:30:00Z",
+      "lastModified": "2026-07-25T08:30:00Z",
+      "description": "Repeat RPR titer was due by 2026-07-20; no result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E110"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R756689"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2146",
       "intent": "order",
       "status": "requested",
       "businessStatus": {
@@ -1177,7 +5149,7 @@
             ]
           },
           "valueReference": {
-            "reference": "MedicationRequest/D01"
+            "reference": "MedicationRequest/R426517"
           }
         },
         {
@@ -1190,7 +5162,158 @@
             ]
           },
           "valueReference": {
-            "reference": "DocumentReference/D02"
+            "reference": "DocumentReference/R977714"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2203",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P105"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E105"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-09-05T09:00:00Z",
+      "lastModified": "2026-09-05T09:00:00Z",
+      "description": "Repeat RPR titer was due 6 months after the March 1 treatment; no result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E105"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "MedicationAdministration/R242510"
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R747576"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2217",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P108"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E108"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-09-12T08:00:00Z",
+      "lastModified": "2026-09-12T08:00:00Z",
+      "description": "Repeat RPR titer was due by 2026-09-01; no result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E108"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R444747"
           }
         }
       ]

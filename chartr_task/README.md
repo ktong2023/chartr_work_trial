@@ -1,9 +1,39 @@
-# ChartR treatment-review task — v0.1.4
+# ChartR review-queue task — v0.2.0
 
-One Harbor task contains Samantha Lee/P101, Darrow Jones/P102 and Morgan Patel/P103.
+One Harbor task contains ten synthetic patients (P101–P110) and two review categories:
+treatment review and follow-up.
 The original `task_1` tutorial is unchanged. The existing `-a anthropic_agent` import
 continues to work. Development uses the existing `.venv`: Harbor **0.23.0**, Anthropic
 SDK **1.8.0**, jsonschema **4.26.0**. No installed dependency was upgraded.
+
+## Revision 0.2.0 — follow-up category, ten patients, anti-shortcut fixture
+
+Difficulty revision. Adds a `follow_up` category (destination `follow_up_coordination`;
+reasons `OVERDUE_FOLLOW_UP` → `open`, `FOLLOW_UP_TIMING_UNCLEAR` → `needs_clarification`)
+next to the unchanged treatment rules, and seven new patients (P104–P110). The starting
+queue grows from one item to four: Q102 is now Q2146, plus Q2081, Q2203 and Q2217.
+Expected final state: 9 items, graded per (patient, category); every other pair must be
+empty. Each new case isolates one reasoning skill with one plausible wrong answer: date
+arithmetic from a named anchor, booked-after-due, unrelated recent visit, completion after
+the due date, staff removal or patient self-report, unreconciled plans, and a clinician
+replacement that follows re-treatment. The private case sheet is
+`../chartr_task1_cases_v0_2.md`.
+
+Anti-shortcut changes: every record ID is an opaque hash (no chronology, patient, type or
+relevance signal; this removes the 0.1.4 tell where routine records were always X06–X08),
+and routine content now includes orders, results, visits and signed clinician notes.
+`qa/test_clinic.py` enforces that ID order never separates citable from routine records
+and that every type, role, label and author on a citable record also appears on a
+routine one. New record types: ServiceRequest plans (`intent: plan`, optional `due-by`),
+MedicationAdministration, Observation and Encounter. S04 gains `authoredOn`; orders gain
+`requester`. The service rejects mismatched category/destination/reason combinations.
+
+Budgets raised so the larger cohort cannot fail on limits: 100 turns, 4,096 output
+tokens, 1,170 s adapter wall time (Harbor agent timeout 1,200 s), 50,000 tool-output
+characters. Every chart stays under 20,000 characters (generator and test check).
+QA: 18 clinic tests, including a failing variant for every tempting wrong answer
+(each confirmed to fail on its intended check), plus 11 adapter tests. Offline
+reference = 1 in both evidence variants; no-op = 0.
 
 ## Revision 0.1.4 — extraneous records; evidence relevance now enforceable
 
@@ -79,17 +109,16 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a no
 
 # ONE paid pilot, only when you decide to run it; not executed during implementation.
 # ANTHROPIC_API_KEY must already be exported on the host. Do not use --agent-env for it.
-PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent -m claude-opus-5 --ak max_turns=60 --ak max_tokens=2048 --ak wall_timeout_sec=570 --jobs-dir "$PWD/jobs/chartr"
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent:AnthropicAgent -m claude-opus-5 --ak max_turns=100 --ak max_tokens=4096 --ak wall_timeout_sec=1170 --jobs-dir "$PWD/jobs/chartr"
 ```
 
 The model default preserves the original `claude-opus-5` value. `-m` overrides it;
 otherwise `ANTHROPIC_MODEL` overrides the default. `--ak max_turns`, `max_tokens`,
 `wall_timeout_sec`, `api_timeout_sec`, `tool_timeout_sec`, `max_tool_chars` configure
 limits. `ANTHROPIC_MAX_TURNS` and `ANTHROPIC_MAX_TOKENS` are optional host fallbacks.
-Harbor allows 600 seconds for the agent, 600 for builds, and 120 for verification.
+Harbor allows 1,200 seconds for the agent, 600 for builds, and 120 for verification.
 The adapter uses the ordinary Messages API and no new organization-dependent API
-features. This revision has not been retested with paid requests; the earlier
-0.1.0 pilot artifacts are retained.
+features. Earlier pilot artifacts are retained under their own version labels.
 
 ## Architecture and trust boundary
 
@@ -127,7 +156,7 @@ passes while an agent-created counter 999 at the same path is ignored. The real
 clinical boundary probe also plants a forgery in both the agent's `/evidence` and
 its published artifacts directory; neither shadows the trusted service evidence.
 
-Every new trial gets an empty SQLite database, Q102, fresh nonce, ID counter and
+Every new trial gets an empty SQLite database, the four seeded items, fresh nonce, ID counter and
 audit. Reusing an existing database is rejected. Reset means tearing down the
 per-trial containers and launching a new trial, never calling an agent admin API.
 
@@ -136,7 +165,8 @@ per-trial containers and launching a new trial, never calling an agent admin API
 See [public tools and mapping](environment/public/tools.md) for exact commands,
 return shapes, local extensions, episode/evidence links, timestamps and status
 mapping. Patient, EpisodeOfCare, DocumentReference, MedicationRequest,
-ServiceRequest, Organization and Task resources are stored as JSON. This is a
+MedicationAdministration, ServiceRequest, Observation, Encounter, Organization and Task
+resources are stored as JSON. This is a
 limited representation, **not full FHIR REST/API conformance**. The official R4
 4.0.1 JSON schema is vendored and checksum checked; see
 [schema provenance](environment/service/schema/README.md).
@@ -145,11 +175,12 @@ S04 is an outstanding request, with no fabricated result. D01 retains its August
 31 authorship and September 1 cancellation; D04 explicitly replaces it. D04 stays
 an active recorded order because D05 reports patient completion without documenting
 an order-status closure. Both Morgan orders retain active status and their distinct
-supporting notes. No new diagnoses or clinical categories have been introduced.
+supporting notes. Follow-up plans are ServiceRequest `intent: plan`; a revoked plan
+carries `cancelled-at`/`cancelled-by`/`replaced-by` like D01.
 
 Custom `open`/`needs_clarification`/`resolved` codes live in Task.businessStatus;
-Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 32
-resources including Q102. New/updated tasks are schema validated before commit.
+Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 138
+resources including the four seeded items. New/updated tasks are schema validated before commit.
 FHIR schema validation is structural; it is not complete terminology, profile,
 reference-resolution or FHIRPath conformance validation.
 
@@ -157,11 +188,11 @@ reference-resolution or FHIRPath conformance validation.
 
 `solution/reference.py` reads and writes only through the same `clinic` CLI. Harbor
 uploads it for dedicated oracle runs only. `tests/grade.py` imports neither the
-reference nor the backend. It accepts either S01 or S03 with S02/S04, D03 plus D01
-or D04, and M02/M04; relevant additional references and different action ordering
-are allowed. Explanation text must be nonempty, but its factual prose requires
+reference nor the backend. `EXPECTED` is keyed by (patient, category) with role-based
+required groups and allowed sets (see the private case sheet); relevant additional
+references and different action ordering are allowed. Explanation text must be nonempty, but its factual prose requires
 human QA. The backend intentionally permits duplicate and semantically incorrect
-items; the grader detects them. Q102 cannot be reassigned, deleted or replaced.
+items; the grader detects them. Seeded items cannot be reassigned, deleted or replaced.
 
 ## Evidence and attribution
 
