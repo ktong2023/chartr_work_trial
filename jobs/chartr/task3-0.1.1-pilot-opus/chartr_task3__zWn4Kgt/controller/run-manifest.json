@@ -1,0 +1,41 @@
+{
+  "harbor": "0.23.0",
+  "anthropic": "1.8.0",
+  "provider": "chartr_environment:ChartREnvironment",
+  "task_files_sha256": {
+    "instruction.md": "37ad10513f498cf2bc734a4159a4d90700ed8aacbcf97eea8ca854265bd33fb4",
+    "README.md": "394a33026f441cc2b0fd853948127390382429026ab78c2d2c77acd9faf890b0",
+    "task.toml": "bd9560fb866c17796123ef18056b362e8de171a599863fb0053126b6163ce832",
+    "tests/docker-compose.yaml": "490c1326cd1aebc685172eeb145cbefdae212de187269976e4557e80a52fb77a",
+    "tests/expected.json": "fd0251af84c4e6166748b3f2cfd94cadfd89d45d669f63006f3ab0b0d7fb7632",
+    "tests/Dockerfile": "953ce0c2072519c007ae998c174b6a26a1d240f7f34a4e710560e0ab93dd252f",
+    "tests/baseline.json": "c9fec8f7c3d76b024f06d7f3f81d02a9d2af222f665ece55bc29944c7006d48d",
+    "tests/test.sh": "93e413891d381b6b7955571f1745d695ba6250df5e449d3c246731de62af9ce0",
+    "tests/grade.py": "1ba1a1526a787f7f9389045329d0d18f81f30b53bb16625e0babb49ad841d27c",
+    "solution/solve.sh": "fc19e0b98ad46178c974f6b6f0641fd4a4df3c1faee272ded1cc20f41fb3c03e",
+    "solution/reference.py": "50f44f90e6ce39f917a6b5fbf11f2edfe5d7d5e0e2a0e458228b49aec089efa7",
+    "solution/answers.json": "defad936b7d248c041acb474175e007a38d05d23b5c13669ab415e1bd07167a7",
+    "environment/docker-compose.yaml": "47e4e05ff8acb0afda033084784c5e0a0b466beaf176d785e898ba8aeac13b0e",
+    "environment/Dockerfile": "5c56ee2ba2cb5ea8e01564fe7dac1873e3719fc67570de7a13ccb6b9a9b98205",
+    "environment/.dockerignore": "7c15329d385d40574bacec429476be705b269a903c9c80fa2b34257c36967053",
+    "environment/public/clinic.py": "2ec6194fc00a9a81d5c0e3e3088104ffa763606c2d4547c692766357c3f33a5f",
+    "environment/public/policy.md": "4e3f235ce150194ae31c060e9ea9739bdf49f75c562e3348f4665c3475cde63f",
+    "environment/public/tools.md": "5c8de5f045761e35f6bbb0da0246e3373309c4215ad474ff1f0e41a272c304b5",
+    "environment/service/fixture.json": "64b3aa5c3d8967bdf69c499f6e04ab1f76748c1a780efa25d99e67d6bd4080b0",
+    "environment/service/store.py": "d9592ae2575fec0469520d6780ba88272c252b92a7aa7372e91a9034a6a312c0",
+    "environment/service/server.py": "cb912cdbd0b901c2cae516dcefc4469f3dd0429de16b0646fe9c5ca4e827b73b",
+    "environment/service/requirements.txt": "d9f7a6bff05a579f6736ddb26d0bbb80619cc1639e5d38d005aa396982b3ed35",
+    "environment/service/Dockerfile": "8da325acb8543c0b284b859deec81d33a1acf808feac3a3e91c008261c964ce2",
+    "environment/service/control.py": "699767969e188ecf47b611c8ec93534e059999178fe4290546574f971cb74413",
+    "environment/service/fhir.py": "2ec8b15badb2d232a7a3fb9384a1403608b329a8d45fb3290305a0e9152384d9",
+    "environment/service/schema/README.md": "9afc7bd27da530bc9582d87109b99d23ce6dcf00ed8f057279ba8082eff402d5",
+    "environment/service/schema/fhir.schema.json": "2230406893b4cf002a4ee1e5e2bbeca22ac5d2d4931b3e9ef7b9594bbc376a01"
+  },
+  "trial_id": "792e425d-00f2-48ab-888b-cc467e465063",
+  "bind_mounts": false,
+  "container_images": {
+    "clinic": "chartr_task3__zwn4kgt__env-clinic",
+    "main": "chartr_task3__zwn4kgt__env-main"
+  },
+  "provider_sha256": "3c15e67ed70dec624761332026a57322fb7c0088d1ee27c2bc878ef26594f4d8"
+}

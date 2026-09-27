@@ -1,0 +1,99 @@
+{
+  "version": "chartr-cohort-audit-0.1.1",
+  "evaluation_time": "2026-09-24T12:00:00Z",
+  "initial_digest": "33a005b60a198801dc3c7b3fee4bb18b24dce5aa608765c621f92c61f49ec33d",
+  "episodes": {
+    "P09a3361": [
+      "E64d1ef0"
+    ],
+    "P2429873": [
+      "Ef45875e"
+    ],
+    "P254df41": [
+      "Eafd89ce"
+    ],
+    "P2865e20": [
+      "E6ab9682"
+    ],
+    "P396c7fe": [
+      "E94ee1e8"
+    ],
+    "P3d6b2a7": [
+      "Ecbd7499"
+    ],
+    "P3e26dc9": [
+      "Ead4b59f"
+    ],
+    "P3f3525d": [
+      "E3596e1e"
+    ],
+    "P44298b5": [
+      "Eeb39d8a"
+    ],
+    "P45d125d": [
+      "E9e4636f"
+    ],
+    "P5a288b4": [
+      "E9be4500"
+    ],
+    "P5e6337c": [
+      "E951984f"
+    ],
+    "P5eba35d": [
+      "Ecf41cf3"
+    ],
+    "P7030bbb": [
+      "Ea075649"
+    ],
+    "P7174842": [
+      "E2fbfb83"
+    ],
+    "P86f7f3d": [
+      "E91a2522"
+    ],
+    "Pa9421d2": [
+      "E0ad00ab"
+    ],
+    "Pb2bdcfd": [
+      "Eaf73698"
+    ],
+    "Pbdba90b": [
+      "E5277160"
+    ],
+    "Pc5f932c": [
+      "E26c47e4"
+    ],
+    "Pcad01a5": [
+      "E4a0b2d5"
+    ],
+    "Pd7bebc5": [
+      "Eaa239e0"
+    ],
+    "Pe5a8691": [
+      "E3854bdd"
+    ],
+    "Pe76140d": [
+      "E8148b85"
+    ],
+    "Pf01d840": [
+      "Edf4bc81"
+    ],
+    "Pf34bdae": [
+      "Ee51dc75"
+    ],
+    "Pfa3b235": [
+      "E4156ce7"
+    ],
+    "Pfd11513": [
+      "E2cb4fca"
+    ],
+    "Pff38aca": [
+      "Eafdb92a"
+    ]
+  },
+  "nonce": "0d86326c-f5af-4be3-9bbb-8f9a7f21e348",
+  "trial_id": "42c31b20-c4fe-4fc3-9753-2e076e1eba01",
+  "frozen": false,
+  "faults": 0,
+  "next_id": 1001
+}
