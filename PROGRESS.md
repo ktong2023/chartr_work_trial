@@ -1,5 +1,27 @@
 # ChartR implementation handoff
 
+## Interacting-requirements probe `chartr_graph/` v0.1.0 (September 27, 2026)
+
+Follow-up to `chartr_probe` (5/5). Six patients, three courses and two checkpoints each (36
+determinations, 335 R4 resources): scoped amendments with role authority and withdrawal chains,
+overlapping review pauses that stretch both the dose-gap and follow-up clocks, titer-conditioned
+routine/accelerated schedules, and a per-patient joint allocation of specimens to checkpoints that
+must reach the maximum (one specimen per checkpoint, `second` needs `first` plus a separation).
+Authored golden answers (`qa/graph_cases.py`) agree with the independent public-record solver on all
+36 rows and every optimum. The grader checks row fields exactly and judges the allocation as
+constraints, accepting any maximum assignment (38 exist; all tested). Eleven wrong algorithms fail
+(greedy allocation 2/6 patients wrong, one-pass pause clock 2/6, the rest 3–6/6). Offline 65/65;
+Docker oracle 1, no-op 0; boundary probe exit 0. Note: `-a qa.agents:BoundaryProbe` silently did
+not run the probe; `--agent-import-path qa.agents:BoundaryProbe` did.
+
+Pilots (`jobs/chartr/graph-0.1.0-1790530987/opus-pilot/`, adapter 0.3.1, `claude-opus-5`, 150 turns,
+16K tokens, 3,500 s): **5/5**, all valid `end_turn`, 21–23 turns, 360–398 s, no API retries; all 180
+determinations right. 5.06M input / 0.14M output tokens. Every run wrote a 540–650-line solver:
+clause parser with withdrawal resolution and authority, pause union, iterative due dates, then an
+exhaustive search for the maximum allocation, and verified its saved rows round-trip. Conclusion:
+a fully specified protocol over machine-regular records reduces to programming, which Opus does
+without error; adding more rules of this kind is unlikely to change that.
+
 ## Dependent-history probe and audit fixes (September 27, 2026)
 
 New `chartr_probe/` v0.1.0: 12 fresh patients, two episodes each, 289 R4 resources,

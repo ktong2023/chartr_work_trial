@@ -53,6 +53,12 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_graph -a o
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_graph -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 5 -n 5 --ak max_turns=150 --ak max_tokens=16000 --ak wall_timeout_sec=3500 --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 ```
 
+## Pilot result
+
+Five `claude-opus-5` pilots (adapter 0.3.1): **5/5**, all valid, 21–23 turns, 360–398 s; every
+determination right. Each run wrote a 540–650-line solver (clause parser, pause union, iterative due
+dates, exhaustive allocation search). Evidence: `jobs/chartr/graph-0.1.0-1790530987/`.
+
 ## Limits
 
 The amendment language is regular, so an agent may write a solver; correct tool-assisted
