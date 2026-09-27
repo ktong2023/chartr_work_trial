@@ -1,6 +1,6 @@
 {
     "schema_version": 3,
-    "created_at": "2026-09-27T22:04:20.802067Z",
+    "created_at": "2026-09-27T22:21:11.778903Z",
     "harbor": {
         "version": "0.23.0",
         "is_editable": false
@@ -9,15 +9,15 @@
     "retry": {
         "max_retries": 0,
         "exclude_exceptions": [
-            "VerifierOutputParseError",
-            "ApiUsageLimitError",
-            "AgentAuthenticationError",
-            "RewardFileEmptyError",
-            "AgentTimeoutError",
             "ModelNotFoundError",
-            "AgentSafetyRefusalError",
+            "RewardFileNotFoundError",
+            "ApiUsageLimitError",
             "VerifierTimeoutError",
-            "RewardFileNotFoundError"
+            "AgentTimeoutError",
+            "VerifierOutputParseError",
+            "AgentSafetyRefusalError",
+            "RewardFileEmptyError",
+            "AgentAuthenticationError"
         ],
         "wait_multiplier": 1.0,
         "min_wait_sec": 1.0,
@@ -28,9 +28,9 @@
             "schema_version": 2,
             "task": {
                 "name": "chartr_task3",
-                "version": "0.1.1",
+                "version": "0.2.0",
                 "type": "local",
-                "digest": "sha256:31818437d454c3d43978ad38e29ccf39d19d9517da85adfdb5658f2e6d54900f",
+                "digest": "sha256:bb7061721c8ae14697d53a909b3fda6f321ca5222845ecaeaed387c6b1cf678b",
                 "path": "chartr_task3"
             },
             "install_only": false,
@@ -70,9 +70,9 @@
             "schema_version": 2,
             "task": {
                 "name": "chartr_task3",
-                "version": "0.1.1",
+                "version": "0.2.0",
                 "type": "local",
-                "digest": "sha256:31818437d454c3d43978ad38e29ccf39d19d9517da85adfdb5658f2e6d54900f",
+                "digest": "sha256:bb7061721c8ae14697d53a909b3fda6f321ca5222845ecaeaed387c6b1cf678b",
                 "path": "chartr_task3"
             },
             "install_only": false,
@@ -112,9 +112,9 @@
             "schema_version": 2,
             "task": {
                 "name": "chartr_task3",
-                "version": "0.1.1",
+                "version": "0.2.0",
                 "type": "local",
-                "digest": "sha256:31818437d454c3d43978ad38e29ccf39d19d9517da85adfdb5658f2e6d54900f",
+                "digest": "sha256:bb7061721c8ae14697d53a909b3fda6f321ca5222845ecaeaed387c6b1cf678b",
                 "path": "chartr_task3"
             },
             "install_only": false,
@@ -154,9 +154,9 @@
             "schema_version": 2,
             "task": {
                 "name": "chartr_task3",
-                "version": "0.1.1",
+                "version": "0.2.0",
                 "type": "local",
-                "digest": "sha256:31818437d454c3d43978ad38e29ccf39d19d9517da85adfdb5658f2e6d54900f",
+                "digest": "sha256:bb7061721c8ae14697d53a909b3fda6f321ca5222845ecaeaed387c6b1cf678b",
                 "path": "chartr_task3"
             },
             "install_only": false,
@@ -196,9 +196,9 @@
             "schema_version": 2,
             "task": {
                 "name": "chartr_task3",
-                "version": "0.1.1",
+                "version": "0.2.0",
                 "type": "local",
-                "digest": "sha256:31818437d454c3d43978ad38e29ccf39d19d9517da85adfdb5658f2e6d54900f",
+                "digest": "sha256:bb7061721c8ae14697d53a909b3fda6f321ca5222845ecaeaed387c6b1cf678b",
                 "path": "chartr_task3"
             },
             "install_only": false,
