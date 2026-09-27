@@ -29,7 +29,8 @@ Allowed reasons: `UNRESOLVED_TREATMENT_CONCERN`, `CONFLICTING_ACTIVE_PLANS`.
 Allowed workflow statuses: `open`, `needs_clarification`, `resolved`.
 Only category `treatment_review` and destination `clinical_review` are supported.
 `evidence` is a nonempty JSON array of up to 20 clinical record IDs in the item's
-patient and episode. Explanation must be nonempty and at most 4,000 characters.
+patient and episode. Explanation must be nonempty and at most 4,000 characters; its
+only allowed whitespace characters are space, tab, carriage return and line feed.
 Request bodies are limited to 16 KiB. Ordering and repeated citations have no meaning.
 
 Clinical sources are immutable. There are no delete, reset, admin, export, grading,

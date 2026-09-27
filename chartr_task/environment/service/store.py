@@ -1,12 +1,15 @@
 from contextlib import contextmanager
 import json
+import re
 import sqlite3
 import uuid
 from pathlib import Path
 
-from fhir import NOW, VERSION, STATUS, REASONS, canonical, digest, episode, review, validate
+from fhir import NOW, VERSION, STATUS, REASONS, SCHEMA, canonical, digest, episode, review, validate
 
 HERE = Path(__file__).parent
+# R4 string pattern; checked up front so agent text is a 400, never a schema-failure 500.
+FHIR_STRING = re.compile(SCHEMA["definitions"]["string"]["pattern"])
 
 
 class InvalidRequest(ValueError):
@@ -189,6 +192,8 @@ class Store:
             raise InvalidRequest("status must be open, needs_clarification, or resolved")
         if not isinstance(data["explanation"], str) or not data["explanation"].strip() or len(data["explanation"]) > 4000:
             raise InvalidRequest("explanation must be nonempty text, at most 4000 characters")
+        if not FHIR_STRING.search(data["explanation"]):
+            raise InvalidRequest("explanation whitespace must be space, tab, carriage return or line feed")
         refs = data["evidence"]
         if not isinstance(refs, list) or not 1 <= len(refs) <= 20 or not all(isinstance(x, str) for x in refs):
             raise InvalidRequest("evidence must be a nonempty list of up to 20 record IDs")

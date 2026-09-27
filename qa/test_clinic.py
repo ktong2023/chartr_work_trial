@@ -148,6 +148,19 @@ class ClinicTests(unittest.TestCase):
         for key in ('id', 'for', 'focus', 'authoredOn', 'reasonCode', 'code', 'owner'):
             self.assertEqual(saved[key], original[0][key])
 
+    def test_unsupported_whitespace_is_recoverable_validation_error(self):
+        bad = {'patient':'P101','episode':'E101','reason':'UNRESOLVED_TREATMENT_CONCERN',
+               'category':'treatment_review','destination':'clinical_review','status':'open',
+               'evidence':['S01','S02','S04'],'explanation':'Pending pregnancy result.'}
+        self.cli('create', '--json', json.dumps(bad), error=True)
+        for text in ('Pending review.', 'a b', 'a b', 'a\fb'):
+            self.cli('update', 'Q102', '--json', json.dumps({'explanation': text}), error=True)
+        with patch.object(reference, 'clinic', self.cli):
+            reference.solve()
+        snapshot, result = self.finish()
+        self.assertEqual(snapshot['metadata']['faults'], 0)
+        self.assertEqual((result['validity'], result['reward']), ('valid', 1))
+
     def test_source_readonly_no_admin_and_frozen(self):
         for path in ('/reset', '/admin', '/export', '/records/S01', '/grade'):
             status, _ = self.store.request('POST', path, {})
