@@ -65,6 +65,14 @@ days. Residual concerns it raised: a later local note versus the hospital's deli
 published outside-record rule, 32 vs 29 days); a pregnancy test pending for three months (realistic as a lost
 send-out, still `RESULT_PENDING`); an ongoing pregnancy with incomplete treatment counts as an issue now.
 
+## Verification (September 27, 2026)
+
+Offline suite 101/101 (all tasks, including adapter tests, Harbor 0.23.0 / anthropic 1.8.0 / jsonschema 4.26.0 in a
+fresh venv). Docker (cloud container): Task 3 oracle 1, no-op 0 (valid; errors missing 8, missed 10, overclaim 7),
+boundary probe exit 0; Task 1 0.5.2 regression oracle 1, no-op 0. These Docker runs used temporary copies of the
+tasks whose service Dockerfile adds two lines trusting the cloud proxy's CA so `pip install` could build; every other
+file was identical. Evidence: `jobs/chartr/task3-0.1.0-*-cacopy/`, `jobs/chartr/task1-0.5.2-*-regression-cacopy/`.
+
 ## Reuse
 
 Service, CLI pattern, controller attestation/collection, separate verifier and Harbor provider are reused

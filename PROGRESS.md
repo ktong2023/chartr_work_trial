@@ -8,8 +8,9 @@ moved to `archive/task2/`. Clinical truth is the CDC 2021 STI guidelines; public
 output vocabulary and local conventions. 29 patients, 116 candidates (12 confirmed, 9 `cannot_determine`, 8 review
 requests). Private engine `qa/task3_rules.py` recomputes every disposition by possible-world evaluation and agrees
 with the authored truth; 13 wrong algorithms each fail on exactly their target candidates. See `chartr_task3/README.md`.
-Offline `qa/test_task3.py` 12/12 in a scratch venv with the pinned service dependencies; this cloud container has no
-Docker daemon or Harbor, so Docker oracle/no-op/boundary runs and paid pilots must run on the user's machine.
+Independent second-model review matched all 116 candidates after a wording fix. Verification: offline 101/101; Docker
+Task 3 oracle 1, no-op 0, boundary exit 0; Task 1 regression oracle 1, no-op 0 (cloud runs used task copies trusting
+the proxy CA for the image build only). Paid pilots not yet run.
 
 ## Messy-notes probe `chartr_notes/` v0.1.0 (September 27, 2026)
 
