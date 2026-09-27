@@ -198,6 +198,17 @@ def build():
         if pid:
             charts.setdefault(pid, []).append(r['id'])
     charts = {k: v for k, v in charts.items() if k.startswith('P')}
+    # Patients whose charts hold records of one specimen accession: either chart is valid evidence.
+    by_accession = {}
+    for r in sources:
+        if r['resourceType'] in ('Observation', 'Specimen'):
+            accession = r['identifier'][0]['value'] if r['resourceType'] == 'Observation' else r['accessionIdentifier']['value']
+            by_accession.setdefault(accession, set()).add(r['subject']['reference'].split('/')[1])
+    partners = {}
+    for pids in by_accession.values():
+        for pid in pids:
+            partners.setdefault(pid, set()).update(pids - {pid})
+    partners = {k: sorted(v) for k, v in sorted(partners.items()) if v}
 
     # Oracle submissions: every non-silent candidate plus every requested one, citing chart records.
     evidence_kinds = {'INADEQUATE_TREATMENT': ('MedicationAdministration', 'MedicationDispense', 'Condition'),
@@ -211,7 +222,7 @@ def build():
         answers.append({'patient': pid, 'episode': eid, 'issue': issue, 'disposition': e['disposition'],
                         'missing_evidence': e['code'], 'evidence': cited, 'explanation': 'Reference determination.'})
     fixture = {'version': VERSION, 'evaluation_time': NOW, 'episodes': episodes, 'sources': sources}
-    return fixture, {'candidates': expected, 'charts': charts, 'linked': linked}, answers
+    return fixture, {'candidates': expected, 'charts': charts, 'linked': linked, 'partners': partners}, answers
 
 
 def main():

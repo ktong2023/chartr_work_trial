@@ -10,7 +10,11 @@ requests). Private engine `qa/task3_rules.py` recomputes every disposition by po
 with the authored truth; 13 wrong algorithms each fail on exactly their target candidates. See `chartr_task3/README.md`.
 Independent second-model review matched all 116 candidates after a wording fix. Verification: offline 101/101; Docker
 Task 3 oracle 1, no-op 0, boundary exit 0; Task 1 regression oracle 1, no-op 0 (cloud runs used task copies trusting
-the proxy CA for the image build only). Paid pilots not yet run.
+the proxy CA for the image build only).
+Pilot 0.1.0 (5 × `claude-opus-5`, all valid): raw 0/5 from one grader defect (cross-chart evidence for the misfile
+rejected) and one wording defect (follow-up did not require the specimen to be the patient's); defect-adjusted 4/5,
+the single fair miss an unapplied outside-facility authority rule. Both defects fixed in 0.1.1 (oracle 1, no-op 0).
+Triage in `chartr_task3/README.md`.
 
 ## Relevance probe `chartr_relevance/` v0.1.0 (September 27, 2026)
 

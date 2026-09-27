@@ -1,4 +1,4 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.1.0 (29-patient core)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.1.1 (29-patient core)
 
 The agent audits 29 synthetic syphilis-care patients (one episode each) for four publicly defined issue
 types: `INADEQUATE_TREATMENT`, `FOLLOW_UP_OVERDUE`, `MISFILED_RESULT`, `PREGNANCY_TREATMENT_INADEQUATE`.
@@ -72,6 +72,34 @@ fresh venv). Docker (cloud container): Task 3 oracle 1, no-op 0 (valid; errors m
 boundary probe exit 0; Task 1 0.5.2 regression oracle 1, no-op 0. These Docker runs used temporary copies of the
 tasks whose service Dockerfile adds two lines trusting the cloud proxy's CA so `pip install` could build; every other
 file was identical. Evidence: `jobs/chartr/task3-0.1.0-*-cacopy/`, `jobs/chartr/task1-0.5.2-*-regression-cacopy/`.
+
+## Pilot 0.1.0 (September 27, 2026) and fixes in 0.1.1
+
+Five `claude-opus-5` trials (adapter 0.3.2; 150 turns, 32K output, 900 s API timeout, 3,500 s wall), all valid
+`end_turn`, 16–21 turns, 518–676 s, 0.86–1.36M input tokens; peak single-turn output 26.4K (a 16K cap would have
+truncated two runs). Artifacts: branch `task3-pilot-results`, `jobs/chartr/task3-0.1.0-pilot-opus/`.
+
+**Raw 0/5.** Every trial failed on two defects, fixed in 0.1.1:
+- *Grader defect (all 5):* the correct `MISFILED_RESULT` item for the misfiled RPR cited the owning patient's chart
+  (her "RPR drawn" nursing note or specimen record), which the evidence check wrongly rejected. 0.1.1 accepts the
+  chart of any patient that shares a specimen accession.
+- *Policy wording defect (all 5):* the 24-month follow-up whose only specimen has an unresolved identity was marked
+  not overdue. The convention said a test counts when "its specimen was collected", without requiring that the
+  specimen be the patient's, and the identity rule spoke only of results; "not an issue" was defensible. 0.1.1 says
+  "a specimen from the patient" and makes the identity rule cover specimens. The expected answer is unchanged.
+
+**Defect-adjusted regrade: 4/5.** The one fair miss (trial `EYPqUZh`): coded the delivery date for the pregnancy
+requirement as an unresolved conflict between the hospital discharge summary (32 days after treatment) and a later
+clinic note (29 days), without applying the published rule that care at another facility is established only by that
+facility's record; the other four runs cited that rule. Every other candidate was right in every run: all
+undeterminable codes, all determinable-despite-gap cases, all complex-looking non-issues, all review requests,
+including unstaged latent = unknown duration, doxy-PEP is not treatment, azithromycin, the 14-day gap in pregnancy,
+pending results that do and do not matter, and cross-chart identity. Opus scripted the cohort, then read every chart.
+
+Reading: calibrated abstention on a small, fully readable cohort is not where Opus fails (about 1 fair miss per 125
+hard decisions). The misses that did occur were an authority rule applied inconsistently and a second-order
+consequence of an unresolved fact (identity conflict → follow-up) that no run connected, though its wording was
+defective. 0.1.1: offline tests pass; Docker oracle 1, no-op 0.
 
 ## Reuse
 

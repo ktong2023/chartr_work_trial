@@ -191,6 +191,11 @@ class Task3(unittest.TestCase):
         linked = EXPECTED['linked'][pid14]
         ok = [dict(a, evidence=linked) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a for a in ANSWERS]
         self.assertEqual(self.run_items(ok)['reward'], 1)
+        # The owner's chart is valid evidence for the misfile (pilot 0.1.0 grader defect).
+        owner_note = EXPECTED['charts'][pid15]
+        cross = [dict(a, evidence=owner_note[:5]) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a for a in ANSWERS]
+        self.assertEqual(self.run_items(cross)['reward'], 1)
+        self.assertEqual(EXPECTED['partners'], {pid14: [pid15], pid15: [pid14]})
         foreign = EXPECTED['charts'][KEYS['p27'][0]][0]
         bad = [dict(a, evidence=[foreign]) if a['patient'] == pid15 else a for a in ANSWERS]
         result = self.run_items(bad)
