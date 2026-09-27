@@ -1,5 +1,16 @@
 # ChartR implementation handoff
 
+## Task 3 cohort audit `chartr_task3/` v0.1.0 — 29-patient core (September 27, 2026)
+
+Built per `TASK3_BUILD_PROMPT.md` and `TASK_DESIGN_PRINCIPLES.md` (user decisions: `claude-opus-5`, 32K output
+cap / 900 s API timeout / 150 turns / 3,500 s, zero tolerance, archive Task 2). Task 2 was never built; its brief
+moved to `archive/task2/`. Clinical truth is the CDC 2021 STI guidelines; public docs carry only goal, interface,
+output vocabulary and local conventions. 29 patients, 116 candidates (12 confirmed, 9 `cannot_determine`, 8 review
+requests). Private engine `qa/task3_rules.py` recomputes every disposition by possible-world evaluation and agrees
+with the authored truth; 13 wrong algorithms each fail on exactly their target candidates. See `chartr_task3/README.md`.
+Offline `qa/test_task3.py` 12/12 in a scratch venv with the pinned service dependencies; this cloud container has no
+Docker daemon or Harbor, so Docker oracle/no-op/boundary runs and paid pilots must run on the user's machine.
+
 ## Messy-notes probe `chartr_notes/` v0.1.0 (September 27, 2026)
 
 Same cases, golden answers and grader as `chartr_graph`; only documentation changes. Corrections,

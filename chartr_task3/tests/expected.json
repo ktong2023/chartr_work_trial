@@ -1,0 +1,1300 @@
+{
+  "candidates": {
+    "Pbdba90b|E5277160|INADEQUATE_TREATMENT": {
+      "patient_key": "p01",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "inference",
+      "requested": true
+    },
+    "Pbdba90b|E5277160|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p01",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pbdba90b|E5277160|MISFILED_RESULT": {
+      "patient_key": "p01",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pbdba90b|E5277160|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p01",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P2429873|Ef45875e|INADEQUATE_TREATMENT": {
+      "patient_key": "p02",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "inference",
+      "requested": false
+    },
+    "P2429873|Ef45875e|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p02",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P2429873|Ef45875e|MISFILED_RESULT": {
+      "patient_key": "p02",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P2429873|Ef45875e|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p02",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pf34bdae|Ee51dc75|INADEQUATE_TREATMENT": {
+      "patient_key": "p03",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "Pf34bdae|Ee51dc75|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p03",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pf34bdae|Ee51dc75|MISFILED_RESULT": {
+      "patient_key": "p03",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pf34bdae|Ee51dc75|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p03",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pc5f932c|E26c47e4|INADEQUATE_TREATMENT": {
+      "patient_key": "p04",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "Pc5f932c|E26c47e4|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p04",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pc5f932c|E26c47e4|MISFILED_RESULT": {
+      "patient_key": "p04",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pc5f932c|E26c47e4|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p04",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P254df41|Eafd89ce|INADEQUATE_TREATMENT": {
+      "patient_key": "p05",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": false
+    },
+    "P254df41|Eafd89ce|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p05",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P254df41|Eafd89ce|MISFILED_RESULT": {
+      "patient_key": "p05",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P254df41|Eafd89ce|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p05",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pe5a8691|E3854bdd|INADEQUATE_TREATMENT": {
+      "patient_key": "p06",
+      "disposition": "cannot_determine",
+      "code": "UNRESOLVED_SOURCE_CONFLICT",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "Pe5a8691|E3854bdd|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p06",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pe5a8691|E3854bdd|MISFILED_RESULT": {
+      "patient_key": "p06",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pe5a8691|E3854bdd|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p06",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P44298b5|Eeb39d8a|INADEQUATE_TREATMENT": {
+      "patient_key": "p07",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "relevance",
+      "requested": false
+    },
+    "P44298b5|Eeb39d8a|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p07",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P44298b5|Eeb39d8a|MISFILED_RESULT": {
+      "patient_key": "p07",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P44298b5|Eeb39d8a|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p07",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pff38aca|Eafdb92a|INADEQUATE_TREATMENT": {
+      "patient_key": "p08",
+      "disposition": "cannot_determine",
+      "code": "OUTSIDE_RECORD_NOT_RECEIVED",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "Pff38aca|Eafdb92a|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p08",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pff38aca|Eafdb92a|MISFILED_RESULT": {
+      "patient_key": "p08",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pff38aca|Eafdb92a|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p08",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P7174842|E2fbfb83|INADEQUATE_TREATMENT": {
+      "patient_key": "p09",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": true
+    },
+    "P7174842|E2fbfb83|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p09",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": false
+    },
+    "P7174842|E2fbfb83|MISFILED_RESULT": {
+      "patient_key": "p09",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P7174842|E2fbfb83|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p09",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pa9421d2|E0ad00ab|INADEQUATE_TREATMENT": {
+      "patient_key": "p10",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "relevance",
+      "requested": false
+    },
+    "Pa9421d2|E0ad00ab|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p10",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "Pa9421d2|E0ad00ab|MISFILED_RESULT": {
+      "patient_key": "p10",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pa9421d2|E0ad00ab|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p10",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pfd11513|E2cb4fca|INADEQUATE_TREATMENT": {
+      "patient_key": "p11",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pfd11513|E2cb4fca|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p11",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "relevance",
+      "requested": true
+    },
+    "Pfd11513|E2cb4fca|MISFILED_RESULT": {
+      "patient_key": "p11",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pfd11513|E2cb4fca|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p11",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P396c7fe|E94ee1e8|INADEQUATE_TREATMENT": {
+      "patient_key": "p12",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "relevance",
+      "requested": false
+    },
+    "P396c7fe|E94ee1e8|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p12",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "inference",
+      "requested": false
+    },
+    "P396c7fe|E94ee1e8|MISFILED_RESULT": {
+      "patient_key": "p12",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P396c7fe|E94ee1e8|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p12",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3f3525d|E3596e1e|INADEQUATE_TREATMENT": {
+      "patient_key": "p13",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3f3525d|E3596e1e|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p13",
+      "disposition": "cannot_determine",
+      "code": "OUTSIDE_RECORD_NOT_RECEIVED",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "P3f3525d|E3596e1e|MISFILED_RESULT": {
+      "patient_key": "p13",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3f3525d|E3596e1e|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p13",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5a288b4|E9be4500|INADEQUATE_TREATMENT": {
+      "patient_key": "p14",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5a288b4|E9be4500|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p14",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "P5a288b4|E9be4500|MISFILED_RESULT": {
+      "patient_key": "p14",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "P5a288b4|E9be4500|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p14",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P86f7f3d|E91a2522|INADEQUATE_TREATMENT": {
+      "patient_key": "p15",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P86f7f3d|E91a2522|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p15",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": true
+    },
+    "P86f7f3d|E91a2522|MISFILED_RESULT": {
+      "patient_key": "p15",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P86f7f3d|E91a2522|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p15",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P09a3361|E64d1ef0|INADEQUATE_TREATMENT": {
+      "patient_key": "p16",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P09a3361|E64d1ef0|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p16",
+      "disposition": "cannot_determine",
+      "code": "UNRESOLVED_SOURCE_CONFLICT",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "P09a3361|E64d1ef0|MISFILED_RESULT": {
+      "patient_key": "p16",
+      "disposition": "cannot_determine",
+      "code": "UNRESOLVED_SOURCE_CONFLICT",
+      "kind": "undeterminable",
+      "requested": true
+    },
+    "P09a3361|E64d1ef0|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p16",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pcad01a5|E4a0b2d5|INADEQUATE_TREATMENT": {
+      "patient_key": "p17",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pcad01a5|E4a0b2d5|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p17",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pcad01a5|E4a0b2d5|MISFILED_RESULT": {
+      "patient_key": "p17",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": true
+    },
+    "Pcad01a5|E4a0b2d5|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p17",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5e6337c|E951984f|INADEQUATE_TREATMENT": {
+      "patient_key": "p18",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5e6337c|E951984f|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p18",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5e6337c|E951984f|MISFILED_RESULT": {
+      "patient_key": "p18",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5e6337c|E951984f|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p18",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "relevance",
+      "requested": false
+    },
+    "Pf01d840|Edf4bc81|INADEQUATE_TREATMENT": {
+      "patient_key": "p19",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pf01d840|Edf4bc81|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p19",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pf01d840|Edf4bc81|MISFILED_RESULT": {
+      "patient_key": "p19",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pf01d840|Edf4bc81|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p19",
+      "disposition": "cannot_determine",
+      "code": "OUTSIDE_RECORD_NOT_RECEIVED",
+      "kind": "undeterminable",
+      "requested": true
+    },
+    "Pd7bebc5|Eaa239e0|INADEQUATE_TREATMENT": {
+      "patient_key": "p20",
+      "disposition": "cannot_determine",
+      "code": "RESULT_PENDING",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "Pd7bebc5|Eaa239e0|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p20",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pd7bebc5|Eaa239e0|MISFILED_RESULT": {
+      "patient_key": "p20",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pd7bebc5|Eaa239e0|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p20",
+      "disposition": "cannot_determine",
+      "code": "RESULT_PENDING",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "P2865e20|E6ab9682|INADEQUATE_TREATMENT": {
+      "patient_key": "p21",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "relevance",
+      "requested": false
+    },
+    "P2865e20|E6ab9682|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p21",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P2865e20|E6ab9682|MISFILED_RESULT": {
+      "patient_key": "p21",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P2865e20|E6ab9682|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p21",
+      "disposition": "cannot_determine",
+      "code": "RESULT_PENDING",
+      "kind": "undeterminable",
+      "requested": false
+    },
+    "Pe76140d|E8148b85|INADEQUATE_TREATMENT": {
+      "patient_key": "p22",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pe76140d|E8148b85|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p22",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pe76140d|E8148b85|MISFILED_RESULT": {
+      "patient_key": "p22",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pe76140d|E8148b85|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p22",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": false
+    },
+    "P3d6b2a7|Ecbd7499|INADEQUATE_TREATMENT": {
+      "patient_key": "p23",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "nonissue",
+      "requested": false
+    },
+    "P3d6b2a7|Ecbd7499|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p23",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3d6b2a7|Ecbd7499|MISFILED_RESULT": {
+      "patient_key": "p23",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3d6b2a7|Ecbd7499|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p23",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P45d125d|E9e4636f|INADEQUATE_TREATMENT": {
+      "patient_key": "p24",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": true
+    },
+    "P45d125d|E9e4636f|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p24",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P45d125d|E9e4636f|MISFILED_RESULT": {
+      "patient_key": "p24",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P45d125d|E9e4636f|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p24",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "P7030bbb|Ea075649|INADEQUATE_TREATMENT": {
+      "patient_key": "p25",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "real",
+      "requested": false
+    },
+    "P7030bbb|Ea075649|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p25",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P7030bbb|Ea075649|MISFILED_RESULT": {
+      "patient_key": "p25",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P7030bbb|Ea075649|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p25",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pfa3b235|E4156ce7|INADEQUATE_TREATMENT": {
+      "patient_key": "p26",
+      "disposition": "confirmed",
+      "code": null,
+      "kind": "inference",
+      "requested": false
+    },
+    "Pfa3b235|E4156ce7|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p26",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pfa3b235|E4156ce7|MISFILED_RESULT": {
+      "patient_key": "p26",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pfa3b235|E4156ce7|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p26",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3e26dc9|Ead4b59f|INADEQUATE_TREATMENT": {
+      "patient_key": "p27",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3e26dc9|Ead4b59f|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p27",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3e26dc9|Ead4b59f|MISFILED_RESULT": {
+      "patient_key": "p27",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P3e26dc9|Ead4b59f|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p27",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5eba35d|Ecf41cf3|INADEQUATE_TREATMENT": {
+      "patient_key": "p28",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5eba35d|Ecf41cf3|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p28",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5eba35d|Ecf41cf3|MISFILED_RESULT": {
+      "patient_key": "p28",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "P5eba35d|Ecf41cf3|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p28",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pb2bdcfd|Eaf73698|INADEQUATE_TREATMENT": {
+      "patient_key": "p29",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pb2bdcfd|Eaf73698|FOLLOW_UP_OVERDUE": {
+      "patient_key": "p29",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pb2bdcfd|Eaf73698|MISFILED_RESULT": {
+      "patient_key": "p29",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    },
+    "Pb2bdcfd|Eaf73698|PREGNANCY_TREATMENT_INADEQUATE": {
+      "patient_key": "p29",
+      "disposition": "not_an_issue",
+      "code": null,
+      "kind": "control",
+      "requested": false
+    }
+  },
+  "charts": {
+    "Pa9421d2": [
+      "E0ad00ab",
+      "R0d07949b4f34",
+      "R34c296c82dae",
+      "R54414476bd7a",
+      "R6aa7ce4d85cb",
+      "R76a7ae364846",
+      "R80471e54707d",
+      "R840798011d80",
+      "R88e0be734ac2",
+      "R93e7560ada24",
+      "R95eff7e2aeba",
+      "Ra66fa8daaa9c",
+      "Rb4a91cc7f574",
+      "Rb6d0c9ae5fe3",
+      "Rbaf1d59d3013",
+      "Ree07a4fa48b4"
+    ],
+    "Pc5f932c": [
+      "E26c47e4",
+      "R1aceeaba2bff",
+      "R28fb18460ef4",
+      "R2e1549a1fd01",
+      "R3a77efee4b2a",
+      "R49231f4025c9",
+      "R4d43dcd07dcb",
+      "R528adf031387",
+      "R5e85fa473db7",
+      "R7a35247e4cfc",
+      "R84aa6677a1c5",
+      "Ra7962712ecbb",
+      "Ra7c71efbbc81",
+      "Radd0c0084f66",
+      "Rda877498a8cf",
+      "Re8cfbd76c76b"
+    ],
+    "Pfd11513": [
+      "E2cb4fca",
+      "R1e1c26c47f5d",
+      "R302c2679dbee",
+      "R3a416ab6b9f9",
+      "R72172b28ec91",
+      "R8221b078a309",
+      "R8a602be3430a",
+      "R9db0d6238651",
+      "Ra90f4b3ca3c4",
+      "Raaaa95a95502",
+      "Rb31740b16296",
+      "Rd83c294c4f39",
+      "Rdbe347ecbfcf",
+      "Rf550a32838c0"
+    ],
+    "P7174842": [
+      "E2fbfb83",
+      "R05f82efd971f",
+      "R08ad4910274b",
+      "R222e0030ef18",
+      "R3236bca81c51",
+      "R3b736d19c3a8",
+      "R4ccc8b262bc9",
+      "R61a6a657af50",
+      "R7faf060ec9c0",
+      "R8d5ae1c6364a",
+      "Rac52f8e8a047",
+      "Rdd5064ca6f3f",
+      "Rde97ef6f5e9c",
+      "Reed779abfd58",
+      "Rf4b6f607dc06"
+    ],
+    "P3f3525d": [
+      "E3596e1e",
+      "R08756c9095fb",
+      "R1df6815739fd",
+      "R2d57adb8e8f6",
+      "R2fba5cfd673e",
+      "R340961b04e30",
+      "R72da65275a5f",
+      "R7500344868eb",
+      "R76b8fbdf9e4c",
+      "Ra01873897ab4",
+      "Ra95431a2b299",
+      "Rb583bca36e18",
+      "Rb9f4310bffa1",
+      "Rfaf358a1eb02"
+    ],
+    "Pe5a8691": [
+      "E3854bdd",
+      "R23ba98b98979",
+      "R41e1cb337160",
+      "R4e79a3b01676",
+      "R6cea3aac6364",
+      "R9e0e46d33d35",
+      "Rbc8a9536c239",
+      "Rd403a1b46258",
+      "Rd6c2676fca98",
+      "Rde393b46fc1d",
+      "Re24b90533455"
+    ],
+    "Pfa3b235": [
+      "E4156ce7",
+      "R06e8453cba94",
+      "R3496d34508d3",
+      "R36fcdc23d3dd",
+      "R6257ff0e3aa6",
+      "R6506a9cb19be",
+      "R6984f0eb40ce",
+      "R7b778d831634",
+      "R7d7a505d7a28",
+      "R805872901be8",
+      "R99f5e33ded8e",
+      "R9a3fac1743ab",
+      "Ra86dbdfb653a",
+      "Raf4853a3e882",
+      "Rdd92bbb3c051",
+      "Ref57fb46a263",
+      "Rfd0241dc3b19"
+    ],
+    "Pcad01a5": [
+      "E4a0b2d5",
+      "R194a479234ec",
+      "R2b6fca07ed75",
+      "R2e18a9ea8714",
+      "R477dc5d14c1f",
+      "R59fed47f5580",
+      "R827fb9fc2137",
+      "Rbf1daf68dc55",
+      "Rbf3a19fc33e4",
+      "Rc7f2214aaf95",
+      "Rf7090fab4a22",
+      "Rf8f9029f3e58"
+    ],
+    "Pbdba90b": [
+      "E5277160",
+      "R0201cf6181e9",
+      "R0ead57315bb5",
+      "R2fd4702b9d3d",
+      "R42a74980be01",
+      "R4aa6e4f04321",
+      "R4c69dc3b3645",
+      "R6b03f0834341",
+      "R7d1db2470e17",
+      "R86fd16f52ecf",
+      "R96a2514fb74d",
+      "R9df69739138f"
+    ],
+    "P09a3361": [
+      "E64d1ef0",
+      "R06f7fb29079e",
+      "R0fa2dc5c6733",
+      "R2d42efddbddc",
+      "R372a4d842e3b",
+      "R38bf53bd3afb",
+      "R690cb6f14e8b",
+      "R70fefa59a83b",
+      "R8511d5cd4d56",
+      "R8959ebd651be",
+      "Ra1100072bf01",
+      "Rc4cc46810b90",
+      "Rd75b7732960a",
+      "Rd7a8a161a61b",
+      "Rf2872d94c09f",
+      "Rf2f8bb53922f"
+    ],
+    "P2865e20": [
+      "E6ab9682",
+      "R0d83935ab5c6",
+      "R21261d3162c5",
+      "R39055295d8e0",
+      "R5dd8ded81561",
+      "R650558441f29",
+      "R8cfaea610acb",
+      "R9ea1f1040e81",
+      "Ra3942e4f30a6",
+      "Ra97bed23c0ae",
+      "Rab78b047578c",
+      "Radad9c2d8475",
+      "Rcd17a6ad0470",
+      "Rf9db26ead311"
+    ],
+    "Pe76140d": [
+      "E8148b85",
+      "R099f342920ef",
+      "R19533781bae3",
+      "R28eaf6295d33",
+      "R2de51d577f9e",
+      "R5070f3a20833",
+      "R79bc42662cc9",
+      "R997229f8652d",
+      "Ra6d51e916d31",
+      "Ra9bd3189bdd7",
+      "Rd4e66f26a200",
+      "Reb3fece69c9e",
+      "Rf33acced3bc3",
+      "Rf3c510933442"
+    ],
+    "P86f7f3d": [
+      "E91a2522",
+      "R0279bed8a8ae",
+      "R1f9eae76e46b",
+      "R312b4315e4e1",
+      "R358faf9cf732",
+      "R393f7e9ad494",
+      "R3f2aa3dc20d5",
+      "R4c90adf34f8e",
+      "R7b6b760f9d78",
+      "R9295d8a34c59",
+      "R96783519f5fd",
+      "R98351522da3f",
+      "Rcdd4fefd0249",
+      "Re6b519788caa",
+      "Re9823693bab0"
+    ],
+    "P396c7fe": [
+      "E94ee1e8",
+      "R1b2cda60a7ca",
+      "R3bcfad318772",
+      "R5d393883a8cc",
+      "R5f36ea1e44f0",
+      "R70d5df8201e8",
+      "R7a295c7d4fb2",
+      "R99b6c1b84935",
+      "Ra247b952c08f",
+      "Rb092636ce607",
+      "Rbb7b02860c61",
+      "Rce50343d9576",
+      "Rd02bc5837c42",
+      "Re6e419c0c70a"
+    ],
+    "P5e6337c": [
+      "E951984f",
+      "R038c5c462947",
+      "R1d7296e35550",
+      "R4b4c04005f72",
+      "R6ff0390f0fe4",
+      "R7bc31519b2b2",
+      "R7dfa28873b7f",
+      "R81d1bd056369",
+      "R88e5dc8b0143",
+      "R8bc6f51a9383",
+      "R8c59b6c38683",
+      "Rb4a421398e54",
+      "Rb4c1a8b8d7d7",
+      "Rd2ad46ef6dca",
+      "Rd8dd8eda205a",
+      "Rdfc7403e5bf1",
+      "Rf4d53c93ffc3"
+    ],
+    "P5a288b4": [
+      "E9be4500",
+      "R0625dd8699fd",
+      "R11c57201f9fe",
+      "R29b26b182ad8",
+      "R3a96c57e71b4",
+      "R4890acc504ef",
+      "R77d6d14a53db",
+      "R9a457c944ac9",
+      "Ra6589a986056",
+      "Rb77ea6daec4d",
+      "Re0f8e2aef406"
+    ],
+    "P45d125d": [
+      "E9e4636f",
+      "R0678354279b3",
+      "R2766ce143e8a",
+      "R2ebd1311147f",
+      "R362516686c03",
+      "R3730cec6d469",
+      "R54999b1b5f66",
+      "R5a92588c7ffc",
+      "R91542ce0ce88",
+      "R94823194117b",
+      "R960530488cb5",
+      "Rb1c4ddb40048",
+      "Rb9ddc85d5728",
+      "Rd4379155b431",
+      "Rec220867c74c",
+      "Rf0bd16ab57cc",
+      "Rf59677b93814"
+    ],
+    "P7030bbb": [
+      "Ea075649",
+      "R3b89f7137629",
+      "R7db676cad2c0",
+      "R8cb83f1c963f",
+      "R8ee3add9f1af",
+      "R8f41005f28cc",
+      "R93100fbbcfc2",
+      "R995d235930c0",
+      "Rab08552226b7",
+      "Re1cac7dd6145",
+      "Re4bdecc928e7",
+      "Ree94f2617b29",
+      "Rff8a2543f6e2"
+    ],
+    "Pd7bebc5": [
+      "Eaa239e0",
+      "R1e46ea031532",
+      "R25d33ec3a9e3",
+      "R2c49e4619584",
+      "R351b92b15d48",
+      "R43ca69f3d617",
+      "R49f81c509bab",
+      "R78e1036f3ebc",
+      "R78f22fc8e0b8",
+      "R8a5c5740c37c",
+      "R912046678090",
+      "R9e3c58cd24c2",
+      "Ra2529680b361",
+      "Re58db9d760a8"
+    ],
+    "P3e26dc9": [
+      "Ead4b59f",
+      "R05a4a3789067",
+      "R09b1b4043d9b",
+      "R0f91e21ebd56",
+      "R36a34405f497",
+      "R85c5d1d8bdd6",
+      "R8760220f4eb7",
+      "Raddb0dc6e604",
+      "Rb363f7175caf",
+      "Rb8338d754de1",
+      "Rc4c842fa4802",
+      "Rd7c34b7442bf",
+      "Re3a2e8810820",
+      "Re52f32935be5",
+      "Re7d1d95fbc24",
+      "Rf42e44e714d8"
+    ],
+    "Pb2bdcfd": [
+      "Eaf73698",
+      "R07810043b943",
+      "R1db1cdcee015",
+      "R2904bce5bb8e",
+      "R38923ef14d6c",
+      "R391cbcd6d795",
+      "R691b91224a51",
+      "R97025f8453f5",
+      "Rad7eae4c20e5",
+      "Rb680839220e4",
+      "Rb8aa698f957c",
+      "Rbe5868e95239",
+      "Rd7fc9b3645dc",
+      "Re00668ef3be6",
+      "Rf2aab9bb2518"
+    ],
+    "P254df41": [
+      "Eafd89ce",
+      "R0c4b976240c0",
+      "R0d4f1ee68d71",
+      "R20546fedffb4",
+      "R3f8159a6f776",
+      "R436543831e7b",
+      "R44593942e17f",
+      "R4e984ca2a489",
+      "R7a19f072a60b",
+      "R9cf64035e3d0",
+      "Rc311f00ff499",
+      "Rd17af638ecf3",
+      "Ree1180fa1514"
+    ],
+    "Pff38aca": [
+      "Eafdb92a",
+      "R049a64ea2ca4",
+      "R1c7185032179",
+      "R218245a07fd2",
+      "R496b28b30760",
+      "R53468b9b4173",
+      "R5c674c520644",
+      "R5ea617059061",
+      "R5ec6d6e58818",
+      "R7190edc51f1a",
+      "R7c5899c39fab",
+      "R92058a5eaad8",
+      "R9f64422e6b35",
+      "Raaac290fe38b",
+      "Re82fe03240cb"
+    ],
+    "P3d6b2a7": [
+      "Ecbd7499",
+      "R1fc2f754db55",
+      "R3a3abd85dca4",
+      "R59eeabb633f2",
+      "R72f29766be5f",
+      "R7398f3ec4933",
+      "R7c2fcbd340ee",
+      "R9c6cf7b9693a",
+      "Rbb7b5da51833",
+      "Rc3a43fee6380",
+      "Rd3658c5a7acf",
+      "Rd837616a8173",
+      "Rf743ea54beaa"
+    ],
+    "P5eba35d": [
+      "Ecf41cf3",
+      "R157aa60a3525",
+      "R1bdabd699fa8",
+      "R2837d03210c2",
+      "R51913f1e83eb",
+      "R5dcd0b9e9c4a",
+      "R62b9fd7c8bab",
+      "R6635853da9e1",
+      "R7b8f2502a073",
+      "R82d50fdadccb",
+      "R96841155fa8b",
+      "Rc1634913eca4",
+      "Rd8d6c8b5fc77",
+      "Rf7a12d00ee5b"
+    ],
+    "Pf01d840": [
+      "Edf4bc81",
+      "R0083a427d4e3",
+      "R12f741ffe9fe",
+      "R2f4e5f4a8666",
+      "R31b8e171b6cd",
+      "R35a03bed1367",
+      "R3f764912645a",
+      "R71512d2b18a3",
+      "R7fe471e59629",
+      "Raa3ddc85c026",
+      "Rabd804816606",
+      "Rc541e07b1a97",
+      "Re2aa9ab2a336",
+      "Re4478c362bca",
+      "Reb8ecf233de2",
+      "Reef7fc18efd3"
+    ],
+    "Pf34bdae": [
+      "Ee51dc75",
+      "R289dfecbca57",
+      "R302e2c011a98",
+      "R5bb174ddeeae",
+      "R74f396af33e0",
+      "R7af5da5c69c7",
+      "R7ce2618288da",
+      "R87fb5b78c438",
+      "R9314a09ccd1b",
+      "Ra17cad3a973e",
+      "Rb58435a44c04",
+      "Rb979a379e9e2",
+      "Rbcdf30cf0f70",
+      "Rd0baea2cc0c5"
+    ],
+    "P44298b5": [
+      "Eeb39d8a",
+      "R06d897146c01",
+      "R19624aa9b97b",
+      "R1a3141e7ff8b",
+      "R26a4a2dfef9c",
+      "R59eba5c42142",
+      "R69636c69db9d",
+      "R812523e98ff8",
+      "R99a88fcdb19a",
+      "R9e67f4a058e6",
+      "Rcc663392426a",
+      "Rd483aea38e97",
+      "Rf8217e53fdb1"
+    ],
+    "P2429873": [
+      "Ef45875e",
+      "R46962b739bc0",
+      "R4d16c851d722",
+      "R63e65d051478",
+      "R7649bfea645b",
+      "R7913a7ec16f8",
+      "R8c7e65f32e85",
+      "R90d96fdff777",
+      "Rb7db4b28e919",
+      "Rc1e01001897e"
+    ]
+  },
+  "linked": {
+    "P5a288b4": [
+      "R4c90adf34f8e",
+      "R1e96d0922c32"
+    ],
+    "P86f7f3d": [
+      "R29b26b182ad8",
+      "R1e96d0922c32"
+    ],
+    "P09a3361": [
+      "R8afce1668a21"
+    ]
+  }
+}
