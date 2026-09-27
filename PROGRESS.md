@@ -7,7 +7,8 @@ Core 29 unchanged plus 271 generated (`qa/task3_families.py`): 1,200 candidates 
 conflict chains added because the only fair pilot miss (2/10) was the outside-facility rule vs a later local note.
 Second-model review of 58 sampled charts matched 231/232 (the miss a generator bug, fixed) and prompted three fairness
 fixes. Audit log made linear after it overflowed tmpfs at this scale. Offline 14/14; Docker oracle 1, no-op 0,
-boundary 0. Pilots not yet run; suggested budgets 250 turns / 32K / 900 s / 7,000 s.
+boundary 0. Suggested budgets 250 turns / 32K / 900 s / 7,000 s. A batch pushed as `task3-0.2.0-pilot-opus` actually
+ran 0.1.1 (manifest matches `f2b8a1b`): defect-adjusted 2/5, three patient-22 misses; 0.1.x total 10/15. 0.2.0 not yet piloted.
 
 ## Task 3 cohort audit `chartr_task3/` v0.1.0 — 29-patient core (September 27, 2026)
 

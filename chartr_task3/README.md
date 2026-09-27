@@ -46,6 +46,12 @@ Suggested pilot budgets for 300 patients: 250 turns, 32K output, 900 s API timeo
 
 ## History: the 29-patient core (0.1.x)
 
+**Third 0.1.1 batch (mislabeled).** The results-branch folder `task3-0.2.0-pilot-opus` holds five trials whose task
+files match commit `f2b8a1b` (0.1.1) exactly; the local checkout had not been updated, so they are *not* 0.2.0 runs.
+All valid `end_turn`, 14–25 turns, 565–670 s, peak turn 28.4K. Raw 1/5; with the 0.1.2 evidence rule 2/5. All three
+fair misses are patient 22 (hospital discharge summary vs later clinic note coded as an unresolved conflict). Across
+the three 0.1.x batches, defect-adjusted: **10/15**, and every fair miss (5/15 runs) is that one authority case.
+
 The agent audits 29 synthetic syphilis-care patients (one episode each) for four publicly defined issue
 types: `INADEQUATE_TREATMENT`, `FOLLOW_UP_OVERDUE`, `MISFILED_RESULT`, `PREGNANCY_TREATMENT_INADEQUATE`.
 It does not know how many issues exist or where. For each candidate (episode × issue) the disposition is
