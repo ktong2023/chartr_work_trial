@@ -79,6 +79,7 @@ All runs used `claude-opus-5`. Artifacts are under `jobs/chartr/<timestamp>/char
 | `v0.4.0-pilot-opus` (5 trials) | 0.4.0 | 5/5 | 19–29 / 215–250 s | All supersession-boundary cases right; runs cite the tightened "explicit" rule |
 | `v0.5.0-pilot-opus` (5 trials) | 0.5.0 | invalid (5) | 17–24 / 260–287 s | All `APIConnectionError` in the same ~25 s window; host network/API blip; rerun as 0.5.1 |
 | `v0.5.1-pilot-opus` (5 trials) | 0.5.1 | 5/5 | 17–32 / 482–558 s | Event histories solved; two runs survived connection drops via retries; Opus noticed twin cases as "deliberate contrast" |
+| `proto-0.1.0-pilot-opus` (5 trials) | proto 0.1.0 (`chartr_proto/`) | 5/5 | 17–24 / 163–217 s | Inferred all 16 hidden standards from 31 past determinations; all 24 fields right |
 
 No run has shown the agent probing outside its boundary. The runs only ran `ls /app`
 and `clinic --help`, both public.

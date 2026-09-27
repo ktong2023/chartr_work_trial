@@ -59,9 +59,8 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.context.n_output_tokens,10)
         self.assertEqual(self.context.n_cache_tokens,6)
         first = self.client.messages.create.call_args_list[0].kwargs
-        self.assertEqual(set(first), {'model','max_tokens','tools','messages','thinking','cache_control'})
-        self.assertEqual(first['thinking'], {'type': 'adaptive', 'display': 'summarized'})
-        self.assertEqual(first['cache_control'], {'type': 'ephemeral'})
+        # Exactly the original request shape: no caching, thinking, beta or gateway parameters.
+        self.assertEqual(set(first), {'model','max_tokens','tools','messages'})
         self.assertEqual(first['model'],'org-opus')
         self.assertEqual(first['max_tokens'],321)
         self.assertTrue(any(e['event']=='tool_output' for e in events))
@@ -105,6 +104,8 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
         error = anthropic.APIConnectionError(request=httpx.Request('POST', 'https://example.invalid'))
         term, events = await self.run_agent([error, response()], api_retry_delays=(0,))
         self.assertEqual((term['reason'], term['validity']), ('end_turn', 'valid'))
+        first, retried = (c.kwargs for c in self.client.messages.create.call_args_list)
+        self.assertEqual(first, retried)  # A retry re-sends the identical request.
         self.assertEqual([e['error_type'] for e in events if e['event'] == 'api_retry'], ['APIConnectionError'])
 
     async def test_missing_credentials_is_invalid_without_api_call(self):
@@ -114,10 +115,6 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual((self.read_termination()['reason'], self.read_termination()['validity']),
                          ('missing_credentials', 'evaluation_error'))
         self.constructor.assert_not_called()
-
-    async def test_adaptive_thinking_can_be_disabled(self):
-        await self.run_agent([response()], adaptive_thinking=False)
-        self.assertNotIn('thinking', self.client.messages.create.call_args_list[0].kwargs)
 
     async def test_tool_infrastructure_error(self):
         self.environment.exec.side_effect = RuntimeError('secret body must not be logged')

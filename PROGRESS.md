@@ -1,5 +1,60 @@
 # ChartR implementation handoff
 
+## Dependent-history probe and audit fixes (September 27, 2026)
+
+New `chartr_probe/` v0.1.0: 12 fresh patients, two episodes each, 289 R4 resources,
+explicit protocol, no demonstration bank. Scoped amendments and retractions require
+reconstructing course membership, counted dose sequence, completion anchor, due date,
+and qualifying results. Independently authored expected fields agree with a separate
+public-record reconstruction solver. All ten wrong-algorithm controls fail; ID renaming
+and record reordering preserve answers. Private implementation and public-surface details
+are in `chartr_probe/README.md`; results and resume notes are in `DEPENDENCY_PROBE_HANDOFF.md`.
+
+Legacy fixes: `chartr_proto` 0.1.1 rejects malformed patient types with 400/faults=0;
+`chartr_task` 0.5.2 removes P132's computed completion/extra-dose summary while preserving
+the actual date and restart retraction. Existing clinical expectations are unchanged.
+The old induction fixture is retained as a historical comparison, including its known
+near-copy; the new experiment entirely removes demonstration-answer exposure.
+
+Offline suite 52/52 passed, plus the new executable-entrypoint regression check. New probe
+Docker oracle 1, no-op 0, isolation probe clean; corrected legacy oracles both 1 and no-ops both 0.
+The first new-probe oracle did not execute because solve.sh lacked executable permission;
+fixed before paid runs, with the failed setup run retained. Harbor 0.23.0 rejects the bare
+custom-agent name; the verified form is `-a anthropic_agent:AnthropicAgent`.
+User authorized five paid pilots after free checks; batch completed with adapter 0.3.1,
+150 turns / 16K output tokens / 3500 seconds. Evidence root:
+`jobs/chartr/dependency-probe-20260927-1790527316201/`.
+
+Result: **5/5 pass**, all valid `end_turn`, 14–25 turns, 315–378 seconds. All 60 patient
+determinations, including intermediate fields, passed. Every run read all 12 charts;
+no service faults, API retries, tool errors, or truncated outputs. Task hashes matched
+the frozen files in all five manifests. Total usage: 3,128,459 input / 118,763 output
+tokens, no cache usage. `pilot-summary.json` records per-trial checks and usage.
+The model organized charts into compact tables, resolved amendments and episode bindings,
+and submitted explicit answers; no private-path accesses appeared in recorded commands.
+The probe removes known shortcuts but **does not meet the target failure rate**. Do not
+mistake longer responses for a measured reasoning failure, tighten budgets, or hide rules
+to force a score. Further paid runs require authorization; proposed next design directions
+and limits are in `DEPENDENCY_PROBE_HANDOFF.md`.
+
+## Prototype: follow-up induction `chartr_proto/` v0.1.0 (September 27, 2026)
+
+User-approved prototype of the two strongest difficulty ideas: (1) infer unwritten standards from
+31 past determinations instead of reading a rule table, and (2) grade four reasoning fields per
+patient (governing plan, due date, completion record, status) for 6 current patients. Separate task
+directory; the main task is untouched. Private rule engine `qa/proto_rules.py` with 16 misconceptions,
+each contradicted by at least two precedents and failing at least one current case (checked at
+build time and by tests). Offline 42/42 (10 prototype tests); Docker oracle 1 (x2), no-op 0,
+boundary probe clean.
+
+Prototype pilots (`jobs/chartr/proto-0.1.0-pilot-opus/`): **5/5**, all valid `end_turn`, 17–24 turns,
+163–217 s, no API errors, no truncated tool output, no credentials in artifacts. Every run downloaded
+all 37 charts, tabulated the 31 past determinations with a script, stated each hidden standard
+correctly with the precedents that show it, and got all 24 graded fields right. Diagnosis: the
+precedents are clean one-factor contrasts, and nearly every standard matches clinical common sense,
+so induction was easy. Harder induction would need standards that go against common sense,
+precedents where several factors vary at once, and some standards shown only once.
+
 ## Current revision: 0.5.1 — harness robustness (September 27, 2026)
 
 0.5.0 pilots (`jobs/chartr/v0.5.0-pilot-opus/`): **all 5 invalid** (`api_error`,
@@ -9,12 +64,16 @@ reward; no credentials in artifacts. Per the framework they are retained and rer
 counted.
 
 0.5.1 harness and service changes (no case changes):
-- Adapter 0.3.0: transient API failures (connection/timeout, 408/409/429/5xx) retried after
-  10/30/90 s with an `api_retry` event per retry; adaptive thinking requested explicitly with
-  `display: "summarized"` (same thinking as the default, now readable in events.jsonl for
-  failure attribution); automatic prompt caching (lower cost and latency, same behavior);
-  tool-output cap 100,000 characters; missing-key detection no longer catches unrelated
-  KeyErrors. Refusal fallbacks deliberately not enabled: they would let another model answer.
+- Adapter 0.3.0 (used for the 0.5.1 pilots): transient API failures retried after 10/30/90 s
+  with an `api_retry` event per retry; explicit adaptive thinking with summarized display;
+  automatic prompt caching; tool-output cap 100,000 characters; missing-key detection fixed.
+- Adapter 0.3.1 (current, user decision): ChartR's access is HIPAA-constrained and rejects
+  extra API features, so requests are back to exactly the original shape (no caching, no
+  thinking parameter, no beta/fallback/gateway features). Kept: identical-request retries,
+  the 100K tool-output cap and the missing-key fix. Thinking text is omitted again.
+  Behavioral equivalence and an exact cost multiplier were not established by a controlled
+  comparison. The 0.5.1 pilots remain historical evidence under adapter 0.3.0; report
+  their configuration separately from current 0.3.1 runs.
 - Service: evidence accepts typed references (`DocumentReference/R123456`) as review items
   display them, removing the most common wasted 400 in pilots; mismatched types still 400.
 Offline 33/33 (new tests: API retry, missing credentials, thinking toggle, typed evidence);

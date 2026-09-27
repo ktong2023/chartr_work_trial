@@ -24,9 +24,6 @@ class Options(AgentOptions):
     api_timeout_sec: float = Field(600, gt=0)
     tool_timeout_sec: float = Field(60, gt=0)
     max_tool_chars: int = Field(100000, ge=256)
-    # Same adaptive thinking Opus 5 runs by default; "summarized" only makes the reasoning visible
-    # in events.jsonl for failure attribution. Disable for models without adaptive thinking.
-    adaptive_thinking: bool = True
     # Backoff (seconds) before each retry of a transient API failure; empty disables retries.
     api_retry_delays: tuple[float, ...] = (10.0, 30.0, 90.0)
 
@@ -44,7 +41,7 @@ class AnthropicAgent(BaseAgent):
         return "anthropic-direct"
 
     def version(self):
-        return "0.3.0"
+        return "0.3.1"
 
     async def setup(self, environment):
         pass
@@ -91,13 +88,10 @@ class AnthropicAgent(BaseAgent):
         tools = [{"name": "bash", "description": "Run a shell command inside the task environment.",
                   "input_schema": {"type": "object", "properties": {"command": {"type": "string"}},
                                    "required": ["command"], "additionalProperties": False}}]
-        # GA Messages API features only: adaptive thinking with summarized display (unchanged
-        # behavior) and automatic prompt caching (unchanged behavior, lower cost). No beta headers,
-        # gateway features or refusal fallbacks: a fallback would let a different model answer.
-        extra = {"cache_control": {"type": "ephemeral"}}
-        if self.options.adaptive_thinking:
-            extra["thinking"] = {"type": "adaptive", "display": "summarized"}
         try:
+            # Only the ordinary Messages API: ChartR's HIPAA-constrained access rejects extra features.
+            # No beta headers, thinking options, caching directives, fallbacks, or gateway features.
+            # The only addition is re-sending the identical request after a transient failure.
             api_key = os.environ.get("ANTHROPIC_API_KEY")
             if not api_key:
                 reason = "missing_credentials"
@@ -107,7 +101,7 @@ class AnthropicAgent(BaseAgent):
                 for turns in range(1, self.options.max_turns + 1):
                     self._event("request", turn=turns, message_count=len(messages))
                     response = await self._create(client, turns, model=self.model_name, max_tokens=self.options.max_tokens,
-                                                  tools=tools, messages=messages, **extra)
+                                                  tools=tools, messages=messages)
                     raw = response.model_dump(mode="json")
                     self._event("response", turn=turns, response=raw, request_id=getattr(response, "_request_id", None))
                     for key in usage:

@@ -1,0 +1,50 @@
+[
+  {
+    "patient": "P301",
+    "status": "not_due",
+    "plan": "R402073",
+    "due_date": "2026-09-30",
+    "completion": null,
+    "explanation": "Determined by applying the standards shown in the review history."
+  },
+  {
+    "patient": "P302",
+    "status": "overdue",
+    "plan": "R516907",
+    "due_date": "2026-09-02",
+    "completion": null,
+    "explanation": "Determined by applying the standards shown in the review history."
+  },
+  {
+    "patient": "P303",
+    "status": "not_due",
+    "plan": "R715374",
+    "due_date": "2026-10-03",
+    "completion": null,
+    "explanation": "Determined by applying the standards shown in the review history."
+  },
+  {
+    "patient": "P304",
+    "status": "completed",
+    "plan": "R508420",
+    "due_date": "2026-08-20",
+    "completion": "R298810",
+    "explanation": "Determined by applying the standards shown in the review history."
+  },
+  {
+    "patient": "P305",
+    "status": "unclear",
+    "plan": null,
+    "due_date": null,
+    "completion": null,
+    "explanation": "Determined by applying the standards shown in the review history."
+  },
+  {
+    "patient": "P306",
+    "status": "not_due",
+    "plan": "R258525",
+    "due_date": null,
+    "completion": null,
+    "explanation": "Determined by applying the standards shown in the review history."
+  }
+]

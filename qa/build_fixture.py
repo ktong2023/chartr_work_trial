@@ -801,7 +801,7 @@ def build():
     dose("P132.r2", "P132", "2026-03-22T09:30:00Z", bpg, bpg_dose, "P132.rx", "Riley Chen")
     dose("P132.r3", "P132", "2026-03-29T09:15:00Z", bpg, bpg_dose, "P132.rx", "Dana Kim")
     note("P132.corr", "P132", "2026-04-02T16:00:00Z", "treating-clinician", "Addendum", "Jordan Blake",
-         "Correction to the 3/15 note: the interval since the second dose was 13 days, within the 14-day window, so the original series was completed on 3/15 and no restart was needed. The 3/22 and 3/29 injections were extra doses.", True)
+         "Correction to the 3/15 note: the second dose was administered on 3/02. The instruction in the 3/15 note to restart the series is retracted.", True)
 
     for patient, *_ in PATIENTS:
         chart = [r for r in sources if r.get("subject", r.get("patient", {})).get("reference") == "Patient/" + patient

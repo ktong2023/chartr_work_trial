@@ -6,7 +6,7 @@ from jsonschema import Draft6Validator
 
 BASE = "https://chartr.example/fhir"
 NOW = "2026-09-24T12:00:00Z"
-VERSION = "chartr-treatment-review-0.5.1"
+VERSION = "chartr-treatment-review-0.5.2"
 STATUS = {"open": "requested", "needs_clarification": "requested", "resolved": "completed"}
 # Each review category has exactly one destination (owner Organization) and its own reasons.
 CATEGORIES = {

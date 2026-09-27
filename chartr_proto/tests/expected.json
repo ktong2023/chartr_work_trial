@@ -1,0 +1,40 @@
+{
+  "P301": {
+    "status": "not_due",
+    "plan": "R402073",
+    "due_date": "2026-09-30",
+    "completion": []
+  },
+  "P302": {
+    "status": "overdue",
+    "plan": "R516907",
+    "due_date": "2026-09-02",
+    "completion": []
+  },
+  "P303": {
+    "status": "not_due",
+    "plan": "R715374",
+    "due_date": "2026-10-03",
+    "completion": []
+  },
+  "P304": {
+    "status": "completed",
+    "plan": "R508420",
+    "due_date": "2026-08-20",
+    "completion": [
+      "R298810"
+    ]
+  },
+  "P305": {
+    "status": "unclear",
+    "plan": null,
+    "due_date": null,
+    "completion": []
+  },
+  "P306": {
+    "status": "not_due",
+    "plan": "R258525",
+    "due_date": null,
+    "completion": []
+  }
+}

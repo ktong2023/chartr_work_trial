@@ -1,4 +1,6 @@
-# ChartR review-queue task — v0.5.0
+# ChartR review-queue task — v0.5.2
+
+Revision 0.5.2 removes the derived completion-date/extra-dose conclusion from P132's addendum. The actual dose-date fact and explicit restart retraction remain; expected queue dispositions and evidence alternatives are unchanged. The separate dependent-history experiment is in `chartr_probe/`.
 
 One Harbor task contains twenty-four synthetic patients and two review categories:
 treatment review and follow-up.
@@ -155,10 +157,12 @@ limits. `ANTHROPIC_MAX_TURNS` and `ANTHROPIC_MAX_TOKENS` are optional host fallb
 Harbor allows 1,800 seconds for the agent, 600 for builds, and 120 for verification.
 `claude-opus-5` runs adaptive thinking by default (effort `high`); thinking tokens count toward
 `max_tokens`, so the adapter defaults to 16,000 output tokens with a 600 s per-request timeout.
-Adapter 0.3.0 requests that same adaptive thinking with `display: "summarized"` so reasoning
-summaries are logged for failure attribution, enables automatic prompt caching, retries
-transient API failures (logged as `api_retry`), and caps tool output at 100,000 characters.
-It never enables refusal fallbacks, which would let a different model answer.
+Adapter 0.3.1 sends exactly the original request shape (`model`, `max_tokens`, `tools`,
+`messages`): ChartR's HIPAA-constrained access rejects extra features, so there is no prompt
+caching, thinking parameter, beta header, refusal fallback or gateway feature. Thinking text
+therefore stays omitted. The only additions are re-sending the identical request after a
+transient failure (connection/timeout, 408/409/429/5xx; logged as `api_retry`) and a
+100,000-character tool-output cap.
 The adapter uses the ordinary Messages API and no new organization-dependent API
 features. Earlier pilot artifacts are retained under their own version labels.
 

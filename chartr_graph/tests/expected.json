@@ -1,0 +1,982 @@
+{
+  "Pcc4b059": {
+    "rows": {
+      "E355eb668a50b:first": {
+        "episode": "E355eb668a50b",
+        "checkpoint": "first",
+        "plan": "R0c6aaf24acd7",
+        "course": "R39c452637939",
+        "branch": "accelerated",
+        "doses": [
+          "Reb4fdb2c35e3",
+          "R4b74b203ce91",
+          "Rdc121d4aa6bf"
+        ],
+        "completion_date": "2026-01-22",
+        "due_date": "2026-04-11",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E355eb668a50b:second": {
+        "episode": "E355eb668a50b",
+        "checkpoint": "second",
+        "plan": "R0c6aaf24acd7",
+        "course": "R39c452637939",
+        "branch": "accelerated",
+        "doses": [
+          "Reb4fdb2c35e3",
+          "R4b74b203ce91",
+          "Rdc121d4aa6bf"
+        ],
+        "completion_date": "2026-01-22",
+        "due_date": "2026-06-11",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E26e019bfe998:first": {
+        "episode": "E26e019bfe998",
+        "checkpoint": "first",
+        "plan": "R40a43afc91c7",
+        "course": "R48163b816963",
+        "branch": "accelerated",
+        "doses": [
+          "R8d120293b4c1",
+          "Rf7397f67ea4a",
+          "R0f3ad04b018b"
+        ],
+        "completion_date": "2026-01-27",
+        "due_date": "2026-04-27",
+        "paused_days": 0,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E26e019bfe998:second": {
+        "episode": "E26e019bfe998",
+        "checkpoint": "second",
+        "plan": "R40a43afc91c7",
+        "course": "R48163b816963",
+        "branch": "accelerated",
+        "doses": [
+          "R8d120293b4c1",
+          "Rf7397f67ea4a",
+          "R0f3ad04b018b"
+        ],
+        "completion_date": "2026-01-27",
+        "due_date": "2026-06-27",
+        "paused_days": 0,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E136e5a4b1fb1:first": {
+        "episode": "E136e5a4b1fb1",
+        "checkpoint": "first",
+        "plan": "R3b00a743de38",
+        "course": "R7263c3782aca",
+        "branch": "routine",
+        "doses": [
+          "R812aa5a52916",
+          "Rca3ce667c56a",
+          "R3eda1525e54b"
+        ],
+        "completion_date": "2026-02-04",
+        "due_date": "2026-04-24",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E136e5a4b1fb1:second": {
+        "episode": "E136e5a4b1fb1",
+        "checkpoint": "second",
+        "plan": "R3b00a743de38",
+        "course": "R7263c3782aca",
+        "branch": "routine",
+        "doses": [
+          "R812aa5a52916",
+          "Rca3ce667c56a",
+          "R3eda1525e54b"
+        ],
+        "completion_date": "2026-02-04",
+        "due_date": "2026-06-24",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      }
+    },
+    "reports": {
+      "R89f19cdded34": {
+        "specimen": "R4ceaeb66ec8e",
+        "date": "2026-04-10",
+        "courses": [
+          "R39c452637939",
+          "R48163b816963"
+        ],
+        "eligible": true
+      },
+      "R5089d3e47f93": {
+        "specimen": "R55c88e8dfb06",
+        "date": "2026-04-22",
+        "courses": [
+          "R39c452637939",
+          "R7263c3782aca"
+        ],
+        "eligible": true
+      },
+      "Ra250107b1809": {
+        "specimen": "Reaf6e9f44f8f",
+        "date": "2026-05-02",
+        "courses": [
+          "R7263c3782aca"
+        ],
+        "eligible": true
+      },
+      "Reeba29253841": {
+        "specimen": "Ra65997707cdb",
+        "date": "2026-06-14",
+        "courses": [
+          "R39c452637939",
+          "R48163b816963"
+        ],
+        "eligible": true
+      },
+      "R0ed2d7b03f4f": {
+        "specimen": "R27728b21eaeb",
+        "date": "2026-06-28",
+        "courses": [
+          "R39c452637939",
+          "R7263c3782aca"
+        ],
+        "eligible": true
+      },
+      "R884de2c1ebb6": {
+        "specimen": "Rf5c216af3cf9",
+        "date": "2026-07-05",
+        "courses": [
+          "R7263c3782aca"
+        ],
+        "eligible": true
+      }
+    },
+    "optimum": 6
+  },
+  "P2f8358f": {
+    "rows": {
+      "E4496b815b3d7:first": {
+        "episode": "E4496b815b3d7",
+        "checkpoint": "first",
+        "plan": "Raab6080b6855",
+        "course": "R334334beb26e",
+        "branch": "routine",
+        "doses": [
+          "Rddf1c78eb1cf",
+          "R837142e7c5ed",
+          "R0beda7accc51"
+        ],
+        "completion_date": "2026-02-19",
+        "due_date": "2026-06-19",
+        "paused_days": 31,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E4496b815b3d7:second": {
+        "episode": "E4496b815b3d7",
+        "checkpoint": "second",
+        "plan": "Raab6080b6855",
+        "course": "R334334beb26e",
+        "branch": "routine",
+        "doses": [
+          "Rddf1c78eb1cf",
+          "R837142e7c5ed",
+          "R0beda7accc51"
+        ],
+        "completion_date": "2026-02-19",
+        "due_date": "2026-08-19",
+        "paused_days": 31,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E6b777043671f:first": {
+        "episode": "E6b777043671f",
+        "checkpoint": "first",
+        "plan": "Rd692f8547de9",
+        "course": "Radd0d067e467",
+        "branch": "accelerated",
+        "doses": [
+          "Re3e30981f159",
+          "R675e4c303d8d",
+          "R97b1837cda36"
+        ],
+        "completion_date": "2026-02-12",
+        "due_date": "2026-06-12",
+        "paused_days": 31,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E6b777043671f:second": {
+        "episode": "E6b777043671f",
+        "checkpoint": "second",
+        "plan": "Rd692f8547de9",
+        "course": "Radd0d067e467",
+        "branch": "accelerated",
+        "doses": [
+          "Re3e30981f159",
+          "R675e4c303d8d",
+          "R97b1837cda36"
+        ],
+        "completion_date": "2026-02-12",
+        "due_date": "2026-08-12",
+        "paused_days": 31,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Ed5f077cad38c:first": {
+        "episode": "Ed5f077cad38c",
+        "checkpoint": "first",
+        "plan": "R16889b6f92db",
+        "course": "Rd2762f1d3c0f",
+        "branch": "routine",
+        "doses": [
+          "R06435acc9871",
+          "R099775d1d9a9",
+          "R94471c00a748"
+        ],
+        "completion_date": "2026-03-02",
+        "due_date": "2026-06-02",
+        "paused_days": 0,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Ed5f077cad38c:second": {
+        "episode": "Ed5f077cad38c",
+        "checkpoint": "second",
+        "plan": "R16889b6f92db",
+        "course": "Rd2762f1d3c0f",
+        "branch": "routine",
+        "doses": [
+          "R06435acc9871",
+          "R099775d1d9a9",
+          "R94471c00a748"
+        ],
+        "completion_date": "2026-03-02",
+        "due_date": "2026-08-02",
+        "paused_days": 0,
+        "fixed_status": null,
+        "separation": 42
+      }
+    },
+    "reports": {
+      "R9f4c49a7045e": {
+        "specimen": "R1e3a66787960",
+        "date": "2026-06-04",
+        "courses": [
+          "R334334beb26e",
+          "Radd0d067e467"
+        ],
+        "eligible": true
+      },
+      "R5843502b933e": {
+        "specimen": "R1e3a66787960",
+        "date": "2026-06-04",
+        "courses": [
+          "R334334beb26e",
+          "Radd0d067e467"
+        ],
+        "eligible": true
+      },
+      "R7823b3795c32": {
+        "specimen": "R941db9accb88",
+        "date": "2026-06-15",
+        "courses": [
+          "R334334beb26e",
+          "Rd2762f1d3c0f"
+        ],
+        "eligible": true
+      },
+      "Rf881e450aee1": {
+        "specimen": "Rf19b5c89c8cb",
+        "date": "2026-05-01",
+        "courses": [
+          "Radd0d067e467",
+          "Rd2762f1d3c0f"
+        ],
+        "eligible": true
+      },
+      "R19ccc0a742a7": {
+        "specimen": "R1b1ba65fc171",
+        "date": "2026-08-01",
+        "courses": [
+          "R334334beb26e",
+          "Radd0d067e467"
+        ],
+        "eligible": true
+      },
+      "R9c753e82f0ae": {
+        "specimen": "R1b1ba65fc171",
+        "date": "2026-08-01",
+        "courses": [
+          "R334334beb26e",
+          "Radd0d067e467"
+        ],
+        "eligible": true
+      },
+      "R4413e856f8da": {
+        "specimen": "R1c172e8d2562",
+        "date": "2026-08-16",
+        "courses": [
+          "R334334beb26e",
+          "Rd2762f1d3c0f"
+        ],
+        "eligible": true
+      },
+      "R86ceec83954e": {
+        "specimen": "Rb7e24bd8b4e8",
+        "date": "2026-08-30",
+        "courses": [
+          "Rd2762f1d3c0f"
+        ],
+        "eligible": true
+      }
+    },
+    "optimum": 4
+  },
+  "P21bee4e": {
+    "rows": {
+      "E6c703b01cc15:first": {
+        "episode": "E6c703b01cc15",
+        "checkpoint": "first",
+        "plan": "Rd34fbc3c4fe9",
+        "course": "R53c9e49410a0",
+        "branch": "routine",
+        "doses": [
+          "R257a65b7efbd",
+          "R21cb46a99590",
+          "Rab4be29b100c"
+        ],
+        "completion_date": "2026-03-23",
+        "due_date": "2026-06-07",
+        "paused_days": 15,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E6c703b01cc15:second": {
+        "episode": "E6c703b01cc15",
+        "checkpoint": "second",
+        "plan": "Rd34fbc3c4fe9",
+        "course": "R53c9e49410a0",
+        "branch": "routine",
+        "doses": [
+          "R257a65b7efbd",
+          "R21cb46a99590",
+          "Rab4be29b100c"
+        ],
+        "completion_date": "2026-03-23",
+        "due_date": "2026-08-07",
+        "paused_days": 15,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Edd15661ce3fe:first": {
+        "episode": "Edd15661ce3fe",
+        "checkpoint": "first",
+        "plan": "Ra84828b811eb",
+        "course": "R50d91dd70d51",
+        "branch": "routine",
+        "doses": [
+          "Rc0b53ad50a63",
+          "Rf74899afcffa",
+          "Rc7ccda794880"
+        ],
+        "completion_date": "2026-03-18",
+        "due_date": "2026-06-04",
+        "paused_days": 17,
+        "fixed_status": null,
+        "separation": 56
+      },
+      "Edd15661ce3fe:second": {
+        "episode": "Edd15661ce3fe",
+        "checkpoint": "second",
+        "plan": "Ra84828b811eb",
+        "course": "R50d91dd70d51",
+        "branch": "routine",
+        "doses": [
+          "Rc0b53ad50a63",
+          "Rf74899afcffa",
+          "Rc7ccda794880"
+        ],
+        "completion_date": "2026-03-18",
+        "due_date": "2026-08-04",
+        "paused_days": 17,
+        "fixed_status": null,
+        "separation": 56
+      },
+      "E5456ebf267f4:first": {
+        "episode": "E5456ebf267f4",
+        "checkpoint": "first",
+        "plan": "R51cc9d6f6c80",
+        "course": "R71f198e54118",
+        "branch": "accelerated",
+        "doses": [
+          "R6293dd948cb7",
+          "R17d24c650c13",
+          "Rdb1ba637fbe9"
+        ],
+        "completion_date": "2026-03-28",
+        "due_date": "2026-05-28",
+        "paused_days": 0,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E5456ebf267f4:second": {
+        "episode": "E5456ebf267f4",
+        "checkpoint": "second",
+        "plan": "R51cc9d6f6c80",
+        "course": "R71f198e54118",
+        "branch": "accelerated",
+        "doses": [
+          "R6293dd948cb7",
+          "R17d24c650c13",
+          "Rdb1ba637fbe9"
+        ],
+        "completion_date": "2026-03-28",
+        "due_date": "2026-06-28",
+        "paused_days": 0,
+        "fixed_status": null,
+        "separation": 42
+      }
+    },
+    "reports": {
+      "R28dbdf53752a": {
+        "specimen": "Rfd95af82228c",
+        "date": "2026-05-18",
+        "courses": [
+          "R53c9e49410a0",
+          "R71f198e54118"
+        ],
+        "eligible": true
+      },
+      "Re7225cb871ff": {
+        "specimen": "R6ffb28bc3f9b",
+        "date": "2026-05-24",
+        "courses": [
+          "R53c9e49410a0",
+          "R50d91dd70d51"
+        ],
+        "eligible": true
+      },
+      "Ra28de7bb2153": {
+        "specimen": "R935650c9fe54",
+        "date": "2026-06-03",
+        "courses": [
+          "R53c9e49410a0",
+          "R50d91dd70d51"
+        ],
+        "eligible": true
+      },
+      "R9bf11a130cb1": {
+        "specimen": "Rc1939bd8b39c",
+        "date": "2026-06-08",
+        "courses": [
+          "R71f198e54118"
+        ],
+        "eligible": true
+      },
+      "Ra0e911992780": {
+        "specimen": "Rd318f0751c8c",
+        "date": "2026-06-27",
+        "courses": [
+          "R53c9e49410a0",
+          "R71f198e54118"
+        ],
+        "eligible": true
+      },
+      "R2785c7e20e9d": {
+        "specimen": "R3f255c512fec",
+        "date": "2026-07-09",
+        "courses": [
+          "R50d91dd70d51",
+          "R71f198e54118"
+        ],
+        "eligible": true
+      },
+      "Re04498cf008b": {
+        "specimen": "R2846e2fa65d9",
+        "date": "2026-08-08",
+        "courses": [
+          "R53c9e49410a0",
+          "R50d91dd70d51"
+        ],
+        "eligible": true
+      }
+    },
+    "optimum": 5
+  },
+  "P16ab4b1": {
+    "rows": {
+      "E9409b0dcc7f6:first": {
+        "episode": "E9409b0dcc7f6",
+        "checkpoint": "first",
+        "plan": "Rea8d41446b78",
+        "course": "R1afb94163b75",
+        "branch": "accelerated",
+        "doses": [
+          "R363195a76cbb",
+          "R9f41d2e6142c",
+          "R3e43cbbbdcf1"
+        ],
+        "completion_date": "2026-04-15",
+        "due_date": "2026-06-06",
+        "paused_days": 22,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E9409b0dcc7f6:second": {
+        "episode": "E9409b0dcc7f6",
+        "checkpoint": "second",
+        "plan": "Rea8d41446b78",
+        "course": "R1afb94163b75",
+        "branch": "accelerated",
+        "doses": [
+          "R363195a76cbb",
+          "R9f41d2e6142c",
+          "R3e43cbbbdcf1"
+        ],
+        "completion_date": "2026-04-15",
+        "due_date": "2026-08-06",
+        "paused_days": 22,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E8361fe5d9272:first": {
+        "episode": "E8361fe5d9272",
+        "checkpoint": "first",
+        "plan": "Rc026014ebd47",
+        "course": "Rde38d51210d3",
+        "branch": "routine",
+        "doses": [
+          "Re9aca711fbe4",
+          "Reedfcac7f9e9",
+          "R9af3a1e0c1f5"
+        ],
+        "completion_date": "2026-04-17",
+        "due_date": "2026-06-25",
+        "paused_days": 8,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E8361fe5d9272:second": {
+        "episode": "E8361fe5d9272",
+        "checkpoint": "second",
+        "plan": "Rc026014ebd47",
+        "course": "Rde38d51210d3",
+        "branch": "routine",
+        "doses": [
+          "Re9aca711fbe4",
+          "Reedfcac7f9e9",
+          "R9af3a1e0c1f5"
+        ],
+        "completion_date": "2026-04-17",
+        "due_date": "2026-08-25",
+        "paused_days": 8,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Efeb438c4a707:first": {
+        "episode": "Efeb438c4a707",
+        "checkpoint": "first",
+        "plan": "Rcb91eca532b1",
+        "course": "R1f7a1199a5da",
+        "branch": "routine",
+        "doses": [
+          "Ra762d8fa56f5",
+          "Rdb0215029ca8",
+          "R6e73a65b9542"
+        ],
+        "completion_date": "2026-04-26",
+        "due_date": "2026-08-11",
+        "paused_days": 16,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Efeb438c4a707:second": {
+        "episode": "Efeb438c4a707",
+        "checkpoint": "second",
+        "plan": "Rcb91eca532b1",
+        "course": "R1f7a1199a5da",
+        "branch": "routine",
+        "doses": [
+          "Ra762d8fa56f5",
+          "Rdb0215029ca8",
+          "R6e73a65b9542"
+        ],
+        "completion_date": "2026-04-26",
+        "due_date": "2026-10-12",
+        "paused_days": 16,
+        "fixed_status": null,
+        "separation": 42
+      }
+    },
+    "reports": {
+      "Rec0ae1371995": {
+        "specimen": "Rcba4f9c5d755",
+        "date": "2026-06-07",
+        "courses": [
+          "R1afb94163b75",
+          "Rde38d51210d3"
+        ],
+        "eligible": true
+      },
+      "R0ce742a12e78": {
+        "specimen": "R6200fc2240f6",
+        "date": "2026-06-20",
+        "courses": [
+          "R1afb94163b75"
+        ],
+        "eligible": true
+      },
+      "R51ec6110e332": {
+        "specimen": "R5b7b36517594",
+        "date": "2026-07-01",
+        "courses": [
+          "Rde38d51210d3"
+        ],
+        "eligible": true
+      },
+      "Rd6f450e3f3ab": {
+        "specimen": "R6e2e46e0f411",
+        "date": "2026-07-30",
+        "courses": [
+          "R1afb94163b75",
+          "R1f7a1199a5da"
+        ],
+        "eligible": true
+      },
+      "Ra45a722e9bed": {
+        "specimen": "R3ec46c751c5f",
+        "date": "2026-08-15",
+        "courses": [
+          "R1afb94163b75",
+          "Rde38d51210d3",
+          "R1f7a1199a5da"
+        ],
+        "eligible": true
+      },
+      "R47dcbf22b5f0": {
+        "specimen": "R316a24053cf9",
+        "date": "2026-09-10",
+        "courses": [
+          "Rde38d51210d3",
+          "R1f7a1199a5da"
+        ],
+        "eligible": true
+      },
+      "R35129d79c720": {
+        "specimen": "R9a98f169533c",
+        "date": "2026-09-22",
+        "courses": [
+          "R1f7a1199a5da"
+        ],
+        "eligible": true
+      }
+    },
+    "optimum": 6
+  },
+  "Pa32ae28": {
+    "rows": {
+      "Ed3dcf832e821:first": {
+        "episode": "Ed3dcf832e821",
+        "checkpoint": "first",
+        "plan": "Ref854720849b",
+        "course": "Re4cd27168367",
+        "branch": "routine",
+        "doses": [
+          "R3a7d05b2256d",
+          "Rbf0e06ec6544",
+          "R7daa5b14bf24"
+        ],
+        "completion_date": "2026-05-22",
+        "due_date": "2026-08-11",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Ed3dcf832e821:second": {
+        "episode": "Ed3dcf832e821",
+        "checkpoint": "second",
+        "plan": "Ref854720849b",
+        "course": "Re4cd27168367",
+        "branch": "routine",
+        "doses": [
+          "R3a7d05b2256d",
+          "Rbf0e06ec6544",
+          "R7daa5b14bf24"
+        ],
+        "completion_date": "2026-05-22",
+        "due_date": "2026-10-12",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E8a691e8b4eff:first": {
+        "episode": "E8a691e8b4eff",
+        "checkpoint": "first",
+        "plan": "R680427f10b46",
+        "course": "R3dc8cab44a36",
+        "branch": "accelerated",
+        "doses": [
+          "R762ba3f79054",
+          "Rb9aac7fb92bf",
+          "R3b4afc7ad402"
+        ],
+        "completion_date": "2026-05-19",
+        "due_date": "2026-08-18",
+        "paused_days": 30,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E8a691e8b4eff:second": {
+        "episode": "E8a691e8b4eff",
+        "checkpoint": "second",
+        "plan": "R680427f10b46",
+        "course": "R3dc8cab44a36",
+        "branch": "accelerated",
+        "doses": [
+          "R762ba3f79054",
+          "Rb9aac7fb92bf",
+          "R3b4afc7ad402"
+        ],
+        "completion_date": "2026-05-19",
+        "due_date": "2026-09-18",
+        "paused_days": 30,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Ecd1c6c8e7e1a:first": {
+        "episode": "Ecd1c6c8e7e1a",
+        "checkpoint": "first",
+        "plan": "Rbf97e2d5583e",
+        "course": "R092887056bb5",
+        "branch": "routine",
+        "doses": [
+          "R76a07b0f2b06",
+          "Rb78aa48b65d1",
+          "Rf19aa81f77d8"
+        ],
+        "completion_date": "2026-05-19",
+        "due_date": "2026-07-09",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "Ecd1c6c8e7e1a:second": {
+        "episode": "Ecd1c6c8e7e1a",
+        "checkpoint": "second",
+        "plan": "Rbf97e2d5583e",
+        "course": "R092887056bb5",
+        "branch": "routine",
+        "doses": [
+          "R76a07b0f2b06",
+          "Rb78aa48b65d1",
+          "Rf19aa81f77d8"
+        ],
+        "completion_date": "2026-05-19",
+        "due_date": "2026-09-08",
+        "paused_days": 20,
+        "fixed_status": null,
+        "separation": 42
+      }
+    },
+    "reports": {
+      "Rb03548127ae2": {
+        "specimen": "R53af7a981ddd",
+        "date": "2026-07-01",
+        "courses": [
+          "R092887056bb5"
+        ],
+        "eligible": true
+      },
+      "R2ccbb1994ced": {
+        "specimen": "Rb3a3866175d6",
+        "date": "2026-07-24",
+        "courses": [
+          "Re4cd27168367",
+          "R092887056bb5"
+        ],
+        "eligible": true
+      },
+      "Rc791ae206343": {
+        "specimen": "R6f1721a076eb",
+        "date": "2026-08-05",
+        "courses": [
+          "Re4cd27168367",
+          "R3dc8cab44a36"
+        ],
+        "eligible": true
+      },
+      "R88dca684f801": {
+        "specimen": "Rd4d59c6aae82",
+        "date": "2026-08-22",
+        "courses": [
+          "R3dc8cab44a36",
+          "R092887056bb5"
+        ],
+        "eligible": true
+      },
+      "Rbf3715c92adb": {
+        "specimen": "R9cc3d89b5526",
+        "date": "2026-09-01",
+        "courses": [
+          "Re4cd27168367",
+          "R3dc8cab44a36",
+          "R092887056bb5"
+        ],
+        "eligible": true
+      },
+      "Rd8d04299f29b": {
+        "specimen": "R7ccf3ce6c618",
+        "date": "2026-09-20",
+        "courses": [
+          "R3dc8cab44a36",
+          "R092887056bb5"
+        ],
+        "eligible": true
+      },
+      "Raf238abca941": {
+        "specimen": "Reeeda5048bea",
+        "date": "2026-09-24",
+        "courses": [
+          "Re4cd27168367"
+        ],
+        "eligible": false
+      }
+    },
+    "optimum": 5
+  },
+  "P7724320": {
+    "rows": {
+      "E9c1ef28bd4f6:first": {
+        "episode": "E9c1ef28bd4f6",
+        "checkpoint": "first",
+        "plan": "R2bb575cc8353",
+        "course": "Rc6b18cf51340",
+        "branch": "accelerated",
+        "doses": [
+          "Rcd904f9674be",
+          "R81613ce3fd72",
+          "R979d5ae3a202"
+        ],
+        "completion_date": "2026-06-22",
+        "due_date": "2026-08-22",
+        "paused_days": 31,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E9c1ef28bd4f6:second": {
+        "episode": "E9c1ef28bd4f6",
+        "checkpoint": "second",
+        "plan": "R2bb575cc8353",
+        "course": "Rc6b18cf51340",
+        "branch": "accelerated",
+        "doses": [
+          "Rcd904f9674be",
+          "R81613ce3fd72",
+          "R979d5ae3a202"
+        ],
+        "completion_date": "2026-06-22",
+        "due_date": "2026-09-22",
+        "paused_days": 31,
+        "fixed_status": null,
+        "separation": 42
+      },
+      "E91183fdbfe87:first": {
+        "episode": "E91183fdbfe87",
+        "checkpoint": "first",
+        "plan": null,
+        "course": null,
+        "branch": null,
+        "doses": [],
+        "completion_date": null,
+        "due_date": null,
+        "paused_days": null,
+        "fixed_status": "unclear",
+        "separation": 42
+      },
+      "E91183fdbfe87:second": {
+        "episode": "E91183fdbfe87",
+        "checkpoint": "second",
+        "plan": null,
+        "course": null,
+        "branch": null,
+        "doses": [],
+        "completion_date": null,
+        "due_date": null,
+        "paused_days": null,
+        "fixed_status": "unclear",
+        "separation": 42
+      },
+      "E6d166e729c0d:first": {
+        "episode": "E6d166e729c0d",
+        "checkpoint": "first",
+        "plan": null,
+        "course": null,
+        "branch": null,
+        "doses": [],
+        "completion_date": null,
+        "due_date": null,
+        "paused_days": null,
+        "fixed_status": "no_requirement",
+        "separation": 42
+      },
+      "E6d166e729c0d:second": {
+        "episode": "E6d166e729c0d",
+        "checkpoint": "second",
+        "plan": null,
+        "course": null,
+        "branch": null,
+        "doses": [],
+        "completion_date": null,
+        "due_date": null,
+        "paused_days": null,
+        "fixed_status": "no_requirement",
+        "separation": 42
+      }
+    },
+    "reports": {
+      "R475bfe6a508e": {
+        "specimen": "Rf25f9aa3faec",
+        "date": "2026-08-04",
+        "courses": [
+          "Rc6b18cf51340"
+        ],
+        "eligible": true
+      },
+      "R644e08549444": {
+        "specimen": "Rbfc467cb04a0",
+        "date": "2026-08-25",
+        "courses": [
+          "Rc6b18cf51340",
+          "Red49fd4f5cd9"
+        ],
+        "eligible": true
+      },
+      "R3d89a86de201": {
+        "specimen": "Ra690daa36b20",
+        "date": "2026-09-18",
+        "courses": [
+          "Rc6b18cf51340"
+        ],
+        "eligible": true
+      },
+      "R394eb367bfcd": {
+        "specimen": "R41cb46c85f61",
+        "date": "2026-09-20",
+        "courses": [
+          "Red49fd4f5cd9",
+          "R3c7802addb1c"
+        ],
+        "eligible": true
+      }
+    },
+    "optimum": 2
+  }
+}

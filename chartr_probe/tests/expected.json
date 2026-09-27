@@ -1,0 +1,168 @@
+{
+  "Pbf2d13c": {
+    "episode": "E6bcc1332b8d2",
+    "status": "overdue",
+    "plan": "R9f2c8f597a10",
+    "course": "R8c8e5ed1e67f",
+    "doses": [
+      "R8887fbd9128d",
+      "R5203f29d59d2",
+      "Re7a8b94085f9"
+    ],
+    "completion_date": "2026-02-26",
+    "due_date": "2026-08-26",
+    "results": []
+  },
+  "P548a425": {
+    "episode": "Edcb21c31411a",
+    "status": "not_due",
+    "plan": "R7b56c7c0f743",
+    "course": "Rfb7989bdaa0b",
+    "doses": [
+      "R4f75c7ffe386",
+      "R04dd95f3bd26"
+    ],
+    "completion_date": null,
+    "due_date": null,
+    "results": []
+  },
+  "P0c27463": {
+    "episode": "E0670c351f0ea",
+    "status": "completed",
+    "plan": "Rddbcb2399420",
+    "course": "Rfae4cf4de38f",
+    "doses": [
+      "Ra7d644178db6",
+      "Rb1e8bea85bc6",
+      "Rc4502e44f86a"
+    ],
+    "completion_date": "2026-01-26",
+    "due_date": "2026-07-26",
+    "results": [
+      "R780a21b7bf39"
+    ]
+  },
+  "Paf9b6fe": {
+    "episode": "Ede9db59ef283",
+    "status": "not_due",
+    "plan": "R87e96e659b1f",
+    "course": "R00bb189bdba3",
+    "doses": [
+      "R02c17cb8abdb",
+      "R2f00da53558f",
+      "Rc897b5677f72"
+    ],
+    "completion_date": "2026-03-15",
+    "due_date": "2026-12-15",
+    "results": []
+  },
+  "P3434547": {
+    "episode": "E663992354f3e",
+    "status": "completed",
+    "plan": "R2066a2f57898",
+    "course": "Rdf71e411353c",
+    "doses": [
+      "R9bd243ea12c7",
+      "R4d6eaf6c1571",
+      "R0f5ce353e84d"
+    ],
+    "completion_date": "2026-02-19",
+    "due_date": "2026-08-19",
+    "results": [
+      "R01257f121ed5"
+    ]
+  },
+  "P9d05375": {
+    "episode": "Ee47da4fa7b2e",
+    "status": "not_due",
+    "plan": "R29e9dc1bed68",
+    "course": "R83e80b1d5daa",
+    "doses": [
+      "R1bb301fe59d5",
+      "R9906e2dc8726",
+      "Ra209f3e9b950"
+    ],
+    "completion_date": "2026-04-04",
+    "due_date": "2026-10-04",
+    "results": []
+  },
+  "P1784032": {
+    "episode": "Ef03e7d187400",
+    "status": "unclear",
+    "plan": null,
+    "course": null,
+    "doses": [],
+    "completion_date": null,
+    "due_date": null,
+    "results": []
+  },
+  "Pe466123": {
+    "episode": "Eb4989549b823",
+    "status": "no_requirement",
+    "plan": null,
+    "course": null,
+    "doses": [],
+    "completion_date": null,
+    "due_date": null,
+    "results": []
+  },
+  "P49ead2b": {
+    "episode": "E5dd0204c909f",
+    "status": "overdue",
+    "plan": "R874306696512",
+    "course": "R5d4eaf495ba2",
+    "doses": [
+      "R905365c990ce",
+      "Rf1c64e37bfa2",
+      "R60aaae67764f"
+    ],
+    "completion_date": "2026-03-16",
+    "due_date": "2026-09-16",
+    "results": []
+  },
+  "Pdf87764": {
+    "episode": "E219b3b732f6e",
+    "status": "completed",
+    "plan": "R14828807d386",
+    "course": "R407ed3ae2c71",
+    "doses": [
+      "R677203d7fd7b",
+      "R513ae98e4fb4",
+      "R1eab01d5a7c8"
+    ],
+    "completion_date": "2026-01-21",
+    "due_date": "2026-07-21",
+    "results": [
+      "R9e974921d365",
+      "Rce4ce2270a69"
+    ]
+  },
+  "Pd292237": {
+    "episode": "Ebd07cb1ebe21",
+    "status": "overdue",
+    "plan": "R3091aeca51e3",
+    "course": "R7a966dd5df26",
+    "doses": [
+      "R0d280067d7e5",
+      "Rd05f6e331a69",
+      "Rdaeeedaef494"
+    ],
+    "completion_date": "2026-01-31",
+    "due_date": "2026-02-28",
+    "results": []
+  },
+  "Pda454b0": {
+    "episode": "E67433d83158e",
+    "status": "not_due",
+    "plan": "R26483725f831",
+    "course": "R16f2817b4b24",
+    "doses": [
+      "R3698e336fb62",
+      "R65fb92959f0d",
+      "R1c5993bf8439"
+    ],
+    "completion_date": "2026-04-06",
+    "due_date": "2026-10-06",
+    "results": []
+  }
+}
