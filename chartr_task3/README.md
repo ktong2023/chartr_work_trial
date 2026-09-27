@@ -55,6 +55,16 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 --ag
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 5 -n 5 --ak max_turns=150 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=3500 --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 ```
 
+## Independent review (September 27, 2026)
+
+A second model, given only the rendered charts and the public docs, decided all 116 candidates. It matched
+the authored answers on 114; both misses were one wording ambiguity (whether pregnancy bears on
+`INADEQUATE_TREATMENT`), fixed in the issue definitions, after which it matched all 116. The pregnant
+patient's dose gap was widened from 11 to 14 days because CDC does not define a "missed" dose in pregnancy by
+days. Residual concerns it raised: a later local note versus the hospital's delivery date (settled by the
+published outside-record rule, 32 vs 29 days); a pregnancy test pending for three months (realistic as a lost
+send-out, still `RESULT_PENDING`); an ongoing pregnancy with incomplete treatment counts as an issue now.
+
 ## Reuse
 
 Service, CLI pattern, controller attestation/collection, separate verifier and Harbor provider are reused

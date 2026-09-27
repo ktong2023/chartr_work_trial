@@ -544,9 +544,9 @@ PATIENTS = [
              ('condition', '2025-03-03', 'Late latent syphilis', DR[1]),
              ('bpg', '2025-03-03', '2.4 million units IM', RN[2], 'R gluteal.'),
              ('bpg', '2025-03-10', '2.4 million units IM', RN[2], 'L gluteal.'),
-             ('note', '2025-03-17', '1600', 'nurse', RN[2], 'Telephone encounter', 'Pt no ride today, rescheduled to Friday 3/21.'),
-             ('bpg', '2025-03-21', '2.4 million units IM', RN[2], 'R gluteal.'),
-             ('note', '2025-03-21', '1130', 'clinician', DR[1], 'Prenatal visit', '21w0d. Third Bicillin today (4 days late, transport). Series complete.'),
+             ('note', '2025-03-17', '1600', 'nurse', RN[2], 'Telephone encounter', 'Pt no ride today, rescheduled to Monday 3/24.'),
+             ('bpg', '2025-03-24', '2.4 million units IM', RN[2], 'R gluteal.'),
+             ('note', '2025-03-24', '1130', 'clinician', DR[1], 'Prenatal visit', '21w3d. Third Bicillin today (a week late; no transport, then clinic closed Friday). Series complete.'),
              ('outside', '2025-08-06', 'Riverside Hospital',
               'RIVERSIDE HOSPITAL - DISCHARGE SUMMARY (L&D)\nPatient: JACKSON, IMANI  DOB 02/25/1998\nDelivery '
               '08/01/2025, repeat low transverse cesarean, live male infant 3310 g. Maternal RPR 1:1.'),
@@ -556,7 +556,7 @@ PATIENTS = [
          facts=dict(stage='late_latent', pregnant=True, delivery='2025-08-01'),
          gaps={'outside_received': (PRG,)},
          truth={ADQ: ('confirmed', None), PRG: ('confirmed', None)}, kinds={ADQ: 'real', PRG: 'real'},
-         requests={ADQ: 'Pharmacy QA: third Bicillin dose given 11 days after the second. Please review.'}),
+         requests={ADQ: 'Pharmacy QA: third Bicillin dose given 14 days after the second. Please review.'}),
 
     # ---------------------------------------------------------------- 25: primary, left before the injection.
     dict(key='p25', name='Tyrell Adams', sex='male', dob='2002-04-18', dx='2026-04-20',
