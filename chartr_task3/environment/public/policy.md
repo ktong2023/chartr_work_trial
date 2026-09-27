@@ -24,10 +24,10 @@ A `cannot_determine` item names the missing-evidence code of the fact it depends
 
 | Issue | Exists when |
 |---|---|
-| `INADEQUATE_TREATMENT` | An episode diagnosed at least 30 days before the evaluation time has not received treatment adequate for its infection. |
+| `INADEQUATE_TREATMENT` | An episode diagnosed at least 30 days before the evaluation time has not received treatment adequate for its infection, given the patient's pregnancy status. |
 | `FOLLOW_UP_OVERDUE` | A post-treatment nontreponemal test recommended at a stated number of months after treatment was not collected within its window, and the window closed before the evaluation time. |
 | `MISFILED_RESULT` | A laboratory result filed in the episode's chart belongs to a different patient. |
-| `PREGNANCY_TREATMENT_INADEQUATE` | The patient was pregnant at any time from the episode's diagnosis to the evaluation time, and did not receive treatment adequate for syphilis in pregnancy, begun at least 30 days before delivery. |
+| `PREGNANCY_TREATMENT_INADEQUATE` | The patient was pregnant at any time from the episode's diagnosis to the evaluation time and has not received treatment adequate for syphilis in pregnancy; once delivery has occurred, that treatment must have begun at least 30 days before it. |
 
 ## Local conventions
 

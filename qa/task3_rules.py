@@ -80,8 +80,9 @@ def evaluate(f, pending_counts=True, pregnant_gap=9):
     if not f['pregnant']:
         out[PRG] = False
     else:
-        end = D(f['delivery']) if f['delivery'] else D(EVAL)
-        out[PRG] = not (ok and start is not None and (end - start).days >= 30)
+        # Ongoing pregnancy: adequate treatment so far. After delivery: begun at least 30 days before it.
+        timely = f['delivery'] is None or (start is not None and (D(f['delivery']) - start).days >= 30)
+        out[PRG] = not (ok and timely)
     treated = [D(d) for d, k in f['doses'] if k != 'pep' and D(d) >= D(f['dx'])]
     overdue = False
     if treated:
