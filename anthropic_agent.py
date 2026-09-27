@@ -18,11 +18,17 @@ from harbor.models.agent.context import ModelUsage
 
 class Options(AgentOptions):
     max_turns: Annotated[int, Env("ANTHROPIC_MAX_TURNS", fallback="ANTHROPIC_MAX_TURNS")] = Field(100, ge=1)
-    max_tokens: Annotated[int, Env("ANTHROPIC_MAX_TOKENS", fallback="ANTHROPIC_MAX_TOKENS")] = Field(4096, ge=1)
-    wall_timeout_sec: float = Field(1170, gt=0)
-    api_timeout_sec: float = Field(90, gt=0)
+    # Opus 5 thinks by default (adaptive) and thinking counts toward max_tokens; 16K avoids mid-thinking cutoffs.
+    max_tokens: Annotated[int, Env("ANTHROPIC_MAX_TOKENS", fallback="ANTHROPIC_MAX_TOKENS")] = Field(16000, ge=1)
+    wall_timeout_sec: float = Field(1770, gt=0)
+    api_timeout_sec: float = Field(600, gt=0)
     tool_timeout_sec: float = Field(60, gt=0)
-    max_tool_chars: int = Field(50000, ge=256)
+    max_tool_chars: int = Field(100000, ge=256)
+    # Same adaptive thinking Opus 5 runs by default; "summarized" only makes the reasoning visible
+    # in events.jsonl for failure attribution. Disable for models without adaptive thinking.
+    adaptive_thinking: bool = True
+    # Backoff (seconds) before each retry of a transient API failure; empty disables retries.
+    api_retry_delays: tuple[float, ...] = (10.0, 30.0, 90.0)
 
 
 class AnthropicAgent(BaseAgent):
@@ -38,7 +44,7 @@ class AnthropicAgent(BaseAgent):
         return "anthropic-direct"
 
     def version(self):
-        return "0.2.0"
+        return "0.3.0"
 
     async def setup(self, environment):
         pass
@@ -55,6 +61,21 @@ class AnthropicAgent(BaseAgent):
             handle.flush()
             os.fsync(handle.fileno())
 
+    async def _create(self, client, turn, **request):
+        """One model request. Transient API failures are retried with logged backoff: a failed
+        request returned nothing, so resending it cannot change what the model has seen."""
+        for attempt, delay in enumerate((*self.options.api_retry_delays, None), 1):
+            try:
+                return await client.messages.create(**request)
+            except anthropic.APIError as exc:
+                transient = isinstance(exc, anthropic.APIConnectionError) or (
+                    isinstance(exc, anthropic.APIStatusError) and (exc.status_code in (408, 409, 429) or exc.status_code >= 500))
+                if not transient or delay is None:
+                    raise
+                self._event("api_retry", turn=turn, attempt=attempt, error_type=type(exc).__name__,
+                            status_code=getattr(exc, "status_code", None), delay_sec=delay)
+                await asyncio.sleep(delay)
+
     async def run(self, instruction, environment, context):
         self.evidence_dir.mkdir(parents=True, exist_ok=True)
         self._started = time.monotonic()
@@ -70,16 +91,23 @@ class AnthropicAgent(BaseAgent):
         tools = [{"name": "bash", "description": "Run a shell command inside the task environment.",
                   "input_schema": {"type": "object", "properties": {"command": {"type": "string"}},
                                    "required": ["command"], "additionalProperties": False}}]
+        # GA Messages API features only: adaptive thinking with summarized display (unchanged
+        # behavior) and automatic prompt caching (unchanged behavior, lower cost). No beta headers,
+        # gateway features or refusal fallbacks: a fallback would let a different model answer.
+        extra = {"cache_control": {"type": "ephemeral"}}
+        if self.options.adaptive_thinking:
+            extra["thinking"] = {"type": "adaptive", "display": "summarized"}
         try:
-            # Only the ordinary Messages API used by the original working adapter.
-            # No beta headers, thinking options, caching directives, or gateway features.
-            client = anthropic.AsyncAnthropic(api_key=os.environ["ANTHROPIC_API_KEY"],
-                                              timeout=self.options.api_timeout_sec, max_retries=0)
+            api_key = os.environ.get("ANTHROPIC_API_KEY")
+            if not api_key:
+                reason = "missing_credentials"
+                return
+            client = anthropic.AsyncAnthropic(api_key=api_key, timeout=self.options.api_timeout_sec, max_retries=0)
             async with asyncio.timeout(self.options.wall_timeout_sec):
                 for turns in range(1, self.options.max_turns + 1):
                     self._event("request", turn=turns, message_count=len(messages))
-                    response = await client.messages.create(model=self.model_name, max_tokens=self.options.max_tokens,
-                                                            tools=tools, messages=messages)
+                    response = await self._create(client, turns, model=self.model_name, max_tokens=self.options.max_tokens,
+                                                  tools=tools, messages=messages, **extra)
                     raw = response.model_dump(mode="json")
                     self._event("response", turn=turns, response=raw, request_id=getattr(response, "_request_id", None))
                     for key in usage:
@@ -138,8 +166,6 @@ class AnthropicAgent(BaseAgent):
             reason = "api_error"
             self._event("api_error", error_type=type(exc).__name__, status_code=getattr(exc, "status_code", None),
                         request_id=getattr(exc, "request_id", None))
-        except KeyError:
-            reason = "missing_credentials"
         except Exception as exc:
             reason = "tool_or_adapter_error"
             self._event("error", error_type=type(exc).__name__)  # Never log exception bodies/headers.

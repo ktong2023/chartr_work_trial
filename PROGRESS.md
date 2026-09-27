@@ -1,5 +1,99 @@
 # ChartR implementation handoff
 
+## Current revision: 0.5.1 — harness robustness (September 27, 2026)
+
+0.5.0 pilots (`jobs/chartr/v0.5.0-pilot-opus/`): **all 5 invalid** (`api_error`,
+`APIConnectionError`), every trial failing within the same ~25 s window about 4 minutes in:
+a host-side network or API interruption, not the task. Correctly recorded as invalid with no
+reward; no credentials in artifacts. Per the framework they are retained and rerun, not
+counted.
+
+0.5.1 harness and service changes (no case changes):
+- Adapter 0.3.0: transient API failures (connection/timeout, 408/409/429/5xx) retried after
+  10/30/90 s with an `api_retry` event per retry; adaptive thinking requested explicitly with
+  `display: "summarized"` (same thinking as the default, now readable in events.jsonl for
+  failure attribution); automatic prompt caching (lower cost and latency, same behavior);
+  tool-output cap 100,000 characters; missing-key detection no longer catches unrelated
+  KeyErrors. Refusal fallbacks deliberately not enabled: they would let another model answer.
+- Service: evidence accepts typed references (`DocumentReference/R123456`) as review items
+  display them, removing the most common wasted 400 in pilots; mismatched types still 400.
+Offline 33/33 (new tests: API retry, missing credentials, thinking toggle, typed evidence);
+Docker oracle 1 (x2), no-op 0, mocked API error invalid after 3 logged retries, mocked
+budget valid.
+
+0.5.1 pilots (`jobs/chartr/v0.5.1-pilot-opus/`): **5/5**, all valid `end_turn`, 17–32 turns,
+482–558 s. Two runs survived host connection drops via retries (3 and 4 `api_retry` events),
+which previously would have invalidated them. Prompt caching works (nearly all input is cache
+reads). Thinking summaries (11–16K chars per run) show every event-history case solved
+directly; the only wobble was P117, where one run first inferred from "deliberate contrast"
+between twin cases that no flag was needed, then re-read the explicit rule and corrected
+itself. Finding: Opus reasons about the benchmark's construction when cases come in
+recognizable twins (P117/P123, P118/P124, P103/P121); these should be de-twinned.
+
+## Previous revision: 0.5.0 — event histories (September 27, 2026)
+
+Direction chosen by the user after 0.4.0 (5/5): event-history reconstruction. Eight cases
+every pilot solved are switched off; P125–P132 added (see README "Revision 0.5.0" and the
+case sheet). Offline 29/29 (11 new wrong-answer variants, each failing on its intended
+check); leak audit clean after adding routine counterparts for features left only on
+citable records when the easy cases were switched off; Docker oracle 1 (x2), no-op 0.
+
+## Previous revision: 0.4.0 — supersession-boundary cases (September 27, 2026)
+
+0.3.2 pilots (`jobs/chartr/v0.3.2-pilot-opus/`): **4/5**, all valid `end_turn`, no API errors,
+max 2.4K output tokens per turn. The failure again missed P117's treatment conflict ("superseded
+by the later note reclassifying to early latent on new outside records"). Comparable 0.3.x runs
+(same cases, excluding the budget truncation): 12/14, with every miss the same error: inferring
+that a later, well-reasoned plan silently supersedes an earlier active order. 0.4.0 targets that
+boundary: P121 (history-based reassessment) and P122 (normal CSF) need a treatment-conflict item;
+P123 is P117's twin with an explicit cancellation (no item); P124 is P118's twin without the
+explicit "replaces" sentence (follow-up timing unclear). TR2's loose phrase "authorized
+clarification" now reads "an authorized clarification that explicitly addresses the
+disagreement". Cohort 24, 19 expected items. Offline 29/29; Docker oracle 1 (x2), no-op 0.
+
+0.4.0 pilots (`jobs/chartr/v0.4.0-pilot-opus/`): **5/5**, all valid `end_turn`, no API errors,
+5.1M input tokens. Every run handled P117, P121–P124 correctly and cited the tightened
+"explicit" wording in its reasoning. Conclusion so far: with clearly disclosed rules, Opus 5
+makes essentially no errors on this case style; every discriminating miss in 0.3.x came from
+loose or ambiguous rule wording. Next direction needs a decision (event-history state
+tracking vs. scale).
+
+## Previous revision: 0.3.2 — budget fix (September 27, 2026)
+
+0.3.1 batch B (`jobs/chartr/v0.3.1-pilot-opus-b/`): 4/5. The failure stopped on
+`output_truncated` at turn 12 before any writes: its response was a single thinking block
+that used the whole 4,096-token cap. `claude-opus-5` runs adaptive thinking by default
+(effort `high`, thinking text omitted) even though the adapter sends no thinking options,
+and thinking counts toward `max_tokens`. That is a harness budget failure, not a reasoning
+signal. 0.3.1 over ten pilots: 8/10; one reasoning slip (P117 supersession inference), one
+budget truncation. 0.3.2 raises adapter defaults to `max_tokens` 16,000, API timeout 600 s,
+wall 1,770 s, Harbor agent timeout 1,800 s (SDK non-streaming guard does not apply with an
+explicit client timeout). Cases unchanged; offline 29/29.
+
+## Previous revision: 0.3.1 — P117 defect fix (September 27, 2026)
+
+0.3.0 pilots (`jobs/chartr/v0.3.0-pilot-opus/`): 1/5 raw, all valid `end_turn`, 19–26 turns,
+193–245 s, 4.5M input tokens total, no credentials in artifacts. All four failures were the
+same single miss, P117/follow_up, which triage attributes to a **task defect**, not the model:
+the plan was timed from "completing treatment", the conflicting orders left completion
+undocumented under either reading, and the new "not yet due" clause makes "no item" a
+defensible (arguably better) answer. Regrading the saved snapshots with either answer
+accepted gives 5/5; no other case produced an error or visible hesitation in any run.
+0.3.1 gives P117's plan an explicit date (due 2026-09-02), so P117 cleanly needs two items
+(treatment conflict + overdue follow-up). Offline 29/29; Docker oracle 1 (×2), no-op 0.
+
+0.3.1 pilots, batch A (`jobs/chartr/v0.3.1-pilot-opus/`): **4/5**, all valid `end_turn`, 22–36
+turns, 216–253 s, 5.3M input tokens, no credentials. The failure missed P117's treatment
+conflict, reasoning that the second clinician's plan was "clarified by new outside records".
+The policy requires an explicit correction, replacement, cancellation or reconciliation,
+and the note never mentions the first order (same structure as Morgan, whom the same run
+flagged), so this counts as a valid model failure. Borderline: the policy's phrase
+"authorized clarification" is loosely worded. Batch B running to reach ten pilots.
+
+## Previous revision: 0.3.0 — prose over structure, twenty patients (September 27, 2026)
+
+See `chartr_task/README.md` "Revision 0.3.0" and `chartr_task1_cases_v0_3.md`.
+
 ## Current revision: 0.2.0 — follow-up category and ten patients (September 26, 2026)
 
 See `chartr_task/README.md` "Revision 0.2.0" and the private case sheet

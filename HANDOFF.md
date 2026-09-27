@@ -29,7 +29,7 @@ items according to a published policy. A private grader checks the saved queue.
   ```sh
   PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task \
     -a anthropic_agent:AnthropicAgent -m claude-opus-5 \
-    --ak max_turns=100 --ak max_tokens=4096 --ak wall_timeout_sec=1170 \
+    --ak max_turns=100 --ak max_tokens=16000 --ak wall_timeout_sec=1770 \
     --jobs-dir "$PWD/jobs/chartr"
   ```
 
@@ -72,6 +72,13 @@ All runs used `claude-opus-5`. Artifacts are under `jobs/chartr/<timestamp>/char
 | `2026-09-26__18-25-27` | 0.1.3 | 1 | 10 / 61 s | Reasoned from the records; all citations inside the allowed sets |
 | `2026-09-26__18-33-58` | 0.1.4 | 1 | 10 / 70 s | Cited S01–S04, D01–D04, M01–M04 |
 | `v0.2.0-pilot-opus` (5 trials) | 0.2.0 | 5/5 | 11–25 / 115–154 s | Every decision right in every run, with no visible hesitation; tabulated charts with a script; two runs self-corrected an evidence-format 400 |
+| `v0.3.0-pilot-opus` (5 trials) | 0.3.0 | 1/5 raw; 5/5 after defect regrade | 19–26 / 193–245 s | Every failure was P117/follow_up, a case-design defect (see PROGRESS.md); nothing else missed |
+| `v0.3.1-pilot-opus` (5 trials) | 0.3.1 | 4/5 | 22–36 / 216–253 s | One run treated P117's later single-dose plan as silently superseding the active weekly order |
+| `v0.3.1-pilot-opus-b` (5 trials) | 0.3.1 | 4/5 | 12–29 / 95–234 s | Failure was a 4,096-token cap hit inside a thinking block (budget, not reasoning); fixed in 0.3.2 |
+| `v0.3.2-pilot-opus` (5 trials) | 0.3.2 | 4/5 | 23–27 / 230–251 s | Same P117 miss: later plan read as superseding |
+| `v0.4.0-pilot-opus` (5 trials) | 0.4.0 | 5/5 | 19–29 / 215–250 s | All supersession-boundary cases right; runs cite the tightened "explicit" rule |
+| `v0.5.0-pilot-opus` (5 trials) | 0.5.0 | invalid (5) | 17–24 / 260–287 s | All `APIConnectionError` in the same ~25 s window; host network/API blip; rerun as 0.5.1 |
+| `v0.5.1-pilot-opus` (5 trials) | 0.5.1 | 5/5 | 17–32 / 482–558 s | Event histories solved; two runs survived connection drops via retries; Opus noticed twin cases as "deliberate contrast" |
 
 No run has shown the agent probing outside its boundary. The runs only ran `ls /app`
 and `clinic --help`, both public.

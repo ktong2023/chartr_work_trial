@@ -1,10 +1,46 @@
-# ChartR review-queue task — v0.2.0
+# ChartR review-queue task — v0.5.0
 
-One Harbor task contains ten synthetic patients (P101–P110) and two review categories:
+One Harbor task contains twenty-four synthetic patients and two review categories:
 treatment review and follow-up.
 The original `task_1` tutorial is unchanged. The existing `-a anthropic_agent` import
 continues to work. Development uses the existing `.venv`: Harbor **0.23.0**, Anthropic
 SDK **1.8.0**, jsonschema **4.26.0**. No installed dependency was upgraded.
+
+## Revision 0.5.0 — event histories
+
+After 0.3.x–0.4.0 calibration showed Opus 5 near-perfect under clearly stated rules, eight
+event-history cases (P125–P132) replace the eight cases every pilot solved (P104, P106,
+P109, P111, P113, P115, P116 and P120 are switched off via `COHORT`, kept in the generator
+and grader). Each new answer depends on reconstructing state at the evaluation time from
+5–10 events: an order held and never resumed; a retracted plan revision; doses charted
+twice or charted but not given; a rejected specimen followed by a corrected valid result;
+a held-then-resumed order alongside a new regimen; a retracted resolution that reopens an
+existing item; a nurse "per protocol" revision; and an erroneous series restart later
+corrected. `tools.md` states the event semantics once (holds, resumptions, retractions,
+dose counting, rejected and corrected results). 0.4.0 added P121–P124 (explicit vs.
+implicit supersession) and tightened TR2's "authorized clarification" wording; 0.3.2 raised
+the adapter to 16,000 output tokens because Opus 5 thinks by default. 24 patients, 7 seeded
+items, 19 expected final items.
+
+## Revision 0.3.0 — prose over structure, multi-step cases, twenty patients
+
+Second difficulty revision, after all 0.2.0 pilots passed by reading answers off structured
+fields. Plans no longer carry `due-by`, orders are no longer linked to plans, and statuses
+stay stale after later documentation (P110's replaced plan stays `active`). `tools.md`
+discloses this once: later documentation that explicitly corrects, discontinues or
+replaces an earlier record governs, subject to the policy's authority rules. `policy.md`
+adds: a requirement whose named event has not yet occurred is not yet due.
+
+Ten new patients (P111–P120), each with an obvious shortcut that gives the wrong answer:
+a discontinued duplicate order still `active`; an addendum that corrects a plan interval;
+a scanned outside result; a returned pregnancy test with no clinician decision; a completed
+6-month RPR; a misfiled result; unreconciled regimens that also make the follow-up anchor
+unknowable (two items); a restarted series plus a prose plan revision; a clinician note that
+addresses a different concern; and a nurse-entered recall plan. Seeded items: 7; expected
+final items: 16. Private case sheet: `../chartr_task1_cases_v0_3.md`. `COHORT` in
+`qa/build_fixture.py` switches patients off for calibration; grader, reference and tests
+skip absent patients. QA: 18 clinic tests (40 wrong-answer variants, each confirmed to fail
+on its intended check) plus 11 adapter tests; bulk variants run in-process for speed.
 
 ## Revision 0.2.0 — follow-up category, ten patients, anti-shortcut fixture
 
@@ -109,14 +145,20 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a no
 
 # ONE paid pilot, only when you decide to run it; not executed during implementation.
 # ANTHROPIC_API_KEY must already be exported on the host. Do not use --agent-env for it.
-PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent:AnthropicAgent -m claude-opus-5 --ak max_turns=100 --ak max_tokens=4096 --ak wall_timeout_sec=1170 --jobs-dir "$PWD/jobs/chartr"
+PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task -a anthropic_agent:AnthropicAgent -m claude-opus-5 --ak max_turns=100 --ak max_tokens=16000 --ak wall_timeout_sec=1770 --jobs-dir "$PWD/jobs/chartr"
 ```
 
 The model default preserves the original `claude-opus-5` value. `-m` overrides it;
 otherwise `ANTHROPIC_MODEL` overrides the default. `--ak max_turns`, `max_tokens`,
 `wall_timeout_sec`, `api_timeout_sec`, `tool_timeout_sec`, `max_tool_chars` configure
 limits. `ANTHROPIC_MAX_TURNS` and `ANTHROPIC_MAX_TOKENS` are optional host fallbacks.
-Harbor allows 1,200 seconds for the agent, 600 for builds, and 120 for verification.
+Harbor allows 1,800 seconds for the agent, 600 for builds, and 120 for verification.
+`claude-opus-5` runs adaptive thinking by default (effort `high`); thinking tokens count toward
+`max_tokens`, so the adapter defaults to 16,000 output tokens with a 600 s per-request timeout.
+Adapter 0.3.0 requests that same adaptive thinking with `display: "summarized"` so reasoning
+summaries are logged for failure attribution, enables automatic prompt caching, retries
+transient API failures (logged as `api_retry`), and caps tool output at 100,000 characters.
+It never enables refusal fallbacks, which would let a different model answer.
 The adapter uses the ordinary Messages API and no new organization-dependent API
 features. Earlier pilot artifacts are retained under their own version labels.
 
@@ -156,7 +198,7 @@ passes while an agent-created counter 999 at the same path is ignored. The real
 clinical boundary probe also plants a forgery in both the agent's `/evidence` and
 its published artifacts directory; neither shadows the trusted service evidence.
 
-Every new trial gets an empty SQLite database, the four seeded items, fresh nonce, ID counter and
+Every new trial gets an empty SQLite database, the seeded items, fresh nonce, ID counter and
 audit. Reusing an existing database is rejected. Reset means tearing down the
 per-trial containers and launching a new trial, never calling an agent admin API.
 
@@ -179,8 +221,8 @@ supporting notes. Follow-up plans are ServiceRequest `intent: plan`; a revoked p
 carries `cancelled-at`/`cancelled-by`/`replaced-by` like D01.
 
 Custom `open`/`needs_clarification`/`resolved` codes live in Task.businessStatus;
-Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 138
-resources including the four seeded items. New/updated tasks are schema validated before commit.
+Task.status uses R4 `requested`/`requested`/`completed`. The source fixture has 272
+resources including the seven seeded items. New/updated tasks are schema validated before commit.
 FHIR schema validation is structural; it is not complete terminology, profile,
 reference-resolution or FHIRPath conformance validation.
 

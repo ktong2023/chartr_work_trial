@@ -59,7 +59,9 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(self.context.n_output_tokens,10)
         self.assertEqual(self.context.n_cache_tokens,6)
         first = self.client.messages.create.call_args_list[0].kwargs
-        self.assertEqual(set(first), {'model','max_tokens','tools','messages'})
+        self.assertEqual(set(first), {'model','max_tokens','tools','messages','thinking','cache_control'})
+        self.assertEqual(first['thinking'], {'type': 'adaptive', 'display': 'summarized'})
+        self.assertEqual(first['cache_control'], {'type': 'ephemeral'})
         self.assertEqual(first['model'],'org-opus')
         self.assertEqual(first['max_tokens'],321)
         self.assertTrue(any(e['event']=='tool_output' for e in events))
@@ -92,11 +94,30 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_api_error_is_invalid_and_redacted(self):
         self.client.messages.create.side_effect = anthropic.APIConnectionError(request=httpx.Request('POST','https://example.invalid'))
-        agent = AnthropicAgent(logs_dir=self.logs)
+        agent = AnthropicAgent(logs_dir=self.logs, api_retry_delays=(0, 0))
         await agent.run('sk-ant-offline-test-secret',self.environment,self.context)
+        self.assertEqual(self.client.messages.create.await_count, 3)
         self.assertEqual(self.read_termination()['validity'],'evaluation_error')
         self.assertEqual(self.read_termination()['reason'],'api_error')
         self.assertNotIn('sk-ant-offline-test-secret',json.dumps(self.read_events()))
+
+    async def test_transient_api_error_is_retried_and_logged(self):
+        error = anthropic.APIConnectionError(request=httpx.Request('POST', 'https://example.invalid'))
+        term, events = await self.run_agent([error, response()], api_retry_delays=(0,))
+        self.assertEqual((term['reason'], term['validity']), ('end_turn', 'valid'))
+        self.assertEqual([e['error_type'] for e in events if e['event'] == 'api_retry'], ['APIConnectionError'])
+
+    async def test_missing_credentials_is_invalid_without_api_call(self):
+        with patch.dict(os.environ, {'ANTHROPIC_API_KEY': ''}):
+            agent = AnthropicAgent(logs_dir=self.logs)
+            await agent.run('Test', self.environment, self.context)
+        self.assertEqual((self.read_termination()['reason'], self.read_termination()['validity']),
+                         ('missing_credentials', 'evaluation_error'))
+        self.constructor.assert_not_called()
+
+    async def test_adaptive_thinking_can_be_disabled(self):
+        await self.run_agent([response()], adaptive_thinking=False)
+        self.assertNotIn('thinking', self.client.messages.create.call_args_list[0].kwargs)
 
     async def test_tool_infrastructure_error(self):
         self.environment.exec.side_effect = RuntimeError('secret body must not be logged')

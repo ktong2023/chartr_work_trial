@@ -162,11 +162,11 @@ class Store:
             spec = CATEGORIES.get(data["category"])
             if spec is None or data["destination"] != spec["destination"] or data["reason"] not in spec["reasons"]:
                 raise InvalidRequest("Unsupported category, or destination/reason not allowed for that category")
-            self._validate_changes(data, data["patient"], data["episode"], by_id)
+            evidence = self._validate_changes(data, data["patient"], data["episode"], by_id)
             item_id = "Q" + str(self.metadata(db)["next_id"])
             self.set_meta(db, "next_id", self.metadata(db)["next_id"] + 1)
             result = review(item_id, data["patient"], data["episode"], data["category"], data["reason"],
-                            data["status"], data["evidence"], data["explanation"], by_id, seq=seq)
+                            data["status"], evidence, data["explanation"], by_id, seq=seq)
             db.execute("INSERT INTO queue VALUES (?,?)", (item_id, canonical(result)))
             return result
         if method == "PATCH" and len(parts) == 2 and parts[0] == "reviews":
@@ -180,9 +180,9 @@ class Store:
             merged = {"status": original["businessStatus"]["coding"][0]["code"],
                       "evidence": [i["valueReference"]["reference"].split("/")[1] for i in original["input"]],
                       "explanation": original["description"], **data}
-            self._validate_changes(merged, patient, ep, by_id)
+            evidence = self._validate_changes(merged, patient, ep, by_id)
             result = review(original["id"], patient, ep, original["code"]["coding"][0]["code"],
-                            original["reasonCode"]["coding"][0]["code"], merged["status"], merged["evidence"],
+                            original["reasonCode"]["coding"][0]["code"], merged["status"], evidence,
                             merged["explanation"], by_id, created=original["authoredOn"], seq=seq)
             db.execute("UPDATE queue SET resource=? WHERE id=?", (canonical(result), original["id"]))
             return result
@@ -199,7 +199,13 @@ class Store:
         refs = data["evidence"]
         if not isinstance(refs, list) or not 1 <= len(refs) <= 20 or not all(isinstance(x, str) for x in refs):
             raise InvalidRequest("evidence must be a nonempty list of up to 20 record IDs")
+        ids = []
         for ref in refs:
-            r = sources.get(ref, {})
-            if r.get("subject", {}).get("reference") != "Patient/" + patient or episode(r) != ep:
+            # Bare record IDs and typed references ("DocumentReference/R123456") are both accepted.
+            kind, _, record_id = ref.rpartition("/")
+            r = sources.get(record_id, {})
+            if (kind and r.get("resourceType") != kind) or r.get("subject", {}).get("reference") != "Patient/" + patient \
+                    or episode(r) != ep:
                 raise InvalidRequest("Evidence must reference clinical records in the same patient and episode")
+            ids.append(record_id)
+        return ids

@@ -1,8 +1,8 @@
 {
-  "version": "chartr-treatment-review-0.2.0",
+  "version": "chartr-treatment-review-0.5.1",
   "evaluation_time": "2026-09-24T12:00:00Z",
-  "initial_digest": "959a612a624d0fb64e780c07b11a18b7704ddfcd1ae74114c537014b0ef9b9af",
-  "sources_digest": "95a320bfa5fd242cc08a61b64403ab2051cd45b116a90bbc02cb944852260ea4",
+  "initial_digest": "3b58cef1f1e06907652dc00f9ad50c33f30539bc71e480f22f57fae9b889394f",
+  "sources_digest": "9188dcb6ba0ce0b969cca9080998059450f825f0aa607369ca20b84b8fe68ee4",
   "queue": [
     {
       "resourceType": "Task",
@@ -69,6 +69,157 @@
           },
           "valueReference": {
             "reference": "ServiceRequest/R756689"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2104",
+      "intent": "order",
+      "status": "completed",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "resolved"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "treatment_review"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "UNRESOLVED_TREATMENT_CONCERN"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P130"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E130"
+      },
+      "owner": {
+        "reference": "Organization/clinical-review"
+      },
+      "authoredOn": "2026-08-10T08:00:00Z",
+      "lastModified": "2026-08-10T08:00:00Z",
+      "description": "INR reviewed on 8/20 and IM injections cleared to proceed.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E130"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "DocumentReference/R319245"
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "DocumentReference/R395663"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2131",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "follow_up"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "OVERDUE_FOLLOW_UP"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P128"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E128"
+      },
+      "owner": {
+        "reference": "Organization/follow-up-coordination"
+      },
+      "authoredOn": "2026-08-25T08:00:00Z",
+      "lastModified": "2026-08-25T08:00:00Z",
+      "description": "Repeat RPR titer was due by 2026-08-20; the 8/18 specimen was rejected and no valid result is on file.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E128"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "ServiceRequest/R703670"
           }
         }
       ]
@@ -233,6 +384,88 @@
           },
           "valueReference": {
             "reference": "ServiceRequest/R747576"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Task",
+      "id": "Q2209",
+      "intent": "order",
+      "status": "requested",
+      "businessStatus": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-status",
+            "code": "open"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/category",
+            "code": "treatment_review"
+          }
+        ]
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "https://chartr.example/fhir/CodeSystem/review-reason",
+            "code": "UNRESOLVED_TREATMENT_CONCERN"
+          }
+        ]
+      },
+      "for": {
+        "reference": "Patient/P119"
+      },
+      "focus": {
+        "reference": "EpisodeOfCare/E119"
+      },
+      "owner": {
+        "reference": "Organization/clinical-review"
+      },
+      "authoredOn": "2026-09-08T08:00:00Z",
+      "lastModified": "2026-09-08T08:00:00Z",
+      "description": "Pharmacy is holding doxycycline because of an isotretinoin interaction; prescriber review requested.",
+      "extension": [
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/episode",
+          "valueReference": {
+            "reference": "EpisodeOfCare/E119"
+          }
+        },
+        {
+          "url": "https://chartr.example/fhir/StructureDefinition/event-sequence",
+          "valueInteger": 0
+        }
+      ],
+      "input": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "DocumentReference/R120370"
+          }
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "https://chartr.example/fhir/CodeSystem/input",
+                "code": "evidence"
+              }
+            ]
+          },
+          "valueReference": {
+            "reference": "MedicationRequest/R808600"
           }
         }
       ]

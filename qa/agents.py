@@ -54,6 +54,7 @@ class MockAPIError(AnthropicAgent):
         client = SimpleNamespace(messages=SimpleNamespace(create=AsyncMock(side_effect=
             anthropic.APIConnectionError(request=httpx.Request("POST", "https://example.invalid")))), close=AsyncMock())
         with patch("anthropic_agent.anthropic.AsyncAnthropic", return_value=client), \
+             patch("anthropic_agent.asyncio.sleep", AsyncMock()), \
              patch.dict("os.environ", {"ANTHROPIC_API_KEY": "sk-ant-offline-test-only"}):
             await super().run(instruction, environment, context)
 
