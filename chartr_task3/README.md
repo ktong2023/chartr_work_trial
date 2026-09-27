@@ -1,4 +1,50 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.1.2 (29-patient core)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.2.0 (300 patients, chain-weighted)
+
+## Expansion 0.2.0 (September 27, 2026)
+
+The 29-patient core (unchanged cases) plus 271 generated patients: **300 patients, 1,200 candidates, 6,579 records,
+107 confirmed, 101 `cannot_determine` (69 conflict, 18 pending, 14 outside), 34 review requests.** Generator:
+`qa/task3_families.py` (seeded, deterministic); cohort: `qa/task3_cohort.py`. Weighted heavily toward *chained*
+cases, where one fact's status must be carried into a different issue or a different patient's chart; 187 of the
+~360 non-control candidates are chains, each family pointing both ways (the chain changes the answer / is present
+but does not):
+
+| Family | What must be carried | Patients |
+|---|---|---|
+| F1 identity conflict | label vs accessioning → follow-up; lab/collector corrections by the record's author; accession naming another cohort patient → *their* follow-up | 36 |
+| F2 resolved misfile | result in A's chart is B's → A misfiled + A follow-up; B's follow-up satisfied (or just missed) | 30 |
+| F4 pending pregnancy test | pending hCG → doxycycline adequacy and pregnancy issue; irrelevant when BPG suffices either way | 18 |
+| F5 hCG identity | positive hCG misfiled to / disputed with another cohort patient → her pregnancy → her doxycycline adequacy | 21 |
+| F6 corrections | author's dose-date correction → follow-up anchor or series gap; a non-author's contradiction → unresolved | 21 |
+| F7 outside first dose | received ED record sets the anchor (even against a later clinic note); unreceived ED dose → anchor unknown | 23 |
+| F9 delivery | received hospital record beats a later local note (both directions); unreceived record with conflicting local notes | 14 |
+| F3 stage inference | no staging entry: exam text → stage → adequacy and the 24-month test | 13 |
+| Single-step | overdue, gaps, untreated, doxy-PEP, rejected, pending, name change, outside records incl. contradicted | 26 |
+| Background | clean histories, pregnancies with received deliveries, rejected-then-recollected specimens | 69 |
+
+Every generated instance declares its intended dispositions; the build refuses unless `qa/task3_rules.py` recomputes
+all 1,200 exactly, and refuses any record dated after the evaluation time. Surface details vary per instance; no two
+instances of a variant share a chart skeleton.
+
+**Independent review:** a second model given only 58 rendered charts (one per variant plus cross-chart partners) and
+the public docs matched 231/232 decisions; the miss was a generator bug (a specimen dated after the evaluation time),
+fixed. Its concerns led to three more fixes: identity conflicts on pregnancy tests name only female patients; a
+partial outside record now states the series was incomplete; the outside-facility rule now says other records do not
+change what the facility's record establishes.
+
+**Infrastructure at scale:** the audit log stored the full item list before and after every request (quadratic;
+it filled the service's 32 MB tmpfs in the first oracle attempt, correctly classified invalid). It now stores item-state
+digests, the one item a write changed, and read digests; the grader replays the chain. Sources are cached in the
+service; tmpfs raised to 128 MB. Task timeout raised to 7,200 s.
+
+**Checks:** offline `qa/test_task3.py` 14/14 (all 13 wrong algorithms fail on both core and generated cases; audit
+tampering detected; audit linear); Docker oracle 1, no-op 0, boundary exit 0 (cloud CA-copy runs).
+
+Suggested pilot budgets for 300 patients: 250 turns, 32K output, 900 s API timeout, 7,000 s wall.
+
+---
+
+## History: the 29-patient core (0.1.x)
 
 The agent audits 29 synthetic syphilis-care patients (one episode each) for four publicly defined issue
 types: `INADEQUATE_TREATMENT`, `FOLLOW_UP_OVERDUE`, `MISFILED_RESULT`, `PREGNANCY_TREATMENT_INADEQUATE`.

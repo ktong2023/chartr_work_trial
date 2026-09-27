@@ -1,5 +1,14 @@
 # ChartR implementation handoff
 
+## Task 3 expansion `chartr_task3/` v0.2.0 — 300 patients, chain-weighted (September 27, 2026)
+
+Core 29 unchanged plus 271 generated (`qa/task3_families.py`): 1,200 candidates (107 confirmed, 101
+`cannot_determine`), 187 chained non-control candidates across eight families, both directions each; authority-
+conflict chains added because the only fair pilot miss (2/10) was the outside-facility rule vs a later local note.
+Second-model review of 58 sampled charts matched 231/232 (the miss a generator bug, fixed) and prompted three fairness
+fixes. Audit log made linear after it overflowed tmpfs at this scale. Offline 14/14; Docker oracle 1, no-op 0,
+boundary 0. Pilots not yet run; suggested budgets 250 turns / 32K / 900 s / 7,000 s.
+
 ## Task 3 cohort audit `chartr_task3/` v0.1.0 — 29-patient core (September 27, 2026)
 
 Built per `TASK3_BUILD_PROMPT.md` and `TASK_DESIGN_PRINCIPLES.md` (user decisions: `claude-opus-5`, 32K output

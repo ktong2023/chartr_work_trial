@@ -32,7 +32,7 @@ All resources use the pinned R4 4.0.1 structural schema; this is not a full FHIR
 - AllergyIntolerance: `code` substance, `reaction`.
 - Observation: laboratory result. `effectiveDateTime` is collection time, `issued` result time, `valueString` the result, `status` `final`, `registered` (no result yet) or `cancelled` (not performed); `note` holds laboratory comments; `specimen` references the specimen's collection record; `identifier` holds the accession number.
 - Specimen: collection record. `accessionIdentifier`, `collection` (time, collector); `label-name`, `label-mrn` and `label-dob` extensions hold the identifiers printed on the specimen label.
-- Basic with code text `Laboratory accessioning`: the laboratory's accessioning entry, with no patient subject. Extensions `accession`, `patient-name`, `patient-mrn`, `patient-dob`, `received`.
+- Basic with code text `Laboratory accessioning`: the laboratory's accessioning entry, with no patient subject; `author` entered it. Extensions `accession`, `patient-name`, `patient-mrn`, `patient-dob`, `received`.
 - MedicationAdministration: a dose given in clinic; `status` `completed` or `not-done`, `effectiveDateTime`, `dosage.text`, `performer`, `note`.
 - MedicationDispense: medication dispensed to the patient; `quantity`, `daysSupply`, `whenHandedOver`, `dosageInstruction`, `note`.
 - DocumentReference: a note, letter or scanned outside record. `description` is the full text (identical to the base64 attachment), `type` the document type, `date` documentation time, `author`, `author-role` extension.

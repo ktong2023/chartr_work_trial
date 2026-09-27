@@ -14,7 +14,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 TASK = ROOT / 'chartr_task3'
-NAMES = ['fhir', 'store', 'server', 'grade', 'task3_cases', 'task3_rules', 'build_task3']
+NAMES = ['fhir', 'store', 'server', 'grade', 'task3_cases', 'task3_families', 'task3_cohort', 'task3_rules', 'build_task3']
 saved = {n: sys.modules.pop(n) for n in NAMES if n in sys.modules}
 paths = [str(TASK / 'environment/service'), str(TASK / 'tests'), str(ROOT / 'qa')]
 sys.path[:0] = paths
@@ -26,14 +26,15 @@ finally:
     sys.modules.update(saved)
     for p in paths:
         sys.path.remove(p)
-store, server, grade, cases, rules, builder = (M[n] for n in ['store', 'server', 'grade', 'task3_cases', 'task3_rules', 'build_task3'])
+store, server, grade, cases, cohort, rules, builder = (M[n] for n in ['store', 'server', 'grade', 'task3_cases', 'task3_cohort', 'task3_rules', 'build_task3'])
+CORE = {p['key'] for p in cases.PATIENTS}
 FIXTURE = json.loads((TASK / 'environment/service/fixture.json').read_text())
 EXPECTED = json.loads((TASK / 'tests/expected.json').read_text())
 ANSWERS = json.loads((TASK / 'solution/answers.json').read_text())
 KEYS = {v['patient_key']: k.split('|')[:2] for k, v in EXPECTED['candidates'].items()}
 
-# Candidates each wrong algorithm must get wrong: (patient key, issue prefix). Derived from the design, and
-# asserted to be exactly the algorithm's errors.
+# Core candidates each wrong algorithm must get wrong: (patient key, issue prefix). Derived from the design, and
+# asserted to be exactly the algorithm's errors on the hand-authored core.
 TARGETS = {
     'never_abstain': {('p01', 'INA'), ('p06', 'INA'), ('p08', 'INA'), ('p12', 'INA'), ('p12', 'FOL'), ('p13', 'FOL'),
                       ('p16', 'FOL'), ('p16', 'MIS'), ('p19', 'PRE'), ('p20', 'INA'), ('p20', 'PRE'), ('p21', 'PRE')},
@@ -93,7 +94,7 @@ class Task3(unittest.TestCase):
 
     # ------------------------------------------------------------------ answers
     def test_rules_agree_with_authored_truth_and_build_is_reproducible(self):
-        for p in cases.PATIENTS:
+        for p in cohort.PATIENTS:
             got = rules.disposition(p)
             for issue in cases.ISSUES:
                 self.assertEqual(got[issue], p['truth'].get(issue, ('not_an_issue', None)), (p['key'], issue))
@@ -104,18 +105,36 @@ class Task3(unittest.TestCase):
 
     def test_design_counts(self):
         c = list(EXPECTED['candidates'].values())
-        self.assertEqual(len(c), 29 * 4)
-        self.assertEqual(sum(x['disposition'] == 'confirmed' for x in c), 12)
-        codes = [x['code'] for x in c if x['disposition'] == 'cannot_determine']
-        self.assertEqual(len(codes), 9)
-        self.assertEqual(set(codes), {'RESULT_PENDING', 'OUTSIDE_RECORD_NOT_RECEIVED', 'UNRESOLVED_SOURCE_CONFLICT'})
+        self.assertEqual(len(c), 300 * 4)
+        core = [x for x in c if x['patient_key'] in CORE]
+        self.assertEqual(sum(x['disposition'] == 'confirmed' for x in core), 12)
+        self.assertEqual(sum(x['disposition'] == 'cannot_determine' for x in core), 9)
+        codes = {x['code'] for x in c if x['disposition'] == 'cannot_determine'}
+        self.assertEqual(codes, {'RESULT_PENDING', 'OUTSIDE_RECORD_NOT_RECEIVED', 'UNRESOLVED_SOURCE_CONFLICT'})
         requested = [x for x in c if x['requested']]
-        self.assertEqual(len(requested), 8)
+        self.assertGreaterEqual(len(requested), 30)
         self.assertEqual({x['disposition'] for x in requested}, {'confirmed', 'not_an_issue', 'cannot_determine'})
-        # Each unknown decides at most one code; no world is left out of the unknown's options.
-        for p in cases.PATIENTS:
-            if p.get('unknown'):
-                self.assertGreaterEqual(len(p['unknown']['options']), 1)
+        # Weighted toward chained cases: most non-control candidates are chains.
+        hard = [x for x in c if x['kind'] != 'control']
+        chained = [x for x in hard if x['kind'].startswith('chain')]
+        self.assertGreater(len(chained), 0.45 * len(hard))
+
+    def test_chained_families_point_both_ways(self):
+        by_family = {}
+        for p in cohort.PATIENTS[len(cases.PATIENTS):]:
+            for issue, kind in p['kinds'].items():
+                if kind.startswith('chain'):
+                    by_family.setdefault(p['family'], set()).add(p['truth'].get(issue, ('not_an_issue', None))[0])
+        for family, dispositions in by_family.items():
+            self.assertIn('not_an_issue', dispositions, family)
+            self.assertTrue(dispositions - {'not_an_issue'}, family)
+        # No identical twins: within a family variant, no two instances share a chart skeleton (record kinds and dates).
+        seen = {}
+        for p in cohort.PATIENTS[len(cases.PATIENTS):]:
+            sig = (p['family'], p['variant'], tuple(sorted((r[0], r[1]) for r in p['records'])))
+            self.assertNotIn(sig, seen, p['key'])
+            seen[sig] = p['key']
+        self.assertEqual(len({p['name'] for p in cohort.PATIENTS}), len(cohort.PATIENTS))
 
     def test_reference_passes_and_noop_fails(self):
         result = self.run_items(ANSWERS)
@@ -146,7 +165,8 @@ class Task3(unittest.TestCase):
                     self.assertEqual(r.returncode, 0, r.stderr)
                 r = cli('item', '--json', json.dumps(ANSWERS[0]))
                 self.assertEqual(r.returncode, 2)
-                self.assertEqual(len(json.loads(cli('requests').stdout)['requests']), 8)
+                self.assertEqual(len(json.loads(cli('requests').stdout)['requests']),
+                                 sum(v['requested'] for v in EXPECTED['candidates'].values()))
             finally:
                 http.shutdown()
                 http.server_close()
@@ -162,7 +182,9 @@ class Task3(unittest.TestCase):
             if algorithm == 'flag_all':
                 self.assertEqual(len(wrong), sum(1 for v in EXPECTED['candidates'].values() if v['disposition'] != 'confirmed'))
                 continue
-            self.assertEqual(wrong, TARGETS[algorithm], algorithm)
+            self.assertEqual({w for w in wrong if w[0] in CORE}, TARGETS[algorithm], algorithm)
+            if algorithm not in ('pending_not_obtained', 'nonpregnant_interval_in_pregnancy', 'default_late'):
+                self.assertTrue({w for w in wrong if w[0] not in CORE}, algorithm + ' fails no generated case')
         self.assertTrue(truth)
 
     def test_zero_tolerance_and_absence_semantics(self):
@@ -183,7 +205,8 @@ class Task3(unittest.TestCase):
         self.assertEqual(result['errors'], {'missing': 1})
         # Right disposition with the wrong code fails.
         wrong_code = [dict(a, missing_evidence='RESULT_PENDING') if a['missing_evidence'] == 'UNRESOLVED_SOURCE_CONFLICT' else a for a in base]
-        self.assertEqual(self.run_items(wrong_code)['errors'], {'wrong_code': 3})
+        conflicts = sum(1 for v in EXPECTED['candidates'].values() if v['code'] == 'UNRESOLVED_SOURCE_CONFLICT')
+        self.assertEqual(self.run_items(wrong_code)['errors'], {'wrong_code': conflicts})
 
     def test_evidence_validity(self):
         pid14, _ = KEYS['p14']
@@ -195,7 +218,8 @@ class Task3(unittest.TestCase):
         owner_note = EXPECTED['charts'][pid15]
         cross = [dict(a, evidence=owner_note[:5]) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a for a in ANSWERS]
         self.assertEqual(self.run_items(cross)['reward'], 1)
-        self.assertEqual(EXPECTED['partners'], {pid14: [pid15], pid15: [pid14]})
+        self.assertEqual(EXPECTED['partners'][pid14], [pid15])
+        self.assertEqual(EXPECTED['partners'][pid15], [pid14])
         # Own patient/episode records, the answered review request and the partner's patient record are valid (pilot 0.1.1).
         request_ids = [r['id'] for r in FIXTURE['sources'] if r['resourceType'] == 'Task' and r['for']['reference'] == 'Patient/' + pid14]
         own = [dict(a, evidence=[pid14, KEYS['p14'][1], pid15] + request_ids) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a
@@ -243,7 +267,27 @@ class Task3(unittest.TestCase):
         snapshot = self.store.collect()
         self.assertEqual(self.store.request('GET', '/patients')[0], 409)
         audit = next(e for e in snapshot['audit'] if e['path'] == '/export')
-        self.assertEqual(audit['result'], {'complete': True, 'resources': len(FIXTURE['sources'])})
+        self.assertEqual(set(audit['result']), {'digest'})
+        self.assertLess(len(json.dumps(snapshot['audit'])), 20000)
+
+    def test_audit_is_linear_and_tampering_is_detected(self):
+        self.fresh()
+        for payload in ANSWERS:
+            self.assertEqual(self.post(payload)[0], 200)
+        for _ in range(20):
+            self.store.request('GET', '/items')
+        snapshot = self.store.collect()
+        # Audit size grows with the number of requests, not requests x saved items.
+        self.assertLess(len(json.dumps(snapshot['audit'])), 3000 * len(snapshot['audit']))
+        self.assertEqual(grade.grade(snapshot, self.meta)['reward'], 1)
+        forged = json.loads(json.dumps(snapshot))
+        forged['items'][0]['businessStatus']['coding'][0]['code'] = 'not_an_issue'
+        with self.assertRaises(grade.EvaluationError):
+            grade.grade(forged, self.meta)
+        forged = json.loads(json.dumps(snapshot))
+        forged['audit'][-25]['changed']['description'] = 'edited'
+        with self.assertRaises(grade.EvaluationError):
+            grade.grade(forged, self.meta)
 
     # ------------------------------------------------------------------ public surface and fairness
     def test_public_surface(self):
@@ -276,7 +320,7 @@ class Task3(unittest.TestCase):
         self.assertFalse({r['id'] for r in fixture['sources']} & {r['id'] for r in FIXTURE['sources']})
         strip = lambda e: sorted((v['patient_key'], k.split('|')[2], v['disposition'], v['code']) for k, v in e['candidates'].items())
         self.assertEqual(strip(expected), strip(EXPECTED))
-        reordered = [dict(p, records=list(reversed(p['records']))) for p in cases.PATIENTS]
+        reordered = [dict(p, records=list(reversed(p['records']))) for p in cohort.PATIENTS]
         for p in reordered:
             self.assertEqual(rules.disposition(p), rules.disposition(rules.BY_KEY[p['key']]), p['key'])
 

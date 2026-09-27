@@ -25,6 +25,14 @@ def event_time(r):
 class Store:
     def __init__(self, path):
         self.path = Path(path)
+        self._sources = None
+
+    def sources(self, db):
+        # Clinical sources are immutable (write triggers abort), so they are parsed once per process.
+        if self._sources is None:
+            rows = self.rows(db, "source")
+            self._sources = (rows, {r["id"]: r for r in rows})
+        return self._sources
 
     @contextmanager
     def connect(self):
@@ -113,7 +121,7 @@ class Store:
             if not m["trial_id"]:
                 return 503, {"error": "Trial initialization pending"}
             seq = db.execute("SELECT COALESCE(MAX(seq),0)+1 FROM audit").fetchone()[0]
-            before = self.rows(db, "items")
+            before = digest(self.rows(db, "items"))
             db.execute("SAVEPOINT operation")
             try:
                 response = self._operation(db, m, method, path, data, seq)
@@ -126,17 +134,19 @@ class Store:
                 self.set_meta(db, "faults", m["faults"] + 1)
                 status, response = 500, {"error": "Internal service error; evaluation infrastructure fault"}
             db.execute("RELEASE operation")
-            # Bulk reads are logged by route only; the fixture itself is already attested.
-            logged = {"complete": True, "resources": len(response.get("resources", []))} if path == "/export" and status == 200 else response
+            # Linear-size audit: item-state digests before and after, the one item a successful write changed,
+            # and a digest of each successful read (sources are immutable and attested).
+            write = method in ("POST", "PATCH") and status == 200
+            logged = {"digest": digest(response)} if method == "GET" and status == 200 else {"id": response["id"]} if write else response
             event = {"seq": seq, "method": method, "path": path, "arguments": data,
                      "status": status, "result": logged, "before": before,
-                     "after": self.rows(db, "items"), "clinical_time": NOW}
+                     "after": digest(self.rows(db, "items")), "changed": response if write else None,
+                     "clinical_time": NOW}
             db.execute("INSERT INTO audit VALUES (?,?)", (seq, canonical(event)))
             return status, response
 
     def _operation(self, db, m, method, path, data, seq):
-        sources = self.rows(db, "source")
-        by_id = {r["id"]: r for r in sources}
+        sources, by_id = self.sources(db)
         cohort = m["episodes"]
         parts = path.strip("/").split("/")
         if method == "GET":

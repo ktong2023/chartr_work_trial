@@ -3,11 +3,11 @@ artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
 name = "chartr/cohort-audit"
-version = "0.1.2"
+version = "0.2.0"
 description = "Audit a syphilis-care cohort for defined issues with calibrated abstention"
 
 [agent]
-timeout_sec = 3600
+timeout_sec = 7200
 
 [environment]
 network_mode = "public"

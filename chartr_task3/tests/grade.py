@@ -35,16 +35,21 @@ def check_evidence_integrity(snapshot, attestation):
                 raise EvaluationError("Incorrect fixture baseline: " + key)
         if not meta["frozen"] or meta["faults"] != 0:
             raise EvaluationError("Snapshot was not frozen or service recorded an infrastructure fault")
-        current = []
+        # Replay the audit: each successful write changes exactly the item it returned; digests chain.
+        current = {}
+        state = lambda: [current[k] for k in sorted(current)]
         for seq, event in enumerate(snapshot["audit"], 1):
-            if event["seq"] != seq or event["before"] != current:
+            if event["seq"] != seq or event["before"] != digest(state()):
                 raise EvaluationError("Audit sequence/state continuity broken")
             if event["status"] >= 500:
                 raise EvaluationError("Service failed during evaluation")
-            if (event["method"] == "GET" or event["status"] != 200) and event["after"] != current:
-                raise EvaluationError("Read/rejected operation changed state")
-            current = event["after"]
-        if snapshot["items"] != current:
+            if event["method"] in ("POST", "PATCH") and event["status"] == 200:
+                current[event["changed"]["id"]] = event["changed"]
+            elif event["changed"] is not None:
+                raise EvaluationError("Read/rejected operation recorded a change")
+            if event["after"] != digest(state()):
+                raise EvaluationError("Audit state digest mismatch")
+        if snapshot["items"] != state():
             raise EvaluationError("Final items differ from service audit")
     except (KeyError, TypeError) as exc:
         raise EvaluationError("Missing or malformed trusted evidence") from exc

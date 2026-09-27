@@ -8,7 +8,8 @@ with the unknown's code. The same machinery evaluates the deliberately wrong alg
 import calendar
 import datetime as dt
 
-from task3_cases import PATIENTS, EVAL, ISSUES, ADQ, FUP, MIS, PRG, PEND, OUT, CONF
+from task3_cases import EVAL, ISSUES, ADQ, FUP, MIS, PRG, PEND, OUT, CONF
+from task3_cohort import PATIENTS
 
 D = dt.date.fromisoformat
 EARLY = ('primary', 'secondary', 'early_latent')
@@ -18,12 +19,29 @@ ALGORITHMS = ('never_abstain', 'abstain_any_gap', 'flag_all', 'per_patient', 'ig
 GAP_CODE = {'stage_unrecorded': CONF, 'conflict': CONF, 'outside': OUT, 'outside_received': OUT,
             'pending_hcg': PEND, 'pending_rpr': PEND}
 BY_KEY = {p['key']: p for p in PATIENTS}
+# Which unknown option each wrong algorithm settles on, when the patient declares one.
+CHOICE = {'never_abstain': 'best', 'latest_wins': 'latest', 'pending_negative': 'negative',
+          'ignore_unreceived': 'absent', 'per_patient': 'chart'}
+CHOICE_KIND = {'latest': 'conflict', 'negative': 'pending', 'absent': 'outside'}
 
 
 def months(day, n):
     ix = day.year * 12 + day.month - 1 + n
     y, m = divmod(ix, 12)
     return dt.date(y, m + 1, min(day.day, calendar.monthrange(y, m + 1)[1]))
+
+
+def _cross_chart_index(patients):
+    """Laboratory records filed in one chart whose specimen was labeled for another patient."""
+    index = {}
+    for q in patients:
+        for r in q['records']:
+            if r[0] in ('rpr', 'hcg') and r[3].get('owner', q['key']) != q['key']:
+                index.setdefault(r[3]['owner'], []).append(r)
+    return index
+
+
+CROSS = _cross_chart_index(PATIENTS)
 
 
 def derived(p, view='full'):
@@ -37,17 +55,15 @@ def derived(p, view='full'):
             doses.append((day, 'azithro' if 'zithro' in r[2] else 'other'))
         elif kind == 'dispense' and 'oxycycline' in r[2]:
             doses.append((day, 'pep' if '72 hours' in r[5] else {14: 'doxy14', 28: 'doxy28'}[r[4]]))
-    first = min((d for d, _ in doses), default=None)
-    for q in [p if x['key'] == p['key'] else x for x in PATIENTS]:
-        for r in q['records']:
-            if r[0] != 'rpr' or not first:
-                continue
-            owner = r[3].get('owner', q['key'])
-            mine = (q['key'] == p['key']) if view == 'per_patient' else owner == p['key']
-            if q['key'] == p['key'] and owner != p['key'] and view != 'per_patient':
-                misfiled = True
-            if mine and D(r[1]) > D(first):
-                fu.append((r[1], r[3].get('status', 'final')))
+    own = [r for r in p['records'] if r[0] in ('rpr', 'hcg')]
+    for r in own:
+        if view != 'per_patient' and r[3].get('owner', p['key']) != p['key']:
+            misfiled = True
+    labs = own if view == 'per_patient' else [r for r in own if r[3].get('owner', p['key']) == p['key']] + CROSS.get(p['key'], [])
+    for r in labs:
+        # Windows start months after the first dose, so earlier (diagnostic) RPRs never fall inside one.
+        if r[0] == 'rpr':
+            fu.append((r[1], r[3].get('status', 'final')))
     return dict(doses=doses, fu=fu, misfiled=misfiled, stage_recorded=True, pregnant=False, allergy=False,
                 delivery=None, extra_fu=[], fu_drop=[])
 
@@ -121,13 +137,9 @@ def disposition(p, algorithm=None):
     worlds = [{}]
     if unknown:
         worlds = list(unknown['options'].values())
-        chosen = {'never_abstain': 'best', 'latest_wins': 'latest', 'pending_negative': 'negative',
-                  'ignore_unreceived': 'absent'}.get(algorithm)
-        if chosen and unknown.get(chosen) and (chosen == 'best' or unknown['kind'] in
-                                               {'latest': 'conflict', 'negative': 'pending', 'absent': 'outside'}[chosen]):
-            worlds = [unknown['options'][unknown[chosen]]]
-        if algorithm == 'per_patient' and unknown['kind'] == 'conflict' and 'collection' in unknown['options']:
-            worlds = [unknown['options']['collection']]
+        label = CHOICE.get(algorithm)
+        if label and unknown.get(label) and (label in ('best', 'chart') or unknown['kind'] == CHOICE_KIND[label]):
+            worlds = [unknown['options'][unknown[label]]]
     results = [evaluate(facts(p, view, [w] + extra), **kw) for w in worlds]
     out = {}
     for issue in ISSUES:

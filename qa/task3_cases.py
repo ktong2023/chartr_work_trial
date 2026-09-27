@@ -361,7 +361,7 @@ PATIENTS = [
              ('rpr', '2026-08-05', 'NR', {'accession_owner': 'EXTERNAL', 'collector': RN[1]}),
          ],
          facts=dict(stage='late_latent'),
-         unknown=dict(code=CONF, kind='conflict', best='collection', latest='accession',
+         unknown=dict(code=CONF, kind='conflict', best='collection', latest='accession', chart='collection',
                       options={'collection': {}, 'accession': dict(fu_drop=['2026-08-05'], misfiled=True)}),
          truth={MIS: ('cannot_determine', CONF), FUP: ('cannot_determine', CONF)},
          kinds={MIS: 'undeterminable', FUP: 'undeterminable'},

@@ -15,12 +15,14 @@ ROOT = Path(__file__).resolve().parents[1]
 TASK = ROOT / 'chartr_task3'
 sys.path[:0] = [str(TASK / 'environment/service'), str(ROOT / 'qa')]
 from fhir import BASE, NOW, VERSION, concept, digest, extension, validate  # noqa: E402
-from task3_cases import EXTERNAL, ISSUES, PATIENTS  # noqa: E402
+from task3_cases import ISSUES  # noqa: E402
+from task3_cohort import EXTERNALS, PATIENTS  # noqa: E402
 import task3_rules  # noqa: E402
 
 SALT = 'task3-v1'
 ROLE_TIME = {'clinician': 'Electronically signed: {}', 'nurse': 'Signed: {}', 'pharmacist': 'Verified: {}',
-             'registration': 'Entered by: {}'}
+             'registration': 'Entered by: {}', 'laboratory': 'Released by: {}'}
+LABTECH = ['R. Chen, MLS', 'M. Ortiz, MLS', 'K. Dube, MLT', 'S. Walsh, MLS', 'J. Ferris, MLT']
 RESULT_TIME = '1600'
 COLLECTORS = ['Clinic phlebotomy', 'Ana Ruiz, RN', 'Jordan Lee, RN', 'Mina Cho, RN', 'Sam Okafor, LPN', 'T. Brandt, phlebotomist']
 
@@ -54,7 +56,8 @@ def build():
     sources, episodes, charts, expected, answers = [], {}, {}, {}, []
     people = {p['key']: {'pid': 'P' + h('patient', p['key'])[:7], 'mrn': mrn(p['key']), 'dob': p['dob'],
                          'name': label(p['name'])} for p in PATIENTS}
-    people['EXTERNAL'] = EXTERNAL
+    people.update(EXTERNALS)
+    assert len({v['mrn'] for v in people.values()}) == len(people), 'MRN collision'
     linked = {}
 
     for p in PATIENTS:
@@ -74,7 +77,8 @@ def build():
             sources.append(r)
             return r
 
-        def lab(n, r, code, value, status='final', comment=None, owner=None, accession_owner=None, label_name=None, collector=None):
+        def lab(n, r, code, value, status='final', comment=None, owner=None, accession_owner=None, label_name=None, collector=None,
+                accessioner=None):
             """Observation in this chart; its specimen record goes to the chart of the patient it was labeled for."""
             day = r[1]
             owner = owner or key
@@ -88,6 +92,7 @@ def build():
             acc_who = people[accession_owner or owner]
             acc = {'resourceType': 'Basic', 'id': rid(key, str(n), 'accession'), 'code': {'text': 'Laboratory accessioning'},
                    'created': plus(day, 0),
+                   'author': {'display': accessioner or LABTECH[int(h('acc-by', key, str(n))[:4], 16) % len(LABTECH)]},
                    'extension': [extension('event-time', 'DateTime', stamp(day, '1300')),
                                  extension('accession', 'String', accession),
                                  extension('patient-name', 'String', label_name or acc_who['name']),
@@ -142,15 +147,16 @@ def build():
                     raise ValueError(r)
                 value = None if r[2] is None else ('Nonreactive' if r[2] == 'NR' else 'Reactive ' + r[2])
                 lab(n, r, 'RPR, quantitative', value, status, opts.get('comment'), opts.get('owner'),
-                    opts.get('accession_owner'), opts.get('label_name'), opts.get('collector'))
+                    opts.get('accession_owner'), opts.get('label_name'), opts.get('collector'), opts.get('accessioner'))
             elif kind == 'trep':
                 lab(n, r, 'Treponema pallidum antibody (TP-PA)', r[2].capitalize())
             elif kind == 'hcg':
                 opts = r[3]
+                ident = (opts.get('owner'), opts.get('accession_owner'), opts.get('label_name'), opts.get('collector'), opts.get('accessioner'))
                 if r[2] is None:
-                    lab(n, r, 'hCG, serum quantitative', None, 'registered', opts.get('comment'))
+                    lab(n, r, 'hCG, serum quantitative', None, 'registered', opts.get('comment'), *ident)
                 else:
-                    lab(n, r, 'hCG, serum', r[2].capitalize())
+                    lab(n, r, 'hCG, serum', r[2].capitalize(), 'final', None, *ident)
             elif kind == 'lab':
                 lab(n, r, r[2], r[3])
             elif kind == 'bpg':
@@ -191,6 +197,8 @@ def build():
     sources.sort(key=lambda r: r['id'])
     for r in sources:
         validate(r)
+        when = next((e['valueDateTime'] for e in r.get('extension', []) if e['url'].endswith('/event-time')), NOW)
+        assert when <= NOW, ('record dated after the evaluation time', r['id'], when)
     assert len(sources) == len({r['id'] for r in sources})
     by_id = {r['id']: r for r in sources}
     for r in sources:

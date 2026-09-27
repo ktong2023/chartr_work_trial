@@ -12,8 +12,8 @@ services:
     networks: [clinic-net]
     read_only: true
     tmpfs:
-      - /state:size=32m
-      - /evidence:size=32m
+      - /state:size=128m
+      - /evidence:size=128m
       - /tmp:size=8m
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
