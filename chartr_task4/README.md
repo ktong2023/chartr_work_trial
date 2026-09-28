@@ -139,3 +139,8 @@ pilot result: all five runs ended at their first bulk export.
   - One run cited a refill order as the trigger.
   - One run read ectopic beats that aren't there and gave HR 64 on a 58 bpm tracing.
   - One run read a QTc of 521 ms on a normal ECG with baseline wander.
+- **v0.1.1**, `jobs/chartr/task4-0.1.1-1790560349` (5 runs): 1/5, with no key defects. 4/5 missed 10004235 without ever mentioning it; one
+  of those runs also cited a note that does not mention AF as AF evidence.
+
+  Combined with the rescored v0.1.0 batch: **2/10**. Pass or fail rests almost entirely on the 10004235 case, which
+  8/10 runs missed.
