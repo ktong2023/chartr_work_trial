@@ -18,7 +18,12 @@ TASK = ROOT / 'chartr_task4'
 
 
 def run(*cmd):
-    return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True).stdout
+    # Fail closed: a missing git or unreachable Docker must not read as a clean checkout or an idle host.
+    try:
+        out = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=60)
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return None, str(exc)
+    return (out.stdout if out.returncode == 0 else None), out.stderr.strip()
 
 
 def main():
@@ -31,23 +36,30 @@ def main():
     pinned = {line.split()[1] for line in (TASK / 'environment/service/overlay/pinned.sha256').read_text().splitlines()}
     catalog = {f"mimic-iv-ecg-demo/0.1/{e['path']}{ext}" for e in overlay['ecg_catalog'] for ext in ('.hea', '.dat')}
     adapter = (ROOT / 'anthropic_agent.py').read_text()
-    others = [n for n in run('docker', 'ps', '--format', '{{.Names}}').split() if n.startswith('chartr_')]
+    status, _ = run('git', 'status', '--porcelain', '--', str(TASK))
+    commit, _ = run('git', 'rev-parse', '--short', 'HEAD')
+    names, docker_err = run('docker', 'ps', '--format', '{{.Names}}')
+    host, _ = run('docker', 'info', '--format', '{{.NCPU}} CPUs {{.MemTotal}} bytes')
+    others = [n for n in (names or '').split() if n.startswith('chartr_')]
     checks = {
         f'task.toml version is {want}': toml == want,
         f'service version is chartr-task4-{want}': service == f'chartr-task4-{want}',
         f'baseline version is chartr-task4-{want}': baseline['version'] == f'chartr-task4-{want}',
         'every catalogued ECG file is pinned': catalog <= pinned,
         'answer key has items and interpretations': bool(expected['items']) and bool(expected['interpretations']),
-        'chartr_task4/ has no uncommitted changes': not run('git', 'status', '--porcelain', '--', str(TASK)).strip(),
+        'git available and chartr_task4/ has no uncommitted changes': status is not None and commit is not None and not status.strip(),
         'adapter supports --ak prompt_cache=true': 'prompt_cache: bool' in adapter,
-        'no other ChartR trial containers running': not others,
+        'docker reachable': names is not None and host is not None and not host.startswith('0 '),
+        'no other ChartR trial containers running': names is not None and not others,
     }
     for name, ok in checks.items():
         print(('ok    ' if ok else 'FAIL  ') + name)
     if others:
         print('running:', ' '.join(sorted(others)))
-    print(f"commit {run('git', 'rev-parse', '--short', 'HEAD').strip()}; {len(expected['items'])} items, "
-          f"{len(expected['interpretations'])} interpretations; docker {run('docker', 'info', '--format', '{{.NCPU}} CPUs {{.MemTotal}} bytes').strip()}")
+    if names is None:
+        print('docker error:', docker_err)
+    print(f"commit {(commit or '?').strip()}; {len(expected['items'])} items, {len(expected['interpretations'])} interpretations; "
+          f"docker {(host or '?').strip()}")
     sys.exit(0 if all(checks.values()) else 1)
 
 

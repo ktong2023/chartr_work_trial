@@ -1,113 +1,164 @@
-# chartr_task4 — cardiology population review on real data (v0.3.0)
+# chartr_task4 — cardiology population review on real data (v0.4.0)
 
-The agent reviews a 100-patient clinic population at 2026-09-24 12:00 America/New_York. It saves a review item for every
-issue that needs clinical review, and an ECG finding for every patient whose most recent ECG shows atrial fibrillation or a
-prolonged QTc. The population is the MIMIC-IV Clinical Database Demo on FHIR, and the ECGs are the MIMIC-IV-ECG Demo
-(12-lead, 10 s, 500 Hz WFDB). Both are re-dated per patient and extended with a synthetic outpatient cardiology layer.
+The agent reviews a 100-patient clinic population (69 living) at 2026-09-24 12:00 America/New_York. It must save:
+- a **review item** for every issue that needs clinical review;
+- a **structured interpretation** of every living patient's most recent ECG: rhythm, rate, intervals, axis, conduction,
+  and changes from that patient's previous ECG.
+
+The population is the MIMIC-IV Clinical Database Demo on FHIR. The ECGs are the MIMIC-IV-ECG Demo (12-lead, 10 s,
+500 Hz WFDB). Both are re-dated per patient and extended with a synthetic outpatient cardiology layer. The target is an
+Opus 5 pass rate of 2–7/10, where failures are genuine reasoning or ECG-reading errors.
 
 ## Data and licence
 
 - MIMIC-IV Clinical Database Demo on FHIR v2.1.0 and MIMIC-IV-ECG Demo v0.1 (PhysioNet), Open Data Commons Open Database
   License v1.0. They are fetched at image build time from the pinned PhysioNet versions, with every file checked against
-  `environment/service/overlay/pinned.sha256` (436 files).
-- The build also used the machine measurements of MIMIC-IV-ECG v1.0 (open access, ODbL). These served only as a third ECG
-  reader when labelling. They are not shipped and are not seen by the agent.
+  `environment/service/overlay/pinned.sha256` (446 files).
+- The machine measurements of MIMIC-IV-ECG v1.0 (open access, ODbL) served only as one ECG reader when labelling. They are
+  not shipped and are not seen by the agent.
 - No credentialed PhysioNet data is used. This is a derived database and is not for clinical use.
 
 ## What the agent sees
 
-- `instruction.md` (86 words), `/app/policy.md` and `/app/tools.md`.
+- `instruction.md` (81 words), `/app/policy.md` and `/app/tools.md`.
   - The policy names the categories and the guideline.
-  - Every operational rule is in dated clinic memos inside the chart: the QT watch list and threshold, ECG-after-start windows
-    (one of which replaces another), INR after dose changes, and who may change warfarin doses.
-- Nothing tells the agent how to read an ECG. It gets raw WFDB records and the same pinned analysis libraries used to label
-  them (numpy, scipy, wfdb, neurokit2).
+  - `tools.md` defines each field and vocabulary. For example, the axis categories are given in degrees, and `qtc_ms` is
+    defined as Bazett-corrected.
+- Every operational rule is in dated clinic memos inside the chart: the QT watch list and the 500 ms threshold,
+  ECG-after-start windows with the start dates each applies to, INR after dose changes, and who may change warfarin doses.
+- Nothing tells the agent how to read an ECG. It gets raw WFDB records and pinned analysis libraries (numpy, scipy, wfdb,
+  neurokit2).
 
 ## Build and assembly
 
-- `qa/build_task4.py` (private) writes `environment/service/overlay/`. The overlay holds per-patient day offsets, 3 removed
-  records, 2,415 added FHIR resources cloned from real record shapes, the 203-ECG catalog, and int32 sample deltas for
-  8 edited ECGs.
+- `qa/build_task4.py` (private) writes `environment/service/overlay/`. The overlay holds:
+  - per-patient day offsets;
+  - 5 removed Condition records (AF codes for two patients, and one acute coagulopathy code);
+  - 2,896 added FHIR resources cloned from real record shapes;
+  - the 208-ECG catalog for 55 patients;
+  - int32 sample deltas for 9 edited ECGs.
 - `environment/service/assemble.py` rebuilds `/data/sources.sqlite` and `/data/ecg` deterministically. The content digest
   is pinned in `tests/baseline.json`.
-- Re-anchoring moves each patient by whole weeks close to whole years, so weekday and season are preserved and local
-  wall-clock times are kept.
+- Re-anchoring moves each patient by whole weeks close to whole years, so weekday and season are preserved.
+- **Every living patient gets the same generated outpatient layer**, so cases do not stand out:
+  - visits, including short return visits;
+  - medication changes;
+  - labs;
+  - progress notes with optional routine free text;
+  - nurse and pharmacist calls;
+  - occasional outside-records summaries.
 
-### ECG labels
+  Cases differ only in their clinical content.
 
-Three readers:
+### ECG catalog and edits
 
-- an in-house algorithm;
-- neurokit2 (dwt and cwt delineation, leads II and V5);
-- the MIMIC machine statements and intervals.
+- The catalog holds the readable tracings: 135 normal-rhythm, 66 AF, 6 prolonged-QT (5 edited, 1 real) and 1 paced.
+- Five harder tracings were added after 12-lead designer review:
+  - sinus tachycardia with first-degree AV block and LBBB, then ventricular pacing;
+  - two LBBB tracings;
+  - a rate-related RBBB that resolves the same day.
+- Candidate flutters were rejected because flutter waves could not be confirmed.
+- **QT edits** time-warp the low-frequency J-point-to-T-end segment, keep the original high-frequency noise, and take the
+  extra time from the T–P segment.
+  - The four current QT edits target QTc 570–615 ms.
+  - For each of them, every agreeing automated reading is at least 520 ms. The accepted range (agreeing readings ±20 ms)
+    therefore never crosses the 500 ms review threshold.
+  - The older look-alike keeps a 505 ms floor, because no decision rests on it.
+- **Artifacts** are added to four tracings: EMG noise, baseline wander (two tracings) and LA/RA reversal.
 
-Only ECGs where the readers agree are catalogued (132 normal, 66 AF, 5 prolonged QTc).
+### How ECG answers are set (actual rules per field)
 
-### ECG edits
+The labels come from three automated readers plus designer review. It is not uniform three-reader agreement:
 
-- Four ECGs have a lengthened QT. The low-frequency J-point-to-T-end segment is time-warped, the original high-frequency
-  noise is kept, and the extra time is taken from the T–P segment.
-  - The targets are just above threshold: QTc (Bazett) of 560–590 ms.
-  - After the edit, every agreeing read is at least 505 ms, and the graded range covers every agreeing read ± 20 ms.
-- Four ECGs have realistic acquisition artifacts: EMG, baseline wander (two) and LA/RA reversal. A fifth, a motion artifact,
-  was withdrawn in v0.1.1: on that low-voltage tracing it made the rhythm unreadable.
+| Reader | What it is |
+|---|---|
+| M | The cart's own statements and intervals (MIMIC-IV-ECG v1.0 machine measurements) |
+| N | neurokit2 DWT delineation on lead II |
+| G | An in-house 12-lead median-beat method. It shares neurokit2's lead-II R-peak detection, so it is not fully independent of N |
 
-## Answers (17 review items, 18 ECG findings)
+| Field | Rule |
+|---|---|
+| Rhythm | Catalog label: the cart statement plus RR irregularity from two algorithms. Tracings that designer review could not settle accept several rhythms: 108780865 AF/sinus; 100924231 sinus/flutter/ectopic atrial; any "sinus or ectopic atrial" cart statement sinus/other. |
+| Rate | All reads ±5 bpm (AF ±12). |
+| QRS | M and G within 30 ms, then accepted range ±25 ms. N's QRS is excluded: validated against M it runs +48 to +66 ms (median), from the DWT R-offset convention. |
+| QTc (Bazett) | Anchored on M and N (both required, within 50 ms). The tangent (A) and G reads are admitted if within 60 ms of the anchors. Accepted range ±40 ms (inter-observer variability). Otherwise ungraded. QT edits use their own agreeing-read range. |
+| PR | Numeric PR is not graded, because onset conventions differ by 30–50 ms. It must be null in AF. |
+| First-degree AV block | Required only if the cart states it with PR ≥ 210 ms and a second reader agrees. Forbidden only if M and N, and G when it found a P wave, all read ≤ 160 ms. Otherwise allowed. |
+| Bundle-branch block | Required only if the cart statement, G's morphology, and QRS ≥ 120 ms from both M and G all agree. Forbidden if both QRS reads are < 110 ms. Otherwise allowed. |
+| Axis | One category if M and G agree ≥ 10° from a boundary. Neighbouring categories if near a boundary. Ungraded if M and G differ by more than 40° (indeterminate). |
+| Changes | Rhythm and BBB changes are required only if true under every accepted reading of both ECGs. QTc ±60 ms changes use the same padded ranges as the QTc fields, so any pair of accepted readings implies an accepted change set. No QTc change is currently required. |
 
-| Reason | Patients (MIMIC subject) | What must be reasoned |
-|---|---|---|
-| UNTREATED_AF | 10039997, 10023771, 10004235 | CHA2DS2-VASc with the sex-specific threshold. For 10004235, AF is documented only on an older ECG. |
-| ANTICOAGULANT_WITH_CONTRAINDICATION | 10004457 | An outside-records note of a recent GI bleed, while apixaban is still current. |
-| DUAL_ANTICOAGULATION | 10014354 | Switched to apixaban, but the rivaroxaban order was never stopped. |
-| RHYTHM_DOCUMENTATION_CONFLICT | 10015272 | The note says sinus rhythm; the same-day ECGs show AF. |
-| PROLONGED_QTC_ON_WATCH_LIST_DRUG | 10023239, 10004422, 10012853 | Measure QTc on the most recent ECG. Link it to the current watch-list order and the latest K and Mg results. |
-| ECG_AFTER_WATCH_LIST_START | 10039831, 10029291, 10018423, 10022880, 10021312, 10004422 | Status is one of overdue, not_due, completed or cannot_determine. The right memo depends on the start date; there is an unreceived outside ECG; only Cardiology Clinic starts count. |
-| INR_AFTER_WARFARIN_DOSE_CHANGE | 10016150, 10012853 | A clinician change that was completed, and a pharmacist change that is overdue. |
+No blinded cardiologist adjudicated these labels. The ECG IDs whose rhythm was set by designer review are listed in
+`qa/task4_interp_truth.py`.
 
-There are also 18 findings on patients' most recent ECGs (15 AF, 3 QTC_PROLONGED), with heart rate and QTc graded against
-ranges.
+## Answers (v0.4.0)
+
+**20 review items on 18 patients:**
+- UNTREATED_AF ×4. Two are code-based; for 10004235 and 10020306, AF appears in notes, an older ECG or inpatient rhythm
+  charting, but not in diagnosis codes.
+- ANTICOAGULANT_WITH_CONTRAINDICATION ×1.
+- DUAL_ANTICOAGULATION ×1.
+- RHYTHM_DOCUMENTATION_CONFLICT ×1.
+- PROLONGED_QTC_ON_WATCH_LIST_DRUG ×4. One of these (10013049) has a note calling the QT "acceptable".
+- ECG_AFTER_WATCH_LIST_START ×7, covering memo applicability by start date, an unreceived outside ECG, and inpatient starts.
+- INR_AFTER_WARFARIN_DOSE_CHANGE ×2.
+
+**Two optional QT items (neither required nor penalized).** Two watch-list patients' latest ECGs are artifact tracings
+with ungraded QTc: 10018423 (LA/RA reversal) and 10019385 (baseline wander).
+
+**37 required interpretations**, one per living patient with ECGs; 18 deceased patients' latest ECGs are optional.
+- Rhythm: 31 sinus, 4 AF, 2 with several accepted readings.
+- Required comparisons: new AF ×2, resolved AF ×2, and one resolved RBBB.
+- Required conduction: one LBBB and one first-degree AV block.
+- Graded fields: rhythm, rate and conduction on all 37; QRS on 36; axis on 35; QTc on 24; PR (null in AF) on 4.
 
 **Look-alikes that must not be flagged:**
-
-- a remote, resolved bleed;
-- a clean warfarin-to-apixaban switch;
-- a nurse call about an extra tablet with no change made;
-- routine pharmacist INR calls and nurse refill calls;
-- an older long-QT ECG followed by a normal current ECG;
+- a remote bleed;
+- a clean anticoagulant switch;
+- a nurse call about an extra tablet;
+- routine pharmacist INR calls and refills;
+- an older long-QT ECG followed by a normal one;
 - sinus rhythm documented in paroxysmal AF;
-- artifact ECGs;
+- a watch-list start before any memo applied;
 - deceased patients;
 - inpatient watch-list orders.
 
 ## Grading (`tests/grade.py`)
 
-The grader only accepts evidence collected by the controller. It checks attestation, the baseline digest, freezing, and
-audit continuity; invalid runs get no reward. It reports five components, and reward is 1 only if all of them pass:
+The grader only accepts evidence collected by the controller. It checks attestation, the baseline digest, freezing,
+audit continuity and zero service faults; invalid runs get no reward. The components are identification, item_fields,
+ecg_interpretation, ecg_comparison, ecg_linkage and chart_rules, and all must pass.
 
-- `identification`: the exact set of (patient, category, reason), with no extras or duplicates.
-- `item_fields`: every structured field of every item. These are the record IDs the item rests on, the risk score and its
-  factors, status, due date, completion record, and QTc and HR ranges.
-- `ecg_findings`: the exact (ECG, finding) set on each patient's most recent ECG, with heart rate and QTc in range.
-- `ecg_linkage` and `chart_rules` are diagnostic subsets: the item fields that depend on reading an ECG, and the follow-up
-  items that depend on clinic memos.
-
-Explanations are free text and are not graded.
+Scope:
+- Structured fields are graded against the specs above; ungraded ECG fields accept any value.
+- Explanations are free text and are not graded.
+- A pass therefore certifies the graded fields, not a complete clinical interpretation.
 
 ## QA
 
-Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa.test_task4`. It checks:
+Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa.test_task4`. It runs 17 tests:
 
-- The reference (`solution/reference.py`) scores 1 through the real CLI, and a no-op scores 0.
-- 12 wrong algorithms each score 0. Examples: AF codes only; oldest ECG instead of most recent; the old memo applied
-  forever; the new memo applied too early; non-clinic starts counted; unreceived results ignored; a warfarin dosing mention
-  counted as a change; a rhythm conflict taken from another day; deceased patients reviewed.
-- Misreadings score 0: artifacts read as AF, and the remote bleed read as current.
-- The grading ranges admit every agreeing ECG method.
-- Case patients cannot be told apart from living controls by the volume of the added layer: Mann-Whitney AUCs are
-  0.51–0.68 across 10 features.
-- Added resources match real record shapes and timestamp formats.
-- The public surface contains no answers and no ECG method.
-- Service contract: malformed or foreign writes are rejected, the snapshot freezes, and forged snapshots are invalid.
+- **Answers:**
+  - The reference scores 1 through the real CLI, and a no-op scores 0.
+  - 17 wrong algorithms each score 0, and so do misreadings.
+- **Measurement consistency (audit regressions):**
+  - Every required QT item's accepted QTc range is at or above 500 ms.
+  - Every pair of accepted QTc readings implies a change set the comparison accepts.
+  - The grading ranges admit every agreeing reader.
+- **Leakage:**
+  - Case vs control Mann-Whitney AUCs over 14 structural features of the added layer, including the minimum visit gap,
+    the longest note and note line counts.
+  - Simple structural rules (a visit gap under 60 days, a note of six or more lines, an outside-records note) must not
+    isolate cases.
+  - Added resources match real record shapes.
+- **Public surface:** the public files contain no answers and no ECG method.
+- **Service contract:**
+  - Malformed or foreign writes are rejected.
+  - Concurrent HTTP requests are atomic: no duplicate audit sequence numbers.
+  - An audit failure is recorded as an infrastructure fault.
+  - Forged snapshots are invalid.
+
+Run `python3 qa/task4_preflight.py VERSION` before any paid run. It fails closed if git or Docker is unavailable.
 
 ## Running
 
@@ -249,3 +300,52 @@ v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient char
 
   The six failures are genuine: hidden AF missed, a transient RBBB resolution missed, rhythm and rate misreads, and a
   QT misread on the baseline-wander tracing. See TRIAGE.md in that folder.
+
+## v0.4.0: response to the v0.3.6 audit (`TASK4_V036_AUDIT_2026_09_28.md`)
+
+- **QT decision margin.** The three current QT edits whose accepted range dipped below 500 ms were re-edited, with every
+  agreeing reading now at least 520 ms. QT-safety items are also:
+  - required only when the whole accepted range of the latest ECG is at or above 500 ms;
+  - absent when the whole range is below 500 ms;
+  - optional otherwise.
+- **Serial QTc changes** now use the same padded ranges as the QTc fields. As a result, no QTc change is required.
+- **Service concurrency.** State access is serialized and each request is a `BEGIN IMMEDIATE` transaction. An audit failure
+  is recorded as an infrastructure fault. Before the fix, 8-way concurrent HTTP reads reproduced duplicate audit sequence
+  numbers; now they pass.
+- **Reader documentation** reflects the actual per-field rules above. First-degree AV block is forbidden only when every
+  available PR reader reads 160 ms or less.
+- **Leakage.** Short return visits, routine note free text and outside-records notes were added for everyone. QA now checks
+  structural rules and the longest note.
+- **Docs and preflight.** The current-state summary is corrected, grading claims are qualified, and preflight fails closed.
+
+## Classification of post-pilot changes
+
+Raw and rescored results are reported separately. Rescores are development evidence, not independent confirmation.
+
+- **Defect corrections** (the old key contradicted the public task or its own measurement uncertainty):
+  - vascular-disease definition (v0.1.1);
+  - AF evidence from charted rhythm, notes and older ECGs (v0.1.1);
+  - the dual-anticoagulation note (v0.1.1);
+  - the start-note trigger (v0.1.1);
+  - interval tolerances (v0.3.1);
+  - corroborating dysrhythmia codes, with an AF-establishing record still required (v0.3.6);
+  - QT decision and comparison consistency (v0.4.0).
+- **Label adjudication after seeing runs** (designer review, not a blinded expert):
+  - the withdrawn motion-artifact ECG (v0.1.1);
+  - the three multi-reading rhythms (v0.3.3, v0.3.6);
+  - the indeterminate-axis and PR-margin rules (v0.3.5, v0.3.6).
+- **Task redesign or calibration** (this changes what is tested; earlier failures are not thereby reclassified as unfair):
+  - new cases (v0.2.0);
+  - full interpretation and harder tracings (v0.3.0);
+  - AF in the note history of 10020306 (v0.3.2) and 10004235 (v0.3.4);
+  - living-only interpretations (v0.3.2);
+  - notes-only rhythm conflicts (v0.3.1). This changed the public definition, and the earlier nursing-chart flags were a
+    plausible reading of the old policy.
+- **Pilot scores:**
+
+  | Version | Raw | Rescored |
+  |---|---|---|
+  | v0.3.4 | 1/5 | 1/5 against v0.3.6 |
+  | v0.3.5 (10 trials) | 1/10 | 4/10 retrospective, against v0.3.6 |
+
+  v0.4.0 has not been piloted. The earlier snapshots cannot be rescored against it, because its QT-edited tracings differ.

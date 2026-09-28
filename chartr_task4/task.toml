@@ -3,7 +3,7 @@ artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
 
 [task]
 name = "chartr/cardiology-population-review"
-version = "0.3.6"
+version = "0.4.0"
 description = "Review a 100-patient real-data clinic population for anticoagulation, QT safety, follow-up and documentation issues, reading raw ECGs"
 
 [agent]

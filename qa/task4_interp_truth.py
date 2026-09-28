@@ -129,7 +129,8 @@ def spec_for(sid, t, r, lab):
         mpr = M.get('pr'); others = [v for v in (G.get('pr'), N.get('pr')) if v]
         if 'FIRST_DEGREE_AV_BLOCK' in mc and mpr and mpr >= 210 and any(v >= 210 for v in others):
             required.add('FIRST_DEGREE_AV_BLOCK')
-        elif not (mpr and N.get('pr') and mpr <= 160 and N['pr'] <= 160):   # forbidden only when cart and neurokit both leave a 40 ms margin
+        elif not (mpr and N.get('pr') and max(v for v in (mpr, N['pr'], G.get('pr')) if v) <= 160):
+            # forbidden only when the cart and neurokit, and the global reader if it found a P wave, all leave a 40 ms margin
             allowed.add('FIRST_DEGREE_AV_BLOCK')
     elif rhythm == 'PACED':
         allowed.add('FIRST_DEGREE_AV_BLOCK')
@@ -158,8 +159,11 @@ def changes(cur, prev, cur_q, prev_q):
         required.add('RESOLVED_BUNDLE_BRANCH_BLOCK')
     elif (p_req or p_opt) and not c_req:
         allowed.add('RESOLVED_BUNDLE_BRANCH_BLOCK')
-    if 'range' in cur['qtc_ms'] and 'range' in prev['qtc_ms'] and cur_q and prev_q and opts(cur) == opts(prev) == ['SINUS']:
-        lo, hi = min(cur_q) - max(prev_q), max(cur_q) - min(prev_q)
+    if 'range' in cur['qtc_ms'] and 'range' in prev['qtc_ms'] and opts(cur) == opts(prev) == ['SINUS']:
+        # v0.4 (audit): use the same padded ranges the QTc fields accept, so any pair of accepted readings implies a change
+        # (or no change) that the comparison also accepts.
+        (clo, chi), (plo, phi) = cur['qtc_ms']['range'], prev['qtc_ms']['range']
+        lo, hi = clo - phi, chi - plo
         if lo >= 60: required.add('QTC_INCREASE_60')
         elif hi >= 60: allowed.add('QTC_INCREASE_60')
         if hi <= -60: required.add('QTC_DECREASE_60')

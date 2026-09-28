@@ -1339,7 +1339,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100698634": {
@@ -1495,8 +1497,8 @@
    },
    "qtc_ms": {
     "range": [
-     489.2,
-     589.2
+     500.79999999999995,
+     608.5
     ]
    },
    "axis": {
@@ -1571,7 +1573,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102853474": {
@@ -2019,7 +2023,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "104629882": {
@@ -2918,7 +2924,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109661561": {
@@ -3318,8 +3326,8 @@
    },
    "qtc_ms": {
     "range": [
-     491.3,
-     592.5
+     506.6,
+     611.1
     ]
    },
    "axis": {
@@ -3506,8 +3514,8 @@
    },
    "qtc_ms": {
     "range": [
-     488.5,
-     601.7
+     502.6,
+     600.6
     ]
    },
    "axis": {
@@ -3950,7 +3958,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "103088543": {
@@ -4901,7 +4911,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "108912996": {
@@ -5239,7 +5251,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "107374881": {
@@ -6001,7 +6015,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102888469": {
@@ -6262,7 +6278,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "101744645": {
@@ -6977,10 +6995,10 @@
    },
    "prior_ecg": "105362569",
    "changes": {
-    "required": [
+    "required": [],
+    "allowed": [
      "QTC_DECREASE_60"
-    ],
-    "allowed": []
+    ]
    }
   },
   "e1de99bc-3bc5-565e-9ee6-69675b9cc267": {
@@ -7027,7 +7045,10 @@
    "prior_ecg": "102616671",
    "changes": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
    }
   },
   "a5d4cb17-db8d-574b-bd88-71473088fd9a": {
@@ -7071,7 +7092,10 @@
    "prior_ecg": "109840765",
    "changes": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
    }
   },
   "77e10fd0-6a1c-5547-a130-fae1341acf36": {
@@ -7146,7 +7170,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "100698634",
@@ -7182,8 +7208,8 @@
     },
     "qtc_ms": {
      "range": [
-      489.2,
-      589.2
+      500.79999999999995,
+      608.5
      ]
     },
     "axis": {
@@ -7294,7 +7320,9 @@
    "changes": {
     "required": [],
     "allowed": [
-     "NEW_BUNDLE_BRANCH_BLOCK"
+     "NEW_BUNDLE_BRANCH_BLOCK",
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
     ]
    }
   },
@@ -7555,7 +7583,10 @@
    "prior_ecg": "102910502",
    "changes": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
    }
   },
   "735c5ea5-a995-5613-9c30-5421bcc2cf25": {
@@ -7729,7 +7760,8 @@
    "changes": {
     "required": [],
     "allowed": [
-     "QTC_DECREASE_60"
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
     ]
    }
   },
@@ -7757,8 +7789,8 @@
     },
     "qtc_ms": {
      "range": [
-      491.3,
-      592.5
+      506.6,
+      611.1
      ]
     },
     "axis": {
@@ -7806,8 +7838,8 @@
     },
     "qtc_ms": {
      "range": [
-      488.5,
-      601.7
+      502.6,
+      600.6
      ]
     },
     "axis": {
@@ -7951,7 +7983,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "101016166",
@@ -8047,6 +8081,7 @@
    "changes": {
     "required": [],
     "allowed": [
+     "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]
    }
@@ -8491,7 +8526,8 @@
      "RESOLVED_BUNDLE_BRANCH_BLOCK"
     ],
     "allowed": [
-     "QTC_DECREASE_60"
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
     ]
    }
   },
@@ -8672,10 +8708,10 @@
    },
    "prior_ecg": "107149156",
    "changes": {
-    "required": [
+    "required": [],
+    "allowed": [
      "QTC_INCREASE_60"
-    ],
-    "allowed": []
+    ]
    }
   },
   "7d61fb4e-dc5e-5b1b-a7a6-1d96a3818546": {
@@ -8720,7 +8756,8 @@
    "changes": {
     "required": [],
     "allowed": [
-     "QTC_DECREASE_60"
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
     ]
    }
   },
@@ -8897,6 +8934,7 @@
    "changes": {
     "required": [],
     "allowed": [
+     "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]
    }
@@ -9025,6 +9063,7 @@
    "changes": {
     "required": [],
     "allowed": [
+     "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]
    }
@@ -9103,7 +9142,10 @@
    "prior_ecg": "107274479",
    "changes": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
    }
   },
   "e635f2dd-aaec-5fef-a100-b9dfb523cbb6": {

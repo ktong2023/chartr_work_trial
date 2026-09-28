@@ -235,7 +235,8 @@ class Builder:
         d = first
         cap = spec.get('last_visit') or EVAL.date() - dt.timedelta(days=rng.randint(6, 45))
         while d <= cap:
-            dates.append(d); d += dt.timedelta(days=rng.randint(60, 130))
+            # v0.4 (audit): routine spacing includes short return visits, so a <60-day gap is not a case marker.
+            dates.append(d); d += dt.timedelta(days=rng.randint(21, 59) if rng.random() < 0.25 else rng.randint(60, 130))
         if not dates:
             dates = [EVAL.date() - dt.timedelta(days=rng.randint(12, 40))]
         # A case's fixed visit takes the place of the routine visit nearest to it, so case charts are no busier than others.
@@ -321,6 +322,16 @@ class Builder:
                                f'Patient called asking whether to take {name} with food. Advised to take as prescribed; no change.',
                                'Returned patient call regarding clinic letter. Questions answered.'])
             self.note(s, f'phone:{n}:{day}', at(day, rng.choice([9, 10, 13, 16]), rng.choice([0, 15, 30, 45])), 'telephone', 'nurse', text)
+        # v0.4 (audit): outside-records summaries for some patients, so the note type is not specific to a case.
+        if rng.random() < 0.12:
+            day = order[0] + dt.timedelta(days=rng.randint(10, max(11, (EVAL.date() - order[0]).days - 5)))
+            self.note(s, 'outside-routine', at(min(day, EVAL.date() - dt.timedelta(days=3)), rng.choice([11, 14, 15]), rng.choice([5, 20, 40])),
+                      'outside', 'clinician', rng.choice([
+                          'Outside records received and reviewed (Riverside Urgent Care): visit for a sprained ankle; x-ray negative. No cardiac issues noted.',
+                          'Outside records received and reviewed (City Medical Group): screening colonoscopy normal; repeat in 10 years.',
+                          'Outside records received and reviewed (Lakeside Eye Center): routine eye examination, no changes.',
+                          'Outside records received and reviewed (Mercy Hospital emergency department): evaluated for viral gastroenteritis, '
+                          'treated with oral fluids and discharged the same day.']))
         self.visits[s] = visits
         return visits
 
@@ -336,7 +347,16 @@ class Builder:
                  f"BP {rng.randint(112, 148)}/{rng.randint(64, 88)}, weight stable. {rng.choice(['No chest pain or syncope.', 'Denies palpitations or presyncope.', 'Mild exertional fatigue, otherwise well.', 'Feels well.'])}"]
         if extra:
             lines.append(extra)
-        lines.append(rng.choice(['Continue current regimen. Return in 3 months.', 'No changes today. Follow up in 3-4 months.', 'Plan as above; routine follow-up.']))
+        if rng.random() < 0.3:   # v0.4 (audit): routine free text for everyone, so an extra note line is not a case marker
+            lines.append(rng.choice(['Home BP log reviewed; readings mostly at goal.',
+                                     'Discussed a low-sodium diet and regular walking; patient receptive and plans to join a walking group.',
+                                     'Labs from the last visit reviewed with the patient; no changes needed.',
+                                     'Reports good adherence to medications and uses a weekly pill organizer.',
+                                     'Seen by primary care last month for a routine visit; those notes were reviewed and raised no cardiac concerns.',
+                                     'Asked about travel next month; advised to keep medications in carry-on luggage and to stay hydrated on the flight.',
+                                     'Influenza vaccination encouraged this season.']))
+        lines.append(rng.choice(['Continue current regimen. Return in 3 months.', 'No changes today. Follow up in 3-4 months.', 'Plan as above; routine follow-up.',
+                                 'Return in 4-6 weeks.']))
         return '\n'.join(lines)
 
 
@@ -586,7 +606,26 @@ def answers(b, memos):
          due_date=ex('2026-09-08'), completion_record=ex(k['10016150:inr']))
     item('10012853', 'FOLLOW_UP', 'INR_AFTER_WARFARIN_DOSE_CHANGE', status=ex('overdue'), trigger=ex(k['10012853:dose']), requirement=ex(memos['inr']),
          due_date=ex('2026-09-17'), completion_record=ex(None))
-    return {'items': items, 'interpretations': findings, 'optional_interpretations': optional, 'current_ecg': {p: e['study_id'] for p, e in current_ecg.items()}}
+    # QT decision consistency (v0.4, audit): for every living patient with a current watch-list order, the QT-safety item is
+    # required only if every accepted QTc reading of the latest ECG is >= 500 ms, absent if every accepted reading is < 500 ms,
+    # and optional (neither required nor penalized) when the accepted range straddles 500 ms or QTc is ungraded.
+    required_qt = {i['patient'] for i in items if i['reason'] == 'PROLONGED_QTC_ON_WATCH_LIST_DRUG'}
+    optional_items = []
+    for s, v in sorted(b.info.items()):
+        p = b.pid[s]
+        if v['death'] or p not in interp['latest'] or not any(current_orders(b, s, d) for d in WATCH if d in b.meds):
+            continue
+        q = interp['latest'][p]['fields']['qtc_ms']
+        lo, hi = q['range'] if 'range' in q else (0, 10 ** 6)
+        if lo >= 500:
+            assert p in required_qt, (s, q)
+        elif hi >= 500:
+            assert p not in required_qt, (s, q)
+            optional_items.append([p, 'QT_SAFETY', 'PROLONGED_QTC_ON_WATCH_LIST_DRUG'])
+        else:
+            assert p not in required_qt, (s, q)
+    return {'items': items, 'interpretations': findings, 'optional_interpretations': optional, 'optional_items': optional_items,
+            'current_ecg': {p: e['study_id'] for p, e in current_ecg.items()}}
 
 
 def checks(b, ans):

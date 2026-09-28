@@ -18,6 +18,7 @@ import threading
 import unittest
 import zlib
 import sqlite3
+import datetime as dt
 import uuid
 from http.server import ThreadingHTTPServer
 from unittest.mock import patch
@@ -238,6 +239,31 @@ class Task4Tests(unittest.TestCase):
                         self.assertTrue(f['fields']['qtc_ms']['range'][0] <= q <= f['fields']['qtc_ms']['range'][1], (f['ecg'], method, q))
                 self.assertGreaterEqual(min(q for q in reads if abs(q - median) <= 60), 505, f['ecg'])
 
+    def test_qt_decisions_consistent_with_accepted_measurements(self):
+        """Audit v0.3.6: an accepted QTc reading must never imply the opposite QT-safety disposition."""
+        for i in EXPECTED['items']:
+            if i['reason'] == 'PROLONGED_QTC_ON_WATCH_LIST_DRUG':
+                self.assertGreaterEqual(i['fields']['qtc_ms']['range'][0], 500, i['subject'])
+                latest = next(e for e in EXPECTED['interpretations'] if e['patient'] == i['patient'])
+                self.assertGreaterEqual(latest['fields']['qtc_ms']['range'][0], 500, i['subject'])
+
+    def test_serial_qtc_changes_consistent_with_accepted_readings(self):
+        """Audit v0.3.6: any pair of individually accepted QTc readings must imply a change set the comparison accepts."""
+        interp = json.loads((ROOT / 'qa/task4/ecg_interp.json').read_text())['ecg']
+        checked = 0
+        for e in EXPECTED['interpretations']:
+            cur, prior = e['fields']['qtc_ms'], (interp[e['prior_ecg']]['qtc_ms'] if e['prior_ecg'] else None)
+            if not prior or 'range' not in cur or 'range' not in prior:
+                continue
+            for c in cur['range']:
+                for p in prior['range']:
+                    derived = set(e['changes']['required']) - {'QTC_INCREASE_60', 'QTC_DECREASE_60'}
+                    if c - p >= 60: derived.add('QTC_INCREASE_60')
+                    if p - c >= 60: derived.add('QTC_DECREASE_60')
+                    self.assertTrue(grade.field_ok(e['changes'], sorted(derived)), (e['subject'], c, p, e['changes']))
+                    checked += 1
+        self.assertGreater(checked, 20)
+
     # ------------------------------------------------------------------ separability
     def test_case_patients_not_separable_by_added_layer(self):
         """Per-patient features of the synthetic layer: cases vs living controls (Mann-Whitney AUC)."""
@@ -262,6 +288,12 @@ class Task4Tests(unittest.TestCase):
             'note_chars': lambda rs: sum(len(text(r)) for r in rs if r['resourceType'] == 'DocumentReference'),
             'non_clinician_notes': lambda rs: sum(r['resourceType'] == 'DocumentReference' and r['extension'][0]['valueCode'] != 'clinician' for r in rs),
             'first_added': lambda rs: min(assemble.when_of(r) or '9' for r in rs),
+            # v0.4 (audit): structural features beyond totals
+            'min_visit_gap': lambda rs: min([(b - a).days for a, b in zip(*(lambda d: (d, d[1:]))(sorted(
+                dt.date.fromisoformat(r['period']['start'][:10]) for r in rs if r['resourceType'] == 'Encounter')))] or [9999]),
+            'max_note_chars': lambda rs: max([len(text(r)) for r in rs if r['resourceType'] == 'DocumentReference'] or [0]),
+            'max_note_lines': lambda rs: max([len(text(r).split('\n\n')[0].splitlines()) for r in rs if r['resourceType'] == 'DocumentReference'] or [0]),
+            'outside_notes': lambda rs: sum(r['resourceType'] == 'DocumentReference' and r['type']['coding'][0]['code'] == '34133-9' for r in rs),
             'last_added': lambda rs: max(assemble.when_of(r) or '' for r in rs if (assemble.when_of(r) or '') <= '2026-09-24T12'),
         }
         aucs = {}
@@ -274,6 +306,15 @@ class Task4Tests(unittest.TestCase):
         print(f'\ncase vs control AUC ({len(cases)} cases, {len(living - cases)} living controls):', aucs)
         for name, auc in aucs.items():
             self.assertLess(abs(auc - 0.5), 0.3, (name, auc))
+        # No simple structural rule may isolate a group of cases: a rule that flags >= 3 cases must also flag controls.
+        rules = {'visit gap < 60 days': lambda rs: features['min_visit_gap'](rs) < 60,
+                 'a note with 6+ content lines': lambda rs: features['max_note_lines'](rs) >= 6,
+                 'an outside-records note': lambda rs: features['outside_notes'](rs) > 0}
+        for name, rule in rules.items():
+            hit_cases = sum(rule(by[p]) for p in cases); hit_ctrl = sum(rule(by[p]) for p in living - cases)
+            print(f'  rule {name!r}: {hit_cases}/{len(cases)} cases, {hit_ctrl}/{len(living - cases)} controls')
+            if hit_cases >= 3:
+                self.assertGreater(hit_ctrl, 0, name)
 
     def test_added_resources_have_real_shapes(self):
         """Every added resource of a type the demo has matches the key structure of some real resource of that type."""
@@ -372,6 +413,39 @@ class Task4Tests(unittest.TestCase):
                 grade.grade(bad, self.attestation)
         with self.assertRaises(grade.EvaluationError):
             grade.grade(snap, dict(self.attestation, nonce='other'))
+
+    def test_concurrent_http_requests_are_atomic(self):
+        """Parallel reads and writes over HTTP (audit v0.3.6 found duplicate audit sequence numbers and silent failures)."""
+        import urllib.request
+        from concurrent.futures import ThreadPoolExecutor
+        http = ThreadingHTTPServer(('127.0.0.1', 0), server.Handler)
+        threading.Thread(target=http.serve_forever, daemon=True).start()
+        self.addCleanup(http.shutdown)
+        base = f'http://127.0.0.1:{http.server_port}'
+        mine = PID('10039997')
+
+        def call(i):
+            if i % 10 == 0:   # interleave writes with the reads
+                body = json.dumps({'patient': mine, 'category': 'ANTICOAGULATION', 'reason': 'UNTREATED_AF', 'explanation': str(i)}).encode()
+                req = urllib.request.Request(base + '/items', data=body, method='POST', headers={'Content-Type': 'application/json'})
+            else:
+                req = urllib.request.Request(base + ('/ecg' if i % 2 else '/search?type=Condition&patient=' + mine))
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.status
+        with patch.object(server, 'STORE', self.service), ThreadPoolExecutor(8) as pool:
+            statuses = list(pool.map(call, range(80)))
+        self.assertEqual(statuses, [200] * 80)
+        snap = self.service.collect()
+        self.assertEqual(snap['metadata']['faults'], 0)
+        self.assertEqual([e['seq'] for e in snap['audit']], list(range(1, 81)))
+        self.assertEqual(len(snap['items']), 8)
+        grade.check_integrity(snap, self.attestation)
+
+    def test_audit_failure_is_a_fault(self):
+        with patch.object(self.service, 'audited_in_transaction', side_effect=sqlite3.OperationalError('disk I/O error')):
+            status, _ = self.service.request('GET', '/ecg')
+        self.assertEqual(status, 500)
+        self.assertEqual(self.service.collect()['metadata']['faults'], 1)
 
     def test_http_body_limit(self):
         http = ThreadingHTTPServer(('127.0.0.1', 0), server.Handler)

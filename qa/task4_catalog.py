@@ -76,12 +76,19 @@ def agreeing(reads, spread=60):
     return {k: v for k, v in reads.items() if abs(v - med) <= spread}
 
 
-def lengthen_verified(rec):
-    for target in range(530, 600, 5):
+# v0.4 (audit): the graded QTc range is the agreeing reads +-20 ms, and the clinic's review threshold is 500 ms. Requiring every
+# agreeing read >= 520 keeps the whole accepted range at or above the threshold, so no accepted measurement implies the
+# opposite disposition.
+# The older look-alike (no QT decision rests on it; it is only a prior for comparison) keeps the original 505 ms floor.
+MIN_AGREEING_QTC = {'current': 520, 'older': 505}
+
+
+def lengthen_verified(rec, role='current'):
+    for target in range(530, 660, 5):
         new, info = E.lengthen_qt(rec, target)
         qtcs, hrs = measure_all(new / np.asarray(rec.adc_gain))
         good = agreeing(qtcs) if qtcs else {}
-        if len(good) >= 4 and min(good.values()) >= 505:
+        if len(good) >= 4 and min(good.values()) >= MIN_AGREEING_QTC[role]:
             return new, target, good, hrs, info
     raise ValueError('could not reach a fair QT margin')
 
@@ -102,7 +109,7 @@ def build():
                  'ecg_time': shifted[sid]['ecg_time'], 'path': e['path']}
         t = {'label': lab, 'edit': None}
         if sid in QT_EDITS:
-            new, target, qtcs, hrs, info = lengthen_verified(rec)
+            new, target, qtcs, hrs, info = lengthen_verified(rec, QT_EDITS[sid])
             t.update(label='QTC_PROLONGED', edit=f'qt_lengthened:{QT_EDITS[sid]}', target_bazett=target, qtc_reads=qtcs,
                      qtc_range=[min(qtcs.values()) - 20, max(qtcs.values()) + 20], hr_reads=hrs, delta_ms=round(info['delta_ms']))
             d = new

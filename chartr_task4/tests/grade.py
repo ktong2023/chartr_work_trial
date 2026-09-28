@@ -2,6 +2,7 @@
 
 Components (all required for reward 1; each reported separately):
   1. identification  - exactly the expected set of (patient, category, reason) review items, no extras or duplicates
+                       (optional items, where an accepted ECG measurement straddles a decision threshold, are not extras)
   2. item_fields     - every structured basis field of every expected item (explanations are not graded)
   3. ecg_interpretation - one interpretation per living patient, of that patient's most recent ECG (deceased patients'
                           latest ECGs are optional); rhythm, rate, intervals,
@@ -86,7 +87,7 @@ def grade(snapshot, attestation):
     submitted = [key(i) for i in items]
     expected_keys = [key(i) for i in EXPECTED['items']]
     missing = sorted(set(expected_keys) - set(submitted))
-    extra = sorted(set(submitted) - set(expected_keys))
+    extra = sorted(set(submitted) - set(expected_keys) - {tuple(k) for k in EXPECTED.get('optional_items', [])})
     duplicates = sorted({k for k in submitted if submitted.count(k) > 1})
     per_item, linkage, rules = {}, {}, {}
     for exp in EXPECTED['items']:

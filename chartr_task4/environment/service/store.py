@@ -5,11 +5,11 @@ State:   /state/state.sqlite (review items, ECG interpretations, audit, metadata
 The service checks operational validity (types, vocabularies, record ownership) and never correctness.
 """
 from contextlib import contextmanager
-import base64, json, re, sqlite3, uuid, zlib
+import base64, json, re, sqlite3, threading, uuid, zlib
 from urllib.parse import parse_qsl
 from pathlib import Path
 
-VERSION = 'chartr-task4-0.3.6'
+VERSION = 'chartr-task4-0.4.0'
 NOW = '2026-09-24T12:00:00-04:00'
 PAGE = 1000
 CATEGORIES = {'ANTICOAGULATION': {'UNTREATED_AF', 'ANTICOAGULANT_WITH_CONTRAINDICATION'},
@@ -31,6 +31,9 @@ ITEM_FIELDS = ('patient', 'category', 'reason', 'status', 'af_evidence', 'risk_s
 INTERP_FIELDS = ('ecg', 'rhythm', 'ventricular_rate', 'pr_ms', 'qrs_ms', 'qtc_ms', 'axis', 'conduction', 'prior_ecg', 'changes', 'explanation')
 DATE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 COUNTS = {}
+# One request at a time touches trial state: audit sequence numbers, writes and the frozen flag must be atomic even when an
+# agent issues concurrent requests (ThreadingHTTPServer). BEGIN IMMEDIATE also serializes against the controller process.
+STATE_LOCK = threading.Lock()
 TEXT = re.compile(r'^[\x09\x0a\x0d\x20-\U0010ffff]*$')
 
 
@@ -99,33 +102,62 @@ class Store:
                     'sources_digest': m['sources_digest']}
 
     def collect(self):
-        with self.connect() as db:
+        with STATE_LOCK, self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
             self.set_meta(db, 'frozen', True)
             events = [json.loads(e) for (e,) in db.execute('SELECT event FROM audit ORDER BY seq')]
-            return {'metadata': self.meta(db), **self.state(db), 'audit': events}
+            snapshot = {'metadata': self.meta(db), **self.state(db), 'audit': events}
+            db.execute('COMMIT')
+            return snapshot
+
+    def record_fault(self):
+        with self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            self.set_meta(db, 'faults', self.meta(db)['faults'] + 1)
+            db.execute('COMMIT')
 
     # ------------------------------------------------------------------ request handling
     def request(self, method, path, data=None):
-        with self.connect() as db:
-            m = self.meta(db)
-            if m['frozen']:
-                return 409, {'error': 'Evaluation state is frozen'}
-            before = self.state(db)
-            seq = db.execute('SELECT COALESCE(MAX(seq), 0) + 1 FROM audit').fetchone()[0]
+        with STATE_LOCK:
             try:
-                response = self.operation(db, method, path, data)
-                status = 200
-            except InvalidRequest as exc:
-                status, response = 400, {'error': str(exc)}
+                return self.audited(method, path, data)
             except Exception:
-                self.set_meta(db, 'faults', m['faults'] + 1)
-                status, response = 500, {'error': 'Internal service error; evaluation infrastructure fault'}
-            after = self.state(db) if method != 'GET' else before
-            db.execute('INSERT INTO audit VALUES (?,?)', (seq, json.dumps({
-                'seq': seq, 'method': method, 'path': path.split('?')[0], 'status': status,
-                'arguments': data if method != 'GET' else None, 'before': before if method != 'GET' else None,
-                'after': after if method != 'GET' else None})))
-            return status, response
+                # Any failure outside the operation itself (e.g. recording the audit event) is an infrastructure fault
+                # that invalidates the evaluation; it must never pass silently.
+                self.record_fault()
+                return 500, {'error': 'Internal service error; evaluation infrastructure fault'}
+
+    def audited(self, method, path, data):
+        with self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            try:
+                result = self.audited_in_transaction(db, method, path, data)
+                db.execute('COMMIT')
+                return result
+            except BaseException:
+                db.execute('ROLLBACK')
+                raise
+
+    def audited_in_transaction(self, db, method, path, data):
+        m = self.meta(db)
+        if m['frozen']:
+            return 409, {'error': 'Evaluation state is frozen'}
+        before = self.state(db)
+        seq = db.execute('SELECT COALESCE(MAX(seq), 0) + 1 FROM audit').fetchone()[0]
+        try:
+            response = self.operation(db, method, path, data)
+            status = 200
+        except InvalidRequest as exc:
+            status, response = 400, {'error': str(exc)}
+        except Exception:
+            self.set_meta(db, 'faults', m['faults'] + 1)
+            status, response = 500, {'error': 'Internal service error; evaluation infrastructure fault'}
+        after = self.state(db) if method != 'GET' else before
+        db.execute('INSERT INTO audit VALUES (?,?)', (seq, json.dumps({
+            'seq': seq, 'method': method, 'path': path.split('?')[0], 'status': status,
+            'arguments': data if method != 'GET' else None, 'before': before if method != 'GET' else None,
+            'after': after if method != 'GET' else None})))
+        return status, response
 
     def operation(self, db, method, path, data):
         route, _, query = path.partition('?')
