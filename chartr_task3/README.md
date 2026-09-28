@@ -9,23 +9,35 @@ caching on, `caffeinate`, and `-n 10`. Results branch `task3-pilot-results`, `jo
 - **Run time:** 98% of it is generating 112–149K output tokens per run, so caching cut input cost but barely changed
   wall time.
 
-**Raw 4/10** (2qiXgav, RgLAepP, Xqtgqdm, tKW2k6E). Not counted:
-- **PQ8ap5i, budget:** it hit the 32K output cap while writing every decision into one command, so nothing was saved.
-  The cap is raised for future runs (`max_tokens=64000`, `api_timeout_sec=1800`).
-- **CJ4ZKQH, wording:** it read "a test recommended at a stated number of months" as requiring a chart order, and so
-  answered "not an issue" to every follow-up candidate. Its other answers were right.
+**Three separate statements (per the 0.3.1 audit, `TASK3_V031_AUDIT_2026_09_28.md`):**
+1. **Benchmark outcome, v0.3.0: 4 passes / 10 attempts.** Passes were 2qiXgav, RgLAepP, Xqtgqdm and tKW2k6E. All 10
+   attempts were valid, and all 10 count in this number.
+2. **Retrospective analysis of the 6 failures:** 4 defensible model failures, 1 wording-affected failure and 1
+   output-budget failure (below). A reasoning-only view is 4 passes out of the 8 attempts not affected by wording or
+   budget (4/9 if CJ4ZKQH is counted). This is an analysis, not a benchmark result, and not a v0.3.1 result.
+3. **v0.3.1:** the free verification passed, but no model batch has been run on it yet. The old runs are not
+   re-scored against it.
 
-Fair fails (4), each checked against the run's explanations:
+Categorized failures:
+- **PQ8ap5i, output budget.** A valid `output_truncated` attempt, not an infrastructure error: one response used the
+  whole 32K output cap building a single large submission command, and the adapter correctly did not run the
+  incomplete call. It stays in the raw result. The frozen 0.3.1 protocol below raises the cap.
+- **CJ4ZKQH, wording.** It treated guideline-based follow-up as requiring a recommendation written in the chart, so
+  it missed 41 of the 43 follow-up candidates whose answer was not "not an issue". Its explicit follow-up items were 13
+  not-an-issue, 1 confirmed and 1 cannot-determine; it did catch a case with a written 12-month reminder. The v0.3.0
+  wording ("recommended at a stated number of months") allowed that reading. 0.3.1 names the CDC as the source.
 
-| Run | Missed |
+The four defensible failures below were verified against the charts and each run's saved items. Saying why a run
+failed is an inference: several runs filtered records in their own scripts, so some decisive note text never
+appeared in what they displayed. A miss may be a failure to retrieve or keep the evidence, not a conscious rejection
+of it. Repeated misses across the instances of one family count as one recurring failure, not several.
+
+| Run | Missed (did not account for) |
 |---|---|
-| 5XayigW | Patient-reported outside care ignored (injections elsewhere ×2, core p08, a PCP RPR in core p13); core p06 MAR-vs-pharmacy conflict |
-| ALwrnZf | Core p16: flagged the identity conflict for `MISFILED_RESULT` but still counted the specimen for follow-up |
-| T9WouCF | Took the MAR over a non-author clinician's contradicting note (F6 dispute ×3); core p13 |
-| snDgxNq | Identity named only on another chart's accessioning entry (F1 partner ×3). Its `RESULT_PENDING` on pending, unrejected follow-up specimens (pending_fu ×2, core p11) is the wording defect fixed in 0.3.1 |
-
-**Defect-adjusted: 4/8** (4/9 counting CJ4ZKQH as a fail), inside the 2–7 of 10 target. The accessioning-only
-identity chain, which was right in 2/5 runs in 0.2.0, was missed by only one of the eight counted runs here.
+| 5XayigW | Patient-reported care at another facility whose record was not received: injections elsewhere (×2), core p08, and a PCP RPR (core p13). Also core p06's unresolved MAR-vs-pharmacy dose discrepancy |
+| ALwrnZf | Core p16: flagged the specimen identity conflict for `MISFILED_RESULT` but did not carry it into follow-up |
+| T9WouCF | A non-author clinician's note disputing the MAR date, which changes follow-up coverage (F6 dispute ×3); also core p13 |
+| snDgxNq | Identity named only on another chart's accessioning entry (F1 partner ×3). Its three `RESULT_PENDING` answers on pending, unrejected follow-up specimens (pending_fu ×2, core p11) are listed separately: the v0.3.0 wording was less explicit, and 0.3.1 clarifies it |
 
 **0.3.1 (policy wording only; no case or answer changes):**
 - `FOLLOW_UP_OVERDUE` now names the source of the recommendation: "a nontreponemal test that the CDC 2021 guidelines
@@ -36,6 +48,41 @@ identity chain, which was right in 2/5 runs in 0.2.0, was missed by only one of 
 **0.3.1 checks:** offline 15/15; Docker (cloud CA copies) oracle 1, no-op valid 0, boundary probe exit 0 (snapshot complete,
 frozen, 0 faults). The authored answers and answer key are unchanged from 0.3.0.
 
+
+## Predeclared protocol for the v0.3.1 batch (fixed before the run)
+
+- **Frozen configuration:**
+  - task 0.3.1 at a commit whose preflight passes (`python3 qa/task3_preflight.py 0.3.1` prints only `ok`);
+  - adapter 0.4.0;
+  - model `claude-opus-5`;
+  - `-k 10 -n 10`;
+  - budgets `max_turns=250`, `max_tokens=64000`, `api_timeout_sec=1800`, `wall_timeout_sec=7000`,
+    `prompt_cache=true`;
+  - job name `task3-0.3.1-pilot-opus`.
+- **Headline:** raw passes out of 10 valid attempts. The 2–7 of 10 target is judged on this number.
+- **Invalid attempts:** evaluation errors (no reward, e.g. an API outage or a service fault) are not attempts. They
+  are reported and rerun under the same configuration until there are 10 valid attempts.
+- **Budget failures:** valid attempts that end by output truncation, turn exhaustion, wall timeout or context
+  exhaustion count as failures in the headline, and are reported as a separate category.
+- **Triage:** each failure is classified from its saved items and trace as a model failure, a task/grader defect or a
+  budget failure. A defect found in triage is fixed in a new version and reported separately. It does not change this
+  batch's headline, and the batch is not re-scored retroactively.
+
+## What a pass measures, and its limits
+
+- **Measured:** correct structured decisions across interacting records. That is every disposition and
+  missing-evidence code for all 800 candidates, including calibrated abstention and carrying one fact into another
+  issue or patient's chart.
+- **Not measured:**
+  - The grader checks that citations are admissible and explanations are nonempty, not that they justify the
+    decision. Records with no patient subject, such as accessioning entries, are admissible for any patient even when
+    irrelevant.
+  - The rules engine is independently written but consumes authored case facts. Agreement with the authored answers
+    doesn't by itself prove that the rendered records convey every needed fact.
+  - The independent reviews cover samples (59, 21 and 60 patients, with linked charts supplied), not all 800
+    candidates and not full-cohort retrieval.
+  - Case families repeat templates. Instances of one variant are correlated, not independent reasoning tests, and
+    the score is an aggregate-reliability test.
 
 ## 0.3.0: calibration and run time (user decisions, September 28, 2026)
 

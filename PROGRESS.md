@@ -4,11 +4,13 @@
 
 - **Setup:** 200 patients, adapter 0.4.0 with caching (input about 0 uncached), `caffeinate`, `-n 10`. Each run took
   25–31 min with no stalls, and the batch took 31 min.
-- **Raw 4/10.** Not counted: one run hit the 32K output cap while writing its submission (the cap is now 64K with an
-  1,800 s request timeout), and one run misread "recommended at a stated number of months" as needing a chart order.
-- **Fair fails (4):** unreceived outside care ignored; an identity conflict not carried to follow-up; a non-author
-  note taken as a correction; accessioning-only identity missed.
-- **Defect-adjusted 4/8, in band.**
+- **v0.3.0 benchmark outcome: 4/10** (all 10 valid attempts count).
+- **Retrospective analysis of the 6 failures:**
+  - 4 defensible model failures: unreceived outside care not accounted for; an identity conflict not carried to
+    follow-up; a non-author note contradicting the MAR; accessioning-only identity missed.
+  - 1 wording-affected failure: "recommended at a stated number of months" read as needing a chart order.
+  - 1 output-budget failure: the 32K cap was hit while writing the submission.
+  - A reasoning-only view is 4/8. That is analysis, not a v0.3.1 result.
 - **0.3.1** clarifies two policy sentences: the CDC is the source of follow-up recommendations, and a pending,
   unrejected specimen counts as collected. No answers change.
 
