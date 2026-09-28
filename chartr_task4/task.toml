@@ -1,0 +1,30 @@
+schema_version = "1.4"
+artifacts = [{ source = "/evidence/snapshot.json", service = "clinic" }]
+
+[task]
+name = "chartr/cardiology-population-review"
+version = "0.1.1"
+description = "Review a 100-patient real-data clinic population for anticoagulation, QT safety, follow-up and documentation issues, reading raw ECGs"
+
+[agent]
+timeout_sec = 7200
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 1800
+cpus = 2
+memory_mb = 4096
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 180
+
+[[verifier.collect]]
+service = "clinic"
+command = "python /app/control.py collect"
+timeout_sec = 60
+
+[verifier.environment]
+network_mode = "public"
+cpus = 1
+memory_mb = 512

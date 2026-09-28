@@ -39,15 +39,16 @@ class ChartREnvironment(DockerEnvironment):
                 raise RuntimeError("ChartR containers must not have host bind mounts")
         controller = self.trial_paths.trial_dir / "controller"
         controller.mkdir(exist_ok=True)
-        if (self.environment_dir / "service/fixture.json").exists():
+        if (self.environment_dir / "service/fixture.json").exists() or (self.environment_dir / "service/overlay").is_dir():
             result = await super().service_exec(
                 "python /app/control.py attest " + shlex.quote(str(self.context_id)), service="clinic", timeout_sec=30)
             if result.return_code:
                 raise RuntimeError("Clinic startup attestation failed")
             attestation = json.loads(result.stdout)
             baseline = json.loads((self.environment_dir.parent / "tests/baseline.json").read_text())
-            if attestation["initial_digest"] != baseline["initial_digest"]:
-                raise RuntimeError("Clinic initial digest differs from private baseline")
+            digest = "initial_digest" if "initial_digest" in baseline else "sources_digest"
+            if attestation[digest] != baseline[digest]:
+                raise RuntimeError("Clinic source digest differs from private baseline")
             (controller / "attestation.json").write_text(json.dumps(attestation, indent=2))
             task = self.environment_dir.parent
             files = {str(p.relative_to(task)): hashlib.sha256(p.read_bytes()).hexdigest()

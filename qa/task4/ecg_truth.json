@@ -1,0 +1,2771 @@
+{
+ "105362569": {
+  "label": "QTC_PROLONGED",
+  "edit": "qt_lengthened:older",
+  "target_bazett": 560,
+  "qtc_reads": {
+   "II/A": 509.7,
+   "II/nk-dwt": 567.1,
+   "V5/A": 508.1,
+   "V5/nk-dwt": 573.9,
+   "V5/nk-cwt": 569.6
+  },
+  "qtc_range": [
+   488.1,
+   593.9
+  ],
+  "hr_reads": {
+   "II/A": 67.3,
+   "II/nk-dwt": 68.2,
+   "II/nk-cwt": 68.2,
+   "V5/A": 67.3,
+   "V5/nk-dwt": 67.3,
+   "V5/nk-cwt": 67.3
+  },
+  "delta_ms": 136,
+  "hr_range": [
+   62.3,
+   73.2
+  ]
+ },
+ "102172660": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 73.3,
+   "nk": 73.3,
+   "machine": 71.0
+  },
+  "hr_range": [
+   66.0,
+   78.3
+  ]
+ },
+ "104430624": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 111.1,
+   "nk": 111.1,
+   "machine": 111.1
+  },
+  "hr_range": [
+   106.1,
+   116.1
+  ]
+ },
+ "102144047": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 98.7,
+   "nk": 98.7,
+   "machine": 98.0
+  },
+  "hr_range": [
+   93.0,
+   103.7
+  ]
+ },
+ "106959793": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 105.6,
+   "nk": 105.6,
+   "machine": 106.0
+  },
+  "hr_range": [
+   100.6,
+   111.0
+  ]
+ },
+ "106183809": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 96.2,
+   "nk": 96.2,
+   "machine": 96.0
+  },
+  "hr_range": [
+   91.0,
+   101.2
+  ]
+ },
+ "105404782": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 77.9,
+   "nk": 78.1,
+   "machine": 78.0
+  },
+  "hr_range": [
+   72.9,
+   83.1
+  ]
+ },
+ "102241375": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 110.3,
+   "nk": 110.7,
+   "machine": 110.1
+  },
+  "hr_range": [
+   105.1,
+   115.7
+  ]
+ },
+ "105649244": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 88.9,
+   "nk": 89.0,
+   "machine": 89.0
+  },
+  "hr_range": [
+   83.9,
+   94.0
+  ]
+ },
+ "105858994": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 67.0,
+   "nk": 67.0,
+   "machine": 67.0
+  },
+  "hr_range": [
+   62.0,
+   72.0
+  ]
+ },
+ "105928266": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 80.2,
+   "nk": 80.4,
+   "machine": 80.0
+  },
+  "hr_range": [
+   75.0,
+   85.4
+  ]
+ },
+ "106525263": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 118.6,
+   "nk": 118.6,
+   "machine": 118.1
+  },
+  "hr_range": [
+   113.1,
+   123.6
+  ]
+ },
+ "103036945": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 90.9,
+   "nk": 90.9,
+   "machine": 91.0
+  },
+  "hr_range": [
+   85.9,
+   96.0
+  ]
+ },
+ "107898490": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 80.6,
+   "nk": 80.9,
+   "machine": 80.0
+  },
+  "hr_range": [
+   75.0,
+   85.9
+  ]
+ },
+ "102616671": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 87.3,
+   "nk": 87.3,
+   "machine": 87.1
+  },
+  "hr_range": [
+   82.1,
+   92.3
+  ]
+ },
+ "105014865": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 93.5,
+   "nk": 93.6,
+   "machine": 93.0
+  },
+  "hr_range": [
+   88.0,
+   98.6
+  ]
+ },
+ "109795468": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 98.0,
+   "nk": 98.0,
+   "machine": 98.0
+  },
+  "hr_range": [
+   93.0,
+   103.0
+  ]
+ },
+ "104835782": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 75.2,
+   "nk": 75.2,
+   "machine": 75.0
+  },
+  "hr_range": [
+   70.0,
+   80.2
+  ]
+ },
+ "109840765": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 80.6,
+   "nk": 81.1,
+   "machine": 81.0
+  },
+  "hr_range": [
+   75.6,
+   86.1
+  ]
+ },
+ "100728139": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 87.8,
+   "nk": 87.8,
+   "machine": 87.1
+  },
+  "hr_range": [
+   82.1,
+   92.8
+  ]
+ },
+ "106362803": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 101.2,
+   "nk": 106.4,
+   "machine": 104.2
+  },
+  "hr_range": [
+   89.2,
+   118.4
+  ]
+ },
+ "103024863": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 69.0,
+   "nk": 69.0,
+   "machine": 69.0
+  },
+  "hr_range": [
+   57.0,
+   81.0
+  ]
+ },
+ "107525170": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 160.4,
+   "nk": 163.9,
+   "machine": 157.1
+  },
+  "hr_range": [
+   145.1,
+   175.9
+  ]
+ },
+ "107806866": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 67.9,
+   "nk": 68.0,
+   "machine": 68.0
+  },
+  "hr_range": [
+   55.9,
+   80.0
+  ]
+ },
+ "104791103": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 93.6,
+   "nk": 93.6,
+   "machine": 89.0
+  },
+  "hr_range": [
+   77.0,
+   105.6
+  ]
+ },
+ "104547052": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 127.1,
+   "nk": 125.5,
+   "machine": 127.1
+  },
+  "hr_range": [
+   113.5,
+   139.1
+  ]
+ },
+ "104710852": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 78.1,
+   "nk": 74.8,
+   "machine": 79.1
+  },
+  "hr_range": [
+   62.8,
+   91.1
+  ]
+ },
+ "100634327": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 118.3,
+   "nk": 117.9,
+   "machine": 115.2
+  },
+  "hr_range": [
+   103.2,
+   130.3
+  ]
+ },
+ "105825300": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 98.2,
+   "nk": 125.5,
+   "machine": 105.1
+  },
+  "hr_range": [
+   86.2,
+   137.5
+  ]
+ },
+ "107555672": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 107.5,
+   "nk": 141.8,
+   "machine": 128.2
+  },
+  "hr_range": [
+   95.5,
+   153.8
+  ]
+ },
+ "102403584": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 98.5,
+   "nk": 100.7,
+   "machine": 106.0
+  },
+  "hr_range": [
+   86.5,
+   118.0
+  ]
+ },
+ "105389347": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 147.1,
+   "nk": 144.2,
+   "machine": 136.1
+  },
+  "hr_range": [
+   124.1,
+   159.1
+  ]
+ },
+ "101771242": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 135.7,
+   "nk": 138.2,
+   "machine": 138.2
+  },
+  "hr_range": [
+   123.7,
+   150.2
+  ]
+ },
+ "103837709": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 99.7,
+   "nk": 98.4,
+   "machine": 80.0
+  },
+  "hr_range": [
+   68.0,
+   111.7
+  ]
+ },
+ "108184246": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 130.4,
+   "nk": 129.9,
+   "machine": 121.2
+  },
+  "hr_range": [
+   109.2,
+   142.4
+  ]
+ },
+ "104935003": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 105.3,
+   "nk": 105.6,
+   "machine": 100.0
+  },
+  "hr_range": [
+   88.0,
+   117.6
+  ]
+ },
+ "107452620": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 143.2,
+   "nk": 139.9,
+   "machine": 137.3
+  },
+  "hr_range": [
+   125.3,
+   155.2
+  ]
+ },
+ "101121040": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 65.1,
+   "nk": 65.2,
+   "machine": 65.0
+  },
+  "hr_range": [
+   60.0,
+   70.2
+  ]
+ },
+ "108895765": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 164.4,
+   "nk": 162.2,
+   "machine": 163.0
+  },
+  "hr_range": [
+   150.2,
+   176.4
+  ]
+ },
+ "108195884": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 103.4,
+   "nk": 103.4,
+   "machine": 103.1
+  },
+  "hr_range": [
+   98.1,
+   108.4
+  ]
+ },
+ "100698634": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 147.1,
+   "nk": 147.1,
+   "machine": 147.1
+  },
+  "hr_range": [
+   142.1,
+   152.1
+  ]
+ },
+ "108780865": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 47.2,
+   "nk": 47.2,
+   "machine": 47.0
+  },
+  "hr_range": [
+   35.0,
+   59.2
+  ]
+ },
+ "107771656": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 62.2,
+   "nk": 62.2,
+   "machine": 62.0
+  },
+  "hr_range": [
+   57.0,
+   67.2
+  ]
+ },
+ "101581810": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 53.8,
+   "nk": 53.9,
+   "machine": 54.0
+  },
+  "hr_range": [
+   48.8,
+   59.0
+  ]
+ },
+ "106885519": {
+  "label": "QTC_PROLONGED",
+  "edit": "qt_lengthened:current",
+  "target_bazett": 565,
+  "qtc_reads": {
+   "II/A": 511.8,
+   "II/nk-dwt": 567.1,
+   "V5/A": 509.2,
+   "V5/nk-cwt": 569.2
+  },
+  "qtc_range": [
+   489.2,
+   589.2
+  ],
+  "hr_reads": {
+   "II/A": 62.0,
+   "II/nk-dwt": 62.0,
+   "II/nk-cwt": 62.0,
+   "V5/A": 62.0,
+   "V5/nk-dwt": 62.0,
+   "V5/nk-cwt": 62.0
+  },
+  "delta_ms": 138,
+  "hr_range": [
+   57.0,
+   67.0
+  ]
+ },
+ "102101022": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 94.6,
+   "nk": 94.6,
+   "machine": 95.1
+  },
+  "hr_range": [
+   89.6,
+   100.1
+  ]
+ },
+ "102955795": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 114.5,
+   "nk": 114.5,
+   "machine": 115.2
+  },
+  "hr_range": [
+   109.5,
+   120.2
+  ]
+ },
+ "102853474": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 111.5,
+   "nk": 111.5,
+   "machine": 111.1
+  },
+  "hr_range": [
+   106.1,
+   116.5
+  ]
+ },
+ "103300096": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 106.4,
+   "nk": 106.4,
+   "machine": 106.0
+  },
+  "hr_range": [
+   101.0,
+   111.4
+  ]
+ },
+ "109788729": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 99.5,
+   "nk": 99.3,
+   "machine": 99.0
+  },
+  "hr_range": [
+   94.0,
+   104.5
+  ]
+ },
+ "100850284": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 111.9,
+   "nk": 111.9,
+   "machine": 111.1
+  },
+  "hr_range": [
+   106.1,
+   116.9
+  ]
+ },
+ "107885876": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 100.7,
+   "nk": 100.7,
+   "machine": 101.0
+  },
+  "hr_range": [
+   95.7,
+   106.0
+  ]
+ },
+ "101784267": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 108.3,
+   "nk": 108.3,
+   "machine": 108.1
+  },
+  "hr_range": [
+   103.1,
+   113.3
+  ]
+ },
+ "100145505": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 96.2,
+   "nk": 96.2,
+   "machine": 96.0
+  },
+  "hr_range": [
+   91.0,
+   101.2
+  ]
+ },
+ "102436418": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 111.9,
+   "nk": 111.9,
+   "machine": 111.1
+  },
+  "hr_range": [
+   106.1,
+   116.9
+  ]
+ },
+ "100211464": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 94.0,
+   "nk": 94.0,
+   "machine": 94.0
+  },
+  "hr_range": [
+   89.0,
+   99.0
+  ]
+ },
+ "102002950": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 94.3,
+   "nk": 94.3,
+   "machine": 94.0
+  },
+  "hr_range": [
+   89.0,
+   99.3
+  ]
+ },
+ "100914215": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 111.1,
+   "nk": 111.1,
+   "machine": 111.1
+  },
+  "hr_range": [
+   106.1,
+   116.1
+  ]
+ },
+ "109253034": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 76.9,
+   "nk": 76.9,
+   "machine": 76.0
+  },
+  "hr_range": [
+   71.0,
+   81.9
+  ]
+ },
+ "108446236": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 55.9,
+   "nk": 56.0,
+   "machine": 56.0
+  },
+  "hr_range": [
+   50.9,
+   61.0
+  ]
+ },
+ "104629882": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 57.5,
+   "nk": 57.5,
+   "machine": 58.0
+  },
+  "hr_range": [
+   52.5,
+   63.0
+  ]
+ },
+ "101839963": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 60.1,
+   "nk": 60.0,
+   "machine": 60.0
+  },
+  "hr_range": [
+   55.0,
+   65.1
+  ]
+ },
+ "107158938": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 51.7,
+   "nk": 51.7,
+   "machine": 51.0
+  },
+  "hr_range": [
+   46.0,
+   56.7
+  ]
+ },
+ "107132278": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 86.5,
+   "nk": 86.5,
+   "machine": 86.1
+  },
+  "hr_range": [
+   81.1,
+   91.5
+  ]
+ },
+ "107674864": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 151.5,
+   "nk": 152.3,
+   "machine": 134.2
+  },
+  "hr_range": [
+   122.2,
+   164.3
+  ]
+ },
+ "107819285": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 97.4,
+   "nk": 97.4,
+   "machine": 97.1
+  },
+  "hr_range": [
+   92.1,
+   102.4
+  ]
+ },
+ "105060792": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 132.7,
+   "nk": 135.1,
+   "machine": 124.2
+  },
+  "hr_range": [
+   112.2,
+   147.1
+  ]
+ },
+ "109138694": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 141.5,
+   "nk": 144.9,
+   "machine": 136.1
+  },
+  "hr_range": [
+   124.1,
+   156.9
+  ]
+ },
+ "104706820": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 65.5,
+   "nk": 65.5,
+   "machine": 65.0
+  },
+  "hr_range": [
+   60.0,
+   70.5
+  ]
+ },
+ "102280728": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 54.4,
+   "nk": 54.4,
+   "machine": 54.0
+  },
+  "hr_range": [
+   49.0,
+   59.4
+  ]
+ },
+ "103042067": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 50.6,
+   "nk": 50.5,
+   "machine": 50.0
+  },
+  "hr_range": [
+   45.0,
+   55.6
+  ]
+ },
+ "101206211": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 58.0,
+   "nk": 58.3,
+   "machine": 58.0
+  },
+  "hr_range": [
+   53.0,
+   63.3
+  ]
+ },
+ "109439164": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 64.3,
+   "nk": 64.3,
+   "machine": 64.0
+  },
+  "hr_range": [
+   59.0,
+   69.3
+  ]
+ },
+ "107059289": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 67.8,
+   "nk": 67.8,
+   "machine": 67.0
+  },
+  "hr_range": [
+   62.0,
+   72.8
+  ]
+ },
+ "101757242": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 61.5,
+   "nk": 61.5,
+   "machine": 61.0
+  },
+  "hr_range": [
+   56.0,
+   66.5
+  ]
+ },
+ "104822395": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 56.8,
+   "nk": 56.8,
+   "machine": 58.0
+  },
+  "hr_range": [
+   51.8,
+   63.0
+  ]
+ },
+ "107719002": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 66.9,
+   "nk": 67.0,
+   "machine": 67.0
+  },
+  "hr_range": [
+   61.9,
+   72.0
+  ]
+ },
+ "108689967": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 58.6,
+   "nk": 59.4,
+   "machine": 58.0
+  },
+  "hr_range": [
+   53.0,
+   64.4
+  ]
+ },
+ "100246383": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 66.7,
+   "nk": 66.7,
+   "machine": 67.0
+  },
+  "hr_range": [
+   61.7,
+   72.0
+  ]
+ },
+ "109218019": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 121.0,
+   "nk": 121.0,
+   "machine": 120.0
+  },
+  "hr_range": [
+   115.0,
+   126.0
+  ]
+ },
+ "101948356": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 86.7,
+   "nk": 86.7,
+   "machine": 86.1
+  },
+  "hr_range": [
+   81.1,
+   91.7
+  ]
+ },
+ "102456968": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 81.3,
+   "nk": 81.3,
+   "machine": 81.1
+  },
+  "hr_range": [
+   76.1,
+   86.3
+  ]
+ },
+ "107399137": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 143.9,
+   "nk": 144.9,
+   "machine": 138.2
+  },
+  "hr_range": [
+   126.2,
+   156.9
+  ]
+ },
+ "102910502": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 100.3,
+   "nk": 100.3,
+   "machine": 100.0
+  },
+  "hr_range": [
+   95.0,
+   105.3
+  ]
+ },
+ "108322943": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 105.3,
+   "nk": 105.3,
+   "machine": 105.1
+  },
+  "hr_range": [
+   100.1,
+   110.3
+  ]
+ },
+ "103922229": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 106.2,
+   "nk": 105.8,
+   "machine": 104.2
+  },
+  "hr_range": [
+   99.2,
+   111.2
+  ]
+ },
+ "109661561": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 101.4,
+   "nk": 101.4,
+   "machine": 101.0
+  },
+  "hr_range": [
+   96.0,
+   106.4
+  ]
+ },
+ "104450423": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 81.3,
+   "nk": 81.1,
+   "machine": 81.1
+  },
+  "hr_range": [
+   76.1,
+   86.3
+  ]
+ },
+ "107627609": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 97.4,
+   "nk": 97.1,
+   "machine": 97.1
+  },
+  "hr_range": [
+   92.1,
+   102.4
+  ]
+ },
+ "109287357": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 98.8,
+   "nk": 101.7,
+   "machine": 102.0
+  },
+  "hr_range": [
+   86.8,
+   114.0
+  ]
+ },
+ "100269135": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 131.9,
+   "nk": 128.5,
+   "machine": 129.0
+  },
+  "hr_range": [
+   116.5,
+   143.9
+  ]
+ },
+ "105789995": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 96.0,
+   "nk": 93.2,
+   "machine": 101.0
+  },
+  "hr_range": [
+   81.2,
+   113.0
+  ]
+ },
+ "103262474": {
+  "label": "QTC_PROLONGED",
+  "edit": null,
+  "hr_reads": {
+   "A": 78.5,
+   "nk": 78.4,
+   "machine": 79.1
+  },
+  "hr_range": [
+   73.4,
+   84.1
+  ]
+ },
+ "102625534": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 120.5,
+   "nk": 120.5,
+   "machine": 111.1
+  },
+  "hr_range": [
+   99.1,
+   132.5
+  ]
+ },
+ "103952517": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 124.0,
+   "nk": 124.0,
+   "machine": 123.2
+  },
+  "hr_range": [
+   111.2,
+   136.0
+  ]
+ },
+ "107689861": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 52.8,
+   "nk": 52.4,
+   "machine": 53.0
+  },
+  "hr_range": [
+   47.4,
+   58.0
+  ]
+ },
+ "108651109": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 65.6,
+   "nk": 65.5,
+   "machine": 65.0
+  },
+  "hr_range": [
+   60.0,
+   70.6
+  ]
+ },
+ "101515306": {
+  "label": "QTC_PROLONGED",
+  "edit": "qt_lengthened:current",
+  "target_bazett": 590,
+  "qtc_reads": {
+   "II/A": 514.8,
+   "II/nk-dwt": 572.5,
+   "II/nk-cwt": 528.5,
+   "V5/A": 511.3,
+   "V5/nk-cwt": 555.9
+  },
+  "qtc_range": [
+   491.3,
+   592.5
+  ],
+  "hr_reads": {
+   "II/A": 57.5,
+   "II/nk-dwt": 57.5,
+   "II/nk-cwt": 57.5,
+   "V5/A": 57.5,
+   "V5/nk-dwt": 57.5,
+   "V5/nk-cwt": 57.5
+  },
+  "delta_ms": 128,
+  "hr_range": [
+   52.5,
+   62.5
+  ]
+ },
+ "100867733": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 129.3,
+   "nk": 130.4,
+   "machine": 127.1
+  },
+  "hr_range": [
+   115.1,
+   142.4
+  ]
+ },
+ "107573862": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 79.2,
+   "nk": 79.1,
+   "machine": 78.0
+  },
+  "hr_range": [
+   73.0,
+   84.2
+  ]
+ },
+ "106023425": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 78.5,
+   "nk": 78.4,
+   "machine": 78.0
+  },
+  "hr_range": [
+   73.0,
+   83.5
+  ]
+ },
+ "100065910": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 74.6,
+   "nk": 74.5,
+   "machine": 74.1
+  },
+  "hr_range": [
+   69.1,
+   79.6
+  ]
+ },
+ "107321368": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 72.1,
+   "nk": 71.9,
+   "machine": 72.0
+  },
+  "hr_range": [
+   66.9,
+   77.1
+  ]
+ },
+ "108018814": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 68.3,
+   "nk": 68.2,
+   "machine": 67.0
+  },
+  "hr_range": [
+   62.0,
+   73.3
+  ]
+ },
+ "106565956": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 83.1,
+   "nk": 83.1,
+   "machine": 83.1
+  },
+  "hr_range": [
+   78.1,
+   88.1
+  ]
+ },
+ "102305989": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 96.8,
+   "nk": 96.8,
+   "machine": 92.0
+  },
+  "hr_range": [
+   80.0,
+   108.8
+  ]
+ },
+ "106721017": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 125.0,
+   "nk": 112.4,
+   "machine": 118.1
+  },
+  "hr_range": [
+   100.4,
+   137.0
+  ]
+ },
+ "102893922": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 75.2,
+   "nk": 75.1,
+   "machine": 82.1
+  },
+  "hr_range": [
+   63.1,
+   94.1
+  ]
+ },
+ "105607048": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 81.1,
+   "nk": 81.1,
+   "machine": 84.0
+  },
+  "hr_range": [
+   69.1,
+   96.0
+  ]
+ },
+ "108019775": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 139.5,
+   "nk": 140.8,
+   "machine": 133.9
+  },
+  "hr_range": [
+   121.9,
+   152.8
+  ]
+ },
+ "103888812": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 91.2,
+   "nk": 91.2,
+   "machine": 98.0
+  },
+  "hr_range": [
+   79.2,
+   110.0
+  ]
+ },
+ "101693162": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 83.1,
+   "nk": 83.1,
+   "machine": 77.0
+  },
+  "hr_range": [
+   65.0,
+   95.1
+  ]
+ },
+ "100924231": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 140.8,
+   "nk": 140.8,
+   "machine": 140.8
+  },
+  "hr_range": [
+   135.8,
+   145.8
+  ]
+ },
+ "108454397": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 71.4,
+   "nk": 71.4,
+   "machine": 71.0
+  },
+  "hr_range": [
+   59.0,
+   83.4
+  ]
+ },
+ "109839112": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 110.3,
+   "nk": 112.8,
+   "machine": 109.1
+  },
+  "hr_range": [
+   97.1,
+   124.8
+  ]
+ },
+ "105224815": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 62.9,
+   "nk": 62.8,
+   "machine": 63.0
+  },
+  "hr_range": [
+   57.8,
+   68.0
+  ]
+ },
+ "101016166": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 101.5,
+   "nk": 101.7,
+   "machine": 101.0
+  },
+  "hr_range": [
+   96.0,
+   106.7
+  ]
+ },
+ "107457843": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 101.7,
+   "nk": 101.7,
+   "machine": 102.0
+  },
+  "hr_range": [
+   96.7,
+   107.0
+  ]
+ },
+ "103088543": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 144.2,
+   "nk": 144.2,
+   "machine": 137.0
+  },
+  "hr_range": [
+   125.0,
+   156.2
+  ]
+ },
+ "107914094": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 138.9,
+   "nk": 142.2,
+   "machine": 136.1
+  },
+  "hr_range": [
+   124.1,
+   154.2
+  ]
+ },
+ "106186980": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 107.5,
+   "nk": 107.5,
+   "machine": 107.1
+  },
+  "hr_range": [
+   102.1,
+   112.5
+  ]
+ },
+ "105523266": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 120.5,
+   "nk": 120.5,
+   "machine": 120.0
+  },
+  "hr_range": [
+   115.0,
+   125.5
+  ]
+ },
+ "100040711": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 83.4,
+   "nk": 83.6,
+   "machine": 72.0
+  },
+  "hr_range": [
+   60.0,
+   95.6
+  ]
+ },
+ "102167222": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 107.5,
+   "nk": 106.2,
+   "machine": 106.0
+  },
+  "hr_range": [
+   94.0,
+   119.5
+  ]
+ },
+ "103700930": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 113.4,
+   "nk": 113.6,
+   "machine": 111.9
+  },
+  "hr_range": [
+   99.9,
+   125.6
+  ]
+ },
+ "100276290": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 73.0,
+   "nk": 72.8,
+   "machine": 71.0
+  },
+  "hr_range": [
+   59.0,
+   85.0
+  ]
+ },
+ "107036253": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 118.1,
+   "nk": 118.1,
+   "machine": 115.2
+  },
+  "hr_range": [
+   103.2,
+   130.1
+  ]
+ },
+ "101951115": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 114.1,
+   "nk": 114.3,
+   "machine": 111.1
+  },
+  "hr_range": [
+   99.1,
+   126.3
+  ]
+ },
+ "107841896": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 137.6,
+   "nk": 140.2,
+   "machine": 138.2
+  },
+  "hr_range": [
+   125.6,
+   152.2
+  ]
+ },
+ "109757556": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 54.0,
+   "nk": 56.4,
+   "machine": 57.0
+  },
+  "hr_range": [
+   42.0,
+   69.0
+  ]
+ },
+ "100578411": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 82.2,
+   "nk": 82.2,
+   "machine": 81.1
+  },
+  "hr_range": [
+   69.1,
+   94.2
+  ]
+ },
+ "109143487": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 83.8,
+   "nk": 82.6,
+   "machine": 81.1
+  },
+  "hr_range": [
+   69.1,
+   95.8
+  ]
+ },
+ "102514347": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 31.3,
+   "nk": 97.1,
+   "machine": 98.0
+  },
+  "hr_range": [
+   19.3,
+   110.0
+  ]
+ },
+ "100466541": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 81.5,
+   "nk": 81.4,
+   "machine": 78.0
+  },
+  "hr_range": [
+   66.0,
+   93.5
+  ]
+ },
+ "100613396": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 71.3,
+   "nk": 90.0,
+   "machine": 88.1
+  },
+  "hr_range": [
+   59.3,
+   102.0
+  ]
+ },
+ "102393183": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 24.6,
+   "nk": 74.8,
+   "machine": 73.1
+  },
+  "hr_range": [
+   12.6,
+   86.8
+  ]
+ },
+ "104232242": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 60.2,
+   "nk": 60.4,
+   "machine": 60.0
+  },
+  "hr_range": [
+   55.0,
+   65.4
+  ]
+ },
+ "103992480": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 68.7,
+   "nk": 68.8,
+   "machine": 69.0
+  },
+  "hr_range": [
+   63.7,
+   74.0
+  ]
+ },
+ "105745707": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 75.9,
+   "nk": 75.9,
+   "machine": 76.0
+  },
+  "hr_range": [
+   70.9,
+   81.0
+  ]
+ },
+ "107859369": {
+  "label": "NORMAL",
+  "edit": "artifact:la_ra",
+  "hr_reads": {
+   "A": 69.3,
+   "nk": 69.4,
+   "machine": 69.0
+  },
+  "after_artifact": {
+   "qtc": {
+    "II/A": 368.0,
+    "II/nk-dwt": 268.6,
+    "V5/A": 373.9,
+    "V5/nk-dwt": 461.5,
+    "V5/nk-cwt": 473.4
+   },
+   "hr": {
+    "II/A": 69.4,
+    "II/nk-dwt": 69.3,
+    "II/nk-cwt": 69.3,
+    "V5/A": 69.4,
+    "V5/nk-dwt": 69.4,
+    "V5/nk-cwt": 69.4
+   }
+  },
+  "hr_range": [
+   64.0,
+   74.4
+  ]
+ },
+ "101832748": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 61.7,
+   "nk": 61.7,
+   "machine": 62.0
+  },
+  "hr_range": [
+   56.7,
+   67.0
+  ]
+ },
+ "104750528": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 82.9,
+   "nk": 82.9,
+   "machine": 82.1
+  },
+  "hr_range": [
+   77.1,
+   87.9
+  ]
+ },
+ "103671424": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 85.5,
+   "nk": 85.7,
+   "machine": 85.1
+  },
+  "hr_range": [
+   80.1,
+   90.7
+  ]
+ },
+ "109116314": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 82.2,
+   "nk": 82.2,
+   "machine": 82.1
+  },
+  "hr_range": [
+   77.1,
+   87.2
+  ]
+ },
+ "108530691": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 84.3,
+   "nk": 84.5,
+   "machine": 84.0
+  },
+  "hr_range": [
+   79.0,
+   89.5
+  ]
+ },
+ "103857061": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 77.5,
+   "nk": 77.5,
+   "machine": 77.0
+  },
+  "hr_range": [
+   72.0,
+   82.5
+  ]
+ },
+ "103541212": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 85.0,
+   "nk": 85.0,
+   "machine": 85.1
+  },
+  "hr_range": [
+   80.0,
+   90.1
+  ]
+ },
+ "108912996": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 53.2,
+   "nk": 58.9,
+   "machine": 62.0
+  },
+  "hr_range": [
+   41.2,
+   74.0
+  ]
+ },
+ "107873952": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 68.9,
+   "nk": 69.0,
+   "machine": 68.0
+  },
+  "hr_range": [
+   63.0,
+   74.0
+  ]
+ },
+ "101538691": {
+  "label": "NORMAL",
+  "edit": "artifact:wander",
+  "hr_reads": {
+   "A": 68.2,
+   "nk": 68.2,
+   "machine": 68.0
+  },
+  "after_artifact": {
+   "qtc": {
+    "II/A": 604.0,
+    "II/nk-dwt": 367.8,
+    "V5/A": 372.4,
+    "V5/nk-dwt": 428.5
+   },
+   "hr": {
+    "II/A": 68.2,
+    "II/nk-dwt": 68.2,
+    "II/nk-cwt": 68.2,
+    "V5/A": 67.7,
+    "V5/nk-dwt": 68.2,
+    "V5/nk-cwt": 68.2
+   }
+  },
+  "hr_range": [
+   63.0,
+   73.2
+  ]
+ },
+ "106825293": {
+  "label": "NORMAL",
+  "edit": "artifact:emg",
+  "hr_reads": {
+   "A": 74.1,
+   "nk": 74.1,
+   "machine": 73.1
+  },
+  "after_artifact": {
+   "qtc": {
+    "II/A": 397.9,
+    "II/nk-dwt": 435.6,
+    "II/nk-cwt": 460.0,
+    "V5/A": 386.8,
+    "V5/nk-dwt": 512.2,
+    "V5/nk-cwt": 493.3
+   },
+   "hr": {
+    "II/A": 74.1,
+    "II/nk-dwt": 74.1,
+    "II/nk-cwt": 74.1,
+    "V5/A": 74.1,
+    "V5/nk-dwt": 74.1,
+    "V5/nk-cwt": 74.1
+   }
+  },
+  "hr_range": [
+   68.1,
+   79.1
+  ]
+ },
+ "100851619": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 69.8,
+   "nk": 69.8,
+   "machine": 69.0
+  },
+  "hr_range": [
+   64.0,
+   74.8
+  ]
+ },
+ "100849868": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 106.8,
+   "nk": 106.8,
+   "machine": 106.0
+  },
+  "hr_range": [
+   101.0,
+   111.8
+  ]
+ },
+ "101901982": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 121.5,
+   "nk": 121.5,
+   "machine": 121.2
+  },
+  "hr_range": [
+   116.2,
+   126.5
+  ]
+ },
+ "102247352": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 82.2,
+   "nk": 82.2,
+   "machine": 82.1
+  },
+  "hr_range": [
+   77.1,
+   87.2
+  ]
+ },
+ "101401324": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 81.5,
+   "nk": 81.3,
+   "machine": 81.1
+  },
+  "hr_range": [
+   76.1,
+   86.5
+  ]
+ },
+ "107374881": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 76.6,
+   "nk": 77.1,
+   "machine": 75.0
+  },
+  "hr_range": [
+   70.0,
+   82.1
+  ]
+ },
+ "108211642": {
+  "label": "AF",
+  "edit": "artifact:wander",
+  "hr_reads": {
+   "A": 157.5,
+   "nk": 151.1,
+   "machine": 153.1
+  },
+  "after_artifact": {
+   "qtc": {
+    "II/A": 467.2,
+    "II/nk-cwt": 498.3,
+    "V5/A": 535.4,
+    "V5/nk-dwt": 340.1,
+    "V5/nk-cwt": 541.9
+   },
+   "hr": {
+    "II/A": 157.5,
+    "II/nk-dwt": 151.1,
+    "II/nk-cwt": 151.1,
+    "V5/A": 150.8,
+    "V5/nk-dwt": 151.5,
+    "V5/nk-cwt": 151.5
+   }
+  },
+  "hr_range": [
+   139.1,
+   169.5
+  ]
+ },
+ "104882441": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 80.6,
+   "nk": 80.9,
+   "machine": 80.0
+  },
+  "hr_range": [
+   75.0,
+   85.9
+  ]
+ },
+ "107149156": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 132.2,
+   "nk": 132.2,
+   "machine": 132.2
+  },
+  "hr_range": [
+   127.2,
+   137.2
+  ]
+ },
+ "104821039": {
+  "label": "QTC_PROLONGED",
+  "edit": "qt_lengthened:current",
+  "target_bazett": 570,
+  "qtc_reads": {
+   "II/A": 612.2,
+   "II/nk-cwt": 568.5,
+   "V5/A": 523.8,
+   "V5/nk-cwt": 598.8
+  },
+  "qtc_range": [
+   503.79999999999995,
+   632.2
+  ],
+  "hr_reads": {
+   "II/A": 70.1,
+   "II/nk-dwt": 70.1,
+   "II/nk-cwt": 70.1,
+   "V5/A": 70.1,
+   "V5/nk-dwt": 70.1,
+   "V5/nk-cwt": 70.1
+  },
+  "delta_ms": 154,
+  "hr_range": [
+   65.1,
+   75.1
+  ]
+ },
+ "100913766": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 65.9,
+   "nk": 65.8,
+   "machine": 65.0
+  },
+  "hr_range": [
+   60.0,
+   70.9
+  ]
+ },
+ "102857516": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 77.9,
+   "nk": 77.9,
+   "machine": 77.0
+  },
+  "hr_range": [
+   72.0,
+   82.9
+  ]
+ },
+ "105469023": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 57.3,
+   "nk": 68.5,
+   "machine": 66.0
+  },
+  "hr_range": [
+   45.3,
+   80.5
+  ]
+ },
+ "102295353": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 86.5,
+   "nk": 86.2,
+   "machine": 89.0
+  },
+  "hr_range": [
+   74.2,
+   101.0
+  ]
+ },
+ "109550629": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 65.2,
+   "nk": 74.6,
+   "machine": 62.0
+  },
+  "hr_range": [
+   50.0,
+   86.6
+  ]
+ },
+ "109419304": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 65.7,
+   "nk": 65.1,
+   "machine": 65.0
+  },
+  "hr_range": [
+   60.0,
+   70.7
+  ]
+ },
+ "104189894": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 67.3,
+   "nk": 67.3,
+   "machine": 67.0
+  },
+  "hr_range": [
+   62.0,
+   72.3
+  ]
+ },
+ "106465580": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 62.5,
+   "nk": 62.6,
+   "machine": 62.0
+  },
+  "hr_range": [
+   57.0,
+   67.6
+  ]
+ },
+ "109187086": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 142.2,
+   "nk": 143.9,
+   "machine": 142.2
+  },
+  "hr_range": [
+   130.2,
+   155.9
+  ]
+ },
+ "104489698": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 67.6,
+   "nk": 67.5,
+   "machine": 67.0
+  },
+  "hr_range": [
+   62.0,
+   72.6
+  ]
+ },
+ "108234665": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 59.4,
+   "nk": 59.4,
+   "machine": 59.1
+  },
+  "hr_range": [
+   54.1,
+   64.4
+  ]
+ },
+ "105375026": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 133.3,
+   "nk": 132.4,
+   "machine": 131.0
+  },
+  "hr_range": [
+   119.0,
+   145.3
+  ]
+ },
+ "104253928": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 58.3,
+   "nk": 58.3,
+   "machine": 58.0
+  },
+  "hr_range": [
+   53.0,
+   63.3
+  ]
+ },
+ "106045460": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 61.9,
+   "nk": 61.7,
+   "machine": 61.0
+  },
+  "hr_range": [
+   56.0,
+   66.9
+  ]
+ },
+ "103879393": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 73.5,
+   "nk": 73.5,
+   "machine": 73.1
+  },
+  "hr_range": [
+   68.1,
+   78.5
+  ]
+ },
+ "102573205": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 83.3,
+   "nk": 83.6,
+   "machine": 82.1
+  },
+  "hr_range": [
+   77.1,
+   88.6
+  ]
+ },
+ "102888469": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 82.2,
+   "nk": 82.2,
+   "machine": 82.1
+  },
+  "hr_range": [
+   77.1,
+   87.2
+  ]
+ },
+ "102731956": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 94.3,
+   "nk": 94.3,
+   "machine": 94.0
+  },
+  "hr_range": [
+   89.0,
+   99.3
+  ]
+ },
+ "108465338": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 110.7,
+   "nk": 110.7,
+   "machine": 110.1
+  },
+  "hr_range": [
+   105.1,
+   115.7
+  ]
+ },
+ "106143775": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 116.3,
+   "nk": 116.3,
+   "machine": 116.1
+  },
+  "hr_range": [
+   111.1,
+   121.3
+  ]
+ },
+ "103521932": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 111.5,
+   "nk": 111.5,
+   "machine": 111.1
+  },
+  "hr_range": [
+   106.1,
+   116.5
+  ]
+ },
+ "103829890": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 85.0,
+   "nk": 85.2,
+   "machine": 85.1
+  },
+  "hr_range": [
+   80.0,
+   90.2
+  ]
+ },
+ "109219382": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 89.3,
+   "nk": 89.3,
+   "machine": 89.0
+  },
+  "hr_range": [
+   84.0,
+   94.3
+  ]
+ },
+ "109466629": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 71.6,
+   "nk": 71.6,
+   "machine": 71.0
+  },
+  "hr_range": [
+   66.0,
+   76.6
+  ]
+ },
+ "101744645": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 69.7,
+   "nk": 72.1,
+   "machine": 67.0
+  },
+  "hr_range": [
+   55.0,
+   84.1
+  ]
+ },
+ "105005683": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 84.5,
+   "nk": 84.5,
+   "machine": 84.0
+  },
+  "hr_range": [
+   79.0,
+   89.5
+  ]
+ },
+ "104022833": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 118.1,
+   "nk": 118.1,
+   "machine": 118.1
+  },
+  "hr_range": [
+   113.1,
+   123.1
+  ]
+ },
+ "101524902": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 107.1,
+   "nk": 107.1,
+   "machine": 107.0
+  },
+  "hr_range": [
+   102.0,
+   112.1
+  ]
+ },
+ "105616956": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 104.5,
+   "nk": 104.5,
+   "machine": 104.2
+  },
+  "hr_range": [
+   99.2,
+   109.5
+  ]
+ },
+ "104011013": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 78.9,
+   "nk": 78.9,
+   "machine": 78.0
+  },
+  "hr_range": [
+   73.0,
+   83.9
+  ]
+ },
+ "103202417": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 71.8,
+   "nk": 71.8,
+   "machine": 72.0
+  },
+  "hr_range": [
+   66.8,
+   77.0
+  ]
+ },
+ "107274479": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 74.8,
+   "nk": 74.8,
+   "machine": 75.0
+  },
+  "hr_range": [
+   69.8,
+   80.0
+  ]
+ },
+ "102111462": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 75.5,
+   "nk": 75.5,
+   "machine": 75.0
+  },
+  "hr_range": [
+   70.0,
+   80.5
+  ]
+ },
+ "105862861": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 109.5,
+   "nk": 109.5,
+   "machine": 108.1
+  },
+  "hr_range": [
+   103.1,
+   114.5
+  ]
+ },
+ "109952008": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 76.6,
+   "nk": 76.6,
+   "machine": 76.0
+  },
+  "hr_range": [
+   71.0,
+   81.6
+  ]
+ },
+ "109048192": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 74.6,
+   "nk": 74.8,
+   "machine": 74.1
+  },
+  "hr_range": [
+   69.1,
+   79.8
+  ]
+ },
+ "106035722": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 72.1,
+   "nk": 72.1,
+   "machine": 72.0
+  },
+  "hr_range": [
+   67.0,
+   77.1
+  ]
+ },
+ "102298909": {
+  "label": "NORMAL",
+  "edit": null,
+  "hr_reads": {
+   "A": 61.9,
+   "nk": 61.7,
+   "machine": 62.0
+  },
+  "hr_range": [
+   56.7,
+   67.0
+  ]
+ },
+ "106516565": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 137.3,
+   "nk": 133.9,
+   "machine": 124.2
+  },
+  "hr_range": [
+   112.2,
+   149.3
+  ]
+ },
+ "101950824": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 101.7,
+   "nk": 101.7,
+   "machine": 100.0
+  },
+  "hr_range": [
+   88.0,
+   113.7
+  ]
+ },
+ "100944098": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 78.3,
+   "nk": 80.2,
+   "machine": 91.0
+  },
+  "hr_range": [
+   66.3,
+   103.0
+  ]
+ },
+ "104330494": {
+  "label": "AF",
+  "edit": null,
+  "hr_reads": {
+   "A": 63.4,
+   "nk": 63.4,
+   "machine": 63.0
+  },
+  "hr_range": [
+   51.0,
+   75.4
+  ]
+ }
+}

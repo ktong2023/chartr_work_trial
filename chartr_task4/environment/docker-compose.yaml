@@ -1,0 +1,27 @@
+services:
+  main:
+    networks: [clinic-net]
+    depends_on:
+      clinic:
+        condition: service_healthy
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  clinic:
+    build:
+      context: ./service
+    networks: [clinic-net]
+    read_only: true
+    tmpfs:
+      - /state:size=64m
+      - /evidence:size=32m
+      - /tmp:size=8m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=2)"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+networks:
+  clinic-net:
+    internal: true
