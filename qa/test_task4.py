@@ -53,6 +53,8 @@ SHORTCUTS = {  # wrong algorithm -> the case it should break
     'ecg_before_start_counts': 'ECG before the start completes the follow-up',
     'ignore_unreceived': 'unreceived outside ECG ignored',
     'mention_is_dose_change': 'a note about warfarin dosing without a change counts as a dose change',
+    'no_charted_rhythm': 'AF from codes and ECGs only, not inpatient rhythm charting (10020306)',
+    'trust_documented_qt': 'a note calling the QT acceptable overrides the ECG (10013049)',
     'rhythm_any_day': 'sinus rhythm documented in paroxysmal AF counted as a conflict',
 }
 BUILD = {}

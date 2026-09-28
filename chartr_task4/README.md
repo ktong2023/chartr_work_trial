@@ -1,4 +1,4 @@
-# chartr_task4 — cardiology population review on real data (v0.1.1)
+# chartr_task4 — cardiology population review on real data (v0.2.0)
 
 The agent reviews a 100-patient clinic population at 2026-09-24 12:00 America/New_York. It saves a review item for every
 issue that needs clinical review, and an ECG finding for every patient whose most recent ECG shows atrial fibrillation or a
@@ -144,3 +144,21 @@ pilot result: all five runs ended at their first bulk export.
 
   Combined with the rescored v0.1.0 batch: **2/10**. Pass or fail rests almost entirely on the 10004235 case, which
   8/10 runs missed.
+
+## v0.2.0: more cases on the observed weakness
+
+The v0.1 pilots failed almost only on AF evidence that sits outside the latest ECG. v0.2.0 adds three cases (20 items,
+19 findings) so failures spread over more skills:
+
+- **10020306, UNTREATED_AF.** AF appears only in inpatient rhythm charting (76 "AF (Atrial Fibrillation)" entries). She
+  has no AF codes, no ECGs and CHA2DS2-VASc 9. Her acute coagulopathy code is removed so it can't be read as a standing
+  contraindication.
+- **10013049, PROLONGED_QTC_ON_WATCH_LIST_DRUG.** His latest ECG is lengthened just over threshold: tangent reads
+  508–526 ms, other methods 557–582 ms. The note at the escitalopram start says "QT acceptable" about that same ECG. Being
+  started in 2024, before any ECG-after-start memo, also makes him a look-alike with no follow-up requirement.
+- **10019385, ECG_AFTER_WATCH_LIST_START.** Escitalopram was started on 2/12/2026, 17 days before the 14-day memo took
+  effect, and an ECG followed 24 days later. That is completed under the 30-day memo; it would be overdue if the new memo
+  were applied.
+
+To keep the date-dependent case gradable, both ECG memos now state which start dates they cover. The QA suite adds two
+wrong algorithms, both scoring 0: no charted rhythm, and trusting the documented QT.

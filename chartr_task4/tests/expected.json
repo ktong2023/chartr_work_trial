@@ -212,6 +212,112 @@
    "ecg_fields": []
   },
   {
+   "patient": "27980ad8-77b7-5360-b211-bf4fac9c468c",
+   "subject": "10020306",
+   "category": "ANTICOAGULATION",
+   "reason": "UNTREATED_AF",
+   "fields": {
+    "af_evidence": {
+     "subset_of": [
+      "0f84d045-d187-5862-a5aa-b016460bbe0c",
+      "0f93d4f9-0fa9-51e0-acad-ce8ccbaf6a75",
+      "11626c89-3959-5c70-a4e8-3495a6c3b198",
+      "1197b003-0a6e-5c61-8603-b7ddc9006c7e",
+      "23343821-5104-561f-ae10-acfd14751e36",
+      "245f2cb3-793c-598b-8abe-b3fdfc73fbca",
+      "2558914f-577f-5f06-970e-5c379291b1b9",
+      "26b0f8ae-933f-5cc5-9a33-45da9848ec6e",
+      "280410fd-40be-594d-aca7-182b31aff769",
+      "294f4364-ac7e-5564-a8e2-ea7d3c4969d2",
+      "2b26f23f-8e32-5c03-a806-da90d95507c7",
+      "2bb1a921-afdc-5c17-8dd0-a157b9c6cae7",
+      "2d90dca3-f5b0-5691-be08-5cc2be483e5d",
+      "2edb105e-5c9c-5776-ba2e-8a06817d4a5e",
+      "2f664742-1dd8-51f6-b3a8-f1886641126b",
+      "30a1c5a2-1f9d-57c6-a265-2df0beb3d989",
+      "31c87b70-8e05-5f87-a98c-a4d92eae20ce",
+      "31e15296-b294-5a13-a5bb-87e272bdc130",
+      "3241f8b1-c4cd-5366-8a2c-12e0fba503b8",
+      "3782e10c-f255-5de9-9c50-b1550b80a4c8",
+      "37bca9b7-5bd9-507f-8f7c-9fe7cb3bdd51",
+      "3b6b9032-b819-553c-83c2-02e6b0d473bb",
+      "3c392997-f147-540f-b8a5-0825b10b317a",
+      "43ea1644-f7ee-57b8-a635-4323b4c9dda3",
+      "451b35ef-f22c-54cb-bc02-cf52b3d43e94",
+      "458e7213-292b-52b3-8a06-9547a42ad49f",
+      "4874f4a1-5f72-5dfa-b4a1-a5cefaffca16",
+      "52108c7d-94b5-5f7d-b8a5-b83ebcd715f9",
+      "53fdd35e-339f-5975-bd7a-daf0bf6fda49",
+      "563898ac-a0c2-50e1-adb4-fdbdde71214d",
+      "56a12c99-a7f6-58d6-a8a9-b774e5df1ae7",
+      "59674be7-a19d-58a9-96c9-b6309c0b641e",
+      "5bdbdb7b-a5cf-5004-81b4-011fd19ca444",
+      "67b031a7-bb99-579b-84ee-32fe30df7771",
+      "696827af-0075-5501-b5e4-adac5a867ad3",
+      "6b09696a-0f73-5225-8376-ee18d0c90529",
+      "6f34457c-f59b-5169-a3ab-74f1d761c09f",
+      "767ab733-994a-530e-b732-b75640c44751",
+      "79a6b056-cb58-5d43-a253-54abed10cb6a",
+      "7bb35d42-6371-5713-b3e3-58a524d029ae",
+      "7d20ed71-883b-5824-8bf3-79c9abacd13e",
+      "844bd329-f256-5bf4-a387-3443786888fc",
+      "87a063c0-f5a6-50dd-be30-c584c6bfcdcd",
+      "8a7ba95c-5997-5cca-bdb6-55324f54978c",
+      "8c632bce-8462-546a-b554-fb785f1c8038",
+      "8ced06e1-848a-5c16-9e47-807bd8bc2827",
+      "93d01952-265d-5088-b20d-81bf9201e926",
+      "9472c2df-8cb2-5db7-82c4-a019887b5cb5",
+      "95595d76-3034-5f90-9370-eb637896e55a",
+      "96573588-c7bc-5842-b825-bee3137a9feb",
+      "9ea0ec47-cf9c-5b4f-b5d7-3f46580c0bba",
+      "b0555c82-70e3-57e1-9ceb-d62e30b14440",
+      "b901b1e3-10f3-5231-a0ee-01e230d94fe1",
+      "bfc09721-efee-5efe-b982-6b1d93ca5835",
+      "c0d73e44-ddee-599f-beda-bfbb00f34146",
+      "c2e4f519-dc6f-5e6a-8472-327c5775262b",
+      "c2e91c9e-9f31-51cd-ae21-3c20aefe3309",
+      "c5670d53-d711-5fcf-84df-1c0a120e2fcd",
+      "cb545f83-a46f-5b4a-acc7-82e121de1473",
+      "d112c43e-d1b0-5f38-a298-d87f1bd88828",
+      "d4dabdd4-68f8-5694-b069-3c4ee3cb0333",
+      "d59f6f10-68cb-568f-bdfa-cb0a0b8264e4",
+      "d6777c7a-b1e0-5f16-922f-0f6ab5d5988e",
+      "d8b49778-f08b-5e5e-bef0-2d503d78a3ec",
+      "da9fe0ec-4fe8-52b1-9925-3d774a5ab001",
+      "db011e3c-8740-5b72-a43c-504cf7155e78",
+      "dc321ffd-ee36-59e5-911c-7873f0252165",
+      "dee1f439-3844-5b40-bb76-acfc0831164c",
+      "e4aeb77e-97b1-5c66-93a3-a4a74611afd3",
+      "e6d206b4-2069-5a69-913d-b5136f832688",
+      "e6e66fd0-886a-5064-9fa7-6b89cc060484",
+      "e90f4236-3c02-5e33-91b8-b55f21602dfe",
+      "ea8b539b-a4ae-577c-bb2d-0df5f0f0eb00",
+      "eb5ab263-d4b2-5120-b631-946b74cda80d",
+      "f698b4ed-4959-54d8-a7eb-efeb62c72889",
+      "f72817e7-1963-5155-8ee2-a2102dcd78dd"
+     ]
+    },
+    "risk_score": {
+     "exact": 9
+    },
+    "risk_factors": {
+     "set": [
+      "AGE_75_PLUS",
+      "CHF",
+      "DIABETES",
+      "FEMALE",
+      "HYPERTENSION",
+      "STROKE_TIA",
+      "VASCULAR"
+     ]
+    },
+    "anticoagulant": {
+     "null": true
+    }
+   },
+   "ecg_fields": []
+  },
+  {
    "patient": "b410dd44-7d65-56f9-974f-2751e8aa80e2",
    "subject": "10004457",
    "category": "ANTICOAGULATION",
@@ -238,10 +344,10 @@
     "records": {
      "cover": [
       [
-       "0ba6a357-c3bd-5a8a-9127-7dedcdd3a8b6"
+       "b71a461f-9f14-5217-a3bb-3c242d0d08eb"
       ],
       [
-       "99b4dc24-105d-5d94-88f7-27509a115e1d"
+       "7206d5b5-544c-54e3-b118-d3a669f020a7"
       ]
      ],
      "also": [
@@ -296,11 +402,11 @@
     },
     "qt_drug": {
      "one_of": [
-      "f9708e2d-72af-5101-84a0-f742070bfaac"
+      "7f787d30-fc55-5391-a916-c021c8620c63"
      ]
     },
     "potassium": {
-     "exact": "ecb1a5f8-694e-5577-9900-b7129789dcd6"
+     "exact": "551ac9d7-dd80-51d2-bdd1-803361b7e6fe"
     },
     "magnesium": {
      "exact": "db3210cf-f9d0-5e78-85dd-a941aabfba54"
@@ -392,6 +498,45 @@
    ]
   },
   {
+   "patient": "23069939-0c4c-517b-a3ec-baae0d4e3988",
+   "subject": "10013049",
+   "category": "QT_SAFETY",
+   "reason": "PROLONGED_QTC_ON_WATCH_LIST_DRUG",
+   "fields": {
+    "ecg": {
+     "exact": "108018814"
+    },
+    "qtc_ms": {
+     "range": [
+      488.5,
+      601.7
+     ]
+    },
+    "heart_rate": {
+     "range": [
+      63.1,
+      73.3
+     ]
+    },
+    "qt_drug": {
+     "one_of": [
+      "8de890c6-e573-5d32-af46-2eb4d119c474"
+     ]
+    },
+    "potassium": {
+     "exact": "f54ac270-d38a-50ab-9418-a26942edf08e"
+    },
+    "magnesium": {
+     "exact": "8df3764d-7791-583d-aecc-5e560bc1cdda"
+    }
+   },
+   "ecg_fields": [
+    "ecg",
+    "qtc_ms",
+    "heart_rate"
+   ]
+  },
+  {
    "patient": "752d15e2-bd27-52ed-b055-ed79edb86aba",
    "subject": "10039831",
    "category": "FOLLOW_UP",
@@ -402,7 +547,7 @@
     },
     "trigger": {
      "one_of": [
-      "d6dc36c8-e6e7-5f72-8250-e7edb8e9643f",
+      "4dde586a-2683-5981-9512-111a11b70f40",
       "fa831ef2-b962-5999-a1a0-e6b4a062dda2"
      ]
     },
@@ -429,7 +574,7 @@
     },
     "trigger": {
      "one_of": [
-      "a9c255d8-db16-5c10-87ba-6806398af979",
+      "9db19264-ed51-5b2c-885d-907a28cc3bd7",
       "33136968-3e22-5418-a359-8c88c2fce634"
      ]
     },
@@ -456,7 +601,7 @@
     },
     "trigger": {
      "one_of": [
-      "88da30d3-3bd5-51ec-b503-9af088fd644a",
+      "88943096-c495-519c-9485-f834e444e77d",
       "93604d42-a4e8-5942-ae0e-c579f0b3946d"
      ]
     },
@@ -483,7 +628,7 @@
     },
     "trigger": {
      "one_of": [
-      "96c06cc8-bd24-5505-9732-53944f4d47af",
+      "c17946a1-2379-5648-89a7-e0bcc7a9892c",
       "55f064b7-3cb2-59fa-ac35-07d107a38d7d"
      ]
     },
@@ -512,7 +657,7 @@
     },
     "trigger": {
      "one_of": [
-      "b3f9658b-4fa9-5ec4-a6b1-aefa3cd714fe",
+      "f757652a-94c6-5909-9e8d-864d980c7de0",
       "a8e85155-0d80-53bb-8fd3-88ba23f45474"
      ]
     },
@@ -558,6 +703,35 @@
    ]
   },
   {
+   "patient": "c0d83ad6-0b65-5fd6-b241-f50cf552232c",
+   "subject": "10019385",
+   "category": "FOLLOW_UP",
+   "reason": "ECG_AFTER_WATCH_LIST_START",
+   "fields": {
+    "status": {
+     "exact": "completed"
+    },
+    "trigger": {
+     "one_of": [
+      "cbe91d0f-6ce8-5def-9570-40c0d40e5f47",
+      "f10bacd5-f9a9-5134-918e-13febad33802"
+     ]
+    },
+    "requirement": {
+     "exact": "e25bb79f-b908-5535-bbf0-dad59bd93e95"
+    },
+    "due_date": {
+     "exact": "2026-03-14"
+    },
+    "completion_record": {
+     "exact": "101538691"
+    }
+   },
+   "ecg_fields": [
+    "completion_record"
+   ]
+  },
+  {
    "patient": "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0",
    "subject": "10016150",
    "category": "FOLLOW_UP",
@@ -576,7 +750,7 @@
      "exact": "2026-09-08"
     },
     "completion_record": {
-     "exact": "25b9e47a-8fc5-56f8-8397-0a58ff68c21e"
+     "exact": "d6b3bad5-3076-5e66-b42f-6d1705a1bb9e"
     }
    },
    "ecg_fields": []
@@ -614,6 +788,19 @@
    "heart_rate": [
     112.2,
     147.1
+   ]
+  },
+  {
+   "ecg": "108018814",
+   "patient": "23069939-0c4c-517b-a3ec-baae0d4e3988",
+   "finding": "QTC_PROLONGED",
+   "heart_rate": [
+    63.1,
+    73.3
+   ],
+   "qtc_ms": [
+    488.5,
+    601.7
    ]
   },
   {

@@ -218,8 +218,8 @@ class Builder:
     def history(self, s):
         """Plain-language problem list from the patient's real coded diagnoses (most frequent first)."""
         counts = {}
-        for code, disp, _, _ in self.info[s]['dx']:
-            if not disp or (s in REMOVE_AF and AF_CODE.match(code.replace('.', ''))): continue
+        for code, disp, _, rid in self.info[s]['dx']:
+            if not disp or rid in self.removed: continue
             if re.match(r'(?i)(long[- ]term|personal history of|history of|encounter for|other specified|unspecified place)', disp): continue
             counts[disp] = counts.get(disp, 0) + 1
         return [d[0].lower() + d[1:] if d[:2].isupper() is False else d for d, _ in sorted(counts.items(), key=lambda kv: -kv[1])[:4]]
@@ -339,7 +339,10 @@ class Builder:
         return '\n'.join(lines)
 
 
-REMOVE_AF = {'10004235'}
+REMOVE_AF = {'10004235', '10020306'}
+# Other whole Condition records removed (subject -> ICD pattern): an acute inpatient coagulopathy code that would read as a
+# standing contraindication.
+REMOVE_DX = {'10020306': r'^D689'}
 D = dt.date
 
 
@@ -379,7 +382,12 @@ def spec_table():
         '10001217': {'visits': [D(2025, 11, 23)], 'visit_text': {D(2025, 11, 23): 'ECG today: sinus rhythm.'},
                      'visit_reading': {D(2025, 11, 23): {'rhythm': 'sinus'}}},
         '10009628': {'drugs': [('Warfarin', None, None)]}, '10022017': {'drugs': [('Apixaban', None, None)]},
-        '10020306': {'drugs': [('Apixaban', None, None)]}, '10020786': {'drugs': [('Apixaban', None, None)]},
+        '10020786': {'drugs': [('Apixaban', None, None)]},
+        # v0.2 cases: QTc just over threshold contradicting a documented 'QT acceptable'; ECG window set by the memo in force at the start
+        '10013049': {'drugs': [('Escitalopram Oxalate', D(2024, 5, 14), None)], 'visits': [D(2024, 5, 14)],
+                     'visit_text': {D(2024, 5, 14): 'Reviewed ECG from 10/8/2023: sinus rhythm, QT acceptable. Start escitalopram 10 mg daily; PCP aware.'},
+                     'visit_reading': {D(2024, 5, 14): {'qt_assessment': 'acceptable', 'ecg': '108018814'}}},
+        '10019385': {'drugs': [('Escitalopram Oxalate', D(2026, 2, 12), None)]},
         '10019172': {'drugs': [('Apixaban', None, None)], 'visit_text_first': 'Pulse regular; in sinus rhythm today.',
                      'visit_reading_first': {'rhythm': 'sinus'}},
     }
@@ -391,8 +399,11 @@ def build():
     b.context()
     specs = spec_table()
     # A3: AF documented only on the ECG -> remove this patient's AF diagnosis codes (whole Condition records).
+    # 10020306: AF documented only in inpatient rhythm charting (no codes, no ECGs).
     for s in REMOVE_AF:
         b.removed += sorted({rid for code, _, _, rid in b.info[s]['dx'] if AF_CODE.match(code.replace('.', ''))})
+    for s, pat in REMOVE_DX.items():
+        b.removed += sorted({rid for code, _, _, rid in b.info[s]['dx'] if re.match(pat, code.replace('.', ''))} - set(b.removed))
     memos = {
         'standing': b.memo('standing', D(2024, 6, 1), 'Anticoagulation clinic standing order',
                            'Clinic pharmacists may adjust warfarin doses under the anticoagulation protocol and document the change. Nurses may relay '
@@ -402,11 +413,12 @@ def build():
                      'watch-list medication, a most recent ECG with QTc (Bazett) of 500 ms or more requires prescriber review.',
                      {'watch_list': list(WATCH), 'qtc_threshold': 500, 'formula': 'bazett'}),
         'ecg30': b.memo('ecg30', D(2025, 9, 1), 'ECG after starting QT watch-list medications',
-                        'Obtain an ECG within 30 days after a QT watch-list medication is started at a Cardiology Clinic visit.',
+                        'Effective 9/1/2025 for medications started on or after that date: obtain an ECG within 30 days after a QT watch-list '
+                        'medication is started at a Cardiology Clinic visit.',
                         {'post_start_ecg_days': 30, 'effective': '2025-09-01'}),
         'ecg14': b.memo('ecg14', D(2026, 3, 1), 'ECG after starting QT watch-list medications (revised)',
-                        'Effective 3/1/2026, replacing the 9/1/2025 memo: obtain an ECG within 14 days after a QT watch-list medication is '
-                        'started at a Cardiology Clinic visit.', {'post_start_ecg_days': 14, 'effective': '2026-03-01', 'replaces': 'ecg30'}),
+                        'Replaces the 9/1/2025 memo for medications started on or after 3/1/2026 (earlier starts keep the 30-day window): obtain '
+                        'an ECG within 14 days after a QT watch-list medication is started at a Cardiology Clinic visit.', {'post_start_ecg_days': 14, 'effective': '2026-03-01', 'replaces': 'ecg30'}),
         'inr': b.memo('inr', D(2026, 3, 1), 'INR after warfarin dose changes',
                       'Effective 3/1/2026: after a warfarin dose change made by a Cardiology Clinic clinician or clinic pharmacist, obtain an INR within 7 days. '
                       'Dose changes are documented in the note that makes them; refills at an unchanged dose are not changes.',
@@ -526,6 +538,8 @@ def answers(b, memos):
          risk_factors={'set_one_of': [['AGE_65_74', 'HYPERTENSION'], ['AGE_65_74', 'HYPERTENSION', 'VASCULAR']]}, anticoagulant={'null': True})
     item('10004235', 'ANTICOAGULATION', 'UNTREATED_AF', ecg_fields=[], af_evidence={'subset_of': af_conditions('10004235')}, risk_score=ex(2),
          risk_factors={'set': ['CHF', 'HYPERTENSION']}, anticoagulant={'null': True})
+    item('10020306', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence={'subset_of': af_conditions('10020306')}, risk_score=ex(9),
+         risk_factors={'set': ['AGE_75_PLUS', 'CHF', 'DIABETES', 'FEMALE', 'HYPERTENSION', 'STROKE_TIA', 'VASCULAR']}, anticoagulant={'null': True})
     item('10004457', 'ANTICOAGULATION', 'ANTICOAGULANT_WITH_CONTRAINDICATION',
          anticoagulant={'one_of': current_orders(b, '10004457', 'Apixaban')}, contraindication=ex(k['10004457:bleed']))
     item('10014354', 'CONTRADICTION', 'DUAL_ANTICOAGULATION',
@@ -534,7 +548,8 @@ def answers(b, memos):
     rhythm_note = next(n[1] for n in b.notes_by_patient['10015272'] if 'normal sinus rhythm' in n[2])
     af_same_day = [e['study_id'] for e in b.catalog if e['subject_id'] == '10015272' and e['ecg_time'].startswith('2026-06-10')]
     item('10015272', 'CONTRADICTION', 'RHYTHM_DOCUMENTATION_CONFLICT', ecg_fields=['records'], records={'cover': [[rhythm_note], af_same_day]})
-    for s, ecg, drug in (('10023239', '104821039', 'Citalopram'), ('10004422', '106885519', 'Amiodarone'), ('10012853', '101515306', 'Amiodarone')):
+    for s, ecg, drug in (('10023239', '104821039', 'Citalopram'), ('10004422', '106885519', 'Amiodarone'), ('10012853', '101515306', 'Amiodarone'),
+                         ('10013049', '108018814', 'Escitalopram Oxalate')):
         t = b.truth[ecg]
         item(s, 'QT_SAFETY', 'PROLONGED_QTC_ON_WATCH_LIST_DRUG', ecg_fields=['ecg', 'qtc_ms', 'heart_rate'], ecg=ex(ecg), qtc_ms={'range': t['qtc_range']}, heart_rate={'range': t['hr_range']},
              qt_drug={'one_of': current_orders(b, s, drug)}, potassium=ex(latest_lab(b, s, '50971')), magnesium=ex(latest_lab(b, s, '50960')))
@@ -553,6 +568,7 @@ def answers(b, memos):
     fu('10022880', 'Citalopram', '2026-03-16', 'completed', 'ecg14', '104882441')
     fu('10021312', 'Escitalopram Oxalate', '2026-08-24', 'cannot_determine', 'ecg14')
     fu('10004422', 'Amiodarone', '2025-12-10', 'completed', 'ecg30', '106885519')
+    fu('10019385', 'Escitalopram Oxalate', '2026-03-14', 'completed', 'ecg30', '101538691')
     dose_note_16150 = next(n[1] for n in b.notes_by_patient['10016150'] if 'Increase warfarin' in n[2])
     item('10016150', 'FOLLOW_UP', 'INR_AFTER_WARFARIN_DOSE_CHANGE', status=ex('completed'), trigger=ex(dose_note_16150), requirement=ex(memos['inr']),
          due_date=ex('2026-09-08'), completion_record=ex(k['10016150:inr']))

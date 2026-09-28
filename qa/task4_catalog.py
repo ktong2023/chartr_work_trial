@@ -25,7 +25,7 @@ OUT = HERE / 'task4'
 BAD = re.compile(r'(?i)pac(ed|ing|emaker)|flutter|artifact|unsuitable|poor quality|baseline wander')
 
 # study_id -> edit. Current ECGs of QT cases; one older ECG (look-alike); artifact controls; noisy AF.
-QT_EDITS = {'104821039': 'current', '106885519': 'current', '101515306': 'current', '105362569': 'older'}
+QT_EDITS = {'104821039': 'current', '106885519': 'current', '101515306': 'current', '105362569': 'older', '108018814': 'current'}
 # 109419304 (motion, seed 12) was withdrawn after pilot 1: on that low-voltage tracing the artifact made the rhythm unreadable.
 ARTIFACTS = {'106825293': ('emg', 11), '101538691': ('wander', 13),
              '107859369': ('la_ra', 14), '108211642': ('wander', 15)}

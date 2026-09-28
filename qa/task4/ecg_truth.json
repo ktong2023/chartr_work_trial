@@ -1386,15 +1386,31 @@
   ]
  },
  "108018814": {
-  "label": "NORMAL",
-  "edit": null,
-  "hr_reads": {
-   "A": 68.3,
-   "nk": 68.2,
-   "machine": 67.0
+  "label": "QTC_PROLONGED",
+  "edit": "qt_lengthened:current",
+  "target_bazett": 585,
+  "qtc_reads": {
+   "II/A": 526.5,
+   "II/nk-dwt": 557.5,
+   "V5/A": 508.5,
+   "V5/nk-dwt": 581.7,
+   "V5/nk-cwt": 558.3
   },
+  "qtc_range": [
+   488.5,
+   601.7
+  ],
+  "hr_reads": {
+   "II/A": 68.3,
+   "II/nk-dwt": 68.2,
+   "II/nk-cwt": 68.2,
+   "V5/A": 68.3,
+   "V5/nk-dwt": 68.1,
+   "V5/nk-cwt": 68.1
+  },
+  "delta_ms": 156,
   "hr_range": [
-   62.0,
+   63.1,
    73.3
   ]
  },

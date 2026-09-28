@@ -66,6 +66,7 @@ def solve_all(shortcut=None):
     memo_id = lambda key, value: next(i for i, d in docs.items() if d.get(key) == value)
     inr_memo = next(i for i, d in docs.items() if 'inr_days' in d)
     items, findings = [], []
+    documented_ok = {n['ecg'] for n in READINGS['notes'].values() if n.get('qt_assessment') == 'acceptable'}  # shortcut only
     by_patient_ecgs = {}
     for e in ecgs:
         by_patient_ecgs.setdefault(e['patient'], []).append(e)
@@ -77,6 +78,8 @@ def solve_all(shortcut=None):
         # ECG finding on the most recent ECG (all patients)
         for cur in (pe if shortcut == 'every_ecg' else pe[-1:]):
             reading = READINGS['ecg'][cur['ecg']]
+            if shortcut == 'trust_documented_qt' and cur['ecg'] in documented_ok:
+                continue
             if reading['label'] in ('AF', 'QTC_PROLONGED'):
                 f = {'ecg': cur['ecg'], 'finding': reading['label'], 'heart_rate': reading['hr'], 'explanation': 'Most recent ECG.'}
                 if reading['label'] == 'QTC_PROLONGED': f['qtc_ms'] = reading['qtc_ms']
@@ -101,8 +104,10 @@ def solve_all(shortcut=None):
             return [o['id'] for o in rows if o['status'] != 'stopped' and end(o) and end(o) >= EVAL]
         anticoag = {d: current(d) for d in ANTICOAGULANTS if current(d)}
         codes = [(c['id'], c['code']['coding'][0]['code']) for c in conds]
+        charted = [o['id'] for o in search('Observation', patient=pid, code='220048') if re.match(r'^(AF|A Flut)', o.get('valueString') or '')]
         af_records = [cid for cid, code in codes if AF.match(code)] + \
-            ([] if shortcut == 'af_codes_only' else [e['ecg'] for e in pe if READINGS['ecg'][e['ecg']]['label'] == 'AF'])
+            ([] if shortcut == 'af_codes_only' else [e['ecg'] for e in pe if READINGS['ecg'][e['ecg']]['label'] == 'AF']) + \
+            ([] if shortcut in ('af_codes_only', 'no_charted_rhythm') else charted)
         # Stroke-risk factors
         birth = dt.date.fromisoformat(p['birthDate'])
         age = EVAL_DAY.year - birth.year - ((EVAL_DAY.month, EVAL_DAY.day) < (birth.month, birth.day))
@@ -125,7 +130,8 @@ def solve_all(shortcut=None):
                 if same:
                     item('CONTRADICTION', 'RHYTHM_DOCUMENTATION_CONFLICT', records=[n['id'], same[-1]])
         watch = {d: current(d) for d in rules['watch'] if current(d)}
-        if watch and pe and READINGS['ecg'][pe[-1]['ecg']]['label'] == 'QTC_PROLONGED':
+        if watch and pe and READINGS['ecg'][pe[-1]['ecg']]['label'] == 'QTC_PROLONGED' and not (
+                shortcut == 'trust_documented_qt' and pe[-1]['ecg'] in documented_ok):
             labs = lambda code: sorted((o for o in search('Observation', patient=pid, code=code) if o['effectiveDateTime'] <= EVAL),
                                        key=lambda o: o['effectiveDateTime'])
             drug = next(iter(watch))
