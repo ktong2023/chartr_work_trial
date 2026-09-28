@@ -349,3 +349,15 @@ Raw and rescored results are reported separately. Rescores are development evide
   | v0.3.5 (10 trials) | 1/10 | 4/10 retrospective, against v0.3.6 |
 
   v0.4.0 has not been piloted. The earlier snapshots cannot be rescored against it, because its QT-edited tracings differ.
+
+## Final pilot, v0.4.0 (frozen key, commit d1156b5)
+
+- `jobs/chartr/task4-0.4.0-1790626310`: **3/10** (3kzLb4o, dsn6HkF, iXuDhuL). All 10 runs valid, 33–49 min each, 50 min for the batch.
+- Every failure includes at least one genuine error:
+  - first-degree AV block missed on PR misreads (2 runs, their only failure);
+  - T waves counted as beats, giving wrong rates and one false AF;
+  - non-AF records cited as AF evidence;
+  - hidden AF missed;
+  - a transient RBBB resolution missed.
+- Two contested points (see TRIAGE.md) change no outcome: 10022017's prior-ECG rhythm, and an AF code as a corroborating
+  conflict record.
