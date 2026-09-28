@@ -1,0 +1,39 @@
+{
+    "id": "8fef83fb-c9cc-4152-ae7d-2b1af751ff0c",
+    "started_at": "2026-09-28T15:02:53.104308",
+    "updated_at": "2026-09-28T15:03:10.980484",
+    "finished_at": "2026-09-28T15:03:10.980484",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "nop__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "chartr_task4__c2pFw93"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

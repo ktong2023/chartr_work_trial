@@ -1,0 +1,300 @@
+Traceback (most recent call last):
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 415, in run
+    await self._prepare()
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 453, in _prepare
+    await self._setup_agent_environment()
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 1542, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 1548, in _start_agent_environment
+    await asyncio.wait_for(
+    ...<4 lines>...
+    )
+  File "/Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_environment.py", line 24, in start
+    await super().start(force_build=force_build)
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 981, in start
+    await self._run_docker_compose_command(["build"])
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 704, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment cardiology-population-review. Command: docker compose --project-name chartr_task4__vbjwg3d__env --project-directory /Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_task4/environment -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmpeiv1ra53/chartr_task4__vbJWg3D__env-docker-compose-resources.json -f /Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_task4/environment/docker-compose.yaml -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmpr8j9n_77/docker-compose-environment.json -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmppg30f284/docker-compose-mounts.json build. Return code: 1. Stdout:  Image chartr_task4__vbjwg3d__env-main Building 
+ Image chartr_task4__vbjwg3d__env-clinic Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.26kB done
+#1 DONE 0.0s
+
+#2 [clinic internal] load build definition from Dockerfile
+#2 transferring dockerfile: 736B done
+#2 DONE 0.0s
+
+#3 [main internal] load build definition from Dockerfile
+#3 transferring dockerfile: 555B done
+#3 DONE 0.0s
+
+#4 [main internal] load metadata for docker.io/library/python:3.13.7-slim-bookworm@sha256:adafcc17694d715c905b4c7bebd96907a1fd5cf183395f0ebc4d3428bd22d92d
+#4 DONE 0.0s
+
+#5 [clinic internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [main internal] load .dockerignore
+#6 transferring context: 99B done
+#6 DONE 0.0s
+
+#7 [clinic 1/7] FROM docker.io/library/python:3.13.7-slim-bookworm@sha256:adafcc17694d715c905b4c7bebd96907a1fd5cf183395f0ebc4d3428bd22d92d
+#7 CACHED
+
+#8 [main internal] load build context
+#8 transferring context: 9.66kB done
+#8 DONE 0.0s
+
+#9 [clinic internal] load build context
+#9 transferring context: 2.62MB 0.0s done
+#9 DONE 0.1s
+
+#10 [main 2/7] COPY agent-requirements.txt /tmp/agent-requirements.txt
+#10 DONE 0.0s
+
+#11 [main 3/7] RUN pip install --no-cache-dir -r /tmp/agent-requirements.txt && rm /tmp/agent-requirements.txt
+#11 1.012 Collecting aiohappyeyeballs==2.7.1 (from -r /tmp/agent-requirements.txt (line 1))
+#11 1.099   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+#11 ...
+
+#12 [clinic 2/7] RUN pip install --no-cache-dir tzdata==2026.4
+#12 1.067 Collecting tzdata==2026.4
+#12 1.175   Downloading tzdata-2026.4-py2.py3-none-any.whl.metadata (1.4 kB)
+#12 1.188 Downloading tzdata-2026.4-py2.py3-none-any.whl (347 kB)
+#12 1.288 Installing collected packages: tzdata
+#12 1.319 Successfully installed tzdata-2026.4
+#12 1.319 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#12 1.415 
+#12 1.415 [notice] A new release of pip is available: 25.2 -> 26.2.1
+#12 1.415 [notice] To update, run: pip install --upgrade pip
+#12 DONE 1.5s
+
+#13 [clinic 3/7] COPY fetch.py assemble.py /build/
+#13 DONE 0.0s
+
+#14 [clinic 4/7] COPY overlay /build/overlay
+#14 DONE 0.0s
+
+#11 [main 3/7] RUN pip install --no-cache-dir -r /tmp/agent-requirements.txt && rm /tmp/agent-requirements.txt
+#11 1.565 Collecting aiohttp==3.14.3 (from -r /tmp/agent-requirements.txt (line 2))
+#11 1.601   Downloading aiohttp-3.14.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (8.3 kB)
+#11 1.618 Collecting aiosignal==1.4.0 (from -r /tmp/agent-requirements.txt (line 3))
+#11 1.630   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+#11 1.660 Collecting attrs==26.1.0 (from -r /tmp/agent-requirements.txt (line 4))
+#11 1.681   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+#11 1.722 Collecting certifi==2026.7.22 (from -r /tmp/agent-requirements.txt (line 5))
+#11 1.738   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#11 1.936 Collecting cffi==2.1.1 (from -r /tmp/agent-requirements.txt (line 6))
+#11 2.008   Downloading cffi-2.1.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl.metadata (2.5 kB)
+#11 2.116 Collecting charset-normalizer==3.5.1 (from -r /tmp/agent-requirements.txt (line 7))
+#11 2.125   Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (45 kB)
+#11 2.149 Collecting cloudpickle==3.1.2 (from -r /tmp/agent-requirements.txt (line 8))
+#11 2.156   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#11 2.201 Collecting contourpy==1.4.0 (from -r /tmp/agent-requirements.txt (line 9))
+#11 2.222   Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl.metadata (3.8 kB)
+#11 2.232 Collecting cycler==0.12.1 (from -r /tmp/agent-requirements.txt (line 10))
+#11 2.535   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+#11 2.837 Collecting fonttools==4.66.0 (from -r /tmp/agent-requirements.txt (line 11))
+#11 2.859   Downloading fonttools-4.66.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (129 kB)
+#11 3.035 Collecting frozenlist==1.8.0 (from -r /tmp/agent-requirements.txt (line 12))
+#11 3.047   Downloading frozenlist-1.8.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (20 kB)
+#11 3.070 Collecting fsspec==2026.9.0 (from -r /tmp/agent-requirements.txt (line 13))
+#11 3.081   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#11 3.106 Collecting idna==3.20 (from -r /tmp/agent-requirements.txt (line 14))
+#11 3.115   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#11 3.431 Collecting joblib==1.6.0 (from -r /tmp/agent-requirements.txt (line 15))
+#11 3.581   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#11 3.816 Collecting kiwisolver==1.5.1 (from -r /tmp/agent-requirements.txt (line 16))
+#11 3.899   Downloading kiwisolver-1.5.1-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl.metadata (5.2 kB)
+#11 4.115 Collecting matplotlib==3.11.2 (from -r /tmp/agent-requirements.txt (line 17))
+#11 4.125   Downloading matplotlib-3.11.2-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl.metadata (80 kB)
+#11 4.374 Collecting multidict==6.9.1 (from -r /tmp/agent-requirements.txt (line 18))
+#11 4.384   Downloading multidict-6.9.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (5.3 kB)
+#11 4.424 Collecting narwhals==2.26.0 (from -r /tmp/agent-requirements.txt (line 19))
+#11 4.432   Downloading narwhals-2.26.0-py3-none-any.whl.metadata (15 kB)
+#11 4.465 Collecting neurokit2==0.2.13 (from -r /tmp/agent-requirements.txt (line 20))
+#11 4.477   Downloading neurokit2-0.2.13-py3-none-any.whl.metadata (27 kB)
+#11 4.707 Collecting numpy==2.5.3 (from -r /tmp/agent-requirements.txt (line 21))
+#11 4.723   Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+#11 4.745 Collecting packaging==26.3 (from -r /tmp/agent-requirements.txt (line 22))
+#11 4.778   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#11 5.023 Collecting pandas==2.3.3 (from -r /tmp/agent-requirements.txt (line 23))
+#11 5.037   Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl.metadata (91 kB)
+#11 5.224 Collecting pillow==12.3.0 (from -r /tmp/agent-requirements.txt (line 24))
+#11 5.231   Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (9.1 kB)
+#11 5.331 Collecting propcache==0.5.4 (from -r /tmp/agent-requirements.txt (line 25))
+#11 5.339   Downloading propcache-0.5.4-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (25 kB)
+#11 5.355 Collecting pycparser==3.0 (from -r /tmp/agent-requirements.txt (line 26))
+#11 5.362   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+#11 5.385 Collecting pyparsing==3.3.3 (from -r /tmp/agent-requirements.txt (line 27))
+#11 5.393   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+#11 5.407 Collecting python-dateutil==2.9.0.post0 (from -r /tmp/agent-requirements.txt (line 28))
+#11 5.416   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+#11 5.447 Collecting pytz==2026.4 (from -r /tmp/agent-requirements.txt (line 29))
+#11 5.454   Downloading pytz-2026.4-py2.py3-none-any.whl.metadata (22 kB)
+#11 5.498 Collecting PyWavelets==1.10.0 (from -r /tmp/agent-requirements.txt (line 30))
+#11 5.517   Downloading pywavelets-1.10.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (7.6 kB)
+#11 5.537 Collecting requests==2.34.2 (from -r /tmp/agent-requirements.txt (line 31))
+#11 5.546   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#11 5.613 Collecting scikit-learn==1.9.1 (from -r /tmp/agent-requirements.txt (line 32))
+#11 5.620   Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (9.3 kB)
+#11 5.715 Collecting scipy==1.18.1 (from -r /tmp/agent-requirements.txt (line 33))
+#11 5.726   Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (62 kB)
+#11 5.756 Collecting six==1.17.0 (from -r /tmp/agent-requirements.txt (line 34))
+#11 5.766   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+#11 5.777 Collecting soundfile==0.14.0 (from -r /tmp/agent-requirements.txt (line 35))
+#11 5.793   Downloading soundfile-0.14.0-py2.py3-none-manylinux_2_28_aarch64.whl.metadata (18 kB)
+#11 5.816 Collecting threadpoolctl==3.7.0 (from -r /tmp/agent-requirements.txt (line 36))
+#11 5.822   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+#11 5.837 Collecting typing_extensions==4.16.0 (from -r /tmp/agent-requirements.txt (line 37))
+#11 5.852   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#11 5.881 Collecting tzdata==2026.4 (from -r /tmp/agent-requirements.txt (line 38))
+#11 5.888   Downloading tzdata-2026.4-py2.py3-none-any.whl.metadata (1.4 kB)
+#11 5.905 Collecting urllib3==2.8.0 (from -r /tmp/agent-requirements.txt (line 39))
+#11 5.912   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#11 5.940 Collecting wfdb==4.3.1 (from -r /tmp/agent-requirements.txt (line 40))
+#11 5.949   Downloading wfdb-4.3.1-py3-none-any.whl.metadata (3.8 kB)
+#11 6.160 Collecting yarl==1.25.1 (from -r /tmp/agent-requirements.txt (line 41))
+#11 6.171   Downloading yarl-1.25.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (111 kB)
+#11 6.305 Collecting setuptools<82.0.0 (from neurokit2==0.2.13->-r /tmp/agent-requirements.txt (line 20))
+#11 6.313   Downloading setuptools-81.0.0-py3-none-any.whl.metadata (6.6 kB)
+#11 6.377 Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+#11 6.395 Downloading aiohttp-3.14.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (1.8 MB)
+#11 6.663    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 6.2 MB/s  0:00:00
+#11 6.675 Downloading multidict-6.9.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (332 kB)
+#11 6.767 Downloading yarl-1.25.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (115 kB)
+#11 6.832 Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+#11 6.851 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+#11 6.865 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#11 6.889 Downloading cffi-2.1.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (222 kB)
+#11 6.938 Downloading charset_normalizer-3.5.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (240 kB)
+#11 7.024 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#11 7.042 Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (356 kB)
+#11 7.136 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+#11 7.150 Downloading fonttools-4.66.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (5.4 MB)
+#11 7.864    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 7.5 MB/s  0:00:00
+#11 7.877 Downloading frozenlist-1.8.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (233 kB)
+#11 7.934 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#11 7.974 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#11 7.994 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#11 8.039 Downloading kiwisolver-1.5.1-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (1.3 MB)
+#11 8.215    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 7.2 MB/s  0:00:00
+#11 8.230 Downloading matplotlib-3.11.2-cp313-cp313-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (10.7 MB)
+#11 10.13    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 5.7 MB/s  0:00:01
+#11 10.14 Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
+#11 10.26 Downloading neurokit2-0.2.13-py3-none-any.whl (688 kB)
+#11 10.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 688.9/688.9 kB 6.7 MB/s  0:00:00
+#11 10.37 Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (11.7 MB)
+#11 ...
+
+#15 [clinic 5/7] RUN python /build/fetch.py /build/overlay/pinned.sha256 /src  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg  && rm -rf /src /build && chmod -R a-w /data
+#15 ...
+
+#11 [main 3/7] RUN pip install --no-cache-dir -r /tmp/agent-requirements.txt && rm /tmp/agent-requirements.txt
+#11 11.97    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.7/11.7 MB 7.4 MB/s  0:00:01
+#11 11.98 Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+#11 15.26    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 4.8 MB/s  0:00:03
+#11 15.28 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#11 15.34 Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (6.3 MB)
+#11 16.59    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 5.1 MB/s  0:00:01
+#11 16.60 Downloading propcache-0.5.4-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (233 kB)
+#11 16.68 Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+#11 16.71 Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+#11 16.74 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+#11 16.78 Downloading pytz-2026.4-py2.py3-none-any.whl (506 kB)
+#11 16.87 Downloading pywavelets-1.10.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (4.4 MB)
+#11 17.54    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 6.6 MB/s  0:00:00
+#11 17.55 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#11 17.57 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#11 17.62 Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (8.8 MB)
+#11 19.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 5.3 MB/s  0:00:01
+#11 19.29 Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (34.0 MB)
+#11 27.89    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.0/34.0 MB 4.0 MB/s  0:00:08
+#11 27.92 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#11 27.93 Downloading soundfile-0.14.0-py2.py3-none-manylinux_2_28_aarch64.whl (1.2 MB)
+#11 28.15    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 5.7 MB/s  0:00:00
+#11 28.17 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+#11 28.18 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#11 28.20 Downloading tzdata-2026.4-py2.py3-none-any.whl (347 kB)
+#11 28.26 Downloading wfdb-4.3.1-py3-none-any.whl (163 kB)
+#11 28.29 Downloading setuptools-81.0.0-py3-none-any.whl (1.1 MB)
+#11 28.43    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 7.6 MB/s  0:00:00
+#11 28.63 Installing collected packages: pytz, urllib3, tzdata, typing_extensions, threadpoolctl, six, setuptools, pyparsing, pycparser, propcache, pillow, packaging, numpy, narwhals, multidict, kiwisolver, idna, fsspec, frozenlist, fonttools, cycler, cloudpickle, charset-normalizer, certifi, attrs, aiohappyeyeballs, yarl, scipy, requests, PyWavelets, python-dateutil, joblib, contourpy, cffi, aiosignal, soundfile, scikit-learn, pandas, matplotlib, aiohttp, wfdb, neurokit2
+#11 37.97 
+#11 37.97 Successfully installed PyWavelets-1.10.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 attrs-26.1.0 certifi-2026.7.22 cffi-2.1.1 charset-normalizer-3.5.1 cloudpickle-3.1.2 contourpy-1.4.0 cycler-0.12.1 fonttools-4.66.0 frozenlist-1.8.0 fsspec-2026.9.0 idna-3.20 joblib-1.6.0 kiwisolver-1.5.1 matplotlib-3.11.2 multidict-6.9.1 narwhals-2.26.0 neurokit2-0.2.13 numpy-2.5.3 packaging-26.3 pandas-2.3.3 pillow-12.3.0 propcache-0.5.4 pycparser-3.0 pyparsing-3.3.3 python-dateutil-2.9.0.post0 pytz-2026.4 requests-2.34.2 scikit-learn-1.9.1 scipy-1.18.1 setuptools-81.0.0 six-1.17.0 soundfile-0.14.0 threadpoolctl-3.7.0 typing_extensions-4.16.0 tzdata-2026.4 urllib3-2.8.0 wfdb-4.3.1 yarl-1.25.1
+#11 37.97 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#11 38.06 
+#11 38.06 [notice] A new release of pip is available: 25.2 -> 26.2.1
+#11 38.06 [notice] To update, run: pip install --upgrade pip
+#11 DONE 39.0s
+
+#15 [clinic 5/7] RUN python /build/fetch.py /build/overlay/pinned.sha256 /src  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg  && rm -rf /src /build && chmod -R a-w /data
+#15 ...
+
+#16 [main 4/7] COPY public/clinic.py /usr/local/bin/clinic
+#16 DONE 0.1s
+
+#17 [main 5/7] COPY public/tools.md public/policy.md /app/
+#17 DONE 0.0s
+
+#18 [main 6/7] RUN chmod 755 /usr/local/bin/clinic && chmod 644 /app/*.md
+#18 DONE 0.1s
+
+#19 [main 7/7] WORKDIR /app
+#19 DONE 0.0s
+
+#20 [main] exporting to image
+#20 exporting layers
+#20 exporting layers 1.0s done
+#20 writing image sha256:c6c6f7d581359ed2cda8780fd0c7eeac72c892d22e612e0240d5bef3d829a687 done
+#20 naming to docker.io/library/chartr_task4__vbjwg3d__env-main done
+#20 DONE 1.0s
+
+#21 [main] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#15 [clinic 5/7] RUN python /build/fetch.py /build/overlay/pinned.sha256 /src  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg  && rm -rf /src /build && chmod -R a-w /data
+#15 518.8 Traceback (most recent call last):
+#15 518.8   File "/build/assemble.py", line 169, in <module>
+#15 518.8     print(build(*sys.argv[1:6]))
+#15 518.8           ~~~~~^^^^^^^^^^^^^^^^
+#15 518.8   File "/build/assemble.py", line 99, in build
+#15 518.8     db = sqlite3.connect(out_db)
+#15 518.8 sqlite3.OperationalError: unable to open database file
+#15 ERROR: process "/bin/sh -c python /build/fetch.py /build/overlay/pinned.sha256 /src  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg  && rm -rf /src /build && chmod -R a-w /data" did not complete successfully: exit code: 1
+------
+ > [clinic 5/7] RUN python /build/fetch.py /build/overlay/pinned.sha256 /src  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg  && rm -rf /src /build && chmod -R a-w /data:
+518.8 Traceback (most recent call last):
+518.8   File "/build/assemble.py", line 169, in <module>
+518.8     print(build(*sys.argv[1:6]))
+518.8           ~~~~~^^^^^^^^^^^^^^^^
+518.8   File "/build/assemble.py", line 99, in build
+518.8     db = sqlite3.connect(out_db)
+518.8 sqlite3.OperationalError: unable to open database file
+------
+Dockerfile:6
+
+--------------------
+
+   5 |     COPY overlay /build/overlay
+
+   6 | >>> RUN python /build/fetch.py /build/overlay/pinned.sha256 /src \
+
+   7 | >>>  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg \
+
+   8 | >>>  && rm -rf /src /build && chmod -R a-w /data
+
+   9 |     COPY store.py server.py control.py /app/
+
+--------------------
+
+target clinic: failed to solve: process "/bin/sh -c python /build/fetch.py /build/overlay/pinned.sha256 /src  && python /build/assemble.py /src/mimic-iv-fhir-demo/2.1.0/fhir /src/mimic-iv-ecg-demo/0.1 /build/overlay /data/sources.sqlite /data/ecg  && rm -rf /src /build && chmod -R a-w /data" did not complete successfully: exit code: 1
+
+. Stderr: None. 

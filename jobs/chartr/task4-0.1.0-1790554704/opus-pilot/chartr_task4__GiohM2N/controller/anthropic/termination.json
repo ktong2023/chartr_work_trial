@@ -1,0 +1,13 @@
+{
+  "reason": "tool_timeout",
+  "validity": "valid",
+  "turns": 5,
+  "usage": {
+    "input_tokens": 22048,
+    "output_tokens": 1026,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0
+  },
+  "model": "claude-opus-5",
+  "elapsed_sec": 78.936928
+}

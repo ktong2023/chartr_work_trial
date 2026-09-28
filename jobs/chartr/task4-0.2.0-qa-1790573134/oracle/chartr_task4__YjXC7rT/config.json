@@ -1,0 +1,11 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__YjXC7rT",
+    "trials_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.2.0-qa-1790573134/oracle",
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "0cb2598d-3408-4a35-8082-a7eb5273cdf2"
+}

@@ -1,0 +1,14 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__c2pFw93",
+    "trials_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.3.6-qa-1790622103/nop",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "8fef83fb-c9cc-4152-ae7d-2b1af751ff0c"
+}

@@ -1,0 +1,18 @@
+{
+    "job_name": "nop",
+    "jobs_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.4.0-qa-dbg",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "chartr_task4"
+        }
+    ]
+}

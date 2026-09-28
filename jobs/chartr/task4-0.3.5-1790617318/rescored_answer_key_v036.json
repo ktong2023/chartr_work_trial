@@ -1,0 +1,97 @@
+{
+ "chartr_task4__AjuVnrX": {
+  "reward": 1,
+  "failing": [],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__CWvWGfY": {
+  "reward": 0,
+  "failing": [
+   "identification",
+   "item_fields"
+  ],
+  "missing": [
+   "27980ad8:UNTREATED_AF",
+   "568cb149:UNTREATED_AF"
+  ],
+  "extra": []
+ },
+ "chartr_task4__DE4VRou": {
+  "reward": 0,
+  "failing": [
+   "ecg_interpretation",
+   "ecg_comparison"
+  ],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__DiZKdkA": {
+  "reward": 1,
+  "failing": [],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__Murt73D": {
+  "reward": 1,
+  "failing": [],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__bW86LAh": {
+  "reward": 0,
+  "failing": [
+   "identification",
+   "ecg_interpretation"
+  ],
+  "missing": [],
+  "extra": [
+   "c0d83ad6:PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+  ]
+ },
+ "chartr_task4__e8mpFxN": {
+  "reward": 0,
+  "failing": [
+   "identification",
+   "item_fields",
+   "ecg_interpretation",
+   "ecg_comparison"
+  ],
+  "missing": [
+   "568cb149:UNTREATED_AF"
+  ],
+  "extra": []
+ },
+ "chartr_task4__rfo6TJY": {
+  "reward": 0,
+  "failing": [
+   "identification",
+   "item_fields",
+   "ecg_comparison",
+   "ecg_linkage"
+  ],
+  "missing": [
+   "23069939:PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+  ],
+  "extra": []
+ },
+ "chartr_task4__uKBCStc": {
+  "reward": 0,
+  "failing": [
+   "identification",
+   "item_fields",
+   "ecg_interpretation",
+   "ecg_linkage"
+  ],
+  "missing": [
+   "568cb149:UNTREATED_AF"
+  ],
+  "extra": []
+ },
+ "chartr_task4__xZFJm4f": {
+  "reward": 1,
+  "failing": [],
+  "missing": [],
+  "extra": []
+ }
+}

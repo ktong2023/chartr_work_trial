@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "version": "chartr-task4-0.4.0",
+    "evaluation_time": "2026-09-24T12:00:00-04:00",
+    "sources_digest": "01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b",
+    "nonce": "c3445341-809b-479e-82a6-7f0d5f9798a8",
+    "trial_id": "d3efc36b-d5a0-40a6-a96b-4050424ec031",
+    "frozen": true,
+    "faults": 0,
+    "next_item": 1,
+    "next_interpretation": 1
+  },
+  "items": [],
+  "interpretations": [],
+  "audit": []
+}

@@ -1,0 +1,970 @@
+{
+  "validity": "valid",
+  "reward": 0,
+  "components": {
+    "identification": false,
+    "item_fields": false,
+    "ecg_interpretation": false,
+    "ecg_comparison": false,
+    "ecg_linkage": false,
+    "chart_rules": false
+  },
+  "identification": {
+    "missing": [
+      [
+        "23069939-0c4c-517b-a3ec-baae0d4e3988",
+        "QT_SAFETY",
+        "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+      ],
+      [
+        "27980ad8-77b7-5360-b211-bf4fac9c468c",
+        "ANTICOAGULATION",
+        "UNTREATED_AF"
+      ],
+      [
+        "568cb149-804c-59e8-bdf5-816e8151cd22",
+        "ANTICOAGULATION",
+        "UNTREATED_AF"
+      ],
+      [
+        "bbad4581-d089-54a7-b7a0-8d986c5fb5ec",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "c0d83ad6-0b65-5fd6-b241-f50cf552232c",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ]
+    ],
+    "extra": [],
+    "duplicates": []
+  },
+  "items": {
+    "b9a9ae7b-2455-59fe-938d-ce19ef360dd1|ANTICOAGULATION|UNTREATED_AF": {
+      "present": true,
+      "af_evidence": false,
+      "risk_score": true,
+      "risk_factors": true,
+      "anticoagulant": true
+    },
+    "86bce885-4646-59f1-8f95-d92545376ce6|ANTICOAGULATION|UNTREATED_AF": {
+      "present": true,
+      "af_evidence": true,
+      "risk_score": true,
+      "risk_factors": true,
+      "anticoagulant": true
+    },
+    "568cb149-804c-59e8-bdf5-816e8151cd22|ANTICOAGULATION|UNTREATED_AF": {
+      "present": false
+    },
+    "27980ad8-77b7-5360-b211-bf4fac9c468c|ANTICOAGULATION|UNTREATED_AF": {
+      "present": false
+    },
+    "b410dd44-7d65-56f9-974f-2751e8aa80e2|ANTICOAGULATION|ANTICOAGULANT_WITH_CONTRAINDICATION": {
+      "present": true,
+      "anticoagulant": false,
+      "contraindication": true
+    },
+    "cb70e6ae-90b1-562b-8ab0-467c65d18d5e|CONTRADICTION|DUAL_ANTICOAGULATION": {
+      "present": true,
+      "records": false
+    },
+    "5f74c4bf-681e-5123-ab4d-225c72be4f9f|CONTRADICTION|RHYTHM_DOCUMENTATION_CONFLICT": {
+      "present": true,
+      "records": true
+    },
+    "bc2a74ce-4069-5983-9423-1c175f7854d9|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": true,
+      "ecg": true,
+      "qtc_ms": true,
+      "heart_rate": true,
+      "qt_drug": false,
+      "potassium": true,
+      "magnesium": true
+    },
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": true,
+      "ecg": true,
+      "qtc_ms": true,
+      "heart_rate": true,
+      "qt_drug": false,
+      "potassium": true,
+      "magnesium": true
+    },
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": true,
+      "ecg": true,
+      "qtc_ms": true,
+      "heart_rate": true,
+      "qt_drug": false,
+      "potassium": true,
+      "magnesium": true
+    },
+    "23069939-0c4c-517b-a3ec-baae0d4e3988|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": false
+    },
+    "752d15e2-bd27-52ed-b055-ed79edb86aba|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": true
+    },
+    "7ec7078a-0593-5a99-9862-ebbff47fd1c5|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": true
+    },
+    "bbad4581-d089-54a7-b7a0-8d986c5fb5ec|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "13df78e7-150e-5eb7-be5f-5f62b2baee87|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": true
+    },
+    "e7e213ac-81c0-5c7f-8d57-81519132353e|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": false
+    },
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": true
+    },
+    "c0d83ad6-0b65-5fd6-b241-f50cf552232c|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": true
+    },
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": {
+      "present": true,
+      "status": true,
+      "trigger": true,
+      "requirement": true,
+      "due_date": true,
+      "completion_record": true
+    }
+  },
+  "ecg_interpretation": {
+    "checks": {
+      "10005866|105060792": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10022880|104882441": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10032725|103879393": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": false,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10015860|105523266": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10013049|108018814": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10025463|102295353": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10007795|109218019": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10009035|109661561": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10005348|107158938": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10021487|101901982": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": false,
+        "qtc_ms": false,
+        "axis": false,
+        "conduction": false
+      },
+      "10004422|106885519": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10035631|103521932": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10009628|109287357": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10004235|108195884": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10038999|105862861": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": false,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": false
+      },
+      "10015272|103088543": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10018328|103992480": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10009049|107627609": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10007818|107399137": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10039831|106035722": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10019172|108912996": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10003400|101771242": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10024043|100913766": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10029291|104253928": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10014078|106565956": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10037861|101744645": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10039708|109952008": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10026255|105375026": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10019003|103857061": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10007058|102280728": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10023117|102531404": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10022017|108211642": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10005817|107674864": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10002930|109795468": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": false,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": false
+      },
+      "10001217|102172660": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10020944|100849868": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10040025|104330494": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10020187|106825293": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10004457|102853474": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10039997|102298909": {
+        "present": true,
+        "rhythm": false,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": false,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10018423|107859369": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10023239|104821039": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10019385|101538691": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10011398|107689861": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10014354|100924231": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      },
+      "10035185|102888469": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10018081|109757556": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10010471|105789995": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10002428|103036945": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10038992|104941853": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": false,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": false
+      },
+      "10014729|107457843": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10025612|109419304": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10015931|107841896": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10012853|101515306": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": true,
+        "axis": true,
+        "conduction": true
+      },
+      "10037928|101524902": {
+        "present": true,
+        "rhythm": true,
+        "ventricular_rate": true,
+        "qrs_ms": true,
+        "pr_ms": true,
+        "qtc_ms": false,
+        "axis": true,
+        "conduction": true
+      }
+    },
+    "extra": [],
+    "duplicates": []
+  },
+  "ecg_comparison": {
+    "10005866|105060792": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10022880|104882441": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10032725|103879393": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10015860|105523266": {
+      "prior_ecg": true,
+      "changes": false
+    },
+    "10013049|108018814": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10025463|102295353": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10007795|109218019": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10009035|109661561": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10005348|107158938": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10021487|101901982": {
+      "prior_ecg": true,
+      "changes": false
+    },
+    "10004422|106885519": {
+      "prior_ecg": true,
+      "changes": false
+    },
+    "10035631|103521932": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10009628|109287357": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10004235|108195884": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10038999|105862861": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10015272|103088543": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10018328|103992480": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10009049|107627609": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10007818|107399137": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10039831|106035722": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10019172|108912996": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10003400|101771242": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10024043|100913766": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10029291|104253928": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10014078|106565956": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10037861|101744645": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10039708|109952008": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10026255|105375026": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10019003|103857061": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10007058|102280728": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10023117|102531404": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10022017|108211642": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10005817|107674864": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10002930|109795468": {
+      "prior_ecg": true,
+      "changes": false
+    },
+    "10001217|102172660": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10020944|100849868": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10040025|104330494": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10020187|106825293": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10004457|102853474": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10039997|102298909": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10018423|107859369": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10023239|104821039": {
+      "prior_ecg": true,
+      "changes": false
+    },
+    "10019385|101538691": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10011398|107689861": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10014354|100924231": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10035185|102888469": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10018081|109757556": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10010471|105789995": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10002428|103036945": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10038992|104941853": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10014729|107457843": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10025612|109419304": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10015931|107841896": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10012853|101515306": {
+      "prior_ecg": true,
+      "changes": true
+    },
+    "10037928|101524902": {
+      "prior_ecg": true,
+      "changes": true
+    }
+  },
+  "ecg_linkage": {
+    "5f74c4bf-681e-5123-ab4d-225c72be4f9f|CONTRADICTION|RHYTHM_DOCUMENTATION_CONFLICT": true,
+    "bc2a74ce-4069-5983-9423-1c175f7854d9|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": true,
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": true,
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": true,
+    "23069939-0c4c-517b-a3ec-baae0d4e3988|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": false,
+    "13df78e7-150e-5eb7-be5f-5f62b2baee87|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": true,
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": true,
+    "c0d83ad6-0b65-5fd6-b241-f50cf552232c|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false
+  },
+  "chart_rules": {
+    "752d15e2-bd27-52ed-b055-ed79edb86aba|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": true,
+    "7ec7078a-0593-5a99-9862-ebbff47fd1c5|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": true,
+    "bbad4581-d089-54a7-b7a0-8d986c5fb5ec|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "13df78e7-150e-5eb7-be5f-5f62b2baee87|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": true,
+    "e7e213ac-81c0-5c7f-8d57-81519132353e|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": true,
+    "c0d83ad6-0b65-5fd6-b241-f50cf552232c|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": true,
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": true
+  },
+  "narrative_limit": "Explanations are not graded; structured basis fields carry the reasoning."
+}

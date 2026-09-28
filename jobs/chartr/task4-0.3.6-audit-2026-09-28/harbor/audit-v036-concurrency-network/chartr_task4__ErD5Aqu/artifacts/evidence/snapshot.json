@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "version": "chartr-task4-0.3.6",
+    "evaluation_time": "2026-09-24T12:00:00-04:00",
+    "sources_digest": "943ae701cc34eedae62287c347fe982cb660f0f858886d1880af7cb5a3889300",
+    "nonce": "cae90335-0cc2-4b40-ba60-cab65a9ce3fb",
+    "trial_id": "ca5e5208-db05-457f-a44d-b4eeb0feb7d3",
+    "frozen": true,
+    "faults": 0,
+    "next_item": 1,
+    "next_interpretation": 1
+  },
+  "items": [],
+  "interpretations": [],
+  "audit": [
+    {
+      "seq": 1,
+      "method": "POST",
+      "path": "/reset",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 2,
+      "method": "POST",
+      "path": "/admin",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 3,
+      "method": "POST",
+      "path": "/export",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 4,
+      "method": "POST",
+      "path": "/grade",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 5,
+      "method": "POST",
+      "path": "/records/S01",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 6,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 7,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 8,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 9,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 10,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 11,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 12,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 13,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 14,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 15,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    }
+  ]
+}

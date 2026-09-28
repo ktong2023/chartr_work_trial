@@ -1,0 +1,11 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__BqXCYsA",
+    "trials_dir": "/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs/audit-v036-oracle",
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "964340ae-914e-437d-afc7-69a46622f01e"
+}

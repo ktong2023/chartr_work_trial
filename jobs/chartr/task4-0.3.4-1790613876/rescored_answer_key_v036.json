@@ -1,0 +1,50 @@
+{
+ "chartr_task4__4QuGdYm": {
+  "reward": 0,
+  "failing": [
+   "identification",
+   "item_fields"
+  ],
+  "missing": [
+   "27980ad8:UNTREATED_AF",
+   "568cb149:UNTREATED_AF"
+  ],
+  "extra": []
+ },
+ "chartr_task4__SFVnfVD": {
+  "reward": 0,
+  "failing": [
+   "item_fields",
+   "ecg_interpretation",
+   "ecg_linkage",
+   "chart_rules"
+  ],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__t64gpFo": {
+  "reward": 0,
+  "failing": [
+   "item_fields",
+   "ecg_interpretation"
+  ],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__xCZrGaw": {
+  "reward": 1,
+  "failing": [],
+  "missing": [],
+  "extra": []
+ },
+ "chartr_task4__z42axUz": {
+  "reward": 0,
+  "failing": [
+   "identification"
+  ],
+  "missing": [],
+  "extra": [
+   "c0d83ad6:PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+  ]
+ }
+}

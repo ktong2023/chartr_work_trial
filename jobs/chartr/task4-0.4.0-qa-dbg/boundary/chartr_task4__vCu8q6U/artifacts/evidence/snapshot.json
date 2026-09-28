@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "version": "chartr-task4-0.4.0",
+    "evaluation_time": "2026-09-24T12:00:00-04:00",
+    "sources_digest": "01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b",
+    "nonce": "160fc122-af44-4c61-8caa-92b8bc95a233",
+    "trial_id": "a004039a-1996-4820-a7e9-a1a54af9279d",
+    "frozen": true,
+    "faults": 0,
+    "next_item": 1,
+    "next_interpretation": 1
+  },
+  "items": [],
+  "interpretations": [],
+  "audit": [
+    {
+      "seq": 1,
+      "method": "POST",
+      "path": "/reset",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 2,
+      "method": "POST",
+      "path": "/admin",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 3,
+      "method": "POST",
+      "path": "/export",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 4,
+      "method": "POST",
+      "path": "/grade",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 5,
+      "method": "POST",
+      "path": "/records/S01",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    }
+  ]
+}

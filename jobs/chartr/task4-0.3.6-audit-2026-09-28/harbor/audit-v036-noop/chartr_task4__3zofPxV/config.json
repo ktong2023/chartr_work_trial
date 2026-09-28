@@ -1,0 +1,14 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__3zofPxV",
+    "trials_dir": "/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs/audit-v036-noop",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "a1006b02-8ded-482a-8f46-d92bb632c61c"
+}

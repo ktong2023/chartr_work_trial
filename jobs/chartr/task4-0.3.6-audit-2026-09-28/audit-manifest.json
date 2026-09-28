@@ -1,0 +1,12 @@
+{
+  "source_commit": "f425cf028b3fcffb96789ec784da064618ec84a6",
+  "task_version": "0.3.6",
+  "pilot_commit": "d86dabb",
+  "pilot_batch": "task4-0.3.5-1790617318",
+  "source_digest": "943ae701cc34eedae62287c347fe982cb660f0f858886d1880af7cb5a3889300",
+  "scratch_root": "/tmp/chartr-task4-v036-audit.A9xR9P",
+  "no_paid_calls": true,
+  "existing_tests": "12 methods completed in interrupted suite, final wrong-algorithm method rerun separately and passed; 13/13 methods passed",
+  "counterexamples_scope": "Direct grader unit fixtures, not agent-forged trusted evidence or clinical ground truth",
+  "probe_scope": "Fresh Harbor runtime network/concurrency and private-boundary checks"
+}

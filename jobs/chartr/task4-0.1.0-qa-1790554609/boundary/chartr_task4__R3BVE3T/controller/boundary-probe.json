@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "Private files, admin routes, source writes, credentials and Docker socket inaccessible; forgery planted.\n",
+  "stderr": null
+}

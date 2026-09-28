@@ -1,0 +1,25 @@
+test_wrong_algorithms_fail (qa.test_task4.Task4Tests.test_wrong_algorithms_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 27.166s
+
+OK
+
+wrong algorithm -> failing components
+  af_codes_only              identification, item_fields
+  include_deceased           identification
+  any_order_current          identification, item_fields
+  earliest_ecg               ecg_comparison, ecg_interpretation, ecg_linkage, identification, item_fields
+  every_ecg                  ecg_interpretation
+  any_location               chart_rules, ecg_linkage, identification, item_fields
+  first_memo_forever         chart_rules, identification, item_fields
+  latest_memo_always         chart_rules, ecg_linkage, identification, item_fields
+  ecg_before_start_counts    chart_rules, ecg_linkage, item_fields
+  ignore_unreceived          chart_rules, item_fields
+  mention_is_dose_change     chart_rules, identification
+  no_charted_rhythm          identification, item_fields
+  trust_documented_qt        ecg_interpretation, ecg_linkage, identification, item_fields
+  no_comparison              ecg_comparison
+  prior_earliest             ecg_comparison
+  no_conduction              ecg_interpretation
+  rhythm_any_day             identification

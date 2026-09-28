@@ -1,0 +1,18 @@
+{
+    "job_name": "boundary",
+    "jobs_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790554609",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "agents": [
+        {
+            "import_path": "qa.agents:BoundaryProbe"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "chartr_task4"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+ok    task.toml version is 0.3.6
+ok    service version is chartr-task4-0.3.6
+ok    baseline version is chartr-task4-0.3.6
+ok    every catalogued ECG file is pinned
+ok    answer key has items and interpretations
+ok    chartr_task4/ has no uncommitted changes
+ok    adapter supports --ak prompt_cache=true
+ok    no other ChartR trial containers running
+commit ; 20 items, 37 interpretations; docker 0 CPUs 0 bytes

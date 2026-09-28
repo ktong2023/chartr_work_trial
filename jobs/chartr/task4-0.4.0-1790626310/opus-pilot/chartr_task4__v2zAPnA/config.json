@@ -1,0 +1,23 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__v2zAPnA",
+    "trials_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.4.0-1790626310/opus-pilot",
+    "agent": {
+        "name": "anthropic_agent:AnthropicAgent",
+        "model_name": "claude-opus-5",
+        "kwargs": {
+            "max_turns": 300,
+            "max_tokens": 64000,
+            "api_timeout_sec": 1800,
+            "wall_timeout_sec": 7000,
+            "tool_timeout_sec": 900,
+            "prompt_cache": true
+        }
+    },
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "2aaa97b2-2119-4fc3-870e-79c77443e950"
+}

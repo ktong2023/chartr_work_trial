@@ -1,0 +1,452 @@
+{
+  "metadata": {
+    "version": "chartr-task4-0.4.0",
+    "evaluation_time": "2026-09-24T12:00:00-04:00",
+    "sources_digest": "01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b",
+    "nonce": "10955d30-35b2-4b05-8eae-7936698874d0",
+    "trial_id": "c0b292ce-f753-4bf0-87ce-32524da185df",
+    "frozen": true,
+    "faults": 0,
+    "next_item": 1,
+    "next_interpretation": 1
+  },
+  "items": [],
+  "interpretations": [],
+  "audit": [
+    {
+      "seq": 1,
+      "method": "POST",
+      "path": "/reset",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 2,
+      "method": "POST",
+      "path": "/admin",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 3,
+      "method": "POST",
+      "path": "/export",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 4,
+      "method": "POST",
+      "path": "/grade",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 5,
+      "method": "POST",
+      "path": "/records/S01",
+      "status": 400,
+      "arguments": {},
+      "before": {
+        "items": [],
+        "interpretations": []
+      },
+      "after": {
+        "items": [],
+        "interpretations": []
+      }
+    },
+    {
+      "seq": 6,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 7,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 8,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 9,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 10,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 11,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 12,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 13,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 14,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 15,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 16,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 17,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 18,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 19,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 20,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 21,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 22,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 23,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 24,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 25,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 26,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 27,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 28,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 29,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 30,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 31,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 32,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 33,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 34,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 35,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 36,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 37,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 38,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 39,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 40,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 41,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 42,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 43,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 44,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    },
+    {
+      "seq": 45,
+      "method": "GET",
+      "path": "/ecg",
+      "status": 200,
+      "arguments": null,
+      "before": null,
+      "after": null
+    }
+  ]
+}

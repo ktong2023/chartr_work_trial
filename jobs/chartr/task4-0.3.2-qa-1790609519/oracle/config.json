@@ -1,0 +1,13 @@
+{
+    "job_name": "oracle",
+    "jobs_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.3.2-qa-1790609519",
+    "n_concurrent_trials": 1,
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "tasks": [
+        {
+            "path": "chartr_task4"
+        }
+    ]
+}

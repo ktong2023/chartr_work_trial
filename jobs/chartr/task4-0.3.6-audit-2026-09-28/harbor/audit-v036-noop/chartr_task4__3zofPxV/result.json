@@ -1,0 +1,115 @@
+{
+    "id": "a24f6801-d891-4ed2-b3e6-49f5c0cebd5a",
+    "task_name": "chartr/cardiology-population-review",
+    "trial_name": "chartr_task4__3zofPxV",
+    "trial_uri": "file:///private/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs/audit-v036-noop/chartr_task4__3zofPxV",
+    "task_id": {
+        "path": "chartr_task4"
+    },
+    "source": null,
+    "task_checksum": "555c0acde3c67df72a41c372f9762f7629deb286f24cf23da27d28004ab17cd5",
+    "config": {
+        "task": {
+            "path": "chartr_task4",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "chartr_task4__3zofPxV",
+        "trials_dir": "/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs/audit-v036-noop",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": null,
+            "import_path": "chartr_environment:ChartREnvironment",
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "a1006b02-8ded-482a-8f46-d92bb632c61c",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "separate",
+    "exception_info": null,
+    "started_at": "2026-09-28T19:31:28.880260Z",
+    "finished_at": "2026-09-28T19:31:57.117203Z",
+    "environment_setup": {
+        "started_at": "2026-09-28T19:31:28.996792Z",
+        "finished_at": "2026-09-28T19:31:39.172400Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-09-28T19:31:39.172792Z",
+        "finished_at": "2026-09-28T19:31:39.172985Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-09-28T19:31:39.173435Z",
+        "finished_at": "2026-09-28T19:31:39.173690Z"
+    },
+    "verifier": {
+        "started_at": "2026-09-28T19:31:47.127148Z",
+        "finished_at": "2026-09-28T19:31:57.117128Z"
+    },
+    "step_results": null
+}

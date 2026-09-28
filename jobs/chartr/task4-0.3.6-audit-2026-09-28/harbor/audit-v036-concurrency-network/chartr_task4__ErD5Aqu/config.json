@@ -1,0 +1,14 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__ErD5Aqu",
+    "trials_dir": "/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs/audit-v036-concurrency-network",
+    "agent": {
+        "name": "qa.audit_task4_probe:AuditProbe"
+    },
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "d8bfa466-469d-4969-9938-92d6bc1b3951"
+}

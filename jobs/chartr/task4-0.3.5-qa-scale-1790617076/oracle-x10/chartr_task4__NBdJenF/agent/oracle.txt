@@ -1,0 +1,71 @@
+[
+  {
+    "complete": true,
+    "items": [
+      {
+        "id": "I1",
+        "patient": "13df78e7-150e-5eb7-be5f-5f62b2baee87",
+        "category": "FOLLOW_UP",
+        "reason": "ECG_AFTER_WATCH_LIST_START",
+        "status": "completed",
+        "af_evidence": [],
+        "risk_score": null,
+        "risk_factors": [],
+        "anticoagulant": null,
+        "contraindication": null,
+        "records": [],
+        "ecg": null,
+        "qtc_ms": null,
+        "heart_rate": null,
+        "qt_drug": null,
+        "potassium": null,
+        "magnesium": null,
+        "trigger": "c17946a1-2379-5648-89a7-e0bcc7a9892c",
+        "requirement": "2a70ec05-351e-5540-ba0d-7cf9d1ebd076",
+        "due_date": "2026-03-16",
+        "completion_record": "104882441",
+        "explanation": "Reference."
+      },
+      {
+        "id": "I10",
+        "patient": "86bce885-4646-59f1-8f95-d92545376ce6",
+        "category": "ANTICOAGULATION",
+        "reason": "UNTREATED_AF",
+        "status": null,
+        "af_evidence": [
+          "7010d0e5-6584-55c2-b11d-e87f66177f17"
+        ],
+        "risk_score": 2,
+        "risk_factors": [
+          "AGE_65_74",
+          "HYPERTENSION"
+        ],
+        "anticoagulant": null,
+        "contraindication": null,
+        "records": [],
+        "ecg": null,
+        "qtc_ms": null,
+        "heart_rate": null,
+        "qt_drug": null,
+        "potassium": null,
+        "magnesium": null,
+        "trigger": null,
+        "requirement": null,
+        "due_date": null,
+        "completion_record": null,
+        "explanation": "Reference."
+      },
+      {
+        "id": "I11",
+        "patient": "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0",
+        "category": "FOLLOW_UP",
+        "reason": "INR_AFTER_WARFARIN_DOSE_CHANGE",
+        "status": "completed",
+        "af_evidence": [],
+        "risk_score": null,
+        "risk_factors": [],
+        "anticoagulant": null,
+        "contraindication": null,
+        "records": [],
+        "ecg": null,
+        "qtc_ms"

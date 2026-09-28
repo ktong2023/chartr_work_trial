@@ -1,0 +1,18 @@
+[
+  {
+    "source": "/logs/artifacts",
+    "destination": "artifacts/logs/artifacts",
+    "type": "file",
+    "status": "failed",
+    "service": null,
+    "exclude": []
+  },
+  {
+    "source": "/evidence/snapshot.json",
+    "destination": "artifacts/evidence/snapshot.json",
+    "type": "file",
+    "status": "failed",
+    "service": "clinic",
+    "exclude": []
+  }
+]

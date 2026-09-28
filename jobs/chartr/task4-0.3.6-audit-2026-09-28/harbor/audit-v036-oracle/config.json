@@ -1,0 +1,12 @@
+{
+    "job_name": "audit-v036-oracle",
+    "jobs_dir": "/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs",
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "tasks": [
+        {
+            "path": "chartr_task4"
+        }
+    ]
+}

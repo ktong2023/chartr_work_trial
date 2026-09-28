@@ -1,0 +1,14 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__g5gyHLe",
+    "trials_dir": "/tmp/chartr-task4-v036-audit.A9xR9P/audit-jobs/audit-v036-boundary",
+    "agent": {
+        "name": "qa.agents:BoundaryProbe"
+    },
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "9373b4f3-5c3f-496a-b50d-a051746a276d"
+}

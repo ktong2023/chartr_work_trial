@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 144, in upload_file
+    await self._env._run_docker_compose_command(
+    ...<2 lines>...
+    )
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 704, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment cardiology-population-review. Command: docker compose --project-name chartr_task4__cdrcr5e__verifier__trial --project-directory /Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_task4/tests -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmpzx4pebps/chartr_task4__CDrcR5E__verifier__trial-docker-compose-resources.json -f /Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_task4/tests/docker-compose.yaml -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmpbki5uujo/docker-compose-environment.json -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmp10vj8ggg/docker-compose-mounts.json cp /Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json main:/evidence/attestation.json. Return code: 1. Stdout:  chartr_task4__cdrcr5e__verifier__trial-main-1 Copying /Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json to chartr_task4__cdrcr5e__verifier__trial-main-1:/evidence/attestation.json
+lstat /Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json: no such file or directory
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 135, in _fallback_to_tar
+    await operation()
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 120, in _upload_file_with_tar
+    await self._extract_tar(self._tar_file(source_path, target_name), target_dir)
+                            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 77, in _tar_file
+    tar.add(source, arcname=arcname, filter=self._reset_tar_owner)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/tarfile.py", line 2242, in add
+    tarinfo = self.gettarinfo(name, arcname)
+  File "/Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/tarfile.py", line 2110, in gettarinfo
+    statres = os.lstat(name)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 418, in run
+    await self._run()
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/single_step.py", line 52, in _run
+    await self._run_verifier()
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/single_step.py", line 99, in _run_verifier
+    self.result.verifier_result = await self._run_separate_verifier(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 808, in _run_separate_verifier
+    async with self._separate_verifier_env(
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        env_config,
+        ^^^^^^^^^^^
+    ...<2 lines>...
+        step_cfg=step_cfg,
+        ^^^^^^^^^^^^^^^^^^
+    ) as target_env:
+    ^
+  File "/Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/trial/trial.py", line 888, in _separate_verifier_env
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/asyncio/tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_environment.py", line 65, in start
+    await self.upload_file(controller / "attestation.json", "/evidence/attestation.json")
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1124, in upload_file
+    await self._platform.upload_file(source_path, target_path)
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 149, in upload_file
+    await self._fallback_to_tar(
+        cp_error, lambda: self._upload_file_with_tar(source_path, target_path)
+    )
+  File "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 137, in _fallback_to_tar
+    raise RuntimeError(
+    ...<2 lines>...
+    ) from tar_error
+RuntimeError: Docker compose cp failed, and tar upload fallback also failed. cp error: Docker compose command failed for environment cardiology-population-review. Command: docker compose --project-name chartr_task4__cdrcr5e__verifier__trial --project-directory /Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_task4/tests -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmpzx4pebps/chartr_task4__CDrcR5E__verifier__trial-docker-compose-resources.json -f /Users/kyletong/Documents/Coding Projects/work_trial_chartr/.venv/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /Users/kyletong/Documents/Coding Projects/work_trial_chartr-task4/chartr_task4/tests/docker-compose.yaml -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmpbki5uujo/docker-compose-environment.json -f /private/var/folders/hw/14ngdc9d5fgccpjpr2l_qg400000gn/T/tmp10vj8ggg/docker-compose-mounts.json cp /Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json main:/evidence/attestation.json. Return code: 1. Stdout:  chartr_task4__cdrcr5e__verifier__trial-main-1 Copying /Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json to chartr_task4__cdrcr5e__verifier__trial-main-1:/evidence/attestation.json
+lstat /Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json: no such file or directory
+. Stderr: None. . tar error: [Errno 2] No such file or directory: '/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/task4-0.1.0-qa-1790553951/oracle/chartr_task4__CDrcR5E/controller/attestation.json'

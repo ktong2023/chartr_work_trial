@@ -1,0 +1,57 @@
+{
+ "chartr_task4__65EreN2": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_interpretation": false,
+   "ecg_comparison": false,
+   "ecg_linkage": true,
+   "chart_rules": true
+  }
+ },
+ "chartr_task4__7sBEBrw": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_interpretation": false,
+   "ecg_comparison": false,
+   "ecg_linkage": true,
+   "chart_rules": false
+  }
+ },
+ "chartr_task4__FDqKL3H": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_interpretation": false,
+   "ecg_comparison": false,
+   "ecg_linkage": false,
+   "chart_rules": false
+  }
+ },
+ "chartr_task4__TJaPuw9": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_interpretation": false,
+   "ecg_comparison": false,
+   "ecg_linkage": true,
+   "chart_rules": true
+  }
+ },
+ "chartr_task4__qRMKFJU": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_interpretation": true,
+   "ecg_comparison": false,
+   "ecg_linkage": true,
+   "chart_rules": true
+  }
+ }
+}

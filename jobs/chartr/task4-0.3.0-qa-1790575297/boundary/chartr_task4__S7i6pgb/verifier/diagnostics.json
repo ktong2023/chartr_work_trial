@@ -1,0 +1,540 @@
+{
+  "validity": "valid",
+  "reward": 0,
+  "components": {
+    "identification": false,
+    "item_fields": false,
+    "ecg_interpretation": false,
+    "ecg_comparison": false,
+    "ecg_linkage": false,
+    "chart_rules": false
+  },
+  "identification": {
+    "missing": [
+      [
+        "13df78e7-150e-5eb7-be5f-5f62b2baee87",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "23069939-0c4c-517b-a3ec-baae0d4e3988",
+        "QT_SAFETY",
+        "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+      ],
+      [
+        "27980ad8-77b7-5360-b211-bf4fac9c468c",
+        "ANTICOAGULATION",
+        "UNTREATED_AF"
+      ],
+      [
+        "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765",
+        "QT_SAFETY",
+        "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+      ],
+      [
+        "568cb149-804c-59e8-bdf5-816e8151cd22",
+        "ANTICOAGULATION",
+        "UNTREATED_AF"
+      ],
+      [
+        "5f74c4bf-681e-5123-ab4d-225c72be4f9f",
+        "CONTRADICTION",
+        "RHYTHM_DOCUMENTATION_CONFLICT"
+      ],
+      [
+        "752d15e2-bd27-52ed-b055-ed79edb86aba",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "7ec7078a-0593-5a99-9862-ebbff47fd1c5",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "86bce885-4646-59f1-8f95-d92545376ce6",
+        "ANTICOAGULATION",
+        "UNTREATED_AF"
+      ],
+      [
+        "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0",
+        "FOLLOW_UP",
+        "INR_AFTER_WARFARIN_DOSE_CHANGE"
+      ],
+      [
+        "b410dd44-7d65-56f9-974f-2751e8aa80e2",
+        "ANTICOAGULATION",
+        "ANTICOAGULANT_WITH_CONTRAINDICATION"
+      ],
+      [
+        "b9a9ae7b-2455-59fe-938d-ce19ef360dd1",
+        "ANTICOAGULATION",
+        "UNTREATED_AF"
+      ],
+      [
+        "bbad4581-d089-54a7-b7a0-8d986c5fb5ec",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "bc2a74ce-4069-5983-9423-1c175f7854d9",
+        "QT_SAFETY",
+        "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+      ],
+      [
+        "c0d83ad6-0b65-5fd6-b241-f50cf552232c",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "cb70e6ae-90b1-562b-8ab0-467c65d18d5e",
+        "CONTRADICTION",
+        "DUAL_ANTICOAGULATION"
+      ],
+      [
+        "e7e213ac-81c0-5c7f-8d57-81519132353e",
+        "FOLLOW_UP",
+        "ECG_AFTER_WATCH_LIST_START"
+      ],
+      [
+        "f77a5b72-65fd-5b20-8cef-6b6be4791265",
+        "FOLLOW_UP",
+        "INR_AFTER_WARFARIN_DOSE_CHANGE"
+      ],
+      [
+        "f77a5b72-65fd-5b20-8cef-6b6be4791265",
+        "QT_SAFETY",
+        "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+      ]
+    ],
+    "extra": [],
+    "duplicates": []
+  },
+  "items": {
+    "b9a9ae7b-2455-59fe-938d-ce19ef360dd1|ANTICOAGULATION|UNTREATED_AF": {
+      "present": false
+    },
+    "86bce885-4646-59f1-8f95-d92545376ce6|ANTICOAGULATION|UNTREATED_AF": {
+      "present": false
+    },
+    "568cb149-804c-59e8-bdf5-816e8151cd22|ANTICOAGULATION|UNTREATED_AF": {
+      "present": false
+    },
+    "27980ad8-77b7-5360-b211-bf4fac9c468c|ANTICOAGULATION|UNTREATED_AF": {
+      "present": false
+    },
+    "b410dd44-7d65-56f9-974f-2751e8aa80e2|ANTICOAGULATION|ANTICOAGULANT_WITH_CONTRAINDICATION": {
+      "present": false
+    },
+    "cb70e6ae-90b1-562b-8ab0-467c65d18d5e|CONTRADICTION|DUAL_ANTICOAGULATION": {
+      "present": false
+    },
+    "5f74c4bf-681e-5123-ab4d-225c72be4f9f|CONTRADICTION|RHYTHM_DOCUMENTATION_CONFLICT": {
+      "present": false
+    },
+    "bc2a74ce-4069-5983-9423-1c175f7854d9|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": false
+    },
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": false
+    },
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": false
+    },
+    "23069939-0c4c-517b-a3ec-baae0d4e3988|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": {
+      "present": false
+    },
+    "752d15e2-bd27-52ed-b055-ed79edb86aba|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "7ec7078a-0593-5a99-9862-ebbff47fd1c5|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "bbad4581-d089-54a7-b7a0-8d986c5fb5ec|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "13df78e7-150e-5eb7-be5f-5f62b2baee87|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "e7e213ac-81c0-5c7f-8d57-81519132353e|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "c0d83ad6-0b65-5fd6-b241-f50cf552232c|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": {
+      "present": false
+    },
+    "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": {
+      "present": false
+    },
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": {
+      "present": false
+    }
+  },
+  "ecg_interpretation": {
+    "checks": {
+      "10005866|105060792": {
+        "present": false
+      },
+      "10022880|104882441": {
+        "present": false
+      },
+      "10032725|103879393": {
+        "present": false
+      },
+      "10015860|105523266": {
+        "present": false
+      },
+      "10013049|108018814": {
+        "present": false
+      },
+      "10025463|102295353": {
+        "present": false
+      },
+      "10007795|109218019": {
+        "present": false
+      },
+      "10009035|109661561": {
+        "present": false
+      },
+      "10005348|107158938": {
+        "present": false
+      },
+      "10021487|101901982": {
+        "present": false
+      },
+      "10004422|106885519": {
+        "present": false
+      },
+      "10035631|103521932": {
+        "present": false
+      },
+      "10009628|109287357": {
+        "present": false
+      },
+      "10004235|108195884": {
+        "present": false
+      },
+      "10038999|105862861": {
+        "present": false
+      },
+      "10015272|103088543": {
+        "present": false
+      },
+      "10018328|103992480": {
+        "present": false
+      },
+      "10009049|107627609": {
+        "present": false
+      },
+      "10007818|107399137": {
+        "present": false
+      },
+      "10039831|106035722": {
+        "present": false
+      },
+      "10019172|108912996": {
+        "present": false
+      },
+      "10003400|101771242": {
+        "present": false
+      },
+      "10024043|100913766": {
+        "present": false
+      },
+      "10029291|104253928": {
+        "present": false
+      },
+      "10014078|106565956": {
+        "present": false
+      },
+      "10037861|101744645": {
+        "present": false
+      },
+      "10039708|109952008": {
+        "present": false
+      },
+      "10026255|105375026": {
+        "present": false
+      },
+      "10019003|103857061": {
+        "present": false
+      },
+      "10007058|102280728": {
+        "present": false
+      },
+      "10023117|102531404": {
+        "present": false
+      },
+      "10022017|108211642": {
+        "present": false
+      },
+      "10005817|107674864": {
+        "present": false
+      },
+      "10002930|109795468": {
+        "present": false
+      },
+      "10001217|102172660": {
+        "present": false
+      },
+      "10020944|100849868": {
+        "present": false
+      },
+      "10040025|104330494": {
+        "present": false
+      },
+      "10020187|106825293": {
+        "present": false
+      },
+      "10004457|102853474": {
+        "present": false
+      },
+      "10039997|102298909": {
+        "present": false
+      },
+      "10018423|107859369": {
+        "present": false
+      },
+      "10023239|104821039": {
+        "present": false
+      },
+      "10019385|101538691": {
+        "present": false
+      },
+      "10011398|107689861": {
+        "present": false
+      },
+      "10014354|100924231": {
+        "present": false
+      },
+      "10035185|102888469": {
+        "present": false
+      },
+      "10018081|109757556": {
+        "present": false
+      },
+      "10010471|105789995": {
+        "present": false
+      },
+      "10002428|103036945": {
+        "present": false
+      },
+      "10038992|104941853": {
+        "present": false
+      },
+      "10014729|107457843": {
+        "present": false
+      },
+      "10025612|109419304": {
+        "present": false
+      },
+      "10015931|107841896": {
+        "present": false
+      },
+      "10012853|101515306": {
+        "present": false
+      },
+      "10037928|101524902": {
+        "present": false
+      }
+    },
+    "extra": [],
+    "duplicates": []
+  },
+  "ecg_comparison": {
+    "10005866|105060792": {
+      "present": false
+    },
+    "10022880|104882441": {
+      "present": false
+    },
+    "10032725|103879393": {
+      "present": false
+    },
+    "10015860|105523266": {
+      "present": false
+    },
+    "10013049|108018814": {
+      "present": false
+    },
+    "10025463|102295353": {
+      "present": false
+    },
+    "10007795|109218019": {
+      "present": false
+    },
+    "10009035|109661561": {
+      "present": false
+    },
+    "10005348|107158938": {
+      "present": false
+    },
+    "10021487|101901982": {
+      "present": false
+    },
+    "10004422|106885519": {
+      "present": false
+    },
+    "10035631|103521932": {
+      "present": false
+    },
+    "10009628|109287357": {
+      "present": false
+    },
+    "10004235|108195884": {
+      "present": false
+    },
+    "10038999|105862861": {
+      "present": false
+    },
+    "10015272|103088543": {
+      "present": false
+    },
+    "10018328|103992480": {
+      "present": false
+    },
+    "10009049|107627609": {
+      "present": false
+    },
+    "10007818|107399137": {
+      "present": false
+    },
+    "10039831|106035722": {
+      "present": false
+    },
+    "10019172|108912996": {
+      "present": false
+    },
+    "10003400|101771242": {
+      "present": false
+    },
+    "10024043|100913766": {
+      "present": false
+    },
+    "10029291|104253928": {
+      "present": false
+    },
+    "10014078|106565956": {
+      "present": false
+    },
+    "10037861|101744645": {
+      "present": false
+    },
+    "10039708|109952008": {
+      "present": false
+    },
+    "10026255|105375026": {
+      "present": false
+    },
+    "10019003|103857061": {
+      "present": false
+    },
+    "10007058|102280728": {
+      "present": false
+    },
+    "10023117|102531404": {
+      "present": false
+    },
+    "10022017|108211642": {
+      "present": false
+    },
+    "10005817|107674864": {
+      "present": false
+    },
+    "10002930|109795468": {
+      "present": false
+    },
+    "10001217|102172660": {
+      "present": false
+    },
+    "10020944|100849868": {
+      "present": false
+    },
+    "10040025|104330494": {
+      "present": false
+    },
+    "10020187|106825293": {
+      "present": false
+    },
+    "10004457|102853474": {
+      "present": false
+    },
+    "10039997|102298909": {
+      "present": false
+    },
+    "10018423|107859369": {
+      "present": false
+    },
+    "10023239|104821039": {
+      "present": false
+    },
+    "10019385|101538691": {
+      "present": false
+    },
+    "10011398|107689861": {
+      "present": false
+    },
+    "10014354|100924231": {
+      "present": false
+    },
+    "10035185|102888469": {
+      "present": false
+    },
+    "10018081|109757556": {
+      "present": false
+    },
+    "10010471|105789995": {
+      "present": false
+    },
+    "10002428|103036945": {
+      "present": false
+    },
+    "10038992|104941853": {
+      "present": false
+    },
+    "10014729|107457843": {
+      "present": false
+    },
+    "10025612|109419304": {
+      "present": false
+    },
+    "10015931|107841896": {
+      "present": false
+    },
+    "10012853|101515306": {
+      "present": false
+    },
+    "10037928|101524902": {
+      "present": false
+    }
+  },
+  "ecg_linkage": {
+    "5f74c4bf-681e-5123-ab4d-225c72be4f9f|CONTRADICTION|RHYTHM_DOCUMENTATION_CONFLICT": false,
+    "bc2a74ce-4069-5983-9423-1c175f7854d9|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": false,
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": false,
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": false,
+    "23069939-0c4c-517b-a3ec-baae0d4e3988|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": false,
+    "13df78e7-150e-5eb7-be5f-5f62b2baee87|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "c0d83ad6-0b65-5fd6-b241-f50cf552232c|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false
+  },
+  "chart_rules": {
+    "752d15e2-bd27-52ed-b055-ed79edb86aba|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "7ec7078a-0593-5a99-9862-ebbff47fd1c5|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "bbad4581-d089-54a7-b7a0-8d986c5fb5ec|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "13df78e7-150e-5eb7-be5f-5f62b2baee87|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "e7e213ac-81c0-5c7f-8d57-81519132353e|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "c0d83ad6-0b65-5fd6-b241-f50cf552232c|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": false,
+    "afa7c67f-82b9-5f51-bd04-8b7d7c4456c0|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": false,
+    "f77a5b72-65fd-5b20-8cef-6b6be4791265|FOLLOW_UP|INR_AFTER_WARFARIN_DOSE_CHANGE": false
+  },
+  "narrative_limit": "Explanations are not graded; structured basis fields carry the reasoning."
+}

@@ -1,0 +1,802 @@
+{
+  "scope": "Synthetic valid-envelope unit fixtures invoking actual grader; not controller-backed Harbor runs or physiological diagnoses. Values are accepted by private specs; that alone is not proof of clinical accuracy.",
+  "baseline_reward": 1,
+  "cases": [
+    {
+      "kind": "comparison_inconsistency",
+      "current_ecg": "104821039",
+      "current_qtc": 510,
+      "prior_ecg": "107149156",
+      "prior_qtc": 480,
+      "current_value_accepted": true,
+      "prior_value_accepted": true,
+      "delta_ms": 30,
+      "submitted_changes": [],
+      "reward": 0,
+      "failed_comparisons": {
+        "10023239|104821039": {
+          "prior_ecg": true,
+          "changes": false
+        }
+      },
+      "components": {
+        "identification": true,
+        "item_fields": true,
+        "ecg_interpretation": true,
+        "ecg_comparison": false,
+        "ecg_linkage": true,
+        "chart_rules": true
+      }
+    },
+    {
+      "kind": "comparison_inconsistency",
+      "current_ecg": "102172660",
+      "current_qtc": 450,
+      "prior_ecg": "105362569",
+      "prior_qtc": 500,
+      "current_value_accepted": true,
+      "prior_value_accepted": true,
+      "delta_ms": -50,
+      "submitted_changes": [],
+      "reward": 0,
+      "failed_comparisons": {
+        "10001217|102172660": {
+          "prior_ecg": true,
+          "changes": false
+        }
+      },
+      "components": {
+        "identification": true,
+        "item_fields": true,
+        "ecg_interpretation": true,
+        "ecg_comparison": false,
+        "ecg_linkage": true,
+        "chart_rules": true
+      }
+    },
+    {
+      "kind": "comparison_inconsistency",
+      "current_ecg": "103036945",
+      "current_qtc": 450,
+      "prior_ecg": "102616671",
+      "prior_qtc": 380,
+      "current_value_accepted": true,
+      "prior_value_accepted": true,
+      "delta_ms": 70,
+      "submitted_changes": [
+        "QTC_INCREASE_60"
+      ],
+      "reward": 0,
+      "failed_comparisons": {
+        "10002428|103036945": {
+          "prior_ecg": true,
+          "changes": false
+        }
+      },
+      "components": {
+        "identification": true,
+        "item_fields": true,
+        "ecg_interpretation": true,
+        "ecg_comparison": false,
+        "ecg_linkage": true,
+        "chart_rules": true
+      }
+    },
+    {
+      "kind": "threshold_inconsistency",
+      "ecg": "108018814",
+      "qtc_ms": 495,
+      "reward": 0,
+      "components": {
+        "identification": false,
+        "item_fields": false,
+        "ecg_interpretation": true,
+        "ecg_comparison": true,
+        "ecg_linkage": false,
+        "chart_rules": true
+      },
+      "missing": [
+        [
+          "23069939-0c4c-517b-a3ec-baae0d4e3988",
+          "QT_SAFETY",
+          "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+        ]
+      ]
+    },
+    {
+      "kind": "threshold_inconsistency",
+      "ecg": "106885519",
+      "qtc_ms": 495,
+      "reward": 0,
+      "components": {
+        "identification": false,
+        "item_fields": false,
+        "ecg_interpretation": true,
+        "ecg_comparison": true,
+        "ecg_linkage": false,
+        "chart_rules": true
+      },
+      "missing": [
+        [
+          "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765",
+          "QT_SAFETY",
+          "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+        ]
+      ]
+    },
+    {
+      "kind": "threshold_inconsistency",
+      "ecg": "101515306",
+      "qtc_ms": 495,
+      "reward": 0,
+      "components": {
+        "identification": false,
+        "item_fields": false,
+        "ecg_interpretation": true,
+        "ecg_comparison": true,
+        "ecg_linkage": false,
+        "chart_rules": true
+      },
+      "missing": [
+        [
+          "f77a5b72-65fd-5b20-8cef-6b6be4791265",
+          "QT_SAFETY",
+          "PROLONGED_QTC_ON_WATCH_LIST_DRUG"
+        ]
+      ]
+    }
+  ],
+  "reader_value_rejections": {
+    "M": [],
+    "N": [
+      {
+        "subject": "10015860",
+        "ecg": "105523266",
+        "field": "qrs_ms",
+        "value": 146.0,
+        "spec": {
+          "range": [
+            59.0,
+            119.0
+          ]
+        }
+      },
+      {
+        "subject": "10013049",
+        "ecg": "108018814",
+        "field": "qrs_ms",
+        "value": 158.0,
+        "spec": {
+          "range": [
+            59.0,
+            117.0
+          ]
+        }
+      },
+      {
+        "subject": "10007795",
+        "ecg": "109218019",
+        "field": "qrs_ms",
+        "value": 128.0,
+        "spec": {
+          "range": [
+            45.0,
+            107.0
+          ]
+        }
+      },
+      {
+        "subject": "10009035",
+        "ecg": "109661561",
+        "field": "qrs_ms",
+        "value": 133.0,
+        "spec": {
+          "range": [
+            57.0,
+            113.0
+          ]
+        }
+      },
+      {
+        "subject": "10005348",
+        "ecg": "107158938",
+        "field": "qrs_ms",
+        "value": 196.0,
+        "spec": {
+          "range": [
+            59.0,
+            137.0
+          ]
+        }
+      },
+      {
+        "subject": "10004422",
+        "ecg": "106885519",
+        "field": "qrs_ms",
+        "value": 157.0,
+        "spec": {
+          "range": [
+            67.0,
+            121.0
+          ]
+        }
+      },
+      {
+        "subject": "10009628",
+        "ecg": "109287357",
+        "field": "qrs_ms",
+        "value": 148.0,
+        "spec": {
+          "range": [
+            55.0,
+            109.0
+          ]
+        }
+      },
+      {
+        "subject": "10004235",
+        "ecg": "108195884",
+        "field": "qrs_ms",
+        "value": 146.0,
+        "spec": {
+          "range": [
+            63.0,
+            125.0
+          ]
+        }
+      },
+      {
+        "subject": "10038999",
+        "ecg": "105862861",
+        "field": "qrs_ms",
+        "value": 168.0,
+        "spec": {
+          "range": [
+            59.0,
+            115.0
+          ]
+        }
+      },
+      {
+        "subject": "10015272",
+        "ecg": "103088543",
+        "field": "qrs_ms",
+        "value": 144.0,
+        "spec": {
+          "range": [
+            65.0,
+            134.0
+          ]
+        }
+      },
+      {
+        "subject": "10018328",
+        "ecg": "103992480",
+        "field": "qrs_ms",
+        "value": 212.0,
+        "spec": {
+          "range": [
+            49.0,
+            127.0
+          ]
+        }
+      },
+      {
+        "subject": "10009049",
+        "ecg": "107627609",
+        "field": "qrs_ms",
+        "value": 142.0,
+        "spec": {
+          "range": [
+            43.0,
+            101.0
+          ]
+        }
+      },
+      {
+        "subject": "10039831",
+        "ecg": "106035722",
+        "field": "qrs_ms",
+        "value": 146.0,
+        "spec": {
+          "range": [
+            51.0,
+            103.0
+          ]
+        }
+      },
+      {
+        "subject": "10019172",
+        "ecg": "108912996",
+        "field": "qrs_ms",
+        "value": 136.0,
+        "spec": {
+          "range": [
+            63.0,
+            117.0
+          ]
+        }
+      },
+      {
+        "subject": "10014078",
+        "ecg": "106565956",
+        "field": "qrs_ms",
+        "value": 144.0,
+        "spec": {
+          "range": [
+            35.0,
+            93.0
+          ]
+        }
+      },
+      {
+        "subject": "10039708",
+        "ecg": "109952008",
+        "field": "qrs_ms",
+        "value": 124.0,
+        "spec": {
+          "range": [
+            39.0,
+            109.0
+          ]
+        }
+      },
+      {
+        "subject": "10001217",
+        "ecg": "102172660",
+        "field": "qrs_ms",
+        "value": 162.0,
+        "spec": {
+          "range": [
+            59.0,
+            117.0
+          ]
+        }
+      },
+      {
+        "subject": "10020187",
+        "ecg": "106825293",
+        "field": "qrs_ms",
+        "value": 126.0,
+        "spec": {
+          "range": [
+            57.0,
+            121.0
+          ]
+        }
+      },
+      {
+        "subject": "10004457",
+        "ecg": "102853474",
+        "field": "qrs_ms",
+        "value": 152.0,
+        "spec": {
+          "range": [
+            61.0,
+            125.0
+          ]
+        }
+      },
+      {
+        "subject": "10039997",
+        "ecg": "102298909",
+        "field": "qrs_ms",
+        "value": 144.0,
+        "spec": {
+          "range": [
+            69.0,
+            132.0
+          ]
+        }
+      },
+      {
+        "subject": "10018423",
+        "ecg": "107859369",
+        "field": "qrs_ms",
+        "value": 126.0,
+        "spec": {
+          "range": [
+            61.0,
+            115.0
+          ]
+        }
+      },
+      {
+        "subject": "10023239",
+        "ecg": "104821039",
+        "field": "qrs_ms",
+        "value": 168.0,
+        "spec": {
+          "range": [
+            65.0,
+            119.0
+          ]
+        }
+      },
+      {
+        "subject": "10023239",
+        "ecg": "104821039",
+        "field": "qtc_ms",
+        "value": 285.34288277029714,
+        "spec": {
+          "range": [
+            503.79999999999995,
+            632.2
+          ]
+        }
+      },
+      {
+        "subject": "10019385",
+        "ecg": "101538691",
+        "field": "qrs_ms",
+        "value": 174.0,
+        "spec": {
+          "range": [
+            55.0,
+            121.0
+          ]
+        }
+      },
+      {
+        "subject": "10011398",
+        "ecg": "107689861",
+        "field": "qrs_ms",
+        "value": 153.0,
+        "spec": {
+          "range": [
+            57.0,
+            125.0
+          ]
+        }
+      },
+      {
+        "subject": "10014354",
+        "ecg": "100924231",
+        "field": "qrs_ms",
+        "value": 188.0,
+        "spec": {
+          "range": [
+            51.0,
+            106.0
+          ]
+        }
+      },
+      {
+        "subject": "10038992",
+        "ecg": "104941853",
+        "field": "qrs_ms",
+        "value": 164.0,
+        "spec": {
+          "range": [
+            101.0,
+            155.0
+          ]
+        }
+      },
+      {
+        "subject": "10014729",
+        "ecg": "107457843",
+        "field": "qrs_ms",
+        "value": 180.0,
+        "spec": {
+          "range": [
+            53.0,
+            113.0
+          ]
+        }
+      },
+      {
+        "subject": "10012853",
+        "ecg": "101515306",
+        "field": "qrs_ms",
+        "value": 158.0,
+        "spec": {
+          "range": [
+            47.0,
+            107.0
+          ]
+        }
+      }
+    ],
+    "G": [
+      {
+        "subject": "10007795",
+        "ecg": "109218019",
+        "field": "qtc_ms",
+        "value": 627.8693349467064,
+        "spec": {
+          "range": [
+            378.6,
+            481.6
+          ]
+        }
+      },
+      {
+        "subject": "10009035",
+        "ecg": "109661561",
+        "field": "qtc_ms",
+        "value": 703.5268826566675,
+        "spec": {
+          "range": [
+            353.3,
+            491.0
+          ]
+        }
+      },
+      {
+        "subject": "10037928",
+        "ecg": "101524902",
+        "field": "qtc_ms",
+        "value": 643.421608909393,
+        "spec": {
+          "range": [
+            376.9,
+            491.3
+          ]
+        }
+      }
+    ]
+  },
+  "all_serial_tolerance_mismatches": [
+    {
+      "subject": "10015860",
+      "ecg": "105523266",
+      "prior": "106186980",
+      "current_range": [
+        349.6,
+        487.8
+      ],
+      "prior_range": [
+        330.7,
+        479.1
+      ],
+      "delta_range": [
+        -129.5,
+        157.10000000000002
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": [
+          "QTC_INCREASE_60"
+        ]
+      },
+      "mismatch": [
+        "decrease forbidden despite allowable delta<=-60"
+      ]
+    },
+    {
+      "subject": "10009035",
+      "ecg": "109661561",
+      "prior": "102910502",
+      "current_range": [
+        353.3,
+        491.0
+      ],
+      "prior_range": [
+        351.0,
+        482.3
+      ],
+      "delta_range": [
+        -129.0,
+        140.0
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": []
+      },
+      "mismatch": [
+        "increase forbidden despite allowable delta>=60",
+        "decrease forbidden despite allowable delta<=-60"
+      ]
+    },
+    {
+      "subject": "10005348",
+      "ecg": "107158938",
+      "prior": "104629882",
+      "current_range": [
+        346.5,
+        471.6
+      ],
+      "prior_range": [
+        347.8,
+        478.5
+      ],
+      "delta_range": [
+        -132.0,
+        123.80000000000001
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": [
+          "NEW_BUNDLE_BRANCH_BLOCK"
+        ]
+      },
+      "mismatch": [
+        "increase forbidden despite allowable delta>=60",
+        "decrease forbidden despite allowable delta<=-60"
+      ]
+    },
+    {
+      "subject": "10021487",
+      "ecg": "101901982",
+      "prior": "106516875",
+      "current_range": [
+        346.3,
+        475.4
+      ],
+      "prior_range": [
+        413.5,
+        530.6
+      ],
+      "delta_range": [
+        -184.3,
+        61.89999999999998
+      ],
+      "change_spec": {
+        "required": [
+          "RESOLVED_BUNDLE_BRANCH_BLOCK"
+        ],
+        "allowed": [
+          "QTC_DECREASE_60"
+        ]
+      },
+      "mismatch": [
+        "increase forbidden despite allowable delta>=60"
+      ]
+    },
+    {
+      "subject": "10029291",
+      "ecg": "104253928",
+      "prior": "106045460",
+      "current_range": [
+        369.7,
+        488.4
+      ],
+      "prior_range": [
+        336.7,
+        493.9
+      ],
+      "delta_range": [
+        -124.19999999999999,
+        151.7
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": [
+          "QTC_INCREASE_60"
+        ]
+      },
+      "mismatch": [
+        "decrease forbidden despite allowable delta<=-60"
+      ]
+    },
+    {
+      "subject": "10001217",
+      "ecg": "102172660",
+      "prior": "105362569",
+      "current_range": [
+        319.3,
+        461.3
+      ],
+      "prior_range": [
+        488.1,
+        593.9
+      ],
+      "delta_range": [
+        -274.59999999999997,
+        -26.80000000000001
+      ],
+      "change_spec": {
+        "required": [
+          "QTC_DECREASE_60"
+        ],
+        "allowed": []
+      },
+      "mismatch": [
+        "decrease required despite allowable delta>-60"
+      ]
+    },
+    {
+      "subject": "10023239",
+      "ecg": "104821039",
+      "prior": "107149156",
+      "current_range": [
+        503.79999999999995,
+        632.2
+      ],
+      "prior_range": [
+        392.5,
+        489.7
+      ],
+      "delta_range": [
+        14.099999999999966,
+        239.70000000000005
+      ],
+      "change_spec": {
+        "required": [
+          "QTC_INCREASE_60"
+        ],
+        "allowed": []
+      },
+      "mismatch": [
+        "increase required despite allowable delta<60"
+      ]
+    },
+    {
+      "subject": "10011398",
+      "ecg": "107689861",
+      "prior": "108651109",
+      "current_range": [
+        299.5,
+        442.0
+      ],
+      "prior_range": [
+        345.1,
+        497.6
+      ],
+      "delta_range": [
+        -198.10000000000002,
+        96.89999999999998
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": [
+          "QTC_DECREASE_60"
+        ]
+      },
+      "mismatch": [
+        "increase forbidden despite allowable delta>=60"
+      ]
+    },
+    {
+      "subject": "10002428",
+      "ecg": "103036945",
+      "prior": "102616671",
+      "current_range": [
+        361.2,
+        483.5
+      ],
+      "prior_range": [
+        345.2,
+        459.2
+      ],
+      "delta_range": [
+        -98.0,
+        138.3
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": []
+      },
+      "mismatch": [
+        "increase forbidden despite allowable delta>=60",
+        "decrease forbidden despite allowable delta<=-60"
+      ]
+    },
+    {
+      "subject": "10037928",
+      "ecg": "101524902",
+      "prior": "107274479",
+      "current_range": [
+        376.9,
+        491.3
+      ],
+      "prior_range": [
+        361.6,
+        488.3
+      ],
+      "delta_range": [
+        -111.40000000000003,
+        129.7
+      ],
+      "change_spec": {
+        "required": [],
+        "allowed": []
+      },
+      "mismatch": [
+        "increase forbidden despite allowable delta>=60",
+        "decrease forbidden despite allowable delta<=-60"
+      ]
+    }
+  ]
+}

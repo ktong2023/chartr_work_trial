@@ -1,0 +1,28 @@
+test_added_resources_have_real_shapes (qa.test_task4.Task4Tests.test_added_resources_have_real_shapes)
+Every added resource of a type the demo has matches the key structure of some real resource of that type. ... ok
+test_baseline_matches_assembled_sources (qa.test_task4.Task4Tests.test_baseline_matches_assembled_sources) ... ok
+test_case_patients_not_separable_by_added_layer (qa.test_task4.Task4Tests.test_case_patients_not_separable_by_added_layer)
+Per-patient features of the synthetic layer: cases vs living controls (Mann-Whitney AUC). ... /Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x103ef05e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x103ef0400>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_forged_or_foreign_snapshots_are_invalid (qa.test_task4.Task4Tests.test_forged_or_foreign_snapshots_are_invalid) ... ok
+test_harbor_entrypoints_are_executable (qa.test_task4.Task4Tests.test_harbor_entrypoints_are_executable) ... ok
+test_http_body_limit (qa.test_task4.Task4Tests.test_http_body_limit) ... /Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/unittest/case.py:686: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('127.0.0.1', 55784)>
+  function, args, kwargs = self._cleanups.pop()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_measurement_ranges_admit_every_agreeing_method (qa.test_task4.Task4Tests.test_measurement_ranges_admit_every_agreeing_method) ... ok
+test_misreadings_fail (qa.test_task4.Task4Tests.test_misreadings_fail)
+Reading errors: an artifact read as AF on a current ECG, a remote bleed read as a contraindication. ... ok
+test_no_op_scores_zero (qa.test_task4.Task4Tests.test_no_op_scores_zero) ... ok
+test_public_surface_has_no_answers_or_ecg_method (qa.test_task4.Task4Tests.test_public_surface_has_no_answers_or_ecg_method) ... ok
+test_reference_through_real_cli_scores_one (qa.test_task4.Task4Tests.test_reference_through_real_cli_scores_one) ... /Users/kyletong/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/unittest/case.py:686: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('127.0.0.1', 55787)>
+  function, args, kwargs = self._cleanups.pop()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_service_rejects_malformed_and_foreign_writes (qa.test_task4.Task4Tests.test_service_rejects_malformed_and_foreign_writes) ... ok
+test_wrong_algorithms_fail (qa.test_task4.Task4Tests.test_wrong_algorithms_fail) ... 

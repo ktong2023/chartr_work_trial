@@ -1,0 +1,180 @@
+{
+  "scope": "Feature extraction only through Store.request public read routes; private labels used solely to evaluate association. Not a complete solver.",
+  "living": 69,
+  "cases": 18,
+  "controls": 51,
+  "visit_gap_under_60_days": {
+    "cases": [
+      "10022880",
+      "10013049",
+      "10015272",
+      "10039831",
+      "10004457",
+      "10019385"
+    ],
+    "controls": []
+  },
+  "six_content_line_progress_notes": {
+    "cases": [
+      "10022880",
+      "10013049",
+      "10015272",
+      "10016150",
+      "10014354"
+    ],
+    "controls": [
+      "10005348",
+      "10019172",
+      "10001217"
+    ]
+  },
+  "max_progress_note_length_auc": 0.8349673202614379,
+  "concurrent_read_probe": {
+    "attempts": 40,
+    "errors": [
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      },
+      {
+        "error_type": "IntegrityError",
+        "error": "UNIQUE constraint failed: audit.seq"
+      }
+    ],
+    "successes": 5,
+    "audit_events": 5,
+    "faults": 0
+  }
+}

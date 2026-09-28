@@ -1,0 +1,149 @@
+{
+ "chartr_task4__2LN2xqH": {
+  "reward": 1,
+  "components": {
+   "identification": true,
+   "item_fields": true,
+   "ecg_findings": true,
+   "ecg_linkage": true,
+   "chart_rules": true
+  },
+  "identification": {
+   "missing": [],
+   "extra": [],
+   "duplicates": []
+  },
+  "item_failures": {},
+  "finding_failures": {},
+  "finding_extra": []
+ },
+ "chartr_task4__AxyTh6a": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_findings": true,
+   "ecg_linkage": true,
+   "chart_rules": true
+  },
+  "identification": {
+   "missing": [
+    [
+     "568cb149-804c-59e8-bdf5-816e8151cd22",
+     "ANTICOAGULATION",
+     "UNTREATED_AF"
+    ]
+   ],
+   "extra": [],
+   "duplicates": []
+  },
+  "item_failures": {
+   "568cb149-804c-59e8-bdf5-816e8151cd22|ANTICOAGULATION|UNTREATED_AF": [
+    "present"
+   ]
+  },
+  "finding_failures": {},
+  "finding_extra": []
+ },
+ "chartr_task4__cZyYeak": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_findings": true,
+   "ecg_linkage": true,
+   "chart_rules": false
+  },
+  "identification": {
+   "missing": [
+    [
+     "568cb149-804c-59e8-bdf5-816e8151cd22",
+     "ANTICOAGULATION",
+     "UNTREATED_AF"
+    ]
+   ],
+   "extra": [],
+   "duplicates": []
+  },
+  "item_failures": {
+   "568cb149-804c-59e8-bdf5-816e8151cd22|ANTICOAGULATION|UNTREATED_AF": [
+    "present"
+   ],
+   "bbad4581-d089-54a7-b7a0-8d986c5fb5ec|FOLLOW_UP|ECG_AFTER_WATCH_LIST_START": [
+    "trigger"
+   ]
+  },
+  "finding_failures": {},
+  "finding_extra": []
+ },
+ "chartr_task4__cejPD9W": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_findings": false,
+   "ecg_linkage": false,
+   "chart_rules": true
+  },
+  "identification": {
+   "missing": [
+    [
+     "568cb149-804c-59e8-bdf5-816e8151cd22",
+     "ANTICOAGULATION",
+     "UNTREATED_AF"
+    ]
+   ],
+   "extra": [],
+   "duplicates": []
+  },
+  "item_failures": {
+   "568cb149-804c-59e8-bdf5-816e8151cd22|ANTICOAGULATION|UNTREATED_AF": [
+    "present"
+   ],
+   "f77a5b72-65fd-5b20-8cef-6b6be4791265|QT_SAFETY|PROLONGED_QTC_ON_WATCH_LIST_DRUG": [
+    "heart_rate"
+   ]
+  },
+  "finding_failures": {
+   "101515306|QTC_PROLONGED": {
+    "present": true,
+    "heart_rate": false,
+    "qtc_ms": true
+   }
+  },
+  "finding_extra": []
+ },
+ "chartr_task4__tYz8cPU": {
+  "reward": 0,
+  "components": {
+   "identification": false,
+   "item_fields": false,
+   "ecg_findings": false,
+   "ecg_linkage": true,
+   "chart_rules": true
+  },
+  "identification": {
+   "missing": [
+    [
+     "568cb149-804c-59e8-bdf5-816e8151cd22",
+     "ANTICOAGULATION",
+     "UNTREATED_AF"
+    ]
+   ],
+   "extra": [],
+   "duplicates": []
+  },
+  "item_failures": {
+   "568cb149-804c-59e8-bdf5-816e8151cd22|ANTICOAGULATION|UNTREATED_AF": [
+    "present"
+   ]
+  },
+  "finding_failures": {},
+  "finding_extra": [
+   [
+    "101538691",
+    "QTC_PROLONGED"
+   ]
+  ]
+ }
+}
