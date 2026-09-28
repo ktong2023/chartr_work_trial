@@ -214,3 +214,8 @@ findings. It also adds these misreadings, all scoring 0: paced read as sinus wit
   - v0.3.3 accepts either reading for three rhythms that could not be settled on high-resolution review: 103992480
     (sinus/ectopic atrial), 100924231 (sinus tachycardia/2:1 flutter) and 108780865 (slow AF/sinus).
   - Rescored against the v0.3.3 key, 3/5 runs pass every ECG component, and one run (cCSHmmu) fails only on 10004235.
+
+## v0.3.4: calibration
+
+10004235's clinic notes now list "paroxysmal atrial fibrillation" in the history line, the same treatment as 10020306 in
+v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient charting become corroborating evidence.

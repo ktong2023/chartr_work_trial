@@ -345,7 +345,7 @@ REMOVE_AF = {'10004235', '10020306'}
 # standing contraindication.
 REMOVE_DX = {'10020306': r'^D689'}
 # v0.3.2 calibration: 10020306's AF codes stay removed, but her clinic notes carry AF in the history line.
-NOTE_AF = {'10020306': 'persistent atrial fibrillation'}
+NOTE_AF = {'10020306': 'persistent atrial fibrillation', '10004235': 'paroxysmal atrial fibrillation'}   # v0.3.4: 10004235 too
 D = dt.date
 
 
