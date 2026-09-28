@@ -10,7 +10,39 @@
   JSON). They stay off `main` because job folders are gitignored here; the README cites them by path on that branch.
 - **`claude/phase-1-design-proposal-db3m7q`:** the Task 3 development branch. `main` now matches it; the audits
   reference it by name.
-- **Task 4** is in development and not on GitHub yet.
+- **Task 4** (`chartr_task4/`) is at v0.4.0, frozen as the final candidate. It was merged from the local `task4` branch.
+  - Its current state, per-field ECG labelling rules and the classified change history are at the top of
+    `chartr_task4/README.md`.
+  - The audit and the v0.4.0 response are in `TASK4_V036_AUDIT_2026_09_28.md` and the README.
+  - The design brief is `TASK1_MIMIC_UPGRADE.md`.
+  - The PhysioNet inputs live in the gitignored `data/` and are fetched and checksum-verified at image build.
+  - Its pilot job folders are only in the local `jobs/chartr/task4-*` (gitignored) and are not yet on a results branch.
+
+## Task 4 pilot 0.4.0 — final frozen batch (September 28, 2026)
+
+**3/10 valid attempts on the frozen key, inside the 2–7 target** (commit `d1156b5`). The job is
+`jobs/chartr/task4-0.4.0-1790626310` with a `TRIAGE.md`.
+
+**Task.** A 100-patient MIMIC-IV demo population with a synthetic outpatient layer and raw 12-lead WFDB ECGs. The agent
+saves review items and an interpretation of every living patient's latest ECG, with serial comparison.
+
+**Setup.** Adapter 0.4.0 with caching, 64K cap, 10 concurrent trials, `caffeinate`. Runs took 33–49 min; the batch took
+50 min.
+
+**Failures.** Every failing run has a genuine error:
+- first-degree AV block missed on PR misreads;
+- T waves counted as beats;
+- non-AF records cited as AF evidence;
+- hidden AF missed;
+- a transient RBBB resolution missed.
+
+Two contested label points change no outcome (see TRIAGE).
+
+**Earlier batches** were development evidence under keys changed after each run: raw v0.3.5 1/10, retrospective v0.3.6
+4/10.
+
+**Checks:** Task 4 offline 17/17 and adapter tests pass; Task 3 and Task 1 offline tests pass after the merge; Docker
+oracle 1, no-op 0, boundary clean, audit concurrency probe 40/40.
 
 ## Task 3 pilot 0.3.1 — final frozen batch (September 28, 2026)
 
