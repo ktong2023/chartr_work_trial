@@ -27,6 +27,11 @@ BAD = re.compile(r'(?i)pac(ed|ing|emaker)|flutter|artifact|unsuitable|poor quali
 # study_id -> edit. Current ECGs of QT cases; one older ECG (look-alike); artifact controls; noisy AF.
 QT_EDITS = {'104821039': 'current', '106885519': 'current', '101515306': 'current', '105362569': 'older', '108018814': 'current'}
 # 109419304 (motion, seed 12) was withdrawn after pilot 1: on that low-voltage tracing the artifact made the rhythm unreadable.
+# v0.3: harder tracings added after 12-lead review (three readers plus designer review of every lead): sinus tachycardia
+# with first-degree AV block and LBBB, then ventricular pacing (10023117); LBBB with borderline PR (10038992, two ECGs);
+# a transient RBBB earlier the same day as a narrow-QRS ECG (10021487). Candidate flutters were not added: flutter waves
+# could not be confirmed on review.
+ADDITIONS = {'103417522': 'NORMAL', '102531404': 'PACED', '103686933': 'NORMAL', '104941853': 'NORMAL', '106516875': 'NORMAL'}
 ARTIFACTS = {'106825293': ('emg', 11), '101538691': ('wander', 13),
              '107859369': ('la_ra', 14), '108211642': ('wander', 15)}
 
@@ -88,7 +93,7 @@ def build():
     shifted = {e['study_id']: e for e in T.shifted_ecgs(ecgs, off)}
     catalog, truth, deltas = [], {}, {}
     for e in ecgs:
-        sid = e['study_id']; lab = usable_label(labels[sid])
+        sid = e['study_id']; lab = ADDITIONS.get(sid) or usable_label(labels[sid])
         if not lab:
             continue
         rec = E.load(T.ECG_DIR / e['path'])

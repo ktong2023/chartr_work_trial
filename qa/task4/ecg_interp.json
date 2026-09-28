@@ -1,0 +1,9567 @@
+{
+ "ecg": {
+  "105362569": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     62.3,
+     73.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     125.0,
+     184.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     488.1,
+     593.9
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102172660": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     66.0,
+     78.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     138.0,
+     196.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     364.2,
+     441.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104430624": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     358.9,
+     433.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102144047": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     93.0,
+     103.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     110.0,
+     152.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     366.2,
+     446.9
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106959793": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     100.6,
+     111.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     375.4,
+     448.0
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106183809": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     91.0,
+     101.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     112.0,
+     166.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     376.5,
+     457.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105404782": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     72.9,
+     83.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     124.0,
+     166.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     354.6,
+     428.2
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102241375": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     105.1,
+     115.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     112.0,
+     154.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     364.0,
+     437.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105649244": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     83.9,
+     94.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     367.7,
+     448.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105858994": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     62.0,
+     72.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     132.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     351.4,
+     432.2
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105928266": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     75.0,
+     85.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     132.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     369.0,
+     451.9
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106525263": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     113.1,
+     123.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     118.0,
+     160.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     388.1,
+     458.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103036945": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     85.9,
+     96.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     381.2,
+     463.5
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107898490": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     75.0,
+     85.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     140.0,
+     180.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     401.5,
+     463.4
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102616671": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     82.1,
+     92.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     128.0,
+     170.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     365.2,
+     439.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105014865": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     88.0,
+     98.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     45.0,
+     87.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     150.0,
+     194.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     399.8,
+     473.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109795468": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     93.0,
+     103.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     144.0,
+     189.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     386.5,
+     459.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104835782": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     70.0,
+     80.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     51.0,
+     87.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     151.0,
+     196.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     376.3,
+     442.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109840765": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     75.6,
+     86.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     51.0,
+     106.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     132.0,
+     194.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     366.2,
+     452.4
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100728139": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     82.1,
+     92.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     53.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     138.0,
+     186.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     420.3,
+     477.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106362803": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     89.2,
+     118.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103024863": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     57.0,
+     81.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     121.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107525170": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     145.1,
+     175.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107806866": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     55.9,
+     80.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104791103": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     77.0,
+     105.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104547052": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     113.5,
+     139.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104710852": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     62.8,
+     91.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100634327": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     103.2,
+     130.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105825300": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     86.2,
+     137.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107555672": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     95.5,
+     153.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     51.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102403584": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     86.5,
+     118.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105389347": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     124.1,
+     159.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101771242": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     123.7,
+     150.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103837709": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     68.0,
+     111.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108184246": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     109.2,
+     142.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104935003": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     88.0,
+     117.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107452620": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     125.3,
+     155.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101121040": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     60.0,
+     70.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     138.0,
+     178.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     368.2,
+     437.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108895765": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     150.2,
+     176.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     81.0,
+     125.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "108195884": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     98.1,
+     108.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     111.0,
+     156.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "100698634": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     142.1,
+     152.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "108780865": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     35.0,
+     59.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     77.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107771656": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     57.0,
+     67.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     77.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101581810": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     48.8,
+     59.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     389.9,
+     458.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106885519": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     57.0,
+     67.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     77.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     148.0,
+     200.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     489.2,
+     589.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102101022": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     89.6,
+     100.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     405.5,
+     479.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102955795": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     109.5,
+     120.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     114.0,
+     176.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "102853474": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "103300096": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     101.0,
+     111.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     134.0,
+     192.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     391.0,
+     472.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109788729": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     94.0,
+     104.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     135.0,
+     196.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     406.5,
+     460.1
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100850284": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     119.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     146.0,
+     194.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     415.5,
+     470.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107885876": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     95.7,
+     106.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     150.0,
+     198.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     387.4,
+     460.4
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101784267": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     103.1,
+     113.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     412.2,
+     476.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100145505": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     91.0,
+     101.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     145.0,
+     190.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     373.7,
+     452.9
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102436418": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     121.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     415.5,
+     478.9
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100211464": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     89.0,
+     99.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     145.0,
+     206.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     405.7,
+     463.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102002950": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     89.0,
+     99.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     150.0,
+     204.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     405.7,
+     458.9
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100914215": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     138.0,
+     190.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     415.5,
+     471.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109253034": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     71.0,
+     81.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     132.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     390.8,
+     461.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108446236": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     50.9,
+     61.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     114.0,
+     172.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     391.4,
+     431.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "104629882": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     52.5,
+     63.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     128.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     398.9,
+     458.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101839963": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     55.0,
+     65.1
+    ]
+   },
+   "qrs_ms": {
+    "any": true
+   },
+   "pr_ms": {
+    "range": [
+     140.0,
+     186.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     371.1,
+     458.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "107158938": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     46.0,
+     56.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     127.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     148.0,
+     210.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     377.2,
+     451.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "107132278": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     81.1,
+     91.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107674864": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     122.2,
+     164.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107819285": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     92.1,
+     102.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     74.0,
+     115.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     315.1,
+     401.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105060792": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     112.2,
+     147.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109138694": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     124.1,
+     156.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104706820": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     60.0,
+     70.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     176.0,
+     218.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     412.6,
+     469.7
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "102280728": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     49.0,
+     59.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     202.0,
+     258.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ],
+    "allowed": []
+   }
+  },
+  "103042067": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     45.0,
+     55.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     170.0,
+     216.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "101206211": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     53.0,
+     63.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     114.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     166.0,
+     213.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     377.5,
+     440.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "109439164": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     59.0,
+     69.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     178.0,
+     226.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     399.3,
+     464.2
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "107059289": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     62.0,
+     72.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     182.0,
+     224.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     415.8,
+     472.4
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "101757242": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     56.0,
+     66.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     168.0,
+     210.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     392.0,
+     465.8
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104822395": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     51.8,
+     63.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     164.0,
+     210.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     392.6,
+     460.6
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107719002": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     61.9,
+     72.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     176.0,
+     222.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     413.1,
+     472.4
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "108689967": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     53.0,
+     64.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     180.0,
+     222.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     340.2,
+     425.2
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "100246383": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     61.7,
+     72.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     176.0,
+     220.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     408.2,
+     470.3
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "109218019": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     115.0,
+     126.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     88.0,
+     146.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     398.6,
+     461.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101948356": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     81.1,
+     91.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     83.0,
+     125.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     172.0,
+     220.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     408.8,
+     464.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "102456968": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     76.1,
+     86.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     161.0,
+     210.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     414.8,
+     464.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "107399137": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     126.2,
+     156.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102910502": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     95.0,
+     105.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     124.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     408.6,
+     462.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108322943": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     100.1,
+     110.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     148.0,
+     192.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     373.9,
+     448.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103922229": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     99.2,
+     111.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     78.0,
+     142.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     412.2,
+     458.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109661561": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     96.0,
+     106.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     126.0,
+     172.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     413.4,
+     471.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104450423": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     76.1,
+     86.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     132.0,
+     178.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     398.5,
+     472.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107627609": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     92.1,
+     102.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     53.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109287357": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     86.8,
+     114.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100269135": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     116.5,
+     143.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     117.0,
+     165.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [
+     "LBBB"
+    ],
+    "allowed": [
+     "RBBB"
+    ]
+   }
+  },
+  "105789995": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     81.2,
+     113.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     143.0,
+     191.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [
+     "LBBB"
+    ],
+    "allowed": [
+     "RBBB"
+    ]
+   }
+  },
+  "103262474": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     73.4,
+     84.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     129.0,
+     169.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     511.4,
+     592.8
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "EXTREME",
+     "LEFT"
+    ]
+   },
+   "conduction": {
+    "required": [
+     "RBBB"
+    ],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "LBBB"
+    ]
+   }
+  },
+  "102625534": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     99.1,
+     132.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     115.0,
+     153.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [
+     "LBBB"
+    ],
+    "allowed": [
+     "RBBB"
+    ]
+   }
+  },
+  "103952517": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     111.2,
+     136.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     119.0,
+     153.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "107689861": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     47.4,
+     58.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     371.0,
+     422.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108651109": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     60.0,
+     70.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     79.0,
+     123.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     394.3,
+     477.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101515306": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     52.5,
+     62.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     491.3,
+     592.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "100867733": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     115.1,
+     142.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107573862": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     73.0,
+     84.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     110.0,
+     160.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106023425": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     73.0,
+     83.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     112.0,
+     162.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100065910": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     69.1,
+     79.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     82.0,
+     142.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107321368": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     66.9,
+     77.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     347.5,
+     421.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108018814": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     63.1,
+     73.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     91.0,
+     152.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     488.5,
+     601.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106565956": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     78.1,
+     88.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     45.0,
+     83.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     122.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     374.3,
+     443.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102305989": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     80.0,
+     108.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106721017": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     100.4,
+     137.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102893922": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     63.1,
+     94.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105607048": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     69.1,
+     96.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108019775": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     121.9,
+     152.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103888812": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     79.2,
+     110.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101693162": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     65.0,
+     95.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100924231": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     135.8,
+     145.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     96.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     395.1,
+     462.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108454397": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     59.0,
+     83.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109839112": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     97.1,
+     124.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105224815": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     57.8,
+     68.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     382.9,
+     474.1
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101016166": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     96.0,
+     106.7
+    ]
+   },
+   "qrs_ms": {
+    "any": true
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     395.3,
+     471.5
+    ]
+   },
+   "axis": {
+    "any": true
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107457843": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     96.7,
+     107.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103088543": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     125.0,
+     156.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     124.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107914094": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     124.1,
+     154.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     122.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106186980": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     102.1,
+     112.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     140.0,
+     198.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     375.0,
+     459.1
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105523266": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     115.0,
+     125.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     398.6,
+     467.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "100040711": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     60.0,
+     95.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102167222": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     94.0,
+     119.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103700930": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     99.9,
+     125.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     98.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100276290": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     59.0,
+     85.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     77.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107036253": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     103.2,
+     130.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101951115": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     99.1,
+     126.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107841896": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     125.6,
+     152.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109757556": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     42.0,
+     69.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     87.0,
+     139.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "100578411": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     69.1,
+     94.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     97.0,
+     137.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "109143487": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     69.1,
+     95.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     87.0,
+     119.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102514347": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     19.3,
+     110.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     97.0,
+     149.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "100466541": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     66.0,
+     93.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     93.0,
+     147.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "100613396": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     59.3,
+     102.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     77.0,
+     127.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "LEFT"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "102393183": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     12.6,
+     86.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     99.0,
+     129.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "104232242": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     55.0,
+     65.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     108.0,
+     164.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "EXTREME",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103992480": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     63.7,
+     74.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105745707": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     70.9,
+     81.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "107859369": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     64.0,
+     74.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "any": true
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101832748": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     56.7,
+     67.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     407.1,
+     472.4
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104750528": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     77.1,
+     87.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     126.0,
+     172.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "RIGHT"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103671424": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     80.1,
+     90.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     389.7,
+     451.5
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109116314": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     77.1,
+     87.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     397.9,
+     476.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108530691": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     79.0,
+     89.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     333.7,
+     415.3
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103857061": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     72.0,
+     82.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103541212": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     80.0,
+     90.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108912996": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     41.2,
+     74.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     73.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107873952": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     63.0,
+     74.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     371.4,
+     444.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101538691": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     63.0,
+     73.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106825293": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     68.1,
+     79.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     385.4,
+     468.1
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100851619": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     64.0,
+     74.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     93.0,
+     135.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     122.0,
+     178.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     398.6,
+     479.4
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "100849868": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     101.0,
+     111.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     129.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     102.0,
+     156.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "101901982": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     116.2,
+     126.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     106.0,
+     152.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     384.1,
+     455.4
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106516875": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     95.0,
+     105.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     113.0,
+     151.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     118.0,
+     164.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     433.5,
+     510.6
+    ]
+   },
+   "axis": {
+    "any": true
+   },
+   "conduction": {
+    "required": [
+     "RBBB"
+    ],
+    "allowed": [
+     "LBBB"
+    ]
+   }
+  },
+  "102247352": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     77.1,
+     87.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     79.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     124.0,
+     170.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     385.6,
+     448.1
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101401324": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     76.1,
+     86.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     85.0,
+     119.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     138.0,
+     200.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     385.2,
+     465.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107374881": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     70.0,
+     82.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     79.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     119.0,
+     174.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     385.0,
+     460.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108211642": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     139.1,
+     169.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104882441": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     75.0,
+     85.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     148.0,
+     198.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     395.7,
+     442.6
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102531404": {
+   "rhythm": {
+    "exact": "PACED"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     127.0,
+     173.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "RIGHT"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "103417522": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     104.1,
+     114.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     155.0,
+     197.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     202.0,
+     252.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "LBBB"
+    ],
+    "allowed": [
+     "RBBB"
+    ]
+   }
+  },
+  "107149156": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     127.2,
+     137.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     106.0,
+     158.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     412.5,
+     469.7
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "NORMAL",
+     "RIGHT"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104821039": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     65.1,
+     75.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     75.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     503.79999999999995,
+     632.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "100913766": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     60.0,
+     70.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     117.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     365.1,
+     445.1
+    ]
+   },
+   "axis": {
+    "exact": "LEFT"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102857516": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     72.0,
+     82.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     71.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     392.4,
+     469.0
+    ]
+   },
+   "axis": {
+    "exact": "LEFT"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "105469023": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     45.3,
+     80.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102295353": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     74.2,
+     101.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109550629": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     50.0,
+     86.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109419304": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     60.0,
+     70.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     148.0,
+     197.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     345.9,
+     442.6
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104189894": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     62.0,
+     72.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     103.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106465580": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     57.0,
+     67.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109187086": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     130.2,
+     155.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104489698": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     62.0,
+     72.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108234665": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     54.1,
+     64.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     83.0,
+     115.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105375026": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     119.0,
+     145.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     67.0,
+     111.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104253928": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     53.0,
+     63.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     389.7,
+     468.4
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106045460": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     56.0,
+     66.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     77.0,
+     136.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     398.9,
+     473.9
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103879393": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     68.1,
+     78.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     79.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     86.0,
+     133.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102573205": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     77.1,
+     88.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     59.0,
+     109.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102888469": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     77.1,
+     87.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     81.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     118.0,
+     158.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     419.5,
+     478.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102731956": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     89.0,
+     99.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     103.0,
+     167.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     380.0,
+     458.9
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "108465338": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     105.1,
+     115.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     57.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     70.0,
+     134.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     402.6,
+     462.8
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106143775": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     111.1,
+     121.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     97.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     380.9,
+     437.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103521932": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     106.1,
+     116.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     55.0,
+     107.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     368.3,
+     455.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103829890": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     80.0,
+     90.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     130.0,
+     178.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     425.2,
+     479.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109219382": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     84.0,
+     94.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     113.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109466629": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     66.0,
+     76.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     63.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     136.0,
+     196.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     393.1,
+     470.4
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101744645": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     55.0,
+     84.1
+    ]
+   },
+   "qrs_ms": {
+    "any": true
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "RIGHT"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105005683": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     79.0,
+     89.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     41.0,
+     81.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     378.1,
+     456.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104022833": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     113.1,
+     123.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     39.0,
+     83.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     117.0,
+     166.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     370.0,
+     429.7
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101524902": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     102.0,
+     112.1
+    ]
+   },
+   "qrs_ms": {
+    "any": true
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     396.9,
+     471.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "105616956": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     99.2,
+     109.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     45.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     343.7,
+     421.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104011013": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     73.0,
+     83.9
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     41.0,
+     91.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     403.8,
+     476.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "103202417": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     66.8,
+     77.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     47.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     133.0,
+     188.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     377.0,
+     457.5
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "107274479": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     69.8,
+     80.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     41.0,
+     89.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     389.6,
+     468.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102111462": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     70.0,
+     80.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     53.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     128.0,
+     178.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     382.2,
+     456.0
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "104941853": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     54.1,
+     66.2
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     111.0,
+     145.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     424.1,
+     513.0
+    ]
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [
+     "LBBB"
+    ],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "RBBB"
+    ]
+   }
+  },
+  "103686933": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     63.0,
+     74.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     111.0,
+     149.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [
+     "LBBB"
+    ],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
+     "RBBB"
+    ]
+   }
+  },
+  "105862861": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     103.1,
+     114.5
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     69.0,
+     105.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     100.0,
+     144.0
+    ]
+   },
+   "qtc_ms": {
+    "range": [
+     402.4,
+     481.1
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109952008": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     71.0,
+     81.6
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     49.0,
+     99.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     419.8,
+     479.3
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "109048192": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     69.1,
+     79.8
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     45.0,
+     95.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "106035722": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     67.0,
+     77.1
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     61.0,
+     93.0
+    ]
+   },
+   "pr_ms": {
+    "any": true
+   },
+   "qtc_ms": {
+    "range": [
+     391.5,
+     477.2
+    ]
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "102298909": {
+   "rhythm": {
+    "exact": "SINUS"
+   },
+   "ventricular_rate": {
+    "range": [
+     56.7,
+     67.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     79.0,
+     122.0
+    ]
+   },
+   "pr_ms": {
+    "range": [
+     186.0,
+     248.0
+    ]
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "one_of": [
+     "LEFT",
+     "NORMAL"
+    ]
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
+   }
+  },
+  "106516565": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     112.2,
+     149.3
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     65.0,
+     101.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "101950824": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     88.0,
+     113.7
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     101.0,
+     133.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "100944098": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     66.3,
+     103.0
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     97.0,
+     141.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  },
+  "104330494": {
+   "rhythm": {
+    "exact": "AF"
+   },
+   "ventricular_rate": {
+    "range": [
+     51.0,
+     75.4
+    ]
+   },
+   "qrs_ms": {
+    "range": [
+     99.0,
+     135.0
+    ]
+   },
+   "pr_ms": {
+    "null": true
+   },
+   "qtc_ms": {
+    "any": true
+   },
+   "axis": {
+    "exact": "NORMAL"
+   },
+   "conduction": {
+    "required": [],
+    "allowed": [
+     "LBBB",
+     "RBBB"
+    ]
+   }
+  }
+ },
+ "latest": {
+  "a6e7e991-6801-5425-b435-4ca6b7decfcc": {
+   "ecg": "102172660",
+   "subject_id": "10001217",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      66.0,
+      78.3
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      107.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      138.0,
+      196.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      364.2,
+      441.3
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "105362569",
+   "changes": {
+    "required": [
+     "QTC_DECREASE_60"
+    ],
+    "allowed": []
+   }
+  },
+  "e1de99bc-3bc5-565e-9ee6-69675b9cc267": {
+   "ecg": "103036945",
+   "subject_id": "10002428",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      85.9,
+      96.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      61.0,
+      95.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      381.2,
+      463.5
+     ]
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "102616671",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "a5d4cb17-db8d-574b-bd88-71473088fd9a": {
+   "ecg": "109795468",
+   "subject_id": "10002930",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      93.0,
+      103.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      55.0,
+      103.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      144.0,
+      189.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      386.5,
+      459.7
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "109840765",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "77e10fd0-6a1c-5547-a130-fae1341acf36": {
+   "ecg": "101771242",
+   "subject_id": "10003400",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      123.7,
+      150.2
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      63.0,
+      99.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "108184246",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "568cb149-804c-59e8-bdf5-816e8151cd22": {
+   "ecg": "108195884",
+   "subject_id": "10004235",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      98.1,
+      108.4
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      73.0,
+      115.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      111.0,
+      156.0
+     ]
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
+    }
+   },
+   "prior_ecg": "100698634",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "4c48ec6f-716c-5bfd-8cee-b9a6b7c6c765": {
+   "ecg": "106885519",
+   "subject_id": "10004422",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      57.0,
+      67.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      77.0,
+      111.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      148.0,
+      200.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      489.2,
+      589.2
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "108780865",
+   "changes": {
+    "required": [
+     "RESOLVED_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "b410dd44-7d65-56f9-974f-2751e8aa80e2": {
+   "ecg": "102853474",
+   "subject_id": "10004457",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      106.1,
+      116.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      71.0,
+      115.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
+    }
+   },
+   "prior_ecg": "102955795",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "3886cafb-65f4-5789-9213-64678a202f82": {
+   "ecg": "107158938",
+   "subject_id": "10005348",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      46.0,
+      56.7
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      127.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      148.0,
+      210.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      377.2,
+      451.6
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "LBBB",
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "104629882",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "NEW_BUNDLE_BRANCH_BLOCK"
+    ]
+   }
+  },
+  "a2605b15-4f1b-5839-b4ce-fb7a6bc1005f": {
+   "ecg": "107674864",
+   "subject_id": "10005817",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      122.2,
+      164.3
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      61.0,
+      107.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107132278",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "0c2243d2-987b-5cbd-8eb1-170a80647693": {
+   "ecg": "105060792",
+   "subject_id": "10005866",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      112.2,
+      147.1
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      63.0,
+      99.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107819285",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "94abdf17-f13a-5eae-aac0-eca407bbfadd": {
+   "ecg": "102280728",
+   "subject_id": "10007058",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      49.0,
+      59.4
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      65.0,
+      99.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      202.0,
+      258.0
+     ]
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "103042067",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "28dcf33b-0c52-587f-83ad-2a3270976719": {
+   "ecg": "109218019",
+   "subject_id": "10007795",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      115.0,
+      126.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      55.0,
+      97.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      88.0,
+      146.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      398.6,
+      461.6
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "73fb53d8-f1fa-53cd-a25c-2314caccbb99": {
+   "ecg": "107399137",
+   "subject_id": "10007818",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      126.2,
+      156.9
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      115.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "102456968",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "2edf1f64-2919-50e3-b98c-7a55dcfda00d": {
+   "ecg": "109661561",
+   "subject_id": "10009035",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      96.0,
+      106.4
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      67.0,
+      103.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      126.0,
+      172.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      413.4,
+      471.0
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "102910502",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "735c5ea5-a995-5613-9c30-5421bcc2cf25": {
+   "ecg": "107627609",
+   "subject_id": "10009049",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      92.1,
+      102.4
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      53.0,
+      91.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "51d2190c-cc46-56c5-b2ea-363895cbea75": {
+   "ecg": "109287357",
+   "subject_id": "10009628",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      86.8,
+      114.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      65.0,
+      99.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "df756e08-6ea8-5d69-b918-67911945f827": {
+   "ecg": "105789995",
+   "subject_id": "10010471",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      81.2,
+      113.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      143.0,
+      191.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [
+      "LBBB"
+     ],
+     "allowed": [
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "103262474",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "c4c29979-f2f5-56db-af5b-1715887727b8": {
+   "ecg": "107689861",
+   "subject_id": "10011398",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      47.4,
+      58.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      67.0,
+      115.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      371.0,
+      422.0
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "108651109",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60"
+    ]
+   }
+  },
+  "f77a5b72-65fd-5b20-8cef-6b6be4791265": {
+   "ecg": "101515306",
+   "subject_id": "10012853",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      52.5,
+      62.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      57.0,
+      97.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      491.3,
+      592.5
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
+    }
+   },
+   "prior_ecg": "100867733",
+   "changes": {
+    "required": [
+     "RESOLVED_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "23069939-0c4c-517b-a3ec-baae0d4e3988": {
+   "ecg": "108018814",
+   "subject_id": "10013049",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      63.1,
+      73.3
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      107.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      91.0,
+      152.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      488.5,
+      601.7
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "100065910",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "807d2a03-9c57-55e3-a443-09fc8f1de866": {
+   "ecg": "106565956",
+   "subject_id": "10014078",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      78.1,
+      88.1
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      45.0,
+      83.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      122.0,
+      174.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      374.3,
+      443.7
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "cb70e6ae-90b1-562b-8ab0-467c65d18d5e": {
+   "ecg": "100924231",
+   "subject_id": "10014354",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      135.8,
+      145.8
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      61.0,
+      96.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      395.1,
+      462.8
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "109839112",
+   "changes": {
+    "required": [
+     "RESOLVED_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "f3fc719c-f6e0-5c27-a18f-b4e5afaf279b": {
+   "ecg": "107457843",
+   "subject_id": "10014729",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      96.7,
+      107.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      63.0,
+      103.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "101016166",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "5f74c4bf-681e-5123-ab4d-225c72be4f9f": {
+   "ecg": "103088543",
+   "subject_id": "10015272",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      125.0,
+      156.2
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      75.0,
+      124.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107914094",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "1cf9e585-806c-513b-80af-4ca565a28231": {
+   "ecg": "105523266",
+   "subject_id": "10015860",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      115.0,
+      125.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      109.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      398.6,
+      467.8
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
+    }
+   },
+   "prior_ecg": "106186980",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "f5a99b42-365c-5f7e-bcab-4fa33b3cc88e": {
+   "ecg": "107841896",
+   "subject_id": "10015931",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      125.6,
+      152.2
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      61.0,
+      101.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "one_of": [
+      "NORMAL",
+      "RIGHT"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107036253",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "dd2bf984-33c3-5874-8f68-84113327877e": {
+   "ecg": "109757556",
+   "subject_id": "10018081",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      42.0,
+      69.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      87.0,
+      139.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "LBBB",
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "100466541",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "NEW_BUNDLE_BRANCH_BLOCK",
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60",
+     "RESOLVED_BUNDLE_BRANCH_BLOCK"
+    ]
+   }
+  },
+  "71a27b6b-5e41-509f-83a8-8f47e8fb8d78": {
+   "ecg": "103992480",
+   "subject_id": "10018328",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      63.7,
+      74.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      59.0,
+      117.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "104232242",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "bbad4581-d089-54a7-b7a0-8d986c5fb5ec": {
+   "ecg": "107859369",
+   "subject_id": "10018423",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      64.0,
+      74.4
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      71.0,
+      105.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "any": true
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "91f25704-6153-5259-bdd7-2ca6478de14a": {
+   "ecg": "103857061",
+   "subject_id": "10019003",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      72.0,
+      82.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      105.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "108530691",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "76202c51-1b9d-5cc2-a7bc-3dfb2ac3ab32": {
+   "ecg": "108912996",
+   "subject_id": "10019172",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      41.2,
+      74.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      73.0,
+      107.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107873952",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "c0d83ad6-0b65-5fd6-b241-f50cf552232c": {
+   "ecg": "101538691",
+   "subject_id": "10019385",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      63.0,
+      73.2
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      65.0,
+      111.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "aeda7084-be35-510e-b171-f00596aed99f": {
+   "ecg": "106825293",
+   "subject_id": "10020187",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      68.1,
+      79.1
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      67.0,
+      111.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      385.4,
+      468.1
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "a87c1099-8c87-5548-8fc0-56972a82cebf": {
+   "ecg": "100849868",
+   "subject_id": "10020944",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      101.0,
+      111.8
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      71.0,
+      129.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      102.0,
+      156.0
+     ]
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "LBBB",
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "100851619",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "NEW_BUNDLE_BRANCH_BLOCK",
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60",
+     "RESOLVED_BUNDLE_BRANCH_BLOCK"
+    ]
+   }
+  },
+  "4365e125-c049-525a-9459-16d5e6947ad2": {
+   "ecg": "101901982",
+   "subject_id": "10021487",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      116.2,
+      126.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      59.0,
+      99.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      106.0,
+      152.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      384.1,
+      455.4
+     ]
+    },
+    "axis": {
+     "one_of": [
+      "NORMAL",
+      "RIGHT"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "106516875",
+   "changes": {
+    "required": [
+     "RESOLVED_BUNDLE_BRANCH_BLOCK"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60"
+    ]
+   }
+  },
+  "a0bcbbc0-b432-5f7d-ac63-28212f20dead": {
+   "ecg": "108211642",
+   "subject_id": "10022017",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      139.1,
+      169.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      75.0,
+      115.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107374881",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "13df78e7-150e-5eb7-be5f-5f62b2baee87": {
+   "ecg": "104882441",
+   "subject_id": "10022880",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      75.0,
+      85.9
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      61.0,
+      105.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      148.0,
+      198.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      395.7,
+      442.6
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "9c3ebb7e-d087-519e-bea4-31c3d4aac7ff": {
+   "ecg": "102531404",
+   "subject_id": "10023117",
+   "fields": {
+    "rhythm": {
+     "exact": "PACED"
+    },
+    "ventricular_rate": {
+     "range": [
+      106.1,
+      116.3
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      127.0,
+      173.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "RIGHT"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK",
+      "LBBB",
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "103417522",
+   "changes": {
+    "required": [
+     "NEW_PACED_RHYTHM"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60",
+     "RESOLVED_BUNDLE_BRANCH_BLOCK"
+    ]
+   }
+  },
+  "bc2a74ce-4069-5983-9423-1c175f7854d9": {
+   "ecg": "104821039",
+   "subject_id": "10023239",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      65.1,
+      75.1
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      75.0,
+      109.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      503.79999999999995,
+      632.2
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107149156",
+   "changes": {
+    "required": [
+     "QTC_INCREASE_60"
+    ],
+    "allowed": []
+   }
+  },
+  "7d61fb4e-dc5e-5b1b-a7a6-1d96a3818546": {
+   "ecg": "100913766",
+   "subject_id": "10024043",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      60.0,
+      70.9
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      67.0,
+      117.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      365.1,
+      445.1
+     ]
+    },
+    "axis": {
+     "exact": "LEFT"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "102857516",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60"
+    ]
+   }
+  },
+  "28776290-4349-56d3-8c13-adc554feabb8": {
+   "ecg": "102295353",
+   "subject_id": "10025463",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      74.2,
+      101.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      63.0,
+      109.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "109550629",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "f572075b-186b-5565-b2d4-1567fe4f925c": {
+   "ecg": "109419304",
+   "subject_id": "10025612",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      60.0,
+      70.7
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      57.0,
+      101.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      148.0,
+      197.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      345.9,
+      442.6
+     ]
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "9111ccb1-fc93-5599-ab7d-35f1e61d4214": {
+   "ecg": "105375026",
+   "subject_id": "10026255",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      119.0,
+      145.3
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      67.0,
+      111.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "108234665",
+   "changes": {
+    "required": [
+     "NEW_AF"
+    ],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "7ec7078a-0593-5a99-9862-ebbff47fd1c5": {
+   "ecg": "104253928",
+   "subject_id": "10029291",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      53.0,
+      63.3
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      65.0,
+      107.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      389.7,
+      468.4
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "106045460",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "1bb918ba-e04e-5e7a-87ca-dbcbbb4c72c3": {
+   "ecg": "103879393",
+   "subject_id": "10032725",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      68.1,
+      78.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      79.0,
+      109.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      86.0,
+      133.0
+     ]
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "102573205",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "dc332fb6-61f8-552e-8743-765d626f0a4e": {
+   "ecg": "102888469",
+   "subject_id": "10035185",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      77.1,
+      87.2
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      81.0,
+      113.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      118.0,
+      158.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      419.5,
+      478.8
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "4f773083-7f4d-5378-b839-c24ca1e15434": {
+   "ecg": "103521932",
+   "subject_id": "10035631",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      106.1,
+      116.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      55.0,
+      107.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      368.3,
+      455.5
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "106143775",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "842680b3-e421-58cc-8050-3b29668b438c": {
+   "ecg": "101744645",
+   "subject_id": "10037861",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      55.0,
+      84.1
+     ]
+    },
+    "qrs_ms": {
+     "any": true
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "RIGHT"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "fa5fbf9c-23e3-5ef3-9cfb-24d20a950314": {
+   "ecg": "101524902",
+   "subject_id": "10037928",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      102.0,
+      112.1
+     ]
+    },
+    "qrs_ms": {
+     "any": true
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      396.9,
+      471.3
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "107274479",
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "e635f2dd-aaec-5fef-a100-b9dfb523cbb6": {
+   "ecg": "104941853",
+   "subject_id": "10038992",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      54.1,
+      66.2
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      111.0,
+      145.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      424.1,
+      513.0
+     ]
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [
+      "LBBB"
+     ],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK",
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "103686933",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "5f3dcdb5-bd27-58f5-b990-859b6bcc2d73": {
+   "ecg": "105862861",
+   "subject_id": "10038999",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      103.1,
+      114.5
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      69.0,
+      105.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      100.0,
+      144.0
+     ]
+    },
+    "qtc_ms": {
+     "range": [
+      402.4,
+      481.1
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "8e77dd0b-932d-5790-9ba6-5c6df8434457": {
+   "ecg": "109952008",
+   "subject_id": "10039708",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      71.0,
+      81.6
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      49.0,
+      99.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      419.8,
+      479.3
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": "109048192",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60"
+    ]
+   }
+  },
+  "752d15e2-bd27-52ed-b055-ed79edb86aba": {
+   "ecg": "106035722",
+   "subject_id": "10039831",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      67.0,
+      77.1
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      61.0,
+      93.0
+     ]
+    },
+    "pr_ms": {
+     "any": true
+    },
+    "qtc_ms": {
+     "range": [
+      391.5,
+      477.2
+     ]
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": []
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "b9a9ae7b-2455-59fe-938d-ce19ef360dd1": {
+   "ecg": "102298909",
+   "subject_id": "10039997",
+   "fields": {
+    "rhythm": {
+     "exact": "SINUS"
+    },
+    "ventricular_rate": {
+     "range": [
+      56.7,
+      67.0
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      79.0,
+      122.0
+     ]
+    },
+    "pr_ms": {
+     "range": [
+      186.0,
+      248.0
+     ]
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "one_of": [
+      "LEFT",
+      "NORMAL"
+     ]
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
+    }
+   },
+   "prior_ecg": null,
+   "changes": {
+    "required": [],
+    "allowed": []
+   }
+  },
+  "adde1635-3110-5e92-b9f0-7a6d845a1784": {
+   "ecg": "104330494",
+   "subject_id": "10040025",
+   "fields": {
+    "rhythm": {
+     "exact": "AF"
+    },
+    "ventricular_rate": {
+     "range": [
+      51.0,
+      75.4
+     ]
+    },
+    "qrs_ms": {
+     "range": [
+      99.0,
+      135.0
+     ]
+    },
+    "pr_ms": {
+     "null": true
+    },
+    "qtc_ms": {
+     "any": true
+    },
+    "axis": {
+     "exact": "NORMAL"
+    },
+    "conduction": {
+     "required": [],
+     "allowed": [
+      "LBBB",
+      "RBBB"
+     ]
+    }
+   },
+   "prior_ecg": "101950824",
+   "changes": {
+    "required": [],
+    "allowed": [
+     "NEW_BUNDLE_BRANCH_BLOCK",
+     "QTC_DECREASE_60",
+     "QTC_INCREASE_60",
+     "RESOLVED_BUNDLE_BRANCH_BLOCK"
+    ]
+   }
+  }
+ }
+}

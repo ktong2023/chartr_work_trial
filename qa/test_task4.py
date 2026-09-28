@@ -55,6 +55,9 @@ SHORTCUTS = {  # wrong algorithm -> the case it should break
     'mention_is_dose_change': 'a note about warfarin dosing without a change counts as a dose change',
     'no_charted_rhythm': 'AF from codes and ECGs only, not inpatient rhythm charting (10020306)',
     'trust_documented_qt': 'a note calling the QT acceptable overrides the ECG (10013049)',
+    'no_comparison': 'interpretations without the comparison with the previous ECG',
+    'prior_earliest': 'compared with the oldest ECG instead of the previous one',
+    'no_conduction': 'conduction abnormalities not reported',
     'rhythm_any_day': 'sinus rhythm documented in paroxysmal AF counted as a conflict',
 }
 BUILD = {}
@@ -96,9 +99,9 @@ def in_process(service):
             return req('GET', '/patients')
         if args[:2] == ('ecg', 'list'):
             return req('GET', '/ecg')
-        if args[0] in ('item', 'finding') and args[1] == 'add':
+        if args[0] in ('item', 'interpretation') and args[1] == 'add':
             return req('POST', '/' + args[0] + 's', json.loads(args[3]))
-        if args[0] in ('items', 'findings'):
+        if args[0] in ('items', 'interpretations'):
             return req('GET', '/' + args[0])
         raise AssertionError(args)
 
@@ -132,7 +135,7 @@ class Task4Tests(unittest.TestCase):
             for it in items:
                 clinic('item', 'add', '--json', json.dumps(it))
             for f in findings:
-                clinic('finding', 'add', '--json', json.dumps(f))
+                clinic('interpretation', 'add', '--json', json.dumps(f))
         snap = self.service.collect()
         return items, findings, grade.grade(snap, self.attestation)
 
@@ -167,7 +170,7 @@ class Task4Tests(unittest.TestCase):
         result = grade.grade(self.service.collect(), self.attestation)
         self.assertEqual(result['reward'], 0)
         self.assertFalse(result['components']['identification'])
-        self.assertFalse(result['components']['ecg_findings'])
+        self.assertFalse(result['components']['ecg_interpretation'])
 
     def test_wrong_algorithms_fail(self):
         correct_items, correct_findings, result = self.run_reference()
@@ -197,9 +200,16 @@ class Task4Tests(unittest.TestCase):
         self.assertTrue(current_artifacts, 'no artifact ECG is any patient\'s most recent ECG')
         readings = json.loads(json.dumps(reference.READINGS))
         for k in current_artifacts:
-            readings['ecg'][k] = {'label': 'AF', 'hr': readings['ecg'][k]['hr'], 'qtc_ms': None}
+            readings['ecg'][k].update(label='AF', rhythm='AF', pr_ms=None, qtc_ms=None)
         _, _, result = self.run_reference(readings=readings)
         self.assertEqual(result['reward'], 0, 'artifact read as AF')
+        # Paced rhythm read as sinus with LBBB; a transient RBBB on the previous ECG missed.
+        for sid, change in (('102531404', {'rhythm': 'SINUS', 'conduction': ['LBBB']}), ('106516875', {'conduction': []})):
+            self.setUp()
+            readings = json.loads(json.dumps(reference.READINGS))
+            readings['ecg'][sid].update(change)
+            _, _, result = self.run_reference(readings=readings)
+            self.assertEqual(result['reward'], 0, (sid, change))
         # Remote bleed (10005348) read as a current contraindication.
         self.setUp()
         added = [json.loads(l) for l in gzip.open(OVERLAY / 'added.ndjson.gz', 'rt')]
@@ -215,16 +225,16 @@ class Task4Tests(unittest.TestCase):
 
     def test_measurement_ranges_admit_every_agreeing_method(self):
         truth = json.loads((ROOT / 'qa/task4/ecg_truth.json').read_text())
-        for f in EXPECTED['ecg_findings']:
-            t = truth[f['ecg']]
+        for f in EXPECTED['interpretations']:
+            t = truth[f['ecg']]; rate = f['fields']['ventricular_rate']['range']
             for method, hr in t['hr_reads'].items():
-                self.assertTrue(f['heart_rate'][0] <= hr <= f['heart_rate'][1], (f['ecg'], method, hr, f['heart_rate']))
-            if f['finding'] == 'QTC_PROLONGED':
+                self.assertTrue(rate[0] <= hr <= rate[1], (f['ecg'], method, hr, rate))
+            if (t.get('edit') or '').startswith('qt_'):
                 reads = sorted(t['qtc_reads'].values())
                 median = reads[len(reads) // 2]
                 for method, q in t['qtc_reads'].items():
                     if abs(q - median) <= 60:
-                        self.assertTrue(f['qtc_ms'][0] <= q <= f['qtc_ms'][1], (f['ecg'], method, q))
+                        self.assertTrue(f['fields']['qtc_ms']['range'][0] <= q <= f['fields']['qtc_ms']['range'][1], (f['ecg'], method, q))
                 self.assertGreaterEqual(min(q for q in reads if abs(q - median) <= 60), 505, f['ecg'])
 
     # ------------------------------------------------------------------ separability
@@ -303,9 +313,10 @@ class Task4Tests(unittest.TestCase):
         for i in EXPECTED['items']:
             self.assertNotIn(i['subject'], text)
             self.assertNotIn(i['patient'], text)
-        for f in EXPECTED['ecg_findings']:
+        for f in EXPECTED['interpretations']:
             self.assertNotIn(f['ecg'], text)
-        for word in ('tangent', 'neurokit', 'delineat', 'Bazett', 'Fridericia', 'Framingham', 'Hodges', 'RR interval', 'P wave',
+        # 'Bazett' is allowed: it defines the reported qtc_ms field, not a way to measure it.
+        for word in ('tangent', 'neurokit', 'delineat', 'Fridericia', 'Framingham', 'Hodges', 'RR interval', 'P wave',
                      'P-wave', 'irregularly irregular', 'lead II', 'median beat', 'T wave', 'T-wave', 'fibrillatory', 'machine'):
             self.assertNotIn(word.lower(), text.lower(), word)
         dockerignore = (TASK / 'environment/.dockerignore').read_text()
@@ -328,8 +339,15 @@ class Task4Tests(unittest.TestCase):
                      {**base, 'explanation': 'x' * 4001}):
             status, _ = self.request('POST', '/items', body)
             self.assertEqual(status, 400, body if not isinstance(body, dict) else {k: str(v)[:40] for k, v in body.items()})
-        for body in ({'ecg': 'nope', 'finding': 'AF'}, {'ecg': EXPECTED['ecg_findings'][0]['ecg'], 'finding': 'STEMI'}):
-            self.assertEqual(self.request('POST', '/findings', body)[0], 400)
+        e = next(f for f in EXPECTED['interpretations'] if f['prior_ecg'])
+        other = next(f for f in EXPECTED['interpretations'] if f['patient'] != e['patient'])
+        good = {'ecg': e['ecg'], 'rhythm': 'SINUS', 'ventricular_rate': 70}
+        for body in ({'ecg': 'nope', 'rhythm': 'SINUS', 'ventricular_rate': 70}, {**good, 'rhythm': 'VT'}, {**good, 'axis': 'UP'},
+                     {**good, 'conduction': ['LAFB']}, {**good, 'changes': ['NEW_AF', 'NEW_AF']}, {**good, 'prior_ecg': other['ecg']},
+                     {**good, 'prior_ecg': e['ecg']}, {**good, 'ventricular_rate': None}, {**good, 'finding': 'AF'}, {**good, 'qrs_ms': -5}):
+            self.assertEqual(self.request('POST', '/interpretations', body)[0], 400, body)
+        self.assertEqual(self.request('POST', '/interpretations', {**good, 'prior_ecg': e['prior_ecg']})[0], 200)
+        self.assertEqual(self.request('POST', '/findings', {'ecg': e['ecg'], 'finding': 'AF'})[0], 400)
         for method, path in (('POST', '/search'), ('PUT', '/items'), ('DELETE', '/items/I1'), ('POST', '/admin'),
                              ('GET', '/search?type=Condition&page=x'), ('GET', '/search?type=Condition&since=2026')):
             self.assertEqual(self.request(method, path, {})[0], 400, path)

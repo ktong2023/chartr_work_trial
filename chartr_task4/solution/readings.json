@@ -569,1017 +569,2101 @@
   "105362569": {
    "label": "QTC_PROLONGED",
    "hr": 67.8,
-   "qtc_ms": 541
+   "rhythm": "SINUS",
+   "pr_ms": 154,
+   "qrs_ms": 85,
+   "qtc_ms": 541,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102172660": {
    "label": "NORMAL",
    "hr": 72.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 167,
+   "qrs_ms": 88,
+   "qtc_ms": 403,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104430624": {
    "label": "NORMAL",
    "hr": 111.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 75,
+   "qtc_ms": 396,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102144047": {
    "label": "NORMAL",
    "hr": 98.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 131,
+   "qrs_ms": 77,
+   "qtc_ms": 407,
+   "axis": "LEFT",
+   "conduction": []
   },
   "106959793": {
    "label": "NORMAL",
    "hr": 105.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 78,
+   "qtc_ms": 412,
+   "axis": "LEFT",
+   "conduction": []
   },
   "106183809": {
    "label": "NORMAL",
    "hr": 96.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 139,
+   "qrs_ms": 77,
+   "qtc_ms": 417,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105404782": {
    "label": "NORMAL",
    "hr": 78.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 145,
+   "qrs_ms": 76,
+   "qtc_ms": 391,
+   "axis": "LEFT",
+   "conduction": []
   },
   "102241375": {
    "label": "NORMAL",
    "hr": 110.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 133,
+   "qrs_ms": 79,
+   "qtc_ms": 401,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105649244": {
    "label": "NORMAL",
    "hr": 89.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 78,
+   "qtc_ms": 408,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105858994": {
    "label": "NORMAL",
    "hr": 67.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 153,
+   "qrs_ms": 78,
+   "qtc_ms": 392,
+   "axis": "LEFT",
+   "conduction": []
   },
   "105928266": {
    "label": "NORMAL",
    "hr": 80.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 153,
+   "qrs_ms": 79,
+   "qtc_ms": 410,
+   "axis": "LEFT",
+   "conduction": []
   },
   "106525263": {
    "label": "NORMAL",
    "hr": 118.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 139,
+   "qrs_ms": 79,
+   "qtc_ms": 423,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103036945": {
    "label": "NORMAL",
    "hr": 91.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 78,
+   "qtc_ms": 422,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107898490": {
    "label": "NORMAL",
    "hr": 80.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 160,
+   "qrs_ms": 81,
+   "qtc_ms": 432,
+   "axis": "LEFT",
+   "conduction": []
   },
   "102616671": {
    "label": "NORMAL",
    "hr": 87.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 149,
+   "qrs_ms": 76,
+   "qtc_ms": 402,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105014865": {
    "label": "NORMAL",
    "hr": 93.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 172,
+   "qrs_ms": 66,
+   "qtc_ms": 436,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109795468": {
    "label": "NORMAL",
    "hr": 98.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 166,
+   "qrs_ms": 79,
+   "qtc_ms": 423,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104835782": {
    "label": "NORMAL",
    "hr": 75.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 174,
+   "qrs_ms": 69,
+   "qtc_ms": 409,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109840765": {
    "label": "NORMAL",
    "hr": 80.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 163,
+   "qrs_ms": 78,
+   "qtc_ms": 409,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100728139": {
    "label": "NORMAL",
    "hr": 87.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 162,
+   "qrs_ms": 72,
+   "qtc_ms": 449,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106362803": {
    "label": "AF",
    "hr": 103.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 89,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "103024863": {
    "label": "AF",
    "hr": 69.0,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107525170": {
    "label": "AF",
    "hr": 160.5,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 84,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107806866": {
    "label": "AF",
    "hr": 68.0,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 94,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104791103": {
    "label": "AF",
    "hr": 91.3,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 90,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104547052": {
    "label": "AF",
    "hr": 126.3,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 88,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104710852": {
    "label": "AF",
    "hr": 76.9,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 93,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "100634327": {
    "label": "AF",
    "hr": 116.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 85,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "105825300": {
    "label": "AF",
    "hr": 111.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 92,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107555672": {
    "label": "AF",
    "hr": 124.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 76,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102403584": {
    "label": "AF",
    "hr": 102.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 87,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105389347": {
    "label": "AF",
    "hr": 141.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 78,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "101771242": {
    "label": "AF",
    "hr": 136.9,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103837709": {
    "label": "AF",
    "hr": 89.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "108184246": {
    "label": "AF",
    "hr": 125.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 95,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104935003": {
    "label": "AF",
    "hr": 102.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 85,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107452620": {
    "label": "AF",
    "hr": 140.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 87,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "101121040": {
    "label": "NORMAL",
    "hr": 65.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 158,
+   "qrs_ms": 75,
+   "qtc_ms": 403,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108895765": {
    "label": "AF",
    "hr": 163.3,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 103,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108195884": {
    "label": "NORMAL",
    "hr": 103.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 134,
+   "qrs_ms": 94,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100698634": {
    "label": "NORMAL",
    "hr": 147.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 85,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108780865": {
    "label": "AF",
    "hr": 47.1,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 96,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107771656": {
    "label": "NORMAL",
    "hr": 62.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 97,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101581810": {
    "label": "NORMAL",
    "hr": 53.9,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": 424,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106885519": {
    "label": "QTC_PROLONGED",
    "hr": 62.0,
-   "qtc_ms": 539
+   "rhythm": "SINUS",
+   "pr_ms": 174,
+   "qrs_ms": 94,
+   "qtc_ms": 539,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102101022": {
    "label": "NORMAL",
    "hr": 94.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": 443,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102955795": {
    "label": "NORMAL",
    "hr": 114.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 145,
+   "qrs_ms": 93,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102853474": {
    "label": "NORMAL",
    "hr": 111.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 93,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103300096": {
    "label": "NORMAL",
    "hr": 106.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 163,
+   "qrs_ms": 92,
+   "qtc_ms": 432,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109788729": {
    "label": "NORMAL",
    "hr": 99.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 166,
+   "qrs_ms": 90,
+   "qtc_ms": 433,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100850284": {
    "label": "NORMAL",
    "hr": 111.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 170,
+   "qrs_ms": 94,
+   "qtc_ms": 443,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107885876": {
    "label": "NORMAL",
    "hr": 100.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 174,
+   "qrs_ms": 88,
+   "qtc_ms": 424,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101784267": {
    "label": "NORMAL",
    "hr": 108.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": 444,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100145505": {
    "label": "NORMAL",
    "hr": 96.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 168,
+   "qrs_ms": 83,
+   "qtc_ms": 413,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102436418": {
    "label": "NORMAL",
    "hr": 111.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 98,
+   "qtc_ms": 447,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100211464": {
    "label": "NORMAL",
    "hr": 94.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 176,
+   "qrs_ms": 86,
+   "qtc_ms": 434,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102002950": {
    "label": "NORMAL",
    "hr": 94.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 177,
+   "qrs_ms": 93,
+   "qtc_ms": 432,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100914215": {
    "label": "NORMAL",
    "hr": 111.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 164,
+   "qrs_ms": 83,
+   "qtc_ms": 444,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109253034": {
    "label": "NORMAL",
    "hr": 76.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 153,
+   "qrs_ms": 91,
+   "qtc_ms": 426,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108446236": {
    "label": "NORMAL",
    "hr": 56.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 143,
+   "qrs_ms": 82,
+   "qtc_ms": 412,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104629882": {
    "label": "NORMAL",
    "hr": 57.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 151,
+   "qrs_ms": 92,
+   "qtc_ms": 429,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101839963": {
    "label": "NORMAL",
    "hr": 60.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 163,
+   "qrs_ms": null,
+   "qtc_ms": 415,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107158938": {
    "label": "NORMAL",
    "hr": 51.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 179,
+   "qrs_ms": 98,
+   "qtc_ms": 414,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107132278": {
    "label": "NORMAL",
    "hr": 86.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 78,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107674864": {
    "label": "AF",
    "hr": 143.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 84,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107819285": {
    "label": "NORMAL",
    "hr": 97.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 94,
+   "qrs_ms": 86,
+   "qtc_ms": 358,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105060792": {
    "label": "AF",
    "hr": 129.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109138694": {
    "label": "AF",
    "hr": 140.5,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 80,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104706820": {
    "label": "NORMAL",
    "hr": 65.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 197,
+   "qrs_ms": 81,
+   "qtc_ms": 441,
+   "axis": "LEFT",
+   "conduction": []
   },
   "102280728": {
    "label": "NORMAL",
    "hr": 54.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 230,
+   "qrs_ms": 82,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": [
+    "FIRST_DEGREE_AV_BLOCK"
+   ]
   },
   "103042067": {
    "label": "NORMAL",
    "hr": 50.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 193,
+   "qrs_ms": 83,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "101206211": {
    "label": "NORMAL",
    "hr": 58.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 190,
+   "qrs_ms": 90,
+   "qtc_ms": 409,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109439164": {
    "label": "NORMAL",
    "hr": 64.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 202,
+   "qrs_ms": 81,
+   "qtc_ms": 432,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107059289": {
    "label": "NORMAL",
    "hr": 67.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 203,
+   "qrs_ms": 82,
+   "qtc_ms": 444,
+   "axis": "LEFT",
+   "conduction": []
   },
   "101757242": {
    "label": "NORMAL",
    "hr": 61.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 189,
+   "qrs_ms": 81,
+   "qtc_ms": 429,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104822395": {
    "label": "NORMAL",
    "hr": 57.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 187,
+   "qrs_ms": 80,
+   "qtc_ms": 427,
+   "axis": "LEFT",
+   "conduction": []
   },
   "107719002": {
    "label": "NORMAL",
    "hr": 67.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 199,
+   "qrs_ms": 80,
+   "qtc_ms": 443,
+   "axis": "LEFT",
+   "conduction": []
   },
   "108689967": {
    "label": "NORMAL",
    "hr": 58.7,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 201,
+   "qrs_ms": 81,
+   "qtc_ms": 383,
+   "axis": "LEFT",
+   "conduction": []
   },
   "100246383": {
    "label": "NORMAL",
    "hr": 66.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 198,
+   "qrs_ms": 80,
+   "qtc_ms": 439,
+   "axis": "LEFT",
+   "conduction": []
   },
   "109218019": {
    "label": "NORMAL",
    "hr": 120.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 117,
+   "qrs_ms": 76,
+   "qtc_ms": 430,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101948356": {
    "label": "NORMAL",
    "hr": 86.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 196,
+   "qrs_ms": 104,
+   "qtc_ms": 437,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102456968": {
    "label": "NORMAL",
    "hr": 81.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 186,
+   "qrs_ms": 91,
+   "qtc_ms": 440,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107399137": {
    "label": "AF",
    "hr": 141.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 92,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102910502": {
    "label": "NORMAL",
    "hr": 100.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 149,
+   "qrs_ms": 85,
+   "qtc_ms": 435,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108322943": {
    "label": "NORMAL",
    "hr": 105.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 170,
+   "qrs_ms": 93,
+   "qtc_ms": 411,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103922229": {
    "label": "NORMAL",
    "hr": 105.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 110,
+   "qrs_ms": 93,
+   "qtc_ms": 435,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109661561": {
    "label": "NORMAL",
    "hr": 101.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 149,
+   "qrs_ms": 85,
+   "qtc_ms": 442,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104450423": {
    "label": "NORMAL",
    "hr": 81.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 155,
+   "qrs_ms": 87,
+   "qtc_ms": 435,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107627609": {
    "label": "NORMAL",
    "hr": 97.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 72,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109287357": {
    "label": "AF",
    "hr": 100.4,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "100269135": {
    "label": "AF",
    "hr": 130.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 141,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": [
+    "LBBB"
+   ]
   },
   "105789995": {
    "label": "AF",
    "hr": 97.1,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 167,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": [
+    "LBBB"
+   ]
   },
   "103262474": {
    "label": "QTC_PROLONGED",
    "hr": 78.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 149,
+   "qtc_ms": 552,
+   "axis": "EXTREME",
+   "conduction": [
+    "RBBB"
+   ]
   },
   "102625534": {
    "label": "AF",
    "hr": 115.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 134,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": [
+    "LBBB"
+   ]
   },
   "103952517": {
    "label": "AF",
    "hr": 123.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 136,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107689861": {
    "label": "NORMAL",
    "hr": 52.7,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": 396,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108651109": {
    "label": "NORMAL",
    "hr": 65.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 101,
+   "qtc_ms": 436,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101515306": {
    "label": "QTC_PROLONGED",
    "hr": 57.5,
-   "qtc_ms": 542
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 77,
+   "qtc_ms": 542,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100867733": {
    "label": "AF",
    "hr": 128.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 77,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107573862": {
    "label": "NORMAL",
    "hr": 78.6,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 135,
+   "qrs_ms": 80,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106023425": {
    "label": "NORMAL",
    "hr": 78.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 137,
+   "qrs_ms": 76,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100065910": {
    "label": "NORMAL",
    "hr": 74.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 112,
+   "qrs_ms": 88,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107321368": {
    "label": "NORMAL",
    "hr": 72.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 83,
+   "qtc_ms": 384,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108018814": {
    "label": "QTC_PROLONGED",
    "hr": 68.2,
-   "qtc_ms": 545
+   "rhythm": "SINUS",
+   "pr_ms": 122,
+   "qrs_ms": 88,
+   "qtc_ms": 545,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106565956": {
    "label": "NORMAL",
    "hr": 83.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 148,
+   "qrs_ms": 64,
+   "qtc_ms": 409,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102305989": {
    "label": "AF",
    "hr": 94.4,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106721017": {
    "label": "AF",
    "hr": 118.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 77,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102893922": {
    "label": "AF",
    "hr": 78.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105607048": {
    "label": "AF",
    "hr": 82.5,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108019775": {
    "label": "AF",
    "hr": 137.4,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 76,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103888812": {
    "label": "AF",
    "hr": 94.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 89,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101693162": {
    "label": "AF",
    "hr": 80.0,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 92,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100924231": {
    "label": "NORMAL",
    "hr": 140.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 78,
+   "qtc_ms": 429,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108454397": {
    "label": "AF",
    "hr": 71.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 90,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109839112": {
    "label": "AF",
    "hr": 110.9,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 83,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105224815": {
    "label": "NORMAL",
    "hr": 62.9,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 88,
+   "qtc_ms": 428,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101016166": {
    "label": "NORMAL",
    "hr": 101.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": null,
+   "qtc_ms": 433,
+   "axis": null,
+   "conduction": []
   },
   "107457843": {
    "label": "NORMAL",
    "hr": 101.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 83,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103088543": {
    "label": "AF",
    "hr": 140.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 100,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107914094": {
    "label": "AF",
    "hr": 139.1,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 98,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106186980": {
    "label": "NORMAL",
    "hr": 107.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 169,
+   "qrs_ms": 85,
+   "qtc_ms": 417,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105523266": {
    "label": "NORMAL",
    "hr": 120.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 89,
+   "qtc_ms": 433,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100040711": {
    "label": "AF",
    "hr": 77.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 94,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102167222": {
    "label": "AF",
    "hr": 106.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 80,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103700930": {
    "label": "AF",
    "hr": 112.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 80,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100276290": {
    "label": "AF",
    "hr": 72.0,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 94,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107036253": {
    "label": "AF",
    "hr": 116.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 87,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101951115": {
    "label": "AF",
    "hr": 112.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 76,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107841896": {
    "label": "AF",
    "hr": 138.9,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109757556": {
    "label": "AF",
    "hr": 55.5,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 113,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "100578411": {
    "label": "AF",
    "hr": 81.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 117,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "109143487": {
    "label": "AF",
    "hr": 82.4,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 103,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "102514347": {
    "label": "AF",
    "hr": 64.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 123,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "100466541": {
    "label": "AF",
    "hr": 79.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 120,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "100613396": {
    "label": "AF",
    "hr": 80.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 102,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "102393183": {
    "label": "AF",
    "hr": 49.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 114,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104232242": {
    "label": "NORMAL",
    "hr": 60.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 136,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "EXTREME",
+   "conduction": []
   },
   "103992480": {
    "label": "NORMAL",
    "hr": 68.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 88,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "105745707": {
    "label": "NORMAL",
    "hr": 76.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107859369": {
    "label": "NORMAL",
    "hr": 69.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 88,
+   "qtc_ms": null,
+   "axis": null,
+   "conduction": []
   },
   "101832748": {
    "label": "NORMAL",
    "hr": 61.9,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 88,
+   "qtc_ms": 440,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104750528": {
    "label": "NORMAL",
    "hr": 82.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 149,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "RIGHT",
+   "conduction": []
   },
   "103671424": {
    "label": "NORMAL",
    "hr": 85.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": 421,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109116314": {
    "label": "NORMAL",
    "hr": 82.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 84,
+   "qtc_ms": 437,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108530691": {
    "label": "NORMAL",
    "hr": 84.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 90,
+   "qtc_ms": 374,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103857061": {
    "label": "NORMAL",
    "hr": 77.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 87,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103541212": {
    "label": "NORMAL",
    "hr": 85.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108912996": {
    "label": "AF",
    "hr": 57.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 90,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107873952": {
    "label": "NORMAL",
    "hr": 68.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 83,
+   "qtc_ms": 408,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101538691": {
    "label": "NORMAL",
    "hr": 68.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 88,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106825293": {
    "label": "NORMAL",
    "hr": 73.6,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 89,
+   "qtc_ms": 427,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100851619": {
    "label": "NORMAL",
    "hr": 69.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 150,
+   "qrs_ms": 114,
+   "qtc_ms": 439,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100849868": {
    "label": "NORMAL",
    "hr": 106.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 129,
+   "qrs_ms": 100,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101901982": {
    "label": "NORMAL",
    "hr": 121.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 129,
+   "qrs_ms": 79,
+   "qtc_ms": 420,
+   "axis": "NORMAL",
+   "conduction": []
+  },
+  "106516875": {
+   "label": "NORMAL",
+   "hr": 100.2,
+   "rhythm": "SINUS",
+   "pr_ms": 141,
+   "qrs_ms": 132,
+   "qtc_ms": 472,
+   "axis": null,
+   "conduction": [
+    "RBBB"
+   ]
   },
   "102247352": {
    "label": "NORMAL",
    "hr": 82.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 147,
+   "qrs_ms": 95,
+   "qtc_ms": 417,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101401324": {
    "label": "NORMAL",
    "hr": 81.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 169,
+   "qrs_ms": 102,
+   "qtc_ms": 426,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107374881": {
    "label": "NORMAL",
    "hr": 76.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 146,
+   "qrs_ms": 96,
+   "qtc_ms": 423,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108211642": {
    "label": "AF",
    "hr": 154.3,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 95,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104882441": {
    "label": "NORMAL",
    "hr": 80.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 173,
+   "qrs_ms": 83,
+   "qtc_ms": 419,
+   "axis": "NORMAL",
+   "conduction": []
+  },
+  "102531404": {
+   "label": "PACED",
+   "hr": 111.2,
+   "rhythm": "PACED",
+   "pr_ms": null,
+   "qrs_ms": 150,
+   "qtc_ms": null,
+   "axis": "RIGHT",
+   "conduction": []
+  },
+  "103417522": {
+   "label": "NORMAL",
+   "hr": 109.1,
+   "rhythm": "SINUS",
+   "pr_ms": 227,
+   "qrs_ms": 176,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": [
+    "FIRST_DEGREE_AV_BLOCK",
+    "LBBB"
+   ]
   },
   "107149156": {
    "label": "NORMAL",
    "hr": 132.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 132,
+   "qrs_ms": 86,
+   "qtc_ms": 441,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104821039": {
    "label": "QTC_PROLONGED",
    "hr": 70.1,
-   "qtc_ms": 568
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 92,
+   "qtc_ms": 568,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100913766": {
    "label": "NORMAL",
    "hr": 65.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 92,
+   "qtc_ms": 405,
+   "axis": "LEFT",
+   "conduction": []
   },
   "102857516": {
    "label": "NORMAL",
    "hr": 77.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": 431,
+   "axis": "LEFT",
+   "conduction": []
   },
   "105469023": {
    "label": "AF",
    "hr": 62.9,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102295353": {
    "label": "AF",
    "hr": 87.6,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 86,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109550629": {
    "label": "AF",
    "hr": 68.3,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 82,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109419304": {
    "label": "NORMAL",
    "hr": 65.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 172,
+   "qrs_ms": 79,
+   "qtc_ms": 394,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104189894": {
    "label": "NORMAL",
    "hr": 67.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 85,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "106465580": {
    "label": "NORMAL",
    "hr": 62.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 84,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "109187086": {
    "label": "AF",
    "hr": 143.1,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 86,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "104489698": {
    "label": "NORMAL",
    "hr": 67.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 87,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "108234665": {
    "label": "NORMAL",
    "hr": 59.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 99,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105375026": {
    "label": "AF",
    "hr": 132.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 89,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104253928": {
    "label": "NORMAL",
    "hr": 58.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 86,
+   "qtc_ms": 429,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106045460": {
    "label": "NORMAL",
    "hr": 61.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 106,
+   "qrs_ms": 89,
+   "qtc_ms": 436,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103879393": {
    "label": "NORMAL",
    "hr": 73.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 110,
+   "qrs_ms": 94,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102573205": {
    "label": "NORMAL",
    "hr": 82.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 84,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102888469": {
    "label": "NORMAL",
    "hr": 82.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 138,
+   "qrs_ms": 97,
+   "qtc_ms": 449,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102731956": {
    "label": "NORMAL",
    "hr": 94.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 135,
+   "qrs_ms": 78,
+   "qtc_ms": 419,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "108465338": {
    "label": "NORMAL",
    "hr": 110.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 102,
+   "qrs_ms": 75,
+   "qtc_ms": 433,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106143775": {
    "label": "NORMAL",
    "hr": 116.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 76,
+   "qtc_ms": 409,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103521932": {
    "label": "NORMAL",
    "hr": 111.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 81,
+   "qtc_ms": 412,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103829890": {
    "label": "NORMAL",
    "hr": 85.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 154,
+   "qrs_ms": 87,
+   "qtc_ms": 452,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109219382": {
    "label": "NORMAL",
    "hr": 89.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 91,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109466629": {
    "label": "NORMAL",
    "hr": 71.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 166,
+   "qrs_ms": 82,
+   "qtc_ms": 432,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101744645": {
    "label": "AF",
    "hr": 69.5,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": null,
+   "qtc_ms": null,
+   "axis": "RIGHT",
+   "conduction": []
   },
   "105005683": {
    "label": "NORMAL",
    "hr": 84.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 61,
+   "qtc_ms": 417,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104022833": {
    "label": "NORMAL",
    "hr": 118.1,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 142,
+   "qrs_ms": 61,
+   "qtc_ms": 400,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101524902": {
    "label": "NORMAL",
    "hr": 107.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": null,
+   "qtc_ms": 434,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "105616956": {
    "label": "NORMAL",
    "hr": 104.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 69,
+   "qtc_ms": 382,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104011013": {
    "label": "NORMAL",
    "hr": 78.5,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 66,
+   "qtc_ms": 440,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "103202417": {
    "label": "NORMAL",
    "hr": 71.9,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 160,
+   "qrs_ms": 70,
+   "qtc_ms": 417,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "107274479": {
    "label": "NORMAL",
    "hr": 74.9,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 65,
+   "qtc_ms": 429,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102111462": {
    "label": "NORMAL",
    "hr": 75.2,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 153,
+   "qrs_ms": 76,
+   "qtc_ms": 419,
+   "axis": "NORMAL",
+   "conduction": []
+  },
+  "104941853": {
+   "label": "NORMAL",
+   "hr": 60.2,
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 128,
+   "qtc_ms": 469,
+   "axis": "LEFT",
+   "conduction": [
+    "LBBB"
+   ]
+  },
+  "103686933": {
+   "label": "NORMAL",
+   "hr": 68.5,
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 130,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": [
+    "LBBB"
+   ]
   },
   "105862861": {
    "label": "NORMAL",
    "hr": 108.8,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 122,
+   "qrs_ms": 87,
+   "qtc_ms": 442,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109952008": {
    "label": "NORMAL",
    "hr": 76.3,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 74,
+   "qtc_ms": 450,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "109048192": {
    "label": "NORMAL",
    "hr": 74.4,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 70,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "106035722": {
    "label": "NORMAL",
    "hr": 72.0,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": null,
+   "qrs_ms": 77,
+   "qtc_ms": 434,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "102298909": {
    "label": "NORMAL",
    "hr": 61.9,
-   "qtc_ms": null
+   "rhythm": "SINUS",
+   "pr_ms": 217,
+   "qrs_ms": 100,
+   "qtc_ms": null,
+   "axis": "LEFT",
+   "conduction": []
   },
   "106516565": {
    "label": "AF",
    "hr": 130.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 83,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "101950824": {
    "label": "AF",
    "hr": 100.8,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 117,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "100944098": {
    "label": "AF",
    "hr": 84.7,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 119,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   },
   "104330494": {
    "label": "AF",
    "hr": 63.2,
-   "qtc_ms": null
+   "rhythm": "AF",
+   "pr_ms": null,
+   "qrs_ms": 117,
+   "qtc_ms": null,
+   "axis": "NORMAL",
+   "conduction": []
   }
  }
 }

@@ -57,6 +57,33 @@ def memo_rules(docs):
     return rules
 
 
+def interpret(ecg, prior, shortcut=None, documented_ok=()):
+    r = READINGS['ecg'][ecg]
+    out = {'ecg': ecg, 'rhythm': r['rhythm'], 'ventricular_rate': r['hr'], 'pr_ms': r['pr_ms'], 'qrs_ms': r['qrs_ms'], 'qtc_ms': r['qtc_ms'],
+           'axis': r['axis'], 'conduction': [] if shortcut == 'no_conduction' else list(r['conduction']), 'prior_ecg': prior, 'changes': [],
+           'explanation': 'Reference.'}
+    if shortcut == 'trust_documented_qt' and ecg in documented_ok:
+        out['qtc_ms'] = 440
+    if prior:
+        q = READINGS['ecg'][prior]
+        for rhythm, name in (('AF', 'AF'), ('ATRIAL_FLUTTER', 'ATRIAL_FLUTTER'), ('PACED', 'PACED_RHYTHM')):
+            if r['rhythm'] == rhythm and q['rhythm'] != rhythm:
+                out['changes'].append('NEW_' + name)
+            if q['rhythm'] == rhythm and r['rhythm'] != rhythm:
+                out['changes'].append('RESOLVED_' + name)
+        bbb = lambda x: bool(set(x['conduction']) & {'RBBB', 'LBBB'})
+        if bbb(r) and not bbb(q):
+            out['changes'].append('NEW_BUNDLE_BRANCH_BLOCK')
+        if bbb(q) and not bbb(r):
+            out['changes'].append('RESOLVED_BUNDLE_BRANCH_BLOCK')
+        if r['qtc_ms'] and q['qtc_ms'] and r['rhythm'] == q['rhythm'] == 'SINUS':
+            if r['qtc_ms'] - q['qtc_ms'] >= 60:
+                out['changes'].append('QTC_INCREASE_60')
+            if q['qtc_ms'] - r['qtc_ms'] >= 60:
+                out['changes'].append('QTC_DECREASE_60')
+    return out
+
+
 def solve_all(shortcut=None):
     """`shortcut` names a plausible wrong algorithm (QA only; None is the reference)."""
     patients, meds, locations, docs, ecgs = load()
@@ -65,7 +92,7 @@ def solve_all(shortcut=None):
     rules = memo_rules(docs)
     memo_id = lambda key, value: next(i for i, d in docs.items() if d.get(key) == value)
     inr_memo = next(i for i, d in docs.items() if 'inr_days' in d)
-    items, findings = [], []
+    items, findings = [], []   # findings: ECG interpretations
     documented_ok = {n['ecg'] for n in READINGS['notes'].values() if n.get('qt_assessment') == 'acceptable'}  # shortcut only
     by_patient_ecgs = {}
     for e in ecgs:
@@ -75,15 +102,11 @@ def solve_all(shortcut=None):
         pe = sorted(by_patient_ecgs.get(pid, []), key=lambda e: e['time'])
         if shortcut == 'earliest_ecg':
             pe = pe[::-1]
-        # ECG finding on the most recent ECG (all patients)
-        for cur in (pe if shortcut == 'every_ecg' else pe[-1:]):
-            reading = READINGS['ecg'][cur['ecg']]
-            if shortcut == 'trust_documented_qt' and cur['ecg'] in documented_ok:
-                continue
-            if reading['label'] in ('AF', 'QTC_PROLONGED'):
-                f = {'ecg': cur['ecg'], 'finding': reading['label'], 'heart_rate': reading['hr'], 'explanation': 'Most recent ECG.'}
-                if reading['label'] == 'QTC_PROLONGED': f['qtc_ms'] = reading['qtc_ms']
-                findings.append(f)
+        # Interpretation of the most recent ECG (all patients), compared with the previous ECG
+        for i, cur in enumerate(pe if shortcut == 'every_ecg' else pe[-1:]):
+            idx = pe.index(cur)
+            prev = None if shortcut == 'earliest_ecg' else pe[0] if shortcut == 'prior_earliest' and idx > 0 else pe[idx - 1] if idx > 0 else None
+            findings.append(interpret(cur['ecg'], prev['ecg'] if prev and shortcut != 'no_comparison' else None, shortcut, documented_ok))
         if p.get('deceasedDateTime') and p['deceasedDateTime'] <= EVAL and shortcut != 'include_deceased':
             continue
         conds = search('Condition', patient=pid)
@@ -182,8 +205,8 @@ def solve():
     for it in items:
         clinic('item', 'add', '--json', json.dumps(it))
     for f in findings:
-        clinic('finding', 'add', '--json', json.dumps(f))
-    return clinic('items'), clinic('findings')
+        clinic('interpretation', 'add', '--json', json.dumps(f))
+    return clinic('items'), clinic('interpretations')
 
 
 if __name__ == '__main__':

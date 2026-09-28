@@ -55,7 +55,7 @@ def paged(path, params, every, out):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Clinic records, clinic documents, ECGs, review items and ECG findings')
+    parser = argparse.ArgumentParser(description='Clinic records, clinic documents, ECGs, review items and ECG interpretations')
     sub = parser.add_subparsers(dest='command', required=True)
     p = sub.add_parser('patients'); p.add_argument('--page', type=int)
     s = sub.add_parser('search'); s.add_argument('type')
@@ -66,9 +66,9 @@ def main():
     e = sub.add_parser('ecg'); esub = e.add_subparsers(dest='action', required=True)
     el = esub.add_parser('list'); el.add_argument('--patient')
     ef = esub.add_parser('fetch'); ef.add_argument('ecg'); ef.add_argument('--dir', required=True)
-    for kind in ('items', 'findings'):
+    for kind in ('items', 'interpretations'):
         k = sub.add_parser(kind); k.add_argument('--patient')
-    for kind in ('item', 'finding'):
+    for kind in ('item', 'interpretation'):
         k = sub.add_parser(kind); ksub = k.add_subparsers(dest='action', required=True)
         add = ksub.add_parser('add'); add.add_argument('--json', required=True)
         upd = ksub.add_parser('update'); upd.add_argument('id'); upd.add_argument('--json', required=True)
@@ -88,7 +88,7 @@ def main():
             (target / name).write_bytes(base64.b64decode(data))
         print(json.dumps({'ecg': result['ecg'], 'patient': result['patient'], 'time': result['time'],
                           'files': sorted(str(target / n) for n in result['files'])}))
-    elif a.command in ('items', 'findings'):
+    elif a.command in ('items', 'interpretations'):
         print(json.dumps(call('GET', '/' + a.command + query(patient=a.patient)), indent=2))
     else:
         try:

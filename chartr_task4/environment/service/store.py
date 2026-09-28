@@ -1,7 +1,7 @@
 """Task 4 clinic service state: read-only sources (built at image build) plus a per-trial state database.
 
 Sources: /data/sources.sqlite (resources, ECG catalog, content digest) and /data/ecg/<id>/*.{hea,dat}.
-State:   /state/state.sqlite (review items, ECG findings, audit, metadata). A fresh container is a fresh trial.
+State:   /state/state.sqlite (review items, ECG interpretations, audit, metadata). A fresh container is a fresh trial.
 The service checks operational validity (types, vocabularies, record ownership) and never correctness.
 """
 from contextlib import contextmanager
@@ -9,7 +9,7 @@ import base64, json, re, sqlite3, uuid, zlib
 from urllib.parse import parse_qsl
 from pathlib import Path
 
-VERSION = 'chartr-task4-0.2.0'
+VERSION = 'chartr-task4-0.3.0'
 NOW = '2026-09-24T12:00:00-04:00'
 PAGE = 1000
 CATEGORIES = {'ANTICOAGULATION': {'UNTREATED_AF', 'ANTICOAGULANT_WITH_CONTRAINDICATION'},
@@ -18,13 +18,17 @@ CATEGORIES = {'ANTICOAGULATION': {'UNTREATED_AF', 'ANTICOAGULANT_WITH_CONTRAINDI
               'CONTRADICTION': {'DUAL_ANTICOAGULATION', 'RHYTHM_DOCUMENTATION_CONFLICT'}}
 FOLLOW_UP_STATUS = {'completed', 'overdue', 'not_due', 'cannot_determine'}
 RISK_FACTORS = {'CHF', 'HYPERTENSION', 'AGE_65_74', 'AGE_75_PLUS', 'DIABETES', 'STROKE_TIA', 'VASCULAR', 'FEMALE'}
-FINDINGS = {'AF', 'QTC_PROLONGED'}
+RHYTHMS = {'SINUS', 'AF', 'ATRIAL_FLUTTER', 'PACED', 'OTHER'}
+AXES = {'NORMAL', 'LEFT', 'RIGHT', 'EXTREME'}
+CONDUCTION = {'RBBB', 'LBBB', 'FIRST_DEGREE_AV_BLOCK'}
+CHANGES = {'NEW_AF', 'RESOLVED_AF', 'NEW_ATRIAL_FLUTTER', 'RESOLVED_ATRIAL_FLUTTER', 'NEW_PACED_RHYTHM', 'RESOLVED_PACED_RHYTHM',
+           'NEW_BUNDLE_BRANCH_BLOCK', 'RESOLVED_BUNDLE_BRANCH_BLOCK', 'QTC_INCREASE_60', 'QTC_DECREASE_60'}
 ID_FIELDS = ('anticoagulant', 'contraindication', 'ecg', 'qt_drug', 'potassium', 'magnesium', 'trigger', 'requirement', 'completion_record')
 LIST_FIELDS = ('af_evidence', 'records')
 ITEM_FIELDS = ('patient', 'category', 'reason', 'status', 'af_evidence', 'risk_score', 'risk_factors', 'anticoagulant', 'contraindication',
                'records', 'ecg', 'qtc_ms', 'heart_rate', 'qt_drug', 'potassium', 'magnesium', 'trigger', 'requirement', 'due_date',
                'completion_record', 'explanation')
-FINDING_FIELDS = ('ecg', 'finding', 'heart_rate', 'qtc_ms', 'explanation')
+INTERP_FIELDS = ('ecg', 'rhythm', 'ventricular_rate', 'pr_ms', 'qrs_ms', 'qtc_ms', 'axis', 'conduction', 'prior_ecg', 'changes', 'explanation')
 DATE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
 COUNTS = {}
 TEXT = re.compile(r'^[\x09\x0a\x0d\x20-\U0010ffff]*$')
@@ -65,13 +69,13 @@ class Store:
         with self.connect() as db:
             db.executescript('''
                 CREATE TABLE item (id TEXT PRIMARY KEY, body TEXT NOT NULL);
-                CREATE TABLE finding (id TEXT PRIMARY KEY, body TEXT NOT NULL);
+                CREATE TABLE interpretation (id TEXT PRIMARY KEY, body TEXT NOT NULL);
                 CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
                 CREATE TABLE audit (seq INTEGER PRIMARY KEY, event TEXT NOT NULL);
             ''')
             db.executemany('INSERT INTO meta VALUES (?,?)', [(k, json.dumps(v)) for k, v in {
                 'version': VERSION, 'evaluation_time': NOW, 'sources_digest': digest, 'nonce': str(uuid.uuid4()),
-                'trial_id': None, 'frozen': False, 'faults': 0, 'next_item': 1, 'next_finding': 1}.items()])
+                'trial_id': None, 'frozen': False, 'faults': 0, 'next_item': 1, 'next_interpretation': 1}.items()])
 
     @staticmethod
     def meta(db):
@@ -83,7 +87,7 @@ class Store:
 
     def state(self, db):
         return {'items': [json.loads(b) for (b,) in db.execute('SELECT body FROM item ORDER BY id')],
-                'findings': [json.loads(b) for (b,) in db.execute('SELECT body FROM finding ORDER BY id')]}
+                'interpretations': [json.loads(b) for (b,) in db.execute('SELECT body FROM interpretation ORDER BY id')]}
 
     def attest(self, trial_id):
         with self.connect() as db:
@@ -148,16 +152,16 @@ class Store:
                     raise InvalidRequest('Unknown ECG')
                 files = {p.name: base64.b64encode(p.read_bytes()).decode() for p in sorted((self.ecg_dir / row[0]).iterdir())}
                 return {'ecg': row[0], 'patient': row[1], 'time': row[2], 'files': files}
-            if parts in (['items'], ['findings']):
-                table = 'item' if parts == ['items'] else 'finding'
+            if parts in (['items'], ['interpretations']):
+                table = 'item' if parts == ['items'] else 'interpretation'
                 rows = [json.loads(b) for (b,) in db.execute(f'SELECT body FROM {table} ORDER BY id')]
                 if params.get('patient'):
                     rows = [r for r in rows if r.get('patient') == params['patient']]
                 return {'complete': True, parts[0]: rows}
             raise InvalidRequest('Unknown read route')
-        if method == 'POST' and parts in (['items'], ['findings']):
+        if method == 'POST' and parts in (['items'], ['interpretations']):
             return self.write(db, parts[0], None, data)
-        if method == 'PATCH' and len(parts) == 2 and parts[0] in ('items', 'findings'):
+        if method == 'PATCH' and len(parts) == 2 and parts[0] in ('items', 'interpretations'):
             return self.write(db, parts[0], parts[1], data)
         raise InvalidRequest('Unknown operation; clinical sources are read-only')
 
@@ -206,8 +210,8 @@ class Store:
     def write(self, db, kind, record_id, data):
         if not isinstance(data, dict) or not data:
             raise InvalidRequest('JSON object body required')
-        table = 'item' if kind == 'items' else 'finding'
-        allowed = ITEM_FIELDS if kind == 'items' else FINDING_FIELDS
+        table = 'item' if kind == 'items' else 'interpretation'
+        allowed = ITEM_FIELDS if kind == 'items' else INTERP_FIELDS
         unknown = set(data) - set(allowed)
         if unknown:
             raise InvalidRequest('Unknown fields: ' + ', '.join(sorted(unknown)))
@@ -215,6 +219,8 @@ class Store:
             body = {k: None for k in allowed}
             if kind == 'items':
                 body.update(af_evidence=[], risk_factors=[], records=[])
+            else:
+                body.update(conduction=[], changes=[])
         else:
             row = db.execute(f'SELECT body FROM {table} WHERE id = ?', (record_id,)).fetchone()
             if row is None:
@@ -222,12 +228,12 @@ class Store:
             body = json.loads(row[0])
             if kind == 'items' and ('patient' in data or 'category' in data or 'reason' in data):
                 raise InvalidRequest('patient, category and reason are immutable')
-            if kind == 'findings' and 'ecg' in data:
+            if kind == 'interpretations' and 'ecg' in data:
                 raise InvalidRequest('ecg is immutable')
         body.update(data)
-        (self.validate_item if kind == 'items' else self.validate_finding)(body)
+        (self.validate_item if kind == 'items' else self.validate_interpretation)(body)
         if record_id is None:
-            m = self.meta(db); key = 'next_item' if kind == 'items' else 'next_finding'
+            m = self.meta(db); key = 'next_item' if kind == 'items' else 'next_interpretation'
             record_id = ('I' if kind == 'items' else 'F') + str(m[key]); self.set_meta(db, key, m[key] + 1)
             body = {'id': record_id, **body}
             db.execute(f'INSERT INTO {table} VALUES (?,?)', (record_id, json.dumps(body)))
@@ -262,15 +268,27 @@ class Store:
             raise InvalidRequest('due_date must be YYYY-MM-DD or null')
         self.text(b)
 
-    def validate_finding(self, b):
+    def validate_interpretation(self, b):
         with self.sources() as src:
-            if not isinstance(b['ecg'], str) or not src.execute('SELECT 1 FROM ecg WHERE id = ?', (b['ecg'],)).fetchone():
+            row = src.execute('SELECT patient, time FROM ecg WHERE id = ?', (b['ecg'],)).fetchone() if isinstance(b['ecg'], str) else None
+            if row is None:
                 raise InvalidRequest('ecg must be an ECG ID from clinic ecg list')
-        if b['finding'] not in FINDINGS:
-            raise InvalidRequest('finding must be one of ' + ', '.join(sorted(FINDINGS)))
-        for f in ('qtc_ms', 'heart_rate'):
+            if b['prior_ecg'] is not None:
+                prior = src.execute('SELECT patient, time FROM ecg WHERE id = ?', (b['prior_ecg'],)).fetchone() if isinstance(b['prior_ecg'], str) else None
+                if prior is None or prior[0] != row[0] or prior[1] >= row[1]:
+                    raise InvalidRequest('prior_ecg must be an earlier ECG of the same patient, or null')
+        if b['rhythm'] not in RHYTHMS:
+            raise InvalidRequest('rhythm must be one of ' + ', '.join(sorted(RHYTHMS)))
+        if b['axis'] is not None and b['axis'] not in AXES:
+            raise InvalidRequest('axis must be one of ' + ', '.join(sorted(AXES)) + ' or null')
+        for f, vocab in (('conduction', CONDUCTION), ('changes', CHANGES)):
+            if not isinstance(b[f], list) or len(set(b[f])) != len(b[f]) or not set(b[f]) <= vocab:
+                raise InvalidRequest(f'{f} must be a list of distinct values from ' + ', '.join(sorted(vocab)))
+        for f in ('ventricular_rate', 'pr_ms', 'qrs_ms', 'qtc_ms'):
             if b[f] is not None and (type(b[f]) not in (int, float) or not 0 < b[f] < 1000):
                 raise InvalidRequest(f'{f} must be a positive number or null')
+        if b['ventricular_rate'] is None:
+            raise InvalidRequest('ventricular_rate is required')
         self.text(b)
 
     @staticmethod

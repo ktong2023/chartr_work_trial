@@ -1,4 +1,4 @@
-# chartr_task4 — cardiology population review on real data (v0.2.0)
+# chartr_task4 — cardiology population review on real data (v0.3.0)
 
 The agent reviews a 100-patient clinic population at 2026-09-24 12:00 America/New_York. It saves a review item for every
 issue that needs clinical review, and an ECG finding for every patient whose most recent ECG shows atrial fibrillation or a
@@ -162,3 +162,36 @@ The v0.1 pilots failed almost only on AF evidence that sits outside the latest E
 
 To keep the date-dependent case gradable, both ECG memos now state which start dates they cover. The QA suite adds two
 wrong algorithms, both scoring 0: no charted rhythm, and trusting the documented QT.
+
+- **v0.2.0**, `jobs/chartr/task4-0.2.0-1790573334` (5 runs): 0/5. Every run missed both UNTREATED_AF cases whose evidence lies
+  outside the diagnosis codes and latest ECG: 10020306 (charted rhythm) and 10004235 (older ECG). Every other v0.2 addition
+  was handled correctly in all five runs. See TRIAGE.md in that folder.
+
+## v0.3.0: full ECG interpretation with serial comparison
+
+The agent now saves one structured interpretation of every patient's most recent ECG: 55 patients (39 sinus, 15 AF,
+1 paced). The earlier findings only covered AF and prolonged QTc.
+
+**Interpretation fields:** rhythm, ventricular rate, PR, QRS and QTc (Bazett), axis category, conduction (RBBB, LBBB,
+first-degree AV block), the prior ECG, and changes from it: new or resolved AF, flutter, paced rhythm or bundle-branch
+block, and QTc change of 60 ms or more.
+
+**Harder tracings.** Five real ECGs were added after 12-lead review:
+- sinus tachycardia with first-degree AV block and LBBB, followed by ventricular pacing;
+- two LBBB tracings with PVCs and borderline PR;
+- a rate-related RBBB that resolves the same day.
+
+Candidate atrial-flutter tracings were rejected because flutter waves could not be confirmed on review.
+
+**Truth from three readers** (`qa/task4_interpret.py`, `qa/task4_interp_truth.py`): the cart's own measurements and
+statements, neurokit2 DWT, and an in-house 12-lead global method.
+- A field is graded only where the readers agree: QRS on 53 latest ECGs, PR on 33, QTc on 27, axis on 54.
+- Otherwise any value is accepted.
+- Conduction and change lists are graded as required sets plus allowed sets, so a borderline finding is neither
+  demanded nor penalized.
+
+**Grader components:** `identification`, `item_fields`, `ecg_interpretation`, `ecg_comparison`, `ecg_linkage`,
+`chart_rules`.
+
+**QA** adds these wrong algorithms, all scoring 0: interpretations without comparison, prior = oldest ECG, no conduction
+findings. It also adds these misreadings, all scoring 0: paced read as sinus with LBBB, and the transient RBBB missed.

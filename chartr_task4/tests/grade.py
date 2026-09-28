@@ -3,9 +3,11 @@
 Components (all required for reward 1; each reported separately):
   1. identification  - exactly the expected set of (patient, category, reason) review items, no extras or duplicates
   2. item_fields     - every structured basis field of every expected item (explanations are not graded)
-  3. ecg_findings    - exactly the expected (ECG, finding) set on patients' most recent ECGs, with values in range
-  4. ecg_linkage     - diagnostic view: item fields that depend on reading an ECG (subset of 2)
-  5. chart_rules     - diagnostic view: follow-up items driven by clinic documents (subset of 1 and 2)
+  3. ecg_interpretation - exactly one interpretation per patient, of that patient's most recent ECG; rhythm, rate, intervals,
+                          axis and conduction within the reader-agreement specs (fields where readers disagree accept any value)
+  4. ecg_comparison  - each interpretation's prior ECG and change list
+  5. ecg_linkage     - diagnostic view: item fields that depend on reading an ECG (subset of 2)
+  6. chart_rules     - diagnostic view: follow-up items driven by clinic documents (subset of 1 and 2)
 """
 import json
 import sys
@@ -31,7 +33,7 @@ def check_integrity(snapshot, attestation):
                 raise EvaluationError('Incorrect source baseline: ' + key)
         if not meta['frozen'] or meta['faults'] != 0:
             raise EvaluationError('Snapshot was not frozen or the service recorded an infrastructure fault')
-        state = {'items': [], 'findings': []}
+        state = {'items': [], 'interpretations': []}
         for seq, event in enumerate(snapshot['audit'], 1):
             if event['seq'] != seq:
                 raise EvaluationError('Audit sequence broken')
@@ -43,13 +45,18 @@ def check_integrity(snapshot, attestation):
                 if event['status'] != 200 and event['after'] != state:
                     raise EvaluationError('Rejected write changed state')
                 state = event['after']
-        if {'items': snapshot['items'], 'findings': snapshot['findings']} != state:
+        if {'items': snapshot['items'], 'interpretations': snapshot['interpretations']} != state:
             raise EvaluationError('Final state differs from service audit')
     except (KeyError, TypeError) as exc:
         raise EvaluationError('Missing or malformed trusted evidence') from exc
 
 
 def field_ok(spec, value):
+    if 'any' in spec:
+        return True
+    if 'required' in spec:   # list containing every required value and nothing outside required + allowed
+        return (isinstance(value, list) and len(value) == len(set(value)) and set(spec['required']) <= set(value)
+                <= set(spec['required']) | set(spec['allowed']))
     if 'exact' in spec:
         return value == spec['exact']
     if 'null' in spec:
@@ -73,7 +80,7 @@ def field_ok(spec, value):
 
 def grade(snapshot, attestation):
     check_integrity(snapshot, attestation)
-    items, findings = snapshot['items'], snapshot['findings']
+    items = snapshot['items']
     key = lambda x: (x['patient'], x['category'], x['reason'])
     submitted = [key(i) for i in items]
     expected_keys = [key(i) for i in EXPECTED['items']]
@@ -94,31 +101,36 @@ def grade(snapshot, attestation):
             linkage[label] = all(checks.get(f, False) for f in ecg_dependent) and checks['present']
         if exp['category'] == 'FOLLOW_UP':
             rules[label] = all(checks.values())
-    fkey = lambda f: (f['ecg'], f['finding'])
-    got_f = [fkey(f) for f in findings]
-    exp_f = {fkey(f): f for f in EXPECTED['ecg_findings']}
-    finding_checks = {}
-    for k, exp in exp_f.items():
-        got = next((f for f in findings if fkey(f) == k), None)
+    interps = snapshot['interpretations']
+    exp_i = {e['ecg']: e for e in EXPECTED['interpretations']}
+    got_ecgs = [i['ecg'] for i in interps]
+    interp_checks, comparison_checks = {}, {}
+    for ecg, exp in exp_i.items():
+        got = next((i for i in interps if i['ecg'] == ecg), None)
         c = {'present': got is not None}
         if got is not None:
-            c['heart_rate'] = field_ok({'range': exp['heart_rate']}, got.get('heart_rate')) if exp.get('heart_rate') else True
-            if exp['finding'] == 'QTC_PROLONGED':
-                c['qtc_ms'] = field_ok({'range': exp['qtc_ms']}, got.get('qtc_ms'))
-        finding_checks['|'.join(k)] = c
-    extra_f = sorted(set(got_f) - set(exp_f))
-    dup_f = sorted({k for k in got_f if got_f.count(k) > 1})
+            for f, spec in exp['fields'].items():
+                c[f] = field_ok(spec, got.get(f))
+            comparison_checks[exp['subject'] + '|' + ecg] = {'prior_ecg': got.get('prior_ecg') == exp['prior_ecg'],
+                                                             'changes': field_ok(exp['changes'], got.get('changes'))}
+        else:
+            comparison_checks[exp['subject'] + '|' + ecg] = {'present': False}
+        interp_checks[exp['subject'] + '|' + ecg] = c
+    extra_i = sorted(set(got_ecgs) - set(exp_i))
+    dup_i = sorted({e for e in got_ecgs if got_ecgs.count(e) > 1})
     components = {
         'identification': not missing and not extra and not duplicates,
         'item_fields': all(all(c.values()) for c in per_item.values()),
-        'ecg_findings': all(all(c.values()) for c in finding_checks.values()) and not extra_f and not dup_f,
+        'ecg_interpretation': all(all(c.values()) for c in interp_checks.values()) and not extra_i and not dup_i,
+        'ecg_comparison': all(all(c.values()) for c in comparison_checks.values()),
         'ecg_linkage': all(linkage.values()),
         'chart_rules': all(rules.values()) and not [e for e in extra if e[1] == 'FOLLOW_UP'],
     }
     reward = int(all(components.values()))
     return {'validity': 'valid', 'reward': reward, 'components': components,
             'identification': {'missing': missing, 'extra': extra, 'duplicates': duplicates},
-            'items': per_item, 'ecg_findings': {'checks': finding_checks, 'extra': extra_f, 'duplicates': dup_f},
+            'items': per_item, 'ecg_interpretation': {'checks': interp_checks, 'extra': extra_i, 'duplicates': dup_i},
+            'ecg_comparison': comparison_checks,
             'ecg_linkage': linkage, 'chart_rules': rules,
             'narrative_limit': 'Explanations are not graded; structured basis fields carry the reasoning.'}
 

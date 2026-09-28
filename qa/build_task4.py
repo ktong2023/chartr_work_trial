@@ -510,14 +510,14 @@ def answers(b, memos):
     for e in b.catalog:
         if e['ecg_time'] <= EVAL.strftime('%Y-%m-%d %H:%M:%S') and (e['patient'] not in current_ecg or e['ecg_time'] > current_ecg[e['patient']]['ecg_time']):
             current_ecg[e['patient']] = e
+    # ECG interpretations: most recent ECG of every patient with ECGs (specs from qa/task4_interp_truth.py)
+    interp = json.loads((HERE / 'task4/ecg_interp.json').read_text())
     findings = []
     for p, e in sorted(current_ecg.items()):
-        t = b.truth[e['study_id']]
-        if t['label'] in ('AF', 'QTC_PROLONGED'):
-            f = {'ecg': e['study_id'], 'patient': p, 'finding': t['label'], 'heart_rate': t['hr_range']}
-            if t['label'] == 'QTC_PROLONGED':
-                f['qtc_ms'] = t['qtc_range']
-            findings.append(f)
+        L = interp['latest'][p]
+        assert L['ecg'] == e['study_id'], (p, L['ecg'], e['study_id'])
+        findings.append({'patient': p, 'subject': e['subject_id'], 'ecg': L['ecg'], 'fields': L['fields'], 'prior_ecg': L['prior_ecg'],
+                         'changes': L['changes']})
     rhythm = {}
     for o in b.data.get('MimicObservationChartevents', []):
         if o['code']['coding'][0]['code'] == '220048' and re.match(r'^(AF|A Flut)', o.get('valueString') or ''):
@@ -574,7 +574,7 @@ def answers(b, memos):
          due_date=ex('2026-09-08'), completion_record=ex(k['10016150:inr']))
     item('10012853', 'FOLLOW_UP', 'INR_AFTER_WARFARIN_DOSE_CHANGE', status=ex('overdue'), trigger=ex(k['10012853:dose']), requirement=ex(memos['inr']),
          due_date=ex('2026-09-17'), completion_record=ex(None))
-    return {'items': items, 'ecg_findings': findings, 'current_ecg': {p: e['study_id'] for p, e in current_ecg.items()}}
+    return {'items': items, 'interpretations': findings, 'current_ecg': {p: e['study_id'] for p, e in current_ecg.items()}}
 
 
 def checks(b, ans):
@@ -629,8 +629,13 @@ def write(b, memos, ans):
         (ddir / (sid + '.bin')).write_bytes(deltas[sid].astype('<i4').tobytes())
     (TASK / 'tests').mkdir(exist_ok=True); (TASK / 'solution').mkdir(exist_ok=True)
     (TASK / 'tests/expected.json').write_text(json.dumps(ans, indent=1) + '\n')
+    specs = json.loads((HERE / 'task4/ecg_interp.json').read_text())['ecg']
+    mid = lambda sp: round(sum(sp['range']) / 2) if 'range' in sp else None
     expert = {sid: {'label': t['label'], 'hr': round(sum(t['hr_range']) / 2, 1) if t['hr_range'] else None,
-                    'qtc_ms': round(sum(t['qtc_range']) / 2) if t.get('qtc_range') else None} for sid, t in b.truth.items()}
+                    'rhythm': specs[sid]['rhythm']['exact'], 'pr_ms': mid(specs[sid]['pr_ms']), 'qrs_ms': mid(specs[sid]['qrs_ms']),
+                    'qtc_ms': round(sum(t['qtc_range']) / 2) if t.get('qtc_range') else mid(specs[sid]['qtc_ms']),
+                    'axis': specs[sid]['axis'].get('exact') or (specs[sid]['axis'].get('one_of') or [None])[0],
+                    'conduction': specs[sid]['conduction']['required']} for sid, t in b.truth.items()}
     (TASK / 'solution/readings.json').write_text(json.dumps({'notes': b.readings, 'ecg': expert}, indent=1) + '\n')
 
 
@@ -641,7 +646,7 @@ def main():
     write(b, memos, ans)
     from collections import Counter
     print('added', len(b.added), 'resources; removed', len(b.removed), '| items', len(ans['items']), dict(Counter(i['reason'] for i in ans['items'])),
-          '| ECG findings', len(ans['ecg_findings']), dict(Counter(f['finding'] for f in ans['ecg_findings'])))
+          '| ECG interpretations', len(ans['interpretations']), dict(Counter(f['fields']['rhythm']['exact'] for f in ans['interpretations'])))
 
 
 if __name__ == '__main__':
