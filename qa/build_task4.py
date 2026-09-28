@@ -638,8 +638,11 @@ def write(b, memos, ans):
     (TASK / 'tests/expected.json').write_text(json.dumps(ans, indent=1) + '\n')
     specs = json.loads((HERE / 'task4/ecg_interp.json').read_text())['ecg']
     mid = lambda sp: round(sum(sp['range']) / 2) if 'range' in sp else None
+    base = lambda t: 'AF' if t['label'] == 'AF' else 'PACED' if t['label'] == 'PACED' else 'SINUS'
+    rhythm_of = lambda t, opts: base(t) if base(t) in opts else opts[0]
     expert = {sid: {'label': t['label'], 'hr': round(sum(t['hr_range']) / 2, 1) if t['hr_range'] else None,
-                    'rhythm': specs[sid]['rhythm']['exact'], 'pr_ms': mid(specs[sid]['pr_ms']), 'qrs_ms': mid(specs[sid]['qrs_ms']),
+                    'rhythm': specs[sid]['rhythm'].get('exact') or rhythm_of(t, specs[sid]['rhythm']['one_of']),
+                    'pr_ms': mid(specs[sid]['pr_ms']), 'qrs_ms': mid(specs[sid]['qrs_ms']),
                     'qtc_ms': round(sum(t['qtc_range']) / 2) if t.get('qtc_range') else mid(specs[sid]['qtc_ms']),
                     'axis': specs[sid]['axis'].get('exact') or (specs[sid]['axis'].get('one_of') or [None])[0],
                     'conduction': specs[sid]['conduction']['required']} for sid, t in b.truth.items()}
@@ -653,7 +656,7 @@ def main():
     write(b, memos, ans)
     from collections import Counter
     print('added', len(b.added), 'resources; removed', len(b.removed), '| items', len(ans['items']), dict(Counter(i['reason'] for i in ans['items'])),
-          '| ECG interpretations', len(ans['interpretations']), dict(Counter(f['fields']['rhythm']['exact'] for f in ans['interpretations'])))
+          '| ECG interpretations', len(ans['interpretations']), dict(Counter(json.dumps(f['fields']['rhythm']) for f in ans['interpretations'])))
 
 
 if __name__ == '__main__':

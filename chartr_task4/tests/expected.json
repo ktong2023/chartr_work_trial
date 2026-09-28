@@ -1144,12 +1144,11 @@
    },
    "prior_ecg": "108780865",
    "changes": {
-    "required": [
-     "RESOLVED_AF"
-    ],
+    "required": [],
     "allowed": [
      "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
+     "QTC_INCREASE_60",
+     "RESOLVED_AF"
     ]
    }
   },
@@ -1333,7 +1332,10 @@
    "ecg": "103992480",
    "fields": {
     "rhythm": {
-     "exact": "SINUS"
+     "one_of": [
+      "OTHER",
+      "SINUS"
+     ]
     },
     "ventricular_rate": {
      "range": [
@@ -2079,7 +2081,10 @@
    "ecg": "100924231",
    "fields": {
     "rhythm": {
-     "exact": "SINUS"
+     "one_of": [
+      "ATRIAL_FLUTTER",
+      "SINUS"
+     ]
     },
     "ventricular_rate": {
      "range": [
@@ -2116,6 +2121,7 @@
      "RESOLVED_AF"
     ],
     "allowed": [
+     "NEW_ATRIAL_FLUTTER",
      "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]

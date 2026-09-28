@@ -13,12 +13,16 @@ is graded only where independent readers agree; otherwise any value is accepted.
 Comparisons (latest ECG vs the patient's previous served ECG) derive from both ECGs' specs.
 Run with the labeling venv after task4_catalog.py and task4_interpret.py:  data/.labvenv/bin/python qa/task4_interp_truth.py
 """
-import json, sys
+import json, re, sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / 'task4'
 CATS = [('NORMAL', -30, 90), ('LEFT', -90, -30), ('RIGHT', 90, 180), ('EXTREME', -180, -90)]
+# Rhythms that designer review could not settle (pilot evidence reviewed at high resolution): either reading is accepted.
+#  108780865: slow irregular rhythm; the cart says AF, but low-amplitude waves ~150 ms before each QRS may be P waves.
+#  100924231: fixed regular 141/min two days after AF; 2:1 flutter vs sinus tachycardia cannot be separated.
+RHYTHM_AMBIGUOUS = {'108780865': ['AF', 'SINUS'], '100924231': ['ATRIAL_FLUTTER', 'SINUS']}
 NEIGHBOURS = {'NORMAL': ['LEFT', 'RIGHT'], 'LEFT': ['NORMAL', 'EXTREME'], 'RIGHT': ['NORMAL', 'EXTREME'], 'EXTREME': ['LEFT', 'RIGHT']}
 
 
@@ -59,7 +63,10 @@ def spec_for(sid, t, r, lab):
     rhythm = 'AF' if t['label'] == 'AF' else 'PACED' if t['label'] == 'PACED' else 'SINUS'
     M, N, G = r['M'] or {}, r['N'] or {}, r['G'] or {}
     artifact = (t.get('edit') or '').startswith('artifact')
-    s = {'rhythm': {'exact': rhythm}, 'ventricular_rate': {'range': t['hr_range']}}
+    options = RHYTHM_AMBIGUOUS.get(sid)
+    if options is None and rhythm == 'SINUS' and re.search(r'(?i)ectopic atrial', M.get('text') or ''):
+        options = ['OTHER', 'SINUS']      # the cart itself hedges between sinus and an ectopic atrial rhythm
+    s = {'rhythm': {'one_of': sorted(options)} if options else {'exact': rhythm}, 'ventricular_rate': {'range': t['hr_range']}}
     # QRS
     q = [v for v in (M.get('qrs'), G.get('qrs')) if v]
     s['qrs_ms'] = {'range': rng(q, 25)} if len(q) == 2 and abs(q[0] - q[1]) <= 30 else {'any': True}
@@ -130,12 +137,15 @@ def spec_for(sid, t, r, lab):
 
 def changes(cur, prev, cur_q, prev_q):
     required, allowed = set(), set()
-    rc, rp = cur['rhythm']['exact'], prev['rhythm']['exact']
-    for rhythm, name in (('AF', 'AF'), ('PACED', 'PACED_RHYTHM')):
-        if rc == rhythm and rp != rhythm:
-            required.add('NEW_' + name)
-        if rp == rhythm and rc != rhythm:
-            required.add('RESOLVED_' + name)
+    opts = lambda sp: sp['rhythm'].get('one_of') or [sp['rhythm']['exact']]
+    combos = [(c, p) for c in opts(cur) for p in opts(prev)]
+    for rhythm, name in (('AF', 'AF'), ('ATRIAL_FLUTTER', 'ATRIAL_FLUTTER'), ('PACED', 'PACED_RHYTHM')):
+        for tag, holds in (('NEW_', lambda c, p: c == rhythm and p != rhythm), ('RESOLVED_', lambda c, p: p == rhythm and c != rhythm)):
+            hits = [holds(c, p) for c, p in combos]
+            if all(hits):
+                required.add(tag + name)
+            elif any(hits):
+                allowed.add(tag + name)
     bbb = lambda s, k: set(s['conduction'][k]) & {'RBBB', 'LBBB'}
     c_req, c_opt, p_req, p_opt = bbb(cur, 'required'), bbb(cur, 'allowed'), bbb(prev, 'required'), bbb(prev, 'allowed')
     if c_req and not (p_req or p_opt):
@@ -146,7 +156,7 @@ def changes(cur, prev, cur_q, prev_q):
         required.add('RESOLVED_BUNDLE_BRANCH_BLOCK')
     elif (p_req or p_opt) and not c_req:
         allowed.add('RESOLVED_BUNDLE_BRANCH_BLOCK')
-    if 'range' in cur['qtc_ms'] and 'range' in prev['qtc_ms'] and cur_q and prev_q:
+    if 'range' in cur['qtc_ms'] and 'range' in prev['qtc_ms'] and cur_q and prev_q and opts(cur) == opts(prev) == ['SINUS']:
         lo, hi = min(cur_q) - max(prev_q), max(cur_q) - min(prev_q)
         if lo >= 60: required.add('QTC_INCREASE_60')
         elif hi >= 60: allowed.add('QTC_INCREASE_60')
@@ -181,7 +191,7 @@ def main():
     print(len(latest), 'patients with ECGs; graded fields on latest ECGs:', dict(graded))
     print('required changes:', Counter(c for v in latest.values() for c in v['changes']['required']))
     print('required conduction:', Counter(c for v in latest.values() for c in v['fields']['conduction']['required']))
-    print('rhythms:', Counter(v['fields']['rhythm']['exact'] for v in latest.values()), 'axis:', Counter(json.dumps(v['fields']['axis']) for v in latest.values()))
+    print('rhythms:', Counter(json.dumps(v['fields']['rhythm']) for v in latest.values()), 'axis:', Counter(json.dumps(v['fields']['axis']) for v in latest.values()))
 
 
 if __name__ == '__main__':

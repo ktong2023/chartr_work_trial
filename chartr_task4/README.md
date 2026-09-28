@@ -208,3 +208,9 @@ findings. It also adds these misreadings, all scoring 0: paced read as sinus wit
 - **Interpretations are required only for living patients:** 37 ECGs (33 sinus, 4 AF). Deceased patients' latest ECGs
   (18) are optional: neither required nor penalized. This makes the paced tracing (10023117, deceased) optional. The LBBB
   (10038992), first-degree AV block (10007058) and transient-RBBB comparison (10021487) remain graded.
+- **v0.3.2**, `jobs/chartr/task4-0.3.2-1790609695` (5 runs): 0/5.
+  - 10020306 is now found in 3/5 runs.
+  - 10004235 is missed in 5/5; across all batches it has been found in 2 of 30 runs.
+  - v0.3.3 accepts either reading for three rhythms that could not be settled on high-resolution review: 103992480
+    (sinus/ectopic atrial), 100924231 (sinus tachycardia/2:1 flutter) and 108780865 (slow AF/sinus).
+  - Rescored against the v0.3.3 key, 3/5 runs pass every ECG component, and one run (cCSHmmu) fails only on 10004235.

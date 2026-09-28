@@ -1362,7 +1362,10 @@
   },
   "108780865": {
    "rhythm": {
-    "exact": "AF"
+    "one_of": [
+     "AF",
+     "SINUS"
+    ]
    },
    "ventricular_rate": {
     "range": [
@@ -3072,7 +3075,10 @@
   },
   "103262474": {
    "rhythm": {
-    "exact": "SINUS"
+    "one_of": [
+     "OTHER",
+     "SINUS"
+    ]
    },
    "ventricular_rate": {
     "range": [
@@ -3710,7 +3716,10 @@
   },
   "100924231": {
    "rhythm": {
-    "exact": "SINUS"
+    "one_of": [
+     "ATRIAL_FLUTTER",
+     "SINUS"
+    ]
    },
    "ventricular_rate": {
     "range": [
@@ -4516,7 +4525,10 @@
   },
   "103992480": {
    "rhythm": {
-    "exact": "SINUS"
+    "one_of": [
+     "OTHER",
+     "SINUS"
+    ]
    },
    "ventricular_rate": {
     "range": [
@@ -7101,12 +7113,11 @@
    },
    "prior_ecg": "108780865",
    "changes": {
-    "required": [
-     "RESOLVED_AF"
-    ],
+    "required": [],
     "allowed": [
      "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
+     "QTC_INCREASE_60",
+     "RESOLVED_AF"
     ]
    }
   },
@@ -7775,7 +7786,10 @@
    "subject_id": "10014354",
    "fields": {
     "rhythm": {
-     "exact": "SINUS"
+     "one_of": [
+      "ATRIAL_FLUTTER",
+      "SINUS"
+     ]
     },
     "ventricular_rate": {
      "range": [
@@ -7812,6 +7826,7 @@
      "RESOLVED_AF"
     ],
     "allowed": [
+     "NEW_ATRIAL_FLUTTER",
      "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]
@@ -8047,7 +8062,10 @@
    "subject_id": "10018328",
    "fields": {
     "rhythm": {
-     "exact": "SINUS"
+     "one_of": [
+      "OTHER",
+      "SINUS"
+     ]
     },
     "ventricular_rate": {
      "range": [
