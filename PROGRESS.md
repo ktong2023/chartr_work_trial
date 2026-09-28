@@ -1,5 +1,17 @@
 # ChartR implementation handoff
 
+## Repository state (September 28, 2026)
+
+- **`main`:** all task code. Task 3 (`chartr_task3/`) is at v0.3.1, the final candidate; its current state and
+  history are at the top of `chartr_task3/README.md`, and the audits are in `TASK3_V020_AUDIT_2026_09_27.md` and
+  `TASK3_V031_AUDIT_2026_09_28.md`. The shared adapter is 0.4.0; prompt caching is opt-in and off by default, so Task 1
+  requests are unchanged. Task 1 (`chartr_task/`) and the earlier probes are unchanged.
+- **`task3-pilot-results`:** the paid Task 3 pilot job artifacts, 0.1.0 through 0.3.1 (about 540 files, 7M lines of
+  JSON). They stay off `main` because job folders are gitignored here; the README cites them by path on that branch.
+- **`claude/phase-1-design-proposal-db3m7q`:** the Task 3 development branch. `main` now matches it; the audits
+  reference it by name.
+- **Task 4** is in development and not on GitHub yet.
+
 ## Task 3 pilot 0.3.1 — final frozen batch (September 28, 2026)
 
 **Headline 4/10 valid attempts, inside the 2–7 target,** under the predeclared protocol. Setup: v0.3.1 environment
