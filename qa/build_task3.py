@@ -196,6 +196,7 @@ def build():
                                                 'kind': kind, 'requested': issue in p['requests']}
 
     check_follow_up_after_seroreversion()
+    check_window_edges()
     sources.sort(key=lambda r: r['id'])
     for r in sources:
         validate(r)
@@ -237,6 +238,30 @@ def check_follow_up_after_seroreversion():
                 earlier = [r[1] for r in own if r[2] == 'NR' and r[3].get('status', 'final') == 'final'
                            and r[1] not in f['fu_drop'] and anchor <= dt.date.fromisoformat(r[1]) < start]
                 assert not earlier, (p['key'], f'{m}-month window missed after nonreactive follow-up', earlier)
+
+
+def check_window_edges(margin=4):
+    """No answer may depend on reading a follow-up window edge as inclusive or exclusive, on how months are added to a
+    month-end date, or on whether a window closing within days of the evaluation time counts as closed (independent
+    review, 0.3.0): moving every edge by `margin` days in either direction must leave every window's status unchanged."""
+    evaluation = dt.date.fromisoformat(NOW[:10])
+    pad = dt.timedelta(days=margin)
+    for p in PATIENTS:
+        for world in (p['unknown']['options'].values() if p.get('unknown') else [{}]):
+            f = task3_rules.facts(p, 'full', [world])
+            treated = [dt.date.fromisoformat(d) for d, k in f['doses'] if k != 'pep' and d >= f['dx']]
+            if not treated:
+                continue
+            specimens = [dt.date.fromisoformat(d) for d, s in f['fu'] + f['extra_fu'] if d not in f['fu_drop'] and s in ('final', 'pending')]
+            for m in ((6, 12) if f['stage'] in ('primary', 'secondary') else (6, 12, 24)):
+                due = task3_rules.months(min(treated), m)
+                lo, hi = due - dt.timedelta(days=30), due + dt.timedelta(days=30)
+                if hi - pad >= evaluation:
+                    continue    # clearly still open: its status cannot matter
+                inner = any(lo + pad <= d <= hi - pad for d in specimens)
+                outer = any(lo - pad <= d <= hi + pad for d in specimens)
+                assert inner == outer, (p['key'], f'{m}-month window met only depending on an edge', lo, hi)
+                assert inner or abs((hi - evaluation).days) >= margin, (p['key'], f'unmet {m}-month window closes at the evaluation time', hi)
 
 
 def ext(r, name):

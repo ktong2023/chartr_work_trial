@@ -105,7 +105,7 @@ class Task3(unittest.TestCase):
 
     def test_design_counts(self):
         c = list(EXPECTED['candidates'].values())
-        self.assertEqual(len(c), 300 * 4)
+        self.assertEqual(len(c), 200 * 4)
         core = [x for x in c if x['patient_key'] in CORE]
         self.assertEqual(sum(x['disposition'] == 'confirmed' for x in core), 12)
         self.assertEqual(sum(x['disposition'] == 'cannot_determine' for x in core), 9)
@@ -227,7 +227,7 @@ class Task3(unittest.TestCase):
         got = {(x, y) for x, ids in allowed.items() for y in allowed if x != y and y in ids}
         self.assertEqual(got, want)
         self.assertIn((pid['p14'], pid['p15']), got)
-        self.assertGreater(len(linking), 40)
+        self.assertGreater(len(linking), 30)
         # Every linked patient may cite the linking result, its specimen and accessioning entry, and the other patient's
         # Patient record and chart, on a real item, whichever chart holds them.
         answers = [dict(a) for a in ANSWERS]
@@ -342,7 +342,7 @@ class Task3(unittest.TestCase):
 
     def test_stage_inference_charts_name_no_stage(self):
         inferred = [p for p in cohort.PATIENTS if p['facts'].get('stage_recorded') is False]
-        self.assertGreaterEqual(len(inferred), 18 + 3)
+        self.assertGreaterEqual(len(inferred), 14 + 3)
         words = re.compile(r'\b(primary|secondary|latent|early|late|duration|chancre|staging)\b', re.I)
         for p in inferred:
             chart = [r for r in FIXTURE['sources'] if (r.get('subject') or r.get('patient') or {}).get('reference') == 'Patient/' + KEYS[p['key']][0]]

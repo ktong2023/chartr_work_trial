@@ -1,5 +1,21 @@
 # ChartR implementation handoff
 
+## Task 3 v0.3.0 and adapter 0.4.0 — calibration and run time (September 28, 2026)
+
+User decisions after pilot 0.2.0: prompt caching, about 200 patients, and option (b).
+- **Adapter 0.4.0** adds opt-in automatic prompt caching (`--ak prompt_cache=true`, 1-hour TTL). It is off by
+  default, so Task 1 and default runs keep the original HIPAA-constrained request shape (the 0.3.1 decision).
+- **Cohort:** 200 patients (2–3 instances per variant, background 26). F7 `unreceived` is removed, and its request
+  moved to `unreceived-both`. That gives 800 candidates: 83 confirmed, 61 `cannot_determine`, 34 requests, and 139 of
+  259 non-control candidates chained.
+- Estimated pass rate is about 25%.
+- Pilot command: `caffeinate -dims env PYTHONPATH=...` with `-k 10 -n 10`; see `chartr_task3/README.md`.
+
+Checks: Task 3 offline 15/15, adapter 15/15, Task 1 offline passes; Docker oracle 1, no-op 0, boundary exit 0.
+Independent review: 236/236, then 84/84 after realism and wording fixes, then 240/240 on the release build. Window-edge
+and seroreversion checks run in the build. Earlier numbers (85 confirmed / 63 CD) moved to 83 / 61 as the generator was
+tightened.
+
 ## Task 3 pilot 0.2.0 (300 patients) and v0.2.2 (September 27, 2026)
 
 Five `claude-opus-5` trials on the real 0.2.0 (hashes match `40162ad`), all valid, 52–82 turns, ≤3,050 s, peak turn

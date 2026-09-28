@@ -1,4 +1,73 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.2.2 (300 patients, chain-weighted)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.3.0 (200 patients, chain-weighted)
+
+## 0.3.0: calibration and run time (user decisions, September 28, 2026)
+
+After pilot 0.2.0 (below): defect-adjusted 0/5, an estimated ~10% pass rate, and 27–51 minutes per run.
+- **Run time came from context, not the task.** 98% of each run was waiting on the model. Context reached 350–620K
+  tokens per turn, and total input was 13–16M tokens per run, all uncached. Three runs also lost about 15 minutes each
+  when a connection stalled; all three failed within 2 s of each other, a host-side network drop.
+- **Adapter 0.4.0: opt-in prompt caching.** Enabled with `--ak prompt_cache=true`: one top-level
+  `cache_control: {type: ephemeral, ttl: 1h}`, and nothing else in the request changes. Caching affects latency and
+  cost, not what the model sees, and on the Claude API cache reads do not count toward input-token rate limits. It is
+  **off by default**, so Task 1 and any default run keep exactly the original request shape. That shape was the
+  user's 0.3.1 decision, because ChartR's HIPAA-constrained access rejects extra features. Adapter 0.3.0 had used
+  caching successfully on this key. The history is append-only, so the automatic breakpoint advances every turn.
+- **200 patients.** Each variant keeps two or three instances; five copies added workload but not difficulty, since a
+  run applies one rule to every instance of a variant. The background drops from 64 to 26 patients.
+- **Option (b):** F7 `unreceived` is removed. That was a patient-reported ED dose that moves the follow-up anchor; the
+  answer depended on the 12-month test falling about a week either side of a window, and 3 of 5 runs missed it. The
+  same story remains in F7 `unreceived-both` (3 patients), where the answer does not depend on the dose, and its
+  review request moved there. `OUTSIDE_RECORD_NOT_RECEIVED` is still exercised by 8 candidates (F9 unreceived
+  deliveries, outside injections, and core p08/p13/p19), all right in every 0.2.0 run once the code wording was fixed.
+- **Expected pass rate:** roughly 25% at the 0.2.0 per-concept rates (identity only on another chart's accessioning
+  entry 2/5, corrections 4/5, early latent 24-month schedule 4/5). Five runs make each rate uncertain.
+
+| Family | Patients (0.3.0) |
+|---|---|
+| F1 identity conflict | 21 |
+| F2 resolved misfile | 20 |
+| F4 pending pregnancy test | 12 |
+| F5 hCG identity | 16 |
+| F6 corrections | 15 |
+| F7 outside first dose (received, late, unreceived-both, received-conflict) | 14 |
+| F9 delivery | 9 |
+| F3 stage inference | 14 |
+| Single-step (incl. contradicted outside records) | 24 |
+| Background | 26 |
+| Core | 29 |
+
+**Counts:** 200 patients, 800 candidates, 4,482 records, 83 confirmed, 61 `cannot_determine` (41 conflict, 12
+pending, 8 outside), 34 review requests, 139 of 259 non-control candidates chained.
+
+**Tightening from the independent review, applied cohort-wide:**
+- **Contradicted outside series:** a patient's "series completed" report now plainly concerns the doses the received
+  record covers, not possible later care.
+- **Pending tests:** these are weeks old, not months. A pending follow-up RPR is collected 5–30 days before the
+  evaluation time, with its window just closed; pending hCGs are 32–44 days old.
+- **Disputed pregnancy tests:** the "hCG drawn" note appears only where ownership is resolved, so the result-pending
+  code can't be argued. The positive test falls during the doxycycline course it bears on.
+- **External patients** named on pregnancy tests are of reproductive age.
+- **Outside records** arrive after any date a later note misstates.
+- **Rejection reasons** are ones that fit a serum specimen.
+- **Window edges:** every specimen that decides whether a follow-up window was met is at least 5 days inside or outside
+  it. Windows closing within days of the evaluation time are filled. The build refuses any cohort where moving every
+  window edge 4 days would change a window's status, which rules out inclusive/exclusive and month-end arithmetic
+  readings. This moved decisive specimens in 15 patients, including core p11's pending specimen, from 3 to 9 days
+  inside its window.
+- **Latent F6 generator bug:** the build caught a disputed dose date pushing the 12-month window past the evaluation
+  time, so the charted anchor now leaves room for it.
+
+**Independent review.** Three passes by the same second-model reviewer, each given only rendered charts and the public docs:
+- **236/236** on one patient per variant.
+- **84/84** on the variants the resulting fixes touched.
+- **240/240** on the release build itself (60 patients).
+
+All packets, keys, decisions and reports are in `qa/reviews/`.
+
+**Checks:** offline `qa/test_task3.py` 15/15; adapter 15/15, including the new opt-in caching test, with the default
+request shape unchanged; Task 1 offline passes. Docker (cloud CA copies, release build): oracle 1, no-op valid 0 (missing 34,
+missed 78, overclaim 54), boundary probe exit 0 with the snapshot complete (4,482 records), frozen, 0 faults.
+
 
 ## Pilot 0.2.0 (September 27, 2026) and 0.2.2
 
@@ -219,8 +288,8 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a o
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a nop --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 --agent-import-path qa.agents:BoundaryProbe --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 # Paid pilots (authorize first; the preflight must print all ok):
-python3 qa/task3_preflight.py 0.2.2
-PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 5 -n 5 --ak max_turns=150 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=3500 --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
+python3 qa/task3_preflight.py 0.3.0
+caffeinate -dims env PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 10 -n 10 --ak max_turns=250 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=7000 --ak prompt_cache=true --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 ```
 
 ## Independent review (September 27, 2026)

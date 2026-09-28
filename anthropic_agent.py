@@ -26,6 +26,9 @@ class Options(AgentOptions):
     max_tool_chars: int = Field(100000, ge=256)
     # Backoff (seconds) before each retry of a transient API failure; empty disables retries.
     api_retry_delays: tuple[float, ...] = (10.0, 30.0, 90.0)
+    # Opt-in (`--ak prompt_cache=true`): automatic prompt caching with a 1-hour TTL. It changes latency and cost,
+    # not what the model sees. Off by default, so default requests keep ChartR's original shape.
+    prompt_cache: bool = False
 
 
 class AnthropicAgent(BaseAgent):
@@ -41,7 +44,7 @@ class AnthropicAgent(BaseAgent):
         return "anthropic-direct"
 
     def version(self):
-        return "0.3.2"
+        return "0.4.0"
 
     async def setup(self, environment):
         pass
@@ -90,18 +93,19 @@ class AnthropicAgent(BaseAgent):
                                    "required": ["command"], "additionalProperties": False}}]
         try:
             # Only the ordinary Messages API: ChartR's HIPAA-constrained access rejects extra features.
-            # No beta headers, thinking options, caching directives, fallbacks, or gateway features.
-            # The only addition is re-sending the identical request after a transient failure.
+            # No beta headers, thinking options, fallbacks, or gateway features, and no caching unless opted in.
+            # The only other addition is re-sending the identical request after a transient failure.
             api_key = os.environ.get("ANTHROPIC_API_KEY")
             if not api_key:
                 reason = "missing_credentials"
                 return
             client = anthropic.AsyncAnthropic(api_key=api_key, timeout=self.options.api_timeout_sec, max_retries=0)
+            cache = {"cache_control": {"type": "ephemeral", "ttl": "1h"}} if self.options.prompt_cache else {}
             async with asyncio.timeout(self.options.wall_timeout_sec):
                 for turns in range(1, self.options.max_turns + 1):
                     self._event("request", turn=turns, message_count=len(messages))
                     response = await self._create(client, turns, model=self.model_name, max_tokens=self.options.max_tokens,
-                                                  tools=tools, messages=messages)
+                                                  tools=tools, messages=messages, **cache)
                     raw = response.model_dump(mode="json")
                     self._event("response", turn=turns, response=raw, request_id=getattr(response, "_request_id", None))
                     for key in usage:

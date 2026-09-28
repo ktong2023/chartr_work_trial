@@ -71,6 +71,13 @@ def window(anchor, m):
     return due, plus(due, -30), plus(due, 30)
 
 
+def inside(g, lo, hi, margin=5):
+    """A date at least `margin` days inside [lo, hi]: no answer may rest on whether a window edge is inclusive, or on
+    how a month is added to a month-end date (Aug 31 + 6 months is Feb 28 or Mar 3)."""
+    assert D(plus(lo, margin)) <= D(plus(hi, -margin)), (lo, hi)
+    return g.date_between(plus(lo, margin), plus(hi, -margin))
+
+
 def closed(anchor, m):
     return D(window(anchor, m)[2]) < EVALD
 
@@ -103,14 +110,14 @@ class Gen:
         a, b = D(lo), D(hi)
         return iso(a + dt.timedelta(days=self.rng.randint(0, max(0, (b - a).days))))
 
-    def external(self, sex=None):
+    def external(self, sex=None, reproductive=False):
         """A non-cohort clinic patient named only by one laboratory accessioning entry."""
         sex = sex or self.pick(['female', 'male'])
         name = self.name(sex)
         first, last = name.split(' ', 1)
         key = f'X{len(self.externals) + 1:03d}'
         mrn = str(int(hashlib.sha256(('ext:' + key).encode()).hexdigest()[:10], 16) % 90000000 + 10000000)
-        dob = self.date_between('1960-01-01', '2003-12-31')
+        dob = self.date_between('1983-01-01', '2006-12-31') if reproductive else self.date_between('1960-01-01', '2003-12-31')
         self.externals[key] = {'mrn': mrn, 'dob': dob, 'name': f'{last.upper()}, {first.upper()}'}
         return key
 
@@ -221,7 +228,7 @@ def followups(c, anchor, stage, skip=(), open_extra=0.3):
     for m in schedule(stage):
         due, lo, hi = window(anchor, m)
         out[m] = (due, lo, hi)
-        if D(hi) < EVALD:
+        if D(hi) < EVALD + dt.timedelta(days=5):   # windows closing near the evaluation time are filled, never left ambiguous
             if m not in skip:
                 day = plus(due, g.rng.randint(-18, 18))
                 # Nonreactive only at the last scheduled test: no answer may rest on a test missed after seroreversion.
@@ -430,7 +437,7 @@ def f4_pending_pregnancy(g, variant):
     """A pregnancy test with no final result, and treatment whose adequacy may or may not depend on it."""
     c = Chart(g, 'F4_pending_pregnancy', variant, sex='female', age=(18, 40))
     if variant == 'doxy':
-        c.dx = g.date_between(plus(EVAL, -85), plus(EVAL, -40))
+        c.dx = g.date_between(plus(EVAL, -44), plus(EVAL, -32))
         c.records.append(('allergy', plus(c.dx, -g.rng.randint(400, 3000)), 'Penicillin',
                           g.pick(['Anaphylaxis after amoxicillin.', 'Hives and throat tightness with penicillin as a child; ED visit.'])))
         diagnose(c, 'early_latent', pregnant_test=False)
@@ -458,13 +465,13 @@ def f4_pending_pregnancy(g, variant):
         expect(c, ADQ=('confirmed', None), PRG=('cannot_determine', PEND))
         kind(c, ADQ='chain_irrelevant', PRG='undeterminable')
     elif variant == 'early1':
-        c.dx = g.date_between(plus(EVAL, -85), plus(EVAL, -40))
+        c.dx = g.date_between(plus(EVAL, -44), plus(EVAL, -32))
         diagnose(c, g.pick(['primary', 'secondary', 'early_latent']), pregnant_test=False)
         give(c, c.dx)
         c.records.append(('hcg', c.dx, None, {'comment': g.pick(['Result to follow.', 'Sent out.'])}))
         kind(c, ADQ='chain_irrelevant', PRG='chain_irrelevant')
     else:  # late3: a correctly spaced series; adequate whether or not she is pregnant
-        c.dx = g.date_between(plus(EVAL, -110), plus(EVAL, -45))
+        c.dx = g.date_between(plus(EVAL, -44), plus(EVAL, -32))
         diagnose(c, 'late_latent', pregnant_test=False)
         treat(c, 'late_latent', c.dx, gaps=[7, 7])
         c.records.append(('hcg', c.dx, None, {'comment': 'Result to follow.'}))
@@ -494,7 +501,7 @@ def f5_hcg_identity(g, variant):
     b = None
     if variant in ('misfile', 'conflict', 'conflict-bpg'):
         b = Chart(g, 'F5_hcg_identity', variant + '-other', sex='female', age=(18, 40))
-        b.dx = plus(test_day, -g.rng.randint(0, 25))
+        b.dx = plus(test_day, -g.rng.randint(0, 10))      # positive test during treatment: pregnant while treated
         b_doxy = variant in ('misfile', 'conflict') and g.rng.random() < 0.8
         if b_doxy:
             b.records.append(('allergy', plus(b.dx, -g.rng.randint(400, 3000)), 'Penicillin', g.pick(['Anaphylaxis.', 'Hives, wheeze.'])))
@@ -504,7 +511,7 @@ def f5_hcg_identity(g, variant):
         else:
             diagnose(b, g.pick(['primary', 'secondary', 'early_latent']), pregnant_test=False)
             give(b, b.dx)
-        if g.rng.random() < 0.5:
+        if variant == 'misfile' and g.rng.random() < 0.5:   # in a conflict it would make RESULT_PENDING arguable
             b.note(test_day, 'nurse', g.pick(NURSES), 'Nursing note', g.pick(['Labs drawn incl. serum hCG.', 'hCG drawn per provider.']))
     if variant == 'misfile':
         a.records.append(('hcg', test_day, 'positive', {'owner': b.key}))
@@ -535,7 +542,7 @@ def f5_hcg_identity(g, variant):
         else:
             kind(b, ADQ='chain_irrelevant', PRG='chain_irrelevant')
     else:  # 'irrelevant': disputed test, but BPG treatment is adequate whether or not she is pregnant
-        a.records.append(('hcg', test_day, 'positive', {'accession_owner': g.external('female')}))
+        a.records.append(('hcg', test_day, 'positive', {'accession_owner': g.external('female', reproductive=True)}))
         a.unknown = dict(code=CONF, kind='conflict', best='self', latest='other', chart='self',
                          options={'self': dict(pregnant=True), 'other': dict(pregnant=False, misfiled=True)})
         a.gaps['conflict'] = (MIS, ADQ, PRG)
@@ -552,7 +559,7 @@ def f6_correction(g, variant):
     """A dose date corrected by its author (or disputed by someone else) moves the follow-up anchor or a gap."""
     if variant in ('anchor-late', 'anchor-early', 'dispute'):
         stage = g.pick(['primary', 'secondary', 'early_latent'])
-        charted = anchor_for(g, [12])
+        charted = plus(anchor_for(g, [12]), -30)   # the other date is up to 28 days later: both 12-month windows closed
         c = Chart(g, 'F6_correction', variant, dx=charted)
         diagnose(c, stage)
         nurse = give(c, charted)
@@ -565,15 +572,15 @@ def f6_correction(g, variant):
         # 6-month specimen valid under either anchor; 12-month specimen inside exactly one anchor's window.
         lo6 = max(window(charted, 6)[1], window(actual, 6)[1])
         hi6 = min(window(charted, 6)[2], window(actual, 6)[2])
-        c.rpr(g.date_between(lo6, hi6), max(1, c.titer // 4))
+        c.rpr(inside(g, lo6, hi6), max(1, c.titer // 4))
         due_c, lo_c, hi_c = window(charted, 12)
         due_a, lo_a, hi_a = window(actual, 12)
         if variant == 'anchor-late':      # specimen fits only the charted (wrong) anchor
-            spec = g.date_between(lo_c, plus(lo_a, -2))
+            spec = inside(g, lo_c, lo_a)
         elif variant == 'anchor-early':   # specimen fits only the corrected anchor
-            spec = g.date_between(lo_a, plus(lo_c, -2))
+            spec = inside(g, lo_a, lo_c)
         else:                             # disputed: fits only the charted anchor
-            spec = g.date_between(lo_c, plus(lo_a, -2))
+            spec = inside(g, lo_c, lo_a)
         c.rpr(spec, max(1, c.titer // 16))      # reactive: it may precede a missed window
         if variant == 'dispute':
             author = g.pick([x for x in CLIN])
@@ -636,8 +643,8 @@ def f7_outside_first_dose(g, variant):
         c.rpr(visit, c.titer)
         c.records.append(('condition', visit, g.pick(STAGE_TEXT[stage]), g.pick(CLIN)))
     if variant in ('received-conflict-ok', 'received-conflict-late'):
-        stated = plus(ed_day, g.rng.randint(6, 10))
-        c.records.append(('outside', plus(ed_day, 4), facility,
+        stated = plus(ed_day, g.rng.randint(10, 14))
+        c.records.append(('outside', plus(stated, g.rng.randint(2, 8)), facility,
                           f'{facility.upper()} - DISCHARGE INSTRUCTIONS / MAR\nPatient: {c.label}  DOB {c.d(c.dob)}\nSeen {c.d(ed_day)}. '
                           f'Dx: {"primary" if stage == "primary" else "secondary"} syphilis. '
                           'Benzathine penicillin G 2.4 million units IM administered. Follow up with STI clinic.'))
@@ -647,12 +654,11 @@ def f7_outside_first_dose(g, variant):
         c.facts['doses'] = [(ed_day, 'bpg')]
         c.wrong['latest_wins'] = dict(doses=[(stated, 'bpg')])
         c.wrong['structured_only'] = dict(doses=[])
-        lo6, hi6 = window(stated, 6)[1], window(ed_day, 6)[2]
-        c.rpr(g.date_between(lo6, hi6), max(1, c.titer // 4))
+        c.rpr(inside(g, window(stated, 6)[1], window(ed_day, 6)[2]), max(1, c.titer // 4))
         if variant == 'received-conflict-ok':      # 12-month specimen fits only the hospital-recorded date
-            spec = g.date_between(window(ed_day, 12)[1], plus(window(stated, 12)[1], -2))
+            spec = inside(g, window(ed_day, 12)[1], window(stated, 12)[1])
         else:                                      # fits only the misstated date: overdue per the governing record
-            spec = g.date_between(plus(window(ed_day, 12)[2], 2), min(window(stated, 12)[2], plus(EVAL, -3)))
+            spec = inside(g, window(ed_day, 12)[2], min(window(stated, 12)[2], EVAL))
             expect(c, FUP=('confirmed', None))
         c.rpr(spec, max(1, c.titer // 16) if c.titer > 8 else 'NR')
         c.gaps['outside_received'] = (FUP,)
@@ -679,9 +685,8 @@ def f7_outside_first_dose(g, variant):
             c.facts['doses'] = [(ed_day, 'bpg')]
             c.wrong['structured_only'] = dict(doses=[])
             # 6-month specimen valid for either anchor; 12-month specimen valid only from the ED date.
-            lo6, hi6 = window(visit, 6)[1], window(ed_day, 6)[2]
-            c.rpr(g.date_between(lo6, hi6), max(1, c.titer // 4))
-            spec = g.date_between(window(ed_day, 12)[1], plus(window(visit, 12)[1], -2))
+            c.rpr(inside(g, window(visit, 6)[1], window(ed_day, 6)[2]), max(1, c.titer // 4))
+            spec = inside(g, window(ed_day, 12)[1], window(visit, 12)[1])
             c.rpr(spec, max(1, c.titer // 16) if c.titer > 8 else 'NR')
             kind(c, ADQ='chain', FUP='chain')
         c.gaps['outside_received'] = (ADQ, FUP)
@@ -692,14 +697,13 @@ def f7_outside_first_dose(g, variant):
             f'States treated at {facility} on {c.d(ed_day)}; ROI faxed for ED records. Giving BPG 2.4 MU today given '
             'uncertainty.']))
         give(c, visit)
-        lo6, hi6 = window(visit, 6)[1], window(ed_day, 6)[2]
-        c.rpr(g.date_between(lo6, hi6), max(1, c.titer // 4))
+        c.rpr(inside(g, window(visit, 6)[1], window(ed_day, 6)[2]), max(1, c.titer // 4))
         if variant == 'unreceived':
-            spec = g.date_between(window(ed_day, 12)[1], plus(window(visit, 12)[1], -2))
+            spec = inside(g, window(ed_day, 12)[1], window(visit, 12)[1])
             expect(c, FUP=('cannot_determine', OUT))
             kind(c, FUP='chain', ADQ='relevance')
         else:
-            spec = g.date_between(window(visit, 12)[1], window(ed_day, 12)[2])
+            spec = inside(g, window(visit, 12)[1], window(ed_day, 12)[2])
             kind(c, FUP='relevance', ADQ='relevance')
         c.rpr(spec, max(1, c.titer // 16) if c.titer > 8 else 'NR')
         c.unknown = dict(code=OUT, kind='outside', best='given', absent='not', chart='given',
@@ -760,7 +764,7 @@ def followups_after(c):
     have = [r[1] for r in c.records if r[0] == 'rpr' and r[1] > first]
     for m in schedule(c.facts['stage']):
         due, lo, hi = window(first, m)
-        if D(hi) < EVALD and not any(lo <= h <= hi for h in have):
+        if D(hi) < EVALD + dt.timedelta(days=5) and not any(lo <= h <= hi for h in have):
             c.rpr(plus(due, c.g.rng.randint(-10, 10)), max(1, getattr(c, 'titer', 8) // 8))
 
 
@@ -865,11 +869,11 @@ def single(g, variant):
         kind(c, ADQ='real')
     elif variant == 'pending_fu':
         stage = g.pick(['primary', 'secondary', 'early_latent'])
-        c.dx = anchor_for(g, [12])
+        c.dx = months(plus(EVAL, -30 - g.rng.randint(3, 20)), -12)     # 12-month window closed 3-20 days ago
         diagnose(c, stage)
         treat(c, stage, c.dx)
         wins = followups(c, c.dx, stage, skip=(12,), open_extra=0.0)
-        c.rpr(g.date_between(wins[12][1], min(wins[12][2], plus(EVAL, -4))), None, status='pending',
+        c.rpr(inside(g, max(wins[12][1], plus(EVAL, -35)), wins[12][2]), None, status='pending',
               comment=g.pick(['Received at reference laboratory. Result to follow.', 'In process.']))
         request(c, FUP, g.pick(REQ[FUP]))
         kind(c, FUP='relevance')
@@ -880,7 +884,7 @@ def single(g, variant):
         treat(c, stage, c.dx)
         wins = followups(c, c.dx, stage, skip=(12,), open_extra=0.0)
         c.rpr(g.date_between(wins[12][1], min(wins[12][2], plus(EVAL, -4))), None, status='rejected',
-              comment=g.pick(['Specimen clotted. Test not performed.', 'QNS - test not performed. Please recollect.']))
+              comment=g.pick(['Specimen hemolyzed. Test not performed.', 'QNS - test not performed. Please recollect.']))
         expect(c, FUP=('confirmed', None))
         kind(c, FUP='real')
     elif variant == 'unknown_duration1':
@@ -929,7 +933,7 @@ def single(g, variant):
                           f'{clinic.upper()} - MEDICATION ADMINISTRATION RECORD\nPatient: {c.label}  DOB {c.d(c.dob)}\n{rows}'))
         c.note(plus(c.dx, g.rng.randint(40, 90)), 'nurse', g.pick(NURSES), 'Telephone encounter', g.pick([
             f'Pt says {clinic} only gave one more shot, not two.' if complete else f'Pt states they finished all three shots; the last two were at {clinic}.',
-            f'Per pt, only one injection was given at {clinic}.' if complete else f'Pt reports series completed at {clinic}.']))
+            f'Per pt, only one injection was given at {clinic}.' if complete else f'Per pt, the second and third injections were both given at {clinic}.']))
         doses = [(c.dx, 'bpg'), (plus(c.dx, 7), 'bpg')] + ([(plus(c.dx, 14), 'bpg')] if complete else [])
         c.facts['doses'] = doses
         c.wrong['latest_wins'] = dict(doses=doses[:2] if complete else doses + [(plus(c.dx, 14), 'bpg')])
@@ -998,27 +1002,31 @@ def background(g, variant):
                 due, lo, hi = window(first, m)
                 if D(hi) < EVALD:
                     bad = plus(lo, c.g.rng.randint(0, 10))
-                    c.rpr(bad, None, status='rejected', comment=g.pick(['Hemolyzed; not performed.', 'Clotted; recollect.']))
+                    c.rpr(bad, None, status='rejected', comment=g.pick(['Hemolyzed; not performed.', 'Quantity not sufficient; recollect.']))
                     break
     noise(c, n=g.rng.randint(0, 4))
     return [c]
 
 
+# 0.3.0: two or three instances per variant (a run applies one rule to every instance of a variant, so copies add
+# workload, not difficulty) and a smaller background. F7 `unreceived` (a patient-reported ED dose that moves the
+# follow-up anchor) was removed by user decision after pilot 0.2.0; `unreceived-both` keeps the same story where the
+# answer does not depend on it.
 PLAN = (
-    [(f1_identity_conflict, v, n) for v, n in (('a', 8), ('b', 5), ('c', 4), ('d', 4), ('e', 5), ('f', 5))] +
-    [(f2_resolved_misfile, v, n) for v, n in (('a', 5), ('b', 3), ('c', 3), ('d', 4))] +
-    [(f4_pending_pregnancy, v, n) for v, n in (('doxy', 5), ('late1', 5), ('early1', 4), ('late3', 4))] +
-    [(f5_hcg_identity, v, n) for v, n in (('misfile', 4), ('conflict', 3), ('conflict-bpg', 2), ('irrelevant', 3))] +
-    [(f6_correction, v, n) for v, n in (('anchor-late', 5), ('anchor-early', 4), ('dispute', 4), ('gap-worse', 4), ('gap-better', 4))] +
-    [(f7_outside_first_dose, v, n) for v, n in (('received', 4), ('late', 3), ('unreceived', 5), ('unreceived-both', 3),
-                                                ('received-conflict-ok', 4), ('received-conflict-late', 4))] +
-    [(f9_delivery, v, n) for v, n in (('hospital-ok', 5), ('hospital-late', 5), ('unreceived', 4))] +
-    [(single, v, 3) for v in ('outside_conflict_complete', 'outside_conflict_incomplete')] +
-    [(f3_stage_inference, v, n) for v, n in (('secondary', 5), ('latent3', 4), ('latent1', 3), ('early1', 3), ('lapsed1', 3))] +
+    [(f1_identity_conflict, v, 3) for v in ('a', 'b', 'c', 'd', 'e', 'f')] +
+    [(f2_resolved_misfile, v, n) for v, n in (('a', 3), ('b', 2), ('c', 2), ('d', 3))] +
+    [(f4_pending_pregnancy, v, 3) for v in ('doxy', 'late1', 'early1', 'late3')] +
+    [(f5_hcg_identity, v, n) for v, n in (('misfile', 3), ('conflict', 2), ('conflict-bpg', 2), ('irrelevant', 2))] +
+    [(f6_correction, v, 3) for v in ('anchor-late', 'anchor-early', 'dispute', 'gap-worse', 'gap-better')] +
+    [(f7_outside_first_dose, v, n) for v, n in (('received', 3), ('late', 2), ('unreceived-both', 3),
+                                                ('received-conflict-ok', 3), ('received-conflict-late', 3))] +
+    [(f9_delivery, v, 3) for v in ('hospital-ok', 'hospital-late', 'unreceived')] +
+    [(single, v, 2) for v in ('outside_conflict_complete', 'outside_conflict_incomplete')] +
+    [(f3_stage_inference, v, n) for v, n in (('secondary', 3), ('latent3', 3), ('latent1', 2), ('early1', 3), ('lapsed1', 3))] +
     [(single, v, 2) for v in ('overdue', 'gap16', 'untreated', 'pending_fu', 'rejected', 'unknown_duration1',
                               'outside_unreceived', 'outside_received', 'name_change', 'pep')]
 )
-TARGET_TOTAL = 300 - len(CORE)
+TARGET_TOTAL = 200 - len(CORE)
 
 
 def generate(seed=SEED):
@@ -1041,7 +1049,7 @@ def generate(seed=SEED):
               ('F2_resolved_misfile', 'b', MIS), ('F4_pending_pregnancy', 'doxy', ADQ), ('F4_pending_pregnancy', 'early1', PRG),
               ('F5_hcg_identity', 'misfile-other', PRG), ('F5_hcg_identity', 'conflict', ADQ), ('F5_hcg_identity', 'irrelevant', PRG),
               ('F6_correction', 'anchor-late', FUP), ('F6_correction', 'anchor-early', FUP), ('F6_correction', 'gap-better', ADQ),
-              ('F7_outside_first_dose', 'received', FUP), ('F7_outside_first_dose', 'unreceived', FUP),
+              ('F7_outside_first_dose', 'received', FUP), ('F7_outside_first_dose', 'unreceived-both', FUP),
               ('F9_delivery', 'hospital-ok', PRG), ('F9_delivery', 'unreceived', PRG), ('F3_stage_inference', 'secondary', FUP)]
     rng = random.Random(seed + 1)
     for fam, var, issue in wanted:

@@ -6,7 +6,7 @@ from jsonschema import Draft6Validator
 
 BASE = "https://chartr.example/fhir"
 NOW = "2026-09-24T12:00:00Z"
-VERSION = "chartr-cohort-audit-0.2.2"
+VERSION = "chartr-cohort-audit-0.3.0"
 ISSUES = ("INADEQUATE_TREATMENT", "FOLLOW_UP_OVERDUE", "MISFILED_RESULT", "PREGNANCY_TREATMENT_INADEQUATE")
 DISPOSITIONS = ("confirmed", "not_an_issue", "cannot_determine")
 CODES = ("RESULT_PENDING", "OUTSIDE_RECORD_NOT_RECEIVED", "UNRESOLVED_SOURCE_CONFLICT")

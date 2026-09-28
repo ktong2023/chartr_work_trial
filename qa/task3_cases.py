@@ -269,7 +269,7 @@ PATIENTS = [
              ('note', '2025-08-18', '1210', 'clinician', DR[3], 'Progress note', 'Painless ulcer labia majora x 10 d. Primary syphilis. BPG today.'),
              ('bpg', '2025-08-18', '2.4 million units IM', RN[3], 'L ventrogluteal.'),
              ('rpr', '2026-02-24', '1:4', {}),
-             ('rpr', '2026-09-14', None, {'status': 'pending', 'comment': 'Received at reference laboratory. Result to follow.'}),
+             ('rpr', '2026-09-08', None, {'status': 'pending', 'comment': 'Received at reference laboratory. Result to follow.'}),
          ],
          facts=dict(stage='primary'),
          kinds={FUP: 'relevance'},
