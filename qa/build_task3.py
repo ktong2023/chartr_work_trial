@@ -58,7 +58,7 @@ def build():
                          'name': label(p['name'])} for p in PATIENTS}
     people.update(EXTERNALS)
     assert len({v['mrn'] for v in people.values()}) == len(people), 'MRN collision'
-    linked = {}
+    accessions = set()
 
     for p in PATIENTS:
         key, me = p['key'], people[p['key']]
@@ -83,7 +83,13 @@ def build():
             day = r[1]
             owner = owner or key
             who = people[owner]
-            accession = 'A' + day[2:4] + day[5:7] + '-' + str(int(h('acc', key, str(n))[:6], 16) % 9000 + 1000)
+            # One accession number per specimen: a repeated number would join unrelated specimens (0.2.0 defect).
+            for i in range(1000):
+                salt = (str(i),) if i else ()
+                accession = 'A' + day[2:4] + day[5:7] + '-' + str(int(h('acc', key, str(n), *salt)[:6], 16) % 9000 + 1000)
+                if accession not in accessions:
+                    break
+            accessions.add(accession)
             spec = add('Specimen', f'{n}s', day, people[owner]['pid'], '1000',
                        accessionIdentifier={'value': accession}, type={'text': 'Serum' if 'hCG' not in code else 'Serum (hCG)'},
                        collection={'collectedDateTime': stamp(day, '1000'), 'collector': {'display': collector or COLLECTORS[int(h('col', key, str(n))[:4], 16) % len(COLLECTORS)]}})
@@ -108,11 +114,6 @@ def build():
                 obs['valueString'] = value
             if comment:
                 obs['note'] = [{'text': comment}]
-            if owner != key:
-                linked.setdefault(pid, []).extend([spec['id'], acc['id']])
-                linked.setdefault(people[owner]['pid'], []).extend([obs['id'], acc['id']])
-            if accession_owner:
-                linked.setdefault(pid, []).append(acc['id'])
             return obs
 
         for n, r in enumerate(p['records']):
@@ -194,6 +195,8 @@ def build():
             expected[f'{pid}|{eid}|{issue}'] = {'patient_key': key, 'disposition': want[0], 'code': want[1],
                                                 'kind': kind, 'requested': issue in p['requests']}
 
+    check_follow_up_after_seroreversion()
+    check_window_edges()
     sources.sort(key=lambda r: r['id'])
     for r in sources:
         validate(r)
@@ -206,17 +209,7 @@ def build():
         if pid:
             charts.setdefault(pid, []).append(r['id'])
     charts = {k: v for k, v in charts.items() if k.startswith('P')}
-    # Patients whose charts hold records of one specimen accession: either chart is valid evidence.
-    by_accession = {}
-    for r in sources:
-        if r['resourceType'] in ('Observation', 'Specimen'):
-            accession = r['identifier'][0]['value'] if r['resourceType'] == 'Observation' else r['accessionIdentifier']['value']
-            by_accession.setdefault(accession, set()).add(r['subject']['reference'].split('/')[1])
-    partners = {}
-    for pids in by_accession.values():
-        for pid in pids:
-            partners.setdefault(pid, set()).update(pids - {pid})
-    partners = {k: sorted(v) for k, v in sorted(partners.items()) if v}
+    check_rendered_identity(sources, people)
 
     # Oracle submissions: every non-silent candidate plus every requested one, citing chart records.
     evidence_kinds = {'INADEQUATE_TREATMENT': ('MedicationAdministration', 'MedicationDispense', 'Condition'),
@@ -230,7 +223,95 @@ def build():
         answers.append({'patient': pid, 'episode': eid, 'issue': issue, 'disposition': e['disposition'],
                         'missing_evidence': e['code'], 'evidence': cited, 'explanation': 'Reference determination.'})
     fixture = {'version': VERSION, 'evaluation_time': NOW, 'episodes': episodes, 'sources': sources}
-    return fixture, {'candidates': expected, 'charts': charts, 'linked': linked, 'partners': partners}, answers
+    return fixture, {'candidates': expected, 'charts': charts}, answers
+
+
+def check_follow_up_after_seroreversion():
+    """No answer may depend on a missed follow-up window that comes after a nonreactive follow-up RPR: CDC 2021 has no
+    seroreversion exception, but some clinicians stop testing once the RPR is nonreactive (independent review, 0.2.1)."""
+    for p in PATIENTS:
+        own = [r for r in p['records'] if r[0] == 'rpr' and r[3].get('owner', p['key']) == p['key']] + task3_rules.CROSS.get(p['key'], [])
+        for world in (p['unknown']['options'].values() if p.get('unknown') else [{}]):
+            f = task3_rules.facts(p, 'full', [world])
+            anchor, missed = task3_rules.missed_windows(f)
+            for m, start, _ in missed:
+                earlier = [r[1] for r in own if r[2] == 'NR' and r[3].get('status', 'final') == 'final'
+                           and r[1] not in f['fu_drop'] and anchor <= dt.date.fromisoformat(r[1]) < start]
+                assert not earlier, (p['key'], f'{m}-month window missed after nonreactive follow-up', earlier)
+
+
+def check_window_edges(margin=4):
+    """No answer may depend on reading a follow-up window edge as inclusive or exclusive, on how months are added to a
+    month-end date, or on whether a window closing within days of the evaluation time counts as closed (independent
+    review, 0.3.0): moving every edge by `margin` days in either direction must leave every window's status unchanged."""
+    evaluation = dt.date.fromisoformat(NOW[:10])
+    pad = dt.timedelta(days=margin)
+    for p in PATIENTS:
+        for world in (p['unknown']['options'].values() if p.get('unknown') else [{}]):
+            f = task3_rules.facts(p, 'full', [world])
+            treated = [dt.date.fromisoformat(d) for d, k in f['doses'] if k != 'pep' and d >= f['dx']]
+            if not treated:
+                continue
+            specimens = [dt.date.fromisoformat(d) for d, s in f['fu'] + f['extra_fu'] if d not in f['fu_drop'] and s in ('final', 'pending')]
+            for m in ((6, 12) if f['stage'] in ('primary', 'secondary') else (6, 12, 24)):
+                due = task3_rules.months(min(treated), m)
+                lo, hi = due - dt.timedelta(days=30), due + dt.timedelta(days=30)
+                if hi - pad >= evaluation:
+                    continue    # clearly still open: its status cannot matter
+                inner = any(lo + pad <= d <= hi - pad for d in specimens)
+                outer = any(lo - pad <= d <= hi + pad for d in specimens)
+                assert inner == outer, (p['key'], f'{m}-month window met only depending on an edge', lo, hi)
+                assert inner or abs((hi - evaluation).days) >= margin, (p['key'], f'unmet {m}-month window closes at the evaluation time', hi)
+
+
+def ext(r, name):
+    return next(v for e in r.get('extension', []) if e['url'].endswith('/' + name) for k, v in e.items() if k.startswith('value'))
+
+
+def check_rendered_identity(sources, people):
+    """Rebuild every laboratory result's identity from the rendered records alone, the way tools.md and policy.md
+    describe it (accession number -> the specimen's collection record and the accessioning entry, each naming a
+    patient by MRN and DOB), and refuse to build unless it matches the facts the rules engine reads. The engine
+    reads generator facts, so it cannot see rendering defects such as the 0.2.0 accession-number collisions."""
+    who = {(v['mrn'], v['dob']): k for k, v in people.items()}
+    key_of = {v['pid']: k for k, v in people.items() if 'pid' in v}
+    registration = {}
+    for r in sources:
+        if r['resourceType'] == 'DocumentReference' and r['type']['text'] == 'Registration update':
+            registration.setdefault(key_of[r['subject']['reference'][8:]], []).append(r['description'])
+    groups = {}
+    for r in sources:
+        kind = r['resourceType']
+        if kind in ('Observation', 'Specimen', 'Basic'):
+            accession = (r['identifier'][0]['value'] if kind == 'Observation' else
+                         r['accessionIdentifier']['value'] if kind == 'Specimen' else ext(r, 'accession'))
+            groups.setdefault(accession, {}).setdefault(kind, []).append(r)
+    results = []    # (filed, label, accessioned, code, date, status, value)
+    for accession, group in groups.items():
+        assert {k: len(v) for k, v in group.items()} == {'Observation': 1, 'Specimen': 1, 'Basic': 1}, ('accession not unique', accession)
+        obs, spec, entry = group['Observation'][0], group['Specimen'][0], group['Basic'][0]
+        assert obs['specimen']['reference'] == 'Specimen/' + spec['id'], accession
+        label = who[(ext(spec, 'label-mrn'), ext(spec, 'label-dob'))]
+        accessioned = who[(ext(entry, 'patient-mrn'), ext(entry, 'patient-dob'))]
+        assert spec['subject']['reference'] == 'Patient/' + people[label]['pid'], ('specimen filed away from its label', accession)
+        for name, person in ((ext(spec, 'label-name'), label), (ext(entry, 'patient-name'), accessioned)):
+            former = name.split(',')[0].title()
+            assert name == people[person]['name'] or any(former in t for t in registration.get(person, [])), ('undocumented name', accession)
+        status = {'final': 'final', 'registered': 'pending', 'cancelled': 'rejected'}[obs['status']]
+        results.append((key_of[obs['subject']['reference'][8:]], label, accessioned, obs['code']['text'],
+                        obs['effectiveDateTime'][:10], status, obs.get('valueString')))
+    for p in PATIENTS:
+        key, f = p['key'], task3_rules.derived(p)
+        # A result filed here that both identifiers give to someone else is misfiled.
+        assert any(x[0] == key and x[1] == x[2] != key for x in results) == f['misfiled'], (key, 'misfiled')
+        # Follow-up candidates are the RPR specimens labeled for this patient, wherever they are filed.
+        assert sorted(x[4:6] for x in results if x[1] == key and x[3].startswith('RPR')) == sorted(f['fu']), (key, 'follow-up specimens')
+        # Every identity conflict naming this patient is a modeled uncertainty (or resolved by a correction).
+        if any(key in x[1:3] and x[1] != x[2] for x in results):
+            assert 'conflict' in p['gaps'], (key, 'unmodeled identity conflict')
+        # A positive pregnancy test that is unambiguously this patient's means she was pregnant.
+        if any(x[1] == x[2] == key and x[3].startswith('hCG') and x[6] == 'Positive' for x in results):
+            assert p['facts'].get('pregnant') is True, (key, 'positive hCG but not pregnant')
 
 
 def main():

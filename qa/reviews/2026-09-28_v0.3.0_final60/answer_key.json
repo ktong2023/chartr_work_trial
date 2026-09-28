@@ -1,0 +1,551 @@
+{
+  "fixture_version": "chartr-cohort-audit-0.3.0",
+  "issues": [
+    "INADEQUATE_TREATMENT",
+    "FOLLOW_UP_OVERDUE",
+    "MISFILED_RESULT",
+    "PREGNANCY_TREATMENT_INADEQUATE"
+  ],
+  "patients": {
+    "Pfd11513": {
+      "patient_key": "p11",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P6ee25b4": {
+      "patient_key": "g001",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "CD-USC",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pdcc0bf0": {
+      "patient_key": "g004",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P31a68c7": {
+      "patient_key": "g007",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P220627a": {
+      "patient_key": "g010",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P30e18f0": {
+      "patient_key": "g013",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "C",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P4da2da0": {
+      "patient_key": "g016",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "CD-USC",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P5fb1a55": {
+      "patient_key": "g017",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "CD-USC",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pebffa90": {
+      "patient_key": "g022",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "C",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pedd014a": {
+      "patient_key": "g023",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P499a0ab": {
+      "patient_key": "g028",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "C",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P10a3539": {
+      "patient_key": "g029",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P90d976a": {
+      "patient_key": "g032",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "C",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pc1aff7e": {
+      "patient_key": "g033",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pf6af666": {
+      "patient_key": "g036",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "C",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P0053fbb": {
+      "patient_key": "g037",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P3f61ad1": {
+      "patient_key": "g042",
+      "answers": {
+        "INADEQUATE_TREATMENT": "CD-RP",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "CD-RP"
+      }
+    },
+    "Pe6bf84b": {
+      "patient_key": "g045",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "CD-RP"
+      }
+    },
+    "P13bfba4": {
+      "patient_key": "g048",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P2775eb0": {
+      "patient_key": "g051",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P1ee63d1": {
+      "patient_key": "g054",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "C",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P532190d": {
+      "patient_key": "g055",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P517ed9a": {
+      "patient_key": "g060",
+      "answers": {
+        "INADEQUATE_TREATMENT": "CD-USC",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "CD-USC"
+      }
+    },
+    "P78f01bb": {
+      "patient_key": "g061",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pfe4cc29": {
+      "patient_key": "g064",
+      "answers": {
+        "INADEQUATE_TREATMENT": "CD-USC",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "CD-USC"
+      }
+    },
+    "P599eef0": {
+      "patient_key": "g065",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P9b92b10": {
+      "patient_key": "g068",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "CD-USC",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P1c2fe99": {
+      "patient_key": "g070",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P86b8a0d": {
+      "patient_key": "g073",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P7d44c2b": {
+      "patient_key": "g076",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "CD-USC",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P60b9439": {
+      "patient_key": "g079",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pf080d63": {
+      "patient_key": "g082",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pa87aa49": {
+      "patient_key": "g085",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P22cdb92": {
+      "patient_key": "g088",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Paa51224": {
+      "patient_key": "g090",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P80c2269": {
+      "patient_key": "g093",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P0d8ea39": {
+      "patient_key": "g096",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pc92985f": {
+      "patient_key": "g099",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pac869bd": {
+      "patient_key": "g102",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "C"
+      }
+    },
+    "Pa701786": {
+      "patient_key": "g105",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "CD-ORNR"
+      }
+    },
+    "Pca15735": {
+      "patient_key": "g108",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P3a23e13": {
+      "patient_key": "g110",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pa130f92": {
+      "patient_key": "g112",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P670f1ae": {
+      "patient_key": "g115",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P4ce63ab": {
+      "patient_key": "g118",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pcf9e297": {
+      "patient_key": "g120",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P0e9081c": {
+      "patient_key": "g123",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pd253f93": {
+      "patient_key": "g126",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P44f94dc": {
+      "patient_key": "g128",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pdc684ce": {
+      "patient_key": "g130",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P0ea7d1e": {
+      "patient_key": "g132",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P0366949": {
+      "patient_key": "g134",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "C",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P2692ed4": {
+      "patient_key": "g136",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pe797e30": {
+      "patient_key": "g138",
+      "answers": {
+        "INADEQUATE_TREATMENT": "CD-ORNR",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pbeb5a65": {
+      "patient_key": "g140",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pe67cf8e": {
+      "patient_key": "g142",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "Pc13348d": {
+      "patient_key": "g144",
+      "answers": {
+        "INADEQUATE_TREATMENT": "C",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P7480451": {
+      "patient_key": "g146",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P9d03234": {
+      "patient_key": "g149",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    },
+    "P1852df5": {
+      "patient_key": "g151",
+      "answers": {
+        "INADEQUATE_TREATMENT": "NI",
+        "FOLLOW_UP_OVERDUE": "NI",
+        "MISFILED_RESULT": "NI",
+        "PREGNANCY_TREATMENT_INADEQUATE": "NI"
+      }
+    }
+  }
+}

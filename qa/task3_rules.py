@@ -99,21 +99,24 @@ def evaluate(f, pending_counts=True, pregnant_gap=9):
         # Ongoing pregnancy: adequate treatment so far. After delivery: begun at least 30 days before it.
         timely = f['delivery'] is None or (start is not None and (D(f['delivery']) - start).days >= 30)
         out[PRG] = not (ok and timely)
-    treated = [D(d) for d, k in f['doses'] if k != 'pep' and D(d) >= D(f['dx'])]
-    overdue = False
-    if treated:
-        anchor = min(treated)
-        specimens = [(D(d), s) for d, s in f['fu'] + f['extra_fu'] if d not in f['fu_drop']]
-        for m in ((6, 12) if f['stage'] in ('primary', 'secondary') else (6, 12, 24)):
-            due = months(anchor, m)
-            lo, hi = due - dt.timedelta(days=30), due + dt.timedelta(days=30)
-            if hi >= D(EVAL):
-                continue
-            usable = ('final', 'pending') if pending_counts else ('final',)
-            if not any(lo <= d <= hi and s in usable for d, s in specimens):
-                overdue = True
-    out[FUP] = overdue
+    out[FUP] = bool(missed_windows(f, pending_counts)[1])
     return out
+
+
+def missed_windows(f, pending_counts=True):
+    """(first dose, [(month, window start, window end)]) for closed follow-up windows with no usable specimen."""
+    treated = [D(d) for d, k in f['doses'] if k != 'pep' and D(d) >= D(f['dx'])]
+    if not treated:
+        return None, []
+    anchor, missed = min(treated), []
+    specimens = [(D(d), s) for d, s in f['fu'] + f['extra_fu'] if d not in f['fu_drop']]
+    usable = ('final', 'pending') if pending_counts else ('final',)
+    for m in ((6, 12) if f['stage'] in ('primary', 'secondary') else (6, 12, 24)):
+        due = months(anchor, m)
+        lo, hi = due - dt.timedelta(days=30), due + dt.timedelta(days=30)
+        if hi < D(EVAL) and not any(lo <= d <= hi and s in usable for d, s in specimens):
+            missed.append((m, lo, hi))
+    return anchor, missed
 
 
 def facts(p, view='full', overrides=()):

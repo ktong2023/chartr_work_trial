@@ -27,13 +27,13 @@ When the fact is care at another facility whose record the clinic has not receiv
 | Issue | Exists when |
 |---|---|
 | `INADEQUATE_TREATMENT` | An episode diagnosed at least 30 days before the evaluation time has not received treatment adequate for its infection, given the patient's pregnancy status. |
-| `FOLLOW_UP_OVERDUE` | A nontreponemal test that the CDC 2021 guidelines recommend at a given number of months after treatment was not collected within its window, and the window closed before the evaluation time. |
+| `FOLLOW_UP_OVERDUE` | A post-treatment nontreponemal test recommended at a stated number of months after treatment was not collected within its window, and the window closed before the evaluation time. |
 | `MISFILED_RESULT` | A laboratory result filed in the episode's chart belongs to a different patient. |
 | `PREGNANCY_TREATMENT_INADEQUATE` | The patient was pregnant at any time from the episode's diagnosis to the evaluation time and has not received treatment adequate for syphilis in pregnancy; once delivery has occurred, that treatment must have begun at least 30 days before it. |
 
 ## Local conventions
 
-- Follow-up months count from the date of the first treatment dose; an untreated episode has no follow-up test due. A test's window runs from 30 days before to 30 days after its due date, and a test is collected within the window when a specimen from the patient was collected then and the laboratory had not rejected it by the evaluation time, whether or not its result is final.
+- Follow-up months count from the date of the first treatment dose; an untreated episode has no follow-up test due. A test's window runs from 30 days before to 30 days after its due date, and a test is collected within the window when a specimen from the patient was collected then and not rejected by the laboratory.
 - A specimen and its laboratory result belong to the patient identified by medical record number and date of birth on the specimen's collection record and on the laboratory's accessioning entry. When these identify different patients, the specimen's patient is unresolved.
 - A later signed correction by a record's author governs that record.
 - Care at another facility is established only by a record from that facility received by the clinic; other records do not change what that record establishes.

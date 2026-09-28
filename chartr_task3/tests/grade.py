@@ -65,17 +65,49 @@ def fields(task):
             "explanation": task.get("description")}
 
 
-def evidence_ok(f, sources):
-    """Evidence must be the item's own patient, episode, chart records or review requests; the chart or patient
-    record of any patient sharing a specimen accession with it (both sides of a misfile); or a clinic-level record."""
-    allowed = set(EXPECTED["charts"].get(f["patient"], [])) | set(EXPECTED["linked"].get(f["patient"], []))
-    allowed |= {f["patient"], f["episode"]}
-    allowed |= {r["id"] for r in sources if r["resourceType"] == "Task" and r.get("for", {}).get("reference") == "Patient/" + f["patient"]}
-    for partner in EXPECTED["partners"].get(f["patient"], []):
-        allowed |= set(EXPECTED["charts"].get(partner, [])) | {partner}
-    clinic_level = {r["id"] for r in sources if "subject" not in r and "patient" not in r and "for" not in r
-                    and r["resourceType"] not in ("Patient", "EpisodeOfCare")}
-    return bool(f["evidence"]) and all(e in allowed or e in clinic_level for e in f["evidence"])
+def ext(r, name):
+    return next((v for e in r.get("extension", []) if e["url"] == PREFIX + "StructureDefinition/" + name
+                 for k, v in e.items() if k.startswith("value")), None)
+
+
+def admissible(sources):
+    """The public evidence rule (tools.md), computed from the attested sources alone. A record belongs to a patient
+    when it is their Patient record or refers to them (EpisodeOfCare, chart records, review requests). An item's
+    evidence may be records belonging to its patient or to a linked patient, or records with no patient subject.
+    Patients are linked when one laboratory result involves both: the charts holding the result and its specimen's
+    collection record, and the patients that record and the accessioning entry identify by MRN and date of birth."""
+    subject = lambda r: (r.get("subject") or r.get("patient") or r.get("for") or {}).get("reference", "")
+    own, person, clinic, involved = {}, {}, set(), {}
+    for r in sources:
+        if r["resourceType"] == "Patient":
+            own.setdefault(r["id"], {r["id"]})
+            person[(r["identifier"][0]["value"], r["birthDate"])] = r["id"]
+    for r in sources:
+        ref = subject(r)
+        if ref.startswith("Patient/"):
+            own.setdefault(ref[8:], set()).add(r["id"])
+        elif r["resourceType"] != "Patient":
+            clinic.add(r["id"])
+        kind = r["resourceType"]
+        if kind == "Observation":
+            involved.setdefault(r["identifier"][0]["value"], set()).add(ref[8:])
+        elif kind == "Specimen":
+            involved.setdefault(r["accessionIdentifier"]["value"], set()).update(
+                {ref[8:], person.get((ext(r, "label-mrn"), ext(r, "label-dob")))})
+        elif kind == "Basic":
+            involved.setdefault(ext(r, "accession"), set()).add(person.get((ext(r, "patient-mrn"), ext(r, "patient-dob"))))
+    allowed = {pid: set(ids) for pid, ids in own.items()}
+    for pids in involved.values():
+        pids = {p for p in pids if p in own}
+        for a in pids:
+            for b in pids - {a}:
+                allowed[a] |= own[b]
+    return allowed, clinic
+
+
+def evidence_ok(f, allowed, clinic):
+    mine = allowed.get(f["patient"], set())
+    return bool(f["evidence"]) and all(e in mine or e in clinic for e in f["evidence"])
 
 
 def grade(snapshot, attestation):
@@ -113,7 +145,8 @@ def grade(snapshot, attestation):
         cell["total"] += 1
         cell["pass"] += ok
     known = set(EXPECTED["candidates"])
-    evidence = {i: evidence_ok(f, sources) for i, f in enumerate(items)}
+    allowed, clinic = admissible(sources)
+    evidence = {i: evidence_ok(f, allowed, clinic) for i, f in enumerate(items)}
     checks = {"source_integrity": digest(sources) == BASELINE["sources_digest"],
               "items_on_cohort_candidates": all(f"{f['patient']}|{f['episode']}|{f['issue']}" in known for f in items),
               "evidence_valid": all(evidence.values()),

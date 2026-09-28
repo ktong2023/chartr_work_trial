@@ -105,7 +105,7 @@ class Task3(unittest.TestCase):
 
     def test_design_counts(self):
         c = list(EXPECTED['candidates'].values())
-        self.assertEqual(len(c), 300 * 4)
+        self.assertEqual(len(c), 200 * 4)
         core = [x for x in c if x['patient_key'] in CORE]
         self.assertEqual(sum(x['disposition'] == 'confirmed' for x in core), 12)
         self.assertEqual(sum(x['disposition'] == 'cannot_determine' for x in core), 9)
@@ -209,24 +209,47 @@ class Task3(unittest.TestCase):
         self.assertEqual(self.run_items(wrong_code)['errors'], {'wrong_code': conflicts})
 
     def test_evidence_validity(self):
-        pid14, _ = KEYS['p14']
-        pid15, _ = KEYS['p15']
-        linked = EXPECTED['linked'][pid14]
-        ok = [dict(a, evidence=linked) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a for a in ANSWERS]
-        self.assertEqual(self.run_items(ok)['reward'], 1)
-        # The owner's chart is valid evidence for the misfile (pilot 0.1.0 grader defect).
-        owner_note = EXPECTED['charts'][pid15]
-        cross = [dict(a, evidence=owner_note[:5]) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a for a in ANSWERS]
-        self.assertEqual(self.run_items(cross)['reward'], 1)
-        self.assertEqual(EXPECTED['partners'][pid14], [pid15])
-        self.assertEqual(EXPECTED['partners'][pid15], [pid14])
-        # Own patient/episode records, the answered review request and the partner's patient record are valid (pilot 0.1.1).
+        allowed, _ = grade.admissible(FIXTURE['sources'])
+        pid = {k: v[0] for k, v in KEYS.items()}
+        # Links the grader computes from rendered records equal the identity relationships the cases were written
+        # with: no link is missing (0.2.0: accessioning-entry-only links) and none is spurious (0.2.0: accession collisions).
+        want, linking = set(), {}
+        for p in cohort.PATIENTS:
+            for n, r in enumerate(p['records']):
+                if r[0] in ('rpr', 'hcg'):
+                    owner = r[3].get('owner', p['key'])
+                    named = {pid[k] for k in (p['key'], owner, r[3].get('accession_owner', owner)) if k in pid}
+                    for x in named:
+                        for y in named - {x}:
+                            want.add((x, y))
+                            linking.setdefault(x, []).extend([builder.rid(p['key'], str(n), 'Observation'), builder.rid(p['key'], f'{n}s', 'Specimen'),
+                                                              builder.rid(p['key'], str(n), 'accession'), y, *EXPECTED['charts'][y][:2]])
+        got = {(x, y) for x, ids in allowed.items() for y in allowed if x != y and y in ids}
+        self.assertEqual(got, want)
+        self.assertIn((pid['p14'], pid['p15']), got)
+        self.assertGreater(len(linking), 30)
+        # Every linked patient may cite the linking result, its specimen and accessioning entry, and the other patient's
+        # Patient record and chart, on a real item, whichever chart holds them.
+        answers = [dict(a) for a in ANSWERS]
+        for x, cited in linking.items():
+            mine = [a for a in answers if a['patient'] == x]
+            if not mine:
+                eid = next(k.split('|')[1] for k in EXPECTED['candidates'] if k.startswith(x + '|'))
+                mine = [{'patient': x, 'episode': eid, 'issue': 'MISFILED_RESULT', 'disposition': 'not_an_issue',
+                         'missing_evidence': None, 'explanation': 'x'}]
+                answers += mine
+            mine[0]['evidence'] = list(dict.fromkeys(cited))[:30]
+        result = self.run_items(answers)
+        self.assertEqual(result['reward'], 1, result['failed_candidates'])
+        # Own patient/episode records and the answered review request are valid (pilot 0.1.1).
+        pid14, eid14 = KEYS['p14']
         request_ids = [r['id'] for r in FIXTURE['sources'] if r['resourceType'] == 'Task' and r['for']['reference'] == 'Patient/' + pid14]
-        own = [dict(a, evidence=[pid14, KEYS['p14'][1], pid15] + request_ids) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a
+        own = [dict(a, evidence=[pid14, eid14] + request_ids) if a['patient'] == pid14 and a['issue'] == 'MISFILED_RESULT' else a
                for a in ANSWERS]
         self.assertEqual(self.run_items(own)['reward'], 1)
-        foreign = EXPECTED['charts'][KEYS['p27'][0]][0]
-        bad = [dict(a, evidence=[foreign]) if a['patient'] == pid15 else a for a in ANSWERS]
+        # An unlinked patient's record is not.
+        foreign = EXPECTED['charts'][pid['p27']][0]
+        bad = [dict(a, evidence=[foreign]) if a['patient'] == pid['p15'] else a for a in ANSWERS]
         result = self.run_items(bad)
         self.assertEqual(result['reward'], 0)
         self.assertFalse(result['global']['evidence_valid'])
@@ -303,15 +326,37 @@ class Task3(unittest.TestCase):
         for path in ('solution/solve.sh', 'tests/test.sh'):
             self.assertTrue(os.access(TASK / path, os.X_OK), path)
 
-    def test_every_result_has_identity_evidence(self):
+    def test_every_result_has_unique_identity_evidence(self):
         by_id = {r['id']: r for r in FIXTURE['sources']}
-        accessions = {next(e['valueString'] for e in r['extension'] if e['url'].endswith('/accession'))
-                      for r in FIXTURE['sources'] if r['resourceType'] == 'Basic'}
+        entries = [grade.ext(r, 'accession') for r in FIXTURE['sources'] if r['resourceType'] == 'Basic']
+        specimens = [r['accessionIdentifier']['value'] for r in FIXTURE['sources'] if r['resourceType'] == 'Specimen']
+        results = [r['identifier'][0]['value'] for r in FIXTURE['sources'] if r['resourceType'] == 'Observation']
+        # One accession number per specimen, result and accessioning entry (0.2.0 had four colliding numbers).
+        self.assertEqual(sorted(entries), sorted(set(entries)))
+        self.assertEqual(sorted(entries), sorted(specimens))
+        self.assertEqual(sorted(entries), sorted(results))
         for r in FIXTURE['sources']:
             if r['resourceType'] == 'Observation':
                 spec = by_id[r['specimen']['reference'].split('/')[1]]
                 self.assertEqual(spec['accessionIdentifier']['value'], r['identifier'][0]['value'])
-                self.assertIn(r['identifier'][0]['value'], accessions)
+
+    def test_stage_inference_charts_name_no_stage(self):
+        inferred = [p for p in cohort.PATIENTS if p['facts'].get('stage_recorded') is False]
+        self.assertGreaterEqual(len(inferred), 14 + 3)
+        words = re.compile(r'\b(primary|secondary|latent|early|late|duration|chancre|staging)\b', re.I)
+        for p in inferred:
+            chart = [r for r in FIXTURE['sources'] if (r.get('subject') or r.get('patient') or {}).get('reference') == 'Patient/' + KEYS[p['key']][0]]
+            self.assertFalse([r for r in chart if r['resourceType'] == 'Condition'], p['key'])
+            for r in chart:
+                text = json.dumps({k: v for k, v in r.items() if k != 'content'})
+                self.assertIsNone(words.search(text), (p['key'], r['id'], text[:200]))
+        # Matched pair: the prior nonreactive test is within 12 months of diagnosis exactly when one dose is adequate.
+        for p in inferred:
+            if p.get('variant') in ('early1', 'lapsed1'):
+                prior = next(r[1] for r in p['records'] if r[0] == 'rpr' and r[2] == 'NR')
+                within = (rules.D(p['dx']) - rules.D(prior)).days <= 365
+                self.assertEqual(within, p['variant'] == 'early1', p['key'])
+                self.assertEqual(p['truth'].get('INADEQUATE_TREATMENT', ('not_an_issue', None))[0] == 'confirmed', not within, p['key'])
 
     def test_id_renaming_and_order_do_not_change_answers(self):
         with patch.object(builder, 'SALT', 'renamed-v2'):

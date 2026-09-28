@@ -1,9 +1,85 @@
 # ChartR implementation handoff
 
+## Task 3 pilot 0.3.0 (10 trials) and v0.3.1 (September 28, 2026)
+
+- **Setup:** 200 patients, adapter 0.4.0 with caching (input about 0 uncached), `caffeinate`, `-n 10`. Each run took
+  25–31 min with no stalls, and the batch took 31 min.
+- **Raw 4/10.** Not counted: one run hit the 32K output cap while writing its submission (the cap is now 64K with an
+  1,800 s request timeout), and one run misread "recommended at a stated number of months" as needing a chart order.
+- **Fair fails (4):** unreceived outside care ignored; an identity conflict not carried to follow-up; a non-author
+  note taken as a correction; accessioning-only identity missed.
+- **Defect-adjusted 4/8, in band.**
+- **0.3.1** clarifies two policy sentences: the CDC is the source of follow-up recommendations, and a pending,
+  unrejected specimen counts as collected. No answers change.
+
+## Task 3 v0.3.0 and adapter 0.4.0 — calibration and run time (September 28, 2026)
+
+User decisions after pilot 0.2.0: prompt caching, about 200 patients, and option (b).
+- **Adapter 0.4.0** adds opt-in automatic prompt caching (`--ak prompt_cache=true`, 1-hour TTL). It is off by
+  default, so Task 1 and default runs keep the original HIPAA-constrained request shape (the 0.3.1 decision).
+- **Cohort:** 200 patients (2–3 instances per variant, background 26). F7 `unreceived` is removed, and its request
+  moved to `unreceived-both`. That gives 800 candidates: 83 confirmed, 61 `cannot_determine`, 34 requests, and 139 of
+  259 non-control candidates chained.
+- Estimated pass rate is about 25%.
+- Pilot command: `caffeinate -dims env PYTHONPATH=...` with `-k 10 -n 10`; see `chartr_task3/README.md`.
+
+Checks: Task 3 offline 15/15, adapter 15/15, Task 1 offline passes; Docker oracle 1, no-op 0, boundary exit 0.
+Independent review: 236/236, then 84/84 after realism and wording fixes, then 240/240 on the release build. Window-edge
+and seroreversion checks run in the build. Earlier numbers (85 confirmed / 63 CD) moved to 83 / 61 as the generator was
+tightened.
+
+## Task 3 pilot 0.2.0 (300 patients) and v0.2.2 (September 27, 2026)
+
+Five `claude-opus-5` trials on the real 0.2.0 (hashes match `40162ad`), all valid, 52–82 turns, ≤3,050 s, peak turn
+≤21.4K. **Raw 0/5; defect-adjusted 0/5.** Defects, all now fixed and not counted:
+- the audit's evidence defect, in all 5 runs;
+- the accession collisions, which Opus flagged in 2 runs;
+- one code-precedence ambiguity: unreceived delivery with disagreeing local notes, where both
+  `OUTSIDE_RECORD_NOT_RECEIVED` and `UNRESOLVED_SOURCE_CONFLICT` literally applied. It affected 1 run; 0.2.2 adds a
+  precedence sentence to `policy.md`, and no answers change.
+
+Fair misses, each verified against the chart and the run's own explanation:
+
+| Miss | Runs | Right in |
+|---|---|---|
+| Patient-reported ED dose not considered when anchoring follow-up (F7) | 3 | 2/5 |
+| Identity named only on the accessioning entry of a specimen filed in another chart (F1 partner / F5) | 3 | 2/5 |
+| Signed dose-date corrections ignored (F6) | 1 | 4/5 |
+| Early latent scheduled 6/12 instead of 6/12/24 | 1 | 4/5 |
+
+The whole core, including patient 22, was right in all 5 runs. Zero tolerance compounds these into an estimated pass
+rate of about 10%, below the 2–7/10 target.
+
+**Decision needed (calibration):**
+- (a) Keep 0.2.2 as is and pilot it to confirm.
+- (b) Soften one discovery chain: my recommendation is to drop the F7 `unreceived` CD variant. It has the lowest
+  clinical stakes, since the test was done, possibly early. That lands at roughly 25%.
+- (c) Soften both, which lands at roughly 60%.
+
+## Task 3 `chartr_task3/` v0.2.1 — fixes from the independent 0.2.0 audit (September 27, 2026)
+
+`TASK3_V020_AUDIT_2026_09_27.md` findings reproduced and fixed across all 300 patients:
+- **Accession collisions.** Four numbers were shared by unrelated specimens. Each specimen now gets a unique number,
+  and the build rebuilds every result's identity from the rendered records and refuses to build unless it matches
+  what the rules engine reads.
+- **Cross-chart evidence.** Links made only through the accessioning entry were rejected, affecting 10 pairs. The
+  evidence rule is now public in `tools.md` and computed by the grader from the attested sources. A test requires the
+  links to equal the authored identity relationships and passes every linked patient's cross-chart citations.
+- **F3 stage inference.** The notes named the stage. They are rewritten to give only examination and history, and a
+  matched early-latent/unknown-duration pair (the prior nonreactive test within 12 months or 15–22 months before
+  diagnosis) is added; F3 now has 18 patients.
+
+A second-model review of the new F3 charts matched 72/72. Its one concern, a missed test after the follow-up RPR had
+turned nonreactive, turned up in 7 patients cohort-wide (5 of them since 0.2.0). It is now fixed for all patients and
+guarded by a build check. Earlier review evidence is kept in `qa/reviews/`, and there is a pre-dispatch check,
+`qa/task3_preflight.py 0.2.1`. The result is 1,200 candidates (109 confirmed, 101 `cannot_determine`) with 208 of 363
+non-control candidates chained. Offline 15/15, Task 1 19/19, adapter 14/14. Docker oracle 1, no-op 0, boundary exit 0. Audit item 4
+(composition over workload) is the next difficulty step after a 0.2.x pilot. Details in `chartr_task3/README.md`.
+
 ## Task 3 expansion `chartr_task3/` v0.2.0 — 300 patients, chain-weighted (September 27, 2026)
 
 Core 29 unchanged plus 271 generated (`qa/task3_families.py`): 1,200 candidates (107 confirmed, 101
-`cannot_determine`), 187 chained non-control candidates across eight families, both directions each; authority-
+`cannot_determine`), 208 chained non-control candidates (first reported as 187, a miscount) across eight families, both directions each; authority-
 conflict chains added because the only fair pilot miss (2/10) was the outside-facility rule vs a later local note.
 Second-model review of 58 sampled charts matched 231/232 (the miss a generator bug, fixed) and prompted three fairness
 fixes. Audit log made linear after it overflowed tmpfs at this scale. Offline 14/14; Docker oracle 1, no-op 0,

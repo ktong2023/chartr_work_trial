@@ -67,6 +67,14 @@ class AdapterTests(unittest.IsolatedAsyncioTestCase):
         self.assertFalse(self.logs.exists())
         self.client.close.assert_awaited_once()
 
+    async def test_prompt_cache_is_opt_in(self):
+        # `--ak prompt_cache=true` arrives as a string; the only change is one top-level cache_control field.
+        await self.run_agent([tool(), response()], prompt_cache='true')
+        for call in self.client.messages.create.call_args_list:
+            self.assertEqual(set(call.kwargs), {'model','max_tokens','tools','messages','cache_control'})
+            self.assertEqual(call.kwargs['cache_control'], {'type':'ephemeral','ttl':'1h'})
+        self.assertFalse(AnthropicAgent(logs_dir=self.logs).options.prompt_cache)
+
     async def test_turn_exhaustion(self):
         term, _ = await self.run_agent([tool()], max_turns=1)
         self.assertEqual(term['reason'],'turn_exhaustion')

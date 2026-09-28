@@ -1,0 +1,40 @@
+53c53
+< [Rdfa133b2ed6a] 2025-03-05 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-03-06T08:00:00Z accession=A2503-8010 specimen=Specimen/R1ed1a7dd0385
+---
+> [Rdfa133b2ed6a] 2025-03-05 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-03-06T08:00:00Z accession=A2503-8010 specimen=Specimen/R1ed1a7dd0385
+209c209
+< [R929a623e699c] 2025-07-27 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-07-28T08:00:00Z accession=A2507-5341 specimen=Specimen/R20d76f29380a
+---
+> [R929a623e699c] 2025-07-27 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-07-28T08:00:00Z accession=A2507-5341 specimen=Specimen/R20d76f29380a
+234c234
+< [Rdac557a6521f] 2024-12-19 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-20T08:00:00Z accession=A2412-1262 specimen=Specimen/R7a4c3754d4e2
+---
+> [Rdac557a6521f] 2024-12-19 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-12-20T08:00:00Z accession=A2412-1262 specimen=Specimen/R7a4c3754d4e2
+236c236
+< [Raf2ea949caa4] 2025-06-23 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-06-24T08:00:00Z accession=A2506-7161 specimen=Specimen/R91a7a7613a72
+---
+> [Raf2ea949caa4] 2025-06-23 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-06-24T08:00:00Z accession=A2506-7161 specimen=Specimen/R91a7a7613a72
+263c263
+< [Rb91b2f20f04a] 2024-12-04 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-05T08:00:00Z accession=A2412-7612 specimen=Specimen/R0c27b1235601
+---
+> [Rb91b2f20f04a] 2024-12-04 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-12-05T08:00:00Z accession=A2412-7612 specimen=Specimen/R0c27b1235601
+388c388
+< [Rf34595226687] 2024-06-01 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-06-02T08:00:00Z accession=A2406-1820 specimen=Specimen/R65e8938f0b29
+---
+> [Rf34595226687] 2024-06-01 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-06-02T08:00:00Z accession=A2406-1820 specimen=Specimen/R65e8938f0b29
+393c393
+< [R1cf945037d5e] 2024-12-12 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-13T08:00:00Z accession=A2412-4892 specimen=Specimen/Rdca12ef79cbb
+---
+> [R1cf945037d5e] 2024-12-12 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-12-13T08:00:00Z accession=A2412-4892 specimen=Specimen/Rdca12ef79cbb
+420c420
+< [R85c651e80ecd] 2025-05-18 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-05-19T08:00:00Z accession=A2505-1753 specimen=Specimen/Rd6c740709e52
+---
+> [R85c651e80ecd] 2025-05-18 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-05-19T08:00:00Z accession=A2505-1753 specimen=Specimen/Rd6c740709e52
+443c443
+< [R19f4c7284a4d] 2024-12-20 LAB RPR, quantitative: status=final value=Nonreactive issued=2024-12-21T08:00:00Z accession=A2412-7049 specimen=Specimen/Rf2af721db5d2
+---
+> [R19f4c7284a4d] 2024-12-20 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2024-12-21T08:00:00Z accession=A2412-7049 specimen=Specimen/Rf2af721db5d2
+445c445
+< [R75436fd50a0b] 2025-05-31 LAB RPR, quantitative: status=final value=Nonreactive issued=2025-06-01T08:00:00Z accession=A2505-3598 specimen=Specimen/Rbb9149e575e2
+---
+> [R75436fd50a0b] 2025-05-31 LAB RPR, quantitative: status=final value=Reactive 1:1 issued=2025-06-01T08:00:00Z accession=A2505-3598 specimen=Specimen/Rbb9149e575e2
