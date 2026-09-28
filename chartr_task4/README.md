@@ -111,17 +111,34 @@ Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa
 
 ## Running
 
-Pilots use the pinned adapter with task-sized limits. A full export of one resource type (814K Observations) takes about
-a minute, so the per-command tool timeout must be raised from the adapter default of 60 s:
+The pilot setup follows Task 3:
+- adapter 0.4.0 with opt-in prompt caching (`--ak prompt_cache=true`, a user decision; requests otherwise keep the
+  original shape);
+- `caffeinate`, so the Mac cannot sleep mid-run;
+- all 10 trials concurrently;
+- a 64K output cap with an 1,800 s request timeout.
+
+Run `python3 qa/task4_preflight.py VERSION` first. It checks versions, pinned ECG files, a clean checkout, and that no
+other ChartR trials are running.
 
 ```sh
-PYTHONPATH="$PWD" .venv/bin/harbor run -c chartr_job.yaml -p chartr_task4 -a anthropic_agent:AnthropicAgent -m claude-opus-5 \
-  -k 5 -n 5 --ak max_turns=300 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=7000 \
-  --ak tool_timeout_sec=900 --env-file .env
+caffeinate -dims env PYTHONPATH="$PWD" .venv/bin/harbor run -c chartr_job.yaml -p chartr_task4 -a anthropic_agent:AnthropicAgent \
+  -m claude-opus-5 -k 10 -n 10 --ak max_turns=300 --ak max_tokens=64000 --ak api_timeout_sec=1800 --ak wall_timeout_sec=7000 \
+  --ak tool_timeout_sec=900 --ak prompt_cache=true --env-file .env --job-name opus-pilot --jobs-dir "$PWD/jobs/chartr/task4-VERSION-TS"
 ```
 
-`jobs/chartr/task4-0.1.0-1790554704` was run with the 60 s default. It is invalid infrastructure evidence and is not a
-pilot result: all five runs ended at their first bulk export.
+**Where the time goes** (v0.3.4, 455 turns):
+- API time is 87–93% of each run, and it is output-bound. Per-turn latency is about 1.4 s plus 12 s per 1K output tokens,
+  plus 0.007 s per 1K input tokens. Runs write about 137K output tokens.
+- Input re-processing is only about 6% of latency, so caching mainly cuts input cost: each run otherwise re-sends about
+  19M input tokens.
+- Tools take 100–300 s per run.
+- Without `caffeinate`, v0.3.2 lost about 9 min per trial to host sleep.
+- With 10 concurrent trials, a batch takes about as long as its slowest run.
+- 10 concurrent oracle trials (20 containers) pass in 3 min 20 s on a 10-CPU, 8 GB Docker host.
+
+`jobs/chartr/task4-0.1.0-1790554704` was run with the 60 s tool-timeout default. It is invalid infrastructure evidence
+and is not a pilot result: all five runs ended at their first bulk export.
 
 ## Pilot history
 
