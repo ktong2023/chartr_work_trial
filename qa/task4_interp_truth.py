@@ -98,6 +98,8 @@ def spec_for(sid, t, r, lab):
     # axis
     if artifact and 'la_ra' in t['edit']:
         s['axis'] = {'any': True}
+    elif M.get('axis') is not None and G.get('axis') is not None and abs(wrap(M['axis'] - G['axis'])) > 40:
+        s['axis'] = {'any': True}   # readers disagree: indeterminate (typically low-voltage QRS)
     elif M.get('axis') is not None and G.get('axis') is not None:
         cm, cg = axis_cat(M['axis']), axis_cat(G['axis'])
         if cm == cg and min(margin(M['axis']), margin(G['axis'])) >= 10:
@@ -127,7 +129,7 @@ def spec_for(sid, t, r, lab):
         mpr = M.get('pr'); others = [v for v in (G.get('pr'), N.get('pr')) if v]
         if 'FIRST_DEGREE_AV_BLOCK' in mc and mpr and mpr >= 210 and any(v >= 210 for v in others):
             required.add('FIRST_DEGREE_AV_BLOCK')
-        elif not (mpr and mpr <= 190 and all(v <= 200 for v in others)):
+        elif not (mpr and mpr <= 160 and all(v <= 180 for v in others)):   # forbidden only with a >=40 ms margin (PR conventions)
             allowed.add('FIRST_DEGREE_AV_BLOCK')
     elif rhythm == 'PACED':
         allowed.add('FIRST_DEGREE_AV_BLOCK')

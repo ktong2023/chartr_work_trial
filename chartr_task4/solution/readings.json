@@ -2113,7 +2113,7 @@
    "pr_ms": null,
    "qrs_ms": 79,
    "qtc_ms": 411,
-   "axis": "NORMAL",
+   "axis": null,
    "conduction": []
   },
   "106516875": {

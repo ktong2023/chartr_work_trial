@@ -219,3 +219,8 @@ findings. It also adds these misreadings, all scoring 0: paced read as sinus wit
 
 10004235's clinic notes now list "paroxysmal atrial fibrillation" in the history line, the same treatment as 10020306 in
 v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient charting become corroborating evidence.
+- **v0.3.4**, `jobs/chartr/task4-0.3.4-1790613876` (5 runs): **1/5** (xCZrGaw passes every component). 10004235 and 10020306 are each found
+  in 4/5 runs. The remaining failures are genuine: rate over-counting, a QT misread on the baseline-wander tracing, AF
+  evidence citing records that don't establish AF, first-degree AV block called on normal PRs, and missed hidden AF.
+  v0.3.5 leaves the axis ungraded when the readers disagree by more than 40°, and forbids first-degree AV block only when
+  the cart's PR is 160 ms or less. Rescored, the batch is unchanged at 1/5.

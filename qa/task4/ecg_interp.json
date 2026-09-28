@@ -30,7 +30,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102172660": {
@@ -63,7 +65,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "104430624": {
@@ -546,7 +550,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109795468": {
@@ -579,7 +585,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "104835782": {
@@ -612,7 +620,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109840765": {
@@ -645,7 +655,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100728139": {
@@ -678,7 +690,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "106362803": {
@@ -1420,7 +1434,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "101581810": {
@@ -1453,7 +1469,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "106885519": {
@@ -1486,7 +1504,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102101022": {
@@ -1519,7 +1539,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102955795": {
@@ -1616,7 +1638,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109788729": {
@@ -1649,7 +1673,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100850284": {
@@ -1682,7 +1708,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "107885876": {
@@ -1715,7 +1743,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "101784267": {
@@ -1748,7 +1778,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100145505": {
@@ -1781,7 +1813,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102436418": {
@@ -1814,7 +1848,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100211464": {
@@ -1847,7 +1883,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102002950": {
@@ -1880,7 +1918,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100914215": {
@@ -1913,7 +1953,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109253034": {
@@ -2082,6 +2124,7 @@
    "conduction": {
     "required": [],
     "allowed": [
+     "FIRST_DEGREE_AV_BLOCK",
      "LBBB",
      "RBBB"
     ]
@@ -2489,7 +2532,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "104822395": {
@@ -2525,7 +2570,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "107719002": {
@@ -2840,7 +2887,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "103922229": {
@@ -2873,7 +2922,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109661561": {
@@ -3214,7 +3265,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "108651109": {
@@ -3840,7 +3893,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "101016166": {
@@ -3900,7 +3955,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "103088543": {
@@ -3993,7 +4050,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "105523266": {
@@ -4849,7 +4908,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "108912996": {
@@ -4912,7 +4973,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "101538691": {
@@ -4975,7 +5038,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100851619": {
@@ -5076,10 +5141,7 @@
     ]
    },
    "axis": {
-    "one_of": [
-     "NORMAL",
-     "RIGHT"
-    ]
+    "any": true
    },
    "conduction": {
     "required": [],
@@ -5282,7 +5344,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102531404": {
@@ -5420,7 +5484,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "100913766": {
@@ -5453,7 +5519,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "102857516": {
@@ -5614,7 +5682,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "104189894": {
@@ -5647,7 +5717,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "106465580": {
@@ -5680,7 +5752,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "109187086": {
@@ -5746,7 +5820,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "108234665": {
@@ -5776,7 +5852,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "105375026": {
@@ -6316,7 +6394,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "105616956": {
@@ -6349,7 +6429,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "104011013": {
@@ -6382,7 +6464,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "103202417": {
@@ -6415,7 +6499,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "107274479": {
@@ -6656,7 +6742,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "106035722": {
@@ -6891,7 +6979,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "105362569",
@@ -6980,7 +7070,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "109840765",
@@ -7108,7 +7200,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "108780865",
@@ -7199,6 +7293,7 @@
     "conduction": {
      "required": [],
      "allowed": [
+      "FIRST_DEGREE_AV_BLOCK",
       "LBBB",
       "RBBB"
      ]
@@ -7634,7 +7729,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "108651109",
@@ -7862,7 +7959,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "101016166",
@@ -8302,7 +8401,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": null,
@@ -8387,10 +8488,7 @@
      ]
     },
     "axis": {
-     "one_of": [
-      "NORMAL",
-      "RIGHT"
-     ]
+     "any": true
     },
     "conduction": {
      "required": [],
@@ -8484,7 +8582,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": null,
@@ -8575,7 +8675,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "107149156",
@@ -8619,7 +8721,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "102857516",
@@ -8708,7 +8812,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": null,
@@ -8999,7 +9105,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "107274479",

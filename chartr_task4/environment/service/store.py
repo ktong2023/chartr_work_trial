@@ -9,7 +9,7 @@ import base64, json, re, sqlite3, uuid, zlib
 from urllib.parse import parse_qsl
 from pathlib import Path
 
-VERSION = 'chartr-task4-0.3.4'
+VERSION = 'chartr-task4-0.3.5'
 NOW = '2026-09-24T12:00:00-04:00'
 PAGE = 1000
 CATEGORIES = {'ANTICOAGULATION': {'UNTREATED_AF', 'ANTICOAGULANT_WITH_CONTRAINDICATION'},

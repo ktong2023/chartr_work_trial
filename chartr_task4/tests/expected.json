@@ -824,7 +824,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": null,
@@ -1047,6 +1049,7 @@
     "conduction": {
      "required": [],
      "allowed": [
+      "FIRST_DEGREE_AV_BLOCK",
       "LBBB",
       "RBBB"
      ]
@@ -1090,10 +1093,7 @@
      ]
     },
     "axis": {
-     "one_of": [
-      "NORMAL",
-      "RIGHT"
-     ]
+     "any": true
     },
     "conduction": {
      "required": [],
@@ -1144,7 +1144,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "108780865",
@@ -1766,7 +1768,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "105362569",
@@ -1811,7 +1815,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": null,
@@ -1984,7 +1990,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "107149156",
@@ -2069,7 +2077,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "108651109",
@@ -2306,7 +2316,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "101016166",
@@ -2355,7 +2367,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": null,
@@ -2445,7 +2459,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "107274479",
