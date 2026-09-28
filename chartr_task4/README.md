@@ -9,6 +9,62 @@ The population is the MIMIC-IV Clinical Database Demo on FHIR. The ECGs are the 
 500 Hz WFDB). Both are re-dated per patient and extended with a synthetic outpatient cardiology layer. The target is an
 Opus 5 pass rate of 2–7/10, where failures are genuine reasoning or ECG-reading errors.
 
+## Final confirmation protocol (fixed September 28, 2026, before any confirmation trial)
+
+This batch confirms the pre-final release. Nothing in this section changes once the batch has started. Running it makes paid
+model calls and needs the user's authorization.
+
+**Frozen configuration**
+
+| | |
+|---|---|
+| Frozen commit | `19edc3b` on `main`. The checkout may be a later `main` commit only if no evaluated file differs from `19edc3b` (step 2); only READMEs, `PROGRESS.md` and reports may change |
+| Task | `chartr/cardiology-population-review` **0.4.1** (`task.toml`, service `chartr-task4-0.4.1`, baseline) |
+| Answer key | `tests/expected.json` sha256 `821026182ca945b8a58f320f8741d0bbea4f8c2db52d85314cfd71fd8ba535e0` |
+| Sources | digest `01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b`, attested by the provider at every trial start; PhysioNet inputs pinned in `overlay/pinned.sha256` (446 files) |
+| Harness | adapter 0.4.0 (`anthropic_agent.py` sha256 `95ce935a…3ead`), provider `chartr_environment.py`, Harbor 0.23.0, anthropic 1.8.0; host environment from `requirements.lock.txt` |
+| Model and budgets | `claude-opus-5`; `-k 10 -n 10`; `max_turns=300`, `max_tokens=64000`, `api_timeout_sec=1800`, `wall_timeout_sec=7000`, `tool_timeout_sec=900`, `prompt_cache=true` |
+| Host | Docker with ≥ 10 CPUs and 8 GB; no other ChartR trial running; `caffeinate` so the host cannot sleep |
+
+**Exact commands** (bash, from the repository root)
+
+1. Update the checkout: `git fetch origin && git checkout main && git pull --ff-only`
+2. Frozen files unchanged (must print `frozen-files-ok`):
+   ```bash
+   git diff --quiet 19edc3b HEAD -- chartr_task4 ':(exclude)chartr_task4/README.md' anthropic_agent.py chartr_environment.py chartr_job.yaml requirements.lock.txt && echo frozen-files-ok
+   ```
+3. Preflight (every line must be `ok`): `python3 qa/task4_preflight.py 0.4.1`
+4. Create the batch's unique output directory. It is never reused; the command refuses an existing path and records the
+   dispatch state:
+   ```bash
+   D="$PWD/jobs/chartr/confirm-task4-0.4.1-$(date -u +%Y%m%dT%H%M%SZ)"; test ! -e "$D" && mkdir -p "$D" && { git rev-parse HEAD; python3 qa/task4_preflight.py 0.4.1; } > "$D/DISPATCH.txt" && echo "$D"
+   ```
+5. Run the batch (job name `batch`):
+   ```bash
+   caffeinate -dims env PYTHONPATH="$PWD" .venv/bin/harbor run -c chartr_job.yaml -p chartr_task4 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 10 -n 10 --ak max_turns=300 --ak max_tokens=64000 --ak api_timeout_sec=1800 --ak wall_timeout_sec=7000 --ak tool_timeout_sec=900 --ak prompt_cache=true --env-file .env --job-name batch --jobs-dir "$D"
+   ```
+6. Score: `python3 qa/confirm_summary.py chartr_task4 "$D"`. If it reports `INCOMPLETE`, rerun the same command with
+   `-k N -n N`, where N is the number of missing valid attempts. Use the next unused job name (`rerun-1`, `rerun-2`, …) in the
+   same `$D`, then score again.
+7. Write `$D/TRIAGE.md`, then commit `$D` to the `task4-pilot-results` branch.
+
+**Counting rules** (applied by `qa/confirm_summary.py`)
+
+- **Headline:** passes among the first 10 valid attempts, in start order. The 2–7 of 10 target is judged on this number alone.
+  It is reported whatever it is, and no further batch is run to reach the target.
+- **Invalid attempts** get no reward and are not attempts: API or adapter errors, cancellation, service faults, and evidence or
+  integrity failures. Report them and rerun under the same command (step 6) until there are 10 valid attempts.
+  - If one job has 3 or more invalid attempts, stop and fix the infrastructure without touching frozen files.
+  - If a frozen file must change, the batch is void.
+- **Budget failures:** valid attempts that end on output truncation, turn, wall or tool timeout, or context exhaustion count as
+  failures in the headline. They are also listed as a separate category.
+- **Provenance:** every trial's manifest must match the frozen task files (README excepted), provider, adapter, model and
+  budgets. One mismatch voids the batch; the script exits 1.
+- **Triage:** classify each failure from its saved items and trace as a model failure, a task/grader defect, or a budget
+  failure.
+  - A defect is fixed in a new version and reported separately.
+  - This batch is never re-scored, and it is not pooled with earlier batches (the v0.4.0 3/10 stays a pilot result).
+
 ## Data and licence
 
 - MIMIC-IV Clinical Database Demo on FHIR v2.1.0 and MIMIC-IV-ECG Demo v0.1 (PhysioNet), Open Data Commons Open Database

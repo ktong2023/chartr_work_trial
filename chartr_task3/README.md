@@ -1,5 +1,64 @@
 # ChartR Task 3: cohort audit with calibrated abstention — v0.3.1 (200 patients, chain-weighted)
 
+## Final confirmation protocol (fixed September 28, 2026, before any confirmation trial)
+
+This batch confirms the pre-final release. It is a new batch: the v0.3.1 pilot below (4/10) stays a pilot result and is not
+pooled with it. Nothing in this section changes once the batch has started. Running it makes paid model calls and needs the
+user's authorization.
+
+**Frozen configuration**
+
+| | |
+|---|---|
+| Frozen commit | `19edc3b` on `main`. The checkout may be a later `main` commit only if no evaluated file differs from `19edc3b` (step 2); only READMEs, `PROGRESS.md` and reports may change. Task 3's evaluated files are identical to the v0.3.1 pilot's |
+| Task | `chartr/cohort-audit` **0.3.1** (`task.toml`, fixture and baseline `chartr-cohort-audit-0.3.1`) |
+| Answer key | `tests/expected.json` sha256 `ffdd6f592cefe259e5886a829e3b9d3918a578f382a041c5a852369610f97517` |
+| Fixture | initial digest `4bda15848c03019ce75bf4c239d8724aaf3041e81fd67aeaf5eee177f5df3ab8`, attested by the provider at every trial start |
+| Harness | adapter 0.4.0 (`anthropic_agent.py` sha256 `95ce935a…3ead`), provider `chartr_environment.py`, Harbor 0.23.0, anthropic 1.8.0; host environment from `requirements.lock.txt` |
+| Model and budgets | `claude-opus-5`; `-k 10 -n 10`; `max_turns=250`, `max_tokens=64000`, `api_timeout_sec=1800`, `wall_timeout_sec=7000`, `prompt_cache=true`, and the default `tool_timeout_sec=60`. These are exactly the v0.3.1 pilot's |
+| Host | Docker; no other ChartR trial running (Task 3 and Task 4 batches never overlap); `caffeinate` so the host cannot sleep |
+
+**Exact commands** (bash, from the repository root)
+
+1. Update the checkout: `git fetch origin && git checkout main && git pull --ff-only`
+2. Frozen files unchanged (must print `frozen-files-ok`):
+   ```bash
+   git diff --quiet 19edc3b HEAD -- chartr_task3 ':(exclude)chartr_task3/README.md' anthropic_agent.py chartr_environment.py chartr_job.yaml requirements.lock.txt && echo frozen-files-ok
+   ```
+3. Preflight (every line must be `ok`): `python3 qa/task3_preflight.py 0.3.1`
+4. No other ChartR trial running (must print `idle`): `docker ps --format '{{.Names}}' | grep -q '^chartr_' || echo idle`
+5. Create the batch's unique output directory. It is never reused; the command refuses an existing path and records the
+   dispatch state:
+   ```bash
+   D="$PWD/jobs/chartr/confirm-task3-0.3.1-$(date -u +%Y%m%dT%H%M%SZ)"; test ! -e "$D" && mkdir -p "$D" && { git rev-parse HEAD; python3 qa/task3_preflight.py 0.3.1; } > "$D/DISPATCH.txt" && echo "$D"
+   ```
+6. Run the batch (job name `batch`):
+   ```bash
+   caffeinate -dims env PYTHONPATH="$PWD" .venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 10 -n 10 --ak max_turns=250 --ak max_tokens=64000 --ak api_timeout_sec=1800 --ak wall_timeout_sec=7000 --ak prompt_cache=true --env-file .env --job-name batch --jobs-dir "$D"
+   ```
+7. Score: `python3 qa/confirm_summary.py chartr_task3 "$D"`. If it reports `INCOMPLETE`, rerun the same command with
+   `-k N -n N`, where N is the number of missing valid attempts. Use the next unused job name (`rerun-1`, `rerun-2`, …) in the
+   same `$D`, then score again.
+8. Write `$D/TRIAGE.md`, then commit `$D` to the `task3-pilot-results` branch.
+
+**Counting rules** (applied by `qa/confirm_summary.py`; the same rules as the v0.3.1 pilot, made mechanical)
+
+- **Headline:** passes among the first 10 valid attempts, in start order. The 2–7 of 10 target is judged on this number alone.
+  It is reported whatever it is, and no further batch is run to reach the target.
+- **Invalid attempts** get no reward and are not attempts: API or adapter errors, cancellation, service faults, and evidence or
+  integrity failures. Report them and rerun under the same command (step 7) until there are 10 valid attempts.
+  - If one job has 3 or more invalid attempts, stop and fix the infrastructure without touching frozen files.
+  - If a frozen file must change, the batch is void.
+- **Budget failures:** valid attempts that end on output truncation, turn, wall or tool timeout, or context exhaustion count as
+  failures in the headline. They are also listed as a separate category. The 64K output cap is part of the frozen
+  configuration; the single-command submission pattern seen in 2 of 20 earlier runs is counted, not excused.
+- **Provenance:** every trial's manifest must match the frozen task files (README excepted), provider, adapter, model and
+  budgets. One mismatch voids the batch; the script exits 1.
+- **Triage:** classify each failure from its saved items and trace as a model failure, a task/grader defect, or a budget
+  failure.
+  - A defect is fixed in a new version and reported separately.
+  - This batch is never re-scored.
+
 ## Pilot 0.3.1: final frozen batch under the predeclared protocol (September 28, 2026)
 
 **Headline: 4 passes / 10 valid attempts** (2GsKnAe, DGcRpcc, KVWAAfk, djAjB3r), inside the 2–7 of 10 target.

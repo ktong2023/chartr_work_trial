@@ -36,6 +36,13 @@ reintroduced one at a time, and invariance/sensitivity harnesses. Its findings a
 
 Task 3 task files are unchanged at 0.3.1.
 
+**Final confirmation protocols** are in both task READMEs ("Final confirmation protocol"). They cover:
+- the frozen commit `19edc3b` and a check that no evaluated file has changed;
+- exact commands and unique `jobs/chartr/confirm-<task>-<version>-<UTC>` directories;
+- counting rules, applied by `qa/confirm_summary.py`.
+
+Neither batch has been run; both need authorization.
+
 ## Task 4 pilot 0.4.0 — final frozen batch (September 28, 2026)
 
 **3/10 valid attempts on the frozen key, inside the 2–7 target** (commit `d1156b5`). The job is
