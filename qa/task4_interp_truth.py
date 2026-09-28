@@ -4,7 +4,7 @@ From the three readers (task4/ecg_reads.json), the catalog labels and edits, eve
 is graded only where independent readers agree; otherwise any value is accepted. Specs:
   rhythm        exact (SINUS / AF / PACED)
   rate          range: all reads -5/+5 (AF +-12)
-  qrs_ms        range when machine and global QRS agree within 30 ms: [min-15, max+15]
+  qrs_ms        range when machine and global QRS agree within 30 ms: [min-25, max+25], floored at 120 where a BBB is required
   pr_ms         SINUS: range when two readers agree within 25 ms: [min-20, max+20]; AF: must be null; PACED: any
   qtc_ms        SINUS: Bazett reads agreeing within 60 ms of their median (>= 2 reads): [min-20, max+20]; edited: catalog range
   axis          one category when machine and global agree >= 10 deg from a boundary; neighbours accepted near a boundary
@@ -135,6 +135,11 @@ def spec_for(sid, t, r, lab):
     elif rhythm == 'PACED':
         allowed.add('FIRST_DEGREE_AV_BLOCK')
     s['conduction'] = {'required': sorted(required), 'allowed': sorted(allowed - required)}
+    # v0.4.1 (release validation F1): a bundle-branch block needs QRS >= 120 ms, so where one is required no accepted QRS reading
+    # may rule it out. (The converse needs no cap: a wide QRS alone does not establish a block, so a forbidden block may still
+    # accept QRS >= 120.)
+    if required & {'RBBB', 'LBBB'} and 'range' in s['qrs_ms']:
+        s['qrs_ms']['range'][0] = max(s['qrs_ms']['range'][0], 120.0)
     return s, qreads
 
 

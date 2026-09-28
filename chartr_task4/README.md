@@ -1,4 +1,4 @@
-# chartr_task4 — cardiology population review on real data (v0.4.0)
+# chartr_task4 — cardiology population review on real data (v0.4.1)
 
 The agent reviews a 100-patient clinic population (69 living) at 2026-09-24 12:00 America/New_York. It must save:
 - a **review item** for every issue that needs clinical review;
@@ -80,11 +80,11 @@ The labels come from three automated readers plus designer review. It is not uni
 |---|---|
 | Rhythm | Catalog label: the cart statement plus RR irregularity from two algorithms. Tracings that designer review could not settle accept several rhythms: 108780865 AF/sinus; 100924231 sinus/flutter/ectopic atrial; any "sinus or ectopic atrial" cart statement sinus/other. |
 | Rate | All reads ±5 bpm (AF ±12). |
-| QRS | M and G within 30 ms, then accepted range ±25 ms. N's QRS is excluded: validated against M it runs +48 to +66 ms (median), from the DWT R-offset convention. |
+| QRS | M and G within 30 ms, then accepted range ±25 ms, floored at 120 ms where a bundle-branch block is required (v0.4.1). N's QRS is excluded: validated against M it runs +48 to +66 ms (median), from the DWT R-offset convention. |
 | QTc (Bazett) | Anchored on M and N (both required, within 50 ms). The tangent (A) and G reads are admitted if within 60 ms of the anchors. Accepted range ±40 ms (inter-observer variability). Otherwise ungraded. QT edits use their own agreeing-read range. |
 | PR | Numeric PR is not graded, because onset conventions differ by 30–50 ms. It must be null in AF. |
 | First-degree AV block | Required only if the cart states it with PR ≥ 210 ms and a second reader agrees. Forbidden only if M and N, and G when it found a P wave, all read ≤ 160 ms. Otherwise allowed. |
-| Bundle-branch block | Required only if the cart statement, G's morphology, and QRS ≥ 120 ms from both M and G all agree. Forbidden if both QRS reads are < 110 ms. Otherwise allowed. |
+| Bundle-branch block | Required only if the cart statement, G's morphology, and QRS ≥ 120 ms from both M and G all agree. Forbidden if both QRS reads are < 110 ms. Otherwise allowed. A forbidden block may still accept QRS ≥ 120 ms, because width alone does not establish a block. |
 | Axis | One category if M and G agree ≥ 10° from a boundary. Neighbouring categories if near a boundary. Ungraded if M and G differ by more than 40° (indeterminate). |
 | Changes | Rhythm and BBB changes are required only if true under every accepted reading of both ECGs. QTc ±60 ms changes use the same padded ranges as the QTc fields, so any pair of accepted readings implies an accepted change set. No QTc change is currently required. |
 
@@ -136,7 +136,7 @@ Scope:
 
 ## QA
 
-Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa.test_task4`. It runs 17 tests:
+Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa.test_task4`. It runs 19 tests:
 
 - **Answers:**
   - The reference scores 1 through the real CLI, and a no-op scores 0.
@@ -145,6 +145,8 @@ Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa
   - Every required QT item's accepted QTc range is at or above 500 ms.
   - Every pair of accepted QTc readings implies a change set the comparison accepts.
   - The grading ranges admit every agreeing reader.
+  - A required bundle-branch block never accepts QRS below 120 ms (v0.4.1).
+- **Invariance:** with every patient, record and ECG ID renamed and every result list shuffled, the reference still scores 1.
 - **Leakage:**
   - Case vs control Mann-Whitney AUCs over 14 structural features of the added layer, including the minimum visit gap,
     the longest note and note line counts.
@@ -158,7 +160,7 @@ Run `T4_BUILD=<dir with sources.sqlite and ecg/> .venv/bin/python -m unittest qa
   - An audit failure is recorded as an infrastructure fault.
   - Forged snapshots are invalid.
 
-Run `python3 qa/task4_preflight.py VERSION` before any paid run. It fails closed if git or Docker is unavailable.
+Run `python3 qa/task4_preflight.py VERSION` before any paid run. It fails closed if git or Docker is unavailable; `qa.test_preflight` checks that.
 
 ## Running
 
@@ -301,6 +303,17 @@ v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient char
   The six failures are genuine: hidden AF missed, a transient RBBB resolution missed, rhythm and rate misreads, and a
   QT misread on the baseline-wander tracing. See TRIAGE.md in that folder.
 
+## v0.4.1: release-validation fix (September 28, 2026)
+
+`RELEASE_VALIDATION_2026_09_28.md` found one key inconsistency of the kind the v0.3.6 audit found for QT. On 104941853 (10038992),
+LBBB was required while the accepted QRS range began at 101 ms, so a key-accepted reading below 120 ms that correctly omitted LBBB
+scored 0. Where a bundle-branch block is required, the QRS range now starts at 120 ms. That changes one graded bound in the key
+and the reference's QRS midpoints; no case, record or other field changes.
+
+- **Pilot impact:** none. All ten v0.4.0 runs read 120–136 ms there and called LBBB. Rescored against the v0.4.1 key the batch is
+  unchanged, 3/10 with identical per-run rewards. v0.4.1 itself has not been piloted.
+- **QA added:** the BBB/QRS consistency test and ID-renaming invariance (the brief asked for it; only record order had been checked).
+
 ## v0.4.0: response to the v0.3.6 audit (`TASK4_V036_AUDIT_2026_09_28.md`)
 
 - **QT decision margin.** The three current QT edits whose accepted range dipped below 500 ms were re-edited, with every
@@ -330,6 +343,7 @@ Raw and rescored results are reported separately. Rescores are development evide
   - interval tolerances (v0.3.1);
   - corroborating dysrhythmia codes, with an AF-establishing record still required (v0.3.6);
   - QT decision and comparison consistency (v0.4.0).
+  - bundle-branch block and QRS consistency (v0.4.1).
 - **Label adjudication after seeing runs** (designer review, not a blinded expert):
   - the withdrawn motion-artifact ECG (v0.1.1);
   - the three multi-reading rhythms (v0.3.3, v0.3.6);
@@ -352,7 +366,7 @@ Raw and rescored results are reported separately. Rescores are development evide
 
 ## Final pilot, v0.4.0 (frozen key, commit d1156b5)
 
-- `jobs/chartr/task4-0.4.0-1790626310`: **3/10** (3kzLb4o, dsn6HkF, iXuDhuL). All 10 runs valid, 33–49 min each, 50 min for the batch.
+- `jobs/chartr/task4-0.4.0-1790626310` (also on the `task4-pilot-results` branch): **3/10** (3kzLb4o, dsn6HkF, iXuDhuL). All 10 runs valid, 33–49 min each, 50 min for the batch.
 - Every failure includes at least one genuine error:
   - first-degree AV block missed on PR misreads (2 runs, their only failure);
   - T waves counted as beats, giving wrong rates and one false AF;

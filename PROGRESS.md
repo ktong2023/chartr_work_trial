@@ -10,13 +10,31 @@
   JSON). They stay off `main` because job folders are gitignored here; the README cites them by path on that branch.
 - **`claude/phase-1-design-proposal-db3m7q`:** the Task 3 development branch. `main` now matches it; the audits
   reference it by name.
-- **Task 4** (`chartr_task4/`) is at v0.4.0, frozen as the final candidate. It was merged from the local `task4` branch.
+- **Task 4** (`chartr_task4/`) is at v0.4.1, the pre-final release: v0.4.0 (the piloted, frozen key) plus the one-bound
+  QRS/LBBB key fix from release validation. It was merged from the local `task4` branch.
   - Its current state, per-field ECG labelling rules and the classified change history are at the top of
     `chartr_task4/README.md`.
   - The audit and the v0.4.0 response are in `TASK4_V036_AUDIT_2026_09_28.md` and the README.
   - The design brief is `TASK1_MIMIC_UPGRADE.md`.
   - The PhysioNet inputs live in the gitignored `data/` and are fetched and checksum-verified at image build.
-  - Its pilot job folders are only in the local `jobs/chartr/task4-*` (gitignored) and are not yet on a results branch.
+  - Its pilot job folders, v0.1.0 through the final v0.4.0 batch, are on the `task4-pilot-results` branch.
+
+## Release validation and pre-final release (September 28, 2026)
+
+`RELEASE_VALIDATION_2026_09_28.md` (checklist) and `RELEASE_MANIFEST_2026_09_28.json` (hashes, environment, results). The
+validation ran from a clean clone with no `.env` and no paid calls: offline suites, preflights, free Harbor checks, audit fixes
+reintroduced one at a time, and invariance/sensitivity harnesses. Its findings are resolved in this release:
+- **F1 (Task 4 key → v0.4.1):** a required bundle-branch block now accepts only QRS ≥ 120 ms. This changes one graded bound (104941853).
+  The v0.4.0 pilot rescores unchanged at 3/10.
+- **F2:** forbidden blocks may still accept wide QRS (width alone is not a block); documented in the Task 4 reader table and
+  the new test.
+- **F3:** Task 4 ID-renaming and order invariance test.
+- **F4:** a Task 3 build check that correction and dispute signatures match the authority the engine assumes.
+- **F5:** `requirements.lock.txt` locks every package of the working `.venv`.
+- **F6:** `qa.test_preflight`.
+- **F7:** the Task 4 pilot artifacts were already on `task4-pilot-results`; the docs now say so.
+
+Task 3 task files are unchanged at 0.3.1.
 
 ## Task 4 pilot 0.4.0 — final frozen batch (September 28, 2026)
 

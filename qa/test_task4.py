@@ -264,6 +264,66 @@ class Task4Tests(unittest.TestCase):
                     checked += 1
         self.assertGreater(checked, 20)
 
+    def test_bbb_decisions_consistent_with_accepted_qrs(self):
+        """Release validation F1 (v0.4.1): a required bundle-branch block needs QRS >= 120 ms, so no accepted QRS reading may
+        rule it out. A forbidden block may still accept a wide QRS (F2): width alone does not establish a block."""
+        interp = json.loads((ROOT / 'qa/task4/ecg_interp.json').read_text())['ecg']
+        specs = [(e['ecg'], e['fields']) for e in EXPECTED['interpretations']] + list(interp.items())
+        required = 0
+        for ecg, fields in specs:
+            if set(fields['conduction']['required']) & {'RBBB', 'LBBB'} and 'range' in fields['qrs_ms']:
+                required += 1
+                self.assertGreaterEqual(fields['qrs_ms']['range'][0], 120, ecg)
+        self.assertGreater(required, 0)
+
+    def test_id_renaming_and_order_do_not_change_answers(self):
+        """Brief: renamed IDs and shuffled record order leave every answer unchanged (release validation F3). The reference
+        sees every patient, resource and ECG ID replaced and every result list shuffled; its answers, mapped back, score 1."""
+        import random
+        rng, fwd, back = random.Random(20260928), {}, {}
+        uuid_re = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+
+        def new_uuid(m):
+            old = m.group(0)
+            if old not in fwd:
+                fwd[old] = str(uuid.uuid5(uuid.NAMESPACE_URL, 'renamed:' + old))
+                back[fwd[old]] = old
+            return fwd[old]
+        rename = lambda obj: json.loads(uuid_re.sub(new_uuid, json.dumps(obj)))
+        restore = lambda obj: json.loads(uuid_re.sub(lambda m: back.get(m.group(0), m.group(0)),
+                                                     re.sub(r'"E(\d{9})"', r'"\1"', json.dumps(obj))))
+        clinic, search = in_process(self.service)
+
+        def renamed_clinic(*args):
+            if args[0] == 'patients':
+                out = rename(clinic(*args)); rng.shuffle(out['resources']); return out
+            if args[:2] == ('ecg', 'list'):
+                out = rename(clinic(*args))
+                out['ecgs'] = [dict(e, ecg='E' + e['ecg']) for e in out['ecgs']]
+                rng.shuffle(out['ecgs'])
+                return out
+            raise AssertionError(args)
+
+        def renamed_search(rtype, patient=None, code=None):
+            rows = rename(search(rtype, back.get(patient, patient), code))
+            rng.shuffle(rows)
+            return rows
+        readings = rename(reference.READINGS)
+        readings['ecg'] = {'E' + k: v for k, v in readings['ecg'].items()}
+        for n in readings['notes'].values():
+            if n.get('ecg'):
+                n['ecg'] = 'E' + n['ecg']
+        with patch.object(reference, 'clinic', renamed_clinic), patch.object(reference, 'search', renamed_search), \
+                patch.object(reference, 'READINGS', readings):
+            items, findings = reference.solve_all()
+        self.assertTrue(fwd and not {i['patient'] for i in items} & set(fwd))   # the reference only ever saw renamed IDs
+        for it in restore(items):
+            clinic('item', 'add', '--json', json.dumps(it))
+        for f in restore(findings):
+            clinic('interpretation', 'add', '--json', json.dumps(f))
+        result = grade.grade(self.service.collect(), self.attestation)
+        self.assertEqual(result['reward'], 1, {k: v for k, v in result['components'].items() if not v})
+
     # ------------------------------------------------------------------ separability
     def test_case_patients_not_separable_by_added_layer(self):
         """Per-patient features of the synthetic layer: cases vs living controls (Mann-Whitney AUC)."""

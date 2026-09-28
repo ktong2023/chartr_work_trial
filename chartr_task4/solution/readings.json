@@ -1540,7 +1540,7 @@
    "hr": 130.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 141,
+   "qrs_ms": 148,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": [
@@ -1564,7 +1564,7 @@
    "hr": 78.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 149,
+   "qrs_ms": 150,
    "qtc_ms": 552,
    "axis": "EXTREME",
    "conduction": [
@@ -1576,7 +1576,7 @@
    "hr": 115.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 134,
+   "qrs_ms": 142,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": [
@@ -2188,7 +2188,7 @@
    "hr": 100.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 132,
+   "qrs_ms": 140,
    "qtc_ms": 472,
    "axis": null,
    "conduction": [
@@ -2623,7 +2623,7 @@
    "hr": 60.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 128,
+   "qrs_ms": 138,
    "qtc_ms": 469,
    "axis": "LEFT",
    "conduction": [
@@ -2635,7 +2635,7 @@
    "hr": 68.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 130,
+   "qrs_ms": 140,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": [

@@ -404,6 +404,10 @@ linked through a laboratory result, or clinic-level records), computed from the 
 (overclaim, underclaim, wrong code, false flag, missed, missing) and requested vs unrequested.
 Citation sufficiency and explanation prose are not graded. Invalid runs produce no reward.
 
+The rules engine reads authored facts, so the build also checks the rendered records that decide authority: every F6 date the engine
+takes from a correction must be signed by the nurse who charted that administration, and every disputed date by someone else
+(release validation, September 28, 2026; build-time check only, no task file or answer changed).
+
 `qa/test_task3.py` (12 tests): rules agree with authored truth and the build is reproducible; reference
 passes through the real CLI (including export); no-op fails; 13 wrong algorithms each fail on exactly their
 target candidates (never abstain, abstain on any gap, flag everything, per-patient processing, ignore received

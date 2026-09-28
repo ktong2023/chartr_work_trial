@@ -210,6 +210,7 @@ def build():
             charts.setdefault(pid, []).append(r['id'])
     charts = {k: v for k, v in charts.items() if k.startswith('P')}
     check_rendered_identity(sources, people)
+    check_rendered_corrections(sources, people)
 
     # Oracle submissions: every non-silent candidate plus every requested one, citing chart records.
     evidence_kinds = {'INADEQUATE_TREATMENT': ('MedicationAdministration', 'MedicationDispense', 'Condition'),
@@ -312,6 +313,29 @@ def check_rendered_identity(sources, people):
         # A positive pregnancy test that is unambiguously this patient's means she was pregnant.
         if any(x[1] == x[2] == key and x[3].startswith('hCG') and x[6] == 'Positive' for x in results):
             assert p['facts'].get('pregnant') is True, (key, 'positive hCG but not pregnant')
+
+
+def check_rendered_corrections(sources, people):
+    """The rules engine reads the corrected dose dates from generator facts, but whether a correction governs depends on who
+    signed it (policy: only the record's author). Refuse to build unless the rendered chart agrees (release validation F4):
+    every F6 date the engine takes from a correction is signed by the nurse who charted that administration, and every
+    disputed date is signed by someone else."""
+    for p in PATIENTS:
+        if p.get('family') != 'F6_correction':
+            continue
+        chart = [r for r in sources if (r.get('subject') or {}).get('reference') == 'Patient/' + people[p['key']]['pid']]
+        performers = {r['effectiveDateTime'][:10]: r['performer'][0]['actor']['display'] for r in chart
+                      if r['resourceType'] == 'MedicationAdministration'}
+        notes = [r for r in chart if r['resourceType'] == 'DocumentReference']
+        if p['variant'] == 'dispute':
+            disputes = [n for n in notes if 'MAR' in n['description'] and ext(n, 'author-role') == 'clinician']
+            assert len(disputes) == 1, (p['key'], 'dispute note')
+            assert disputes[0]['author'][0]['display'] not in performers.values(), (p['key'], 'dispute signed by the administering nurse')
+            continue
+        charted = sorted(set(performers) - {d for d, _ in p['facts']['doses']})
+        corrections = [n for n in notes if n['type']['text'] == 'Nursing note - late entry']
+        assert len(charted) == 1 and len(corrections) == 1, (p['key'], charted, len(corrections))
+        assert corrections[0]['author'][0]['display'] == performers[charted[0]], (p['key'], 'correction not signed by the record author')
 
 
 def main():
