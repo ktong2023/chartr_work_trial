@@ -448,7 +448,9 @@
    },
    "conduction": {
     "required": [],
-    "allowed": []
+    "allowed": [
+     "FIRST_DEGREE_AV_BLOCK"
+    ]
    }
   },
   "107898490": {
@@ -1337,9 +1339,7 @@
    },
    "conduction": {
     "required": [],
-    "allowed": [
-     "FIRST_DEGREE_AV_BLOCK"
-    ]
+    "allowed": []
    }
   },
   "100698634": {
@@ -1571,9 +1571,7 @@
    },
    "conduction": {
     "required": [],
-    "allowed": [
-     "FIRST_DEGREE_AV_BLOCK"
-    ]
+    "allowed": []
    }
   },
   "102853474": {
@@ -2021,9 +2019,7 @@
    },
    "conduction": {
     "required": [],
-    "allowed": [
-     "FIRST_DEGREE_AV_BLOCK"
-    ]
+    "allowed": []
    }
   },
   "104629882": {
@@ -2922,9 +2918,7 @@
    },
    "conduction": {
     "required": [],
-    "allowed": [
-     "FIRST_DEGREE_AV_BLOCK"
-    ]
+    "allowed": []
    }
   },
   "109661561": {
@@ -3771,6 +3765,7 @@
    "rhythm": {
     "one_of": [
      "ATRIAL_FLUTTER",
+     "OTHER",
      "SINUS"
     ]
    },
@@ -3955,9 +3950,7 @@
    },
    "conduction": {
     "required": [],
-    "allowed": [
-     "FIRST_DEGREE_AV_BLOCK"
-    ]
+    "allowed": []
    }
   },
   "103088543": {
@@ -4908,9 +4901,7 @@
    },
    "conduction": {
     "required": [],
-    "allowed": [
-     "FIRST_DEGREE_AV_BLOCK"
-    ]
+    "allowed": []
    }
   },
   "108912996": {
@@ -7028,7 +7019,9 @@
     },
     "conduction": {
      "required": [],
-     "allowed": []
+     "allowed": [
+      "FIRST_DEGREE_AV_BLOCK"
+     ]
     }
    },
    "prior_ecg": "102616671",
@@ -7153,9 +7146,7 @@
     },
     "conduction": {
      "required": [],
-     "allowed": [
-      "FIRST_DEGREE_AV_BLOCK"
-     ]
+     "allowed": []
     }
    },
    "prior_ecg": "100698634",
@@ -7885,6 +7876,7 @@
     "rhythm": {
      "one_of": [
       "ATRIAL_FLUTTER",
+      "OTHER",
       "SINUS"
      ]
     },
@@ -7959,9 +7951,7 @@
     },
     "conduction": {
      "required": [],
-     "allowed": [
-      "FIRST_DEGREE_AV_BLOCK"
-     ]
+     "allowed": []
     }
    },
    "prior_ecg": "101016166",

@@ -22,7 +22,7 @@ CATS = [('NORMAL', -30, 90), ('LEFT', -90, -30), ('RIGHT', 90, 180), ('EXTREME',
 # Rhythms that designer review could not settle (pilot evidence reviewed at high resolution): either reading is accepted.
 #  108780865: slow irregular rhythm; the cart says AF, but low-amplitude waves ~150 ms before each QRS may be P waves.
 #  100924231: fixed regular 141/min two days after AF; 2:1 flutter vs sinus tachycardia cannot be separated.
-RHYTHM_AMBIGUOUS = {'108780865': ['AF', 'SINUS'], '100924231': ['ATRIAL_FLUTTER', 'SINUS']}
+RHYTHM_AMBIGUOUS = {'108780865': ['AF', 'SINUS'], '100924231': ['ATRIAL_FLUTTER', 'OTHER', 'SINUS']}   # 100924231: also read as ectopic atrial tachycardia
 NEIGHBOURS = {'NORMAL': ['LEFT', 'RIGHT'], 'LEFT': ['NORMAL', 'EXTREME'], 'RIGHT': ['NORMAL', 'EXTREME'], 'EXTREME': ['LEFT', 'RIGHT']}
 
 
@@ -129,7 +129,7 @@ def spec_for(sid, t, r, lab):
         mpr = M.get('pr'); others = [v for v in (G.get('pr'), N.get('pr')) if v]
         if 'FIRST_DEGREE_AV_BLOCK' in mc and mpr and mpr >= 210 and any(v >= 210 for v in others):
             required.add('FIRST_DEGREE_AV_BLOCK')
-        elif not (mpr and mpr <= 160 and all(v <= 180 for v in others)):   # forbidden only with a >=40 ms margin (PR conventions)
+        elif not (mpr and N.get('pr') and mpr <= 160 and N['pr'] <= 160):   # forbidden only when cart and neurokit both leave a 40 ms margin
             allowed.add('FIRST_DEGREE_AV_BLOCK')
     elif rhythm == 'PACED':
         allowed.add('FIRST_DEGREE_AV_BLOCK')

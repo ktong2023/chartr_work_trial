@@ -534,18 +534,23 @@ def answers(b, memos):
                                      | {e['study_id'] for e in b.catalog if e['subject_id'] == s and b.truth[e['study_id']]['label'] == 'AF'}
                                      | rhythm.get(s, set())
                                      | {n[1] for n in b.notes_by_patient.get(s, []) if re.search(r'atrial (fibrillation|flutter)', n[2], re.I)})
+    # At least one record establishing AF is required; coded dysrhythmias from the same history (ICD-9 427.x, ICD-10 I47-I49) are
+    # accepted as corroboration alongside it (v0.3.6: four runs cited 427.89 next to 10004235's AF evidence).
+    dysrhythmia = lambda s: sorted({rid for code, _, _, rid in b.info[s]['dx'] if re.match(r'^(427|I4[7-9])', code.replace('.', ''))
+                                    and rid not in b.removed} - set(af_conditions(s)))
+    af_spec = lambda s: {'cover': [af_conditions(s)], 'also': dysrhythmia(s)}
     ex = lambda v: {'exact': v}
     items = []
     def item(s, category, reason, ecg_fields=(), **fields):
         items.append({'patient': pid[s], 'subject': s, 'category': category, 'reason': reason, 'fields': fields, 'ecg_fields': list(ecg_fields)})
     # Untreated AF (authored factor lists; cross-checked against the codes below)
-    item('10039997', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence={'subset_of': af_conditions('10039997')}, risk_score=ex(5),
+    item('10039997', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence=af_spec('10039997'), risk_score=ex(5),
          risk_factors={'set': ['AGE_65_74', 'FEMALE', 'HYPERTENSION', 'STROKE_TIA']}, anticoagulant={'null': True})
-    item('10023771', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence={'subset_of': af_conditions('10023771')}, risk_score={'one_of': [2, 3]},
+    item('10023771', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence=af_spec('10023771'), risk_score={'one_of': [2, 3]},
          risk_factors={'set_one_of': [['AGE_65_74', 'HYPERTENSION'], ['AGE_65_74', 'HYPERTENSION', 'VASCULAR']]}, anticoagulant={'null': True})
-    item('10004235', 'ANTICOAGULATION', 'UNTREATED_AF', ecg_fields=[], af_evidence={'subset_of': af_conditions('10004235')}, risk_score=ex(2),
+    item('10004235', 'ANTICOAGULATION', 'UNTREATED_AF', ecg_fields=[], af_evidence=af_spec('10004235'), risk_score=ex(2),
          risk_factors={'set': ['CHF', 'HYPERTENSION']}, anticoagulant={'null': True})
-    item('10020306', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence={'subset_of': af_conditions('10020306')}, risk_score=ex(9),
+    item('10020306', 'ANTICOAGULATION', 'UNTREATED_AF', af_evidence=af_spec('10020306'), risk_score=ex(9),
          risk_factors={'set': ['AGE_75_PLUS', 'CHF', 'DIABETES', 'FEMALE', 'HYPERTENSION', 'STROKE_TIA', 'VASCULAR']}, anticoagulant={'null': True})
     item('10004457', 'ANTICOAGULATION', 'ANTICOAGULANT_WITH_CONTRAINDICATION',
          anticoagulant={'one_of': current_orders(b, '10004457', 'Apixaban')}, contraindication=ex(k['10004457:bleed']))

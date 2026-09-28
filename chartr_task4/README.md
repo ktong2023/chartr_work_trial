@@ -241,3 +241,11 @@ v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient char
   evidence citing records that don't establish AF, first-degree AV block called on normal PRs, and missed hidden AF.
   v0.3.5 leaves the axis ungraded when the readers disagree by more than 40°, and forbids first-degree AV block only when
   the cart's PR is 160 ms or less. Rescored, the batch is unchanged at 1/5.
+- **v0.3.5**, `jobs/chartr/task4-0.3.5-1790617318` (**10 concurrent trials**, prompt caching): raw 1/10; **4/10 against the
+  v0.3.6 key**. v0.3.6 makes three changes:
+  - coded dysrhythmias are accepted as corroborating AF evidence, with at least one AF-establishing record still required;
+  - first-degree AV block is forbidden only when both the cart and neurokit PR are 160 ms or less;
+  - 100924231 also accepts an ectopic atrial rhythm.
+
+  The six failures are genuine: hidden AF missed, a transient RBBB resolution missed, rhythm and rate misreads, and a
+  QT misread on the baseline-wander tracing. See TRIAGE.md in that folder.
