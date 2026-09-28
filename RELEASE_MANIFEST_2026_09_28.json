@@ -1,0 +1,775 @@
+{
+ "release": {
+  "repository": "https://github.com/ktong2023/chartr_work_trial.git",
+  "branch": "main",
+  "label": "pre-final release",
+  "code_commit": "19edc3b89aec33ec55d553debc408b4e2d17db55",
+  "validated_on": "2026-09-28",
+  "baseline_validated_commit": "3316277e92d7319b5dd689f33472f275a2833386",
+  "note": "Full validation ran on a clean clone of the baseline commit; the code commit adds the F1-F7 resolutions and was re-verified (checks.release_candidate)."
+ },
+ "tasks": {
+  "chartr_task3": {
+   "name": "chartr/cohort-audit",
+   "version": "0.3.1",
+   "tree": "87a51232af7ece5a88fe48b9e2284d3ab71cae8d",
+   "fixture_sha256": "d8431cb1f5b5e86ff15512e5663a1c902c4bcd4eb4cae88a56c56ea40e657f9f",
+   "expected_sha256": "ffdd6f592cefe259e5886a829e3b9d3918a578f382a041c5a852369610f97517",
+   "baseline": {
+    "version": "chartr-cohort-audit-0.3.1",
+    "evaluation_time": "2026-09-24T12:00:00Z",
+    "initial_digest": "4bda15848c03019ce75bf4c239d8724aaf3041e81fd67aeaf5eee177f5df3ab8",
+    "sources_digest": "013df25e88a8c3389ca5e4851d72a1a865b797cc82b42348271bd37d3b4d5bd2"
+   },
+   "counts": {
+    "patients": 200,
+    "candidates": 800,
+    "records": 4482,
+    "confirmed": 83,
+    "cannot_determine": 61,
+    "requested": 34
+   },
+   "piloted_commit": "52dc127 (task files identical to release; README differs)",
+   "pilot_headline": "4/10 valid attempts (v0.3.1)",
+   "files_sha256": {
+    "README.md": "1aff7a8e9c188ed653849e50175e388e1a070ba36331adfc3ca85249de85ab9f",
+    "environment/.dockerignore": "7c15329d385d40574bacec429476be705b269a903c9c80fa2b34257c36967053",
+    "environment/Dockerfile": "5c56ee2ba2cb5ea8e01564fe7dac1873e3719fc67570de7a13ccb6b9a9b98205",
+    "environment/docker-compose.yaml": "b672e1e767d94ee7b45911d5b5f87ac7c7b8ed3cba9ef4074af1370fe05fb667",
+    "environment/public/clinic.py": "2ec6194fc00a9a81d5c0e3e3088104ffa763606c2d4547c692766357c3f33a5f",
+    "environment/public/policy.md": "bc9217dcdf3e266fc8bae49282940b73b867d39023487229f63c0762282249ec",
+    "environment/public/tools.md": "0f76b557aee74b76050b365fd518650974a663fcff4176cff0b4805bbd4c2a57",
+    "environment/service/Dockerfile": "8da325acb8543c0b284b859deec81d33a1acf808feac3a3e91c008261c964ce2",
+    "environment/service/control.py": "699767969e188ecf47b611c8ec93534e059999178fe4290546574f971cb74413",
+    "environment/service/fhir.py": "953bb7833d4551217a08d5bf3dbd6f232d6903874ed82ea4a8cfddebb0a4ffa5",
+    "environment/service/fixture.json": "d8431cb1f5b5e86ff15512e5663a1c902c4bcd4eb4cae88a56c56ea40e657f9f",
+    "environment/service/requirements.txt": "d9f7a6bff05a579f6736ddb26d0bbb80619cc1639e5d38d005aa396982b3ed35",
+    "environment/service/schema/README.md": "9afc7bd27da530bc9582d87109b99d23ce6dcf00ed8f057279ba8082eff402d5",
+    "environment/service/schema/fhir.schema.json": "2230406893b4cf002a4ee1e5e2bbeca22ac5d2d4931b3e9ef7b9594bbc376a01",
+    "environment/service/server.py": "cb912cdbd0b901c2cae516dcefc4469f3dd0429de16b0646fe9c5ca4e827b73b",
+    "environment/service/store.py": "37d0ac00a136647f66b283f61921b77c214d94b47e98998af6dff07bfb95d47f",
+    "instruction.md": "37ad10513f498cf2bc734a4159a4d90700ed8aacbcf97eea8ca854265bd33fb4",
+    "solution/answers.json": "79ec59910d0a7537dc3a13e6e165fd4a5928a84bd5ddbaa227ac1b21dabacbde",
+    "solution/reference.py": "50f44f90e6ce39f917a6b5fbf11f2edfe5d7d5e0e2a0e458228b49aec089efa7",
+    "solution/solve.sh": "fc19e0b98ad46178c974f6b6f0641fd4a4df3c1faee272ded1cc20f41fb3c03e",
+    "task.toml": "6d08a9173f0ba40b5c71fd471da76d3fe13cc16305e835e810562f709acfa8f6",
+    "tests/Dockerfile": "953ce0c2072519c007ae998c174b6a26a1d240f7f34a4e710560e0ab93dd252f",
+    "tests/baseline.json": "9705e9518d097254977eb5e598807a39c5f690ce7ddcfc7026871d2064d59bcc",
+    "tests/docker-compose.yaml": "490c1326cd1aebc685172eeb145cbefdae212de187269976e4557e80a52fb77a",
+    "tests/expected.json": "ffdd6f592cefe259e5886a829e3b9d3918a578f382a041c5a852369610f97517",
+    "tests/grade.py": "5f4262509b1faa24e3c150be7b695b10db535895ae0f12f59d2e7c33ae438251",
+    "tests/test.sh": "93e413891d381b6b7955571f1745d695ba6250df5e449d3c246731de62af9ce0"
+   }
+  },
+  "chartr_task4": {
+   "name": "chartr/cardiology-population-review",
+   "version": "0.4.1",
+   "tree": "61c53534d2ff3d4084a3b1efbdc768b0e2423961",
+   "expected_sha256": "821026182ca945b8a58f320f8741d0bbea4f8c2db52d85314cfd71fd8ba535e0",
+   "baseline": {
+    "version": "chartr-task4-0.4.1",
+    "evaluation_time": "2026-09-24T12:00:00-04:00",
+    "sources_digest": "01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b"
+   },
+   "pinned_inputs": {
+    "list_sha256": "a11cc24ae57ab5472ca06983d984cfd5e2d6d9fbebc2ea85c4f559a1410dfeaf",
+    "files": 446,
+    "sources": [
+     "MIMIC-IV Clinical Database Demo on FHIR v2.1.0",
+     "MIMIC-IV-ECG Demo v0.1"
+    ],
+    "license": "ODbL v1.0"
+   },
+   "counts": {
+    "patients": 100,
+    "living": 69,
+    "ecgs": 208,
+    "items": 20,
+    "item_patients": 18,
+    "required_interpretations": 37
+   },
+   "piloted_commit": "d1156b5 = v0.4.0; v0.4.1 differs by one graded QRS bound (104941853: 101 -> 120 ms), reference QRS midpoints, version strings and README",
+   "pilot_headline": "3/10 valid attempts (v0.4.0); rescored against the v0.4.1 key: 3/10, identical per run; v0.4.1 not piloted",
+   "files_sha256": {
+    "README.md": "72893675d5c08feb4663e91c83769cb627f62de959e1534fae1312810cf2bda9",
+    "environment/.dockerignore": "45f4701fadc7549bb64e4100e5fb6d371d62941d486fe75c20f478e4557e5ee9",
+    "environment/Dockerfile": "7703190e09577349bcaf582c52ba420e070bf43d697c34f9fab519cd6b930f4f",
+    "environment/agent-requirements.txt": "dc37465041b7787f7a200b0a1a9d59ca86119752a1cadcf65624726a44d29d1c",
+    "environment/docker-compose.yaml": "f5fe81313c44f43747973ab168aac01aac68e89aa703c99d41427318a94178a5",
+    "environment/public/clinic.py": "dd208d34bda825755ae343dd00ec7e981425ea25bd612d81414e770787856579",
+    "environment/public/policy.md": "5ca3f688b889fa0efd5ca32897dff6084cded7e1fb0168b43fd24b0f6082e87b",
+    "environment/public/tools.md": "5eabbdfb5522a5ddfaee236efba429969b7fcef556ffa41e9ef103a65f69a023",
+    "environment/service/Dockerfile": "56e37da70a7a9cb204f3790139a2e256aab7f3ab626ddfdd467ba3d8548bec97",
+    "environment/service/assemble.py": "0058a8c7df2e93c7b04e061b9adeb009b68516375f17b29979b82180413f9d95",
+    "environment/service/control.py": "9e341ff3f383fdd75896ae0975986b00f5460355d8a18c95997e9e2b2aefd73c",
+    "environment/service/fetch.py": "68e273f731ad90f85eab07d66dc8fafc7e6c10894fff482c53f22d85c43cc3d9",
+    "environment/service/overlay/added.ndjson.gz": "d25a791deaba8f4eb699f78e474df702cb620a7214ee113358daa9f21430055f",
+    "environment/service/overlay/ecg_deltas/101515306.bin": "abaf55966fb4c6f5632161d150a959248f760fbf299c37acaf662b6ee126a14e",
+    "environment/service/overlay/ecg_deltas/101538691.bin": "42d8ae9c739ed6c5c937d05490d53b6fa50115ff6110e3b392681850b7da2820",
+    "environment/service/overlay/ecg_deltas/104821039.bin": "a9c49f669d7eb37a9938bb84731141f498c586e6b5688e4ae0edb599a5daf0df",
+    "environment/service/overlay/ecg_deltas/105362569.bin": "c5493d47e7f736e51567b79c322de6f54066db3571d175434f49f7fefe8fac96",
+    "environment/service/overlay/ecg_deltas/106825293.bin": "49857ffe3e3371d19057f5646ad35274ce337edfa861f4a080a6832ce6e35a14",
+    "environment/service/overlay/ecg_deltas/106885519.bin": "f0ff98c0c1d577c90736a8c6f9da1a0f7cb6298ab434e5dd692de9bbb6472faa",
+    "environment/service/overlay/ecg_deltas/107859369.bin": "75d8e9f18a93908b82bc290528460bf7e40ac75a93c56cd728ada955b628b58f",
+    "environment/service/overlay/ecg_deltas/108018814.bin": "b18c02bd2d52fcb5b39bd47c60614f443a5004bc813c01345c2cec57d35c8e21",
+    "environment/service/overlay/ecg_deltas/108211642.bin": "50193ef9c74673a8e8ca30e1e1a6222338dbdd9bcf39c4a62a9356058760f898",
+    "environment/service/overlay/overlay.json": "37af8b872f26995434dbcce7405d8d094d21a8845eeed0ee47b9059caf370322",
+    "environment/service/overlay/pinned.sha256": "a11cc24ae57ab5472ca06983d984cfd5e2d6d9fbebc2ea85c4f559a1410dfeaf",
+    "environment/service/server.py": "fd3471828ad0177ac8f5226da3766b2fcd57d56c7fc60b588b050584f5e7d645",
+    "environment/service/store.py": "0c727178e0d3168af451c708468d9fd374c2c3feae57b378187a494d7472cd3f",
+    "instruction.md": "c75527de4aeabab580ed1e07ad3f83ab6eecde53581b722629d5f772cf1ef62b",
+    "solution/readings.json": "5ca1c5bc0daec640760acba275f03e8b35ec12d8efad0eba69d56e9f266048c3",
+    "solution/reference.py": "3fcc520d90521dd65398c114c55431b6871c0e176b38230c0e041191a226b5a7",
+    "solution/solve.sh": "fc19e0b98ad46178c974f6b6f0641fd4a4df3c1faee272ded1cc20f41fb3c03e",
+    "task.toml": "58cda27c98d0ad3ebcdb4b560131a8bbd7a71cef31f71421037a60613bba6295",
+    "tests/Dockerfile": "953ce0c2072519c007ae998c174b6a26a1d240f7f34a4e710560e0ab93dd252f",
+    "tests/baseline.json": "1659db555eb813bfc37a95dcecfb0956ff4cf1fb282bd86f57e2c9984d98d067",
+    "tests/docker-compose.yaml": "490c1326cd1aebc685172eeb145cbefdae212de187269976e4557e80a52fb77a",
+    "tests/expected.json": "821026182ca945b8a58f320f8741d0bbea4f8c2db52d85314cfd71fd8ba535e0",
+    "tests/grade.py": "1e924565be70578342ca46b1e2fe9503c3b246a2045bf36d4706c15cb67b7bcc",
+    "tests/test.sh": "93e413891d381b6b7955571f1745d695ba6250df5e449d3c246731de62af9ce0"
+   }
+  }
+ },
+ "shared_harness_sha256": {
+  "anthropic_agent.py": "95ce935aabe5b0356d953ae57c94a8e43616d63aeea31bf84256b0803aea3ead",
+  "chartr_environment.py": "f57ea3d58f58a902bad801cbfbe2ff97f30c513b6470b8d74d8b0c97baef6fae",
+  "chartr_job.yaml": "aae78d44b9b072f91a86deebd48c7212020b93963fbeaeac2677adb221bba701",
+  "requirements.txt": "bd3c3217a297ba5700906840cc0d8d83ac53eac0528f986037f060275fb496d4",
+  "requirements.lock.txt": "2fa34c788c579794c4ff68b0c1cce226754ac5b0d92d9902b9805d3571f96d33",
+  "qa/agents.py": "2800b451772300329fedfede5f79899174223e7b80c9f542cabded1ace209736"
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "pinned": {
+   "harbor": "0.23.0",
+   "anthropic": "1.8.0",
+   "jsonschema": "4.26.0"
+  },
+  "docker": "29.8.0",
+  "transitive_drift_vs_existing_venv": [
+   "boto3==1.43.104",
+   "botocore==1.43.104",
+   "filelock==4.0.5",
+   "litellm==1.103.0",
+   "platformdirs==4.12.1",
+   "pyjwt==2.15.1",
+   "uvicorn==0.54.0"
+  ]
+ },
+ "checks": {
+  "offline": {
+   "task3": {
+    "ran": "Ran 15 tests in 118.364s",
+    "ok": true,
+    "log": "validation/logs/offline-task3.log"
+   },
+   "task4": {
+    "ran": "Ran 17 tests in 108.385s",
+    "ok": true,
+    "log": "validation/logs/offline-task4.log"
+   },
+   "adapter": {
+    "ran": "Ran 15 tests in 0.085s",
+    "ok": true,
+    "log": "validation/logs/offline-adapter.log"
+   },
+   "task1_regression": {
+    "ran": "Ran 19 tests in 34.742s",
+    "ok": true,
+    "log": "validation/logs/offline-task1.log"
+   }
+  },
+  "preflight": {
+   "clean_checkout": "task3 exit 0, task4 exit 0",
+   "fail_closed": "wrong version, no .git, dirty task dir, Docker unreachable: all exit 1",
+   "logs": [
+    "validation/logs/preflight-clean.log",
+    "validation/logs/preflight-nogit.log",
+    "validation/logs/preflight-failclosed-extra.log"
+   ]
+  },
+  "data": {
+   "fetched_and_verified": "446/446 (fetch.py, exit 0)",
+   "assembled_sources_digest": "01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b",
+   "assembled_matches_baseline": true,
+   "no_cache_service_image_build": "sha256:9434f1264dec2a1d67e302a8bbb2d0ac9ff3874613d4a618fa2fbb95291367a3\ndocker build --no-cache -q -t rv-task4-clinic:nocache .  0.50s user 0.58s system 0% cpu 13:01.92 total\nbuild exit 0\nimage digest 01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b\necg files 208"
+  },
+  "harbor_free": {
+   "task3": {
+    "task3-boundary/chartr_task3__LphX2j7": {
+     "reward": 0.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": null,
+     "api_retries": null,
+     "boundary_probe_exit": 0,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": 4482,
+      "items": 0,
+      "audit_events": 5
+     },
+     "task_files_matching_release": 27,
+     "task_files": 27,
+     "bind_mounts": false
+    },
+    "task3-mock-api-error/chartr_task3__Wz3Haj8": {
+     "reward": null,
+     "validity": "evaluation_error",
+     "exception": "RewardFileNotFoundError",
+     "termination": {
+      "validity": "evaluation_error",
+      "reason": "api_error",
+      "turns": 1
+     },
+     "api_retries": 3,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": 4482,
+      "items": 0,
+      "audit_events": 0
+     },
+     "task_files_matching_release": 27,
+     "task_files": 27,
+     "bind_mounts": false
+    },
+    "task3-mock-budget/chartr_task3__frUaRwD": {
+     "reward": 0.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": {
+      "validity": "valid",
+      "reason": "turn_exhaustion",
+      "turns": 1
+     },
+     "api_retries": 0,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": 4482,
+      "items": 0,
+      "audit_events": 1
+     },
+     "task_files_matching_release": 27,
+     "task_files": 27,
+     "bind_mounts": false
+    },
+    "task3-nop/chartr_task3__frVdijU": {
+     "reward": 0.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": null,
+     "api_retries": null,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": 4482,
+      "items": 0,
+      "audit_events": 0
+     },
+     "task_files_matching_release": 27,
+     "task_files": 27,
+     "bind_mounts": false
+    },
+    "task3-oracle/chartr_task3__aDydKPa": {
+     "reward": 1.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": null,
+     "api_retries": null,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": 4482,
+      "items": 166,
+      "audit_events": 170
+     },
+     "task_files_matching_release": 27,
+     "task_files": 27,
+     "bind_mounts": false
+    }
+   },
+   "task4": {
+    "task4-boundary/chartr_task4__McaVCUA": {
+     "reward": 0.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": null,
+     "api_retries": null,
+     "boundary_probe_exit": 0,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": null,
+      "items": 0,
+      "audit_events": 5
+     },
+     "task_files_matching_release": 37,
+     "task_files": 37,
+     "bind_mounts": false
+    },
+    "task4-mock-api-error/chartr_task4__e3MPB3R": {
+     "reward": null,
+     "validity": "evaluation_error",
+     "exception": "RewardFileNotFoundError",
+     "termination": {
+      "validity": "evaluation_error",
+      "reason": "api_error",
+      "turns": 1
+     },
+     "api_retries": 3,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": null,
+      "items": 0,
+      "audit_events": 0
+     },
+     "task_files_matching_release": 37,
+     "task_files": 37,
+     "bind_mounts": false
+    },
+    "task4-mock-budget/chartr_task4__ZdEgsXw": {
+     "reward": 0.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": {
+      "validity": "valid",
+      "reason": "turn_exhaustion",
+      "turns": 1
+     },
+     "api_retries": 0,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": null,
+      "items": 0,
+      "audit_events": 1
+     },
+     "task_files_matching_release": 37,
+     "task_files": 37,
+     "bind_mounts": false
+    },
+    "task4-nop/chartr_task4__vsTu6Bp": {
+     "reward": 0.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": null,
+     "api_retries": null,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": null,
+      "items": 0,
+      "audit_events": 0
+     },
+     "task_files_matching_release": 37,
+     "task_files": 37,
+     "bind_mounts": false
+    },
+    "task4-oracle/chartr_task4__jUMH96g": {
+     "reward": 1.0,
+     "validity": "valid",
+     "exception": null,
+     "termination": null,
+     "api_retries": null,
+     "boundary_probe_exit": null,
+     "snapshot": {
+      "path": "artifacts/evidence/snapshot.json",
+      "frozen": true,
+      "faults": 0,
+      "sources": null,
+      "items": 20,
+      "audit_events": 421
+     },
+     "task_files_matching_release": 37,
+     "task_files": 37,
+     "bind_mounts": false
+    }
+   },
+   "jobs_dir": "jobs/chartr/release-validation-2026-09-28/"
+  },
+  "audit_fix_mutations": {
+   "T3_accession_collision": {
+    "caught": true,
+    "test": "qa.test_task3.Task3.test_every_result_has_unique_identity_evidence",
+    "defect": "v0.2.0 audit #1: two unrelated results share one accession number"
+   },
+   "T3_cross_chart_evidence_rule": {
+    "caught": true,
+    "test": "qa.test_task3.Task3.test_evidence_validity",
+    "defect": "v0.2.0 audit #2: evidence links only through charts holding the result/specimen, not label or accessioning MRN+DOB"
+   },
+   "T3_stage_named_in_F3_note": {
+    "caught": true,
+    "test": "qa.test_task3.Task3.test_stage_inference_charts_name_no_stage",
+    "defect": "v0.2.0 audit #3: a stage-inference chart names the stage"
+   },
+   "T4_qt_range_crosses_threshold": {
+    "caught": true,
+    "test": "qa.test_task4.Task4Tests.test_qt_decisions_consistent_with_accepted_measurements",
+    "defect": "v0.3.6 audit P1: a required QT item accepts a QTc below the 500 ms threshold"
+   },
+   "T4_serial_change_unsupported": {
+    "caught": true,
+    "test": "qa.test_task4.Task4Tests.test_serial_qtc_changes_consistent_with_accepted_readings",
+    "defect": "v0.3.6 audit P1: a required QTc change that accepted readings do not imply"
+   },
+   "T4_concurrency_unserialized": {
+    "caught": true,
+    "test": "qa.test_task4.Task4Tests.test_concurrent_http_requests_are_atomic",
+    "defect": "v0.3.6 audit P1: requests not serialized (no lock, autocommit audit sequencing)"
+   },
+   "T4_audit_failure_not_fault": {
+    "caught": true,
+    "test": "qa.test_task4.Task4Tests.test_audit_failure_is_a_fault",
+    "defect": "v0.3.6 audit P1: an audit-transaction failure is not recorded as an infrastructure fault"
+   }
+  },
+  "task3_metamorphic": {
+   "baseline_rebuild_equals_committed": true,
+   "baseline_reference_reward": true,
+   "I1_ids_renamed": true,
+   "I2_record_order_shuffled": true,
+   "I3_patient_names_changed": true,
+   "I4_reverse_submission_order": true,
+   "I4_reverse_evidence_order": true,
+   "I4_typed_evidence_ids": true,
+   "I4_reworded_explanations": true,
+   "I4_explicit_not_an_issue_everywhere": true,
+   "I4_saved_wrong_then_corrected_via_update": true,
+   "D1_pending_rpr_rejected_p11": true,
+   "D2_identity_conflict_resolved_p16": true,
+   "D3_outside_rpr_received_p13": true,
+   "D4_dose_interval_23_days_g152": true,
+   "D5_outside_delivery_record_absent_p22": true,
+   "N1_render_only_author_change_g070": true,
+   "N2_render_only_reword_routine_note_g152": true,
+   "G1_every_single_wrong_decision_fails": true,
+   "G2_duplicate_item_fails": true,
+   "G3_item_on_foreign_episode_fails": true
+  },
+  "task4_metamorphic": {
+   "R0_reference_scores_one": true,
+   "I_reverse_order": true,
+   "I_typed_record_ids": true,
+   "I_reworded_explanations": true,
+   "I_list_fields_reversed": true,
+   "I_all_ranges_at_lower_edge": true,
+   "I_all_ranges_at_upper_edge": true,
+   "I_ungraded_fields_arbitrary": true,
+   "I_optional_deceased_interpretations_added": true,
+   "I_optional_qt_items_added": true,
+   "I_every_accepted_alternative_reading": true,
+   "I_saved_wrong_then_corrected_via_update": true,
+   "G_every_single_field_error_fails": true,
+   "G_presence_and_extras": true,
+   "C_superficial_search_and_list_order_shuffled": true,
+   "C_superficial_old_stopped_anticoagulant_added": true,
+   "C_decisive_current_anticoagulant_added": true,
+   "C_decisive_af_charting_removed_10020306": true,
+   "C_decisive_inr_drawn_in_window": true,
+   "C_decisive_qt_ecg_read_normal_480": true,
+   "C_decisive_af_latest_read_sinus": true,
+   "C_decisive_first_degree_avb_missed": true,
+   "C_superficial_qt_ecg_read_plus_10ms_still_inside": true,
+   "J_qt_item_status_matches_accepted_range": true,
+   "J_bbb_vs_qrs_range": false,
+   "J_af_rhythm_accepts_null_pr": true,
+   "J_rhythm_changes_consistent_with_accepted_rhythms": true,
+   "J_audit_v036_counterexamples": true
+  },
+  "release_candidate": {
+   "offline": {
+    "task3": {
+     "ran": "Ran 15 tests in 124.724s",
+     "ok": true,
+     "log": "validation/logs/v041-qa.test_task3.log"
+    },
+    "task4": {
+     "ran": "Ran 19 tests in 40.033s",
+     "ok": true,
+     "log": "validation/logs/v041-qa.test_task4.log"
+    },
+    "adapter": {
+     "ran": "Ran 15 tests in 0.092s",
+     "ok": true,
+     "log": "validation/logs/v041-qa.test_adapter.log"
+    },
+    "clinic": {
+     "ran": "Ran 19 tests in 37.828s",
+     "ok": true,
+     "log": "validation/logs/v041-qa.test_clinic.log"
+    },
+    "preflight": {
+     "ran": "Ran 3 tests in 1.158s",
+     "ok": true,
+     "log": "validation/logs/v041-qa.test_preflight.log"
+    }
+   },
+   "task3_metamorphic": {
+    "baseline_rebuild_equals_committed": true,
+    "baseline_reference_reward": true,
+    "I1_ids_renamed": true,
+    "I2_record_order_shuffled": true,
+    "I3_patient_names_changed": true,
+    "I4_reverse_submission_order": true,
+    "I4_reverse_evidence_order": true,
+    "I4_typed_evidence_ids": true,
+    "I4_reworded_explanations": true,
+    "I4_explicit_not_an_issue_everywhere": true,
+    "I4_saved_wrong_then_corrected_via_update": true,
+    "D1_pending_rpr_rejected_p11": true,
+    "D2_identity_conflict_resolved_p16": true,
+    "D3_outside_rpr_received_p13": true,
+    "D4_dose_interval_23_days_g152": true,
+    "D5_outside_delivery_record_absent_p22": true,
+    "N1_render_only_author_change_g070": true,
+    "N2_render_only_reword_routine_note_g152": true,
+    "G1_every_single_wrong_decision_fails": true,
+    "G2_duplicate_item_fails": true,
+    "G3_item_on_foreign_episode_fails": true
+   },
+   "task4_metamorphic": {
+    "R0_reference_scores_one": true,
+    "I_reverse_order": true,
+    "I_typed_record_ids": true,
+    "I_reworded_explanations": true,
+    "I_list_fields_reversed": true,
+    "I_all_ranges_at_lower_edge": true,
+    "I_all_ranges_at_upper_edge": true,
+    "I_ungraded_fields_arbitrary": true,
+    "I_optional_deceased_interpretations_added": true,
+    "I_optional_qt_items_added": true,
+    "I_every_accepted_alternative_reading": true,
+    "I_saved_wrong_then_corrected_via_update": true,
+    "G_every_single_field_error_fails": true,
+    "G_presence_and_extras": true,
+    "C_superficial_search_and_list_order_shuffled": true,
+    "C_superficial_old_stopped_anticoagulant_added": true,
+    "C_decisive_current_anticoagulant_added": true,
+    "C_decisive_af_charting_removed_10020306": true,
+    "C_decisive_inr_drawn_in_window": true,
+    "C_decisive_qt_ecg_read_normal_480": true,
+    "C_decisive_af_latest_read_sinus": true,
+    "C_decisive_first_degree_avb_missed": true,
+    "C_superficial_qt_ecg_read_plus_10ms_still_inside": true,
+    "J_qt_item_status_matches_accepted_range": true,
+    "J_bbb_vs_qrs_range": true,
+    "J_af_rhythm_accepts_null_pr": true,
+    "J_rhythm_changes_consistent_with_accepted_rhythms": true,
+    "J_audit_v036_counterexamples": true
+   },
+   "harbor_free": {
+    "task4": {
+     "v041-task4-boundary/chartr_task4__mHbwQam": {
+      "reward": 0.0,
+      "validity": "valid",
+      "exception": null,
+      "termination": null,
+      "api_retries": null,
+      "boundary_probe_exit": 0,
+      "snapshot": {
+       "path": "artifacts/evidence/snapshot.json",
+       "frozen": true,
+       "faults": 0,
+       "sources": null,
+       "items": 0,
+       "audit_events": 5
+      },
+      "task_files_matching_release": 37,
+      "task_files": 37,
+      "bind_mounts": false
+     },
+     "v041-task4-nop/chartr_task4__YDy7kZs": {
+      "reward": 0.0,
+      "validity": "valid",
+      "exception": null,
+      "termination": null,
+      "api_retries": null,
+      "boundary_probe_exit": null,
+      "snapshot": {
+       "path": "artifacts/evidence/snapshot.json",
+       "frozen": true,
+       "faults": 0,
+       "sources": null,
+       "items": 0,
+       "audit_events": 0
+      },
+      "task_files_matching_release": 37,
+      "task_files": 37,
+      "bind_mounts": false
+     },
+     "v041-task4-oracle/chartr_task4__62c8P4F": {
+      "reward": 1.0,
+      "validity": "valid",
+      "exception": null,
+      "termination": null,
+      "api_retries": null,
+      "boundary_probe_exit": null,
+      "snapshot": {
+       "path": "artifacts/evidence/snapshot.json",
+       "frozen": true,
+       "faults": 0,
+       "sources": null,
+       "items": 20,
+       "audit_events": 421
+      },
+      "task_files_matching_release": 37,
+      "task_files": 37,
+      "bind_mounts": false
+     }
+    },
+    "task3": {
+     "v041-task3-nop/chartr_task3__8RDJBW9": {
+      "reward": 0.0,
+      "validity": "valid",
+      "exception": null,
+      "termination": null,
+      "api_retries": null,
+      "boundary_probe_exit": null,
+      "snapshot": {
+       "path": "artifacts/evidence/snapshot.json",
+       "frozen": true,
+       "faults": 0,
+       "sources": 4482,
+       "items": 0,
+       "audit_events": 0
+      },
+      "task_files_matching_release": 27,
+      "task_files": 27,
+      "bind_mounts": false
+     },
+     "v041-task3-oracle/chartr_task3__dobDg5E": {
+      "reward": 1.0,
+      "validity": "valid",
+      "exception": null,
+      "termination": null,
+      "api_retries": null,
+      "boundary_probe_exit": null,
+      "snapshot": {
+       "path": "artifacts/evidence/snapshot.json",
+       "frozen": true,
+       "faults": 0,
+       "sources": 4482,
+       "items": 166,
+       "audit_events": 170
+      },
+      "task_files_matching_release": 27,
+      "task_files": 27,
+      "bind_mounts": false
+     }
+    }
+   },
+   "preflight": [
+    "ok    git checkout readable (status and commit)",
+    "ok    task.toml version is 0.3.1",
+    "ok    fixture version is 0.3.1",
+    "ok    baseline version is 0.3.1",
+    "ok    fixture matches baseline digest",
+    "ok    chartr_task3/ has no uncommitted changes",
+    "commit 19edc3b; 200 patients; 4482 records",
+    "task3 exit 0",
+    "ok    task.toml version is 0.4.1",
+    "ok    service version is chartr-task4-0.4.1",
+    "ok    baseline version is chartr-task4-0.4.1",
+    "ok    every catalogued ECG file is pinned",
+    "ok    answer key has items and interpretations",
+    "ok    git available and chartr_task4/ has no uncommitted changes",
+    "ok    adapter supports --ak prompt_cache=true",
+    "ok    docker reachable",
+    "ok    no other ChartR trial containers running",
+    "commit 19edc3b; 20 items, 37 interpretations; docker 10 CPUs 8214851584 bytes",
+    "task4 exit 0"
+   ],
+   "lbbb_repro_after_fix": [
+    "key: qrs_ms {'range': [120.0, 155.0]} | conduction {'required': ['LBBB'], 'allowed': ['FIRST_DEGREE_AV_BLOCK', 'RBBB']}",
+    "qrs_ms=110 conduction=['LBBB', 'FIRST_DEGREE_AV_BLOCK']: reward 0; qrs_ok=False conduction_ok=True",
+    "qrs_ms=110 conduction=['FIRST_DEGREE_AV_BLOCK']: reward 0; qrs_ok=False conduction_ok=False",
+    "qrs_ms=130 conduction=['LBBB', 'FIRST_DEGREE_AV_BLOCK']: reward 1; qrs_ok=True conduction_ok=True"
+   ],
+   "v040_pilot_rescored_under_v041": "3/10; 10/10 per-run rewards identical",
+   "lock_file_reproduces_working_venv": true
+  }
+ },
+ "findings": [
+  {
+   "id": "F1",
+   "severity": "medium",
+   "task": "task4",
+   "status": "resolved in v0.4.1",
+   "summary": "ECG 104941853: LBBB required while accepted QRS began at 101 ms. The QRS range now starts at 120 ms wherever a BBB is required.",
+   "regression_test": "qa.test_task4.Task4Tests.test_bbb_decisions_consistent_with_accepted_qrs",
+   "repro": "validation/scripts/repro_lbbb_qrs.py"
+  },
+  {
+   "id": "F2",
+   "severity": "low",
+   "task": "task4",
+   "status": "resolved: documented, no key change",
+   "summary": "Forbidden BBB may accept QRS >= 120 ms: width alone does not establish a block, so no accepted QRS implies BBB."
+  },
+  {
+   "id": "F3",
+   "severity": "low",
+   "task": "task4",
+   "status": "resolved",
+   "summary": "ID-renaming and order invariance test added.",
+   "regression_test": "qa.test_task4.Task4Tests.test_id_renaming_and_order_do_not_change_answers"
+  },
+  {
+   "id": "F4",
+   "severity": "info",
+   "task": "task3",
+   "status": "resolved for the correction-authority case",
+   "summary": "Build refuses unless F6 correction/dispute signatures match the authority the engine assumes (N1 probe now refused). Other prose-only facts still rest on authoring and independent review."
+  },
+  {
+   "id": "F5",
+   "severity": "low",
+   "task": "both",
+   "status": "resolved",
+   "summary": "requirements.lock.txt pins all 94 packages of the working .venv; a fresh install reproduces it exactly."
+  },
+  {
+   "id": "F6",
+   "severity": "low",
+   "task": "both",
+   "status": "resolved",
+   "summary": "qa.test_preflight: outside Git, wrong version, Docker unreachable all exit 1."
+  },
+  {
+   "id": "F7",
+   "severity": "low",
+   "task": "task4",
+   "status": "resolved (report error corrected)",
+   "summary": "The v0.4.0 pilot folder was already on task4-pilot-results (135/135 files identical to the local copy); PROGRESS.md and README now say so."
+  }
+ ],
+ "constraints_observed": [
+  ".env not read",
+  "no paid model calls (mocked adapter only)",
+  "no task, key or test edits",
+  "no dependency upgrades to the existing .venv"
+ ]
+}
