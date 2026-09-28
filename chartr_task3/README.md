@@ -1,4 +1,41 @@
-# ChartR Task 3: cohort audit with calibrated abstention — v0.3.0 (200 patients, chain-weighted)
+# ChartR Task 3: cohort audit with calibrated abstention — v0.3.1 (200 patients, chain-weighted)
+
+## Pilot 0.3.0 (September 28, 2026) and fixes in 0.3.1
+
+Ten `claude-opus-5` trials on the actual 0.3.0 (every task-file hash matches `e9dbe75`), run with adapter 0.4.0,
+caching on, `caffeinate`, and `-n 10`. Results branch `task3-pilot-results`, `jobs/chartr/task3-0.3.0-pilot-opus/`.
+- **Budgets:** 35–70 turns, 1,496–1,846 s each, 31 min for the whole batch. There were no API retries or stalls.
+- **Caching:** input was about 0 uncached tokens per run, with 4.5–17.7M read from cache and 0.34–0.64M written.
+- **Run time:** 98% of it is generating 112–149K output tokens per run, so caching cut input cost but barely changed
+  wall time.
+
+**Raw 4/10** (2qiXgav, RgLAepP, Xqtgqdm, tKW2k6E). Not counted:
+- **PQ8ap5i, budget:** it hit the 32K output cap while writing every decision into one command, so nothing was saved.
+  The cap is raised for future runs (`max_tokens=64000`, `api_timeout_sec=1800`).
+- **CJ4ZKQH, wording:** it read "a test recommended at a stated number of months" as requiring a chart order, and so
+  answered "not an issue" to every follow-up candidate. Its other answers were right.
+
+Fair fails (4), each checked against the run's explanations:
+
+| Run | Missed |
+|---|---|
+| 5XayigW | Patient-reported outside care ignored (injections elsewhere ×2, core p08, a PCP RPR in core p13); core p06 MAR-vs-pharmacy conflict |
+| ALwrnZf | Core p16: flagged the identity conflict for `MISFILED_RESULT` but still counted the specimen for follow-up |
+| T9WouCF | Took the MAR over a non-author clinician's contradicting note (F6 dispute ×3); core p13 |
+| snDgxNq | Identity named only on another chart's accessioning entry (F1 partner ×3). Its `RESULT_PENDING` on pending, unrejected follow-up specimens (pending_fu ×2, core p11) is the wording defect fixed in 0.3.1 |
+
+**Defect-adjusted: 4/8** (4/9 counting CJ4ZKQH as a fail), inside the 2–7 of 10 target. The accessioning-only
+identity chain, which was right in 2/5 runs in 0.2.0, was missed by only one of the eight counted runs here.
+
+**0.3.1 (policy wording only; no case or answer changes):**
+- `FOLLOW_UP_OVERDUE` now names the source of the recommendation: "a nontreponemal test that the CDC 2021 guidelines
+  recommend at a given number of months after treatment".
+- The follow-up convention now says a specimen counts as collected when "the laboratory had not rejected it by the
+  evaluation time, whether or not its result is final". The independent reviewer had flagged this reading twice.
+
+**0.3.1 checks:** offline 15/15; Docker (cloud CA copies) oracle 1, no-op valid 0, boundary probe exit 0 (snapshot complete,
+frozen, 0 faults). The authored answers and answer key are unchanged from 0.3.0.
+
 
 ## 0.3.0: calibration and run time (user decisions, September 28, 2026)
 
@@ -288,8 +325,8 @@ PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a o
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a nop --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 --agent-import-path qa.agents:BoundaryProbe --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 # Paid pilots (authorize first; the preflight must print all ok):
-python3 qa/task3_preflight.py 0.3.0
-caffeinate -dims env PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 10 -n 10 --ak max_turns=250 --ak max_tokens=32000 --ak api_timeout_sec=900 --ak wall_timeout_sec=7000 --ak prompt_cache=true --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
+python3 qa/task3_preflight.py 0.3.1
+caffeinate -dims env PYTHONPATH="$PWD" ./.venv/bin/harbor run -c chartr_job.yaml -p chartr_task3 -a anthropic_agent:AnthropicAgent -m claude-opus-5 -k 10 -n 10 --ak max_turns=250 --ak max_tokens=64000 --ak api_timeout_sec=1800 --ak wall_timeout_sec=7000 --ak prompt_cache=true --env-file .env --job-name NAME --jobs-dir "$PWD/jobs/chartr"
 ```
 
 ## Independent review (September 27, 2026)

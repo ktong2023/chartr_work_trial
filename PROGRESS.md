@@ -1,5 +1,17 @@
 # ChartR implementation handoff
 
+## Task 3 pilot 0.3.0 (10 trials) and v0.3.1 (September 28, 2026)
+
+- **Setup:** 200 patients, adapter 0.4.0 with caching (input about 0 uncached), `caffeinate`, `-n 10`. Each run took
+  25–31 min with no stalls, and the batch took 31 min.
+- **Raw 4/10.** Not counted: one run hit the 32K output cap while writing its submission (the cap is now 64K with an
+  1,800 s request timeout), and one run misread "recommended at a stated number of months" as needing a chart order.
+- **Fair fails (4):** unreceived outside care ignored; an identity conflict not carried to follow-up; a non-author
+  note taken as a correction; accessioning-only identity missed.
+- **Defect-adjusted 4/8, in band.**
+- **0.3.1** clarifies two policy sentences: the CDC is the source of follow-up recommendations, and a pending,
+  unrejected specimen counts as collected. No answers change.
+
 ## Task 3 v0.3.0 and adapter 0.4.0 — calibration and run time (September 28, 2026)
 
 User decisions after pilot 0.2.0: prompt caching, about 200 patients, and option (b).
