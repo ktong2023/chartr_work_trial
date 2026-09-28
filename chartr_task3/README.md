@@ -1,5 +1,53 @@
 # ChartR Task 3: cohort audit with calibrated abstention — v0.3.1 (200 patients, chain-weighted)
 
+## Pilot 0.3.1: final frozen batch under the predeclared protocol (September 28, 2026)
+
+**Headline: 4 passes / 10 valid attempts** (2GsKnAe, DGcRpcc, KVWAAfk, djAjB3r), inside the 2–7 of 10 target.
+
+**Setup.** Ten `claude-opus-5` trials, run with exactly the frozen configuration:
+- adapter 0.4.0;
+- `max_turns=250`, `max_tokens=64000`, `api_timeout_sec=1800`, `wall_timeout_sec=7000`;
+- caching on, `-k 10 -n 10`.
+
+The artifacts are on `task3-pilot-results`, in `jobs/chartr/task3-0.3.1-pilot-opus/`.
+
+**Provenance.** Every environment, verifier, solution and instruction file matches v0.3.1. The one differing file is
+this README, which matches `52dc127`: the checkout had not yet merged the documentation-only audit response. Nothing
+the environment or grader uses differs.
+
+**Run health.**
+- All 10 attempts were valid, with no evaluation errors, so none were rerun.
+- No API retries.
+- 40–67 turns and 1,364–1,856 s per run; 31 minutes for the batch.
+- About 0 uncached input tokens and 104–147K output tokens per run.
+
+**Categories (triaged from saved items, charts and traces; no task or grader defect found):**
+
+| Attempt | Category | What it did not account for |
+|---|---|---|
+| Gn7VPQQ | Budget failure (counted) | Finished its analysis ("I've analyzed all 200 patients"), then tried to write every decision into one command and exceeded the 64K output cap; nothing was saved. Same pattern as 0.3.0's PQ8ap5i. Two other runs peaked at 45K and 42K output tokens, which the 64K cap allowed, and one of them passed |
+| B24Thje | Model | A received ED record over a later clinic note that misstates the dose date (F7 received-conflict-late, 1 candidate) |
+| PCds9a2 | Model | Label-vs-accessioning identity conflict in its own chart (F1 f: `MISFILED_RESULT` and follow-up); a received hospital delivery date over a later note (F9 hospital-late); unreceived outside injections (single outside_unreceived, answered not-an-issue) |
+| Pmzp2Ay | Model | Identity named only on another chart's accessioning entry (F1 partner ×3, one requested) |
+| V84v8J2 | Model | A non-author clinician's note disputing the MAR date (F6 dispute ×3); an untreated episode with only a "not-done" injection record; unreceived outside care (single outside_unreceived ×2, core p13) |
+| z8iMPfP | Model | Signed dose-date corrections by the MAR's author (F6 anchor-late ×3, gap-worse ×3, gap-better, requested) and the non-author dispute (×3); unreceived outside care (outside_unreceived, core p13) |
+
+The recurring model failures across both 10-run batches are the same small set of concepts. Each is a documented
+public convention applied to records the run had access to:
+- unreceived outside care that should force abstention (5 of 20 runs);
+- signed corrections, or non-author disputes, of administration dates (4);
+- identity that only the accessioning entry reveals, or a label/accession conflict not carried into follow-up (5);
+- a received outside record over a later local note (2).
+
+The whole 29-patient core was right in every run except p06, p08 and p13 (unreceived outside care and an unresolved
+dose discrepancy) and p16 (identity carried into follow-up).
+
+**Observation for any later version (not applied to this batch):** in 2 of 20 runs the model wrote its entire
+submission into one tool call and ran past the output cap. A budget should not be what fails a run. Raising the cap
+further would need the adapter to stream responses (128K output); the alternative is to leave it as the model's own
+strategy failure. The decision is the user's.
+
+
 ## Pilot 0.3.0 (September 28, 2026) and fixes in 0.3.1
 
 Ten `claude-opus-5` trials on the actual 0.3.0 (every task-file hash matches `e9dbe75`), run with adapter 0.4.0,

@@ -1,5 +1,19 @@
 # ChartR implementation handoff
 
+## Task 3 pilot 0.3.1 — final frozen batch (September 28, 2026)
+
+**Headline 4/10 valid attempts, inside the 2–7 target,** under the predeclared protocol. Setup: v0.3.1 environment
+(only the task README differs, at the pre-audit commit), adapter 0.4.0, 64K output cap, caching on. There were no
+evaluation errors and no retries, runs took 23–31 min, and the batch took 31 min.
+
+Categories:
+- 1 budget failure (counted): the run wrote its whole submission into one command and hit the 64K cap.
+- 5 model failures on documented conventions: unreceived outside care, author corrections and non-author disputes,
+  accessioning-only identity, a received record over a later note, and one untreated episode.
+- No task or grader defect found.
+
+See `chartr_task3/README.md` for the per-run table and cross-batch concept counts.
+
 ## Task 3 pilot 0.3.0 (10 trials) and v0.3.1 (September 28, 2026)
 
 - **Setup:** 200 patients, adapter 0.4.0 with caching (input about 0 uncached), `caffeinate`, `-n 10`. Each run took
