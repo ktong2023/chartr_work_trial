@@ -219,6 +219,7 @@
    "fields": {
     "af_evidence": {
      "subset_of": [
+      "0ddf90de-42ec-543c-ad1f-1161c44dd66f",
       "0f84d045-d187-5862-a5aa-b016460bbe0c",
       "0f93d4f9-0fa9-51e0-acad-ce8ccbaf6a75",
       "11626c89-3959-5c70-a4e8-3495a6c3b198",
@@ -246,6 +247,7 @@
       "451b35ef-f22c-54cb-bc02-cf52b3d43e94",
       "458e7213-292b-52b3-8a06-9547a42ad49f",
       "4874f4a1-5f72-5dfa-b4a1-a5cefaffca16",
+      "5116e8ae-7db7-579c-8340-8ed1fb0901c9",
       "52108c7d-94b5-5f7d-b8a5-b83ebcd715f9",
       "53fdd35e-339f-5975-bd7a-daf0bf6fda49",
       "563898ac-a0c2-50e1-adb4-fdbdde71214d",
@@ -270,7 +272,9 @@
       "95595d76-3034-5f90-9370-eb637896e55a",
       "96573588-c7bc-5842-b825-bee3137a9feb",
       "9ea0ec47-cf9c-5b4f-b5d7-3f46580c0bba",
+      "a41e9ebb-c518-5726-9b5e-b634e722e32b",
       "b0555c82-70e3-57e1-9ceb-d62e30b14440",
+      "b86540fe-a517-5f16-ba68-2335621bb0e5",
       "b901b1e3-10f3-5231-a0ee-01e230d94fe1",
       "bfc09721-efee-5efe-b982-6b1d93ca5835",
       "c0d73e44-ddee-599f-beda-bfbb00f34146",
@@ -782,51 +786,6 @@
  ],
  "interpretations": [
   {
-   "patient": "0c2243d2-987b-5cbd-8eb1-170a80647693",
-   "subject": "10005866",
-   "ecg": "105060792",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      112.2,
-      147.1
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      53.0,
-      109.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "107819285",
-   "changes": {
-    "required": [
-     "NEW_AF"
-    ],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
    "patient": "13df78e7-150e-5eb7-be5f-5f62b2baee87",
    "subject": "10022880",
    "ecg": "104882441",
@@ -867,49 +826,6 @@
    "changes": {
     "required": [],
     "allowed": []
-   }
-  },
-  {
-   "patient": "1bb918ba-e04e-5e7a-87ca-dbcbbb4c72c3",
-   "subject": "10032725",
-   "ecg": "103879393",
-   "fields": {
-    "rhythm": {
-     "exact": "SINUS"
-    },
-    "ventricular_rate": {
-     "range": [
-      68.1,
-      78.5
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      69.0,
-      119.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "102573205",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
    }
   },
   {
@@ -997,49 +913,6 @@
     }
    },
    "prior_ecg": "100065910",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "28776290-4349-56d3-8c13-adc554feabb8",
-   "subject": "10025463",
-   "ecg": "102295353",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      74.2,
-      101.0
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      53.0,
-      119.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "109550629",
    "changes": {
     "required": [],
     "allowed": [
@@ -1276,51 +1149,6 @@
     ],
     "allowed": [
      "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "4f773083-7f4d-5378-b839-c24ca1e15434",
-   "subject": "10035631",
-   "ecg": "103521932",
-   "fields": {
-    "rhythm": {
-     "exact": "SINUS"
-    },
-    "ventricular_rate": {
-     "range": [
-      106.1,
-      116.5
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      45.0,
-      117.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "range": [
-      329.3,
-      475.5
-     ]
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "106143775",
-   "changes": {
-    "required": [],
-    "allowed": [
      "QTC_INCREASE_60"
     ]
    }
@@ -1586,51 +1414,6 @@
    }
   },
   {
-   "patient": "73fb53d8-f1fa-53cd-a25c-2314caccbb99",
-   "subject": "10007818",
-   "ecg": "107399137",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      126.2,
-      156.9
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      59.0,
-      125.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "102456968",
-   "changes": {
-    "required": [
-     "NEW_AF"
-    ],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
    "patient": "752d15e2-bd27-52ed-b055-ed79edb86aba",
    "subject": "10039831",
    "ecg": "106035722",
@@ -1715,94 +1498,6 @@
     "allowed": [
      "QTC_DECREASE_60",
      "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "77e10fd0-6a1c-5547-a130-fae1341acf36",
-   "subject": "10003400",
-   "ecg": "101771242",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      123.7,
-      150.2
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      53.0,
-      109.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "108184246",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "7d61fb4e-dc5e-5b1b-a7a6-1d96a3818546",
-   "subject": "10024043",
-   "ecg": "100913766",
-   "fields": {
-    "rhythm": {
-     "exact": "SINUS"
-    },
-    "ventricular_rate": {
-     "range": [
-      60.0,
-      70.9
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      57.0,
-      127.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "range": [
-      313.5,
-      465.1
-     ]
-    },
-    "axis": {
-     "exact": "LEFT"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "102857516",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "QTC_DECREASE_60"
     ]
    }
   },
@@ -1895,43 +1590,6 @@
    }
   },
   {
-   "patient": "842680b3-e421-58cc-8050-3b29668b438c",
-   "subject": "10037861",
-   "ecg": "101744645",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      55.0,
-      84.1
-     ]
-    },
-    "qrs_ms": {
-     "any": true
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "RIGHT"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": null,
-   "changes": {
-    "required": [],
-    "allowed": []
-   }
-  },
-  {
    "patient": "8e77dd0b-932d-5790-9ba6-5c6df8434457",
    "subject": "10039708",
    "ecg": "109952008",
@@ -1969,94 +1627,6 @@
     }
    },
    "prior_ecg": "109048192",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "9111ccb1-fc93-5599-ab7d-35f1e61d4214",
-   "subject": "10026255",
-   "ecg": "105375026",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      119.0,
-      145.3
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      57.0,
-      121.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "108234665",
-   "changes": {
-    "required": [
-     "NEW_AF"
-    ],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "91f25704-6153-5259-bdd7-2ca6478de14a",
-   "subject": "10019003",
-   "ecg": "103857061",
-   "fields": {
-    "rhythm": {
-     "exact": "SINUS"
-    },
-    "ventricular_rate": {
-     "range": [
-      72.0,
-      82.5
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      59.0,
-      115.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "108530691",
    "changes": {
     "required": [],
     "allowed": [
@@ -2111,56 +1681,6 @@
    }
   },
   {
-   "patient": "9c3ebb7e-d087-519e-bea4-31c3d4aac7ff",
-   "subject": "10023117",
-   "ecg": "102531404",
-   "fields": {
-    "rhythm": {
-     "exact": "PACED"
-    },
-    "ventricular_rate": {
-     "range": [
-      106.1,
-      116.3
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      117.0,
-      183.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "RIGHT"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": [
-      "FIRST_DEGREE_AV_BLOCK",
-      "LBBB",
-      "RBBB"
-     ]
-    }
-   },
-   "prior_ecg": "103417522",
-   "changes": {
-    "required": [
-     "NEW_PACED_RHYTHM"
-    ],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60",
-     "RESOLVED_BUNDLE_BRANCH_BLOCK"
-    ]
-   }
-  },
-  {
    "patient": "a0bcbbc0-b432-5f7d-ac63-28212f20dead",
    "subject": "10022017",
    "ecg": "108211642",
@@ -2206,94 +1726,6 @@
    }
   },
   {
-   "patient": "a2605b15-4f1b-5839-b4ce-fb7a6bc1005f",
-   "subject": "10005817",
-   "ecg": "107674864",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      122.2,
-      164.3
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      51.0,
-      117.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "107132278",
-   "changes": {
-    "required": [
-     "NEW_AF"
-    ],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
-   "patient": "a5d4cb17-db8d-574b-bd88-71473088fd9a",
-   "subject": "10002930",
-   "ecg": "109795468",
-   "fields": {
-    "rhythm": {
-     "exact": "SINUS"
-    },
-    "ventricular_rate": {
-     "range": [
-      93.0,
-      103.0
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      45.0,
-      113.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "range": [
-      337.0,
-      479.7
-     ]
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "109840765",
-   "changes": {
-    "required": [],
-    "allowed": []
-   }
-  },
-  {
    "patient": "a6e7e991-6801-5425-b435-4ca6b7decfcc",
    "subject": "10001217",
    "ecg": "102172660",
@@ -2336,102 +1768,6 @@
      "QTC_DECREASE_60"
     ],
     "allowed": []
-   }
-  },
-  {
-   "patient": "a87c1099-8c87-5548-8fc0-56972a82cebf",
-   "subject": "10020944",
-   "ecg": "100849868",
-   "fields": {
-    "rhythm": {
-     "exact": "SINUS"
-    },
-    "ventricular_rate": {
-     "range": [
-      101.0,
-      111.8
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      61.0,
-      139.0
-     ]
-    },
-    "pr_ms": {
-     "any": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": [
-      "LBBB",
-      "RBBB"
-     ]
-    }
-   },
-   "prior_ecg": "100851619",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "NEW_BUNDLE_BRANCH_BLOCK",
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60",
-     "RESOLVED_BUNDLE_BRANCH_BLOCK"
-    ]
-   }
-  },
-  {
-   "patient": "adde1635-3110-5e92-b9f0-7a6d845a1784",
-   "subject": "10040025",
-   "ecg": "104330494",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      51.0,
-      75.4
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      89.0,
-      145.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [],
-     "allowed": [
-      "LBBB",
-      "RBBB"
-     ]
-    }
-   },
-   "prior_ecg": "101950824",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "NEW_BUNDLE_BRANCH_BLOCK",
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60",
-     "RESOLVED_BUNDLE_BRANCH_BLOCK"
-    ]
    }
   },
   {
@@ -2829,106 +2165,6 @@
    }
   },
   {
-   "patient": "dd2bf984-33c3-5874-8f68-84113327877e",
-   "subject": "10018081",
-   "ecg": "109757556",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      42.0,
-      69.0
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      77.0,
-      149.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "one_of": [
-      "LEFT",
-      "NORMAL"
-     ]
-    },
-    "conduction": {
-     "required": [],
-     "allowed": [
-      "LBBB",
-      "RBBB"
-     ]
-    }
-   },
-   "prior_ecg": "100466541",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "NEW_BUNDLE_BRANCH_BLOCK",
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60",
-     "RESOLVED_BUNDLE_BRANCH_BLOCK"
-    ]
-   }
-  },
-  {
-   "patient": "df756e08-6ea8-5d69-b918-67911945f827",
-   "subject": "10010471",
-   "ecg": "105789995",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      81.2,
-      113.0
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      133.0,
-      201.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "exact": "NORMAL"
-    },
-    "conduction": {
-     "required": [
-      "LBBB"
-     ],
-     "allowed": [
-      "RBBB"
-     ]
-    }
-   },
-   "prior_ecg": "103262474",
-   "changes": {
-    "required": [
-     "NEW_AF"
-    ],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
    "patient": "e1de99bc-3bc5-565e-9ee6-69675b9cc267",
    "subject": "10002428",
    "ecg": "103036945",
@@ -3118,52 +2354,6 @@
    }
   },
   {
-   "patient": "f5a99b42-365c-5f7e-bcab-4fa33b3cc88e",
-   "subject": "10015931",
-   "ecg": "107841896",
-   "fields": {
-    "rhythm": {
-     "exact": "AF"
-    },
-    "ventricular_rate": {
-     "range": [
-      125.6,
-      152.2
-     ]
-    },
-    "qrs_ms": {
-     "range": [
-      51.0,
-      111.0
-     ]
-    },
-    "pr_ms": {
-     "null": true
-    },
-    "qtc_ms": {
-     "any": true
-    },
-    "axis": {
-     "one_of": [
-      "NORMAL",
-      "RIGHT"
-     ]
-    },
-    "conduction": {
-     "required": [],
-     "allowed": []
-    }
-   },
-   "prior_ecg": "107036253",
-   "changes": {
-    "required": [],
-    "allowed": [
-     "QTC_DECREASE_60",
-     "QTC_INCREASE_60"
-    ]
-   }
-  },
-  {
    "patient": "f77a5b72-65fd-5b20-8cef-6b6be4791265",
    "subject": "10012853",
    "ecg": "101515306",
@@ -3253,6 +2443,26 @@
     "allowed": []
    }
   }
+ ],
+ "optional_interpretations": [
+  "100849868",
+  "100913766",
+  "101744645",
+  "101771242",
+  "102295353",
+  "102531404",
+  "103521932",
+  "103857061",
+  "103879393",
+  "104330494",
+  "105060792",
+  "105375026",
+  "105789995",
+  "107399137",
+  "107674864",
+  "107841896",
+  "109757556",
+  "109795468"
  ],
  "current_ecg": {
   "a6e7e991-6801-5425-b435-4ca6b7decfcc": "102172660",

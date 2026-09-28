@@ -10,4 +10,4 @@ Review items (category: reason):
 
 Follow-up status: `completed` (done within the required time), `overdue` (not done, due on or before the evaluation date), `not_due` (not done, due later), `cannot_determine` (a referenced result not in the chart could have completed it).
 
-ECG interpretation, for each patient's most recent ECG: rhythm, ventricular rate, intervals, axis, conduction abnormalities, and changes from that patient's previous ECG.
+ECG interpretation, for each living patient's most recent ECG: rhythm, ventricular rate, intervals, axis, conduction abnormalities, and changes from that patient's previous ECG.

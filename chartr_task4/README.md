@@ -200,3 +200,11 @@ findings. It also adds these misreadings, all scoring 0: paced read as sinus wit
   notes. Every run still misses the two hidden-evidence AF items. Separately, the ECG interpretation and comparison
   components fail in 5/5 runs on real misreads: slow AF read as sinus on a prior, a paced prior claimed, AF rates miscounted.
   See TRIAGE.md in that folder.
+
+## v0.3.2: calibration
+
+- **10020306:** her clinic notes now list "persistent atrial fibrillation" in the history line. Her AF diagnosis codes
+  stay removed, so the evidence is note text plus inpatient rhythm charting.
+- **Interpretations are required only for living patients:** 37 ECGs (33 sinus, 4 AF). Deceased patients' latest ECGs
+  (18) are optional: neither required nor penalized. This makes the paced tracing (10023117, deceased) optional. The LBBB
+  (10038992), first-degree AV block (10007058) and transient-RBBB comparison (10021487) remain graded.

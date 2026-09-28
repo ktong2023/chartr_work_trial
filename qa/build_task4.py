@@ -222,7 +222,8 @@ class Builder:
             if not disp or rid in self.removed: continue
             if re.match(r'(?i)(long[- ]term|personal history of|history of|encounter for|other specified|unspecified place)', disp): continue
             counts[disp] = counts.get(disp, 0) + 1
-        return [d[0].lower() + d[1:] if d[:2].isupper() is False else d for d, _ in sorted(counts.items(), key=lambda kv: -kv[1])[:4]]
+        hist = [d[0].lower() + d[1:] if d[:2].isupper() is False else d for d, _ in sorted(counts.items(), key=lambda kv: -kv[1])[:4]]
+        return ([NOTE_AF[s]] + hist[:3]) if s in NOTE_AF else hist
 
     # ------------------------------------------------------------------ outpatient layer (every living patient)
     def outpatient(self, s, spec):
@@ -343,6 +344,8 @@ REMOVE_AF = {'10004235', '10020306'}
 # Other whole Condition records removed (subject -> ICD pattern): an acute inpatient coagulopathy code that would read as a
 # standing contraindication.
 REMOVE_DX = {'10020306': r'^D689'}
+# v0.3.2 calibration: 10020306's AF codes stay removed, but her clinic notes carry AF in the history line.
+NOTE_AF = {'10020306': 'persistent atrial fibrillation'}
 D = dt.date
 
 
@@ -513,7 +516,11 @@ def answers(b, memos):
     # ECG interpretations: most recent ECG of every patient with ECGs (specs from qa/task4_interp_truth.py)
     interp = json.loads((HERE / 'task4/ecg_interp.json').read_text())
     findings = []
+    living_pid = {b.pid[s] for s, v in b.info.items() if not v['death']}
+    optional = sorted(e['study_id'] for p, e in current_ecg.items() if p not in living_pid)   # deceased: neither required nor penalized
     for p, e in sorted(current_ecg.items()):
+        if p not in living_pid:
+            continue
         L = interp['latest'][p]
         assert L['ecg'] == e['study_id'], (p, L['ecg'], e['study_id'])
         findings.append({'patient': p, 'subject': e['subject_id'], 'ecg': L['ecg'], 'fields': L['fields'], 'prior_ecg': L['prior_ecg'],
@@ -574,7 +581,7 @@ def answers(b, memos):
          due_date=ex('2026-09-08'), completion_record=ex(k['10016150:inr']))
     item('10012853', 'FOLLOW_UP', 'INR_AFTER_WARFARIN_DOSE_CHANGE', status=ex('overdue'), trigger=ex(k['10012853:dose']), requirement=ex(memos['inr']),
          due_date=ex('2026-09-17'), completion_record=ex(None))
-    return {'items': items, 'interpretations': findings, 'current_ecg': {p: e['study_id'] for p, e in current_ecg.items()}}
+    return {'items': items, 'interpretations': findings, 'optional_interpretations': optional, 'current_ecg': {p: e['study_id'] for p, e in current_ecg.items()}}
 
 
 def checks(b, ans):

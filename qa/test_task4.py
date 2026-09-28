@@ -53,7 +53,7 @@ SHORTCUTS = {  # wrong algorithm -> the case it should break
     'ecg_before_start_counts': 'ECG before the start completes the follow-up',
     'ignore_unreceived': 'unreceived outside ECG ignored',
     'mention_is_dose_change': 'a note about warfarin dosing without a change counts as a dose change',
-    'no_charted_rhythm': 'AF from codes and ECGs only, not inpatient rhythm charting (10020306)',
+    'no_charted_rhythm': 'AF from codes and ECGs only, not rhythm charting or notes (10020306)',
     'trust_documented_qt': 'a note calling the QT acceptable overrides the ECG (10013049)',
     'no_comparison': 'interpretations without the comparison with the previous ECG',
     'prior_earliest': 'compared with the oldest ECG instead of the previous one',
@@ -203,8 +203,9 @@ class Task4Tests(unittest.TestCase):
             readings['ecg'][k].update(label='AF', rhythm='AF', pr_ms=None, qtc_ms=None)
         _, _, result = self.run_reference(readings=readings)
         self.assertEqual(result['reward'], 0, 'artifact read as AF')
-        # Paced rhythm read as sinus with LBBB; a transient RBBB on the previous ECG missed.
-        for sid, change in (('102531404', {'rhythm': 'SINUS', 'conduction': ['LBBB']}), ('106516875', {'conduction': []})):
+        # LBBB missed on a living patient's latest ECG; a transient RBBB on the previous ECG missed. (The paced ECG belongs to a
+        # deceased patient and is optional since v0.3.2.)
+        for sid, change in (('104941853', {'conduction': []}), ('106516875', {'conduction': []})):
             self.setUp()
             readings = json.loads(json.dumps(reference.READINGS))
             readings['ecg'][sid].update(change)

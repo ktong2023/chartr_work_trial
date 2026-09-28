@@ -102,8 +102,9 @@ def solve_all(shortcut=None):
         pe = sorted(by_patient_ecgs.get(pid, []), key=lambda e: e['time'])
         if shortcut == 'earliest_ecg':
             pe = pe[::-1]
-        # Interpretation of the most recent ECG (all patients), compared with the previous ECG
-        for i, cur in enumerate(pe if shortcut == 'every_ecg' else pe[-1:]):
+        # Interpretation of the most recent ECG (living patients), compared with the previous ECG
+        dead = p.get('deceasedDateTime') and p['deceasedDateTime'] <= EVAL
+        for i, cur in enumerate([] if dead and shortcut != 'include_deceased' else pe if shortcut == 'every_ecg' else pe[-1:]):
             idx = pe.index(cur)
             prev = None if shortcut == 'earliest_ecg' else pe[0] if shortcut == 'prior_earliest' and idx > 0 else pe[idx - 1] if idx > 0 else None
             findings.append(interpret(cur['ecg'], prev['ecg'] if prev and shortcut != 'no_comparison' else None, shortcut, documented_ok))

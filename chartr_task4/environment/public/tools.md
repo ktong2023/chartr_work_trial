@@ -22,7 +22,7 @@ Items: `patient`, `category`, `reason` (see policy; immutable after creation) an
 | PROLONGED_QTC_ON_WATCH_LIST_DRUG | `ecg`, `qtc_ms`, `heart_rate`, `qt_drug` (current order), `potassium`, `magnesium` (most recent results) |
 | ECG_AFTER_WATCH_LIST_START, INR_AFTER_WARFARIN_DOSE_CHANGE | `status`, `trigger` (the order or note that created the requirement), `requirement` (clinic document), `due_date`, `completion_record` |
 
-ECG interpretations (one per patient, for that patient's most recent ECG):
+ECG interpretations (one per living patient, for that patient's most recent ECG):
 
 | Field | Value |
 |---|---|
@@ -36,4 +36,4 @@ ECG interpretations (one per patient, for that patient's most recent ECG):
 | `changes` | versus `prior_ecg`, list from `NEW_AF`, `RESOLVED_AF`, `NEW_ATRIAL_FLUTTER`, `RESOLVED_ATRIAL_FLUTTER`, `NEW_PACED_RHYTHM`, `RESOLVED_PACED_RHYTHM`, `NEW_BUNDLE_BRANCH_BLOCK`, `RESOLVED_BUNDLE_BRANCH_BLOCK`, `QTC_INCREASE_60`, `QTC_DECREASE_60` (QTc changed by 60 ms or more); empty if none |
 | `explanation` | free text |
 
-Record fields take IDs (bare or typed, e.g. `Observation/ID`); ECG IDs come from `clinic ecg list`. Unused fields are null or empty lists. One item per issue and one interpretation per patient; duplicates fail. Writes are never retried; list saved records after a lost response. Requests are limited to 16 KiB. Exit codes: 0 ok, 2 invalid request, 3 transport or service failure.
+Record fields take IDs (bare or typed, e.g. `Observation/ID`); ECG IDs come from `clinic ecg list`. Unused fields are null or empty lists. One item per issue and one interpretation per living patient; duplicates fail. Writes are never retried; list saved records after a lost response. Requests are limited to 16 KiB. Exit codes: 0 ok, 2 invalid request, 3 transport or service failure.

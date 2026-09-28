@@ -3,7 +3,8 @@
 Components (all required for reward 1; each reported separately):
   1. identification  - exactly the expected set of (patient, category, reason) review items, no extras or duplicates
   2. item_fields     - every structured basis field of every expected item (explanations are not graded)
-  3. ecg_interpretation - exactly one interpretation per patient, of that patient's most recent ECG; rhythm, rate, intervals,
+  3. ecg_interpretation - one interpretation per living patient, of that patient's most recent ECG (deceased patients'
+                          latest ECGs are optional); rhythm, rate, intervals,
                           axis and conduction within the reader-agreement specs (fields where readers disagree accept any value)
   4. ecg_comparison  - each interpretation's prior ECG and change list
   5. ecg_linkage     - diagnostic view: item fields that depend on reading an ECG (subset of 2)
@@ -116,7 +117,7 @@ def grade(snapshot, attestation):
         else:
             comparison_checks[exp['subject'] + '|' + ecg] = {'present': False}
         interp_checks[exp['subject'] + '|' + ecg] = c
-    extra_i = sorted(set(got_ecgs) - set(exp_i))
+    extra_i = sorted(set(got_ecgs) - set(exp_i) - set(EXPECTED.get('optional_interpretations', [])))
     dup_i = sorted({e for e in got_ecgs if got_ecgs.count(e) > 1})
     components = {
         'identification': not missing and not extra and not duplicates,
