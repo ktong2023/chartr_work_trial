@@ -35,8 +35,8 @@ the environment or grader uses differs.
 The recurring model failures across both 10-run batches are the same small set of concepts. Each is a documented
 public convention applied to records the run had access to:
 - unreceived outside care that should force abstention (5 of 20 runs);
-- signed corrections, or non-author disputes, of administration dates (4);
-- identity that only the accessioning entry reveals, or a label/accession conflict not carried into follow-up (5);
+- signed corrections, or non-author disputes, of administration dates (3);
+- identity that only the accessioning entry reveals, or a label/accession conflict not carried into follow-up (4);
 - a received outside record over a later local note (2).
 
 The whole 29-patient core was right in every run except p06, p08 and p13 (unreceived outside care and an unresolved
