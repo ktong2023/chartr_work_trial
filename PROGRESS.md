@@ -1,14 +1,42 @@
 # ChartR implementation handoff
 
+## Repository state (September 28, 2026)
+
+- **`main`:** all task code. Task 3 (`chartr_task3/`) is at v0.3.1, the final candidate; its current state and
+  history are at the top of `chartr_task3/README.md`, and the audits are in `TASK3_V020_AUDIT_2026_09_27.md` and
+  `TASK3_V031_AUDIT_2026_09_28.md`. The shared adapter is 0.4.0; prompt caching is opt-in and off by default, so Task 1
+  requests are unchanged. Task 1 (`chartr_task/`) and the earlier probes are unchanged.
+- **`task3-pilot-results`:** the paid Task 3 pilot job artifacts, 0.1.0 through 0.3.1 (about 540 files, 7M lines of
+  JSON). They stay off `main` because job folders are gitignored here; the README cites them by path on that branch.
+- **`claude/phase-1-design-proposal-db3m7q`:** the Task 3 development branch. `main` now matches it; the audits
+  reference it by name.
+- **Task 4** is in development and not on GitHub yet.
+
+## Task 3 pilot 0.3.1 — final frozen batch (September 28, 2026)
+
+**Headline 4/10 valid attempts, inside the 2–7 target,** under the predeclared protocol. Setup: v0.3.1 environment
+(only the task README differs, at the pre-audit commit), adapter 0.4.0, 64K output cap, caching on. There were no
+evaluation errors and no retries, runs took 23–31 min, and the batch took 31 min.
+
+Categories:
+- 1 budget failure (counted): the run wrote its whole submission into one command and hit the 64K cap.
+- 5 model failures on documented conventions: unreceived outside care, author corrections and non-author disputes,
+  accessioning-only identity, a received record over a later note, and one untreated episode.
+- No task or grader defect found.
+
+See `chartr_task3/README.md` for the per-run table and cross-batch concept counts.
+
 ## Task 3 pilot 0.3.0 (10 trials) and v0.3.1 (September 28, 2026)
 
 - **Setup:** 200 patients, adapter 0.4.0 with caching (input about 0 uncached), `caffeinate`, `-n 10`. Each run took
   25–31 min with no stalls, and the batch took 31 min.
-- **Raw 4/10.** Not counted: one run hit the 32K output cap while writing its submission (the cap is now 64K with an
-  1,800 s request timeout), and one run misread "recommended at a stated number of months" as needing a chart order.
-- **Fair fails (4):** unreceived outside care ignored; an identity conflict not carried to follow-up; a non-author
-  note taken as a correction; accessioning-only identity missed.
-- **Defect-adjusted 4/8, in band.**
+- **v0.3.0 benchmark outcome: 4/10** (all 10 valid attempts count).
+- **Retrospective analysis of the 6 failures:**
+  - 4 defensible model failures: unreceived outside care not accounted for; an identity conflict not carried to
+    follow-up; a non-author note contradicting the MAR; accessioning-only identity missed.
+  - 1 wording-affected failure: "recommended at a stated number of months" read as needing a chart order.
+  - 1 output-budget failure: the 32K cap was hit while writing the submission.
+  - A reasoning-only view is 4/8. That is analysis, not a v0.3.1 result.
 - **0.3.1** clarifies two policy sentences: the CDC is the source of follow-up recommendations, and a pending,
   unrejected specimen counts as collected. No answers change.
 

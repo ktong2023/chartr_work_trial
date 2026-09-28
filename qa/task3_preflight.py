@@ -26,18 +26,21 @@ def main():
     toml = re.search(r'^version = "(.+)"', (TASK / 'task.toml').read_text(), re.M).group(1)
     fixture = json.loads((TASK / 'environment/service/fixture.json').read_text())
     baseline = json.loads((TASK / 'tests/baseline.json').read_text())
-    dirty = subprocess.run(['git', 'status', '--porcelain', '--', str(TASK)], cwd=ROOT, capture_output=True, text=True).stdout
-    commit = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    # Fail closed: provenance is claimed only when both Git commands succeed (0.3.1 audit).
+    status = subprocess.run(['git', 'status', '--porcelain', '--', str(TASK)], cwd=ROOT, capture_output=True, text=True)
+    head = subprocess.run(['git', 'rev-parse', '--short', 'HEAD'], cwd=ROOT, capture_output=True, text=True)
+    commit = head.stdout.strip()
     checks = {
+        'git checkout readable (status and commit)': status.returncode == 0 and head.returncode == 0 and bool(commit),
         f'task.toml version is {want}': toml == want,
         f'fixture version is {want}': fixture['version'] == f'chartr-cohort-audit-{want}',
         f'baseline version is {want}': baseline['version'] == f'chartr-cohort-audit-{want}',
         'fixture matches baseline digest': digest(fixture) == baseline['initial_digest'],
-        'chartr_task3/ has no uncommitted changes': not dirty.strip(),
+        'chartr_task3/ has no uncommitted changes': status.returncode == 0 and not status.stdout.strip(),
     }
     for name, ok in checks.items():
         print(('ok    ' if ok else 'FAIL  ') + name)
-    print(f'commit {commit}; {len(fixture["episodes"])} patients; {len(fixture["sources"])} records')
+    print(f'commit {commit or "UNKNOWN"}; {len(fixture["episodes"])} patients; {len(fixture["sources"])} records')
     sys.exit(0 if all(checks.values()) else 1)
 
 
