@@ -62,15 +62,11 @@ def spec_for(sid, t, r, lab):
     s = {'rhythm': {'exact': rhythm}, 'ventricular_rate': {'range': t['hr_range']}}
     # QRS
     q = [v for v in (M.get('qrs'), G.get('qrs')) if v]
-    s['qrs_ms'] = {'range': rng(q, 15)} if len(q) == 2 and abs(q[0] - q[1]) <= 30 else {'any': True}
+    s['qrs_ms'] = {'range': rng(q, 25)} if len(q) == 2 and abs(q[0] - q[1]) <= 30 else {'any': True}
     # PR
     if rhythm == 'AF':
         s['pr_ms'] = {'null': True}
-    elif rhythm == 'SINUS':
-        prs = [v for v in (M.get('pr'), G.get('pr'), N.get('pr')) if v]
-        pair = next(([a, b] for i, a in enumerate(prs) for b in prs[i + 1:] if abs(a - b) <= 25), None)
-        s['pr_ms'] = {'range': rng(pair, 20)} if pair and M.get('pr') in pair else {'any': True}
-    else:
+    else:   # PR onset conventions differ by 30-50 ms between methods; PR is graded through first-degree AV block only
         s['pr_ms'] = {'any': True}
     # QTc (Bazett)
     if t.get('qtc_range'):
@@ -82,9 +78,10 @@ def spec_for(sid, t, r, lab):
         A = lab['reads'].get('A') or {}
         base = [v for v in (bazett(M.get('qt'), M.get('hr')), bazett(N.get('qt'), N.get('hr'))) if v]
         if len(base) == 2 and abs(base[0] - base[1]) <= 50:
+            # QT end-point conventions (global vs single-lead tangent) differ by 30-50 ms: accept every plausible reader +-40 (inter-observer variability)
             mid = sum(base) / 2
-            qreads = base + [v for v in (bazett(A.get('qt'), A.get('hr')), bazett(G.get('qt'), G.get('hr'))) if v and abs(v - mid) <= 40]
-            s['qtc_ms'] = {'range': rng(qreads, 20)}
+            qreads = base + [v for v in (bazett(A.get('qt'), A.get('hr')), bazett(G.get('qt'), G.get('hr'))) if v and abs(v - mid) <= 60]
+            s['qtc_ms'] = {'range': rng(qreads, 40)}
         else:
             qreads = []
             s['qtc_ms'] = {'any': True}

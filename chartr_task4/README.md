@@ -195,3 +195,8 @@ statements, neurokit2 DWT, and an in-house 12-lead global method.
 
 **QA** adds these wrong algorithms, all scoring 0: interpretations without comparison, prior = oldest ECG, no conduction
 findings. It also adds these misreadings, all scoring 0: paced read as sinus with LBBB, and the transient RBBB missed.
+- **v0.3.0**, `jobs/chartr/task4-0.3.0-1790576029` (5 runs): 0/5, also 0/5 after rescoring against the v0.3.1 key. The v0.3.1 key widens QTc
+  to plausible readers ±40 ms and QRS to ±25 ms, grades PR only via first-degree AV block, and limits rhythm conflicts to
+  notes. Every run still misses the two hidden-evidence AF items. Separately, the ECG interpretation and comparison
+  components fail in 5/5 runs on real misreads: slow AF read as sinus on a prior, a paced prior claimed, AF rates miscounted.
+  See TRIAGE.md in that folder.
