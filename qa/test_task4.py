@@ -43,7 +43,7 @@ EXPECTED = grade.EXPECTED
 NS = uuid.uuid5(uuid.NAMESPACE_OID, 'MIMIC-IV')
 PID = lambda subject: str(uuid.uuid5(uuid.uuid5(NS, 'Patient'), subject))
 SHORTCUTS = {  # wrong algorithm -> the case it should break
-    'af_codes_only': 'AF established only by a rhythm strip (10004235)',
+    'af_codes_only': 'AF established only by charting and notes (10020306)',
     'include_deceased': 'deceased patients reviewed',
     'any_order_current': 'orders current without honouring stops and validity',
     'earliest_ecg': 'oldest ECG instead of most recent',

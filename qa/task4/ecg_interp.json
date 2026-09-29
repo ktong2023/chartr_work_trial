@@ -11,10 +11,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -46,10 +43,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -81,10 +75,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -114,10 +105,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -150,10 +138,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -186,10 +171,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -219,10 +201,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -255,10 +234,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -288,10 +264,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -321,10 +294,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -357,10 +327,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -393,10 +360,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -426,10 +390,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -464,10 +425,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -500,10 +458,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -533,10 +488,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     35.0,
-     97.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -568,10 +520,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -603,10 +552,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     41.0,
-     97.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -638,10 +584,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     41.0,
-     116.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -673,10 +616,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     43.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -708,10 +648,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -741,10 +678,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     131.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -774,10 +708,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -807,10 +738,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -840,10 +768,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -873,10 +798,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -906,10 +828,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -939,10 +858,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -972,10 +888,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1005,10 +918,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     41.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1035,10 +945,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1065,10 +972,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1098,10 +1002,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1128,10 +1029,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1161,10 +1059,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1191,10 +1086,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1224,10 +1116,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1257,10 +1146,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1290,10 +1176,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     71.0,
-     135.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -1323,10 +1206,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1355,10 +1235,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1390,13 +1267,10 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     67.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
-    "null": true
+    "any": true
    },
    "qtc_ms": {
     "any": true
@@ -1420,10 +1294,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     67.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1452,10 +1323,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1487,10 +1355,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     67.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1522,10 +1387,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1557,10 +1419,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1589,10 +1448,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1621,10 +1477,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1656,10 +1509,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1691,10 +1541,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     129.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1726,10 +1573,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1761,10 +1605,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1796,10 +1637,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1831,10 +1669,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     131.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1866,10 +1701,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1901,10 +1733,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1936,10 +1765,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -1971,10 +1797,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2004,10 +1827,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2039,10 +1859,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2106,10 +1923,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     137.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2143,10 +1957,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2173,10 +1984,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -2203,10 +2011,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2236,10 +2041,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -2266,10 +2068,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -2296,10 +2095,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2334,10 +2130,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2366,10 +2159,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2401,10 +2191,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     124.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2436,10 +2223,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2474,10 +2258,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2512,10 +2293,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2550,10 +2328,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2588,10 +2363,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2626,10 +2398,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2664,10 +2433,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2702,10 +2468,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2735,10 +2498,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     73.0,
-     135.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2772,10 +2532,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2807,10 +2564,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -2837,10 +2591,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2870,10 +2621,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2905,10 +2653,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2940,10 +2685,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -2973,10 +2715,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3006,10 +2745,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     43.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3036,10 +2772,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3071,7 +2804,7 @@
    "qrs_ms": {
     "range": [
      120.0,
-     175.0
+     180.0
     ]
    },
    "pr_ms": {
@@ -3104,8 +2837,8 @@
    },
    "qrs_ms": {
     "range": [
-     133.0,
-     201.0
+     128.0,
+     206.0
     ]
    },
    "pr_ms": {
@@ -3142,7 +2875,7 @@
    "qrs_ms": {
     "range": [
      120.0,
-     179.0
+     184.0
     ]
    },
    "pr_ms": {
@@ -3183,7 +2916,7 @@
    "qrs_ms": {
     "range": [
      120.0,
-     163.0
+     168.0
     ]
    },
    "pr_ms": {
@@ -3215,10 +2948,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     109.0,
-     163.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3248,10 +2978,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3283,10 +3010,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     69.0,
-     133.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3316,10 +3040,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3351,10 +3072,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3381,10 +3099,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3411,10 +3126,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3441,10 +3153,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3471,10 +3180,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3504,10 +3210,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3537,10 +3240,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     35.0,
-     93.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3570,10 +3270,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3600,10 +3297,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3630,10 +3324,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3660,10 +3351,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3690,10 +3378,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3720,10 +3405,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3750,10 +3432,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3784,10 +3463,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     106.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3817,10 +3493,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3847,10 +3520,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -3877,10 +3547,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3942,10 +3609,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -3974,10 +3638,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     134.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4004,10 +3665,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     132.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4034,10 +3692,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4069,10 +3724,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4104,10 +3756,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4134,10 +3783,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4164,10 +3810,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     108.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4194,10 +3837,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     67.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4224,10 +3864,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4254,10 +3891,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4284,10 +3918,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4317,10 +3948,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     77.0,
-     149.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4353,10 +3981,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     87.0,
-     147.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4389,10 +4014,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     77.0,
-     129.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4422,10 +4044,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     87.0,
-     159.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4458,10 +4077,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     83.0,
-     157.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4494,10 +4110,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     67.0,
-     137.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4527,10 +4140,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     89.0,
-     139.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -4563,10 +4173,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4599,10 +4206,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4632,10 +4236,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4664,10 +4265,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4694,10 +4292,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4730,10 +4325,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4760,10 +4352,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4796,10 +4385,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4829,10 +4415,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4865,10 +4448,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4895,10 +4475,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4918,7 +4495,10 @@
   },
   "108912996": {
    "rhythm": {
-    "exact": "AF"
+    "one_of": [
+     "AF",
+     "SINUS"
+    ]
    },
    "ventricular_rate": {
     "range": [
@@ -4927,13 +4507,10 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     63.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
-    "null": true
+    "any": true
    },
    "qtc_ms": {
     "any": true
@@ -4957,10 +4534,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -4992,10 +4566,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5022,10 +4593,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5057,10 +4625,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     83.0,
-     145.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5096,10 +4661,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     139.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5129,10 +4691,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5164,7 +4723,7 @@
    "qrs_ms": {
     "range": [
      120.0,
-     161.0
+     166.0
     ]
    },
    "pr_ms": {
@@ -5199,10 +4758,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     69.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5232,10 +4788,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     75.0,
-     129.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5267,10 +4820,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     69.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5300,10 +4850,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -5330,10 +4877,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5365,10 +4909,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     117.0,
-     183.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5400,8 +4941,8 @@
    },
    "qrs_ms": {
     "range": [
-     145.0,
-     207.0
+     140.0,
+     212.0
     ]
    },
    "pr_ms": {
@@ -5434,10 +4975,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5470,10 +5008,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     65.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5505,10 +5040,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     127.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5540,10 +5072,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     61.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5575,10 +5104,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -5605,10 +5131,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -5635,10 +5158,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -5665,10 +5185,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5703,10 +5220,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     113.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5738,10 +5252,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5773,10 +5284,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -5806,10 +5314,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5841,10 +5346,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     73.0,
-     125.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5873,10 +5375,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     57.0,
-     121.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -5903,10 +5402,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5936,10 +5432,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5969,10 +5462,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     69.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -5999,10 +5489,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     49.0,
-     119.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6031,10 +5518,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     71.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6064,10 +5548,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6097,10 +5578,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     47.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6130,10 +5608,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     107.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6163,10 +5638,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     45.0,
-     117.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6196,10 +5668,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6229,10 +5698,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     123.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6259,10 +5725,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     53.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6321,10 +5784,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     31.0,
-     91.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6354,10 +5814,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     29.0,
-     93.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6419,10 +5876,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     35.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6454,10 +5908,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     31.0,
-     101.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6489,10 +5940,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     37.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6524,10 +5972,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     31.0,
-     99.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6557,10 +6002,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     43.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6592,7 +6034,7 @@
    "qrs_ms": {
     "range": [
      120.0,
-     155.0
+     160.0
     ]
    },
    "pr_ms": {
@@ -6633,7 +6075,7 @@
    "qrs_ms": {
     "range": [
      120.0,
-     159.0
+     164.0
     ]
    },
    "pr_ms": {
@@ -6669,10 +6111,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     59.0,
-     115.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6702,10 +6141,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     39.0,
-     109.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6735,10 +6171,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     35.0,
-     105.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6767,10 +6200,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     51.0,
-     103.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6800,10 +6230,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     69.0,
-     132.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "any": true
@@ -6835,10 +6262,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     55.0,
-     111.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -6865,10 +6289,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     91.0,
-     143.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -6898,10 +6319,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     87.0,
-     151.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -6931,10 +6349,7 @@
     ]
    },
    "qrs_ms": {
-    "range": [
-     89.0,
-     145.0
-    ]
+    "any": true
    },
    "pr_ms": {
     "null": true
@@ -6969,10 +6384,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7015,10 +6427,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      105.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7065,10 +6474,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      45.0,
-      113.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7112,10 +6518,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      53.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -7154,10 +6557,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      63.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7198,10 +6598,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      67.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7246,10 +6643,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      61.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7290,10 +6684,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      137.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7340,10 +6731,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -7384,10 +6772,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      53.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -7428,10 +6813,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7472,10 +6854,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      45.0,
-      107.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7514,10 +6893,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -7558,10 +6934,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      113.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7603,10 +6976,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      43.0,
-      101.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7642,10 +7012,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -7685,8 +7052,8 @@
     },
     "qrs_ms": {
      "range": [
-      133.0,
-      201.0
+      128.0,
+      206.0
      ]
     },
     "pr_ms": {
@@ -7732,10 +7099,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7779,10 +7143,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      47.0,
-      107.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7828,10 +7189,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7873,10 +7231,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      35.0,
-      93.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7919,10 +7274,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      106.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -7967,10 +7319,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      53.0,
-      113.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8011,10 +7360,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      65.0,
-      134.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -8053,10 +7399,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      119.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8100,10 +7443,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      111.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -8145,10 +7485,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      77.0,
-      149.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -8198,10 +7535,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      49.0,
-      127.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8243,10 +7577,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      61.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8282,10 +7613,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8315,7 +7643,10 @@
    "subject_id": "10019172",
    "fields": {
     "rhythm": {
-     "exact": "AF"
+     "one_of": [
+      "AF",
+      "SINUS"
+     ]
     },
     "ventricular_rate": {
      "range": [
@@ -8324,13 +7655,10 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      63.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
-     "null": true
+     "any": true
     },
     "qtc_ms": {
      "any": true
@@ -8345,10 +7673,9 @@
    },
    "prior_ecg": "107873952",
    "changes": {
-    "required": [
-     "NEW_AF"
-    ],
+    "required": [],
     "allowed": [
+     "NEW_AF",
      "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]
@@ -8368,10 +7695,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8407,10 +7731,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8451,10 +7772,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      61.0,
-      139.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8498,10 +7816,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      49.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8545,10 +7860,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      65.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -8589,10 +7901,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8633,10 +7942,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      117.0,
-      183.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8682,10 +7988,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      65.0,
-      119.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8728,10 +8031,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      127.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8775,10 +8075,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      53.0,
-      119.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -8817,10 +8114,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      47.0,
-      111.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8864,10 +8158,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -8908,10 +8199,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8953,10 +8241,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      69.0,
-      119.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -8995,10 +8280,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      71.0,
-      123.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -9037,10 +8319,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      45.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -9164,7 +8443,7 @@
     "qrs_ms": {
      "range": [
       120.0,
-      155.0
+      160.0
      ]
     },
     "pr_ms": {
@@ -9215,10 +8494,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -9257,10 +8533,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      39.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -9302,10 +8575,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      103.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -9344,10 +8614,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      69.0,
-      132.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -9388,10 +8655,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      89.0,
-      145.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true

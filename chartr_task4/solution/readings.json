@@ -638,7 +638,7 @@
    "hr": 67.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": 541,
    "axis": "NORMAL",
    "conduction": []
@@ -648,7 +648,7 @@
    "hr": 72.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": 390,
    "axis": "NORMAL",
    "conduction": []
@@ -658,7 +658,7 @@
    "hr": 111.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 75,
+   "qrs_ms": null,
    "qtc_ms": 396,
    "axis": "NORMAL",
    "conduction": []
@@ -668,7 +668,7 @@
    "hr": 98.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 77,
+   "qrs_ms": null,
    "qtc_ms": 407,
    "axis": "LEFT",
    "conduction": []
@@ -678,7 +678,7 @@
    "hr": 105.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 412,
    "axis": "LEFT",
    "conduction": []
@@ -688,7 +688,7 @@
    "hr": 96.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 77,
+   "qrs_ms": null,
    "qtc_ms": 417,
    "axis": "NORMAL",
    "conduction": []
@@ -698,7 +698,7 @@
    "hr": 78.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": 391,
    "axis": "LEFT",
    "conduction": []
@@ -708,7 +708,7 @@
    "hr": 110.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 79,
+   "qrs_ms": null,
    "qtc_ms": 401,
    "axis": "NORMAL",
    "conduction": []
@@ -718,7 +718,7 @@
    "hr": 89.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 408,
    "axis": "NORMAL",
    "conduction": []
@@ -728,7 +728,7 @@
    "hr": 67.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 392,
    "axis": "LEFT",
    "conduction": []
@@ -738,7 +738,7 @@
    "hr": 80.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 79,
+   "qrs_ms": null,
    "qtc_ms": 410,
    "axis": "LEFT",
    "conduction": []
@@ -748,7 +748,7 @@
    "hr": 118.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 79,
+   "qrs_ms": null,
    "qtc_ms": 413,
    "axis": "NORMAL",
    "conduction": []
@@ -758,7 +758,7 @@
    "hr": 91.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 422,
    "axis": "LEFT",
    "conduction": []
@@ -768,7 +768,7 @@
    "hr": 80.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "LEFT",
    "conduction": []
@@ -778,7 +778,7 @@
    "hr": 87.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": 402,
    "axis": "NORMAL",
    "conduction": []
@@ -788,7 +788,7 @@
    "hr": 93.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 66,
+   "qrs_ms": null,
    "qtc_ms": 425,
    "axis": "NORMAL",
    "conduction": []
@@ -798,7 +798,7 @@
    "hr": 98.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 79,
+   "qrs_ms": null,
    "qtc_ms": 408,
    "axis": "NORMAL",
    "conduction": []
@@ -808,7 +808,7 @@
    "hr": 75.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 69,
+   "qrs_ms": null,
    "qtc_ms": 397,
    "axis": "NORMAL",
    "conduction": []
@@ -818,7 +818,7 @@
    "hr": 80.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 409,
    "axis": "NORMAL",
    "conduction": []
@@ -828,7 +828,7 @@
    "hr": 87.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 72,
+   "qrs_ms": null,
    "qtc_ms": 449,
    "axis": "NORMAL",
    "conduction": []
@@ -838,7 +838,7 @@
    "hr": 103.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 89,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -848,7 +848,7 @@
    "hr": 69.0,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -858,7 +858,7 @@
    "hr": 160.5,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 84,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -868,7 +868,7 @@
    "hr": 68.0,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -878,7 +878,7 @@
    "hr": 91.3,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 90,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -888,7 +888,7 @@
    "hr": 126.3,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -898,7 +898,7 @@
    "hr": 76.9,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 93,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -908,7 +908,7 @@
    "hr": 116.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -918,7 +918,7 @@
    "hr": 111.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -928,7 +928,7 @@
    "hr": 124.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -938,7 +938,7 @@
    "hr": 102.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -948,7 +948,7 @@
    "hr": 141.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -958,7 +958,7 @@
    "hr": 136.9,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -968,7 +968,7 @@
    "hr": 89.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -978,7 +978,7 @@
    "hr": 125.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 95,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -988,7 +988,7 @@
    "hr": 102.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -998,7 +998,7 @@
    "hr": 140.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1008,7 +1008,7 @@
    "hr": 65.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 75,
+   "qrs_ms": null,
    "qtc_ms": 403,
    "axis": "NORMAL",
    "conduction": []
@@ -1018,7 +1018,7 @@
    "hr": 163.3,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 103,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1028,7 +1028,7 @@
    "hr": 103.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1038,7 +1038,7 @@
    "hr": 147.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1048,7 +1048,7 @@
    "hr": 47.1,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 96,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1058,7 +1058,7 @@
    "hr": 62.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 97,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1068,7 +1068,7 @@
    "hr": 53.9,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": 405,
    "axis": "NORMAL",
    "conduction": []
@@ -1078,7 +1078,7 @@
    "hr": 62.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": 555,
    "axis": "NORMAL",
    "conduction": []
@@ -1088,7 +1088,7 @@
    "hr": 94.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": 429,
    "axis": "NORMAL",
    "conduction": []
@@ -1098,7 +1098,7 @@
    "hr": 114.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 93,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1108,7 +1108,7 @@
    "hr": 111.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 93,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1118,7 +1118,7 @@
    "hr": 106.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": 432,
    "axis": "NORMAL",
    "conduction": []
@@ -1128,7 +1128,7 @@
    "hr": 99.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 90,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "NORMAL",
    "conduction": []
@@ -1138,7 +1138,7 @@
    "hr": 111.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": 443,
    "axis": "NORMAL",
    "conduction": []
@@ -1148,7 +1148,7 @@
    "hr": 100.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": 407,
    "axis": "NORMAL",
    "conduction": []
@@ -1158,7 +1158,7 @@
    "hr": 108.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": 425,
    "axis": "NORMAL",
    "conduction": []
@@ -1168,7 +1168,7 @@
    "hr": 96.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": 413,
    "axis": "NORMAL",
    "conduction": []
@@ -1178,7 +1178,7 @@
    "hr": 111.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 98,
+   "qrs_ms": null,
    "qtc_ms": 426,
    "axis": "NORMAL",
    "conduction": []
@@ -1188,7 +1188,7 @@
    "hr": 94.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 86,
+   "qrs_ms": null,
    "qtc_ms": 416,
    "axis": "NORMAL",
    "conduction": []
@@ -1198,7 +1198,7 @@
    "hr": 94.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 93,
+   "qrs_ms": null,
    "qtc_ms": 416,
    "axis": "NORMAL",
    "conduction": []
@@ -1208,7 +1208,7 @@
    "hr": 111.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": 444,
    "axis": "NORMAL",
    "conduction": []
@@ -1218,7 +1218,7 @@
    "hr": 76.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": 426,
    "axis": "NORMAL",
    "conduction": []
@@ -1228,7 +1228,7 @@
    "hr": 56.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": 386,
    "axis": "NORMAL",
    "conduction": []
@@ -1238,7 +1238,7 @@
    "hr": 57.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": 413,
    "axis": "NORMAL",
    "conduction": []
@@ -1258,7 +1258,7 @@
    "hr": 51.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 98,
+   "qrs_ms": null,
    "qtc_ms": 409,
    "axis": "NORMAL",
    "conduction": []
@@ -1268,7 +1268,7 @@
    "hr": 86.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1278,7 +1278,7 @@
    "hr": 143.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 84,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1288,7 +1288,7 @@
    "hr": 97.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 86,
+   "qrs_ms": null,
    "qtc_ms": 358,
    "axis": "NORMAL",
    "conduction": []
@@ -1298,7 +1298,7 @@
    "hr": 129.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1308,7 +1308,7 @@
    "hr": 140.5,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1318,7 +1318,7 @@
    "hr": 65.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": 416,
    "axis": "LEFT",
    "conduction": []
@@ -1328,7 +1328,7 @@
    "hr": 54.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": [
@@ -1340,7 +1340,7 @@
    "hr": 50.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1350,7 +1350,7 @@
    "hr": 58.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 90,
+   "qrs_ms": null,
    "qtc_ms": 409,
    "axis": "NORMAL",
    "conduction": []
@@ -1360,7 +1360,7 @@
    "hr": 64.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "LEFT",
    "conduction": []
@@ -1370,7 +1370,7 @@
    "hr": 67.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": 444,
    "axis": "LEFT",
    "conduction": []
@@ -1380,7 +1380,7 @@
    "hr": 61.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": 413,
    "axis": "LEFT",
    "conduction": []
@@ -1390,7 +1390,7 @@
    "hr": 57.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": 404,
    "axis": "LEFT",
    "conduction": []
@@ -1400,7 +1400,7 @@
    "hr": 67.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": 443,
    "axis": "LEFT",
    "conduction": []
@@ -1410,7 +1410,7 @@
    "hr": 58.7,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": 383,
    "axis": "LEFT",
    "conduction": []
@@ -1420,7 +1420,7 @@
    "hr": 66.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": 416,
    "axis": "LEFT",
    "conduction": []
@@ -1430,7 +1430,7 @@
    "hr": 120.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": 430,
    "axis": "NORMAL",
    "conduction": []
@@ -1440,7 +1440,7 @@
    "hr": 86.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 104,
+   "qrs_ms": null,
    "qtc_ms": 437,
    "axis": "NORMAL",
    "conduction": []
@@ -1450,7 +1450,7 @@
    "hr": 81.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": 440,
    "axis": "NORMAL",
    "conduction": []
@@ -1460,7 +1460,7 @@
    "hr": 141.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1470,7 +1470,7 @@
    "hr": 100.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": 417,
    "axis": "NORMAL",
    "conduction": []
@@ -1480,7 +1480,7 @@
    "hr": 105.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 93,
+   "qrs_ms": null,
    "qtc_ms": 411,
    "axis": "NORMAL",
    "conduction": []
@@ -1490,7 +1490,7 @@
    "hr": 105.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 93,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "NORMAL",
    "conduction": []
@@ -1500,7 +1500,7 @@
    "hr": 101.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": 422,
    "axis": "NORMAL",
    "conduction": []
@@ -1510,7 +1510,7 @@
    "hr": 81.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": 418,
    "axis": "NORMAL",
    "conduction": []
@@ -1520,7 +1520,7 @@
    "hr": 97.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 72,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1530,7 +1530,7 @@
    "hr": 100.4,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1540,7 +1540,7 @@
    "hr": 130.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 148,
+   "qrs_ms": 150,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": [
@@ -1564,7 +1564,7 @@
    "hr": 78.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 150,
+   "qrs_ms": 152,
    "qtc_ms": 552,
    "axis": "EXTREME",
    "conduction": [
@@ -1576,7 +1576,7 @@
    "hr": 115.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 142,
+   "qrs_ms": 144,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": [
@@ -1588,7 +1588,7 @@
    "hr": 123.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 136,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1598,7 +1598,7 @@
    "hr": 52.7,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": 371,
    "axis": "NORMAL",
    "conduction": []
@@ -1608,7 +1608,7 @@
    "hr": 65.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 101,
+   "qrs_ms": null,
    "qtc_ms": 421,
    "axis": "NORMAL",
    "conduction": []
@@ -1618,7 +1618,7 @@
    "hr": 57.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 77,
+   "qrs_ms": null,
    "qtc_ms": 559,
    "axis": "NORMAL",
    "conduction": []
@@ -1628,7 +1628,7 @@
    "hr": 128.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 77,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1638,7 +1638,7 @@
    "hr": 78.6,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1648,7 +1648,7 @@
    "hr": 78.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1658,7 +1658,7 @@
    "hr": 74.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1668,7 +1668,7 @@
    "hr": 72.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": 384,
    "axis": "NORMAL",
    "conduction": []
@@ -1678,7 +1678,7 @@
    "hr": 68.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": 552,
    "axis": "NORMAL",
    "conduction": []
@@ -1688,7 +1688,7 @@
    "hr": 83.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 64,
+   "qrs_ms": null,
    "qtc_ms": 399,
    "axis": "NORMAL",
    "conduction": []
@@ -1698,7 +1698,7 @@
    "hr": 94.4,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1708,7 +1708,7 @@
    "hr": 118.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 77,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1718,7 +1718,7 @@
    "hr": 78.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1728,7 +1728,7 @@
    "hr": 82.5,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1738,7 +1738,7 @@
    "hr": 137.4,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1748,7 +1748,7 @@
    "hr": 94.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 89,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1758,7 +1758,7 @@
    "hr": 80.0,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1768,7 +1768,7 @@
    "hr": 140.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "NORMAL",
    "conduction": []
@@ -1778,7 +1778,7 @@
    "hr": 71.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 90,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1788,7 +1788,7 @@
    "hr": 110.9,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1798,7 +1798,7 @@
    "hr": 62.9,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": 428,
    "axis": "NORMAL",
    "conduction": []
@@ -1818,7 +1818,7 @@
    "hr": 101.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1828,7 +1828,7 @@
    "hr": 140.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 100,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1838,7 +1838,7 @@
    "hr": 139.1,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 98,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1848,7 +1848,7 @@
    "hr": 107.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": 405,
    "axis": "NORMAL",
    "conduction": []
@@ -1858,7 +1858,7 @@
    "hr": 120.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 89,
+   "qrs_ms": null,
    "qtc_ms": 419,
    "axis": "NORMAL",
    "conduction": []
@@ -1868,7 +1868,7 @@
    "hr": 77.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1878,7 +1878,7 @@
    "hr": 106.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1888,7 +1888,7 @@
    "hr": 112.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 80,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1898,7 +1898,7 @@
    "hr": 72.0,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1908,7 +1908,7 @@
    "hr": 116.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1918,7 +1918,7 @@
    "hr": 112.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1928,7 +1928,7 @@
    "hr": 138.9,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -1938,7 +1938,7 @@
    "hr": 55.5,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 113,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1948,7 +1948,7 @@
    "hr": 81.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 117,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1958,7 +1958,7 @@
    "hr": 82.4,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 103,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1968,7 +1968,7 @@
    "hr": 64.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 123,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1978,7 +1978,7 @@
    "hr": 79.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 120,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1988,7 +1988,7 @@
    "hr": 80.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 102,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -1998,7 +1998,7 @@
    "hr": 49.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 114,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2008,7 +2008,7 @@
    "hr": 60.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "EXTREME",
    "conduction": []
@@ -2018,7 +2018,7 @@
    "hr": 68.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2028,7 +2028,7 @@
    "hr": 76.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2038,7 +2038,7 @@
    "hr": 69.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": null,
    "conduction": []
@@ -2048,7 +2048,7 @@
    "hr": 61.9,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": 422,
    "axis": "NORMAL",
    "conduction": []
@@ -2058,7 +2058,7 @@
    "hr": 82.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "RIGHT",
    "conduction": []
@@ -2068,7 +2068,7 @@
    "hr": 85.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": 421,
    "axis": "NORMAL",
    "conduction": []
@@ -2078,7 +2078,7 @@
    "hr": 82.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 84,
+   "qrs_ms": null,
    "qtc_ms": 437,
    "axis": "NORMAL",
    "conduction": []
@@ -2088,7 +2088,7 @@
    "hr": 84.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 90,
+   "qrs_ms": null,
    "qtc_ms": 374,
    "axis": "NORMAL",
    "conduction": []
@@ -2098,7 +2098,7 @@
    "hr": 77.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2108,7 +2108,7 @@
    "hr": 85.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2118,7 +2118,7 @@
    "hr": 57.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 90,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2128,7 +2128,7 @@
    "hr": 68.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": 408,
    "axis": "NORMAL",
    "conduction": []
@@ -2138,7 +2138,7 @@
    "hr": 68.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 88,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2148,7 +2148,7 @@
    "hr": 73.6,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 89,
+   "qrs_ms": null,
    "qtc_ms": 427,
    "axis": "NORMAL",
    "conduction": []
@@ -2158,7 +2158,7 @@
    "hr": 69.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 114,
+   "qrs_ms": null,
    "qtc_ms": 439,
    "axis": "NORMAL",
    "conduction": []
@@ -2168,7 +2168,7 @@
    "hr": 106.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 100,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2178,7 +2178,7 @@
    "hr": 121.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 79,
+   "qrs_ms": null,
    "qtc_ms": 411,
    "axis": null,
    "conduction": []
@@ -2188,7 +2188,7 @@
    "hr": 100.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 140,
+   "qrs_ms": 143,
    "qtc_ms": 472,
    "axis": null,
    "conduction": [
@@ -2200,7 +2200,7 @@
    "hr": 82.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 95,
+   "qrs_ms": null,
    "qtc_ms": 417,
    "axis": "NORMAL",
    "conduction": []
@@ -2210,7 +2210,7 @@
    "hr": 81.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 102,
+   "qrs_ms": null,
    "qtc_ms": 426,
    "axis": "NORMAL",
    "conduction": []
@@ -2220,7 +2220,7 @@
    "hr": 76.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 96,
+   "qrs_ms": null,
    "qtc_ms": 423,
    "axis": "NORMAL",
    "conduction": []
@@ -2230,7 +2230,7 @@
    "hr": 154.3,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 95,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2240,7 +2240,7 @@
    "hr": 80.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": 397,
    "axis": "NORMAL",
    "conduction": []
@@ -2250,7 +2250,7 @@
    "hr": 111.2,
    "rhythm": "PACED",
    "pr_ms": null,
-   "qrs_ms": 150,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "RIGHT",
    "conduction": []
@@ -2273,7 +2273,7 @@
    "hr": 132.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 86,
+   "qrs_ms": null,
    "qtc_ms": 441,
    "axis": "NORMAL",
    "conduction": []
@@ -2283,7 +2283,7 @@
    "hr": 70.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": 568,
    "axis": "NORMAL",
    "conduction": []
@@ -2293,7 +2293,7 @@
    "hr": 65.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 92,
+   "qrs_ms": null,
    "qtc_ms": 389,
    "axis": "LEFT",
    "conduction": []
@@ -2303,7 +2303,7 @@
    "hr": 77.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "LEFT",
    "conduction": []
@@ -2313,7 +2313,7 @@
    "hr": 62.9,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2323,7 +2323,7 @@
    "hr": 87.6,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 86,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2333,7 +2333,7 @@
    "hr": 68.3,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2343,7 +2343,7 @@
    "hr": 65.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 79,
+   "qrs_ms": null,
    "qtc_ms": 394,
    "axis": "LEFT",
    "conduction": []
@@ -2353,7 +2353,7 @@
    "hr": 67.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 85,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2363,7 +2363,7 @@
    "hr": 62.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 84,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2373,7 +2373,7 @@
    "hr": 143.1,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 86,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2383,7 +2383,7 @@
    "hr": 67.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2393,7 +2393,7 @@
    "hr": 59.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 99,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2403,7 +2403,7 @@
    "hr": 132.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 89,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2413,7 +2413,7 @@
    "hr": 58.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 86,
+   "qrs_ms": null,
    "qtc_ms": 429,
    "axis": "NORMAL",
    "conduction": []
@@ -2423,7 +2423,7 @@
    "hr": 61.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 89,
+   "qrs_ms": null,
    "qtc_ms": 415,
    "axis": "NORMAL",
    "conduction": []
@@ -2433,7 +2433,7 @@
    "hr": 73.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 94,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2443,7 +2443,7 @@
    "hr": 82.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 84,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2453,7 +2453,7 @@
    "hr": 82.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 97,
+   "qrs_ms": null,
    "qtc_ms": 434,
    "axis": "NORMAL",
    "conduction": []
@@ -2463,7 +2463,7 @@
    "hr": 94.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 78,
+   "qrs_ms": null,
    "qtc_ms": 413,
    "axis": "NORMAL",
    "conduction": []
@@ -2473,7 +2473,7 @@
    "hr": 110.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 75,
+   "qrs_ms": null,
    "qtc_ms": 409,
    "axis": "NORMAL",
    "conduction": []
@@ -2483,7 +2483,7 @@
    "hr": 116.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": 387,
    "axis": "NORMAL",
    "conduction": []
@@ -2493,7 +2493,7 @@
    "hr": 111.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 81,
+   "qrs_ms": null,
    "qtc_ms": 402,
    "axis": "NORMAL",
    "conduction": []
@@ -2503,7 +2503,7 @@
    "hr": 85.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": 452,
    "axis": "NORMAL",
    "conduction": []
@@ -2513,7 +2513,7 @@
    "hr": 89.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 91,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2523,7 +2523,7 @@
    "hr": 71.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 82,
+   "qrs_ms": null,
    "qtc_ms": 426,
    "axis": "NORMAL",
    "conduction": []
@@ -2543,7 +2543,7 @@
    "hr": 84.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 61,
+   "qrs_ms": null,
    "qtc_ms": 410,
    "axis": "NORMAL",
    "conduction": []
@@ -2553,7 +2553,7 @@
    "hr": 118.1,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 61,
+   "qrs_ms": null,
    "qtc_ms": 400,
    "axis": "NORMAL",
    "conduction": []
@@ -2573,7 +2573,7 @@
    "hr": 104.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 69,
+   "qrs_ms": null,
    "qtc_ms": 382,
    "axis": "NORMAL",
    "conduction": []
@@ -2583,7 +2583,7 @@
    "hr": 78.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 66,
+   "qrs_ms": null,
    "qtc_ms": 432,
    "axis": "NORMAL",
    "conduction": []
@@ -2593,7 +2593,7 @@
    "hr": 71.9,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 70,
+   "qrs_ms": null,
    "qtc_ms": 410,
    "axis": "NORMAL",
    "conduction": []
@@ -2603,7 +2603,7 @@
    "hr": 74.9,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 65,
+   "qrs_ms": null,
    "qtc_ms": 425,
    "axis": "NORMAL",
    "conduction": []
@@ -2613,7 +2613,7 @@
    "hr": 75.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 76,
+   "qrs_ms": null,
    "qtc_ms": 411,
    "axis": "NORMAL",
    "conduction": []
@@ -2623,7 +2623,7 @@
    "hr": 60.2,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 138,
+   "qrs_ms": 140,
    "qtc_ms": 469,
    "axis": "LEFT",
    "conduction": [
@@ -2635,7 +2635,7 @@
    "hr": 68.5,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 140,
+   "qrs_ms": 142,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": [
@@ -2647,7 +2647,7 @@
    "hr": 108.8,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 87,
+   "qrs_ms": null,
    "qtc_ms": 442,
    "axis": "NORMAL",
    "conduction": []
@@ -2657,7 +2657,7 @@
    "hr": 76.3,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 74,
+   "qrs_ms": null,
    "qtc_ms": 435,
    "axis": "NORMAL",
    "conduction": []
@@ -2667,7 +2667,7 @@
    "hr": 74.4,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 70,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2677,7 +2677,7 @@
    "hr": 72.0,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 77,
+   "qrs_ms": null,
    "qtc_ms": 425,
    "axis": "NORMAL",
    "conduction": []
@@ -2687,7 +2687,7 @@
    "hr": 61.9,
    "rhythm": "SINUS",
    "pr_ms": null,
-   "qrs_ms": 100,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "LEFT",
    "conduction": []
@@ -2697,7 +2697,7 @@
    "hr": 130.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 83,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2707,7 +2707,7 @@
    "hr": 100.8,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 117,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2717,7 +2717,7 @@
    "hr": 84.7,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 119,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []
@@ -2727,7 +2727,7 @@
    "hr": 63.2,
    "rhythm": "AF",
    "pr_ms": null,
-   "qrs_ms": 117,
+   "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
    "conduction": []

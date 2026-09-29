@@ -360,7 +360,8 @@ class Builder:
         return '\n'.join(lines)
 
 
-REMOVE_AF = {'10004235', '10020306'}
+# v0.4.2 calibration: 10004235's AF diagnosis codes are restored (hidden AF missed in 4/10 v0.4.1 runs); 10020306 stays hidden.
+REMOVE_AF = {'10020306'}
 # Other whole Condition records removed (subject -> ICD pattern): an acute inpatient coagulopathy code that would read as a
 # standing contraindication.
 REMOVE_DX = {'10020306': r'^D689'}

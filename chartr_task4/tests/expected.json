@@ -111,6 +111,7 @@
        "2c0fbe98-7f1a-5ff1-a51a-79845fb0dce2",
        "301f4fdd-2cd8-5bf3-8ce2-b5f65c340a71",
        "305cc8c9-bf09-53e5-b2c6-9149269c64d9",
+       "3545a05e-76af-5738-a20b-7c0e84805cfc",
        "36eb82cc-f9e4-5550-8377-90dbb3643a87",
        "389958f9-f276-5763-8b7d-800bfbae895a",
        "3a46d5f0-2a80-5401-9918-dc1ebe849de3",
@@ -142,6 +143,7 @@
        "6e8ff310-183c-5adb-a796-6c2641dcfcd5",
        "6e981d1a-0c1b-5cd8-856c-684eac06d953",
        "6ec9a0f3-b6f0-5c60-9d83-121d6323ce44",
+       "731bfccd-8679-5ab1-9903-5cd5e5baf240",
        "73bf4bc2-49c2-5dae-8444-9b4108b29ce7",
        "75bf1d44-f07a-5fc5-8841-6a964b3118a6",
        "77363726-1330-560e-91c7-d3ea430056cd",
@@ -159,6 +161,7 @@
        "8e385dab-5eb6-5444-80cb-a3204ea1ae57",
        "8efc76b5-88dd-5d07-a04c-813702df4895",
        "909eab48-e9d7-5948-96da-8a8a29317d45",
+       "911e96ad-e446-54cf-a77d-04933388d3bc",
        "914c4830-2d27-5f7f-852e-650a99c51544",
        "917116c9-8fe4-5245-8576-3cd70886d307",
        "91bd103e-e541-5298-945e-f91fdfdeff16",
@@ -820,10 +823,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -865,10 +865,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      119.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -913,10 +910,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -959,10 +953,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      45.0,
-      107.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1002,10 +993,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      113.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1048,10 +1036,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      137.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1099,10 +1084,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      49.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1147,10 +1129,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      67.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1196,10 +1175,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -1239,10 +1215,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      63.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1284,10 +1257,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1327,10 +1297,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      65.0,
-      134.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -1373,10 +1340,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      49.0,
-      127.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1419,10 +1383,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      43.0,
-      101.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1459,10 +1420,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      103.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1493,7 +1451,10 @@
    "ecg": "108912996",
    "fields": {
     "rhythm": {
-     "exact": "AF"
+     "one_of": [
+      "AF",
+      "SINUS"
+     ]
     },
     "ventricular_rate": {
      "range": [
@@ -1502,13 +1463,10 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      63.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
-     "null": true
+     "any": true
     },
     "qtc_ms": {
      "any": true
@@ -1523,10 +1481,9 @@
    },
    "prior_ecg": "107873952",
    "changes": {
-    "required": [
-     "NEW_AF"
-    ],
+    "required": [],
     "allowed": [
+     "NEW_AF",
      "QTC_DECREASE_60",
      "QTC_INCREASE_60"
     ]
@@ -1547,10 +1504,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1593,10 +1547,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      35.0,
-      93.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1636,10 +1587,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      39.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1682,10 +1630,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      109.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1727,10 +1672,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      65.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "null": true
@@ -1772,10 +1714,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      59.0,
-      117.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1819,10 +1758,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1864,10 +1800,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      61.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1909,10 +1842,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      69.0,
-      132.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1954,10 +1884,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      61.0,
-      115.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -1994,10 +1921,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      65.0,
-      119.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2041,10 +1965,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      55.0,
-      121.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2081,10 +2002,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      57.0,
-      125.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2133,10 +2051,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      106.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2182,10 +2097,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      71.0,
-      123.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2225,10 +2137,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      51.0,
-      105.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2278,7 +2187,7 @@
     "qrs_ms": {
      "range": [
       120.0,
-      155.0
+      160.0
      ]
     },
     "pr_ms": {
@@ -2330,10 +2239,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      53.0,
-      113.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2375,10 +2281,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      47.0,
-      111.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true
@@ -2423,10 +2326,7 @@
      ]
     },
     "qrs_ms": {
-     "range": [
-      47.0,
-      107.0
-     ]
+     "any": true
     },
     "pr_ms": {
      "any": true

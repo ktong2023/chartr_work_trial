@@ -1,4 +1,4 @@
-# chartr_task4 — cardiology population review on real data (v0.4.1)
+# chartr_task4 — cardiology population review on real data (v0.4.2)
 
 The agent reviews a 100-patient clinic population (69 living) at 2026-09-24 12:00 America/New_York. It must save:
 - a **review item** for every issue that needs clinical review;
@@ -358,6 +358,26 @@ v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient char
 
   The six failures are genuine: hidden AF missed, a transient RBBB resolution missed, rhythm and rate misreads, and a
   QT misread on the baseline-wander tracing. See TRIAGE.md in that folder.
+
+## v0.4.2: difficulty calibration after the v0.4.1 confirmation batch (September 29, 2026)
+
+The v0.4.1 confirmation batch scored 1/10, and the v0.4.0 pilot 3/10 (about 20% combined, below the 2–7/10 target). This is
+an announced calibration, not a defect fix. The v0.4.1 result stands; the "Final confirmation protocol" section above
+describes v0.4.1 and must be re-issued for 0.4.2 (new frozen commit, key hash and sources digest) before any 0.4.2 batch.
+
+1. **ECG 108912996 (10019172) is rhythm-ambiguous:** AF or SINUS accepted. PR is not graded, and NEW_AF is allowed but not
+   required. The AF label had no blinded adjudication, neurokit reports a PR, and 2/10 v0.4.1 runs read sinus.
+2. **10004235's AF diagnosis codes are restored.** Hidden AF was missed in 4/10 v0.4.1 runs. 10020306 stays the hidden-AF
+   case (charting and notes only).
+3. **QRS margin is 30 ms (was 25) on every tracing.**
+4. **QRS duration is graded only where a bundle-branch block is required** (2 of 37 latest ECGs). Elsewhere conduction is
+   graded through the conduction field.
+
+Key `tests/expected.json` sha256 `471d935b5ad62d7fc241c522613c394b5e29aa45c4477a3cc5a31907ecf57d81`; sources digest
+`bb92ea2825a1c4b0d492e22166878aac1dc502237f880dea6b394335cf6f3f0f`.
+
+**Rescore of the 20 existing runs against the 0.4.2 key** (grading changes only; not a result): 5/20 (was 4/20). Only 4jPYbWk flips.
+Change 2 cannot show up in a rescore, because it changes what the agent can find, not how it is graded.
 
 ## v0.4.1: release-validation fix (September 28, 2026)
 

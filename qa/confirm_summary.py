@@ -26,7 +26,7 @@ ADAPTER = '0.4.0'
 PROTOCOL = {   # version and the exact --ak budgets of each task's confirmation command
     'chartr_task3': {'version': '0.3.1', 'limits': {'max_turns': 250, 'max_tokens': 64000, 'api_timeout_sec': 1800.0,
                                                    'wall_timeout_sec': 7000.0, 'tool_timeout_sec': 60.0, 'prompt_cache': True}},
-    'chartr_task4': {'version': '0.4.1', 'limits': {'max_turns': 300, 'max_tokens': 64000, 'api_timeout_sec': 1800.0,
+    'chartr_task4': {'version': '0.4.2', 'limits': {'max_turns': 300, 'max_tokens': 64000, 'api_timeout_sec': 1800.0,
                                                    'wall_timeout_sec': 7000.0, 'tool_timeout_sec': 900.0, 'prompt_cache': True}},
 }
 COMPLETED = {'end_turn', 'stop_sequence', 'refusal'}

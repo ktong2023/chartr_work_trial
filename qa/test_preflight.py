@@ -12,7 +12,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = {'task3': '0.3.1', 'task4': '0.4.1'}
+CURRENT = {'task3': '0.3.1', 'task4': '0.4.2'}
 
 
 def copy_without_git(task):

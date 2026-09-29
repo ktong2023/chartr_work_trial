@@ -22,7 +22,9 @@ CATS = [('NORMAL', -30, 90), ('LEFT', -90, -30), ('RIGHT', 90, 180), ('EXTREME',
 # Rhythms that designer review could not settle (pilot evidence reviewed at high resolution): either reading is accepted.
 #  108780865: slow irregular rhythm; the cart says AF, but low-amplitude waves ~150 ms before each QRS may be P waves.
 #  100924231: fixed regular 141/min two days after AF; 2:1 flutter vs sinus tachycardia cannot be separated.
-RHYTHM_AMBIGUOUS = {'108780865': ['AF', 'SINUS'], '100924231': ['ATRIAL_FLUTTER', 'OTHER', 'SINUS']}   # 100924231: also read as ectopic atrial tachycardia
+#  108912996 (v0.4.2): cart says AF and two of three readers find no P wave, but neurokit reports a PR and two confirmation
+#  runs read sinus; no blinded cardiologist read exists, so either reading is accepted and NEW_AF becomes allowed.
+RHYTHM_AMBIGUOUS = {'108780865': ['AF', 'SINUS'], '108912996': ['AF', 'SINUS'], '100924231': ['ATRIAL_FLUTTER', 'OTHER', 'SINUS']}   # 100924231: also read as ectopic atrial tachycardia
 NEIGHBOURS = {'NORMAL': ['LEFT', 'RIGHT'], 'LEFT': ['NORMAL', 'EXTREME'], 'RIGHT': ['NORMAL', 'EXTREME'], 'EXTREME': ['LEFT', 'RIGHT']}
 
 
@@ -69,9 +71,10 @@ def spec_for(sid, t, r, lab):
     s = {'rhythm': {'one_of': sorted(options)} if options else {'exact': rhythm}, 'ventricular_rate': {'range': t['hr_range']}}
     # QRS
     q = [v for v in (M.get('qrs'), G.get('qrs')) if v]
-    s['qrs_ms'] = {'range': rng(q, 25)} if len(q) == 2 and abs(q[0] - q[1]) <= 30 else {'any': True}
+    # v0.4.2: pad 30 ms (was 25) on both sides for every tracing; see the QRS grading note after conduction.
+    s['qrs_ms'] = {'range': rng(q, 30)} if len(q) == 2 and abs(q[0] - q[1]) <= 30 else {'any': True}
     # PR
-    if rhythm == 'AF':
+    if rhythm == 'AF' and not (options and 'SINUS' in options):   # v0.4.2: a sinus reading of an ambiguous rhythm may report a PR
         s['pr_ms'] = {'null': True}
     else:   # PR onset conventions differ by 30-50 ms between methods; PR is graded through first-degree AV block only
         s['pr_ms'] = {'any': True}
@@ -140,6 +143,10 @@ def spec_for(sid, t, r, lab):
     # accept QRS >= 120.)
     if required & {'RBBB', 'LBBB'} and 'range' in s['qrs_ms']:
         s['qrs_ms']['range'][0] = max(s['qrs_ms']['range'][0], 120.0)
+    # v0.4.2 calibration: QRS duration is graded only where it supports a required bundle-branch block; elsewhere conduction is
+    # graded through the conduction field alone.
+    if not required & {'RBBB', 'LBBB'}:
+        s['qrs_ms'] = {'any': True}
     return s, qreads
 
 
