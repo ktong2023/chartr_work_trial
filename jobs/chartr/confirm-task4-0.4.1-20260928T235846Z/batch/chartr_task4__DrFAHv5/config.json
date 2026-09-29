@@ -1,0 +1,23 @@
+{
+    "task": {
+        "path": "chartr_task4"
+    },
+    "trial_name": "chartr_task4__DrFAHv5",
+    "trials_dir": "/Users/kyletong/Documents/Coding Projects/work_trial_chartr/jobs/chartr/confirm-task4-0.4.1-20260928T235846Z/batch",
+    "agent": {
+        "name": "anthropic_agent:AnthropicAgent",
+        "model_name": "claude-opus-5",
+        "kwargs": {
+            "max_turns": 300,
+            "max_tokens": 64000,
+            "api_timeout_sec": 1800,
+            "wall_timeout_sec": 7000,
+            "tool_timeout_sec": 900,
+            "prompt_cache": true
+        }
+    },
+    "environment": {
+        "import_path": "chartr_environment:ChartREnvironment"
+    },
+    "job_id": "7cdd453f-9ea8-490d-8bb1-d513ae559de9"
+}

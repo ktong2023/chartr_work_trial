@@ -1,0 +1,18 @@
+{
+  "evaluated_commit": "19edc3b",
+  "dispatch_commit": "63a05e4b838f6ceb99aa519a2448521d7cb782c2",
+  "task": "chartr_task4",
+  "version": "0.4.1",
+  "confirmation_protocol": "chartr_task4/README.md at dispatch commit",
+  "authorized_trials": 10,
+  "model": "claude-opus-5",
+  "files_sha256": {
+    "chartr_task4/tests/expected.json": "821026182ca945b8a58f320f8741d0bbea4f8c2db52d85314cfd71fd8ba535e0",
+    "chartr_task4/README.md": "bc5217b6b756e7a87fecb53dbd20a7f3af84f76d00b4ad206fdcc866b0e69f33",
+    "anthropic_agent.py": "95ce935aabe5b0356d953ae57c94a8e43616d63aeea31bf84256b0803aea3ead",
+    "chartr_environment.py": "f57ea3d58f58a902bad801cbfbe2ff97f30c513b6470b8d74d8b0c97baef6fae",
+    "chartr_job.yaml": "aae78d44b9b072f91a86deebd48c7212020b93963fbeaeac2677adb221bba701",
+    "requirements.lock.txt": "2fa34c788c579794c4ff68b0c1cce226754ac5b0d92d9902b9805d3571f96d33",
+    "qa/confirm_summary.py": "3cc5cae82c578414df6c28a80f0fe2e4b9a6cc6f88375854bb3dc266c2e876fe"
+  }
+}
