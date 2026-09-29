@@ -1,0 +1,11 @@
+bcfdac4d10d83c58d19e3c3792326a692e4aaf73
+ok    task.toml version is 0.4.2
+ok    service version is chartr-task4-0.4.2
+ok    baseline version is chartr-task4-0.4.2
+ok    every catalogued ECG file is pinned
+ok    answer key has items and interpretations
+ok    git available and chartr_task4/ has no uncommitted changes
+ok    adapter supports --ak prompt_cache=true
+ok    docker reachable
+ok    no other ChartR trial containers running
+commit bcfdac4; 20 items, 37 interpretations; docker 10 CPUs 8214851584 bytes

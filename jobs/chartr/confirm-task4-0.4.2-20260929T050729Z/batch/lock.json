@@ -1,0 +1,468 @@
+{
+    "schema_version": 3,
+    "created_at": "2026-09-29T05:07:37.874101Z",
+    "harbor": {
+        "version": "0.23.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 10,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "VerifierOutputParseError",
+            "VerifierTimeoutError",
+            "ApiUsageLimitError",
+            "AgentTimeoutError",
+            "ModelNotFoundError",
+            "AgentSafetyRefusalError",
+            "RewardFileNotFoundError",
+            "AgentAuthenticationError",
+            "RewardFileEmptyError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        },
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "chartr_task4",
+                "version": "0.4.2",
+                "type": "local",
+                "digest": "sha256:4227311b801c61ebed27a5fbc563a2e3d7e79fb538bb21d5c846e5c960129145",
+                "path": "chartr_task4"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent": {
+                "name": "anthropic_agent:AnthropicAgent",
+                "model_name": "claude-opus-5",
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [],
+                "kwargs": {
+                    "max_turns": 300,
+                    "max_tokens": 64000,
+                    "api_timeout_sec": 1800,
+                    "wall_timeout_sec": 7000,
+                    "tool_timeout_sec": 900,
+                    "prompt_cache": true
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "import_path": "chartr_environment:ChartREnvironment",
+                "force_build": false,
+                "delete": true,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "separate"
+            }
+        }
+    ]
+}
