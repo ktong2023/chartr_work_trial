@@ -1,5 +1,36 @@
 # ChartR implementation handoff
 
+## Final confirmation results (September 29, 2026)
+
+Both tasks are final. Each confirmation batch ran once under its task README's predeclared protocol and was scored by
+`qa/confirm_summary.py`. The batches are not pooled with each other or with pilots.
+
+| Task | Version | Frozen commit | Headline | Batch (results branch) |
+|---|---|---|---|---|
+| Task 3 (`chartr_task3/`) | 0.3.1 | `19edc3b` | **5/10**, inside 2–7 | `confirm-task3-0.3.1-20260928T232731Z` (`task3-pilot-results`) |
+| Task 4 (`chartr_task4/`) | 0.4.1 | `19edc3b` | 1/10, below target | `confirm-task4-0.4.1-20260928T235846Z` (`task4-pilot-results`) |
+| Task 4 (`chartr_task4/`) | **0.4.2** | `98a881a` | **3/10**, inside 2–7 | `confirm-task4-0.4.2-20260929T050729Z` (`task4-pilot-results`) |
+
+Every batch had 10 valid attempts: no reruns, no budget failures, and provenance passed. Each batch folder has a `TRIAGE.md`
+that classifies every failure. All failures are model failures; none is a task or grader defect.
+
+- **Task 3 (5/10):** failures are cross-chart follow-up overclaims (2 runs), missed 24-month follow-ups (2 runs), and one
+  run with several misses.
+- **Task 4 v0.4.1 (1/10):** failures are hidden AF missed (4 runs), ECG reading errors (7), and a wrong memo cited (1). The
+  result stands as that version's result.
+- **Task 4 v0.4.2:** an announced calibration after v0.4.1, listed in the "v0.4.2" section of `chartr_task4/README.md`:
+  - ECG 108912996 made rhythm-ambiguous;
+  - 10004235's AF codes restored;
+  - QRS graded only where a bundle-branch block is required;
+  - first-degree AV block on 102280728 made optional.
+
+  Rescoring the 20 earlier runs gave 8/20 before the batch.
+- **Task 4 v0.4.2 (3/10):** failures are hidden AF missed (4 runs), QTc or rate errors (4), a non-AF record cited as AF
+  evidence (2), and an unreceived ECG used as a completion record (1). Contested but counted: the two `af_evidence`
+  over-citations (5/10 under a lenient rule) and one QTc miss of 0.6 ms.
+  - The protocol was re-issued for 0.4.2 before the batch.
+  - `qa/confirm_summary.py` keeps a frozen commit per task.
+
 ## Repository state (September 28, 2026)
 
 - **`main`:** all task code. Task 3 (`chartr_task3/`) is at v0.3.1, the final candidate; its current state and
@@ -41,7 +72,7 @@ Task 3 task files are unchanged at 0.3.1.
 - exact commands and unique `jobs/chartr/confirm-<task>-<version>-<UTC>` directories;
 - counting rules, applied by `qa/confirm_summary.py`.
 
-Neither batch has been run; both need authorization.
+The confirmation results are in "Final confirmation results" above.
 
 ## Task 4 pilot 0.4.0 — final frozen batch (September 28, 2026)
 
