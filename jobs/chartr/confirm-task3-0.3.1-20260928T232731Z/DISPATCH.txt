@@ -1,0 +1,8 @@
+63a05e4b838f6ceb99aa519a2448521d7cb782c2
+ok    git checkout readable (status and commit)
+ok    task.toml version is 0.3.1
+ok    fixture version is 0.3.1
+ok    baseline version is 0.3.1
+ok    fixture matches baseline digest
+ok    chartr_task3/ has no uncommitted changes
+commit 63a05e4; 200 patients; 4482 records

@@ -1,0 +1,13 @@
+{
+  "reason": "end_turn",
+  "validity": "valid",
+  "turns": 46,
+  "usage": {
+    "input_tokens": 92,
+    "output_tokens": 132321,
+    "cache_read_input_tokens": 8388323,
+    "cache_creation_input_tokens": 396626
+  },
+  "model": "claude-opus-5",
+  "elapsed_sec": 1581.254583
+}

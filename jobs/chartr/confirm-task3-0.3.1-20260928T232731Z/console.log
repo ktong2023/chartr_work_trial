@@ -1,0 +1,26 @@
+  10/10 Mean: 0.500 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:29:59 0:00:00
+adhoc • anthropic-direct • claude-opus-5
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃ Pass@2 ┃ Pass@4 ┃ Pass@5 ┃ Pass@8 ┃ Pass@10 ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━┩
+│     10 │          0 │ 0.500 │  0.778 │  0.976 │  0.996 │  1.000 │   1.000 │
+└────────┴────────────┴───────┴────────┴────────┴────────┴────────┴─────────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     5 │
+│ 1.0    │     5 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 29m 59s
+Results written to /Users/kyletong/Documents/Coding 
+Projects/work_trial_chartr/jobs/chartr/confirm-task3-0.3.1-20260928T232731Z/batc
+h/result.json
+Inspect results by running `harbor view /Users/kyletong/Documents/Coding 
+Projects/work_trial_chartr/jobs/chartr/confirm-task3-0.3.1-20260928T232731Z`
+Share results by running `harbor upload /Users/kyletong/Documents/Coding 
+Projects/work_trial_chartr/jobs/chartr/confirm-task3-0.3.1-20260928T232731Z/batc
+h`
+
