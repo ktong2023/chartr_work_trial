@@ -385,7 +385,7 @@ changes what the agent can find, not how it is graded.
 
 ## v0.4.1: release-validation fix (September 28, 2026)
 
-`RELEASE_VALIDATION_2026_09_28.md` found one key inconsistency of the kind the v0.3.6 audit found for QT. On 104941853 (10038992),
+[`RELEASE_VALIDATION_2026_09_28.md`](../docs/release/RELEASE_VALIDATION_2026_09_28.md) found one key inconsistency of the kind the v0.3.6 audit found for QT. On 104941853 (10038992),
 LBBB was required while the accepted QRS range began at 101 ms, so a key-accepted reading below 120 ms that correctly omitted LBBB
 scored 0. Where a bundle-branch block is required, the QRS range now starts at 120 ms. That changes one graded bound in the key
 and the reference's QRS midpoints; no case, record or other field changes.
@@ -394,7 +394,7 @@ and the reference's QRS midpoints; no case, record or other field changes.
   unchanged, 3/10 with identical per-run rewards. v0.4.1 itself has not been piloted.
 - **QA added:** the BBB/QRS consistency test and ID-renaming invariance (the brief asked for it; only record order had been checked).
 
-## v0.4.0: response to the v0.3.6 audit (`TASK4_V036_AUDIT_2026_09_28.md`)
+## v0.4.0: response to the v0.3.6 audit ([`TASK4_V036_AUDIT_2026_09_28.md`](../docs/audits/TASK4_V036_AUDIT_2026_09_28.md))
 
 - **QT decision margin.** The three current QT edits whose accepted range dipped below 500 ms were re-edited, with every
   agreeing reading now at least 520 ms. QT-safety items are also:

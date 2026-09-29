@@ -1,0 +1,13 @@
+2026-09-28T23:27:32  chartr_task3__Xw6Xdrd    fail     end_turn           overclaim
+2026-09-28T23:27:32  chartr_task3__2LCiX4L    fail     end_turn           missed
+2026-09-28T23:27:32  chartr_task3__reSK6L9    pass     end_turn           
+2026-09-28T23:27:32  chartr_task3__uBiC29g    pass     end_turn           
+2026-09-28T23:27:32  chartr_task3__bdK7sjH    fail     end_turn           missed
+2026-09-28T23:27:32  chartr_task3__xMreuhf    fail     end_turn           overclaim
+2026-09-28T23:27:32  chartr_task3__6XqsLvn    pass     end_turn           
+2026-09-28T23:27:32  chartr_task3__TSGnJbn    pass     end_turn           
+2026-09-28T23:27:32  chartr_task3__SXq9ZER    fail     end_turn           missed, overclaim
+2026-09-28T23:27:32  chartr_task3__Ng8WpkK    pass     end_turn           
+
+10 trials: 10 valid, 0 invalid (rerun under the same command); budget failures among counted: 0
+HEADLINE (chartr_task3, frozen commit 19edc3b): 5/10 valid attempts pass.

@@ -116,7 +116,7 @@ caching on, `caffeinate`, and `-n 10`. Results branch `task3-pilot-results`, `jo
 - **Run time:** 98% of it is generating 112–149K output tokens per run, so caching cut input cost but barely changed
   wall time.
 
-**Three separate statements (per the 0.3.1 audit, `TASK3_V031_AUDIT_2026_09_28.md`):**
+**Three separate statements (per the 0.3.1 audit, [`TASK3_V031_AUDIT_2026_09_28.md`](../docs/audits/TASK3_V031_AUDIT_2026_09_28.md)):**
 1. **Benchmark outcome, v0.3.0: 4 passes / 10 attempts.** Passes were 2qiXgav, RgLAepP, Xqtgqdm and tKW2k6E. All 10
    attempts were valid, and all 10 count in this number.
 2. **Retrospective analysis of the 6 failures:** 4 defensible model failures, 1 wording-affected failure and 1
@@ -296,7 +296,7 @@ with received hospital records. Requested candidates scored 31–34 of 34; the m
 **Calibration.** Zero tolerance compounds independent concepts. Each run fair-failed 1–3 of 4 concepts, and the two
 discovery chains (unreceived first dose, accessioning-only identity) were each right in only 2 of 5 runs. The
 estimated pass rate is about 10%, below the 2–7 of 10 target. The 0.2.1 and 0.2.2 fixes would not turn any of these
-runs into a pass. Next step: the user's decision on which concept to soften or remove (see PROGRESS.md), then a 0.2.x
+runs into a pass. Next step: the user's decision on which concept to soften or remove (see [`PROGRESS.md`](../docs/history/PROGRESS.md)), then a 0.2.x
 pilot after `python3 qa/task3_preflight.py VERSION`.
 
 **0.2.2 checks:** offline 15/15; Docker (cloud CA copies) oracle 1, no-op valid 0, boundary probe exit 0 (trusted
@@ -305,7 +305,7 @@ snapshot complete, frozen, 0 faults).
 
 ## 0.2.1: fixes from the independent 0.2.0 audit (September 27, 2026)
 
-`TASK3_V020_AUDIT_2026_09_27.md` audited 0.2.0 and found two fairness defects and one overstated difficulty claim. All
+[`TASK3_V020_AUDIT_2026_09_27.md`](../docs/audits/TASK3_V020_AUDIT_2026_09_27.md) audited 0.2.0 and found two fairness defects and one overstated difficulty claim. All
 three were reproduced, then fixed across the whole 300-patient cohort, not just the cases the audit named.
 
 - **Accession-number collisions (high).** Accession numbers came from a hash reduced mod 9,000 with no uniqueness
@@ -434,7 +434,7 @@ It does not know how many issues exist or where. For each candidate (episode × 
 (`RESULT_PENDING`, `OUTSIDE_RECORD_NOT_RECEIVED`, `UNRESOLVED_SOURCE_CONFLICT`). Absence of an item
 means `not_an_issue`, except for the eight candidates named in review requests, which need an explicit item.
 
-Design follows `TASK3_BUILD_PROMPT.md` and `TASK_DESIGN_PRINCIPLES.md`: clinical truth is the CDC 2021 STI
+Design follows [`TASK3_BUILD_PROMPT.md`](../docs/design/TASK3_BUILD_PROMPT.md) and [`TASK_DESIGN_PRINCIPLES.md`](../docs/design/TASK_DESIGN_PRINCIPLES.md): clinical truth is the CDC 2021 STI
 Treatment Guidelines, not a published protocol. The public docs (`instruction.md`,
 `environment/public/policy.md`, `tools.md`) contain only the goal, the interface, the output vocabulary and
 local conventions (evaluation time, follow-up windows, identity evidence, correction/outside-record

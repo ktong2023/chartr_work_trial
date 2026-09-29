@@ -1,4 +1,4 @@
-# Task 3 independent reviews (TASK_DESIGN_PRINCIPLES.md section 6)
+# Task 3 independent reviews ([TASK_DESIGN_PRINCIPLES.md](../../docs/design/TASK_DESIGN_PRINCIPLES.md) section 6)
 
 Each review gives a second model only what an agent sees: rendered charts (selected patients, every patient linked to
 them through a laboratory result, the accessioning entries for their results, their review requests) and the public

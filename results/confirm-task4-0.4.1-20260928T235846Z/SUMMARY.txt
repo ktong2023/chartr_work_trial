@@ -1,0 +1,13 @@
+2026-09-28T23:58:47  chartr_task4__4jPYbWk    fail     end_turn           ecg_comparison, ecg_interpretation
+2026-09-28T23:58:47  chartr_task4__CfDqnVD    fail     end_turn           ecg_interpretation, ecg_linkage, item_fields
+2026-09-28T23:58:47  chartr_task4__77EhP7W    fail     end_turn           ecg_comparison, ecg_interpretation, identification, item_fields
+2026-09-28T23:58:47  chartr_task4__DrFAHv5    fail     end_turn           ecg_comparison, ecg_interpretation
+2026-09-28T23:58:47  chartr_task4__4VKuoXw    pass     end_turn           
+2026-09-28T23:58:47  chartr_task4__ALSct2y    fail     end_turn           ecg_interpretation
+2026-09-28T23:58:47  chartr_task4__kwRjFiH    fail     end_turn           chart_rules, identification, item_fields
+2026-09-28T23:58:47  chartr_task4__kHM3Xvh    fail     end_turn           ecg_interpretation, identification, item_fields
+2026-09-28T23:58:47  chartr_task4__ewkP9iU    fail     end_turn           identification, item_fields
+2026-09-28T23:58:47  chartr_task4__FkVc3Wy    fail     end_turn           ecg_interpretation
+
+10 trials: 10 valid, 0 invalid (rerun under the same command); budget failures among counted: 0
+HEADLINE (chartr_task4, frozen commit 19edc3b): 1/10 valid attempts pass.

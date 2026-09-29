@@ -1,4 +1,4 @@
-"""Render a Task 3 independent-review packet (TASK_DESIGN_PRINCIPLES.md section 6) from the built fixture.
+"""Render a Task 3 independent-review packet (docs/design/TASK_DESIGN_PRINCIPLES.md section 6) from the built fixture.
 
 The packet holds only what an agent could see: the selected patients' charts, the charts of every patient linked to
 them through a laboratory result, the accessioning entries for those results, their review requests, and the public

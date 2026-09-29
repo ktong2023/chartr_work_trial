@@ -5,3 +5,6 @@ __pycache__/
 jobs/
 .DS_Store
 data/
+.idea/
+.claude/
+habor_tutorial/
