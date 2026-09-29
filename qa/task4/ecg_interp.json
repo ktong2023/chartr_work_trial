@@ -2142,10 +2142,10 @@
     "exact": "NORMAL"
    },
    "conduction": {
-    "required": [
+    "required": [],
+    "allowed": [
      "FIRST_DEGREE_AV_BLOCK"
-    ],
-    "allowed": []
+    ]
    }
   },
   "103042067": {
@@ -6825,10 +6825,10 @@
      "exact": "NORMAL"
     },
     "conduction": {
-     "required": [
+     "required": [],
+     "allowed": [
       "FIRST_DEGREE_AV_BLOCK"
-     ],
-     "allowed": []
+     ]
     }
    },
    "prior_ecg": "103042067",

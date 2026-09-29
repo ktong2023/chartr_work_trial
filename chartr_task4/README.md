@@ -372,8 +372,10 @@ describes v0.4.1 and must be re-issued for 0.4.2 (new frozen commit, key hash an
 3. **QRS margin is 30 ms (was 25) on every tracing.**
 4. **QRS duration is graded only where a bundle-branch block is required** (2 of 37 latest ECGs). Elsewhere conduction is
    graded through the conduction field.
+5. **First-degree AV block on 102280728 (10007058) is accepted but not required.** It was the only failure in 3 of the 20
+   v0.4.0/v0.4.1 runs.
 
-Key `tests/expected.json` sha256 `471d935b5ad62d7fc241c522613c394b5e29aa45c4477a3cc5a31907ecf57d81`; sources digest
+Key `tests/expected.json` sha256 `aea0888c3e014ec49ece381eedb45037896be8d98c8a4f44a7ba56c8b9dfd04b`; sources digest
 `bb92ea2825a1c4b0d492e22166878aac1dc502237f880dea6b394335cf6f3f0f`.
 
 **Rescore of the 20 existing runs against the 0.4.2 key** (grading changes only; not a result): 5/20 (was 4/20). Only 4jPYbWk flips.

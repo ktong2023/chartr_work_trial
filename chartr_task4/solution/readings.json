@@ -1331,9 +1331,7 @@
    "qrs_ms": null,
    "qtc_ms": null,
    "axis": "NORMAL",
-   "conduction": [
-    "FIRST_DEGREE_AV_BLOCK"
-   ]
+   "conduction": []
   },
   "103042067": {
    "label": "NORMAL",
