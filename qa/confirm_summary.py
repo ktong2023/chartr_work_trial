@@ -1,6 +1,6 @@
 """Score a final confirmation batch under its predeclared protocol (standard library only; makes no model calls).
 
-    python3 qa/confirm_summary.py TASK BATCH_DIR [--frozen COMMIT]      e.g.  python3 qa/confirm_summary.py chartr_task4 jobs/chartr/confirm-task4-0.4.1-20261001T120000Z
+    python3 qa/confirm_summary.py TASK BATCH_DIR [--frozen COMMIT]      e.g.  python3 qa/confirm_summary.py chartr_task4 jobs/chartr/confirm-task4-0.4.2-20261001T120000Z
 
 BATCH_DIR is the batch's unique jobs directory (every Harbor job inside it: the batch and any reruns). The script applies
 the counting rules in the task README's "Final confirmation protocol" mechanically:
@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FROZEN = '19edc3b'
+FROZEN = {'chartr_task3': '19edc3b', 'chartr_task4': '98a881a'}   # protocol commit per task
 MODEL = 'claude-opus-5'
 ADAPTER = '0.4.0'
 PROTOCOL = {   # version and the exact --ak budgets of each task's confirmation command
@@ -91,8 +91,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('task', choices=sorted(PROTOCOL))
     ap.add_argument('batch_dir', type=Path)
-    ap.add_argument('--frozen', default=FROZEN, help='frozen commit (default: the protocol commit)')
+    ap.add_argument('--frozen', default=None, help='frozen commit (default: the protocol commit)')
     args = ap.parse_args()
+    args.frozen = args.frozen or FROZEN[args.task]
     trials = sorted((t for t in args.batch_dir.glob(f'*/{args.task}__*') if t.is_dir()),
                     key=lambda t: (read(t / 'result.json') or {}).get('started_at') or '')
     records = [trial_record(t, args.task, args.frozen) for t in trials]

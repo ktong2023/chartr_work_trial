@@ -9,19 +9,20 @@ The population is the MIMIC-IV Clinical Database Demo on FHIR. The ECGs are the 
 500 Hz WFDB). Both are re-dated per patient and extended with a synthetic outpatient cardiology layer. The target is an
 Opus 5 pass rate of 2–7/10, where failures are genuine reasoning or ECG-reading errors.
 
-## Final confirmation protocol (fixed September 28, 2026, before any confirmation trial)
+## Final confirmation protocol, v0.4.2 (fixed September 29, 2026, before any v0.4.2 trial)
 
-This batch confirms the pre-final release. Nothing in this section changes once the batch has started. Running it makes paid
+This replaces the v0.4.1 protocol (September 28), whose batch scored 1/10 and stands as that version's result
+(`jobs/chartr/confirm-task4-0.4.1-20260928T235846Z/TRIAGE.md`). This batch confirms the final release. Nothing in this section changes once the batch has started. Running it makes paid
 model calls and needs the user's authorization.
 
 **Frozen configuration**
 
 | | |
 |---|---|
-| Frozen commit | `19edc3b` on `main`. The checkout may be a later `main` commit only if no evaluated file differs from `19edc3b` (step 2); only READMEs, `PROGRESS.md` and reports may change |
-| Task | `chartr/cardiology-population-review` **0.4.1** (`task.toml`, service `chartr-task4-0.4.1`, baseline) |
-| Answer key | `tests/expected.json` sha256 `821026182ca945b8a58f320f8741d0bbea4f8c2db52d85314cfd71fd8ba535e0` |
-| Sources | digest `01889990daf1e991493c77348eaa0c7cbf4afd3e983ecba113eb4a78f89bd06b`, attested by the provider at every trial start; PhysioNet inputs pinned in `overlay/pinned.sha256` (446 files) |
+| Frozen commit | `98a881a` on `main`. The checkout may be a later `main` commit only if no evaluated file differs from `98a881a` (step 2); only READMEs, `PROGRESS.md` and reports may change |
+| Task | `chartr/cardiology-population-review` **0.4.2** (`task.toml`, service `chartr-task4-0.4.2`, baseline) |
+| Answer key | `tests/expected.json` sha256 `aea0888c3e014ec49ece381eedb45037896be8d98c8a4f44a7ba56c8b9dfd04b` |
+| Sources | digest `bb92ea2825a1c4b0d492e22166878aac1dc502237f880dea6b394335cf6f3f0f`, attested by the provider at every trial start; PhysioNet inputs pinned in `overlay/pinned.sha256` (446 files) |
 | Harness | adapter 0.4.0 (`anthropic_agent.py` sha256 `95ce935a…3ead`), provider `chartr_environment.py`, Harbor 0.23.0, anthropic 1.8.0; host environment from `requirements.lock.txt` |
 | Model and budgets | `claude-opus-5`; `-k 10 -n 10`; `max_turns=300`, `max_tokens=64000`, `api_timeout_sec=1800`, `wall_timeout_sec=7000`, `tool_timeout_sec=900`, `prompt_cache=true` |
 | Host | Docker with ≥ 10 CPUs and 8 GB; no other ChartR trial running; `caffeinate` so the host cannot sleep |
@@ -31,13 +32,13 @@ model calls and needs the user's authorization.
 1. Update the checkout: `git fetch origin && git checkout main && git pull --ff-only`
 2. Frozen files unchanged (must print `frozen-files-ok`):
    ```bash
-   git diff --quiet 19edc3b HEAD -- chartr_task4 ':(exclude)chartr_task4/README.md' anthropic_agent.py chartr_environment.py chartr_job.yaml requirements.lock.txt && echo frozen-files-ok
+   git diff --quiet 98a881a HEAD -- chartr_task4 ':(exclude)chartr_task4/README.md' anthropic_agent.py chartr_environment.py chartr_job.yaml requirements.lock.txt && echo frozen-files-ok
    ```
-3. Preflight (every line must be `ok`): `python3 qa/task4_preflight.py 0.4.1`
+3. Preflight (every line must be `ok`): `python3 qa/task4_preflight.py 0.4.2`
 4. Create the batch's unique output directory. It is never reused; the command refuses an existing path and records the
    dispatch state:
    ```bash
-   D="$PWD/jobs/chartr/confirm-task4-0.4.1-$(date -u +%Y%m%dT%H%M%SZ)"; test ! -e "$D" && mkdir -p "$D" && { git rev-parse HEAD; python3 qa/task4_preflight.py 0.4.1; } > "$D/DISPATCH.txt" && echo "$D"
+   D="$PWD/jobs/chartr/confirm-task4-0.4.2-$(date -u +%Y%m%dT%H%M%SZ)"; test ! -e "$D" && mkdir -p "$D" && { git rev-parse HEAD; python3 qa/task4_preflight.py 0.4.2; } > "$D/DISPATCH.txt" && echo "$D"
    ```
 5. Run the batch (job name `batch`):
    ```bash
@@ -63,7 +64,7 @@ model calls and needs the user's authorization.
 - **Triage:** classify each failure from its saved items and trace as a model failure, a task/grader defect, or a budget
   failure.
   - A defect is fixed in a new version and reported separately.
-  - This batch is never re-scored, and it is not pooled with earlier batches (the v0.4.0 3/10 stays a pilot result).
+  - This batch is never re-scored, and it is not pooled with earlier batches (the v0.4.0 pilot 3/10 and the v0.4.1 confirmation 1/10 stand as those versions' results).
 
 ## Data and licence
 
@@ -136,7 +137,7 @@ The labels come from three automated readers plus designer review. It is not uni
 |---|---|
 | Rhythm | Catalog label: the cart statement plus RR irregularity from two algorithms. Tracings that designer review could not settle accept several rhythms: 108780865 AF/sinus; 100924231 sinus/flutter/ectopic atrial; any "sinus or ectopic atrial" cart statement sinus/other. |
 | Rate | All reads ±5 bpm (AF ±12). |
-| QRS | M and G within 30 ms, then accepted range ±25 ms, floored at 120 ms where a bundle-branch block is required (v0.4.1). N's QRS is excluded: validated against M it runs +48 to +66 ms (median), from the DWT R-offset convention. |
+| QRS | M and G within 30 ms, then accepted range ±30 ms (v0.4.2; was ±25), floored at 120 ms where a bundle-branch block is required (v0.4.1); since v0.4.2 graded only where a bundle-branch block is required. N's QRS is excluded: validated against M it runs +48 to +66 ms (median), from the DWT R-offset convention. |
 | QTc (Bazett) | Anchored on M and N (both required, within 50 ms). The tangent (A) and G reads are admitted if within 60 ms of the anchors. Accepted range ±40 ms (inter-observer variability). Otherwise ungraded. QT edits use their own agreeing-read range. |
 | PR | Numeric PR is not graded, because onset conventions differ by 30–50 ms. It must be null in AF. |
 | First-degree AV block | Required only if the cart states it with PR ≥ 210 ms and a second reader agrees. Forbidden only if M and N, and G when it found a P wave, all read ≤ 160 ms. Otherwise allowed. |
@@ -363,7 +364,7 @@ v0.3.2. His AF diagnosis codes stay removed; the older AF ECG and inpatient char
 
 The v0.4.1 confirmation batch scored 1/10, and the v0.4.0 pilot 3/10 (about 20% combined, below the 2–7/10 target). This is
 an announced calibration, not a defect fix. The v0.4.1 result stands; the "Final confirmation protocol" section above
-describes v0.4.1 and must be re-issued for 0.4.2 (new frozen commit, key hash and sources digest) before any 0.4.2 batch.
+has been re-issued for 0.4.2.
 
 1. **ECG 108912996 (10019172) is rhythm-ambiguous:** AF or SINUS accepted. PR is not graded, and NEW_AF is allowed but not
    required. The AF label had no blinded adjudication, neurokit reports a PR, and 2/10 v0.4.1 runs read sinus.
@@ -378,8 +379,9 @@ describes v0.4.1 and must be re-issued for 0.4.2 (new frozen commit, key hash an
 Key `tests/expected.json` sha256 `aea0888c3e014ec49ece381eedb45037896be8d98c8a4f44a7ba56c8b9dfd04b`; sources digest
 `bb92ea2825a1c4b0d492e22166878aac1dc502237f880dea6b394335cf6f3f0f`.
 
-**Rescore of the 20 existing runs against the 0.4.2 key** (grading changes only; not a result): 5/20 (was 4/20). Only 4jPYbWk flips.
-Change 2 cannot show up in a rescore, because it changes what the agent can find, not how it is graded.
+**Rescore of the 20 existing runs against the 0.4.2 key** (grading changes only; not a result): 8/20 (was 4/20). The runs that
+flip are 4jPYbWk (change 1) and ALSct2y, 6sqZzHF and v2zAPnA (change 5). Change 2 cannot show up in a rescore, because it
+changes what the agent can find, not how it is graded.
 
 ## v0.4.1: release-validation fix (September 28, 2026)
 
