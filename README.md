@@ -25,7 +25,7 @@ every graded decision is right.
   - [Inside each task](#inside-each-task)
 - [Running](#running)
 - [Licensing and citations](#licensing-and-citations)
-- [What surprised me, what I'd change, what I'd do with more time](#discussion)
+- [Discussion](#discussion)
 
 ## Final results
 
@@ -165,7 +165,30 @@ Its README has the exact command.
   Atrial Fibrillation*. Both are cited in full in the task READMEs.
 - **Third-party software.** The tasks use Harbor, the Anthropic Python SDK, NeuroKit2 and WFDB under their own licences.
 
-## discussion
+## Discussion
+**What surprised me?**
+- Having to grapple with Claude Code/Codex struggling to balance my different requireemnts/preferences for the task creation (ie unambiguity vs. bare-bones instructions)
+- How much I underestimated the reasoning capabilities of the model
+- how easy AI was at scaling
 
-test
+**What you'd change**
+- deep diving into specific grading schema to find what was really made "too easy" in the name of fairness
+- diversifying reasoning for task failures
+
+**What you'd do next with more time.**
+- expert review of clinical metrics/data
+- larger confirmation runs and more developed realistic EHR database
+- testing with different models to see gaps in specific capabilities
+- fine-tuned LLM-as-a-judge explanation judgements
+
+
+
+
+
+
+
+
+
+
+
 
