@@ -4,6 +4,17 @@
 the predeclared protocol below. The full triage is in
 [`results/confirm-task3-0.3.1-20260928T232731Z/TRIAGE.md`](../results/confirm-task3-0.3.1-20260928T232731Z/TRIAGE.md).
 
+## Contents
+
+- [Overview](#overview)
+- [Environment](#environment)
+- [Tools given to the model](#tools-given-to-the-model)
+- [Final confirmation batch: 10 trials](#final-confirmation-batch-10-trials)
+- [Version history](#version-history)
+- [Limits](#limits)
+- [Licensing and citations](#licensing-and-citations)
+- [Final confirmation protocol](#final-confirmation-protocol-fixed-september-28-2026-before-any-confirmation-trial)
+
 ## Overview
 
 The agent audits the syphilis care of a 200-patient synthetic clinic cohort as of September 24, 2026, 12:00 UTC. Clinical

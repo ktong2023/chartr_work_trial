@@ -4,6 +4,17 @@
 the predeclared protocol below. The full triage is in
 [`results/confirm-task4-0.4.2-20260929T050729Z/TRIAGE.md`](../results/confirm-task4-0.4.2-20260929T050729Z/TRIAGE.md).
 
+## Contents
+
+- [Overview](#overview)
+- [Environment](#environment)
+- [Tools given to the model](#tools-given-to-the-model)
+- [Final confirmation batch: 10 trials](#final-confirmation-batch-10-trials)
+- [Version history](#version-history)
+- [Limits](#limits)
+- [Licensing and citations](#licensing-and-citations)
+- [Final confirmation protocol (v0.4.2)](#final-confirmation-protocol-v042-fixed-september-29-2026-before-any-v042-trial)
+
 ## Overview
 
 The agent reviews a 100-patient cardiology clinic population (69 living) as of September 24, 2026, 12:00 America/New_York.

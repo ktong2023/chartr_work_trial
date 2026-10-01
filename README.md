@@ -18,6 +18,14 @@ every graded decision is right.
 | **Task 3: cohort audit with calibrated abstention** | Audits the syphilis care of 200 synthetic patients against the CDC 2021 guidelines. It must abstain with a stated reason exactly where the records leave a fact unresolved, and carry facts across issues and across patients' charts | [`chartr_task3/README.md`](chartr_task3/README.md) |
 | **Task 4: cardiology population review with raw ECGs** | Reviews a 100-patient population built on real MIMIC-IV data for anticoagulation, QT-safety, follow-up and documentation issues, and interprets each living patient's latest raw 12-lead ECG | [`chartr_task4/README.md`](chartr_task4/README.md) |
 
+## Contents
+
+- [Final results](#final-results)
+- [Repository layout](#repository-layout)
+  - [Inside each task](#inside-each-task)
+- [Running](#running)
+- [Licensing and citations](#licensing-and-citations)
+
 ## Final results
 
 Each task was confirmed with one ten-attempt batch of `claude-opus-5`. The protocol for each batch was predeclared and
