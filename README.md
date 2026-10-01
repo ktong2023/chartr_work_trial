@@ -25,6 +25,7 @@ every graded decision is right.
   - [Inside each task](#inside-each-task)
 - [Running](#running)
 - [Licensing and citations](#licensing-and-citations)
+- [What surprised me, what I'd change, what I'd do with more time](#discussion)
 
 ## Final results
 
@@ -163,3 +164,8 @@ Its README has the exact command.
   (MMWR Recomm Rep 2021;70(RR-4)). Task 4 uses the *2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of
   Atrial Fibrillation*. Both are cited in full in the task READMEs.
 - **Third-party software.** The tasks use Harbor, the Anthropic Python SDK, NeuroKit2 and WFDB under their own licences.
+
+## discussion
+
+test
+
