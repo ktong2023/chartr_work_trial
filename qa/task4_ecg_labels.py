@@ -17,7 +17,7 @@ from scipy import signal
 import wfdb
 
 warnings.filterwarnings('ignore')
-MAIN = Path('/Users/kyletong/Documents/Coding Projects/work_trial_chartr')
+MAIN = Path(__file__).resolve().parents[1]
 DEMO = MAIN / 'data/physionet/mimic-iv-ecg-demo/0.1'
 FULL = MAIN / 'data/physionet/mimic-iv-ecg/1.0/machine_measurements.csv'
 OUT = Path(__file__).resolve().parent / 'task4' / 'ecg_labels.json'

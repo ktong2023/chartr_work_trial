@@ -43,7 +43,12 @@ committed before it ran: frozen files, exact command, budgets and counting rules
   [1/10](results/confirm-task4-0.4.1-20260928T235846Z/TRIAGE.md). That stands as that version's result. 0.4.2 is an
   announced calibration, described in the Task 4 README.
 - **Full logs.** Trial logs and agent trajectories for every pilot and confirmation batch are on the `task3-pilot-results`
-  and `task4-pilot-results` branches.
+  and `task4-pilot-results` branches. The three confirmation batches:
+  [Task 3 v0.3.1](https://github.com/ktong2023/chartr_work_trial/tree/task3-pilot-results/jobs/chartr/confirm-task3-0.3.1-20260928T232731Z),
+  [Task 4 v0.4.1](https://github.com/ktong2023/chartr_work_trial/tree/task4-pilot-results/jobs/chartr/confirm-task4-0.4.1-20260928T235846Z),
+  [Task 4 v0.4.2](https://github.com/ktong2023/chartr_work_trial/tree/task4-pilot-results/jobs/chartr/confirm-task4-0.4.2-20260929T050729Z).
+  In each trial folder, `controller/anthropic/events.jsonl` is the full trajectory and `verifier/diagnostics.json` the
+  grader's per-field result. These branches keep the repository's earlier layout, from before it was reorganized.
 
 ## Repository layout
 
@@ -111,16 +116,28 @@ frozen-file check diffs them against the frozen commit (`19edc3b` for Task 3, `9
 ## Running
 
 **Setup.**
-- Create a fresh virtual environment from `requirements.lock.txt` (Harbor 0.23.0, anthropic 1.8.0).
+- Create a fresh virtual environment from `requirements.lock.txt` (Python 3.13, Harbor 0.23.0, anthropic 1.8.0):
+  ```bash
+  uv venv --python 3.13 .venv && uv pip install --python .venv/bin/python -r requirements.lock.txt
+  ```
 - Paid batches also need:
   - Docker with at least 10 CPUs and 8 GB;
   - an `.env` file with the Anthropic API key;
   - no other ChartR trial running.
 
-**Offline checks** (no API key, no model calls):
+**Offline checks** (no API key, no model calls). The Task 3, preflight and adapter suites need nothing else:
 
 ```bash
-.venv/bin/python -m unittest qa.test_task3 qa.test_task4 qa.test_preflight qa.test_adapter
+.venv/bin/python -m unittest qa.test_task3 qa.test_preflight qa.test_adapter
+```
+
+The Task 4 suite assembles the clinic database from the PhysioNet inputs, which are not in the repository (`data/` is
+gitignored). Download them once with the same script the image build uses; it fetches the 446 pinned files (about 75 MB,
+roughly 10 minutes) and verifies every checksum:
+
+```bash
+python3 chartr_task4/environment/service/fetch.py chartr_task4/environment/service/overlay/pinned.sha256 data/physionet
+.venv/bin/python -m unittest qa.test_task4
 ```
 
 **Reference and no-op runs** (Docker, free). The reference solution should score 1 and the no-op 0:
@@ -153,10 +170,11 @@ Its README has the exact command.
   (ODbL)**:
   - MIMIC-IV Clinical Database Demo on FHIR v2.1.0;
   - MIMIC-IV-ECG Demo v0.1;
-  - the MIMIC-IV-ECG v1.0 machine measurements, used only as one labelling reader and not shipped.
+  - the MIMIC-IV-ECG v1.0 machine measurements, used only as one labelling reader and never shown to the agent.
 
-  The data is fetched at image build time and checksum-verified against pinned hashes. It is not redistributed in this
-  repository. The derived database is re-dated, extended with synthetic records, shared under the ODbL, and not for
+  The data is fetched at image build time and checksum-verified against pinned hashes. The source files are not
+  redistributed in this repository. Derived values used for ECG labelling (each reader's measurements, including the
+  machine's, in `qa/task4/ecg_reads.json`) are kept here under the same licence. The derived database is re-dated, extended with synthetic records, shared under the ODbL, and not for
   clinical use. Full dataset and paper citations are in the
   [Task 4 README](chartr_task4/README.md#licensing-and-citations).
 - **Task 3 data** is entirely synthetic, with no real patient data.

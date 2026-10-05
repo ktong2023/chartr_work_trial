@@ -19,3 +19,10 @@ To regenerate `SUMMARY.txt` for the v0.4.1 batch, pass `--frozen 19edc3b`.
 
 The full batch folders (trial logs, agent trajectories, snapshots; about 93 MB each) are on the `task3-pilot-results` and
 `task4-pilot-results` branches, at `jobs/chartr/<batch>/`.
+Direct links:
+[Task 3 v0.3.1](https://github.com/ktong2023/chartr_work_trial/tree/task3-pilot-results/jobs/chartr/confirm-task3-0.3.1-20260928T232731Z),
+[Task 4 v0.4.1](https://github.com/ktong2023/chartr_work_trial/tree/task4-pilot-results/jobs/chartr/confirm-task4-0.4.1-20260928T235846Z),
+[Task 4 v0.4.2](https://github.com/ktong2023/chartr_work_trial/tree/task4-pilot-results/jobs/chartr/confirm-task4-0.4.2-20260929T050729Z).
+In each trial folder (`batch/<task>__<id>/`), `controller/anthropic/events.jsonl` is the full trajectory, `verifier/diagnostics.json`
+the grader's per-field result, and `artifacts/evidence/snapshot.json` the controller-collected final state. These branches
+keep the repository's earlier layout, from before it was reorganized.

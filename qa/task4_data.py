@@ -13,7 +13,7 @@ import datetime as dt
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-MAIN = Path('/Users/kyletong/Documents/Coding Projects/work_trial_chartr')
+MAIN = Path(__file__).resolve().parents[1]
 FHIR_DIR = MAIN / 'data/physionet/mimic-iv-fhir-demo/2.1.0/fhir'
 ECG_DIR = MAIN / 'data/physionet/mimic-iv-ecg-demo/0.1'
 TZ = ZoneInfo('America/New_York')

@@ -191,7 +191,8 @@ same licence, is not for clinical use, and uses no credentialed PhysioNet data. 
 - Gow, B., Pollard, T., Nathanson, L. A., Johnson, A., Moody, B., Fernandes, C., Greenbaum, N., Waks, J. W., Eslami, P.,
   Carbonati, T., Chaudhari, A., Herbst, E., Moukheiber, D., Berkowitz, S., Mark, R., & Horng, S. (2023). *MIMIC-IV-ECG:
   Diagnostic Electrocardiogram Matched Subset* (version 1.0). PhysioNet. https://doi.org/10.13026/4nqg-sb35. Its machine
-  measurements were used only as one labelling reader and are not shipped.
+  measurements were used only as one labelling reader and are never shown to the agent; the derived reader values
+  used for labelling are kept in `qa/task4/ecg_reads.json` under the ODbL.
 - Pollard, T., Moody, B. E., Lehman, L., Gow, B., Fernandes, C., Xie, C., Johnson, A., Mark, R. G., & Heldt, T. (2026).
   PhysioNet as a global platform for biomedical research. *Nature Health*, 1(8), 792–795.
   https://doi.org/10.1038/s44360-026-00096-z
