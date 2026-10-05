@@ -167,7 +167,7 @@ Its README has the exact command.
 
 ## Discussion
 **What surprised me?**
-- Having to grapple with Claude Code/Codex struggling to balance my different requireemnts/preferences for the task creation (ie unambiguity vs. bare-bones instructions)
+- Having to grapple with Claude Code/Codex struggling to balance my different requirements/preferences for the task creation (ie unambiguity vs. bare-bones instructions)
 - How much I underestimated the reasoning capabilities of the model
 - how easy AI was at scaling
 
